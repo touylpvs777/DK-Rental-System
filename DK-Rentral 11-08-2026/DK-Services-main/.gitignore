@@ -1,0 +1,13 @@
+node_modules/
+__pycache__/
+.venv/
+.venv-*/
+venv/
+.pytest_cache/
+
+.claude/settings.local.json
+backups/
+
+Upload/
+uploads/
+*.xlsx
