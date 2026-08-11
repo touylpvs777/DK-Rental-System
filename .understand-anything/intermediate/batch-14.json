@@ -1,0 +1,122 @@
+{
+  "batchIndex": 14,
+  "nodes": [
+    {
+      "id": "file:frontend/src/styles/breakpoints.css",
+      "type": "file",
+      "name": "Breakpoints & Visibility Utilities",
+      "summary": "Defines the responsive breakpoint scale (xs/sm/md/lg/xl/2xl) and provides utility classes for show/hide at breakpoints, screen-reader-only (.sr-only), text truncation (.text-truncate), and two-line clamp (.line-clamp-2). Used globally across all pages to implement responsive layout behaviour.",
+      "tags": ["css", "breakpoints", "responsive", "utilities", "visibility", "global", "styles"],
+      "filePath": "frontend/src/styles/breakpoints.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/styles/detail.css",
+      "type": "file",
+      "name": "Detail Page Shared Styles",
+      "summary": "Shared CSS patterns for quotation, rental, and future entity detail pages. Covers the detail header/title row, summary cards grid, two-column info grid (collapses to one on mobile), internal-note callout with dark-mode overrides, section chrome, table cell helpers, decision badges (approved/rejected), and hover transitions on summary cards. Relies heavily on design tokens from tokens.css.",
+      "tags": ["css", "detail-page", "layout", "cards", "dark-mode", "shared", "styles"],
+      "filePath": "frontend/src/styles/detail.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/styles/marketplace.css",
+      "type": "file",
+      "name": "Marketplace Card UI Styles",
+      "summary": "Chrome Web Store-inspired design layer for card-based module views. Defines .mp-card with hover-lift, .mp-grid (auto-fill responsive grid), KPI widget strip (.mp-kpi-strip / .mp-kpi-widget) with coloured accent bars, grid/list view toggle (.mp-view-toggle), section headers, dashboard chart panels (.mp-chart-grid), skeleton loading cards, empty state, hero banner with gradient, toolbar, and quick-stats row. Includes dark-mode overrides and responsive breakpoints at 420px, 640px, and 768px.",
+      "tags": ["css", "marketplace", "cards", "kpi", "responsive", "dark-mode", "skeleton", "styles"],
+      "filePath": "frontend/src/styles/marketplace.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/styles/shared.css",
+      "type": "file",
+      "name": "Shared Page Layout Styles",
+      "summary": "Reusable page-level CSS used by CustomersPage, LeadsPage, and all future list modules. Covers page-header, toolbar with search/filter/date inputs, data-table (sortable headers, hover rows, empty and skeleton states), row action buttons, pagination controls, form layout grid (.form-row-2), value-prefix inputs, and error banners. Includes a responsive breakpoint at 640px that collapses two-column forms to one and hides non-essential toolbar elements.",
+      "tags": ["css", "tables", "layout", "forms", "pagination", "toolbar", "shared", "styles"],
+      "filePath": "frontend/src/styles/shared.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/styles/tokens.css",
+      "type": "file",
+      "name": "CSS Design Tokens",
+      "summary": "Foundational CSS custom-property file that defines the entire design token system: full colour palettes (primary blue, success green, warning amber, danger red, info cyan, purple, gray neutrals), semantic surface/border/text aliases, backward-compat colour aliases, layout dimensions (sidebar widths, topbar height, content max-width), border-radius scale, shadow scale (xs–xl), z-index scale, transition durations and easing, sidebar colours, badge/toast/error/JSON viewer semantic tokens, and a complete dark-theme override block under [data-theme=\"dark\"]. Also includes a prefers-reduced-motion rule that disables all animations.",
+      "tags": ["css", "design-tokens", "variables", "dark-mode", "colors", "shadows", "typography", "global", "foundational", "styles"],
+      "filePath": "frontend/src/styles/tokens.css",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "from": "file:frontend/src/styles/tokens.css",
+      "to": "file:frontend/src/styles/breakpoints.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "breakpoints.css consumes design tokens"
+    },
+    {
+      "from": "file:frontend/src/styles/tokens.css",
+      "to": "file:frontend/src/styles/detail.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "detail.css consumes design tokens"
+    },
+    {
+      "from": "file:frontend/src/styles/tokens.css",
+      "to": "file:frontend/src/styles/marketplace.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "marketplace.css consumes design tokens"
+    },
+    {
+      "from": "file:frontend/src/styles/tokens.css",
+      "to": "file:frontend/src/styles/shared.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "shared.css consumes design tokens"
+    },
+    {
+      "from": "file:frontend/src/styles/breakpoints.css",
+      "to": "file:frontend/src/styles/detail.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "detail.css uses breakpoint scale for responsive info grid"
+    },
+    {
+      "from": "file:frontend/src/styles/breakpoints.css",
+      "to": "file:frontend/src/styles/marketplace.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "marketplace.css embeds breakpoints matching the defined scale"
+    },
+    {
+      "from": "file:frontend/src/styles/breakpoints.css",
+      "to": "file:frontend/src/styles/shared.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "shared.css uses 640px breakpoint aligned with sm scale"
+    },
+    {
+      "from": "file:frontend/src/styles/detail.css",
+      "to": "file:frontend/src/styles/shared.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "detail pages build on top of shared table and toolbar styles"
+    },
+    {
+      "from": "file:frontend/src/styles/marketplace.css",
+      "to": "file:frontend/src/styles/shared.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "both provide page-level layout patterns (toolbar, empty state, skeleton)"
+    },
+    {
+      "from": "file:frontend/src/styles/detail.css",
+      "to": "file:frontend/src/styles/marketplace.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "both use card/surface patterns with rounded corners and border tokens"
+    }
+  ]
+}

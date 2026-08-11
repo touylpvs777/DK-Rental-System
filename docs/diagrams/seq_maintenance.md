@@ -1,0 +1,69 @@
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Tech as Technician
+    actor Mgr as Manager
+    participant FE as React SPA
+    participant API as FastAPI Backend
+    participant DB as PostgreSQL
+
+    rect rgb(15,23,42)
+        Note over Tech,DB: TRIGGER — PM Due
+        API->>DB: SELECT maintenance_schedules WHERE due_date less than today
+        DB-->>API: Overdue schedules list
+        API->>DB: UPDATE maintenance_schedules status=DUE
+        Note over FE: Dashboard shows DUE alerts
+    end
+
+    rect rgb(15,23,42)
+        Note over Mgr,DB: CREATE WORK ORDER
+        Mgr->>FE: Open New Work Order form
+        FE->>API: GET /api/v1/forklifts to pick asset
+        API-->>FE: Forklift list
+        Mgr->>FE: Fill WO type, priority, assign technician
+        FE->>API: POST /maintenance/work-orders {forklift_id, type, priority, assigned_to}
+        API->>DB: INSERT work_orders status=SCHEDULED
+        API->>DB: UPDATE forklifts status=IN_SERVICE
+        API->>DB: INSERT forklift_status_history
+        API-->>FE: 201 Work Order SCHEDULED
+    end
+
+    rect rgb(15,23,42)
+        Note over Tech,DB: EXECUTE WORK
+        Tech->>FE: Open assigned work order
+        FE->>API: PATCH /work-orders/{id}/status {status=IN_PROGRESS}
+        API->>DB: UPDATE work_orders status=IN_PROGRESS started_at=now
+        API-->>FE: IN_PROGRESS
+
+        Tech->>FE: Add parts consumed
+        FE->>API: POST /work-orders/{id}/parts {spare_part_id, qty}
+        API->>DB: INSERT part_consumption
+        API->>DB: INSERT inventory_transactions type=ISSUE
+        API->>DB: UPDATE inventory_balance quantity_on_hand minus qty
+        API-->>FE: Parts recorded
+
+        Tech->>FE: Log hours and findings
+        FE->>API: PATCH /work-orders/{id} {actual_hours, findings, resolution}
+        API->>DB: UPDATE work_orders
+
+        Tech->>FE: Mark Completed
+        FE->>API: PATCH /work-orders/{id}/status {status=COMPLETED}
+        API->>DB: UPDATE work_orders status=COMPLETED completed_at=now
+        API->>DB: INSERT service_history
+        API->>DB: INSERT forklift_hour_meter_logs
+        API-->>FE: COMPLETED
+    end
+
+    rect rgb(15,23,42)
+        Note over Mgr,DB: VERIFY AND CLOSE
+        Mgr->>FE: Review completed work order
+        FE->>API: PATCH /work-orders/{id}/status {status=VERIFIED}
+        API->>DB: UPDATE work_orders status=VERIFIED verified_by=mgr.id
+        API->>DB: INSERT maintenance_costs labour and parts
+        API->>DB: UPDATE forklifts status=IN_STOCK
+        API->>DB: INSERT forklift_status_history
+        API->>DB: UPDATE maintenance_schedules next due date
+        API-->>FE: Work Order VERIFIED
+        FE-->>Mgr: Show cost summary
+    end
+```

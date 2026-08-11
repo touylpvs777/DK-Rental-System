@@ -1,0 +1,55 @@
+stateDiagram-v2
+    [*] --> in_stock : Register new forklift
+
+    in_stock --> reserved : Contract approved<br/>reservation created
+    in_stock --> rented : Direct rental activation
+    in_stock --> in_service : Maintenance work order started
+    in_stock --> sold : Asset sold (final)
+    in_stock --> decommissioned : End of life (final)
+
+    reserved --> rented : Contract activated<br/>delivery completed
+    reserved --> in_stock : Reservation cancelled<br/>contract cancelled
+
+    rented --> in_stock : Return completed<br/>inspection passed
+    rented --> in_service : Maintenance during rental<br/>work order created
+    rented --> rented : Extension approved<br/>new end date set
+
+    in_service --> in_stock : Work order verified<br/>maintenance complete
+    in_service --> rented : Work order verified<br/>return to active rental
+
+    sold --> [*]
+    decommissioned --> [*]
+
+    state in_stock {
+        [*] --> available
+        available --> [*]
+        note right of available
+            Forklift is in warehouse
+            Ready for rental or sale
+            Hour meter tracked
+        end note
+    }
+
+    state rented {
+        [*] --> active_rental
+        active_rental --> returning
+        returning --> inspecting
+        inspecting --> [*]
+        note right of active_rental
+            Deployed at customer site
+            Billing cycles active
+            Hour meter tracked remotely
+        end note
+    }
+
+    state in_service {
+        [*] --> work_in_progress
+        work_in_progress --> completed
+        completed --> verified
+        verified --> [*]
+        note right of work_in_progress
+            Parts consumed from inventory
+            Labor and cost tracked
+            Service history recorded
+        end note
+    }

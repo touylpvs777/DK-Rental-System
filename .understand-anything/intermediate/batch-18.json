@@ -1,0 +1,1021 @@
+{
+  "batchIndex": 18,
+  "nodes": [
+    {
+      "id": "file:backend/app/repositories/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "summary": "Empty package initializer for the repositories package.",
+      "tags": ["repository", "package"],
+      "filePath": "backend/app/repositories/__init__.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/billing_repository.py",
+      "type": "file",
+      "name": "billing_repository.py",
+      "summary": "Repository layer for all billing-related models: Invoice, Payment, Deposit, PaymentAllocation, and RevenueRecognition.",
+      "tags": ["repository", "billing", "invoice", "payment", "deposit"],
+      "filePath": "backend/app/repositories/billing_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/repositories/brand_repository.py",
+      "type": "file",
+      "name": "brand_repository.py",
+      "summary": "CRUD repository for the Brand catalog entity.",
+      "tags": ["repository", "brand", "catalog", "crud"],
+      "filePath": "backend/app/repositories/brand_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/category_repository.py",
+      "type": "file",
+      "name": "category_repository.py",
+      "summary": "Repository for ProductCategory with hierarchical tree loading support.",
+      "tags": ["repository", "category", "catalog", "hierarchy"],
+      "filePath": "backend/app/repositories/category_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/repositories/forklift_cost_repository.py",
+      "type": "file",
+      "name": "forklift_cost_repository.py",
+      "summary": "Repository for ForkliftOwnershipCost with aggregation by type and date filters.",
+      "tags": ["repository", "forklift", "cost", "aggregation"],
+      "filePath": "backend/app/repositories/forklift_cost_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/forklift_document_repository.py",
+      "type": "file",
+      "name": "forklift_document_repository.py",
+      "summary": "Repository for ForkliftDocument with expiry-date alerting queries.",
+      "tags": ["repository", "forklift", "document", "expiry"],
+      "filePath": "backend/app/repositories/forklift_document_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/forklift_hour_meter_repository.py",
+      "type": "file",
+      "name": "forklift_hour_meter_repository.py",
+      "summary": "Repository for ForkliftHourMeterLog; supports get_latest reading per forklift.",
+      "tags": ["repository", "forklift", "hour-meter", "telemetry"],
+      "filePath": "backend/app/repositories/forklift_hour_meter_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/forklift_location_repository.py",
+      "type": "file",
+      "name": "forklift_location_repository.py",
+      "summary": "Repository for ForkliftLocation history; provides get_current (latest) location query.",
+      "tags": ["repository", "forklift", "location", "tracking"],
+      "filePath": "backend/app/repositories/forklift_location_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/forklift_model_repository.py",
+      "type": "file",
+      "name": "forklift_model_repository.py",
+      "summary": "Repository for ForkliftModel with brand eager-loading, paginated list, and slug uniqueness checks.",
+      "tags": ["repository", "forklift", "model", "brand", "pagination"],
+      "filePath": "backend/app/repositories/forklift_model_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/repositories/forklift_photo_repository.py",
+      "type": "file",
+      "name": "forklift_photo_repository.py",
+      "summary": "Repository for ForkliftPhoto with primary-photo management (clear_primary before setting new primary).",
+      "tags": ["repository", "forklift", "photo", "primary"],
+      "filePath": "backend/app/repositories/forklift_photo_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/forklift_repository.py",
+      "type": "file",
+      "name": "forklift_repository.py",
+      "summary": "Core repository for Forklift assets; includes get_detail with full relation graph (model, photos, docs, costs, locations, specs, status history) and paginated get_list with multi-field search.",
+      "tags": ["repository", "forklift", "crud", "search", "pagination"],
+      "filePath": "backend/app/repositories/forklift_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/repositories/forklift_status_repository.py",
+      "type": "file",
+      "name": "forklift_status_repository.py",
+      "summary": "Repository for ForkliftStatusHistory; records status transitions per forklift.",
+      "tags": ["repository", "forklift", "status", "history"],
+      "filePath": "backend/app/repositories/forklift_status_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/import_repository.py",
+      "type": "file",
+      "name": "import_repository.py",
+      "summary": "Repository for ImportJob and ImportError; tracks bulk-import job state and per-row errors.",
+      "tags": ["repository", "import", "job", "error"],
+      "filePath": "backend/app/repositories/import_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/repositories/inventory_repository.py",
+      "type": "file",
+      "name": "inventory_repository.py",
+      "summary": "Comprehensive repository for spare-parts inventory: SparePart, Warehouse, InventoryBalance, InventoryTransaction, PurchaseOrder, PurchaseOrderItem, PartConsumption, and dashboard aggregations.",
+      "tags": ["repository", "inventory", "spare-parts", "warehouse", "purchase-order"],
+      "filePath": "backend/app/repositories/inventory_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/repositories/maintenance_repository.py",
+      "type": "file",
+      "name": "maintenance_repository.py",
+      "summary": "Repository for the maintenance module: MaintenancePlan, MaintenanceSchedule, WorkOrder, ServiceHistory, MaintenanceCost, plus overdue-schedule and dashboard aggregation queries.",
+      "tags": ["repository", "maintenance", "work-order", "schedule", "service-history"],
+      "filePath": "backend/app/repositories/maintenance_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/repositories/movement_repository.py",
+      "type": "file",
+      "name": "movement_repository.py",
+      "summary": "Repository for AssetMovement (logistics) with checkpoint/status history support via MovementHistory.",
+      "tags": ["repository", "movement", "logistics", "tracking"],
+      "filePath": "backend/app/repositories/movement_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/repositories/product_repository.py",
+      "type": "file",
+      "name": "product_repository.py",
+      "summary": "Repository for catalog Product entities including specs, images, and compat-brands management.",
+      "tags": ["repository", "product", "catalog", "specs", "images"],
+      "filePath": "backend/app/repositories/product_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/repositories/quotation_repository.py",
+      "type": "file",
+      "name": "quotation_repository.py",
+      "summary": "Repository for sales Quotation entities with line-item, status-history, and approval helpers.",
+      "tags": ["repository", "quotation", "sales", "line-items", "approval"],
+      "filePath": "backend/app/repositories/quotation_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/repositories/rental_repository.py",
+      "type": "file",
+      "name": "rental_repository.py",
+      "summary": "Comprehensive repository for rental contracts: RentalContract, RentalContractItem, RentalContractTerm, RentalExtension, RentalReturn, RentalDamageReport, RentalBillingCycle; includes forklift conflict-check and billing-summary aggregation.",
+      "tags": ["repository", "rental", "contract", "billing-cycle", "extension", "return"],
+      "filePath": "backend/app/repositories/rental_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/routes/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "summary": "Empty package initializer for the routes package.",
+      "tags": ["routes", "package"],
+      "filePath": "backend/app/routes/__init__.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/routes/activity.py",
+      "type": "file",
+      "name": "activity.py",
+      "summary": "FastAPI router exposing activity-log endpoints for audit trail queries (all activity, personal activity, entity history, per-user history).",
+      "tags": ["routes", "activity", "audit", "log"],
+      "filePath": "backend/app/routes/activity.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/routes/auth.py",
+      "type": "file",
+      "name": "auth.py",
+      "summary": "FastAPI router providing JWT-based authentication endpoints: login, logout (token revocation), and token refresh.",
+      "tags": ["routes", "auth", "jwt", "login"],
+      "filePath": "backend/app/routes/auth.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/routes/billing.py",
+      "type": "file",
+      "name": "billing.py",
+      "summary": "FastAPI router covering the full billing workflow: invoices (CRUD + issue/send/cancel/void), payments (record/confirm/reject/allocate), deposits (create/receive/refund/forfeit/apply), revenue recognitions, billing dashboard, and automated billing-cycle generation.",
+      "tags": ["routes", "billing", "invoice", "payment", "deposit", "revenue"],
+      "filePath": "backend/app/routes/billing.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/routes/brands.py",
+      "type": "file",
+      "name": "brands.py",
+      "summary": "FastAPI router for catalog brand CRUD operations with permission-based access control.",
+      "tags": ["routes", "brands", "catalog", "crud"],
+      "filePath": "backend/app/routes/brands.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/routes/catalog.py",
+      "type": "file",
+      "name": "catalog.py",
+      "summary": "Catalog aggregator router that mounts brands, categories, products, and import sub-routers under the /api/v1/catalog prefix.",
+      "tags": ["routes", "catalog", "router", "aggregator"],
+      "filePath": "backend/app/routes/catalog.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "type": "class",
+      "name": "BillingRepository",
+      "summary": "Async repository managing all billing entities. Key methods: get_invoice_list, create_invoice, get_payment_list, create_payment, add_allocation, get_deposit_list, create_deposit, get_recognition_list, get_billing_dashboard.",
+      "tags": ["repository", "billing", "invoice", "payment", "deposit", "sqlalchemy"],
+      "filePath": "backend/app/repositories/billing_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/repositories/brand_repository.py:BrandRepository",
+      "type": "class",
+      "name": "BrandRepository",
+      "summary": "Async CRUD repository for Brand with slug uniqueness checks, name lookup, and active-filter list.",
+      "tags": ["repository", "brand", "catalog", "sqlalchemy"],
+      "filePath": "backend/app/repositories/brand_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/category_repository.py:CategoryRepository",
+      "type": "class",
+      "name": "CategoryRepository",
+      "summary": "Async repository for ProductCategory supporting hierarchical tree loading (get_roots_with_tree), child queries, has_products and has_children guards, and CRUD.",
+      "tags": ["repository", "category", "catalog", "hierarchy", "sqlalchemy"],
+      "filePath": "backend/app/repositories/category_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/repositories/forklift_cost_repository.py:ForkliftCostRepository",
+      "type": "class",
+      "name": "ForkliftCostRepository",
+      "summary": "Async repository for ForkliftOwnershipCost; provides get_by_forklift with date/type filters, get_total_cost and get_cost_by_type aggregations.",
+      "tags": ["repository", "forklift", "cost", "aggregation", "sqlalchemy"],
+      "filePath": "backend/app/repositories/forklift_cost_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/forklift_document_repository.py:ForkliftDocumentRepository",
+      "type": "class",
+      "name": "ForkliftDocumentRepository",
+      "summary": "Async repository for ForkliftDocument; get_by_forklift with document-type filter and get_expiring for upcoming expiry alerts.",
+      "tags": ["repository", "forklift", "document", "expiry", "sqlalchemy"],
+      "filePath": "backend/app/repositories/forklift_document_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/forklift_hour_meter_repository.py:ForkliftHourMeterRepository",
+      "type": "class",
+      "name": "ForkliftHourMeterRepository",
+      "summary": "Async repository for ForkliftHourMeterLog; key operations: get_latest (most recent reading), get_by_forklift (paginated history), create.",
+      "tags": ["repository", "forklift", "hour-meter", "telemetry", "sqlalchemy"],
+      "filePath": "backend/app/repositories/forklift_hour_meter_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/forklift_location_repository.py:ForkliftLocationRepository",
+      "type": "class",
+      "name": "ForkliftLocationRepository",
+      "summary": "Async repository for ForkliftLocation; get_current returns the latest effective location with customer eager-loaded.",
+      "tags": ["repository", "forklift", "location", "tracking", "sqlalchemy"],
+      "filePath": "backend/app/repositories/forklift_location_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/forklift_model_repository.py:ForkliftModelRepository",
+      "type": "class",
+      "name": "ForkliftModelRepository",
+      "summary": "Async repository for ForkliftModel with brand eager-loading; supports paginated get_list with brand/name/series filters, slug uniqueness check, and has_forklifts guard.",
+      "tags": ["repository", "forklift", "model", "brand", "pagination", "sqlalchemy"],
+      "filePath": "backend/app/repositories/forklift_model_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/repositories/forklift_photo_repository.py:ForkliftPhotoRepository",
+      "type": "class",
+      "name": "ForkliftPhotoRepository",
+      "summary": "Async repository for ForkliftPhoto; handles primary-photo enforcement via clear_primary before creating or updating with is_primary=True.",
+      "tags": ["repository", "forklift", "photo", "primary", "sqlalchemy"],
+      "filePath": "backend/app/repositories/forklift_photo_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "type": "class",
+      "name": "ForkliftRepository",
+      "summary": "Core async repository for Forklift records; get_detail loads full relation graph (model→brand, photos, documents, status_history, locations, costs, hour_meters, specs); get_list supports multi-field text search and pagination.",
+      "tags": ["repository", "forklift", "crud", "search", "sqlalchemy"],
+      "filePath": "backend/app/repositories/forklift_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/repositories/forklift_status_repository.py:ForkliftStatusRepository",
+      "type": "class",
+      "name": "ForkliftStatusRepository",
+      "summary": "Async repository for ForkliftStatusHistory; records from_status→to_status transitions and provides paginated history per forklift.",
+      "tags": ["repository", "forklift", "status", "history", "sqlalchemy"],
+      "filePath": "backend/app/repositories/forklift_status_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/import_repository.py:ImportRepository",
+      "type": "class",
+      "name": "ImportRepository",
+      "summary": "Async repository for ImportJob and ImportError; tracks bulk-import lifecycle (create, update status, add_error per row, get_detail with errors).",
+      "tags": ["repository", "import", "job", "error", "sqlalchemy"],
+      "filePath": "backend/app/repositories/import_repository.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/repositories/inventory_repository.py:InventoryRepository",
+      "type": "class",
+      "name": "InventoryRepository",
+      "summary": "Large async repository for spare-parts inventory; covers SparePart CRUD, Warehouse management, InventoryBalance (get_or_create, low-stock alerts), InventoryTransaction logging, PurchaseOrder lifecycle, PartConsumption, and dashboard aggregations (total_stock_value, count_pending_pos).",
+      "tags": ["repository", "inventory", "spare-parts", "warehouse", "purchase-order", "sqlalchemy"],
+      "filePath": "backend/app/repositories/inventory_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/repositories/maintenance_repository.py:MaintenanceRepository",
+      "type": "class",
+      "name": "MaintenanceRepository",
+      "summary": "Async repository for the maintenance module; covers MaintenancePlan CRUD, MaintenanceSchedule with get_overdue_schedules, WorkOrder list/create/update, MaintenanceCost, ServiceHistory, and dashboard aggregations (count_by_wo_status, completed_this_month).",
+      "tags": ["repository", "maintenance", "work-order", "schedule", "sqlalchemy"],
+      "filePath": "backend/app/repositories/maintenance_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/repositories/movement_repository.py:MovementRepository",
+      "type": "class",
+      "name": "MovementRepository",
+      "summary": "Async repository for AssetMovement logistics records; supports paginated list with multi-field filters, get_detail with checkpoints, and add_checkpoint for tracking.",
+      "tags": ["repository", "movement", "logistics", "tracking", "sqlalchemy"],
+      "filePath": "backend/app/repositories/movement_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/repositories/product_repository.py:ProductRepository",
+      "type": "class",
+      "name": "ProductRepository",
+      "summary": "Async repository for catalog Product records; supports full detail loading (specs, images, compat_brands), paginated list with category/brand/rental/sale filters, slug/sku uniqueness, and sub-resource management (add_spec, add_image, delete_image).",
+      "tags": ["repository", "product", "catalog", "specs", "images", "sqlalchemy"],
+      "filePath": "backend/app/repositories/product_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/repositories/quotation_repository.py:QuotationRepository",
+      "type": "class",
+      "name": "QuotationRepository",
+      "summary": "Async repository for sales Quotation records; get_detail loads items with forklift/product, status history, and approvals; helper methods: add_item, update_item, get_items_subtotal, add_approval, add_status_history.",
+      "tags": ["repository", "quotation", "sales", "approval", "sqlalchemy"],
+      "filePath": "backend/app/repositories/quotation_repository.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/repositories/rental_repository.py:RentalRepository",
+      "type": "class",
+      "name": "RentalRepository",
+      "summary": "Comprehensive async repository for rental contracts; get_detail loads full sub-graph (items, terms, status history, extensions, returns with damage reports, billing cycles); key methods: add_extension, add_return, add_damage_report, add_billing_cycle, get_billing_summary, check_forklift_conflicts.",
+      "tags": ["repository", "rental", "contract", "billing-cycle", "extension", "sqlalchemy"],
+      "filePath": "backend/app/repositories/rental_repository.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "endpoint:backend/app/routes/activity.py:list_activity",
+      "type": "endpoint",
+      "name": "GET /activity/",
+      "summary": "Lists all activity-log entries with filters for user, action type, entity type/id, and date range. Requires superuser access.",
+      "tags": ["endpoint", "activity", "audit", "superuser", "get"],
+      "filePath": "backend/app/routes/activity.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/activity.py:my_activity",
+      "type": "endpoint",
+      "name": "GET /activity/me",
+      "summary": "Returns the current authenticated user's own activity log with optional action and date filters.",
+      "tags": ["endpoint", "activity", "audit", "personal", "get"],
+      "filePath": "backend/app/routes/activity.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/activity.py:entity_history",
+      "type": "endpoint",
+      "name": "GET /activity/entity/{entity_type}/{entity_id}",
+      "summary": "Returns audit history for a specific entity record identified by entity_type and entity_id.",
+      "tags": ["endpoint", "activity", "audit", "entity", "get"],
+      "filePath": "backend/app/routes/activity.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/activity.py:user_activity",
+      "type": "endpoint",
+      "name": "GET /activity/user/{user_id}",
+      "summary": "Returns activity log for a specific user by ID. Requires superuser access.",
+      "tags": ["endpoint", "activity", "audit", "superuser", "get"],
+      "filePath": "backend/app/routes/activity.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/auth.py:login",
+      "type": "endpoint",
+      "name": "POST /auth/login",
+      "summary": "Authenticates user credentials (username + password) and returns JWT access and refresh tokens. Logs USER_LOGIN activity.",
+      "tags": ["endpoint", "auth", "jwt", "login", "post"],
+      "filePath": "backend/app/routes/auth.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/auth.py:logout",
+      "type": "endpoint",
+      "name": "POST /auth/logout",
+      "summary": "Revokes the current access token by inserting its JTI into the RevokedToken table and pruning expired revocations.",
+      "tags": ["endpoint", "auth", "jwt", "logout", "revoke", "post"],
+      "filePath": "backend/app/routes/auth.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/auth.py:refresh",
+      "type": "endpoint",
+      "name": "POST /auth/refresh",
+      "summary": "Issues a new access token and refresh token pair given a valid refresh token.",
+      "tags": ["endpoint", "auth", "jwt", "refresh", "post"],
+      "filePath": "backend/app/routes/auth.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/billing.py:list_invoices",
+      "type": "endpoint",
+      "name": "GET /billing/invoices",
+      "summary": "Paginated list of invoices with filters for status, customer, contract, issue/due date ranges, and text search. Requires BILLING_READ permission.",
+      "tags": ["endpoint", "billing", "invoice", "list", "get"],
+      "filePath": "backend/app/routes/billing.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "endpoint:backend/app/routes/billing.py:create_invoice",
+      "type": "endpoint",
+      "name": "POST /billing/invoices",
+      "summary": "Creates a new invoice record and logs INVOICE_CREATED activity. Requires BILLING_CREATE permission.",
+      "tags": ["endpoint", "billing", "invoice", "create", "post"],
+      "filePath": "backend/app/routes/billing.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "endpoint:backend/app/routes/billing.py:record_payment",
+      "type": "endpoint",
+      "name": "POST /billing/payments",
+      "summary": "Records a new customer payment and logs PAYMENT_RECORDED activity. Requires BILLING_CREATE permission.",
+      "tags": ["endpoint", "billing", "payment", "create", "post"],
+      "filePath": "backend/app/routes/billing.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "endpoint:backend/app/routes/billing.py:billing_summary",
+      "type": "endpoint",
+      "name": "GET /billing/summary",
+      "summary": "Returns billing dashboard aggregates: total invoiced, paid, outstanding, overdue, invoice count, payment count — optionally scoped to a customer.",
+      "tags": ["endpoint", "billing", "dashboard", "summary", "get"],
+      "filePath": "backend/app/routes/billing.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/brands.py:list_brands",
+      "type": "endpoint",
+      "name": "GET /brands/",
+      "summary": "Returns paginated list of brands with optional active-status filter. Accessible to any authenticated user.",
+      "tags": ["endpoint", "brands", "catalog", "list", "get"],
+      "filePath": "backend/app/routes/brands.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/brands.py:create_brand",
+      "type": "endpoint",
+      "name": "POST /brands/",
+      "summary": "Creates a new catalog brand and logs CATALOG_BRAND_CREATED activity. Requires MANAGE_CATALOG permission.",
+      "tags": ["endpoint", "brands", "catalog", "create", "post"],
+      "filePath": "backend/app/routes/brands.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/brands.py:update_brand",
+      "type": "endpoint",
+      "name": "PUT /brands/{brand_id}",
+      "summary": "Updates an existing brand and logs CATALOG_BRAND_UPDATED activity. Requires MANAGE_CATALOG permission.",
+      "tags": ["endpoint", "brands", "catalog", "update", "put"],
+      "filePath": "backend/app/routes/brands.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "endpoint:backend/app/routes/brands.py:delete_brand",
+      "type": "endpoint",
+      "name": "DELETE /brands/{brand_id}",
+      "summary": "Deletes a catalog brand and logs CATALOG_BRAND_DELETED activity. Requires MANAGE_CATALOG permission.",
+      "tags": ["endpoint", "brands", "catalog", "delete"],
+      "filePath": "backend/app/routes/brands.py",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "from": "file:backend/app/repositories/billing_repository.py",
+      "to": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/brand_repository.py",
+      "to": "class:backend/app/repositories/brand_repository.py:BrandRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/category_repository.py",
+      "to": "class:backend/app/repositories/category_repository.py:CategoryRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/forklift_cost_repository.py",
+      "to": "class:backend/app/repositories/forklift_cost_repository.py:ForkliftCostRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/forklift_document_repository.py",
+      "to": "class:backend/app/repositories/forklift_document_repository.py:ForkliftDocumentRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/forklift_hour_meter_repository.py",
+      "to": "class:backend/app/repositories/forklift_hour_meter_repository.py:ForkliftHourMeterRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/forklift_location_repository.py",
+      "to": "class:backend/app/repositories/forklift_location_repository.py:ForkliftLocationRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/forklift_model_repository.py",
+      "to": "class:backend/app/repositories/forklift_model_repository.py:ForkliftModelRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/forklift_photo_repository.py",
+      "to": "class:backend/app/repositories/forklift_photo_repository.py:ForkliftPhotoRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/forklift_repository.py",
+      "to": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/forklift_status_repository.py",
+      "to": "class:backend/app/repositories/forklift_status_repository.py:ForkliftStatusRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/import_repository.py",
+      "to": "class:backend/app/repositories/import_repository.py:ImportRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/inventory_repository.py",
+      "to": "class:backend/app/repositories/inventory_repository.py:InventoryRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/maintenance_repository.py",
+      "to": "class:backend/app/repositories/maintenance_repository.py:MaintenanceRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/movement_repository.py",
+      "to": "class:backend/app/repositories/movement_repository.py:MovementRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/product_repository.py",
+      "to": "class:backend/app/repositories/product_repository.py:ProductRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/quotation_repository.py",
+      "to": "class:backend/app/repositories/quotation_repository.py:QuotationRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/repositories/rental_repository.py",
+      "to": "class:backend/app/repositories/rental_repository.py:RentalRepository",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/activity.py",
+      "to": "endpoint:backend/app/routes/activity.py:list_activity",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/activity.py",
+      "to": "endpoint:backend/app/routes/activity.py:my_activity",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/activity.py",
+      "to": "endpoint:backend/app/routes/activity.py:entity_history",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/activity.py",
+      "to": "endpoint:backend/app/routes/activity.py:user_activity",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/auth.py",
+      "to": "endpoint:backend/app/routes/auth.py:login",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/auth.py",
+      "to": "endpoint:backend/app/routes/auth.py:logout",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/auth.py",
+      "to": "endpoint:backend/app/routes/auth.py:refresh",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/billing.py",
+      "to": "endpoint:backend/app/routes/billing.py:list_invoices",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/billing.py",
+      "to": "endpoint:backend/app/routes/billing.py:create_invoice",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/billing.py",
+      "to": "endpoint:backend/app/routes/billing.py:record_payment",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/billing.py",
+      "to": "endpoint:backend/app/routes/billing.py:billing_summary",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/brands.py",
+      "to": "endpoint:backend/app/routes/brands.py:list_brands",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/brands.py",
+      "to": "endpoint:backend/app/routes/brands.py:create_brand",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/brands.py",
+      "to": "endpoint:backend/app/routes/brands.py:update_brand",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "file:backend/app/routes/brands.py",
+      "to": "endpoint:backend/app/routes/brands.py:delete_brand",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "from": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "to": "class:backend/app/models/invoice.py:Invoice",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "to": "class:backend/app/models/payment.py:Payment",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "to": "class:backend/app/models/deposit.py:Deposit",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "to": "class:backend/app/models/revenue_recognition.py:RevenueRecognition",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/brand_repository.py:BrandRepository",
+      "to": "class:backend/app/models/brand.py:Brand",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/category_repository.py:CategoryRepository",
+      "to": "class:backend/app/models/category.py:ProductCategory",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_cost_repository.py:ForkliftCostRepository",
+      "to": "class:backend/app/models/forklift_ownership_cost.py:ForkliftOwnershipCost",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_document_repository.py:ForkliftDocumentRepository",
+      "to": "class:backend/app/models/forklift_document.py:ForkliftDocument",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_hour_meter_repository.py:ForkliftHourMeterRepository",
+      "to": "class:backend/app/models/forklift_hour_meter_log.py:ForkliftHourMeterLog",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_location_repository.py:ForkliftLocationRepository",
+      "to": "class:backend/app/models/forklift_location.py:ForkliftLocation",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_model_repository.py:ForkliftModelRepository",
+      "to": "class:backend/app/models/forklift_model.py:ForkliftModel",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_photo_repository.py:ForkliftPhotoRepository",
+      "to": "class:backend/app/models/forklift_photo.py:ForkliftPhoto",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/models/forklift.py:Forklift",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/models/forklift_status_history.py:ForkliftStatusHistory",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_status_repository.py:ForkliftStatusRepository",
+      "to": "class:backend/app/models/forklift_status_history.py:ForkliftStatusHistory",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/import_repository.py:ImportRepository",
+      "to": "class:backend/app/models/import_job.py:ImportJob",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/inventory_repository.py:InventoryRepository",
+      "to": "class:backend/app/models/spare_part.py:SparePart",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/inventory_repository.py:InventoryRepository",
+      "to": "class:backend/app/models/inventory_balance.py:InventoryBalance",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/inventory_repository.py:InventoryRepository",
+      "to": "class:backend/app/models/purchase_order.py:PurchaseOrder",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/maintenance_repository.py:MaintenanceRepository",
+      "to": "class:backend/app/models/maintenance_plan.py:MaintenancePlan",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/maintenance_repository.py:MaintenanceRepository",
+      "to": "class:backend/app/models/maintenance_schedule.py:MaintenanceSchedule",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/maintenance_repository.py:MaintenanceRepository",
+      "to": "class:backend/app/models/work_order.py:WorkOrder",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/movement_repository.py:MovementRepository",
+      "to": "class:backend/app/models/asset_movement.py:AssetMovement",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/product_repository.py:ProductRepository",
+      "to": "class:backend/app/models/product.py:Product",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/quotation_repository.py:QuotationRepository",
+      "to": "class:backend/app/models/quotation.py:Quotation",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/quotation_repository.py:QuotationRepository",
+      "to": "class:backend/app/models/quotation_item.py:QuotationItem",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/rental_repository.py:RentalRepository",
+      "to": "class:backend/app/models/rental_contract.py:RentalContract",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/rental_repository.py:RentalRepository",
+      "to": "class:backend/app/models/rental_contract_item.py:RentalContractItem",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/rental_repository.py:RentalRepository",
+      "to": "class:backend/app/models/rental_billing_cycle.py:RentalBillingCycle",
+      "type": "reads_from",
+      "weight": 0.5
+    },
+    {
+      "from": "file:backend/app/routes/billing.py",
+      "to": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "from": "file:backend/app/routes/brands.py",
+      "to": "class:backend/app/repositories/brand_repository.py:BrandRepository",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "from": "endpoint:backend/app/routes/billing.py:create_invoice",
+      "to": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "from": "endpoint:backend/app/routes/billing.py:list_invoices",
+      "to": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "from": "endpoint:backend/app/routes/billing.py:record_payment",
+      "to": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "from": "endpoint:backend/app/routes/billing.py:billing_summary",
+      "to": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "from": "endpoint:backend/app/routes/brands.py:create_brand",
+      "to": "class:backend/app/repositories/brand_repository.py:BrandRepository",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "from": "endpoint:backend/app/routes/brands.py:list_brands",
+      "to": "class:backend/app/repositories/brand_repository.py:BrandRepository",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/repositories/forklift_model_repository.py:ForkliftModelRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/repositories/forklift_status_repository.py:ForkliftStatusRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/repositories/forklift_cost_repository.py:ForkliftCostRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/repositories/forklift_document_repository.py:ForkliftDocumentRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/repositories/forklift_photo_repository.py:ForkliftPhotoRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/repositories/forklift_hour_meter_repository.py:ForkliftHourMeterRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository",
+      "to": "class:backend/app/repositories/forklift_location_repository.py:ForkliftLocationRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/billing_repository.py:BillingRepository",
+      "to": "class:backend/app/repositories/rental_repository.py:RentalRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/quotation_repository.py:QuotationRepository",
+      "to": "class:backend/app/repositories/rental_repository.py:RentalRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/inventory_repository.py:InventoryRepository",
+      "to": "class:backend/app/repositories/maintenance_repository.py:MaintenanceRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/product_repository.py:ProductRepository",
+      "to": "class:backend/app/repositories/brand_repository.py:BrandRepository",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "from": "class:backend/app/repositories/product_repository.py:ProductRepository",
+      "to": "class:backend/app/repositories/category_repository.py:CategoryRepository",
+      "type": "related",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+C4Component
+    title FastAPI Backend — Component Diagram
+
+    Container_Boundary(api, "FastAPI Application") {
+
+        Component(routes, "Route Layer", "17 APIRouter files", "218 endpoints, request validation, response serialization")
+        Component(schemas, "Schema Layer", "16 Pydantic files", "Create/Update/Out DTOs, field validation")
+        Component(services, "Service Layer", "22 service classes", "Business logic, workflow state machines, cross-domain hooks")
+        Component(repos, "Repository Layer", "16 repository classes", "Query building, eager loading, pagination, filtering")
+        Component(models, "Model Layer", "52 SQLAlchemy models", "Table definitions, relationships, enums")
+
+        Component(auth, "Auth & Security", "security.py, dependencies.py", "JWT encode/decode, bcrypt, token revocation")
+        Component(rbac, "RBAC Engine", "permissions.py", "32 permissions, 4 roles, require_permission dependency")
+        Component(middleware, "Middleware", "middleware.py", "RequestID, SecurityHeaders, CORS")
+        Component(config, "Config", "config.py", "Pydantic BaseSettings, env vars")
+    }
+
+    ContainerDb(db, "Database", "SQLite / PostgreSQL")
+    Container(files, "File Storage", "Local disk")
+
+    Rel(routes, schemas, "Validates with")
+    Rel(routes, services, "Delegates to")
+    Rel(routes, rbac, "Enforces permissions via")
+    Rel(services, repos, "Queries via")
+    Rel(repos, models, "Maps to")
+    Rel(repos, db, "AsyncSession")
+    Rel(services, files, "Stores uploads")
+    Rel(rbac, auth, "Resolves user via")
+    Rel(middleware, config, "Reads settings")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")

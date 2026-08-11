@@ -1,0 +1,65 @@
+graph TB
+    subgraph "Client Layer"
+        Browser["React 19 SPA<br/>TypeScript + Vite 8"]
+        Mobile["Future Mobile App"]
+    end
+
+    subgraph "Reverse Proxy"
+        Nginx["Nginx<br/>SPA routing + API proxy"]
+    end
+
+    subgraph "Application Layer"
+        subgraph "FastAPI Backend"
+            API["FastAPI 0.115+<br/>Python 3.12+"]
+            MW["Middleware Stack<br/>CORS · RequestID · Security Headers"]
+            Auth["JWT Auth<br/>bcrypt + python-jose"]
+            RBAC["RBAC Engine<br/>32 permissions × 4 roles"]
+        end
+
+        subgraph "Business Domains"
+            CRM["CRM<br/>Customers · Leads"]
+            Catalog["Product Catalog<br/>Brands · Categories · Products"]
+            Equipment["Equipment Registry<br/>Forklifts · Specs · Photos"]
+            Quotation["Quotations<br/>8-stage workflow"]
+            Rental["Rental Contracts<br/>13-status lifecycle"]
+            Movement["Asset Movements<br/>6-stage workflow"]
+            Maintenance["Maintenance<br/>PM Plans · Work Orders"]
+            Inventory["Spare Parts<br/>Warehouses · POs · Stock"]
+            Billing["Billing<br/>Invoices · Payments · Deposits"]
+            Reporting["Reporting<br/>Dashboard · Executive BI"]
+        end
+    end
+
+    subgraph "Data Layer"
+        SQLite["SQLite<br/>Development"]
+        PostgreSQL["PostgreSQL 16<br/>Production"]
+        Alembic["Alembic<br/>Async Migrations"]
+        FileStore["File Storage<br/>uploads/images/"]
+    end
+
+    Browser -->|"HTTPS"| Nginx
+    Mobile -.->|"HTTPS"| Nginx
+    Nginx -->|"/api/v1/*"| API
+    Nginx -->|"/*"| Browser
+    API --> MW --> Auth --> RBAC
+    RBAC --> CRM & Catalog & Equipment & Quotation
+    RBAC --> Rental & Movement & Maintenance & Inventory
+    RBAC --> Billing & Reporting
+    CRM & Catalog & Equipment --> SQLite
+    Quotation & Rental & Movement --> SQLite
+    Maintenance & Inventory & Billing --> SQLite
+    SQLite -.->|"Production"| PostgreSQL
+    Alembic --> PostgreSQL
+    API --> FileStore
+
+    classDef frontend fill:#3b82f6,color:#fff,stroke:#2563eb
+    classDef backend fill:#7c3aed,color:#fff,stroke:#6d28d9
+    classDef domain fill:#059669,color:#fff,stroke:#047857
+    classDef data fill:#d97706,color:#fff,stroke:#b45309
+    classDef proxy fill:#64748b,color:#fff,stroke:#475569
+
+    class Browser,Mobile frontend
+    class API,MW,Auth,RBAC backend
+    class CRM,Catalog,Equipment,Quotation,Rental,Movement,Maintenance,Inventory,Billing,Reporting domain
+    class SQLite,PostgreSQL,Alembic,FileStore data
+    class Nginx proxy

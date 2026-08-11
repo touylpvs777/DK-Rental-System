@@ -1,0 +1,1280 @@
+{
+  "batchIndex": 16,
+  "nodes": [
+    {
+      "id": "file:backend/app/models/brand.py",
+      "type": "file",
+      "name": "brand.py",
+      "summary": "Defines the Brand SQLAlchemy model and BrandRole enum for equipment manufacturer and spare-parts supplier relationships.",
+      "tags": ["model", "sqlalchemy", "brand", "catalog", "product"],
+      "filePath": "backend/app/models/brand.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/models/category.py",
+      "type": "file",
+      "name": "category.py",
+      "summary": "Defines the ProductCategory model with self-referential parent/child hierarchy supporting three levels: division, category, sub-category.",
+      "tags": ["model", "sqlalchemy", "category", "catalog", "hierarchy"],
+      "filePath": "backend/app/models/category.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/models/customer.py",
+      "type": "file",
+      "name": "customer.py",
+      "summary": "Defines the Customer SQLAlchemy model and CustomerStatus enum, representing companies and individuals using DK LAO's forklift services.",
+      "tags": ["model", "sqlalchemy", "customer", "crm"],
+      "filePath": "backend/app/models/customer.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/models/deposit.py",
+      "type": "file",
+      "name": "deposit.py",
+      "summary": "Defines the Deposit model and related enums (DepositType, DepositRecordStatus) for tracking security and advance deposits tied to rental contracts.",
+      "tags": ["model", "sqlalchemy", "deposit", "finance", "rental"],
+      "filePath": "backend/app/models/deposit.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/models/forklift_document.py",
+      "type": "file",
+      "name": "forklift_document.py",
+      "summary": "Defines ForkliftDocument model for storing files (warranties, inspection reports, insurance, manuals) attached to a forklift asset.",
+      "tags": ["model", "sqlalchemy", "forklift", "document", "asset"],
+      "filePath": "backend/app/models/forklift_document.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/forklift_hour_meter_log.py",
+      "type": "file",
+      "name": "forklift_hour_meter_log.py",
+      "summary": "Defines ForkliftHourMeterLog model for recording hour-meter readings on forklift equipment over time.",
+      "tags": ["model", "sqlalchemy", "forklift", "telemetry", "hours"],
+      "filePath": "backend/app/models/forklift_hour_meter_log.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/forklift_location.py",
+      "type": "file",
+      "name": "forklift_location.py",
+      "summary": "Defines ForkliftLocation model for tracking where a forklift is deployed, including customer site and warehouse zone.",
+      "tags": ["model", "sqlalchemy", "forklift", "location", "asset"],
+      "filePath": "backend/app/models/forklift_location.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/forklift_model.py",
+      "type": "file",
+      "name": "forklift_model.py",
+      "summary": "Defines ForkliftModel (make/model catalogue entry) linked to a Brand, with capacity and lift-height specifications.",
+      "tags": ["model", "sqlalchemy", "forklift", "catalog", "equipment"],
+      "filePath": "backend/app/models/forklift_model.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/forklift_ownership_cost.py",
+      "type": "file",
+      "name": "forklift_ownership_cost.py",
+      "summary": "Defines ForkliftOwnershipCost model for recording purchase, maintenance, insurance, and other costs associated with owning a forklift.",
+      "tags": ["model", "sqlalchemy", "forklift", "cost", "finance"],
+      "filePath": "backend/app/models/forklift_ownership_cost.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/forklift_photo.py",
+      "type": "file",
+      "name": "forklift_photo.py",
+      "summary": "Defines ForkliftPhoto model for managing image gallery entries (with primary flag and sort order) for a forklift asset.",
+      "tags": ["model", "sqlalchemy", "forklift", "photo", "media"],
+      "filePath": "backend/app/models/forklift_photo.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/forklift_spec.py",
+      "type": "file",
+      "name": "forklift_spec.py",
+      "summary": "Defines ForkliftSpec model storing detailed technical specifications (mast type, tire type, fork length, battery) for a forklift.",
+      "tags": ["model", "sqlalchemy", "forklift", "spec", "equipment"],
+      "filePath": "backend/app/models/forklift_spec.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/models/forklift_status_history.py",
+      "type": "file",
+      "name": "forklift_status_history.py",
+      "summary": "Defines ForkliftStatusHistory model for recording every status transition (from/to) of a forklift asset with timestamp and actor.",
+      "tags": ["model", "sqlalchemy", "forklift", "status", "audit"],
+      "filePath": "backend/app/models/forklift_status_history.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/forklift.py",
+      "type": "file",
+      "name": "forklift.py",
+      "summary": "Core forklift asset model with status lifecycle enums (ForkliftStatus, ForkliftCondition, FuelType) and relationships to all forklift satellite tables.",
+      "tags": ["model", "sqlalchemy", "forklift", "asset", "equipment", "core"],
+      "filePath": "backend/app/models/forklift.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/models/import_job.py",
+      "type": "file",
+      "name": "import_job.py",
+      "summary": "Defines ImportJob and ImportError models for tracking bulk CSV/Excel data imports with preview, processing, and error rows.",
+      "tags": ["model", "sqlalchemy", "import", "etl", "admin"],
+      "filePath": "backend/app/models/import_job.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/models/inventory_balance.py",
+      "type": "file",
+      "name": "inventory_balance.py",
+      "summary": "Defines InventoryBalance model tracking on-hand, reserved, and available quantities for a spare part in a specific warehouse.",
+      "tags": ["model", "sqlalchemy", "inventory", "warehouse", "spare-parts"],
+      "filePath": "backend/app/models/inventory_balance.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/inventory_transaction.py",
+      "type": "file",
+      "name": "inventory_transaction.py",
+      "summary": "Defines InventoryTransaction model and TransactionType enum for recording all inventory movements (receive, issue, adjust, transfer, return, consume).",
+      "tags": ["model", "sqlalchemy", "inventory", "transaction", "spare-parts"],
+      "filePath": "backend/app/models/inventory_transaction.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/models/invoice_item.py",
+      "type": "file",
+      "name": "invoice_item.py",
+      "summary": "Defines InvoiceItem model representing individual line items within an invoice, optionally linked to a rental billing cycle.",
+      "tags": ["model", "sqlalchemy", "invoice", "billing", "finance"],
+      "filePath": "backend/app/models/invoice_item.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/invoice.py",
+      "type": "file",
+      "name": "invoice.py",
+      "summary": "Defines Invoice model and InvoiceStatus enum managing the full invoice lifecycle (draft through paid/overdue) for rental contracts.",
+      "tags": ["model", "sqlalchemy", "invoice", "billing", "finance", "rental"],
+      "filePath": "backend/app/models/invoice.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/models/lead_note.py",
+      "type": "file",
+      "name": "lead_note.py",
+      "summary": "Defines LeadNote model for attaching timestamped user notes to a sales lead.",
+      "tags": ["model", "sqlalchemy", "lead", "crm", "note"],
+      "filePath": "backend/app/models/lead_note.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/lead.py",
+      "type": "file",
+      "name": "lead.py",
+      "summary": "Defines Lead model with LeadStatus/LeadSource enums and a VALID_TRANSITIONS state machine for managing the sales pipeline.",
+      "tags": ["model", "sqlalchemy", "lead", "crm", "sales", "pipeline"],
+      "filePath": "backend/app/models/lead.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/models/maintenance_cost.py",
+      "type": "file",
+      "name": "maintenance_cost.py",
+      "summary": "Defines MaintenanceCost model and MaintenanceCostType enum for recording labor, parts, and external service costs on a work order.",
+      "tags": ["model", "sqlalchemy", "maintenance", "cost", "work-order"],
+      "filePath": "backend/app/models/maintenance_cost.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/maintenance_plan.py",
+      "type": "file",
+      "name": "maintenance_plan.py",
+      "summary": "Defines MaintenancePlan model (standalone template) with ServiceType and IntervalType enums and a JSON checklist for preventive/corrective maintenance tasks.",
+      "tags": ["model", "sqlalchemy", "maintenance", "plan", "template"],
+      "filePath": "backend/app/models/maintenance_plan.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/models/maintenance_schedule.py",
+      "type": "file",
+      "name": "maintenance_schedule.py",
+      "summary": "Defines MaintenanceSchedule model linking a Forklift to a MaintenancePlan, tracking next-due dates/hours and service history.",
+      "tags": ["model", "sqlalchemy", "maintenance", "schedule", "forklift"],
+      "filePath": "backend/app/models/maintenance_schedule.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/models/movement_history.py",
+      "type": "file",
+      "name": "movement_history.py",
+      "summary": "Defines MovementHistory model recording checkpoint entries (status transitions and GPS coordinates) for an AssetMovement.",
+      "tags": ["model", "sqlalchemy", "movement", "asset", "logistics"],
+      "filePath": "backend/app/models/movement_history.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/models/part_consumption.py",
+      "type": "file",
+      "name": "part_consumption.py",
+      "summary": "Defines PartConsumption model recording spare parts consumed against a work order and/or forklift, with cost tracking.",
+      "tags": ["model", "sqlalchemy", "spare-parts", "consumption", "work-order", "forklift"],
+      "filePath": "backend/app/models/part_consumption.py",
+      "complexity": "moderate"
+    },
+
+    {
+      "id": "class:backend/app/models/brand.py:BrandRole",
+      "type": "class",
+      "name": "BrandRole",
+      "summary": "Enum defining DK LAO's commercial relationship with a brand: PRIMARY (sales+service), PARTS_ONLY, or BOTH.",
+      "tags": ["model", "sqlalchemy", "enum", "brand", "business-rule"],
+      "filePath": "backend/app/models/brand.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/brand.py:Brand",
+      "type": "class",
+      "name": "Brand",
+      "summary": "SQLAlchemy model for equipment manufacturers and spare-parts suppliers, with slug, logo, country, and BrandRole.",
+      "tags": ["model", "sqlalchemy", "brand", "catalog"],
+      "filePath": "backend/app/models/brand.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/category.py:ProductCategory",
+      "type": "class",
+      "name": "ProductCategory",
+      "summary": "Self-referential SQLAlchemy model for a three-level product category hierarchy (division/category/sub-category) with slug and sort order.",
+      "tags": ["model", "sqlalchemy", "category", "catalog", "hierarchy"],
+      "filePath": "backend/app/models/category.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/customer.py:CustomerStatus",
+      "type": "class",
+      "name": "CustomerStatus",
+      "summary": "Enum for customer lifecycle states: ACTIVE, INACTIVE, PROSPECT, CHURNED.",
+      "tags": ["model", "sqlalchemy", "enum", "customer", "crm"],
+      "filePath": "backend/app/models/customer.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/customer.py:Customer",
+      "type": "class",
+      "name": "Customer",
+      "summary": "SQLAlchemy model for CRM customer records with status, contact details, company, and assignment to sales staff.",
+      "tags": ["model", "sqlalchemy", "customer", "crm"],
+      "filePath": "backend/app/models/customer.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/deposit.py:DepositRecordStatus",
+      "type": "class",
+      "name": "DepositRecordStatus",
+      "summary": "Enum for deposit workflow states: PENDING, RECEIVED, PARTIALLY_REFUNDED, REFUNDED, FORFEITED, APPLIED.",
+      "tags": ["model", "sqlalchemy", "enum", "deposit", "finance"],
+      "filePath": "backend/app/models/deposit.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/deposit.py:Deposit",
+      "type": "class",
+      "name": "Deposit",
+      "summary": "SQLAlchemy model for security and advance deposits tied to rental contracts, tracking amounts, refunds, forfeitures, and linked payments.",
+      "tags": ["model", "sqlalchemy", "deposit", "finance", "rental"],
+      "filePath": "backend/app/models/deposit.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/models/forklift_document.py:ForkliftDocument",
+      "type": "class",
+      "name": "ForkliftDocument",
+      "summary": "SQLAlchemy model for documents (warranty, inspection, insurance, manual) attached to a forklift with file URL, size, MIME type, and expiry date.",
+      "tags": ["model", "sqlalchemy", "forklift", "document", "asset"],
+      "filePath": "backend/app/models/forklift_document.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/forklift_hour_meter_log.py:ForkliftHourMeterLog",
+      "type": "class",
+      "name": "ForkliftHourMeterLog",
+      "summary": "SQLAlchemy model for hour-meter readings on a forklift, with reading value, source (manual/auto), and recorder.",
+      "tags": ["model", "sqlalchemy", "forklift", "telemetry", "hours"],
+      "filePath": "backend/app/models/forklift_hour_meter_log.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/forklift_location.py:ForkliftLocation",
+      "type": "class",
+      "name": "ForkliftLocation",
+      "summary": "SQLAlchemy model recording where a forklift is physically located (warehouse zone, customer site address) at a given effective date.",
+      "tags": ["model", "sqlalchemy", "forklift", "location", "asset"],
+      "filePath": "backend/app/models/forklift_location.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/forklift_model.py:ForkliftModel",
+      "type": "class",
+      "name": "ForkliftModel",
+      "summary": "SQLAlchemy model for forklift make/model catalogue entries linked to a Brand, with fuel type, capacity, and max lift height.",
+      "tags": ["model", "sqlalchemy", "forklift", "catalog", "equipment"],
+      "filePath": "backend/app/models/forklift_model.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/forklift_ownership_cost.py:ForkliftOwnershipCost",
+      "type": "class",
+      "name": "ForkliftOwnershipCost",
+      "summary": "SQLAlchemy model for total cost of ownership records (purchase, maintenance, insurance, etc.) against a forklift asset.",
+      "tags": ["model", "sqlalchemy", "forklift", "cost", "finance"],
+      "filePath": "backend/app/models/forklift_ownership_cost.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/forklift_photo.py:ForkliftPhoto",
+      "type": "class",
+      "name": "ForkliftPhoto",
+      "summary": "SQLAlchemy model for forklift photo gallery entries with primary-image flag, sort order, thumbnail URL, and upload metadata.",
+      "tags": ["model", "sqlalchemy", "forklift", "photo", "media"],
+      "filePath": "backend/app/models/forklift_photo.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/forklift_spec.py:ForkliftSpec",
+      "type": "class",
+      "name": "ForkliftSpec",
+      "summary": "SQLAlchemy model storing detailed technical specifications of a forklift: mast type, tire types, fork length, battery, and attachments.",
+      "tags": ["model", "sqlalchemy", "forklift", "spec", "equipment"],
+      "filePath": "backend/app/models/forklift_spec.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/forklift_status_history.py:ForkliftStatusHistory",
+      "type": "class",
+      "name": "ForkliftStatusHistory",
+      "summary": "SQLAlchemy model for audit trail of forklift status transitions, capturing from/to status, reason, actor, and timestamp.",
+      "tags": ["model", "sqlalchemy", "forklift", "status", "audit"],
+      "filePath": "backend/app/models/forklift_status_history.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/forklift.py:ForkliftStatus",
+      "type": "class",
+      "name": "ForkliftStatus",
+      "summary": "Enum for forklift asset lifecycle states: IN_STOCK, SOLD, RENTED, IN_SERVICE, RESERVED, DECOMMISSIONED.",
+      "tags": ["model", "sqlalchemy", "enum", "forklift", "status", "lifecycle"],
+      "filePath": "backend/app/models/forklift.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/forklift.py:Forklift",
+      "type": "class",
+      "name": "Forklift",
+      "summary": "Core SQLAlchemy model for forklift equipment assets, hub of the forklift domain. Holds serial number, status, condition, fuel type, hour meters, and relationships to all forklift satellite tables (specs, photos, documents, locations, status history, ownership costs, hour-meter logs).",
+      "tags": ["model", "sqlalchemy", "forklift", "asset", "equipment", "core", "hub"],
+      "filePath": "backend/app/models/forklift.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/models/import_job.py:ImportStatus",
+      "type": "class",
+      "name": "ImportStatus",
+      "summary": "Enum for import job pipeline states: PENDING, PREVIEW, PROCESSING, COMPLETED, PARTIAL, FAILED.",
+      "tags": ["model", "sqlalchemy", "enum", "import", "etl"],
+      "filePath": "backend/app/models/import_job.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/import_job.py:ImportJob",
+      "type": "class",
+      "name": "ImportJob",
+      "summary": "SQLAlchemy model tracking a bulk data import operation: filename, status, row counts (total/processed/success/error), and serialised preview_data JSON.",
+      "tags": ["model", "sqlalchemy", "import", "etl", "admin"],
+      "filePath": "backend/app/models/import_job.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/import_job.py:ImportError",
+      "type": "class",
+      "name": "ImportError",
+      "summary": "SQLAlchemy model for individual row-level errors within an ImportJob, storing sheet name, row number, raw row data, and error message.",
+      "tags": ["model", "sqlalchemy", "import", "etl", "error"],
+      "filePath": "backend/app/models/import_job.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/inventory_balance.py:InventoryBalance",
+      "type": "class",
+      "name": "InventoryBalance",
+      "summary": "SQLAlchemy model for current stock levels of a spare part in a specific warehouse, tracking on-hand, reserved, and available quantities.",
+      "tags": ["model", "sqlalchemy", "inventory", "warehouse", "spare-parts"],
+      "filePath": "backend/app/models/inventory_balance.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/inventory_transaction.py:TransactionType",
+      "type": "class",
+      "name": "TransactionType",
+      "summary": "Enum for inventory movement types: RECEIVE, ISSUE, ADJUST, TRANSFER, RETURN, CONSUME.",
+      "tags": ["model", "sqlalchemy", "enum", "inventory", "transaction"],
+      "filePath": "backend/app/models/inventory_transaction.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/inventory_transaction.py:InventoryTransaction",
+      "type": "class",
+      "name": "InventoryTransaction",
+      "summary": "SQLAlchemy model for every inventory movement event for a spare part in a warehouse, with quantity, unit cost, total cost, and optional reference.",
+      "tags": ["model", "sqlalchemy", "inventory", "transaction", "spare-parts"],
+      "filePath": "backend/app/models/inventory_transaction.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/invoice_item.py:InvoiceItem",
+      "type": "class",
+      "name": "InvoiceItem",
+      "summary": "SQLAlchemy model for invoice line items with quantity, unit rate, tax, and total amount, optionally linked to a rental billing cycle.",
+      "tags": ["model", "sqlalchemy", "invoice", "billing", "finance"],
+      "filePath": "backend/app/models/invoice_item.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/invoice.py:InvoiceStatus",
+      "type": "class",
+      "name": "InvoiceStatus",
+      "summary": "Enum for invoice lifecycle states: DRAFT, ISSUED, SENT, PARTIALLY_PAID, PAID, OVERDUE, CANCELLED, VOIDED.",
+      "tags": ["model", "sqlalchemy", "enum", "invoice", "billing", "finance"],
+      "filePath": "backend/app/models/invoice.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/invoice.py:Invoice",
+      "type": "class",
+      "name": "Invoice",
+      "summary": "SQLAlchemy model for rental invoices, managing the full billing lifecycle with subtotal, tax, discount, payment tracking, and cancellation fields.",
+      "tags": ["model", "sqlalchemy", "invoice", "billing", "finance", "rental"],
+      "filePath": "backend/app/models/invoice.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/models/lead_note.py:LeadNote",
+      "type": "class",
+      "name": "LeadNote",
+      "summary": "SQLAlchemy model for user-authored timestamped notes attached to a sales lead.",
+      "tags": ["model", "sqlalchemy", "lead", "crm", "note"],
+      "filePath": "backend/app/models/lead_note.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/lead.py:LeadStatus",
+      "type": "class",
+      "name": "LeadStatus",
+      "summary": "Enum for sales pipeline stages (NEW, CONTACTED, QUALIFIED, PROPOSAL, WON, LOST) with VALID_TRANSITIONS state machine enforced in LeadService.",
+      "tags": ["model", "sqlalchemy", "enum", "lead", "crm", "state-machine"],
+      "filePath": "backend/app/models/lead.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/lead.py:Lead",
+      "type": "class",
+      "name": "Lead",
+      "summary": "SQLAlchemy model for CRM sales leads with status pipeline, monetary value, source, customer link, and assignment to a sales rep.",
+      "tags": ["model", "sqlalchemy", "lead", "crm", "sales", "pipeline"],
+      "filePath": "backend/app/models/lead.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/models/maintenance_cost.py:MaintenanceCost",
+      "type": "class",
+      "name": "MaintenanceCost",
+      "summary": "SQLAlchemy model for cost line items (labor, parts, external service) on a work order with quantity, rate, and vendor reference.",
+      "tags": ["model", "sqlalchemy", "maintenance", "cost", "work-order"],
+      "filePath": "backend/app/models/maintenance_cost.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/maintenance_plan.py:MaintenancePlan",
+      "type": "class",
+      "name": "MaintenancePlan",
+      "summary": "SQLAlchemy model for maintenance plan templates defining service type, interval (hours/days/months), estimated cost, and JSON task checklist.",
+      "tags": ["model", "sqlalchemy", "maintenance", "plan", "template"],
+      "filePath": "backend/app/models/maintenance_plan.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/maintenance_schedule.py:MaintenanceSchedule",
+      "type": "class",
+      "name": "MaintenanceSchedule",
+      "summary": "SQLAlchemy model linking a Forklift to a MaintenancePlan, tracking next-due date/hours, last service, and times serviced count.",
+      "tags": ["model", "sqlalchemy", "maintenance", "schedule", "forklift"],
+      "filePath": "backend/app/models/maintenance_schedule.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/models/movement_history.py:MovementHistory",
+      "type": "class",
+      "name": "MovementHistory",
+      "summary": "SQLAlchemy model for GPS checkpoint entries during an asset movement, capturing status transitions, coordinates, and recorder.",
+      "tags": ["model", "sqlalchemy", "movement", "asset", "logistics", "gps"],
+      "filePath": "backend/app/models/movement_history.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "type": "class",
+      "name": "PartConsumption",
+      "summary": "SQLAlchemy model recording spare parts consumed for a work order and/or forklift from a warehouse, with quantity and cost.",
+      "tags": ["model", "sqlalchemy", "spare-parts", "consumption", "work-order", "forklift"],
+      "filePath": "backend/app/models/part_consumption.py",
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/models/brand.py",
+      "target": "class:backend/app/models/brand.py:Brand",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/brand.py",
+      "target": "class:backend/app/models/brand.py:BrandRole",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/category.py",
+      "target": "class:backend/app/models/category.py:ProductCategory",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/customer.py",
+      "target": "class:backend/app/models/customer.py:Customer",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/customer.py",
+      "target": "class:backend/app/models/customer.py:CustomerStatus",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/deposit.py",
+      "target": "class:backend/app/models/deposit.py:Deposit",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/deposit.py",
+      "target": "class:backend/app/models/deposit.py:DepositRecordStatus",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift_document.py",
+      "target": "class:backend/app/models/forklift_document.py:ForkliftDocument",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift_hour_meter_log.py",
+      "target": "class:backend/app/models/forklift_hour_meter_log.py:ForkliftHourMeterLog",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift_location.py",
+      "target": "class:backend/app/models/forklift_location.py:ForkliftLocation",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift_model.py",
+      "target": "class:backend/app/models/forklift_model.py:ForkliftModel",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift_ownership_cost.py",
+      "target": "class:backend/app/models/forklift_ownership_cost.py:ForkliftOwnershipCost",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift_photo.py",
+      "target": "class:backend/app/models/forklift_photo.py:ForkliftPhoto",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift_spec.py",
+      "target": "class:backend/app/models/forklift_spec.py:ForkliftSpec",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift_status_history.py",
+      "target": "class:backend/app/models/forklift_status_history.py:ForkliftStatusHistory",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift.py",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/forklift.py",
+      "target": "class:backend/app/models/forklift.py:ForkliftStatus",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/import_job.py",
+      "target": "class:backend/app/models/import_job.py:ImportJob",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/import_job.py",
+      "target": "class:backend/app/models/import_job.py:ImportError",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/import_job.py",
+      "target": "class:backend/app/models/import_job.py:ImportStatus",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/inventory_balance.py",
+      "target": "class:backend/app/models/inventory_balance.py:InventoryBalance",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/inventory_transaction.py",
+      "target": "class:backend/app/models/inventory_transaction.py:InventoryTransaction",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/inventory_transaction.py",
+      "target": "class:backend/app/models/inventory_transaction.py:TransactionType",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/invoice_item.py",
+      "target": "class:backend/app/models/invoice_item.py:InvoiceItem",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/invoice.py",
+      "target": "class:backend/app/models/invoice.py:Invoice",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/invoice.py",
+      "target": "class:backend/app/models/invoice.py:InvoiceStatus",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/lead_note.py",
+      "target": "class:backend/app/models/lead_note.py:LeadNote",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/lead.py",
+      "target": "class:backend/app/models/lead.py:Lead",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/lead.py",
+      "target": "class:backend/app/models/lead.py:LeadStatus",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/maintenance_cost.py",
+      "target": "class:backend/app/models/maintenance_cost.py:MaintenanceCost",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/maintenance_plan.py",
+      "target": "class:backend/app/models/maintenance_plan.py:MaintenancePlan",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/maintenance_schedule.py",
+      "target": "class:backend/app/models/maintenance_schedule.py:MaintenanceSchedule",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/movement_history.py",
+      "target": "class:backend/app/models/movement_history.py:MovementHistory",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/models/part_consumption.py",
+      "target": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "type": "contains",
+      "weight": 1.0
+    },
+
+    {
+      "source": "class:backend/app/models/brand.py:Brand",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/category.py:ProductCategory",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/customer.py:Customer",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/deposit.py:Deposit",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift_document.py:ForkliftDocument",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift_hour_meter_log.py:ForkliftHourMeterLog",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift_location.py:ForkliftLocation",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift_model.py:ForkliftModel",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift_ownership_cost.py:ForkliftOwnershipCost",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift_photo.py:ForkliftPhoto",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift_spec.py:ForkliftSpec",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift_status_history.py:ForkliftStatusHistory",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/forklift.py:Forklift",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/import_job.py:ImportJob",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/import_job.py:ImportError",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/inventory_balance.py:InventoryBalance",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/inventory_transaction.py:InventoryTransaction",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/invoice_item.py:InvoiceItem",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/invoice.py:Invoice",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/lead_note.py:LeadNote",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/lead.py:Lead",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/maintenance_cost.py:MaintenanceCost",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/maintenance_plan.py:MaintenancePlan",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/maintenance_schedule.py:MaintenanceSchedule",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/movement_history.py:MovementHistory",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "inherits",
+      "weight": 0.9
+    },
+
+    {
+      "source": "class:backend/app/models/forklift_model.py:ForkliftModel",
+      "target": "class:backend/app/models/brand.py:Brand",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift.py:Forklift",
+      "target": "class:backend/app/models/forklift_model.py:ForkliftModel",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift.py:Forklift",
+      "target": "class:backend/app/models/brand.py:Brand",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift.py:Forklift",
+      "target": "class:backend/app/models/customer.py:Customer",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift.py:Forklift",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_document.py:ForkliftDocument",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_document.py:ForkliftDocument",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_hour_meter_log.py:ForkliftHourMeterLog",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_hour_meter_log.py:ForkliftHourMeterLog",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_location.py:ForkliftLocation",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_location.py:ForkliftLocation",
+      "target": "class:backend/app/models/customer.py:Customer",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_location.py:ForkliftLocation",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_ownership_cost.py:ForkliftOwnershipCost",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_ownership_cost.py:ForkliftOwnershipCost",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_photo.py:ForkliftPhoto",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_photo.py:ForkliftPhoto",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_spec.py:ForkliftSpec",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_status_history.py:ForkliftStatusHistory",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/forklift_status_history.py:ForkliftStatusHistory",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/maintenance_schedule.py:MaintenanceSchedule",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/maintenance_schedule.py:MaintenanceSchedule",
+      "target": "class:backend/app/models/maintenance_plan.py:MaintenancePlan",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "target": "class:backend/app/models/forklift.py:Forklift",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "target": "class:backend/app/models/spare_part.py:SparePart",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "target": "class:backend/app/models/warehouse.py:Warehouse",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "target": "class:backend/app/models/work_order.py:WorkOrder",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/deposit.py:Deposit",
+      "target": "class:backend/app/models/customer.py:Customer",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/deposit.py:Deposit",
+      "target": "class:backend/app/models/rental_contract.py:RentalContract",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/deposit.py:Deposit",
+      "target": "class:backend/app/models/payment.py:Payment",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/deposit.py:Deposit",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/invoice.py:Invoice",
+      "target": "class:backend/app/models/customer.py:Customer",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/invoice.py:Invoice",
+      "target": "class:backend/app/models/rental_contract.py:RentalContract",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/invoice.py:Invoice",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/invoice_item.py:InvoiceItem",
+      "target": "class:backend/app/models/invoice.py:Invoice",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/invoice_item.py:InvoiceItem",
+      "target": "class:backend/app/models/rental_billing_cycle.py:RentalBillingCycle",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/lead.py:Lead",
+      "target": "class:backend/app/models/customer.py:Customer",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/lead.py:Lead",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/lead_note.py:LeadNote",
+      "target": "class:backend/app/models/lead.py:Lead",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/lead_note.py:LeadNote",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/customer.py:Customer",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/import_job.py:ImportError",
+      "target": "class:backend/app/models/import_job.py:ImportJob",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/import_job.py:ImportJob",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/inventory_balance.py:InventoryBalance",
+      "target": "class:backend/app/models/spare_part.py:SparePart",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/inventory_balance.py:InventoryBalance",
+      "target": "class:backend/app/models/warehouse.py:Warehouse",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/inventory_transaction.py:InventoryTransaction",
+      "target": "class:backend/app/models/spare_part.py:SparePart",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/inventory_transaction.py:InventoryTransaction",
+      "target": "class:backend/app/models/warehouse.py:Warehouse",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/inventory_transaction.py:InventoryTransaction",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/maintenance_cost.py:MaintenanceCost",
+      "target": "class:backend/app/models/work_order.py:WorkOrder",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/movement_history.py:MovementHistory",
+      "target": "class:backend/app/models/asset_movement.py:AssetMovement",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/movement_history.py:MovementHistory",
+      "target": "class:backend/app/models/user.py:User",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "class:backend/app/models/category.py:ProductCategory",
+      "target": "class:backend/app/models/category.py:ProductCategory",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+
+    {
+      "source": "class:backend/app/models/brand.py:Brand",
+      "target": "class:backend/app/models/forklift_model.py:ForkliftModel",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/inventory_balance.py:InventoryBalance",
+      "target": "class:backend/app/models/inventory_transaction.py:InventoryTransaction",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/invoice.py:Invoice",
+      "target": "class:backend/app/models/deposit.py:Deposit",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/maintenance_plan.py:MaintenancePlan",
+      "target": "class:backend/app/models/maintenance_schedule.py:MaintenanceSchedule",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/forklift.py:Forklift",
+      "target": "class:backend/app/models/maintenance_schedule.py:MaintenanceSchedule",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/forklift.py:Forklift",
+      "target": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/lead.py:Lead",
+      "target": "class:backend/app/models/lead_note.py:LeadNote",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/invoice.py:Invoice",
+      "target": "class:backend/app/models/invoice_item.py:InvoiceItem",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/import_job.py:ImportJob",
+      "target": "class:backend/app/models/import_job.py:ImportError",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/forklift_spec.py:ForkliftSpec",
+      "target": "class:backend/app/models/forklift_document.py:ForkliftDocument",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/forklift_status_history.py:ForkliftStatusHistory",
+      "target": "class:backend/app/models/forklift_location.py:ForkliftLocation",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "class:backend/app/models/maintenance_cost.py:MaintenanceCost",
+      "target": "class:backend/app/models/part_consumption.py:PartConsumption",
+      "type": "related",
+      "weight": 0.5
+    }
+  ]
+}

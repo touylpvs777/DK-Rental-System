@@ -1,0 +1,59 @@
+.lang-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-toggle {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--color-bg-subtle);
+}
+
+.lang-toggle-more {
+  height: 28px;
+  min-width: 40px;
+  padding: 0 6px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+.lang-toggle-more:hover {
+  color: var(--color-text);
+}
+.lang-toggle-more.active {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.lang-toggle-more option {
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.lang-toggle-btn {
+  min-width: 32px; height: 28px;
+  padding: 0 8px;
+  display: flex; align-items: center; justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+.lang-toggle-btn:hover:not(.active) {
+  color: var(--color-text);
+}
+.lang-toggle-btn.active {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}

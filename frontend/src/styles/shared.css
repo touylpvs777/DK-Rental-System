@@ -1,0 +1,226 @@
+/* ────────────────────────────────────────────────────────
+   Shared page layout styles
+   Used by: CustomersPage, LeadsPage, and all future modules
+   ──────────────────────────────────────────────────────── */
+
+/* ── Page header ────────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.page-header h1 { font-size: 20px; font-weight: 700; color: var(--color-text); }
+.page-header-sub { font-size: 13px; color: var(--color-text-muted); margin-top: 2px; }
+
+/* ── Page header banner (module-category colored variant) ─── */
+.page-header-banner {
+  padding: 16px 20px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.page-header-banner h1 { color: white; }
+.page-header-banner .page-header-sub { color: rgba(255, 255, 255, 0.78); }
+/* A few detail pages (invoice/payment) use styles/detail.css's own subtitle
+   classes instead of .page-header-sub — cover those too. */
+.page-header-banner .detail-subtitle,
+.page-header-banner .detail-rev { color: rgba(255, 255, 255, 0.78); }
+/* .btn-primary keeps its own solid color (already high-contrast on any background);
+   ghost/secondary buttons default to a near-invisible light-gray border/text that
+   only works on a white page background, so give them a translucent-white treatment
+   here instead. */
+.page-header-banner .btn-ghost,
+.page-header-banner .btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.page-header-banner .btn-ghost:hover:not(:disabled),
+.page-header-banner .btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+}
+
+/* Document editors (Quotation/Sales Order/Invoice): keeps the title + action
+   buttons in view while scrolling a long line-items grid. Lives inside
+   .doc-preview-hide-on-print, so it's already excluded from print — no
+   @media print override needed. z-index stays below the app shell's own
+   header/sidebar/dropdown layers (--z-header:100, --z-sidebar:200,
+   --z-dropdown:300). */
+.doc-editor-toolbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+/* ── Toolbar ────────────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 340px; }
+.search-wrap svg {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  color: var(--color-text-muted); pointer-events: none;
+}
+.search-input {
+  width: 100%; padding: 8px 12px 8px 34px;
+  border: 1px solid var(--color-border); border-radius: var(--radius);
+  font-size: 13.5px; background: var(--color-surface); color: var(--color-text);
+  outline: none; transition: border-color 0.13s, box-shadow 0.13s;
+}
+.search-input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+
+.filter-select {
+  padding: 8px 12px; border: 1px solid var(--color-border); border-radius: var(--radius);
+  font-size: 13.5px; background: var(--color-surface); color: var(--color-text);
+  outline: none; cursor: pointer; transition: border-color 0.13s;
+}
+.filter-select:focus { border-color: var(--color-primary); }
+
+.date-input {
+  padding: 7px 10px; border: 1px solid var(--color-border); border-radius: var(--radius);
+  font-size: 13px; background: var(--color-surface); color: var(--color-text);
+  outline: none; transition: border-color 0.13s;
+}
+.date-input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+
+.clear-btn {
+  padding: 7px 13px; border: 1px solid var(--color-border); border-radius: var(--radius);
+  font-size: 13px; background: transparent; color: var(--color-text-muted);
+  cursor: pointer; transition: background 0.13s, color 0.13s;
+  white-space: nowrap; align-self: flex-end;
+}
+.clear-btn:hover { background: var(--color-bg); color: var(--color-text); }
+
+.toolbar-count { margin-left: auto; font-size: 13px; color: var(--color-text-muted); white-space: nowrap; }
+
+/* ── Table card ─────────────────────────────────────────── */
+.table-card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: 10px; box-shadow: var(--shadow); overflow: hidden;
+}
+.table-wrap { overflow-x: auto; }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.data-table th {
+  background: var(--color-bg); padding: 10px 14px; text-align: left;
+  font-size: 11.5px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.5px; color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border); white-space: nowrap;
+}
+.data-table th.sortable { cursor: pointer; user-select: none; }
+.data-table th.sortable:hover { color: var(--color-text); }
+
+.sort-icon { display: inline-flex; flex-direction: column; gap: 1px; margin-left: 4px; vertical-align: middle; opacity: 0.4; }
+.sort-icon.active { opacity: 1; color: var(--color-primary); }
+
+.data-table td {
+  padding: 12px 14px; border-bottom: 1px solid var(--color-border);
+  color: var(--color-text); vertical-align: middle;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--color-bg-subtle); }
+
+.cell-muted { color: var(--color-text-muted); }
+.cell-mono  { font-variant-numeric: tabular-nums; }
+
+/* ── Row actions ────────────────────────────────────────── */
+.row-actions { display: flex; align-items: center; gap: 4px; }
+.action-btn {
+  width: 30px; height: 30px; border: 1px solid transparent;
+  background: transparent; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-muted); transition: background 0.13s, color 0.13s, border-color 0.13s;
+}
+.action-btn:hover { background: var(--color-bg); border-color: var(--color-border); color: var(--color-text); }
+.action-btn.danger:hover { background: var(--color-danger-50); border-color: var(--color-danger-200); color: var(--color-danger-600); }
+
+/* ── Empty state ────────────────────────────────────────── */
+.table-empty { padding: 56px 20px; text-align: center; color: var(--color-text-muted); }
+.table-empty svg { margin-bottom: 12px; opacity: 0.35; }
+.table-empty p { font-size: 14px; }
+.table-empty small { font-size: 12px; opacity: 0.7; }
+
+/* ── Skeleton rows ──────────────────────────────────────── */
+.skeleton-row td { padding: 13px 14px; }
+.skeleton-cell {
+  height: 14px; border-radius: 4px; background: var(--color-skeleton);
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+
+/* ── Pagination ─────────────────────────────────────────── */
+.pagination {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; border-top: 1px solid var(--color-border);
+  flex-wrap: wrap; gap: 8px;
+}
+.pagination-info { font-size: 12.5px; color: var(--color-text-muted); }
+.pagination-controls { display: flex; align-items: center; gap: 4px; }
+.page-btn {
+  min-width: 32px; height: 32px; padding: 0 6px;
+  border: 1px solid var(--color-border); border-radius: 6px;
+  background: var(--color-surface); color: var(--color-text);
+  font-size: 13px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.13s, border-color 0.13s;
+}
+.page-btn:hover:not(:disabled):not(.active) { background: var(--color-bg); }
+.page-btn.active { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-on-primary); font-weight: 600; }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Form layout ────────────────────────────────────────── */
+.form-grid { display: flex; flex-direction: column; gap: 14px; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-group label { font-size: 12.5px; font-weight: 500; color: var(--color-text); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 8px 11px; border: 1px solid var(--color-border);
+  border-radius: var(--radius); font-size: 13.5px;
+  background: var(--color-bg); color: var(--color-text);
+  outline: none; transition: border-color 0.13s, box-shadow 0.13s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 80px; }
+.required { color: var(--color-danger-600); }
+
+/* ── Value input with prefix ────────────────────────────── */
+.input-prefix-wrap { position: relative; }
+.input-prefix {
+  position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+  font-size: 13.5px; color: var(--color-text-muted); pointer-events: none;
+}
+.input-prefix-wrap input { padding-left: 22px; }
+
+/* ── Error banner ───────────────────────────────────────── */
+.page-error {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--color-error-bg); border: 1px solid var(--color-error-border); color: var(--color-error-text);
+  border-radius: 8px; padding: 12px 16px; font-size: 13.5px; margin-bottom: 16px;
+}
+
+/* ── Responsive helpers ─────────────────────────────────── */
+.col-hide-sm { }
+@media (max-width: 640px) {
+  .col-hide-sm  { display: none; }
+  .form-row-2   { grid-template-columns: 1fr; }
+  .form-row-3   { grid-template-columns: 1fr; }
+  .toolbar-count { display: none; }
+}

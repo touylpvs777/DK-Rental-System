@@ -1,0 +1,136 @@
+{
+  "batchIndex": 13,
+  "nodes": [
+    {
+      "id": "file:frontend/src/pages/Catalog/BrandsPage.css",
+      "type": "file",
+      "name": "BrandsPage CSS",
+      "summary": "Styles for the Brands management page. Defines a square brand avatar with primary-color background, role badges in three variants (primary, parts_only, both) using semantic color tokens, and an active/inactive status dot indicator rendered via a CSS pseudo-element.",
+      "tags": ["css", "catalog", "brands", "page", "styles", "badge", "avatar"],
+      "filePath": "frontend/src/pages/Catalog/BrandsPage.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/pages/Catalog/CatalogPage.css",
+      "type": "file",
+      "name": "CatalogPage CSS",
+      "summary": "Styles for the main product catalog listing page. Provides a responsive auto-fill product grid (minmax 220px), a card skeleton loader with pulse animation, a centered empty-state layout, and a grid/list view-toggle button group. Includes a mobile breakpoint that tightens column width to 160px.",
+      "tags": ["css", "catalog", "page", "styles", "grid", "skeleton", "view-toggle"],
+      "filePath": "frontend/src/pages/Catalog/CatalogPage.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/pages/Catalog/CategoriesPage.css",
+      "type": "file",
+      "name": "CategoriesPage CSS",
+      "summary": "Styles for the Categories management page. Implements a hierarchical tree table with three nesting levels distinguished by colored dots (primary, purple, info), an expand/collapse toggle button, alternating row backgrounds for child levels, bilingual name display (main + secondary), and shared active/inactive status dot indicators.",
+      "tags": ["css", "catalog", "categories", "page", "styles", "hierarchy", "tree"],
+      "filePath": "frontend/src/pages/Catalog/CategoriesPage.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/pages/Catalog/ProductDetailPage.css",
+      "type": "file",
+      "name": "ProductDetailPage CSS",
+      "summary": "Styles for the Product Detail page — the most complex CSS file in the Catalog module. Covers a two-column responsive layout (collapses to one column on mobile), an image gallery with main viewer, left/right arrow navigation, thumbnail strip, and a full-screen lightbox overlay. Also styles the info column (brand label, product name, badges using color-mix, metadata definition list, compatibility chips, bilingual name), a grouped specifications table with striped rows, and a two-column skeleton loading state.",
+      "tags": ["css", "catalog", "product-detail", "page", "styles", "gallery", "lightbox", "specs", "skeleton"],
+      "filePath": "frontend/src/pages/Catalog/ProductDetailPage.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/pages/Catalog/ImportPage.css",
+      "type": "file",
+      "name": "ImportPage CSS",
+      "summary": "Styles for the Product Import wizard page (listed as ProductsPage.css in the batch manifest, but the actual file on disk is ImportPage.css). Provides a multi-step progress indicator with active/done state transitions, a dashed file dropzone with hover/dragging/has-file state variants, import action buttons, a warning info box, preview summary cards (total/valid/error counts), expandable sheet/tab cards with per-row create/update action badges, and a result banner in success/partial states. Includes a CSS spin keyframe for loading icons.",
+      "tags": ["css", "catalog", "import", "page", "styles", "wizard", "dropzone", "steps"],
+      "filePath": "frontend/src/pages/Catalog/ImportPage.css",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:frontend/src/pages/Catalog/BrandsPage.css",
+      "target": "file:frontend/src/pages/Catalog/CatalogPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/BrandsPage.css",
+      "target": "file:frontend/src/pages/Catalog/CategoriesPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/BrandsPage.css",
+      "target": "file:frontend/src/pages/Catalog/ProductDetailPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/BrandsPage.css",
+      "target": "file:frontend/src/pages/Catalog/ImportPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/CatalogPage.css",
+      "target": "file:frontend/src/pages/Catalog/CategoriesPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/CatalogPage.css",
+      "target": "file:frontend/src/pages/Catalog/ProductDetailPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/CatalogPage.css",
+      "target": "file:frontend/src/pages/Catalog/ImportPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/CategoriesPage.css",
+      "target": "file:frontend/src/pages/Catalog/ProductDetailPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/CategoriesPage.css",
+      "target": "file:frontend/src/pages/Catalog/ImportPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/ProductDetailPage.css",
+      "target": "file:frontend/src/pages/Catalog/ImportPage.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same Catalog feature module"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/BrandsPage.css",
+      "target": "file:frontend/src/pages/Catalog/CategoriesPage.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "Both define identical .status-dot component styles"
+    },
+    {
+      "source": "file:frontend/src/pages/Catalog/BrandsPage.css",
+      "target": "file:frontend/src/pages/Catalog/CatalogPage.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "Both are catalog listing/management page styles with badge/indicator patterns"
+    }
+  ]
+}

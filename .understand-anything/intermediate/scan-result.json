@@ -1,0 +1,3280 @@
+{
+  "scriptCompleted": true,
+  "files": [
+    {
+      "path": ".claude/settings.json",
+      "language": "json",
+      "sizeLines": 5,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/.env.example",
+      "language": "config",
+      "sizeLines": 22,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/alembic.ini",
+      "language": "config",
+      "sizeLines": 150,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/alembic/env.py",
+      "language": "python",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/alembic/README",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/alembic/script.py.mako",
+      "language": "mako",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/alembic/versions/0b24e4aaa242_move_mast_type_and_max_lift_height_mm_.py",
+      "language": "python",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/alembic/versions/425b763888ef_initial_schema_55_tables.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/alembic/versions/fbd2d0a45d80_add_forklift_specs_table.py",
+      "language": "python",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/import_excel.py",
+      "language": "python",
+      "sizeLines": 130,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/core/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/core/config.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/core/middleware.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/core/permissions.py",
+      "language": "python",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/core/security.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/database/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/database/base.py",
+      "language": "python",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/database/database.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/database/session.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/dependencies.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/main.py",
+      "language": "python",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/__init__.py",
+      "language": "python",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/activity_log.py",
+      "language": "python",
+      "sizeLines": 138,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/asset_movement.py",
+      "language": "python",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/base.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/brand.py",
+      "language": "python",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/category.py",
+      "language": "python",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/customer.py",
+      "language": "python",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/deposit.py",
+      "language": "python",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift_document.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift_hour_meter_log.py",
+      "language": "python",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift_location.py",
+      "language": "python",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift_model.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift_ownership_cost.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift_photo.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift_spec.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift_status_history.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/forklift.py",
+      "language": "python",
+      "sizeLines": 165,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/import_job.py",
+      "language": "python",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/inventory_balance.py",
+      "language": "python",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/inventory_transaction.py",
+      "language": "python",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/invoice_item.py",
+      "language": "python",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/invoice.py",
+      "language": "python",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/lead_note.py",
+      "language": "python",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/lead.py",
+      "language": "python",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/maintenance_cost.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/maintenance_plan.py",
+      "language": "python",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/maintenance_schedule.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/movement_history.py",
+      "language": "python",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/part_consumption.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/payment_allocation.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/payment.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/product.py",
+      "language": "python",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/purchase_order_item.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/purchase_order.py",
+      "language": "python",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/quotation_approval.py",
+      "language": "python",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/quotation_item.py",
+      "language": "python",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/quotation_status_history.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/quotation.py",
+      "language": "python",
+      "sizeLines": 128,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/rental_billing_cycle.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/rental_contract_item.py",
+      "language": "python",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/rental_contract_status_history.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/rental_contract_term.py",
+      "language": "python",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/rental_contract.py",
+      "language": "python",
+      "sizeLines": 179,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/rental_damage_report.py",
+      "language": "python",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/rental_extension.py",
+      "language": "python",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/rental_return.py",
+      "language": "python",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/revenue_recognition.py",
+      "language": "python",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/revoked_token.py",
+      "language": "python",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/role.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/service_history.py",
+      "language": "python",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/spare_part.py",
+      "language": "python",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/user.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/warehouse.py",
+      "language": "python",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/models/work_order.py",
+      "language": "python",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/billing_repository.py",
+      "language": "python",
+      "sizeLines": 557,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/brand_repository.py",
+      "language": "python",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/category_repository.py",
+      "language": "python",
+      "sizeLines": 112,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/forklift_cost_repository.py",
+      "language": "python",
+      "sizeLines": 108,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/forklift_document_repository.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/forklift_hour_meter_repository.py",
+      "language": "python",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/forklift_location_repository.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/forklift_model_repository.py",
+      "language": "python",
+      "sizeLines": 140,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/forklift_photo_repository.py",
+      "language": "python",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/forklift_repository.py",
+      "language": "python",
+      "sizeLines": 186,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/forklift_status_repository.py",
+      "language": "python",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/import_repository.py",
+      "language": "python",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/inventory_repository.py",
+      "language": "python",
+      "sizeLines": 233,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/maintenance_repository.py",
+      "language": "python",
+      "sizeLines": 303,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/movement_repository.py",
+      "language": "python",
+      "sizeLines": 164,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/product_repository.py",
+      "language": "python",
+      "sizeLines": 249,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/quotation_repository.py",
+      "language": "python",
+      "sizeLines": 222,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/repositories/rental_repository.py",
+      "language": "python",
+      "sizeLines": 444,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/activity.py",
+      "language": "python",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/auth.py",
+      "language": "python",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/billing.py",
+      "language": "python",
+      "sizeLines": 701,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/brands.py",
+      "language": "python",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/catalog.py",
+      "language": "python",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/categories.py",
+      "language": "python",
+      "sizeLines": 105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/customers.py",
+      "language": "python",
+      "sizeLines": 112,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/dashboard.py",
+      "language": "python",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/forklifts.py",
+      "language": "python",
+      "sizeLines": 462,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/import_catalog.py",
+      "language": "python",
+      "sizeLines": 201,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/inventory.py",
+      "language": "python",
+      "sizeLines": 144,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/leads.py",
+      "language": "python",
+      "sizeLines": 199,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/maintenance.py",
+      "language": "python",
+      "sizeLines": 238,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/movements.py",
+      "language": "python",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/products.py",
+      "language": "python",
+      "sizeLines": 269,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/quotations.py",
+      "language": "python",
+      "sizeLines": 436,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/rentals.py",
+      "language": "python",
+      "sizeLines": 820,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/reports.py",
+      "language": "python",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/roles.py",
+      "language": "python",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/uploads.py",
+      "language": "python",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/routes/users.py",
+      "language": "python",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/activity_log.py",
+      "language": "python",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/billing.py",
+      "language": "python",
+      "sizeLines": 355,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/brand.py",
+      "language": "python",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/category.py",
+      "language": "python",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/common.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/customer.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/dashboard.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/forklift.py",
+      "language": "python",
+      "sizeLines": 446,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/import_job.py",
+      "language": "python",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/inventory.py",
+      "language": "python",
+      "sizeLines": 209,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/lead.py",
+      "language": "python",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/maintenance.py",
+      "language": "python",
+      "sizeLines": 263,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/movement.py",
+      "language": "python",
+      "sizeLines": 163,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/permission.py",
+      "language": "python",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/product.py",
+      "language": "python",
+      "sizeLines": 188,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/quotation.py",
+      "language": "python",
+      "sizeLines": 237,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/rental.py",
+      "language": "python",
+      "sizeLines": 579,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/report.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/role.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/schemas/user.py",
+      "language": "python",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/activity_log_service.py",
+      "language": "python",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/billing_service.py",
+      "language": "python",
+      "sizeLines": 1329,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/brand_service.py",
+      "language": "python",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/category_service.py",
+      "language": "python",
+      "sizeLines": 193,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/customer_service.py",
+      "language": "python",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/dashboard_service.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/forklift_cost_service.py",
+      "language": "python",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/forklift_document_service.py",
+      "language": "python",
+      "sizeLines": 107,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/forklift_hour_meter_service.py",
+      "language": "python",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/forklift_location_service.py",
+      "language": "python",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/forklift_photo_service.py",
+      "language": "python",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/forklift_service.py",
+      "language": "python",
+      "sizeLines": 297,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/forklift_spec_service.py",
+      "language": "python",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/forklift_status_service.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/import_service.py",
+      "language": "python",
+      "sizeLines": 656,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/inventory_service.py",
+      "language": "python",
+      "sizeLines": 286,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/lead_service.py",
+      "language": "python",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/maintenance_service.py",
+      "language": "python",
+      "sizeLines": 374,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/movement_service.py",
+      "language": "python",
+      "sizeLines": 303,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/product_service.py",
+      "language": "python",
+      "sizeLines": 317,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/quotation_service.py",
+      "language": "python",
+      "sizeLines": 339,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/quotation_workflow_service.py",
+      "language": "python",
+      "sizeLines": 222,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/rbac_service.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/rental_contract_service.py",
+      "language": "python",
+      "sizeLines": 709,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/rental_workflow_service.py",
+      "language": "python",
+      "sizeLines": 757,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/report_service.py",
+      "language": "python",
+      "sizeLines": 130,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/user_service.py",
+      "language": "python",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/Upload/Assets_Update_Dynamic.xlsx",
+      "language": "xlsx",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/Upload/Automotive_Daily_Report.xlsx",
+      "language": "xlsx",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/Upload/Breakdown_Monitoring.xlsx",
+      "language": "xlsx",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/Upload/Customer Intervention.xlsx",
+      "language": "xlsx",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/Upload/Daily_Report.xlsx",
+      "language": "xlsx",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/Upload/Delivery-Retriever.xlsx",
+      "language": "xlsx",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/Upload/Historical Reports.xlsx",
+      "language": "xlsx",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/Upload/Track_Forklift_Movement.xlsx",
+      "language": "xlsx",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/utils/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/utils/export.py",
+      "language": "python",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/utils/slugify.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/debug_activity.py",
+      "language": "python",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/debug_activity2.py",
+      "language": "python",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/diagnose_me.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/e2e_final.py",
+      "language": "python",
+      "sizeLines": 620,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/e2e_test.py",
+      "language": "python",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/inspect_db.py",
+      "language": "python",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/migrations/001_catalog_tables.sql",
+      "language": "sql",
+      "sizeLines": 289,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/migrations/002_equipment_registry.sql",
+      "language": "sql",
+      "sizeLines": 437,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "language": "txt",
+      "sizeLines": 13,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "backend/schema_postgresql.sql",
+      "language": "sql",
+      "sizeLines": 1414,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/scripts/seed_inventory.py",
+      "language": "python",
+      "sizeLines": 176,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/scripts/test_inventory.py",
+      "language": "python",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/seed_admin.py",
+      "language": "python",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/test_activity.py",
+      "language": "python",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/test_dashboard.py",
+      "language": "python",
+      "sizeLines": 112,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/test_reports.py",
+      "language": "python",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/verify_dashboard.py",
+      "language": "python",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/verify_lead.py",
+      "language": "python",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/verify_login.py",
+      "language": "python",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 55,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "Dockerfile.backend",
+      "language": "dockerfile",
+      "sizeLines": 16,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "Dockerfile.frontend",
+      "language": "dockerfile",
+      "sizeLines": 18,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "docs/architecture/01-system-architecture.md",
+      "language": "markdown",
+      "sizeLines": 85,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture/02-database-schema.md",
+      "language": "markdown",
+      "sizeLines": 190,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture/03-api-inventory.md",
+      "language": "markdown",
+      "sizeLines": 92,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture/04-frontend-modules.md",
+      "language": "markdown",
+      "sizeLines": 107,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture/05-rbac-model.md",
+      "language": "markdown",
+      "sizeLines": 70,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture/06-project-structure.md",
+      "language": "markdown",
+      "sizeLines": 119,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture/07-dependency-graph.md",
+      "language": "markdown",
+      "sizeLines": 118,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture/08-business-workflows.md",
+      "language": "markdown",
+      "sizeLines": 186,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture/09-gap-analysis.md",
+      "language": "markdown",
+      "sizeLines": 123,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/database/constraints.md",
+      "language": "markdown",
+      "sizeLines": 272,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/database/er_diagram.md",
+      "language": "markdown",
+      "sizeLines": 129,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/database/er-diagram.mmd",
+      "language": "mmd",
+      "sizeLines": 1012,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/database/indexes.md",
+      "language": "markdown",
+      "sizeLines": 161,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/database/migration_order.md",
+      "language": "markdown",
+      "sizeLines": 266,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/database/migration-001-performance-indexes.py",
+      "language": "python",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/database/migration-002-kpi-targets.py",
+      "language": "python",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/database/postgresql-schema.sql",
+      "language": "sql",
+      "sizeLines": 1166,
+      "fileCategory": "data"
+    },
+    {
+      "path": "docs/database/schema-documentation.md",
+      "language": "markdown",
+      "sizeLines": 271,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/database/table_definitions.md",
+      "language": "markdown",
+      "sizeLines": 499,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/api_design.md",
+      "language": "markdown",
+      "sizeLines": 424,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/backend_architecture.md",
+      "language": "markdown",
+      "sizeLines": 245,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/compatibility_report.md",
+      "language": "markdown",
+      "sizeLines": 238,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/database_design.md",
+      "language": "markdown",
+      "sizeLines": 225,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/deployment_design.md",
+      "language": "markdown",
+      "sizeLines": 280,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/frontend_architecture.md",
+      "language": "markdown",
+      "sizeLines": 366,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/impact_analysis.md",
+      "language": "markdown",
+      "sizeLines": 205,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/migration_plan.md",
+      "language": "markdown",
+      "sizeLines": 372,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/module_design.md",
+      "language": "markdown",
+      "sizeLines": 279,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/rollback_plan.md",
+      "language": "markdown",
+      "sizeLines": 311,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/security_design.md",
+      "language": "markdown",
+      "sizeLines": 266,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/01-system-architecture.mmd",
+      "language": "mmd",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/02-c4-context.mmd",
+      "language": "mmd",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/03-c4-container.mmd",
+      "language": "mmd",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/04-c4-component.mmd",
+      "language": "mmd",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/05-er-diagram.mmd",
+      "language": "mmd",
+      "sizeLines": 501,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/06-api-flow.mmd",
+      "language": "mmd",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/07-authentication-flow.mmd",
+      "language": "mmd",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/08-rental-workflow.mmd",
+      "language": "mmd",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/09-maintenance-workflow.mmd",
+      "language": "mmd",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/10-inventory-workflow.mmd",
+      "language": "mmd",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/11-forklift-lifecycle.mmd",
+      "language": "mmd",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/12-billing-flow.mmd",
+      "language": "mmd",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/13-profitability-flow.mmd",
+      "language": "mmd",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/14-deployment-diagram.mmd",
+      "language": "mmd",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/15-sequence-diagrams.mmd",
+      "language": "mmd",
+      "sizeLines": 202,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/16-state-diagrams.mmd",
+      "language": "mmd",
+      "sizeLines": 285,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/c4_component.md",
+      "language": "markdown",
+      "sizeLines": 55,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/c4_component.mmd",
+      "language": "mmd",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/c4_container.md",
+      "language": "markdown",
+      "sizeLines": 24,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/c4_container.mmd",
+      "language": "mmd",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/c4_context.md",
+      "language": "markdown",
+      "sizeLines": 25,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/c4_context.mmd",
+      "language": "mmd",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/er_diagram.md",
+      "language": "markdown",
+      "sizeLines": 176,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/er_diagram.mmd",
+      "language": "mmd",
+      "sizeLines": 174,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/infrastructure.md",
+      "language": "markdown",
+      "sizeLines": 63,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/infrastructure.mmd",
+      "language": "mmd",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/seq_auth.md",
+      "language": "markdown",
+      "sizeLines": 64,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/seq_auth.mmd",
+      "language": "mmd",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/seq_maintenance.md",
+      "language": "markdown",
+      "sizeLines": 69,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/seq_maintenance.mmd",
+      "language": "mmd",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/seq_rental.md",
+      "language": "markdown",
+      "sizeLines": 88,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/seq_rental.mmd",
+      "language": "mmd",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/state_forklift.md",
+      "language": "markdown",
+      "sizeLines": 24,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/state_forklift.mmd",
+      "language": "mmd",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/state_invoice.md",
+      "language": "markdown",
+      "sizeLines": 27,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/state_invoice.mmd",
+      "language": "mmd",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/state_lead.md",
+      "language": "markdown",
+      "sizeLines": 20,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/state_lead.mmd",
+      "language": "mmd",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/state_quotation.md",
+      "language": "markdown",
+      "sizeLines": 28,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/state_quotation.mmd",
+      "language": "mmd",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/state_rental.md",
+      "language": "markdown",
+      "sizeLines": 35,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/state_rental.mmd",
+      "language": "mmd",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/workflow_inventory.md",
+      "language": "markdown",
+      "sizeLines": 32,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/workflow_inventory.mmd",
+      "language": "mmd",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/workflow_maintenance.md",
+      "language": "markdown",
+      "sizeLines": 44,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/workflow_maintenance.mmd",
+      "language": "mmd",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/diagrams/workflow_sales.md",
+      "language": "markdown",
+      "sizeLines": 71,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/workflow_sales.mmd",
+      "language": "mmd",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/gap-analysis.md",
+      "language": "markdown",
+      "sizeLines": 300,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/implementation-backlog.md",
+      "language": "markdown",
+      "sizeLines": 209,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/index.html",
+      "language": "html",
+      "sizeLines": 686,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/refactor-plan.md",
+      "language": "markdown",
+      "sizeLines": 927,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "language": "markdown",
+      "sizeLines": 496,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/testing-strategy.md",
+      "language": "markdown",
+      "sizeLines": 266,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/.env",
+      "language": "config",
+      "sizeLines": 1,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/.env.example",
+      "language": "config",
+      "sizeLines": 1,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/CATALOG-JENSTORE.md",
+      "language": "markdown",
+      "sizeLines": 1367,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/CATALOG-REDESIGN.md",
+      "language": "markdown",
+      "sizeLines": 1266,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/DASHBOARD-REDESIGN.md",
+      "language": "markdown",
+      "sizeLines": 978,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/DESIGN-SYSTEM.md",
+      "language": "markdown",
+      "sizeLines": 1089,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/EQUIPMENT-FLEETIO.md",
+      "language": "markdown",
+      "sizeLines": 1186,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/EQUIPMENT-REDESIGN.md",
+      "language": "markdown",
+      "sizeLines": 1231,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/eslint.config.js",
+      "language": "javascript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/frontend/src/pages/Equipment/EquipmentRegistryPage.tsx",
+      "language": "typescript",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/IMPLEMENTATION-PLAN.md",
+      "language": "markdown",
+      "sizeLines": 1363,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/index.html",
+      "language": "html",
+      "sizeLines": 16,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/LAYOUT-ARCHITECTURE.md",
+      "language": "markdown",
+      "sizeLines": 1131,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/MASTER-IMPLEMENTATION-PLAN.md",
+      "language": "markdown",
+      "sizeLines": 1131,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/package.json",
+      "language": "json",
+      "sizeLines": 36,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/README.md",
+      "language": "markdown",
+      "sizeLines": 73,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/src/api/activity.ts",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/auth.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/billing.ts",
+      "language": "typescript",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/catalog.ts",
+      "language": "typescript",
+      "sizeLines": 142,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/client.ts",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/customers.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/dashboard.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/forklift.ts",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/inventory.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/leads.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/maintenance.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/movement.ts",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/quotation.ts",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/rental.ts",
+      "language": "typescript",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/reports.ts",
+      "language": "typescript",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/api/upload.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/App.css",
+      "language": "css",
+      "sizeLines": 184,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "language": "typescript",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/AgingChart.tsx",
+      "language": "typescript",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/DepositSummaryCard.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/InvoiceCard.tsx",
+      "language": "typescript",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/InvoiceStatusBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/InvoiceSummaryCard.tsx",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/PaymentStatusBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/PaymentSummaryCard.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/RevenueChart.tsx",
+      "language": "typescript",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/billing/StatementTable.tsx",
+      "language": "typescript",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/catalog/CatalogComponents.css",
+      "language": "css",
+      "sizeLines": 327,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/catalog/CatalogComponents.tsx",
+      "language": "typescript",
+      "sizeLines": 294,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/catalog/CatalogDashboardWidget.tsx",
+      "language": "typescript",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/catalog/ProductCard.css",
+      "language": "css",
+      "sizeLines": 113,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/catalog/ProductCard.tsx",
+      "language": "typescript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/catalog/ProductImageGallery.tsx",
+      "language": "typescript",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/catalog/SpecTable.tsx",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/charts/ChartCard.css",
+      "language": "css",
+      "sizeLines": 84,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/charts/ChartCard.tsx",
+      "language": "typescript",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/charts/DistributionBarChart.tsx",
+      "language": "typescript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/charts/HorizontalBarChart.tsx",
+      "language": "typescript",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/charts/index.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/charts/TrendLineChart.tsx",
+      "language": "typescript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/dashboard/DashboardWidgets.css",
+      "language": "css",
+      "sizeLines": 191,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/dashboard/DashboardWidgets.tsx",
+      "language": "typescript",
+      "sizeLines": 383,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/equipment/FleetCard.css",
+      "language": "css",
+      "sizeLines": 109,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/equipment/FleetCard.tsx",
+      "language": "typescript",
+      "sizeLines": 108,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/equipment/ForkliftCard.css",
+      "language": "css",
+      "sizeLines": 104,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/equipment/ForkliftCard.tsx",
+      "language": "typescript",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/equipment/ForkliftStatusBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/equipment/PhotoGallery.css",
+      "language": "css",
+      "sizeLines": 108,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/equipment/PhotoGallery.tsx",
+      "language": "typescript",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/equipment/StatusTimeline.css",
+      "language": "css",
+      "sizeLines": 86,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/equipment/StatusTimeline.tsx",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/inventory/InventoryCard.tsx",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/inventory/ReorderAlert.tsx",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/inventory/StockBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/AppLayout.css",
+      "language": "css",
+      "sizeLines": 33,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/layout/AppLayout.tsx",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/Breadcrumb.css",
+      "language": "css",
+      "sizeLines": 37,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/layout/Breadcrumb.tsx",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/Header.css",
+      "language": "css",
+      "sizeLines": 64,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/layout/Header.tsx",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/PrivateRoute.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/Sidebar.css",
+      "language": "css",
+      "sizeLines": 211,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/layout/Sidebar.tsx",
+      "language": "typescript",
+      "sizeLines": 212,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/Topbar.css",
+      "language": "css",
+      "sizeLines": 120,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/layout/Topbar.tsx",
+      "language": "typescript",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/maintenance/MaintenanceStatusBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/maintenance/PMCalendar.tsx",
+      "language": "typescript",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/maintenance/WorkOrderCard.tsx",
+      "language": "typescript",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/movement/MovementCard.tsx",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/movement/MovementStatusBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/movement/MovementTimeline.tsx",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/quotation/QuotationStatusBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/rental/RentalStatusBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/Badge.tsx",
+      "language": "typescript",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/ConfirmDialog.tsx",
+      "language": "typescript",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/Drawer.css",
+      "language": "css",
+      "sizeLines": 147,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/Drawer.tsx",
+      "language": "typescript",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/ImageUpload.css",
+      "language": "css",
+      "sizeLines": 101,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/ImageUpload.tsx",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/KpiWidget.tsx",
+      "language": "typescript",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/MarketplaceCard.tsx",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/Modal.css",
+      "language": "css",
+      "sizeLines": 80,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/Modal.tsx",
+      "language": "typescript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/NotificationCenter.css",
+      "language": "css",
+      "sizeLines": 117,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/NotificationCenter.tsx",
+      "language": "typescript",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/SearchBar.css",
+      "language": "css",
+      "sizeLines": 148,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/SearchBar.tsx",
+      "language": "typescript",
+      "sizeLines": 167,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/StatCard.css",
+      "language": "css",
+      "sizeLines": 112,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/StatCard.tsx",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/ThemeToggle.css",
+      "language": "css",
+      "sizeLines": 24,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/ThemeToggle.tsx",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/Toast.css",
+      "language": "css",
+      "sizeLines": 62,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/Toast.tsx",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/UserProfileDropdown.css",
+      "language": "css",
+      "sizeLines": 109,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/components/ui/UserProfileDropdown.tsx",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/ui/ViewToggle.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/config/routes.ts",
+      "language": "typescript",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useActivity.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useAuth.ts",
+      "language": "typescript",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useBrands.ts",
+      "language": "typescript",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useCatalog.ts",
+      "language": "typescript",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useCategories.ts",
+      "language": "typescript",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useCustomers.ts",
+      "language": "typescript",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useDashboard.ts",
+      "language": "typescript",
+      "sizeLines": 132,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useDashboardData.ts",
+      "language": "typescript",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useForklifts.ts",
+      "language": "typescript",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useLeads.ts",
+      "language": "typescript",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useQuotations.ts",
+      "language": "typescript",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useRentals.ts",
+      "language": "typescript",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/index.css",
+      "language": "css",
+      "sizeLines": 119,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/dashboard/components/EnterpriseActivityFeed.tsx",
+      "language": "typescript",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/dashboard/components/EnterpriseCharts.tsx",
+      "language": "typescript",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/dashboard/components/EnterpriseKpiStrip.tsx",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/dashboard/components/QuickActions.tsx",
+      "language": "typescript",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/dashboard/hooks/useDashboardKpis.ts",
+      "language": "typescript",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/dashboard/index.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/dashboard/types.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/equipment/components/EquipmentCard.tsx",
+      "language": "typescript",
+      "sizeLines": 144,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/equipment/components/EquipmentDrawer.tsx",
+      "language": "typescript",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/equipment/components/EquipmentFilters.tsx",
+      "language": "typescript",
+      "sizeLines": 99,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/equipment/components/EquipmentGrid.tsx",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/equipment/components/EquipmentQuickActions.tsx",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/equipment/components/EquipmentSearch.tsx",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/equipment/index.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/components/AgingReceivablesChart.tsx",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/components/CollectionRateGauge.tsx",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/components/FinanceKpiStrip.tsx",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/components/FinanceQuickNav.tsx",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/components/InvoiceStatusChart.tsx",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/components/RecentTransactions.tsx",
+      "language": "typescript",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/components/RevenueAreaChart.tsx",
+      "language": "typescript",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/index.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/finance/utils.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/inventory/components/InventoryKpiStrip.tsx",
+      "language": "typescript",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/inventory/components/InventoryQuickNav.tsx",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/inventory/components/LowStockAlerts.tsx",
+      "language": "typescript",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/inventory/components/PurchaseOrderTable.tsx",
+      "language": "typescript",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/inventory/components/StockDistributionChart.tsx",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/inventory/components/WarehouseGrid.tsx",
+      "language": "typescript",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/inventory/index.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/registry.ts",
+      "language": "typescript",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/modules/types.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Activity/ActivityPage.css",
+      "language": "css",
+      "sizeLines": 119,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Activity/ActivityPage.tsx",
+      "language": "typescript",
+      "sizeLines": 537,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/BillingDashboardPage.tsx",
+      "language": "typescript",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/DepositDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 181,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/DepositListPage.tsx",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/DepositPage.tsx",
+      "language": "typescript",
+      "sizeLines": 173,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/FinanceDashboardPage.tsx",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/InvoiceDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/InvoiceListPage.tsx",
+      "language": "typescript",
+      "sizeLines": 150,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/PaymentDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 182,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/PaymentListPage.tsx",
+      "language": "typescript",
+      "sizeLines": 153,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/PaymentPage.tsx",
+      "language": "typescript",
+      "sizeLines": 154,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/RevenueRecognitionPage.tsx",
+      "language": "typescript",
+      "sizeLines": 149,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Billing/StatementPage.tsx",
+      "language": "typescript",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/BrandsPage.css",
+      "language": "css",
+      "sizeLines": 40,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/BrandsPage.tsx",
+      "language": "typescript",
+      "sizeLines": 231,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/CatalogPage.css",
+      "language": "css",
+      "sizeLines": 66,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/CatalogPage.tsx",
+      "language": "typescript",
+      "sizeLines": 332,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/CategoriesPage.css",
+      "language": "css",
+      "sizeLines": 59,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/CategoriesPage.tsx",
+      "language": "typescript",
+      "sizeLines": 241,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/ImportPage.css",
+      "language": "css",
+      "sizeLines": 223,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/ImportPage.tsx",
+      "language": "typescript",
+      "sizeLines": 358,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/ProductDetailPage.css",
+      "language": "css",
+      "sizeLines": 217,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/ProductDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 160,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Catalog/ProductForm.tsx",
+      "language": "typescript",
+      "sizeLines": 223,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Customers/CustomerForm.tsx",
+      "language": "typescript",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Customers/CustomersPage.css",
+      "language": "css",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Customers/CustomersPage.tsx",
+      "language": "typescript",
+      "sizeLines": 291,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Dashboard/DashboardPage.css",
+      "language": "css",
+      "sizeLines": 83,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Dashboard/DashboardPage.tsx",
+      "language": "typescript",
+      "sizeLines": 183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Equipment/EquipmentRegistryPage.css",
+      "language": "css",
+      "sizeLines": 214,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Equipment/EquipmentRegistryPage.tsx",
+      "language": "typescript",
+      "sizeLines": 288,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Equipment/ForkliftDetailPage.css",
+      "language": "css",
+      "sizeLines": 192,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Equipment/ForkliftDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 342,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Equipment/ForkliftForm.tsx",
+      "language": "typescript",
+      "sizeLines": 329,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Executive/ExecutiveDashboardPage.tsx",
+      "language": "typescript",
+      "sizeLines": 264,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Inventory/InventoryDashboardPage.tsx",
+      "language": "typescript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Inventory/PurchaseOrderPage.tsx",
+      "language": "typescript",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Inventory/SparePartDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Inventory/SparePartListPage.tsx",
+      "language": "typescript",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Inventory/WarehousePage.tsx",
+      "language": "typescript",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Leads/LeadForm.tsx",
+      "language": "typescript",
+      "sizeLines": 172,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Leads/LeadsPage.css",
+      "language": "css",
+      "sizeLines": 77,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Leads/LeadsPage.tsx",
+      "language": "typescript",
+      "sizeLines": 342,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Login/LoginPage.css",
+      "language": "css",
+      "sizeLines": 337,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Login/LoginPage.tsx",
+      "language": "typescript",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Maintenance/MaintenanceDashboardPage.tsx",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Maintenance/MaintenanceSchedulePage.tsx",
+      "language": "typescript",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Maintenance/WorkOrderDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 191,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Maintenance/WorkOrderListPage.tsx",
+      "language": "typescript",
+      "sizeLines": 106,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Movement/MovementDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 262,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Movement/MovementForm.tsx",
+      "language": "typescript",
+      "sizeLines": 172,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Movement/MovementListPage.tsx",
+      "language": "typescript",
+      "sizeLines": 182,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Quotations/QuotationDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 529,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Quotations/QuotationFormPage.tsx",
+      "language": "typescript",
+      "sizeLines": 166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Quotations/QuotationListPage.tsx",
+      "language": "typescript",
+      "sizeLines": 254,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Rental/RentalContractDetailPage.tsx",
+      "language": "typescript",
+      "sizeLines": 719,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Rental/RentalContractFormPage.tsx",
+      "language": "typescript",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Rental/RentalContractListPage.tsx",
+      "language": "typescript",
+      "sizeLines": 258,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/Reports/ReportsPage.css",
+      "language": "css",
+      "sizeLines": 245,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/pages/Reports/ReportsPage.tsx",
+      "language": "typescript",
+      "sizeLines": 454,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/providers/ThemeProvider.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/store/authStore.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/store/sidebarStore.ts",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/store/themeStore.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/store/toastStore.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/styles/breakpoints.css",
+      "language": "css",
+      "sizeLines": 39,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/styles/detail.css",
+      "language": "css",
+      "sizeLines": 148,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/styles/marketplace.css",
+      "language": "css",
+      "sizeLines": 483,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/styles/shared.css",
+      "language": "css",
+      "sizeLines": 183,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/styles/tokens.css",
+      "language": "css",
+      "sizeLines": 301,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/types/activity.ts",
+      "language": "typescript",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/auth.ts",
+      "language": "typescript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/billing.ts",
+      "language": "typescript",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/catalog.ts",
+      "language": "typescript",
+      "sizeLines": 267,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/customer.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/dashboard.ts",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/forklift.ts",
+      "language": "typescript",
+      "sizeLines": 201,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/inventory.ts",
+      "language": "typescript",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/lead.ts",
+      "language": "typescript",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/maintenance.ts",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/movement.ts",
+      "language": "typescript",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/quotation.ts",
+      "language": "typescript",
+      "sizeLines": 207,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/rental.ts",
+      "language": "typescript",
+      "sizeLines": 349,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/utils/mockAdapter.ts",
+      "language": "typescript",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tsconfig.app.json",
+      "language": "json",
+      "sizeLines": 30,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/tsconfig.node.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/UX-AUDIT-REPORT.md",
+      "language": "markdown",
+      "sizeLines": 563,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/UX-SPECIFICATION.md",
+      "language": "markdown",
+      "sizeLines": 1290,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "language": "typescript",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "nginx.conf",
+      "language": "conf",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "puppeteer-config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 0,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "render_diagrams.ps1",
+      "language": "powershell",
+      "sizeLines": 45,
+      "fileCategory": "script"
+    },
+    {
+      "path": "requirements.txt",
+      "language": "txt",
+      "sizeLines": 30,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "setup.md",
+      "language": "markdown",
+      "sizeLines": 320,
+      "fileCategory": "docs"
+    }
+  ],
+  "totalFiles": 540,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "very-large",
+  "stats": {
+    "filesScanned": 540,
+    "byCategory": {
+      "config": 10,
+      "code": 415,
+      "data": 4,
+      "docs": 63,
+      "infra": 3,
+      "markup": 44,
+      "script": 1
+    },
+    "byLanguage": {
+      "json": 6,
+      "unknown": 2,
+      "config": 4,
+      "python": 181,
+      "mako": 1,
+      "xlsx": 8,
+      "sql": 4,
+      "txt": 2,
+      "yaml": 1,
+      "dockerfile": 2,
+      "markdown": 61,
+      "mmd": 33,
+      "html": 2,
+      "javascript": 1,
+      "typescript": 188,
+      "css": 42,
+      "conf": 1,
+      "powershell": 1
+    }
+  }
+}

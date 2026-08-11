@@ -1,0 +1,375 @@
+{
+  "batchIndex": 1,
+  "nodes": [
+    {
+      "id": "file:backend/migrations/001_catalog_tables.sql",
+      "type": "file",
+      "name": "001_catalog_tables.sql",
+      "summary": "Migration 001 defining the Product Catalog schema: brands, product categories, products, specs, images, brand compatibility, and bulk import job tracking tables compatible with SQLite and PostgreSQL.",
+      "tags": ["migration", "sql", "catalog", "products", "sqlite", "postgresql"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "complex",
+      "languageNotes": "Dual-dialect: SQLite DDL (AUTOINCREMENT, DATETIME, BOOLEAN) is the active block; a commented PostgreSQL block at the bottom uses SERIAL, TIMESTAMPTZ, BOOL, JSONB, and a TSVECTOR generated column for full-text search."
+    },
+    {
+      "id": "file:backend/migrations/002_equipment_registry.sql",
+      "type": "file",
+      "name": "002_equipment_registry.sql",
+      "summary": "Migration 002 defining the Equipment Registry schema with 8 idempotent PostgreSQL tables for tracking physical forklift assets, status transitions, locations, hour meters, documents, photos, and ownership costs.",
+      "tags": ["migration", "sql", "equipment", "forklift", "registry", "postgresql"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "complex",
+      "languageNotes": "PostgreSQL-only (SERIAL, TIMESTAMPTZ, TSVECTOR generated column for FTS, partial indexes, check constraints using VARCHAR enums); wrapped in BEGIN/COMMIT transaction. Includes pre-flight checklist and rollback script in comments."
+    },
+    {
+      "id": "table:backend/migrations/001_catalog_tables.sql:brands",
+      "type": "table",
+      "name": "brands",
+      "summary": "Equipment and parts brand registry storing brand name, slug, role (primary/parts_only/both), logo URL, country, website, and active/sort metadata.",
+      "tags": ["catalog", "brand", "sql", "product", "master-data"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/migrations/001_catalog_tables.sql:product_categories",
+      "type": "table",
+      "name": "product_categories",
+      "summary": "Self-referential hierarchical product category tree supporting up to 3 levels (division, category, sub-category) with bilingual Lao/English names.",
+      "tags": ["catalog", "category", "sql", "hierarchy", "product", "self-referential"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/migrations/001_catalog_tables.sql:products",
+      "type": "table",
+      "name": "products",
+      "summary": "Core product catalog table storing equipment and spare parts with SKU, brand, category, bilingual names, and business flags for sale, rental, service item, and used availability.",
+      "tags": ["catalog", "product", "sql", "sku", "equipment", "spare-parts"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:backend/migrations/001_catalog_tables.sql:product_specs",
+      "type": "table",
+      "name": "product_specs",
+      "summary": "EAV-pattern table storing flexible grouped technical specifications for products (e.g. Performance, Technical, Origin) with key, label, value, and optional unit.",
+      "tags": ["catalog", "product", "specs", "eav", "sql", "attributes"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/migrations/001_catalog_tables.sql:product_images",
+      "type": "table",
+      "name": "product_images",
+      "summary": "Stores product image URL metadata with primary image flag and display sort order, cascading deletes on product removal.",
+      "tags": ["catalog", "product", "images", "sql", "media"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/migrations/001_catalog_tables.sql:product_compat_brands",
+      "type": "table",
+      "name": "product_compat_brands",
+      "summary": "N:M junction table linking spare-parts products to the equipment brands they are compatible with, enabling cross-brand parts compatibility queries.",
+      "tags": ["catalog", "product", "brand", "compatibility", "sql", "junction"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/migrations/001_catalog_tables.sql:import_jobs",
+      "type": "table",
+      "name": "import_jobs",
+      "summary": "Tracks bulk data import jobs (e.g. Excel uploads) including status lifecycle (pending/preview/processing/completed/partial/failed), row counts, and JSON preview data.",
+      "tags": ["catalog", "import", "job", "sql", "bulk", "etl"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/migrations/001_catalog_tables.sql:import_errors",
+      "type": "table",
+      "name": "import_errors",
+      "summary": "Records per-row import errors for bulk import jobs, storing raw row data snapshots and error messages to support debugging failed imports.",
+      "tags": ["catalog", "import", "error", "sql", "debugging"],
+      "filePath": "backend/migrations/001_catalog_tables.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/migrations/002_equipment_registry.sql:forklift_models",
+      "type": "table",
+      "name": "forklift_models",
+      "summary": "Equipment model/series catalog defining shared specifications (fuel type, capacity_kg, max_lift_height_mm) that multiple physical forklift assets reference.",
+      "tags": ["equipment", "forklift", "model", "sql", "registry", "catalog"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "type": "table",
+      "name": "forklifts",
+      "summary": "Core physical forklift asset table with serial number, status (in_stock/sold/rented/in_service/reserved/decommissioned), condition, fuel type, hour meter readings, warranty, and a generated full-text search vector.",
+      "tags": ["equipment", "forklift", "asset", "sql", "registry", "fleet"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:backend/migrations/002_equipment_registry.sql:forklift_status_history",
+      "type": "table",
+      "name": "forklift_status_history",
+      "summary": "Immutable append-only audit trail recording every forklift status transition (from_status → to_status) with reason and the user who made the change.",
+      "tags": ["equipment", "forklift", "status", "history", "audit", "sql"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/migrations/002_equipment_registry.sql:forklift_locations",
+      "type": "table",
+      "name": "forklift_locations",
+      "summary": "Location history log for forklifts; the most recent row by effective_date represents the current physical location or customer site.",
+      "tags": ["equipment", "forklift", "location", "history", "sql"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/migrations/002_equipment_registry.sql:forklift_hour_meter_logs",
+      "type": "table",
+      "name": "forklift_hour_meter_logs",
+      "summary": "Append-only log of point-in-time hour meter readings for forklifts, sourced from manual entry, service visits, or telemetry; each insert also triggers an update of forklifts.current_hour_meter.",
+      "tags": ["equipment", "forklift", "hour-meter", "telemetry", "sql", "audit"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/migrations/002_equipment_registry.sql:forklift_documents",
+      "type": "table",
+      "name": "forklift_documents",
+      "summary": "File attachment metadata for forklift-related documents (warranty, inspection, insurance, registration, manuals, certificates) with expiry date tracking and external file storage.",
+      "tags": ["equipment", "forklift", "document", "attachment", "sql", "compliance"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/migrations/002_equipment_registry.sql:forklift_photos",
+      "type": "table",
+      "name": "forklift_photos",
+      "summary": "Visual photo documentation for forklifts with primary image flag, thumbnail URL, caption, taken date, and display sort ordering.",
+      "tags": ["equipment", "forklift", "photo", "image", "sql", "media"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/migrations/002_equipment_registry.sql:forklift_ownership_costs",
+      "type": "table",
+      "name": "forklift_ownership_costs",
+      "summary": "Total Cost of Ownership (TCO) entries tracking per-event costs (purchase, maintenance, repair, insurance, parts, inspection) per forklift with currency, vendor, and reference number.",
+      "tags": ["equipment", "forklift", "cost", "tco", "finance", "sql"],
+      "filePath": "backend/migrations/002_equipment_registry.sql",
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/migrations/001_catalog_tables.sql",
+      "target": "table:backend/migrations/001_catalog_tables.sql:brands",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/001_catalog_tables.sql",
+      "target": "table:backend/migrations/001_catalog_tables.sql:product_categories",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/001_catalog_tables.sql",
+      "target": "table:backend/migrations/001_catalog_tables.sql:products",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/001_catalog_tables.sql",
+      "target": "table:backend/migrations/001_catalog_tables.sql:product_specs",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/001_catalog_tables.sql",
+      "target": "table:backend/migrations/001_catalog_tables.sql:product_images",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/001_catalog_tables.sql",
+      "target": "table:backend/migrations/001_catalog_tables.sql:product_compat_brands",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/001_catalog_tables.sql",
+      "target": "table:backend/migrations/001_catalog_tables.sql:import_jobs",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/001_catalog_tables.sql",
+      "target": "table:backend/migrations/001_catalog_tables.sql:import_errors",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklift_models",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklift_status_history",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklift_locations",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklift_hour_meter_logs",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklift_documents",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklift_photos",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklift_ownership_costs",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "table:backend/migrations/001_catalog_tables.sql:products",
+      "target": "table:backend/migrations/001_catalog_tables.sql:brands",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/001_catalog_tables.sql:products",
+      "target": "table:backend/migrations/001_catalog_tables.sql:product_categories",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/001_catalog_tables.sql:product_categories",
+      "target": "table:backend/migrations/001_catalog_tables.sql:product_categories",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/001_catalog_tables.sql:product_specs",
+      "target": "table:backend/migrations/001_catalog_tables.sql:products",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/001_catalog_tables.sql:product_images",
+      "target": "table:backend/migrations/001_catalog_tables.sql:products",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/001_catalog_tables.sql:product_compat_brands",
+      "target": "table:backend/migrations/001_catalog_tables.sql:products",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/001_catalog_tables.sql:product_compat_brands",
+      "target": "table:backend/migrations/001_catalog_tables.sql:brands",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/001_catalog_tables.sql:import_errors",
+      "target": "table:backend/migrations/001_catalog_tables.sql:import_jobs",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklift_models",
+      "target": "table:backend/migrations/001_catalog_tables.sql:brands",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklift_models",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "target": "table:backend/migrations/001_catalog_tables.sql:brands",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklift_status_history",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklift_locations",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklift_hour_meter_logs",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklift_documents",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklift_photos",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/migrations/002_equipment_registry.sql:forklift_ownership_costs",
+      "target": "table:backend/migrations/002_equipment_registry.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "file:backend/migrations/002_equipment_registry.sql",
+      "target": "file:backend/migrations/001_catalog_tables.sql",
+      "type": "depends_on",
+      "weight": 0.6
+    }
+  ]
+}

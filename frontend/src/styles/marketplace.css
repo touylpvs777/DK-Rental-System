@@ -1,0 +1,639 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MARKETPLACE / CHROME WEB STORE INSPIRED DESIGN LAYER
+   - Card-based interface with elevated shadows
+   - Rounded corners (radius-lg)
+   - Hover lift effects
+   - Grid/List toggle support
+   - KPI widget strip
+   - Responsive breakpoints
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Marketplace Card ─────────────────────────────────────────────────── */
+
+.mp-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow 200ms var(--ease-default), transform 200ms var(--ease-default), border-color 200ms;
+  cursor: pointer;
+  position: relative;
+}
+
+.mp-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--color-primary-200);
+}
+
+[data-theme="dark"] .mp-card:hover {
+  border-color: var(--color-primary-700);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.mp-card-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.mp-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mp-card-thumb svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.mp-card-body {
+  padding: 14px 16px;
+}
+
+.mp-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mp-card-subtitle {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mp-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.mp-card-value {
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.mp-card-footer {
+  padding: 10px 16px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* ─── Marketplace Grid ─────────────────────────────────────────────────── */
+
+.mp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .mp-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ─── KPI Widget Strip ─────────────────────────────────────────────────── */
+
+.mp-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .mp-kpi-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .mp-kpi-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mp-kpi-widget {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 200ms, border-color 200ms;
+}
+
+.mp-kpi-widget:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+
+.mp-kpi-widget::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--kpi-color, var(--color-primary-600));
+}
+
+.mp-kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mp-kpi-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+}
+
+.mp-kpi-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--kpi-bg, var(--color-primary-50));
+  color: var(--kpi-color, var(--color-primary-600));
+}
+
+[data-theme="dark"] .mp-kpi-icon {
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.mp-kpi-value {
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+  margin-top: 8px;
+  line-height: 1;
+}
+
+.mp-kpi-change {
+  font-size: 11.5px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mp-kpi-change.positive { color: var(--color-success-600); }
+.mp-kpi-change.negative { color: var(--color-danger-600); }
+.mp-kpi-change.neutral  { color: var(--color-text-muted); }
+
+/* ─── View Toggle (Grid/List) ──────────────────────────────────────────── */
+
+.mp-view-toggle {
+  display: inline-flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.mp-view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 100ms, color 100ms;
+}
+
+.mp-view-btn:hover {
+  background: var(--color-bg-subtle);
+  color: var(--color-text);
+}
+
+.mp-view-btn.active {
+  background: var(--color-primary-600);
+  color: var(--color-on-primary);
+}
+
+[data-theme="dark"] .mp-view-btn.active {
+  background: var(--color-primary-700);
+}
+
+/* ─── Section Headers ──────────────────────────────────────────────────── */
+
+.mp-section {
+  margin-top: 28px;
+}
+
+.mp-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.mp-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.mp-section-sub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-left: 8px;
+}
+
+.mp-section-link {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--color-primary-600);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 100ms;
+}
+
+.mp-section-link:hover {
+  color: var(--color-primary-700);
+}
+
+/* ─── Dashboard Charts Panel ───────────────────────────────────────────── */
+
+.mp-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .mp-chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mp-chart-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.mp-chart-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+/* ─── Skeleton Cards (Loading) ─────────────────────────────────────────── */
+
+.mp-card-skeleton {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.mp-card-skeleton .mp-card-thumb {
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.mp-card-skeleton .skeleton-line {
+  height: 14px;
+  border-radius: 4px;
+  background: var(--color-bg-subtle);
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+[data-theme="dark"] .mp-card-skeleton .skeleton-line {
+  background: var(--color-surface-raised);
+}
+
+/* ─── Empty State (Chrome-inspired) ───────────────────────────────────── */
+
+.mp-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.mp-empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.mp-empty-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--color-text-muted);
+}
+
+.mp-empty-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.mp-empty-sub {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  max-width: 300px;
+}
+
+/* ─── Hero Banner (Feature area) ───────────────────────────────────────── */
+
+.mp-hero {
+  background: #003366;
+  border-radius: var(--radius-xl);
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  color: var(--color-on-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .mp-hero {
+  background: #003366;
+  border: 1px solid var(--color-border);
+}
+
+/* Secondary (ghost) buttons on the DK Blue hero banner need a translucent-white
+   treatment — the default .btn-ghost border/text is near-invisible on this bg. */
+.mp-hero .btn-ghost,
+.mp-hero .btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.mp-hero .btn-ghost:hover:not(:disabled),
+.mp-hero .btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+}
+
+.mp-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mp-hero-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.mp-hero-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+}
+
+.mp-hero-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ─── Hero Grid (hero banner + promo cards, Store-style) ───────────────── */
+
+.mp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 980px) {
+  .mp-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mp-hero-grid .mp-hero {
+  margin-bottom: 0;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mp-promo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mp-promo-card {
+  flex: 1;
+  border-radius: var(--radius-xl);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+  min-height: 56px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform 150ms var(--ease-default), box-shadow 150ms var(--ease-default);
+}
+
+.mp-promo-card:hover {
+  transform: translateY(-2px) scale(1.012);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.mp-promo-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  opacity: 0.35;
+}
+
+.mp-promo-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+
+.mp-promo-value {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.mp-promo-sub {
+  font-size: 11.5px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* ─── Scrollable Row (Store-style trending row) ────────────────────────── */
+
+.mp-row-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mp-row-nav {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.mp-row-nav-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 100ms, color 100ms, border-color 100ms;
+}
+
+.mp-row-nav-btn:hover {
+  background: var(--color-bg-subtle);
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+}
+
+.mp-row-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.mp-row-nav-btn:disabled:hover {
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.mp-row-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.mp-row-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.mp-row-scroll > * {
+  flex: 0 0 auto;
+}
+
+/* ─── Toolbar Enhancement ──────────────────────────────────────────────── */
+
+.mp-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.mp-toolbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── Quick Stats Row ──────────────────────────────────────────────────── */
+
+.mp-quick-stats {
+  display: flex;
+  gap: 24px;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+
+.mp-quick-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mp-quick-stat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.mp-quick-stat-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.mp-quick-stat-value {
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}

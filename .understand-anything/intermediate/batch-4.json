@@ -1,0 +1,107 @@
+{
+  "batchIndex": 4,
+  "nodes": [
+    {
+      "id": "document:docs/architecture/01-system-architecture.md",
+      "type": "document",
+      "name": "System Architecture",
+      "summary": "Defines the full tech stack (React 19 + FastAPI async + SQLAlchemy 2.0 + SQLite/PostgreSQL) and layered architecture pattern with distinct responsibilities for Routes, Services, Repositories, Middleware, and Auth. Includes ASCII diagram of the three-tier SPA → FastAPI → Database stack and JWT-based auth with token revocation.",
+      "tags": ["architecture", "system-design", "tech-stack", "fastapi", "react", "backend", "frontend", "jwt"],
+      "filePath": "docs/architecture/01-system-architecture.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/architecture/02-database-schema.md",
+      "type": "document",
+      "name": "Database Schema",
+      "summary": "Documents all 56 database tables (769+ columns, 143 foreign keys) organized into 11 domains: Auth/RBAC, CRM, Product Catalog, Equipment, Quotations, Rental Contracts, Movements, Maintenance, Inventory, Billing, and Audit. Includes ER overview diagram and per-domain table breakdown with column counts and purpose.",
+      "tags": ["database", "schema", "erd", "tables", "sql", "sqlalchemy", "domains"],
+      "filePath": "docs/architecture/02-database-schema.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/architecture/03-api-inventory.md",
+      "type": "document",
+      "name": "API Inventory",
+      "summary": "Complete inventory of 218 REST endpoints across 17 route modules under /api/v1/*. Includes per-module HTTP verb counts and state machine workflow diagrams for the Quotation, Rental Contract, Asset Movement, Work Order, and Billing workflows.",
+      "tags": ["api", "rest", "endpoints", "routes", "workflow", "state-machine", "fastapi"],
+      "filePath": "docs/architecture/03-api-inventory.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/architecture/04-frontend-modules.md",
+      "type": "document",
+      "name": "Frontend Modules",
+      "summary": "Catalogs the React/TypeScript frontend: 48 lazy-loaded pages across 16 domains, 76 components (layout, UI, domain, module), 17 Axios API clients, 4 Zustand stores, and a CSS architecture based on design tokens. Covers routing, state management, and component hierarchy.",
+      "tags": ["frontend", "react", "typescript", "components", "zustand", "routing", "ui", "pages"],
+      "filePath": "docs/architecture/04-frontend-modules.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/architecture/05-rbac-model.md",
+      "type": "document",
+      "name": "RBAC Model",
+      "summary": "Defines the role-based access control system with 4 roles (super_admin, manager, sales, support) and 32 named permissions. Covers the permission matrix per role, compile-time PermissionName enum, require_permission() dependency factory, startup role seeding, and gaps where maintenance/inventory/movement modules lack dedicated permissions.",
+      "tags": ["rbac", "security", "permissions", "roles", "authorization", "access-control"],
+      "filePath": "docs/architecture/05-rbac-model.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/architecture/06-project-structure.md",
+      "type": "document",
+      "name": "Project Structure",
+      "summary": "Full annotated directory tree of the CRM monorepo: Docker Compose / Nginx config at root, backend Python app under backend/app/ (routes, services, repositories, models, schemas, core), and frontend src/ (pages, components, modules, stores, api clients, styles). Includes file count summary (94 Python files, ~140 TS/TSX files, 56 DB tables).",
+      "tags": ["project-structure", "directory-layout", "file-organization", "docker", "monorepo"],
+      "filePath": "docs/architecture/06-project-structure.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/architecture/07-dependency-graph.md",
+      "type": "document",
+      "name": "Dependency Graph",
+      "summary": "Maps the backend dependency chain (Routes → Schemas/Services → Repositories → Models → Database Session → Config) and cross-service call graph (rental_workflow_service orchestrates billing, forklift status, and movement services). Also covers the frontend component hierarchy and all Python (requirements.txt) and npm package dependencies.",
+      "tags": ["dependencies", "architecture", "backend", "frontend", "packages", "service-graph", "python", "npm"],
+      "filePath": "docs/architecture/07-dependency-graph.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/architecture/08-business-workflows.md",
+      "type": "document",
+      "name": "Business Workflows",
+      "summary": "Detailed ASCII flow diagrams for 7 core operational workflows: Sales Pipeline (Lead → Quotation → Rental Contract), Equipment Lifecycle (in_stock / rented / in_service / sold / decommissioned), Rental Operations (delivery, billing cycles, extensions, returns, damage reports), Billing Cycle (invoice → payment → revenue recognition), Maintenance Operations (PM plan → schedule → work order → inventory consumption), Inventory Management (PO → receive → issue/transfer/consume), and Product Catalog Excel import.",
+      "tags": ["workflows", "business-logic", "state-machine", "operations", "process", "rental", "billing", "maintenance", "inventory"],
+      "filePath": "docs/architecture/08-business-workflows.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/architecture/09-gap-analysis.md",
+      "type": "document",
+      "name": "Gap Analysis",
+      "summary": "Rates 18 modules by completion (87% overall), identifies 5 missing modules (Settings, Notifications, Automotive Service, Technician Management, Customer Portal), 6 incomplete modules, 7 architecture issues (no test suite, no rate limiting, SQLite/PostgreSQL drift), 8 database schema gaps, 5 API gaps, and 7 frontend gaps. Provides a prioritized 10-item refactoring backlog.",
+      "tags": ["gap-analysis", "completeness", "technical-debt", "roadmap", "issues", "refactoring", "backlog"],
+      "filePath": "docs/architecture/09-gap-analysis.md",
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {"source": "document:docs/architecture/01-system-architecture.md", "target": "document:docs/architecture/02-database-schema.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/01-system-architecture.md", "target": "document:docs/architecture/03-api-inventory.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/01-system-architecture.md", "target": "document:docs/architecture/04-frontend-modules.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/01-system-architecture.md", "target": "document:docs/architecture/05-rbac-model.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/01-system-architecture.md", "target": "document:docs/architecture/06-project-structure.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/01-system-architecture.md", "target": "document:docs/architecture/07-dependency-graph.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/02-database-schema.md", "target": "document:docs/architecture/03-api-inventory.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/02-database-schema.md", "target": "document:docs/architecture/08-business-workflows.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/02-database-schema.md", "target": "document:docs/architecture/09-gap-analysis.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/03-api-inventory.md", "target": "document:docs/architecture/04-frontend-modules.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/03-api-inventory.md", "target": "document:docs/architecture/08-business-workflows.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/03-api-inventory.md", "target": "document:docs/architecture/09-gap-analysis.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/04-frontend-modules.md", "target": "document:docs/architecture/05-rbac-model.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/04-frontend-modules.md", "target": "document:docs/architecture/07-dependency-graph.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/04-frontend-modules.md", "target": "document:docs/architecture/09-gap-analysis.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/05-rbac-model.md", "target": "document:docs/architecture/09-gap-analysis.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/06-project-structure.md", "target": "document:docs/architecture/07-dependency-graph.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/07-dependency-graph.md", "target": "document:docs/architecture/08-business-workflows.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/architecture/08-business-workflows.md", "target": "document:docs/architecture/09-gap-analysis.md", "type": "related", "weight": 0.5}
+  ]
+}

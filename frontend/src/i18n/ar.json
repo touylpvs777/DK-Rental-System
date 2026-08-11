@@ -1,0 +1,3013 @@
+{
+	"common": {
+		"brandName": "DK Service",
+		"unassigned": "غير معيّن",
+		"brandTagline": "منصة المؤسسات",
+		"language": "اللغة",
+		"noDataYet": "لا توجد بيانات بعد",
+		"dataWillAppear": "ستظهر البيانات هنا بمجرد وجود سجلات",
+		"save": "حفظ",
+		"saving": "جارٍ الحفظ…",
+		"cancel": "إلغاء",
+		"delete": "حذف",
+		"deleting": "جارٍ الحذف…",
+		"edit": "تعديل",
+		"create": "إنشاء",
+		"add": "إضافة",
+		"remove": "إزالة",
+		"search": "بحث",
+		"filter": "تصفية",
+		"filters": "عوامل التصفية",
+		"actions": "الإجراءات",
+		"status": "الحالة",
+		"loading": "جارٍ التحميل…",
+		"close": "إغلاق",
+		"confirm": "تأكيد",
+		"back": "رجوع",
+		"next": "التالي",
+		"previous": "السابق",
+		"submit": "إرسال",
+		"view": "عرض",
+		"viewDetails": "عرض التفاصيل",
+		"download": "تنزيل",
+		"upload": "رفع",
+		"yes": "نعم",
+		"no": "لا",
+		"required": "مطلوب",
+		"optional": "اختياري",
+		"name": "الاسم",
+		"email": "البريد الإلكتروني",
+		"phone": "الهاتف",
+		"address": "العنوان",
+		"date": "التاريخ",
+		"description": "الوصف",
+		"notes": "ملاحظات",
+		"total": "الإجمالي",
+		"subtotal": "المجموع الفرعي",
+		"quantity": "الكمية",
+		"price": "السعر",
+		"amount": "المبلغ",
+		"type": "النوع",
+		"category": "الفئة",
+		"all": "الكل",
+		"none": "بدون",
+		"unknown": "غير معروف",
+		"active": "نشط",
+		"inactive": "غير نشط",
+		"pending": "قيد الانتظار",
+		"approved": "موافق عليه",
+		"rejected": "مرفوض",
+		"completed": "مكتمل",
+		"cancelled": "ملغى",
+		"noResultsFound": "لم يتم العثور على نتائج",
+		"tryAdjustingFilters": "حاول تعديل عوامل التصفية أو مصطلحات البحث",
+		"somethingWentWrong": "حدث خطأ ما",
+		"retry": "إعادة المحاولة",
+		"clearFilters": "مسح عوامل التصفية",
+		"export": "تصدير",
+		"print": "طباعة",
+		"closeDialog": "إغلاق مربع الحوار",
+		"closePanel": "إغلاق اللوحة",
+		"dismissNotification": "تجاهل الإشعار",
+		"gridView": "عرض شبكي",
+		"listView": "عرض قائمة",
+		"page": "صفحة",
+		"of": "من",
+		"rowsPerPage": "صفوف لكل صفحة",
+		"selectAll": "تحديد الكل",
+		"createdAt": "تاريخ الإنشاء",
+		"updatedAt": "تاريخ التحديث",
+		"mainNavigation": "التنقل الرئيسي",
+		"moreLanguages": "لغات أخرى",
+		"loadingApplication": "جارٍ تحميل التطبيق",
+		"skipToContent": "تخطَّ إلى المحتوى",
+		"theme": "المظهر",
+		"themeLight": "فاتح",
+		"themeDark": "داكن",
+		"themeSystem": "حسب النظام",
+		"scrollLeft": "التمرير لليسار",
+		"scrollRight": "التمرير لليمين",
+		"itemCode": "رمز الصنف",
+		"unit": "الوحدة",
+		"exportPdf": "تصدير إلى PDF",
+		"clear": "مسح"
+	},
+	"leads": {
+		"status": {
+			"new": "جديد",
+			"contacted": "تم التواصل",
+			"qualified": "مؤهل",
+			"proposal": "عرض تجاري",
+			"won": "تم الفوز",
+			"lost": "خسارة"
+		},
+		"form": {
+			"editTitle": "تعديل العميل المحتمل التجاري",
+			"newTitle": "عميل محتمل تجاري جديد",
+			"saveChanges": "حفظ التغييرات",
+			"createLead": "إنشاء عميل محتمل تجاري",
+			"titleLabel": "العنوان",
+			"titlePlaceholder": "مثال: فرصة معدات للشركات",
+			"wonLeadsCannotChange": "لا يمكن تغيير حالة الفرص التجارية المكتسبة.",
+			"sourceLabel": "المصدر",
+			"sourceNone": "— بدون —",
+			"valueLabel": "القيمة ($)",
+			"descriptionPlaceholder": "ملاحظات موجزة حول هذا العميل المحتمل التجاري…"
+		},
+		"source": {
+			"website": "الموقع الإلكتروني",
+			"referral": "إحالة",
+			"coldCall": "اتصال مباشر",
+			"email": "البريد الإلكتروني",
+			"socialMedia": "وسائل التواصل الاجتماعي",
+			"other": "أخرى"
+		},
+		"list": {
+			"title": "العملاء المحتملون التجاريون",
+			"totalCount": "{{count}} عميلًا محتملًا تجاريًا",
+			"newLead": "عميل محتمل تجاري جديد",
+			"searchPlaceholder": "البحث عن العملاء المحتملين التجاريين…",
+			"allSources": "جميع المصادر",
+			"resultsCount": "{{count}} نتيجة",
+			"colLead": "العميل المحتمل التجاري",
+			"colSource": "المصدر",
+			"colValue": "القيمة",
+			"noLeadsFound": "لم يتم العثور على عملاء محتملين تجاريين",
+			"createFirstLead": "أنشئ أول عميل محتمل تجاري لديك للبدء.",
+			"showingRange": "عرض {{start}}–{{end}} من {{total}}",
+			"deleteTitle": "حذف العميل المحتمل التجاري",
+			"deleteMessage": "هل أنت متأكد أنك تريد حذف \"{{title}}\"؟ لا يمكن التراجع عن هذا الإجراء.",
+			"toast": {
+				"loadError": "فشل تحميل العملاء المحتملين.",
+				"createSuccess": "تم إنشاء العميل المحتمل.",
+				"createError": "فشل إنشاء العميل المحتمل.",
+				"updateSuccess": "تم تحديث العميل المحتمل.",
+				"updateError": "فشل تحديث العميل المحتمل.",
+				"deleteSuccess": "تم حذف العميل المحتمل.",
+				"deleteError": "فشل حذف العميل المحتمل."
+			}
+		}
+	},
+	"nav": {
+		"groups": {
+			"dashboard": "لوحة القيادة التنفيذية",
+			"crm": "إدارة علاقات العملاء",
+			"sales": "المبيعات",
+			"purchasing": "المشتريات",
+			"equipment": "أصول المعدات",
+			"rental": "عمليات التأجير",
+			"maintenance": "الخدمة والصيانة",
+			"inventory": "مراقبة المخزون",
+			"finance": "المالية والمحاسبة",
+			"executive": "تقارير الإدارة",
+			"projects": "محفظة المشاريع"
+		},
+		"items": {
+			"overview": "نظرة عامة تشغيلية",
+			"customers": "العملاء",
+			"leads": "العملاء المحتملون التجاريون",
+			"quotations": "العروض التجارية",
+			"registry": "سجل الأصول",
+			"movements": "حركات المخزون",
+			"contracts": "عقود الخدمة",
+			"dashboard": "لوحة القيادة التنفيذية",
+			"maintenance": "الخدمة والصيانة",
+			"inventory": "إدارة المخزون",
+			"billing": "الفوترة والذمم المدينة",
+			"products": "كتالوج المنتجات",
+			"invoices": "الفواتير",
+			"payments": "المدفوعات",
+			"deposits": "الودائع",
+			"statements": "كشف الحساب",
+			"activity": "النشاط",
+			"reports": "التقارير",
+			"analytics": "التحليلات التشغيلية",
+			"iotTelemetry": "قياس إنترنت الأشياء عن بُعد",
+			"settings": "الإعدادات",
+			"warehouseProjects": "مشاريع المستودعات",
+			"purchaseOrders": "أوامر الشراء",
+			"salesOrders": "أوامر البيع",
+			"taxInvoices": "الفواتير الضريبية",
+			"creditNotes": "إشعارات دائن",
+			"paymentVouchers": "سندات الصرف",
+			"deliveryNotes": "إشعارات التسليم",
+			"goodsReceive": "إيصالات استلام البضائع",
+			"goodsIssue": "إذونات صرف البضائع"
+		},
+		"expandSidebar": "توسيع لوحة التنقل",
+		"collapseSidebar": "طي لوحة التنقل"
+	},
+	"movement": {
+		"status": {
+			"draft": "مسودة",
+			"preparing": "قيد التحضير",
+			"in_transit": "قيد النقل",
+			"delivered": "تم التسليم",
+			"completed": "مكتمل",
+			"cancelled": "ملغى"
+		},
+		"type": {
+			"warehouse_transfer": "نقل بين المستودعات",
+			"customer_deployment": "نشر لدى العميل",
+			"customer_return": "إرجاع من العميل",
+			"internal_relocation": "نقل داخلي"
+		},
+		"priority": {
+			"low": "منخفضة",
+			"normal": "عادية",
+			"high": "عالية",
+			"urgent": "عاجلة"
+		},
+		"card": {
+			"customer": "العميل: {{name}}"
+		},
+		"timeline": {
+			"title": "الجدول الزمني للحركة",
+			"by": "بواسطة {{name}}"
+		},
+		"list": {
+			"title": "التحكم بالحركات",
+			"totalCount": "{{count}} حركة",
+			"refresh": "تحديث",
+			"newMovement": "حركة جديدة",
+			"loadFailed": "فشل تحميل الحركات.",
+			"searchPlaceholder": "ابحث برقم أو موقع أو رمز...",
+			"allStatuses": "جميع الحالات",
+			"allTypes": "جميع الأنواع",
+			"resultsCount": "{{count}} نتيجة",
+			"colMovement": "الحركة",
+			"colEquipment": "المعدة",
+			"colFromTo": "من ← إلى",
+			"colScheduled": "الموعد المجدول",
+			"colPriority": "الأولوية",
+			"noMovementsFound": "لم يتم العثور على حركات",
+			"pageOf": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})"
+		},
+		"form": {
+			"title": "حركة جديدة",
+			"backToMovements": "العودة إلى الحركات",
+			"movementType": "نوع الحركة",
+			"priority": "الأولوية",
+			"forkliftId": "معرّف الرافعة الشوكية",
+			"forkliftIdPlaceholder": "أدخل معرّف الرافعة الشوكية",
+			"customerId": "معرّف العميل",
+			"fromLocation": "موقع الانطلاق",
+			"fromLocationPlaceholder": "مستودع DK A",
+			"toLocation": "موقع الوصول",
+			"toLocationPlaceholder": "موقع العميل X",
+			"fromAddress": "عنوان الانطلاق",
+			"toAddress": "عنوان الوصول",
+			"addressPlaceholder": "العنوان الكامل (اختياري)",
+			"scheduledDate": "التاريخ المجدول",
+			"trackingCode": "رمز التتبع / QR",
+			"trackingCodePlaceholder": "مرجع رمز QR أو الباركود",
+			"notesPlaceholder": "ملاحظات مرئية...",
+			"internalNotes": "ملاحظات داخلية",
+			"internalNotesPlaceholder": "للاستخدام الداخلي فقط...",
+			"creating": "جارٍ الإنشاء...",
+			"createMovement": "إنشاء الحركة",
+			"created": "تم إنشاء الحركة {{number}}.",
+			"createFailed": "فشل إنشاء الحركة.",
+			"errors": {
+				"forkliftRequired": "معرّف الرافعة الشوكية مطلوب.",
+				"fromLocationRequired": "موقع الانطلاق مطلوب.",
+				"toLocationRequired": "موقع الوصول مطلوب.",
+				"scheduledDateRequired": "التاريخ المجدول مطلوب."
+			}
+		},
+		"detail": {
+			"notFound": "لم يتم العثور على الحركة.",
+			"actionFailed": "فشل: {{action}}",
+			"actions": {
+				"startPreparing": "بدء التحضير",
+				"recordDeparture": "تسجيل المغادرة",
+				"recordArrival": "تسجيل الوصول",
+				"markComplete": "وضع علامة مكتمل"
+			},
+			"toasts": {
+				"preparationStarted": "بدأ التحضير",
+				"movementCompleted": "اكتملت الحركة",
+				"cancelled": "تم الإلغاء",
+				"departed": "تمت المغادرة",
+				"arrived": "تم الوصول"
+			},
+			"cancelledByUser": "ألغاه المستخدم",
+			"from": "من",
+			"to": "إلى",
+			"scheduled": "الموعد المجدول",
+			"trackingCode": "رمز التتبع",
+			"equipment": "المعدة",
+			"customer": "العميل",
+			"contract": "العقد",
+			"driver": "السائق",
+			"departed": "تمت المغادرة",
+			"arrived": "تم الوصول",
+			"departureHours": "ساعات المغادرة",
+			"arrivalHours": "ساعات الوصول",
+			"internalNote": "ملاحظة داخلية",
+			"cancellationReason": "سبب الإلغاء",
+			"departureHourMeter": "عداد الساعات عند المغادرة",
+			"arrivalHourMeter": "عداد الساعات عند الوصول"
+		}
+	},
+	"header": {
+		"appearance": "المظهر",
+		"settings": "الإعدادات",
+		"logout": "تسجيل الخروج",
+		"roleAdmin": "مسؤول",
+		"roleUser": "مستخدم",
+		"myProfile": "ملفي الشخصي",
+		"changePassword": "تغيير كلمة المرور",
+		"searchPlaceholder": "البحث في الصفحات، الإجراءات...",
+		"searchTrigger": "بحث...",
+		"searchLabel": "بحث (Ctrl+K)",
+		"searchCommandsLabel": "البحث عن أوامر",
+		"clearSearch": "مسح البحث",
+		"noResults": "لا توجد نتائج لـ \"{{query}}\"",
+		"navigate": "التنقل",
+		"select": "اختيار",
+		"close": "إغلاق",
+		"toggleSidebar": "تبديل الشريط الجانبي",
+		"groupNavigation": "التنقل",
+		"groupQuickActions": "إجراءات سريعة",
+		"quickActionNewCustomer": "عميل جديد",
+		"quickActionNewQuotation": "عرض سعر جديد",
+		"quickActionNewContract": "عقد جديد",
+		"quickActionRegisterEquipment": "تسجيل معدة",
+		"justNow": "الآن",
+		"minutesAgo": "منذ {{count}} د",
+		"hoursAgo": "منذ {{count}} س",
+		"daysAgo": "منذ {{count}} يوم",
+		"notifications": "الإشعارات",
+		"notificationsUnread": "الإشعارات، {{count}} غير مقروءة",
+		"noRecentActivity": "لا يوجد نشاط حديث",
+		"systemUser": "النظام",
+		"viewAllActivity": "عرض كل النشاط ←",
+		"searchResults": "نتائج البحث",
+		"breadcrumb": "مسار التنقل",
+		"userActions": "إجراءات المستخدم",
+		"markAllRead": "وضع علامة مقروء على الكل",
+		"adminBroadcast": "المسؤول"
+	},
+	"dashboard": {
+		"exec": {
+			"eyebrow": "نظرة عامة تنفيذية",
+			"title": "مركز قيادة التأجير",
+			"rentalMvpEyebrow": "DK Rental · نظرة عامة تنفيذية",
+			"rentalMvpTitle": "لوحة معلومات الأسطول والتأجير",
+			"kpi": {
+				"totalFleet": "إجمالي الأسطول",
+				"totalFleetSub": "عدد الرافعات الشوكية المسجلة",
+				"activeRented": "قيد التأجير",
+				"activeRentedSub": "الوحدات المؤجرة حالياً",
+				"utilizationRate": "معدل الاستخدام",
+				"utilizationRateSub": "نسبة التأجير إلى إجمالي الأسطول",
+				"pendingMaintenance": "صيانة معلقة",
+				"pendingMaintenanceSub": "أعمال الصيانة الوقائية / الفحص المفتوحة",
+				"pendingMaintenanceCritical": "{{count}} قيد التنفيذ",
+				"totalStockValue": "إجمالي قيمة المخزون",
+				"totalStockValueSub": "رأس المال المستثمر في قطع الغيار",
+				"lowStockAlerts": "تنبيهات انخفاض المخزون",
+				"lowStockAlertsItems": "{{count}} عناصر",
+				"lowStockAlertsSub": "أقل من حد إعادة الطلب",
+				"lowStockAlertsCritical": "{{count}} حرجة"
+			},
+			"chart": {
+				"utilizationTab": "اتجاه استخدام الأسطول",
+				"revenueTab": "الإيرادات مقابل تكلفة الصيانة",
+				"last6Months": "آخر 6 أشهر",
+				"utilizationSeries": "نسبة الاستخدام %",
+				"revenueSeries": "الإيرادات",
+				"maintenanceSeries": "تكلفة الصيانة",
+				"months": {
+					"jan": "يناير",
+					"feb": "فبراير",
+					"mar": "مارس",
+					"apr": "أبريل",
+					"may": "مايو",
+					"jun": "يونيو"
+				}
+			},
+			"contracts": {
+				"title": "عقود التأجير النشطة",
+				"columnContractId": "رقم العقد",
+				"columnCustomerName": "اسم العميل",
+				"columnForkliftModel": "طراز الرافعة",
+				"columnEndDate": "تاريخ الانتهاء",
+				"columnStatus": "الحالة"
+			},
+			"lowStock": {
+				"title": "قطع غيار على وشك النفاد",
+				"minSuffix": "الحد الأدنى"
+			},
+			"status": {
+				"booked": "محجوز",
+				"onRent": "مؤجر",
+				"expiringSoon": "قريب الانتهاء",
+				"overdue": "متأخر",
+				"returned": "تم الإرجاع",
+				"cancelled": "ملغى"
+			},
+			"customizer": {
+				"fontSize": "حجم الخط",
+				"language": "اللغة",
+				"small": "صغير",
+				"medium": "متوسط",
+				"large": "كبير"
+			},
+			"brandsWeService": "العلامات التجارية التي نخدمها"
+		},
+		"title": "لوحة التحكم",
+		"updated": "آخر تحديث {{date}}",
+		"refresh": "تحديث",
+		"retry": "إعادة المحاولة",
+		"keyMetrics": "المقاييس الرئيسية",
+		"quickActions": "إجراءات سريعة",
+		"revenueFleet": "الإيرادات والأسطول",
+		"activityFleet": "النشاط والأسطول",
+		"fleetByFuelType": "الأسطول حسب نوع الوقود",
+		"upcomingTasks": "المهام القادمة",
+		"customerOverview": "نظرة عامة على العملاء",
+		"leadPipeline": "مسار العملاء المحتملين",
+		"resultsConversion": "النتائج والتحويل",
+		"recentActivity": "النشاط الأخير",
+		"viewAll": "عرض الكل",
+		"noRecentActivity": "لا يوجد نشاط حديث",
+		"loadError": "فشل تحميل بيانات لوحة التحكم.",
+		"kpi": {
+			"totalRevenue": "إجمالي الإيرادات",
+			"activeRentals": "عقود الإيجار النشطة",
+			"overdueCount": "{{count}} متأخر",
+			"fleetUtilization": "معدل استخدام الأسطول",
+			"rentedOfFleet": "{{rented}} من {{total}} مؤجرة",
+			"maintenanceDue": "صيانة مستحقة",
+			"criticalCount": "{{count}} حرجة",
+			"lowStock": "مخزون منخفض",
+			"outstandingInvoices": "الفواتير المستحقة",
+			"amountOverdue": "{{amount}} متأخر",
+			"totalCustomers": "إجمالي العملاء",
+			"active": "نشط",
+			"percentOfTotal": "{{pct}} من الإجمالي",
+			"prospects": "العملاء المحتملون",
+			"totalLeads": "إجمالي العملاء المحتملين",
+			"new": "جديد",
+			"contacted": "تم التواصل",
+			"qualified": "مؤهل",
+			"proposal": "عرض مقدم",
+			"won": "فوز",
+			"lost": "خسارة",
+			"conversion": "التحويل",
+			"winRate": "معدل الفوز",
+			"lostRate": "معدل الخسارة",
+			"wonOverTotal": "الفوز / الإجمالي",
+			"wonOverWonLost": "الفوز / (الفوز+الخسارة)",
+			"lostOverWonLost": "الخسارة / (الفوز+الخسارة)"
+		},
+		"quickAction": {
+			"createRental": "إنشاء عقد إيجار",
+			"createRentalDesc": "عقد إيجار جديد",
+			"addEquipment": "إضافة معدة",
+			"addEquipmentDesc": "تسجيل رافعة شوكية",
+			"createInvoice": "إنشاء فاتورة",
+			"createInvoiceDesc": "إصدار فاتورة",
+			"purchaseOrder": "أمر شراء",
+			"purchaseOrderDesc": "طلب قطع غيار",
+			"maintenance": "الصيانة",
+			"maintenanceDesc": "جدولة الصيانة"
+		},
+		"chart": {
+			"revenueTrend": "اتجاه الإيرادات",
+			"revenueTrendSub": "الإيرادات المفوترة شهريًا",
+			"noRevenueData": "لا توجد بيانات إيرادات بعد",
+			"rentalTrend": "اتجاه التأجير",
+			"rentalTrendSub": "العقود النشطة شهريًا",
+			"noRentalData": "لا توجد بيانات تأجير بعد",
+			"fleetUtilization": "معدل استخدام الأسطول",
+			"fleetUtilizationSub": "المعدات حسب الحالة",
+			"noFleetData": "لا توجد بيانات أسطول",
+			"total": "الإجمالي",
+			"maintenanceCost": "تكلفة الصيانة",
+			"maintenanceCostSub": "الإنفاق الشهري على الخدمة",
+			"noMaintenanceCostData": "لا توجد بيانات تكلفة صيانة",
+			"fleetByFuelType": "الأسطول حسب نوع الوقود",
+			"units": "وحدات"
+		},
+		"task": {
+			"loading": "جارٍ التحميل...",
+			"contractsExpiring": "عقود تنتهي قريبًا",
+			"countInDays": "{{count}} خلال {{days}} يومًا",
+			"noContractsExpiring": "لا توجد عقود تنتهي قريبًا",
+			"viewAllContracts": "عرض كل العقود ←",
+			"quotationsExpiring": "عروض أسعار تنتهي قريبًا",
+			"noQuotationsExpiring": "لا توجد عروض أسعار تنتهي قريبًا",
+			"viewAllQuotations": "عرض كل عروض الأسعار ←",
+			"pmServiceDue": "صيانة وقائية / خدمة مستحقة",
+			"approaching": "{{count}} تقترب",
+			"allWithinServiceRange": "جميع الرافعات الشوكية ضمن نطاق الصيانة",
+			"hoursMeter": "{{hours}} ساعة",
+			"viewAllEquipment": "عرض كل المعدات ←"
+		},
+		"fleetStatus": {
+			"inStock": "متوفر",
+			"rented": "مؤجر",
+			"inService": "قيد الصيانة",
+			"reserved": "محجوز",
+			"sold": "مباع",
+			"decommissioned": "خارج الخدمة"
+		},
+		"fuelType": {
+			"diesel": "ديزل",
+			"electric": "كهربائي",
+			"lpg": "غاز مسال",
+			"dualFuel": "وقود مزدوج",
+			"unknown": "غير معروف"
+		},
+		"catalog": {
+			"title": "كتالوج المنتجات",
+			"viewCatalog": "عرض الكتالوج ←",
+			"loadError": "فشل تحميل إحصائيات الكتالوج.",
+			"totalProducts": "إجمالي المنتجات",
+			"brands": "العلامات التجارية",
+			"categories": "الفئات"
+		},
+		"store": {
+			"get": "الحصول عليه",
+			"free": "مجاني",
+			"comingSoon": "قريبًا",
+			"hero": {
+				"assets": {
+					"eyebrow": "وحدة مميزة",
+					"title": "سجل الأصول، بحلة جديدة للعمل الميداني",
+					"desc": "تتبع كل رافعة شوكية ومقطورة وآلة طوال دورة حياتها الكاملة — الملكية، الحالة، وعدادات الساعات في سجل واحد مباشر."
+				},
+				"invoicing": {
+					"eyebrow": "متاح الآن",
+					"title": "فوترة ذكية مع ضريبة القيمة المضافة التلقائية",
+					"desc": "أنشئ أوامر الشراء وعروض الأسعار والفواتير من مسار واحد — المجموع الفرعي والضريبة والإجمالي تُحسب لك تلقائيًا."
+				},
+				"maintenance": {
+					"eyebrow": "اختيار المحررين",
+					"title": "جدولة صيانة تسبق الأعطال",
+					"desc": "حدد الآلات المستحقة للصيانة قبل أن تتعطل، باستخدام بيانات عداد الساعات والسجل الحي."
+				}
+			},
+			"promo": {
+				"sale": {
+					"kicker": "لفترة محدودة",
+					"title": "تخفيضات كبرى — خصم يصل إلى 50% على قطع الغيار"
+				},
+				"new": {
+					"kicker": "إطلاق جديد",
+					"title": "وحدات جديدة هذا الأسبوع"
+				},
+				"staffPicks": {
+					"kicker": "اختيارات الفريق",
+					"title": "الأعلى تقييمًا في الخدمة الميدانية"
+				}
+			},
+			"rows": {
+				"mostUsed": "الوحدات الأكثر استخدامًا",
+				"recommended": "وحدات موصى بها",
+				"fieldService": "الأكثر شيوعًا في الخدمة الميدانية"
+			},
+			"modules": {
+				"equipmentRegistry": {
+					"title": "سجل معدات DK",
+					"sub": "سجل المعدات والمركبات"
+				},
+				"customers": {
+					"title": "عملاء DK",
+					"sub": "إدارة سجلات العملاء"
+				},
+				"quotations": {
+					"title": "عروض أسعار DK",
+					"sub": "عروض الأسعار"
+				},
+				"rentalContracts": {
+					"title": "عقود إيجار DK",
+					"sub": "عقود الإيجار"
+				},
+				"movements": {
+					"title": "حركات DK",
+					"sub": "حركات المعدات"
+				},
+				"projects": {
+					"title": "مشاريع DK",
+					"sub": "المشاريع والمستودعات"
+				},
+				"smartInvoicing": {
+					"title": "فوترة DK الذكية",
+					"sub": "فوترة تلقائية"
+				},
+				"payments": {
+					"title": "مدفوعات DK",
+					"sub": "المدفوعات"
+				},
+				"deposits": {
+					"title": "ودائع DK",
+					"sub": "الودائع"
+				},
+				"statements": {
+					"title": "كشوف حساب DK",
+					"sub": "كشوف الحساب"
+				},
+				"inventory": {
+					"title": "مخزون DK",
+					"sub": "المخزون"
+				},
+				"purchaseOrders": {
+					"title": "أوامر شراء DK",
+					"sub": "طلب قطع الغيار"
+				},
+				"workOrders": {
+					"title": "أوامر عمل DK",
+					"sub": "جدولة الخدمة"
+				},
+				"assetRegistry": {
+					"title": "سجل أصول DK",
+					"sub": "سجل الأصول"
+				},
+				"maintenanceSchedule": {
+					"title": "جدول صيانة DK",
+					"sub": "الصيانة الوقائية"
+				}
+			},
+			"thirdParty": {
+				"routeWise": {
+					"title": "RouteWise",
+					"sub": "Meridian Labs"
+				},
+				"fleetPulse": {
+					"title": "FleetPulse",
+					"sub": "Orbit Communications"
+				},
+				"partsBin": {
+					"title": "PartsBin",
+					"sub": "Ironclad Systems"
+				}
+			}
+		},
+		"errors": {
+			"leadTrend": "فشل تحميل اتجاه العملاء المحتملين.",
+			"customerTrend": "فشل تحميل اتجاه العملاء.",
+			"leadMetrics": "فشل تحميل مؤشرات العملاء المحتملين."
+		}
+	},
+	"equipment": {
+		"status": {
+			"inStock": "متوفر",
+			"sold": "مباع",
+			"rented": "مؤجر",
+			"inService": "قيد الصيانة",
+			"reserved": "محجوز",
+			"decommissioned": "خارج الخدمة"
+		},
+		"ownership": {
+			"forSale": "للبيع",
+			"rental": "أسطول التأجير",
+			"customerOwned": "ملك العميل",
+			"retired": "متقاعد"
+		},
+		"operationalStatus": {
+			"available": "متاح",
+			"onRent": "مؤجر",
+			"inService": "قيد الصيانة",
+			"sold": "مباع"
+		},
+		"condition": {
+			"new": "جديد",
+			"used": "مستعمل",
+			"refurbished": "مجدَّد"
+		},
+		"fuel": {
+			"electric": "كهربائي",
+			"diesel": "ديزل",
+			"lpg": "غاز مسال",
+			"dualFuel": "وقود مزدوج",
+			"notSpecified": "— غير محدد —"
+		},
+		"card": {
+			"hoursValue": "{{count}} ساعة",
+			"editForklift": "تعديل الرافعة الشوكية",
+			"serial": "الرقم التسلسلي",
+			"brand": "العلامة التجارية",
+			"fuel": "الوقود",
+			"customer": "العميل",
+			"iotLive": "متصل",
+			"iotOffline": "غير متصل",
+			"iotAutoSynced": "مزامنة تلقائية عبر IoT"
+		},
+		"filters": {
+			"statusShort": {
+				"inService": "صيانة",
+				"decommissioned": "متقاعد"
+			},
+			"allFuelTypes": "جميع أنواع الوقود",
+			"allConditions": "جميع الحالات",
+			"allOwnership": "جميع أنواع الملكية",
+			"allBrands": "جميع العلامات التجارية",
+			"clear": "مسح",
+			"countLabel": "{{count}} معدة",
+			"noneFound": "لم يتم العثور على معدات",
+			"noneFoundHint": "حاول تعديل عوامل التصفية أو إضافة معدة جديدة",
+			"searchPlaceholder": "البحث عن معدات..."
+		},
+		"quickActions": {
+			"register": {
+				"label": "تسجيل معدة",
+				"desc": "إضافة رافعة شوكية جديدة"
+			},
+			"movement": {
+				"label": "إنشاء حركة",
+				"desc": "نقل المعدة"
+			},
+			"maintenance": {
+				"label": "جدولة صيانة",
+				"desc": "صيانة وقائية"
+			},
+			"rental": {
+				"label": "تأجير جديد",
+				"desc": "تعيين لعقد"
+			}
+		},
+		"gallery": {
+			"noPhotos": "لم يتم رفع صور",
+			"noPhotosHint": "تساعد الصور في تحديد وتوثيق هذه المعدة",
+			"previousPhoto": "الصورة السابقة",
+			"nextPhoto": "الصورة التالية",
+			"viewFullscreen": "عرض بملء الشاشة"
+		},
+		"timeline": {
+			"noHistory": "لم يتم تسجيل أي تغييرات في الحالة بعد.",
+			"system": "النظام"
+		},
+		"form": {
+			"serialRequired": "الرقم التسلسلي مطلوب.",
+			"nameRequired": "الاسم مطلوب.",
+			"saveFailed": "فشل الحفظ. يرجى المحاولة مرة أخرى.",
+			"editTitle": "تعديل الرافعة الشوكية",
+			"registerTitle": "تسجيل رافعة شوكية",
+			"serialNumber": "الرقم التسلسلي",
+			"serialNumberPlaceholder": "مثال: JH-2024-001",
+			"nameEnglish": "الاسم (بالإنجليزية)",
+			"nameEnglishPlaceholder": "مثال: Jungheinrich EFG 216k",
+			"nameLao": "الاسم (باللاوية)",
+			"internalCode": "الرمز الداخلي",
+			"internalCodePlaceholder": "بطاقة أصول DK",
+			"brand": "العلامة التجارية",
+			"noBrand": "— بدون علامة تجارية —",
+			"modelNumber": "رقم الموديل",
+			"modelNumberPlaceholder": "مثال: EFG 216k",
+			"condition": "الحالة",
+			"operationalStatus": "الحالة التشغيلية",
+			"ownershipState": "حالة الملكية",
+			"fuelType": "نوع الوقود",
+			"capacityKg": "السعة (كجم)",
+			"yearManufactured": "سنة الصنع",
+			"currentHourMeter": "عداد الساعات الحالي",
+			"initialHourMeter": "عداد الساعات الأولي",
+			"purchaseDate": "تاريخ الشراء",
+			"warrantyExpiry": "انتهاء الضمان",
+			"notesPlaceholder": "ملاحظات اختيارية...",
+			"saveChanges": "حفظ التغييرات",
+			"capacityKgPlaceholder": "مثال: 1600",
+			"yearManufacturedPlaceholder": "مثال: 2024"
+		},
+		"registry": {
+			"title": "سجل المعدات",
+			"subtitle": "إدارة ومراقبة أسطول الرافعات الشوكية لديك",
+			"refresh": "تحديث",
+			"registerForklift": "تسجيل رافعة شوكية",
+			"searchPlaceholder": "البحث عن الرقم التسلسلي، الاسم، الموديل...",
+			"noForkliftsFound": "لم يتم العثور على رافعات شوكية",
+			"pageInfo": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})",
+			"deleteTitle": "حذف الرافعة الشوكية",
+			"deleteMessage": "حذف \"{{name}}\" (الرقم التسلسلي: {{serial}})؟ لا يمكن التراجع عن هذا الإجراء.",
+			"kpi": {
+				"utilization": "معدل الاستخدام",
+				"avgHours": "متوسط الساعات",
+				"pmDue": "صيانة مستحقة",
+				"critical": "{{count}} حرجة",
+				"avgAge": "متوسط العمر",
+				"years": "{{count}} سنة"
+			},
+			"table": {
+				"forklift": "الرافعة الشوكية",
+				"model": "الموديل",
+				"ownership": "الملكية",
+				"hours": "ساعات العداد"
+			},
+			"toast": {
+				"loadError": "فشل تحميل الرافعات الشوكية.",
+				"createSuccess": "تم تسجيل الرافعة الشوكية بنجاح.",
+				"createError": "فشل تسجيل الرافعة الشوكية.",
+				"updateSuccess": "تم تحديث الرافعة الشوكية بنجاح.",
+				"updateError": "فشل تحديث الرافعة الشوكية.",
+				"deleteSuccess": "تم حذف الرافعة الشوكية.",
+				"deleteError": "فشل حذف الرافعة الشوكية."
+			}
+		},
+		"detail": {
+			"notFoundOrFailed": "الرافعة الشوكية غير موجودة أو فشل التحميل.",
+			"backToEquipment": "العودة إلى المعدات",
+			"notFound": "الرافعة الشوكية غير موجودة.",
+			"tabs": {
+				"overview": "نظرة عامة",
+				"photos": "الصور",
+				"timeline": "الجدول الزمني",
+				"documents": "المستندات",
+				"contracts": "العقود"
+			},
+			"serialAbbrev": "الرقم التسلسلي",
+			"newQuote": "عرض سعر جديد",
+			"newContract": "عقد جديد",
+			"specifications": "المواصفات",
+			"capacity": "السعة",
+			"year": "السنة",
+			"model": "الموديل",
+			"mastType": "نوع الصاري",
+			"maxLiftHeight": "أقصى ارتفاع رفع",
+			"currentLocation": "الموقع الحالي",
+			"zone": "المنطقة",
+			"since": "منذ",
+			"noLocationRecorded": "لا يوجد موقع مسجل",
+			"hourMeter": "عداد الساعات",
+			"hoursUnit": "ساعة",
+			"pctOfThreshold": "{{pct}}% من {{threshold}} ساعة",
+			"serviceInterval": "فترة الصيانة",
+			"initial": "الأولي",
+			"hoursUsed": "الساعات المستخدمة",
+			"dailyAvg": "المتوسط اليومي",
+			"estService": "الصيانة المتوقعة",
+			"estServiceDays": "~{{count}} يوم",
+			"assetSummary": "ملخص الأصل",
+			"assetAge": "عمر الأصل",
+			"years": "{{count}} سنة",
+			"warranty": "الضمان",
+			"expired": "منتهي",
+			"valid": "ساري",
+			"statusChanges": "تغييرات الحالة",
+			"documents": "المستندات",
+			"filesCount": "{{count}} ملفات",
+			"photos": "الصور",
+			"imagesCount": "{{count}} صور",
+			"assignedCustomer": "العميل المعيّن",
+			"documentTitle": "العنوان",
+			"expiry": "الانتهاء",
+			"uploaded": "تاريخ الرفع",
+			"noDocumentsUploaded": "لم يتم رفع أي مستندات",
+			"viewContractsHint": "عرض عقود التأجير المرتبطة بهذه المعدة",
+			"viewRentalContracts": "عرض عقود التأجير"
+		}
+	},
+	"inventory": {
+		"common": {
+			"refresh": "تحديث",
+			"resultCount_one": "{{count}} نتيجة",
+			"resultCount_other": "{{count}} نتيجة",
+			"paginationInfo": "صفحة {{page}} من {{pages}}"
+		},
+		"dashboard": {
+			"title": "مخزون قطع الغيار",
+			"subtitle": "نظرة عامة على إدارة المخزون والمشتريات",
+			"purchaseOrdersButton": "أوامر الشراء",
+			"sparePartsButton": "مخزون قطع الغيار",
+			"quickAccess": "وصول سريع",
+			"loadError": "فشل تحميل بيانات المخزون."
+		},
+		"purchaseOrder": {
+			"title": "أوامر الشراء",
+			"subtitle_one": "{{count}} طلب",
+			"subtitle_other": "{{count}} طلبات",
+			"loadError": "فشل تحميل أوامر الشراء.",
+			"status": {
+				"all": "كل الحالات",
+				"draft": "مسودة",
+				"ordered": "تم الطلب",
+				"partial": "استلام جزئي",
+				"received": "تم الاستلام",
+				"cancelled": "ملغى"
+			},
+			"newPO": "أمر شراء جديد",
+			"form": {
+				"title": "أمر شراء جديد",
+				"backToList": "العودة إلى أوامر الشراء",
+				"vendor": "المورّد",
+				"vendorRequired": "المورّد مطلوب",
+				"warehouse": "المستودع",
+				"warehouseRequired": "المستودع مطلوب",
+				"vendorAddress": "عنوان المورّد",
+				"vendorContact": "جهة اتصال المورّد",
+				"orderDate": "تاريخ الطلب",
+				"expectedDate": "تاريخ الاستلام المتوقع",
+				"taxRate": "نسبة الضريبة (%)",
+				"lineItems": "بنود الطلب",
+				"itemCode": "رمز الصنف",
+				"description": "الوصف",
+				"descriptionPlaceholder": "وصف الصنف",
+				"qty": "الكمية",
+				"unit": "الوحدة",
+				"unitCost": "سعر الوحدة",
+				"linkCatalogPart": "ربط بقطعة من الكتالوج",
+				"linkCatalogPartPlaceholder": "ابحث عن قطع الغيار…",
+				"noPartsFound": "لم يتم العثور على قطع",
+				"addRow": "إضافة صف",
+				"itemRequired": "مطلوب بند واحد على الأقل",
+				"created": "تم إنشاء أمر الشراء {{number}}",
+				"createFailed": "فشل إنشاء أمر الشراء",
+				"creating": "جارٍ الإنشاء...",
+				"createPO": "إنشاء أمر شراء"
+			},
+			"detail": {
+				"loadError": "فشل تحميل أمر الشراء",
+				"notFound": "أمر الشراء غير موجود",
+				"actionFailed": "فشل: {{action}}",
+				"submitted": "تم إرسال أمر الشراء",
+				"submit": "إرسال",
+				"receiveItems": "استلام البضاعة",
+				"receiveModalTitle": "استلام البضاعة",
+				"received": "تم استلام البضاعة",
+				"receivedDate": "تاريخ الاستلام",
+				"qtyOrdered": "الكمية المطلوبة",
+				"qtyReceived": "الكمية المستلمة"
+			}
+		},
+		"spareParts": {
+			"unitPrice": "سعر الوحدة",
+			"unit": "الوحدة",
+			"categories": {
+				"all": "كل الفئات",
+				"filter": "فلتر",
+				"belt": "حزام",
+				"brake": "فرامل",
+				"hydraulic": "هيدروليكي",
+				"electrical": "كهربائي",
+				"engine": "محرك",
+				"tire": "إطار",
+				"chain": "سلسلة",
+				"battery": "بطارية",
+				"lubricant": "زيت تشحيم",
+				"general": "عام"
+			},
+			"list": {
+				"title": "مخزون قطع الغيار",
+				"subtitle_one": "{{count}} قطعة",
+				"subtitle_other": "{{count}} قطعة",
+				"addPart": "إضافة قطعة",
+				"loadError": "فشل تحميل قطع الغيار.",
+				"searchPlaceholder": "ابحث برقم القطعة أو الاسم...",
+				"noPartsFound": "لم يتم العثور على قطع غيار",
+				"columns": {
+					"partNumber": "رقم القطعة",
+					"minStock": "الحد الأدنى للمخزون"
+				}
+			},
+			"detail": {
+				"backToList": "العودة إلى قطع الغيار",
+				"notFound": "غير موجود.",
+				"loadError": "القطعة غير موجودة.",
+				"totalStock": "إجمالي المخزون",
+				"minLevel": "الحد الأدنى",
+				"reorderQty": "كمية إعادة الطلب",
+				"brand": "العلامة التجارية",
+				"leadTime": "مدة التوريد",
+				"leadTimeDays_one": "{{count}} يوم",
+				"leadTimeDays_other": "{{count}} أيام",
+				"created": "تاريخ الإنشاء",
+				"active": "نشط",
+				"stockByWarehouse": "المخزون حسب المستودع",
+				"recentTransactions": "المعاملات الأخيرة",
+				"columns": {
+					"warehouse": "المستودع",
+					"onHand": "المتوفر",
+					"reserved": "المحجوز",
+					"available": "المتاح",
+					"number": "الرقم",
+					"qty": "الكمية",
+					"cost": "التكلفة"
+				}
+			}
+		},
+		"warehouse": {
+			"title": "مواقع المخزون",
+			"list": {
+				"subtitle_one": "{{count}} موقع مخزون",
+				"subtitle_other": "{{count}} مواقع مخزون",
+				"addWarehouse": "إضافة موقع مخزون",
+				"loadError": "فشل تحميل مواقع المخزون."
+			},
+			"form": {
+				"codeLabel": "الرمز",
+				"codePlaceholder": "WH-A",
+				"namePlaceholder": "مستودع ألفا",
+				"addressPlaceholder": "العنوان الكامل (اختياري)",
+				"codeNameRequired": "الرمز والاسم مطلوبان.",
+				"createSuccess": "تم إنشاء المستودع.",
+				"createError": "فشل إنشاء المستودع.",
+				"creating": "جارٍ الإنشاء..."
+			},
+			"detail": {
+				"backToList": "العودة إلى مواقع المخزون",
+				"loadError": "فشل تحميل موقع المخزون.",
+				"notFound": "موقع المخزون غير موجود.",
+				"address": "العنوان",
+				"contactName": "الشخص المسؤول",
+				"contactPhone": "هاتف التواصل",
+				"distinctParts": "عدد القطع المختلفة",
+				"totalStock": "إجمالي وحدات المخزون",
+				"stockTitle": "المخزون في هذا الموقع",
+				"noStock": "لا يوجد مخزون مسجل في هذا الموقع بعد.",
+				"columns": {
+					"part": "القطعة"
+				}
+			}
+		},
+		"stockBadge": {
+			"inStock": "متوفر",
+			"lowStock": "مخزون منخفض",
+			"outOfStock": "نفد المخزون"
+		},
+		"reorderAlert": {
+			"title": "تنبيهات إعادة الطلب ({{count}})",
+			"detail": "{{warehouseCode}}: المتاح {{available}} (الحد الأدنى: {{minLevel}}) — إعادة طلب {{reorderQuantity}}"
+		},
+		"kpi": {
+			"spareParts": "قطع الغيار",
+			"warehouses": "المستودعات",
+			"stockValue": "قيمة المخزون",
+			"lowStock": "مخزون منخفض",
+			"belowMinimum": "{{count}} أقل من الحد الأدنى",
+			"pendingPOs": "أوامر شراء معلقة"
+		},
+		"quickNav": {
+			"parts": {
+				"label": "مخزون قطع الغيار",
+				"desc": "تصفح المخزون"
+			},
+			"warehouses": {
+				"label": "مواقع المخزون",
+				"desc": "إدارة المواقع"
+			},
+			"purchaseOrders": {
+				"label": "أوامر الشراء",
+				"desc": "المشتريات"
+			},
+			"catalog": {
+				"label": "كتالوج المنتجات",
+				"desc": "الكتالوج الكامل"
+			}
+		},
+		"lowStock": {
+			"title": "تنبيهات المخزون المنخفض",
+			"allHealthy": "جميع مستويات المخزون جيدة",
+			"viewAll": "عرض الكل",
+			"min": "الحد الأدنى",
+			"reorder": "إعادة الطلب"
+		},
+		"purchaseOrderTable": {
+			"poNumber": "رقم أمر الشراء",
+			"vendor": "المورّد",
+			"warehouse": "المستودع",
+			"orderDate": "تاريخ الطلب",
+			"empty": "لم يتم العثور على أوامر شراء",
+			"paginationInfo": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})"
+		},
+		"stockDistributionChart": {
+			"title": "المخزون حسب الفئة",
+			"subtitle": "القطع حسب الفئة",
+			"empty": "لا توجد بيانات مخزون"
+		},
+		"warehouseGrid": {
+			"noneFound": "لا توجد مستودعات",
+			"noneFoundHint": "أنشئ أول مستودع لبدء تتبع المخزون"
+		},
+		"import": {
+			"button": "استيراد البيانات",
+			"title": "استيراد بيانات المخزون",
+			"subtitle": "قم بتحميل ملف CSV أو Excel (.xlsx) لإنشاء أو تحديث قطع الغيار بشكل جماعي. سيتم تحديث أرقام القطع الموجودة؛ وسيتم إنشاء الجديدة.",
+			"dropzoneText": "اسحب وأفلت ملفك هنا، أو انقر للتصفح",
+			"dropzoneHint": "يدعم ملفات .csv و .xlsx، حتى 10 ميجابايت",
+			"clearFile": "مسح",
+			"uploadButton": "تحميل واستيراد",
+			"uploading": "جارٍ التحميل ومعالجة البيانات…",
+			"uploadingHint": "قد يستغرق هذا بضع ثوانٍ للملفات الأكبر حجمًا.",
+			"uploadFailed": "فشل الاستيراد. يرجى المحاولة مرة أخرى.",
+			"successBanner": "تم الاستيراد بنجاح",
+			"partialBanner": "اكتمل الاستيراد مع بعض الأخطاء",
+			"resultSummary": "تم استيراد {{imported}}، وتحديث {{updated}}",
+			"rowErrorsTitle": "تعذر استيراد {{count}} صفوف",
+			"rowLabel": "الصف {{row}}:",
+			"closeAndRefresh": "إغلاق وتحديث"
+		}
+	},
+	"rental": {
+		"status": {
+			"reservation": "حجز",
+			"draft": "مسودة",
+			"pendingApproval": "بانتظار الموافقة",
+			"approved": "تمت الموافقة",
+			"revision": "قيد المراجعة",
+			"delivering": "قيد التسليم",
+			"active": "نشط",
+			"overdue": "متأخر",
+			"returning": "قيد الإرجاع",
+			"inspecting": "قيد الفحص",
+			"settling": "قيد التسوية",
+			"closed": "مغلق",
+			"cancelled": "ملغى"
+		},
+		"contractType": {
+			"shortTerm": "قصير الأجل",
+			"longTerm": "طويل الأجل",
+			"project": "مشروع"
+		},
+		"list": {
+			"title": "عقود الإيجار",
+			"totalCount": "{{count}} عقد",
+			"refresh": "تحديث",
+			"newContract": "عقد جديد",
+			"searchPlaceholder": "ابحث برقم العقد أو اسم العميل...",
+			"allStatuses": "كل الحالات",
+			"allTypes": "كل الأنواع",
+			"colContract": "العقد",
+			"colCustomer": "العميل",
+			"colTotalValue": "القيمة الإجمالية",
+			"colStartDate": "تاريخ البدء",
+			"colEndDate": "تاريخ الانتهاء",
+			"noContractsFound": "لم يتم العثور على عقود إيجار",
+			"createOrAdjust": "أنشئ عقدًا جديدًا أو عدّل عوامل التصفية.",
+			"resultsCount": "{{count}} نتيجة",
+			"pageOf": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})",
+			"deleteConfirmTitle": "حذف عقد الإيجار",
+			"deleteConfirmMessage": "حذف \"{{number}}\"؟ لا يمكن التراجع عن هذا الإجراء.",
+			"toast": {
+				"loadError": "فشل تحميل عقود الإيجار.",
+				"createSuccess": "تم إنشاء عقد الإيجار.",
+				"createError": "فشل إنشاء عقد الإيجار.",
+				"deleteSuccess": "تم حذف عقد الإيجار.",
+				"deleteError": "فشل حذف عقد الإيجار."
+			}
+		},
+		"form": {
+			"backToContracts": "العودة إلى عقود الإيجار",
+			"newContract": "عقد إيجار جديد",
+			"contractType": "نوع العقد",
+			"currencyLabel": "العملة",
+			"customerId": "رقم العميل",
+			"customerIdPlaceholder": "أدخل رقم العميل",
+			"startDate": "تاريخ البدء",
+			"endDate": "تاريخ الانتهاء",
+			"taxRateLabel": "نسبة الضريبة (%)",
+			"depositAmount": "مبلغ التأمين",
+			"deliveryAddress": "عنوان التسليم",
+			"deliveryAddressPlaceholder": "عنوان التسليم الكامل",
+			"deliveryContactName": "اسم مسؤول الاستلام",
+			"deliveryContactNamePlaceholder": "السيد / السيدة",
+			"deliveryContactPhone": "هاتف مسؤول الاستلام",
+			"deliveryContactPhonePlaceholder": "+856 20 ...",
+			"notesLabel": "ملاحظات (مرئية للعميل)",
+			"notesPlaceholder": "تظهر في العقد...",
+			"internalNotesLabel": "ملاحظات داخلية",
+			"internalNotesPlaceholder": "للاستخدام الداخلي فقط، لا تظهر للعميل...",
+			"creating": "جارٍ الإنشاء...",
+			"createContract": "إنشاء العقد",
+			"customerIdRequired": "رقم العميل مطلوب.",
+			"startDateRequired": "تاريخ البدء مطلوب.",
+			"endDateRequired": "تاريخ الانتهاء مطلوب.",
+			"createFailed": "فشل إنشاء عقد الإيجار.",
+			"createdToast": "تم إنشاء العقد {{number}}."
+		},
+		"detail": {
+			"backToContracts": "العودة إلى عقود الإيجار",
+			"notFoundError": "عقد الإيجار غير موجود أو فشل التحميل.",
+			"actionFailed": "فشل: {{action}}",
+			"rev": "المراجعة {{number}}",
+			"submit": "إرسال",
+			"approve": "موافقة",
+			"requestRevision": "طلب مراجعة",
+			"activate": "تفعيل",
+			"requestReturn": "طلب إرجاع",
+			"requestExtension": "طلب تمديد",
+			"completeInspection": "إكمال الفحص",
+			"inspectionInfo": "إكمال الفحص — استخدم لوحة الإرجاع أدناه.",
+			"generateBilling": "إنشاء فاتورة",
+			"billingInfo": "إنشاء الفواتير — قادم في المرحلة الرابعة.",
+			"closeContract": "إغلاق العقد",
+			"taxWithRate": "الضريبة ({{rate}}%)",
+			"discount": "الخصم",
+			"totalBilled": "إجمالي المفوتر",
+			"totalPaid": "إجمالي المدفوع",
+			"outstanding": "المتبقي",
+			"customer": "العميل",
+			"deliveryContact": "جهة اتصال التسليم",
+			"deliveryPhone": "هاتف التسليم",
+			"assignedTo": "المسؤول",
+			"approvedBy": "تمت الموافقة بواسطة",
+			"actualStart": "البدء الفعلي",
+			"actualEnd": "الانتهاء الفعلي",
+			"deposit": "التأمين",
+			"paymentTerms": "شروط الدفع",
+			"daysCount": "{{count}} أيام",
+			"internalNote": "ملاحظة داخلية",
+			"lineItems": "بنود العقد ({{count}})",
+			"addItem": "إضافة بند",
+			"colNumber": "#",
+			"colMonthlyRate": "السعر الشهري",
+			"colDailyRate": "السعر اليومي",
+			"colLineTotal": "إجمالي البند",
+			"serialNumber": "الرقم التسلسلي: {{serial}}",
+			"hoursUsed": "الساعات: {{count}}",
+			"noLineItems": "لا توجد بنود بعد.",
+			"addItemsHint": "أضف بنودًا لإنشاء العقد.",
+			"extensions": "التمديدات ({{count}})",
+			"colOriginalEnd": "الانتهاء الأصلي",
+			"colNewEnd": "الانتهاء الجديد",
+			"colReason": "السبب",
+			"activeReturns": "طلبات الإرجاع النشطة ({{count}})",
+			"colReturnNumber": "رقم الإرجاع",
+			"colRequested": "تاريخ الطلب",
+			"colScheduledPickup": "موعد الاستلام",
+			"colForklift": "الرافعة الشوكية",
+			"statusHistory": "سجل الحالة",
+			"colFrom": "من",
+			"colTo": "إلى",
+			"colBy": "بواسطة",
+			"reasons": {
+				"revisionNeeded": "يلزم إجراء مراجعة",
+				"cancelledByUser": "ألغاه المستخدم",
+				"rejected": "مرفوض"
+			},
+			"toasts": {
+				"submitted": "تم الإرسال للموافقة",
+				"revisionRequested": "تم طلب المراجعة",
+				"activated": "تم التفعيل",
+				"contractClosed": "تم إغلاق العقد",
+				"itemRemoved": "تمت إزالة البند",
+				"extensionApproved": "تمت الموافقة على التمديد",
+				"extensionRejected": "تم رفض التمديد"
+			},
+			"addItemModal": {
+				"title": "إضافة بند إلى العقد",
+				"forkliftId": "رقم الرافعة الشوكية",
+				"hourlyRate": "السعر بالساعة",
+				"monthlyRate": "السعر الشهري",
+				"dailyRate": "السعر اليومي",
+				"adding": "جارٍ الإضافة...",
+				"forkliftIdRequired": "رقم الرافعة الشوكية مطلوب.",
+				"descriptionRequired": "الوصف مطلوب.",
+				"monthlyRateRequired": "السعر الشهري مطلوب.",
+				"dailyRateRequired": "السعر اليومي مطلوب.",
+				"itemAdded": "تمت إضافة البند.",
+				"addFailed": "فشل إضافة البند."
+			},
+			"extensionModal": {
+				"title": "طلب تمديد العقد",
+				"currentEndDate": "تاريخ الانتهاء الحالي",
+				"newEndDate": "تاريخ الانتهاء الجديد",
+				"rateAdjustment": "تعديل السعر (%)",
+				"reason": "السبب",
+				"reasonPlaceholder": "سبب طلب التمديد...",
+				"requesting": "جارٍ الطلب...",
+				"requestExtension": "طلب تمديد",
+				"newEndDateRequired": "تاريخ الانتهاء الجديد مطلوب.",
+				"newEndDateAfterCurrent": "يجب أن يكون تاريخ الانتهاء الجديد بعد تاريخ الانتهاء الحالي.",
+				"extensionRequested": "تم طلب التمديد.",
+				"requestFailed": "فشل طلب التمديد."
+			},
+			"returnModal": {
+				"title": "طلب إرجاع المعدة",
+				"returnType": "نوع الإرجاع",
+				"scheduled": "مجدول",
+				"early": "مبكر",
+				"requestedDate": "تاريخ الطلب",
+				"equipmentToReturn": "المعدات المطلوب إرجاعها",
+				"allEquipment": "— جميع المعدات —",
+				"scheduledPickupDate": "تاريخ الاستلام المجدول",
+				"pickupAddress": "عنوان الاستلام",
+				"pickupAddressPlaceholder": "عنوان موقع العميل",
+				"earlyTermination": "إنهاء مبكر (قد تُطبق غرامة)",
+				"notesPlaceholder": "تعليمات إضافية...",
+				"requesting": "جارٍ الطلب...",
+				"requestReturn": "طلب إرجاع",
+				"requestedDateRequired": "تاريخ الطلب مطلوب.",
+				"returnRequested": "تم طلب الإرجاع.",
+				"requestFailed": "فشل إنشاء طلب الإرجاع."
+			}
+		}
+	},
+	"settings": {
+		"title": "الإعدادات العامة",
+		"subtitle": "إدارة الإعدادات الافتراضية الأساسية للمؤسسة عبر نظام تخطيط الموارد.",
+		"loading": "جارٍ تحميل الإعدادات…",
+		"save": "حفظ التغييرات",
+		"saving": "جارٍ الحفظ…",
+		"saveSuccess": "تم تحديث الإعدادات بنجاح.",
+		"saveError": "تعذّر حفظ الإعدادات في الوقت الحالي.",
+		"loadError": "تعذّر تحميل الإعدادات في الوقت الحالي.",
+		"tabs": {
+			"company": "ملف الشركة",
+			"financial": "الإعدادات المالية الافتراضية",
+			"system": "متغيرات النظام",
+			"notifications": "تفضيلات الإشعارات"
+		},
+		"company": {
+			"description": "الإعدادات الافتراضية لملف الشركة",
+			"companyName": "اسم الشركة",
+			"address": "العنوان",
+			"phone": "الهاتف",
+			"fax": "الفاكس",
+			"website": "الموقع الإلكتروني",
+			"email": "البريد الإلكتروني",
+			"logoUrl": "رابط الشعار",
+			"logoInvalidType": "يرجى اختيار ملف صورة.",
+			"logoUploadError": "تعذّر رفع الشعار في الوقت الحالي.",
+			"logoUploading": "جارٍ رفع الشعار…",
+			"logoDropzoneText": "انقر أو اسحب وأفلت لرفع الشعار",
+			"logoDropzoneHint": "PNG أو JPG أو WebP",
+			"bankDetails": {
+				"title": "البيانات المصرفية",
+				"bankName": "اسم البنك",
+				"accountName": "اسم الحساب",
+				"accountNumber": "رقم الحساب",
+				"swift": "رمز SWIFT / BIC"
+			}
+		},
+		"financial": {
+			"description": "الإعدادات المالية الافتراضية",
+			"vatRate": "نسبة ضريبة القيمة المضافة (%)",
+			"defaultCurrency": "العملة الافتراضية",
+			"defaultPaymentTerms": "شروط الدفع الافتراضية"
+		},
+		"system": {
+			"description": "متغيرات النظام",
+			"equipmentTypes": "أنواع المعدات",
+			"repairStatuses": "حالات الإصلاح"
+		},
+		"notifications": {
+			"description": "اشترك في تنبيهات البريد الإلكتروني لأهم أحداث النظام. سيتم إعلامك عند حدوث أي حدث متابَع، باستثناء الإجراءات التي تقوم بها بنفسك.",
+			"loadError": "تعذّر تحميل تفضيلات الإشعارات في الوقت الحالي.",
+			"saveError": "تعذّر تحديث هذا التفضيل في الوقت الحالي.",
+			"groups": {
+				"critical": "الأحداث الحرجة وعمليات الحذف",
+				"sales": "المبيعات والتأجير",
+				"billing": "الفوترة",
+				"operations": "العمليات"
+			},
+			"events": {
+				"customerDeleted": "تم حذف عميل",
+				"forkliftDeleted": "تم حذف رافعة شوكية",
+				"productDeleted": "تم حذف منتج من الكتالوج",
+				"quotationApproved": "تمت الموافقة على عرض السعر",
+				"quotationSent": "تم إرسال عرض السعر إلى العميل",
+				"contractActivated": "تم تفعيل عقد الإيجار",
+				"contractCancelled": "تم إلغاء عقد الإيجار",
+				"invoiceIssued": "تم إصدار فاتورة",
+				"paymentRecorded": "تم تسجيل دفعة",
+				"paymentRejected": "تم رفض دفعة",
+				"depositRefunded": "تم استرداد التأمين",
+				"forkliftStatusChanged": "تغيّرت حالة الرافعة الشوكية",
+				"inventoryImportExecuted": "تم تنفيذ استيراد جماعي للمخزون",
+				"settingUpdated": "تم تحديث إعداد عام"
+			}
+		}
+	},
+	"customers": {
+		"status": {
+			"active": "نشط",
+			"prospect": "محتمل",
+			"inactive": "غير نشط",
+			"churned": "منسحب"
+		},
+		"form": {
+			"editTitle": "تعديل العميل",
+			"newTitle": "عميل جديد",
+			"saveChanges": "حفظ التغييرات",
+			"createCustomer": "إنشاء عميل",
+			"firstNameLabel": "الاسم الأول",
+			"firstNamePlaceholder": "جون",
+			"lastNameLabel": "اسم العائلة",
+			"lastNamePlaceholder": "دو",
+			"emailPlaceholder": "john@example.com",
+			"phonePlaceholder": "+1 555 000 0000",
+			"companyLabel": "الشركة",
+			"companyPlaceholder": "شركة أكمي",
+			"notesPlaceholder": "أي ملاحظات إضافية…"
+		},
+		"list": {
+			"title": "العملاء",
+			"totalCount": "{{count}} عميل إجمالاً",
+			"newCustomer": "عميل جديد",
+			"searchPlaceholder": "البحث بالاسم أو البريد الإلكتروني أو الهاتف…",
+			"allStatuses": "جميع الحالات",
+			"resultsCount": "{{count}} نتيجة",
+			"colCustomer": "العميل",
+			"noCustomersFound": "لم يتم العثور على عملاء",
+			"createFirstCustomer": "أنشئ أول عميل لديك للبدء.",
+			"showingRange": "عرض {{start}}–{{end}} من {{total}}",
+			"deleteTitle": "حذف العميل",
+			"deleteMessage": "هل أنت متأكد أنك تريد حذف \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء.",
+			"toast": {
+				"loadError": "فشل تحميل العملاء.",
+				"createSuccess": "تم إنشاء العميل بنجاح.",
+				"createError": "فشل إنشاء العميل.",
+				"updateSuccess": "تم تحديث العميل بنجاح.",
+				"updateError": "فشل تحديث العميل.",
+				"deleteSuccess": "تم حذف العميل.",
+				"deleteError": "فشل حذف العميل."
+			}
+		}
+	},
+	"finance": {
+		"collectionRate": {
+			"title": "معدل التحصيل",
+			"collected": "تم تحصيله",
+			"invoiced": "تم فوترته"
+		},
+		"kpi": {
+			"totalRevenue": "إجمالي الإيرادات",
+			"collected": "المحصَّل",
+			"outstanding": "المستحق",
+			"overdue": "المتأخر",
+			"pastDue": "{{amount}} متأخر السداد",
+			"invoices": "الفواتير",
+			"totalIssued": "إجمالي المُصدر",
+			"payments": "المدفوعات",
+			"received": "المستلم"
+		},
+		"quickNav": {
+			"invoices": {
+				"label": "الفواتير",
+				"desc": "الإنشاء والإدارة"
+			},
+			"payments": {
+				"label": "المدفوعات",
+				"desc": "تتبع التحصيل"
+			},
+			"deposits": {
+				"label": "الودائع",
+				"desc": "التأمينات النقدية"
+			},
+			"statements": {
+				"label": "كشوف الحساب",
+				"desc": "نشاط الحساب"
+			},
+			"analytics": {
+				"label": "التحليلات",
+				"desc": "الرسوم البيانية والاتجاهات"
+			},
+			"revenue": {
+				"label": "الإيرادات",
+				"desc": "جدول الاعتراف بالإيراد"
+			}
+		},
+		"invoiceStatusChart": {
+			"title": "توزيع الحالات",
+			"totalCount": "{{count}} إجمالاً",
+			"empty": "لا توجد فواتير"
+		},
+		"recentTransactions": {
+			"recentInvoices": "أحدث الفواتير",
+			"recentPayments": "أحدث المدفوعات",
+			"viewAll": "عرض الكل",
+			"noInvoicesYet": "لا توجد فواتير بعد",
+			"noPaymentsYet": "لا توجد مدفوعات بعد"
+		},
+		"revenueChart": {
+			"title": "اتجاه الإيرادات",
+			"subtitle": "آخر 6 أشهر ({{currency}})",
+			"empty": "لا توجد بيانات إيرادات بعد"
+		}
+	},
+	"billing": {
+		"common": {
+			"refresh": "تحديث",
+			"markOverdue": "وضع علامة متأخر",
+			"markOverdueSuccess": "تم وضع علامة متأخر على {{count}} فاتورة",
+			"markOverdueError": "فشل وضع علامة متأخر على الفواتير"
+		},
+		"dashboard": {
+			"title": "الفواتير والمدفوعات",
+			"subtitle": "نظرة عامة مالية وإجراءات سريعة",
+			"quickAccess": "وصول سريع",
+			"loadError": "فشل تحميل ملخص الفوترة."
+		},
+		"finance": {
+			"title": "تحليلات المالية",
+			"subtitle": "أداء الإيرادات، الذمم المدينة، وتتبع التحصيل",
+			"loadError": "فشل تحميل البيانات المالية."
+		},
+		"revenue": {
+			"title": "الاعتراف بالإيراد",
+			"entriesCount": "{{count}} سجل",
+			"resultsCount": "{{count}} نتيجة",
+			"loadError": "فشل تحميل سجلات الاعتراف بالإيراد.",
+			"actionError": "فشل الإجراء.",
+			"empty": "لا توجد سجلات اعتراف بالإيراد",
+			"recognize": "اعتراف",
+			"reverse": "عكس",
+			"paginationInfo": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})",
+			"columns": {
+				"number": "رقم الاعتراف",
+				"period": "الفترة"
+			},
+			"statusOptions": {
+				"all": "جميع الحالات",
+				"scheduled": "مجدول",
+				"recognized": "تم الاعتراف به",
+				"reversed": "تم عكسه"
+			},
+			"typeOptions": {
+				"all": "جميع الأنواع",
+				"rentalIncome": "إيراد التأجير",
+				"serviceFee": "رسوم الخدمة",
+				"penaltyFee": "رسوم الغرامة",
+				"damageRecovery": "استرداد الأضرار",
+				"depositForfeiture": "مصادرة التأمين"
+			},
+			"typeLabels": {
+				"rentalIncome": "إيراد التأجير",
+				"serviceFee": "رسوم الخدمة",
+				"penaltyFee": "غرامة",
+				"damageRecovery": "استرداد الأضرار",
+				"depositForfeiture": "مصادرة التأمين"
+			}
+		},
+		"statement": {
+			"title": "كشف الحساب",
+			"subtitle": "جميع أنشطة الفواتير مع الرصيد الجاري",
+			"loadError": "فشل تحميل بيانات كشف الحساب.",
+			"totalCharges": "إجمالي الرسوم",
+			"totalPayments": "إجمالي المدفوعات",
+			"outstandingBalance": "الرصيد المستحق",
+			"searchPlaceholder": "البحث في الفواتير...",
+			"entriesCount": "{{count}} سجل",
+			"loading": "جارٍ تحميل كشف الحساب...",
+			"noEntries": "لا توجد سجلات في كشف الحساب",
+			"emptySub": "لم يتم العثور على فواتير مطابقة لبحثك",
+			"columns": {
+				"invoiceNumber": "رقم الفاتورة",
+				"charges": "الرسوم",
+				"payments": "المدفوعات",
+				"balance": "الرصيد"
+			}
+		},
+		"aging": {
+			"title": "أعمار الذمم المدينة",
+			"buckets": {
+				"current": "الحالي",
+				"days1to30": "1-30 يومًا",
+				"days31to60": "31-60 يومًا",
+				"days61to90": "61-90 يومًا",
+				"days90plus": "أكثر من 90 يومًا"
+			}
+		},
+		"revenueChart": {
+			"title": "اتجاه الإيرادات (آخر 6 أشهر)",
+			"empty": "لا توجد بيانات متاحة",
+			"invoiced": "تم فوترته",
+			"paid": "تم دفعه",
+			"invoicedTooltip": "تم فوترته: {{amount}}",
+			"paidTooltip": "تم دفعه: {{amount}}"
+		},
+		"payment": {
+			"status": {
+				"pending": "قيد الانتظار",
+				"confirmed": "مؤكد",
+				"rejected": "مرفوض",
+				"refunded": "مسترد"
+			},
+			"method": {
+				"cash": "نقدًا",
+				"bank_transfer": "تحويل بنكي",
+				"check": "شيك",
+				"credit_card": "بطاقة ائتمان",
+				"mobile_payment": "دفع عبر الهاتف المحمول",
+				"mobile_paymentShort": "الهاتف المحمول",
+				"other": "أخرى"
+			},
+			"statusFilter": {
+				"all": "جميع الحالات"
+			},
+			"methodFilter": {
+				"all": "جميع الطرق"
+			},
+			"fields": {
+				"method": "الطريقة",
+				"paymentDate": "تاريخ الدفع",
+				"received": "المستلم",
+				"reference": "المرجع",
+				"createdBy": "أنشأه",
+				"confirmedAt": "تاريخ التأكيد",
+				"confirmedBy": "أكّده",
+				"contract": "العقد"
+			},
+			"table": {
+				"number": "رقم الدفعة",
+				"customer": "العميل"
+			},
+			"list": {
+				"title": "المدفوعات",
+				"subtitle": "{{count}} دفعة",
+				"resultsCount": "{{count}} نتيجة"
+			},
+			"pagination": {
+				"pageOf": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})"
+			},
+			"searchPlaceholder": "البحث عن دفعة / مرجع...",
+			"empty": "لم يتم العثور على مدفوعات",
+			"notFound": "الدفعة غير موجودة",
+			"actions": {
+				"reject": "رفض",
+				"allocateToInvoice": "تخصيص لفاتورة"
+			},
+			"toast": {
+				"confirmed": "تم تأكيد الدفعة",
+				"rejected": "تم رفض الدفعة",
+				"allocated": "تم تخصيص الدفعة",
+				"actionFailed": "فشل: {{action}}",
+				"loadFailed": "فشل تحميل الدفعة.",
+				"loadPaymentsFailed": "فشل تحميل المدفوعات.",
+				"loadInvoicesFailed": "فشل تحميل الفواتير"
+			},
+			"allocate": {
+				"title": "تخصيص الدفعة لفاتورة",
+				"invoiceLabel": "الفاتورة",
+				"selectPlaceholder": "اختر فاتورة...",
+				"balance": "الرصيد",
+				"amountPlaceholder": "0.00",
+				"submit": "تخصيص"
+			},
+			"summary": {
+				"title": "المدفوعات",
+				"transactions": "المعاملات"
+			}
+		},
+		"invoice": {
+			"status": {
+				"draft": "مسودة",
+				"issued": "صادرة",
+				"sent": "مُرسَلة",
+				"partially_paid": "مدفوعة جزئيًا",
+				"paid": "مدفوعة",
+				"overdue": "متأخرة",
+				"cancelled": "ملغاة",
+				"voided": "باطلة"
+			},
+			"summary": {
+				"title": "الفواتير",
+				"outstanding": "المستحق",
+				"overdue": "المتأخر",
+				"count": "العدد"
+			},
+			"filter": {
+				"all": "جميع الحالات",
+				"partially_paid": "مدفوعة جزئيًا"
+			},
+			"list": {
+				"title": "الفواتير",
+				"subtitle": "{{count}} فاتورة",
+				"newInvoice": "فاتورة جديدة",
+				"loadError": "فشل تحميل الفواتير.",
+				"searchPlaceholder": "البحث عن رقم الفاتورة...",
+				"resultsCount": "{{count}} نتيجة",
+				"empty": "لم يتم العثور على فواتير"
+			},
+			"table": {
+				"number": "رقم الفاتورة",
+				"customer": "العميل",
+				"balance": "الرصيد"
+			},
+			"meta": {
+				"issueDate": "تاريخ الإصدار",
+				"dueDate": "تاريخ الاستحقاق",
+				"paidDate": "تاريخ الدفع",
+				"contract": "العقد",
+				"referenceType": "نوع الفاتورة",
+				"period": "الفترة",
+				"createdBy": "أنشأه"
+			},
+			"referenceType": {
+				"sales": "مبيعات",
+				"workOrder": "أمر عمل",
+				"rental": "تأجير"
+			},
+			"form": {
+				"title": "فاتورة جديدة",
+				"backToList": "العودة إلى الفواتير",
+				"customer": "العميل",
+				"customerSearchPlaceholder": "البحث بالاسم أو الشركة...",
+				"noCustomersFound": "لم يتم العثور على عملاء",
+				"referenceType": "نوع الفاتورة",
+				"taxRate": "نسبة الضريبة (%)",
+				"description": "الوصف",
+				"descriptionPlaceholder": "وصف الصنف أو الخدمة",
+				"unitPrice": "سعر الوحدة",
+				"lineTotal": "إجمالي البند",
+				"addRow": "إضافة صف",
+				"subtotal": "المجموع الفرعي",
+				"grandTotal": "الإجمالي الكلي",
+				"creating": "جارٍ الإنشاء...",
+				"createInvoice": "إنشاء فاتورة",
+				"created": "تم إنشاء الفاتورة {{number}}.",
+				"createFailed": "فشل إنشاء الفاتورة.",
+				"errors": {
+					"customerRequired": "يرجى اختيار عميل.",
+					"itemRequired": "مطلوب بند واحد على الأقل يحتوي على وصف."
+				},
+				"itemCode": "رمز الصنف",
+				"itemCodePlaceholder": "مثال: SKU-1000",
+				"unit": "الوحدة",
+				"currency": "العملة",
+				"exchangeRate": "سعر الصرف",
+				"bankDetails": "البيانات المصرفية",
+				"bankDetailsPlaceholder": "اسم البنك، اسم الحساب، رقم الحساب، SWIFT/BIC...",
+				"grandTotalInLAK": "الإجمالي الكلي بـ LAK (العملة الأساسية)",
+				"previewTitle": "معاينة المستند",
+				"previewPendingNumber": "(قيد الانتظار)"
+			},
+			"pagination": {
+				"info": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})"
+			},
+			"actions": {
+				"issue": "إصدار",
+				"send": "إرسال",
+				"void": "إبطال"
+			},
+			"amountSummary": {
+				"tax": "الضريبة ({{rate}}%)",
+				"discount": "الخصم",
+				"paid": "المدفوع",
+				"balanceDue": "الرصيد المستحق"
+			},
+			"detail": {
+				"loadError": "فشل تحميل الفاتورة.",
+				"notFound": "الفاتورة غير موجودة",
+				"actionFailed": "فشل: {{action}}",
+				"internalNotes": "ملاحظات داخلية",
+				"cancellationReason": "سبب الإلغاء"
+			},
+			"lineItems": {
+				"title": "بنود الفاتورة",
+				"number": "#",
+				"qty": "الكمية",
+				"rate": "السعر",
+				"tax": "الضريبة",
+				"empty": "لا توجد بنود"
+			},
+			"allocations": {
+				"title": "تخصيصات الدفع",
+				"payment": "الدفعة",
+				"paymentLabel": "الدفعة رقم {{id}}"
+			},
+			"modal": {
+				"cancel": {
+					"title": "إلغاء الفاتورة",
+					"reasonLabel": "سبب الإلغاء",
+					"reasonPlaceholder": "أدخل السبب..."
+				}
+			},
+			"toast": {
+				"issued": "تم إصدار الفاتورة",
+				"sent": "تم إرسال الفاتورة",
+				"voided": "تم إبطال الفاتورة",
+				"cancelled": "تم إلغاء الفاتورة"
+			},
+			"card": {
+				"due": "الاستحقاق {{date}}",
+				"balance": "الرصيد: {{amount}} {{currency}}"
+			},
+			"vehicleInfo": {
+				"title": "معلومات المركبة",
+				"make": "الصانع",
+				"model": "الطراز",
+				"vin": "رقم الهيكل (VIN)",
+				"engineNo": "رقم المحرك",
+				"regNo": "رقم التسجيل",
+				"jobNumber": "رقم المهمة"
+			}
+		},
+		"deposit": {
+			"status": {
+				"all": "جميع الحالات",
+				"pending": "قيد الانتظار",
+				"received": "تم الاستلام",
+				"partiallyRefunded": "استرداد جزئي",
+				"refunded": "مسترد",
+				"forfeited": "مصادر",
+				"applied": "مطبَّق"
+			},
+			"type": {
+				"all": "جميع الأنواع",
+				"security": "تأمين",
+				"advance": "دفعة مقدمة",
+				"guarantee": "ضمان"
+			},
+			"list": {
+				"title": "الودائع",
+				"subtitle": "{{count}} وديعة",
+				"loadError": "فشل تحميل الودائع.",
+				"resultsCount": "{{count}} نتيجة",
+				"empty": "لم يتم العثور على ودائع"
+			},
+			"table": {
+				"number": "رقم الوديعة",
+				"customer": "العميل",
+				"contract": "العقد",
+				"received": "المستلم"
+			},
+			"pagination": {
+				"info": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})"
+			},
+			"actions": {
+				"markReceived": "وضع علامة مستلمة",
+				"refund": "استرداد",
+				"forfeit": "مصادرة",
+				"applyToInvoice": "تطبيق على فاتورة"
+			},
+			"modal": {
+				"markReceived": {
+					"title": "وضع علامة استلام الوديعة",
+					"depositLabel": "الوديعة",
+					"receivedDateLabel": "تاريخ الاستلام",
+					"confirm": "تأكيد الاستلام"
+				},
+				"refund": {
+					"title": "استرداد الوديعة",
+					"amountLabel": "مبلغ الاسترداد (الحد الأقصى: {{max}})",
+					"dateLabel": "تاريخ الاسترداد"
+				},
+				"forfeit": {
+					"title": "مصادرة الوديعة",
+					"amountLabel": "مبلغ المصادرة (الحد الأقصى: {{max}})",
+					"reasonLabel": "السبب"
+				},
+				"apply": {
+					"title": "تطبيق الوديعة على فاتورة",
+					"invoiceLabel": "الفاتورة",
+					"selectInvoicePlaceholder": "اختر فاتورة...",
+					"invoiceOption": "{{number}} — الرصيد: {{balance}} {{currency}}",
+					"amountLabel": "المبلغ (الحد الأقصى: {{max}})",
+					"confirm": "تطبيق"
+				}
+			},
+			"summary": {
+				"amount": "مبلغ الوديعة",
+				"refunded": "مسترد",
+				"forfeited": "مصادر",
+				"applied": "مطبَّق",
+				"remaining": "المتبقي"
+			},
+			"summaryCard": {
+				"title": "الودائع",
+				"active": "نشطة"
+			},
+			"detail": {
+				"loadError": "فشل تحميل الوديعة.",
+				"notFound": "غير موجود",
+				"actionFailed": "فشل الإجراء.",
+				"invoicesLoadError": "فشل تحميل الفواتير.",
+				"receivedLabel": "تاريخ الاستلام: {{date}}",
+				"refundDateLabel": "تاريخ الاسترداد: {{date}}",
+				"contractLabel": "العقد:",
+				"notesLabel": "ملاحظات:"
+			},
+			"toast": {
+				"received": "تم وضع علامة استلام الوديعة",
+				"receiveError": "فشل استلام الوديعة"
+			}
+		}
+	},
+	"maintenance": {
+		"overdue": "متأخر",
+		"actions": {
+			"refresh": "تحديث"
+		},
+		"status": {
+			"scheduled": "مجدولة",
+			"due": "مستحقة",
+			"inProgress": "قيد التنفيذ",
+			"verified": "تم التحقق"
+		},
+		"type": {
+			"preventive": "وقائية",
+			"corrective": "تصحيحية",
+			"emergency": "طارئة",
+			"inspection": "فحص",
+			"install": "تركيب"
+		},
+		"priority": {
+			"low": "منخفضة",
+			"normal": "عادية",
+			"high": "عالية",
+			"critical": "حرجة"
+		},
+		"dashboard": {
+			"title": "الصيانة والصيانة الوقائية",
+			"subtitle": "لوحة معلومات الصيانة الوقائية",
+			"loadError": "فشل تحميل لوحة المعلومات.",
+			"pmSchedulesButton": "جداول الصيانة الوقائية",
+			"workOrdersButton": "أوامر العمل",
+			"cards": {
+				"pmPlans": "خطط الصيانة الوقائية",
+				"activeSchedules": "الجداول النشطة",
+				"completedThisMonth": "المكتملة (الشهر)",
+				"costThisMonth": "التكلفة (الشهر)"
+			}
+		},
+		"schedule": {
+			"title": "جداول الصيانة الوقائية",
+			"activeSchedules": "{{count}} جدول نشط",
+			"loadError": "فشل تحميل الجداول.",
+			"emptyState": "لا توجد جداول صيانة وقائية نشطة. أنشئ خطة صيانة وقم بتعيينها لمعدة.",
+			"nextDue": "الاستحقاق التالي",
+			"interval": "الفاصل الزمني",
+			"serviced": "تمت الصيانة"
+		},
+		"workOrders": {
+			"list": {
+				"title": "أوامر العمل",
+				"subtitle": "{{count}} أمر عمل",
+				"newWorkOrder": "أمر عمل جديد",
+				"loadError": "فشل تحميل أوامر العمل.",
+				"searchPlaceholder": "البحث بالرقم أو العنوان...",
+				"resultsCount": "{{count}} نتيجة",
+				"allStatuses": "جميع الحالات",
+				"allTypes": "جميع الأنواع",
+				"columns": {
+					"workOrder": "أمر العمل",
+					"priority": "الأولوية"
+				},
+				"paginationInfo": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})"
+			},
+			"form": {
+				"title": "أمر عمل جديد",
+				"backToList": "العودة إلى أوامر العمل",
+				"workOrderTitle": "العنوان",
+				"workOrderTitlePlaceholder": "مثال: صيانة وقائية شهرية",
+				"asset": "الأصل",
+				"assetSearchPlaceholder": "البحث بالرقم التسلسلي أو الاسم...",
+				"noAssetsFound": "لم يتم العثور على أصول",
+				"workType": "نوع العمل",
+				"assignee": "المسؤول",
+				"unassigned": "— غير مُعيَّن —",
+				"schedule": "تاريخ ووقت الجدولة",
+				"creating": "جارٍ الإنشاء...",
+				"createWorkOrder": "إنشاء أمر عمل",
+				"created": "تم إنشاء أمر العمل {{number}}.",
+				"createFailed": "فشل إنشاء أمر العمل.",
+				"errors": {
+					"titleRequired": "العنوان مطلوب.",
+					"assetRequired": "يرجى اختيار أصل.",
+					"scheduleRequired": "تاريخ ووقت الجدولة مطلوبان."
+				}
+			},
+			"detail": {
+				"notFound": "أمر العمل غير موجود.",
+				"backToList": "العودة إلى أوامر العمل",
+				"startWork": "بدء العمل",
+				"completeAction": "إكمال",
+				"verify": "تحقق",
+				"addCost": "إضافة تكلفة",
+				"toastStarted": "بدأ العمل",
+				"actionFailed": "فشل: {{label}}",
+				"fields": {
+					"equipment": "المعدة",
+					"technician": "الفني",
+					"pmPlan": "خطة الصيانة الوقائية",
+					"hourMeter": "عداد الساعات",
+					"started": "بدأ في",
+					"verifiedBy": "تحقق منه",
+					"created": "تاريخ الإنشاء",
+					"estHours": "الساعات المقدرة",
+					"actualHours": "الساعات الفعلية",
+					"actualCost": "التكلفة الفعلية"
+				},
+				"findings": "النتائج",
+				"resolution": "الحل",
+				"cancellationReason": "سبب الإلغاء",
+				"costBreakdown": "تفصيل التكلفة ({{count}})",
+				"rate": "السعر",
+				"startModal": {
+					"title": "بدء أمر العمل",
+					"hourMeterReading": "قراءة عداد الساعات",
+					"starting": "جارٍ البدء...",
+					"start": "بدء"
+				},
+				"completeModal": {
+					"title": "إكمال أمر العمل",
+					"findingsPlaceholder": "ما تم العثور عليه أثناء الفحص...",
+					"resolutionPlaceholder": "ما تم القيام به لحل المشكلة...",
+					"completing": "جارٍ الإكمال..."
+				},
+				"costModal": {
+					"title": "إضافة سجل تكلفة",
+					"descRateRequired": "الوصف والسعر مطلوبان.",
+					"costAdded": "تمت إضافة التكلفة.",
+					"failed": "فشل.",
+					"costType": "نوع التكلفة",
+					"typeParts": "قطع غيار",
+					"typeLabor": "أجور عمالة",
+					"typeExternalService": "خدمة خارجية",
+					"typeOther": "أخرى",
+					"unitRate": "سعر الوحدة",
+					"adding": "جارٍ الإضافة..."
+				},
+				"cancelReasonDefault": "أُلغي بواسطة المستخدم"
+			}
+		}
+	},
+	"activity": {
+		"title": "سجل النشاط",
+		"eventsLoaded": "تم تحميل {{count}} حدث",
+		"refresh": "تحديث",
+		"filters": {
+			"searchPlaceholder": "البحث عن مستخدم أو إجراء…",
+			"action": "الإجراء",
+			"allActions": "جميع الإجراءات",
+			"entityType": "الكيان",
+			"allEntities": "جميع الكيانات",
+			"dateFrom": "من",
+			"dateTo": "إلى"
+		},
+		"entity": {
+			"user": "المستخدم",
+			"customer": "العميل",
+			"lead": "العميل المحتمل",
+			"note": "ملاحظة",
+			"invoice": "الفاتورة",
+			"payment": "الدفعة",
+			"deposit": "الوديعة",
+			"revenue_recognition": "الاعتراف بالإيراد",
+			"project": "المشروع",
+			"project_milestone": "معلم المشروع",
+			"setting": "الإعداد",
+			"inventory_import": "استيراد المخزون",
+			"notification_preference": "تفضيل الإشعارات"
+		},
+		"action": {
+			"user_login": "تسجيل الدخول",
+			"user_logout": "تسجيل الخروج",
+			"user_created": "تم إنشاء المستخدم",
+			"user_updated": "تم تحديث المستخدم",
+			"user_deleted": "تم حذف المستخدم",
+			"customer_created": "تم إنشاء العميل",
+			"customer_updated": "تم تحديث العميل",
+			"customer_deleted": "تم حذف العميل",
+			"customer_status_changed": "تغيير الحالة",
+			"lead_created": "تم إنشاء العميل المحتمل",
+			"lead_updated": "تم تحديث العميل المحتمل",
+			"lead_deleted": "تم حذف العميل المحتمل",
+			"lead_status_changed": "تغيير الحالة",
+			"lead_note_added": "تمت إضافة ملاحظة",
+			"lead_note_deleted": "تم حذف الملاحظة",
+			"catalog_product_created": "تم إنشاء المنتج",
+			"catalog_product_updated": "تم تحديث المنتج",
+			"catalog_product_deleted": "تم حذف المنتج",
+			"catalog_brand_created": "تم إنشاء العلامة التجارية",
+			"catalog_brand_updated": "تم تحديث العلامة التجارية",
+			"catalog_brand_deleted": "تم حذف العلامة التجارية",
+			"catalog_category_created": "تم إنشاء الفئة",
+			"catalog_category_updated": "تم تحديث الفئة",
+			"catalog_category_deleted": "تم حذف الفئة",
+			"catalog_import_previewed": "معاينة الاستيراد",
+			"catalog_import_executed": "تم تنفيذ الاستيراد",
+			"forklift_created": "تمت إضافة الرافعة الشوكية",
+			"forklift_updated": "تم تحديث الرافعة الشوكية",
+			"forklift_deleted": "تم حذف الرافعة الشوكية",
+			"forklift_status_changed": "تغيير الحالة",
+			"quotation_created": "تم إنشاء عرض السعر",
+			"quotation_updated": "تم تحديث عرض السعر",
+			"quotation_deleted": "تم حذف عرض السعر",
+			"quotation_submitted": "تم إرسال عرض السعر للمراجعة",
+			"quotation_approved": "تمت الموافقة على عرض السعر",
+			"quotation_revision_requested": "طلب مراجعة عرض السعر",
+			"quotation_sent": "تم إرسال عرض السعر إلى العميل",
+			"quotation_accepted": "تم قبول عرض السعر",
+			"quotation_declined": "تم رفض عرض السعر",
+			"quotation_converted": "تم تحويل عرض السعر",
+			"quotation_cancelled": "تم إلغاء عرض السعر",
+			"quotation_reactivated": "تمت إعادة تفعيل عرض السعر",
+			"rental_contract_created": "تم إنشاء عقد الإيجار",
+			"rental_contract_updated": "تم تحديث عقد الإيجار",
+			"rental_contract_deleted": "تم حذف عقد الإيجار",
+			"rental_contract_submitted": "تم إرسال عقد الإيجار للموافقة",
+			"rental_contract_approved": "تمت الموافقة على عقد الإيجار",
+			"rental_contract_revision": "طلب مراجعة عقد الإيجار",
+			"rental_contract_activated": "تم تفعيل عقد الإيجار",
+			"rental_contract_cancelled": "تم إلغاء عقد الإيجار",
+			"rental_contract_closed": "تم إغلاق عقد الإيجار",
+			"rental_return_requested": "طلب إرجاع المعدة",
+			"rental_return_picked_up": "تم استلام المعدة من العميل",
+			"rental_return_received": "تم استلام الإرجاع بالمستودع",
+			"rental_return_completed": "اكتمل الإرجاع",
+			"rental_damage_assessed": "تم تقييم الضرر",
+			"rental_damage_disputed": "تم الاعتراض على الضرر",
+			"rental_damage_resolved": "تم حل الضرر",
+			"rental_extension_requested": "طلب تمديد العقد",
+			"rental_extension_approved": "تمت الموافقة على التمديد",
+			"rental_extension_rejected": "تم رفض التمديد",
+			"rental_billing_created": "تم إنشاء الفوترة",
+			"invoice_created": "تم إنشاء الفاتورة",
+			"invoice_updated": "تم تحديث الفاتورة",
+			"invoice_issued": "تم إصدار الفاتورة",
+			"invoice_sent": "تم إرسال الفاتورة",
+			"invoice_cancelled": "تم إلغاء الفاتورة",
+			"invoice_voided": "تم إبطال الفاتورة",
+			"payment_recorded": "تم تسجيل الدفعة",
+			"payment_confirmed": "تم تأكيد الدفعة",
+			"payment_rejected": "تم رفض الدفعة",
+			"payment_allocated": "تم تخصيص الدفعة",
+			"deposit_created": "تم إنشاء الوديعة",
+			"deposit_received": "تم استلام الوديعة",
+			"deposit_refunded": "تم استرداد الوديعة",
+			"deposit_forfeited": "تم مصادرة الوديعة",
+			"deposit_applied": "تم تطبيق الوديعة",
+			"revenue_recognized": "تم الاعتراف بالإيراد",
+			"revenue_reversed": "تم عكس الإيراد",
+			"project_created": "تم إنشاء المشروع",
+			"project_updated": "تم تحديث المشروع",
+			"project_deleted": "تم حذف المشروع",
+			"project_milestone_status_changed": "تغيير حالة المعلم",
+			"setting_updated": "تم تحديث الإعداد",
+			"inventory_import_executed": "تم استيراد المخزون",
+			"notification_preference_created": "تم الاشتراك في الإشعارات",
+			"notification_preference_updated": "تم تحديث تفضيل الإشعارات",
+			"notification_preference_deleted": "تم إلغاء الاشتراك في الإشعارات"
+		},
+		"group": {
+			"user": "المستخدم",
+			"customer": "العميل",
+			"lead": "العميل المحتمل",
+			"billing": "الفوترة",
+			"project": "المشروع",
+			"settings": "الإعدادات",
+			"inventory": "المخزون",
+			"notifications": "الإشعارات"
+		},
+		"table": {
+			"timestamp": "التوقيت",
+			"user": "المستخدم",
+			"action": "الإجراء",
+			"entity": "الكيان",
+			"id": "المعرّف",
+			"details": "التفاصيل",
+			"noActivityFound": "لم يتم العثور على نشاط",
+			"noActivityYet": "سيظهر النشاط هنا بمجرد تفاعل المستخدمين مع النظام.",
+			"ipAddress": "عنوان IP"
+		},
+		"details": {
+			"group": "المجموعة: {{group}}",
+			"eventInfo": "معلومات الحدث",
+			"systemOrDeletedUser": "النظام / مستخدم محذوف",
+			"title": "التفاصيل",
+			"noneRecorded": "لا توجد تفاصيل إضافية مسجلة.",
+			"fieldsModified": "الحقول المعدَّلة:",
+			"drawerTitle": "تفاصيل النشاط",
+			"ipNotTracked": "غير متتبَّع"
+		},
+		"pagination": {
+			"showing": "عرض {{start}}–{{end}} من {{total}}"
+		},
+		"loadError": "فشل تحميل سجل النشاط."
+	},
+	"executive": {
+		"title": "لوحة التحكم التنفيذية",
+		"subtitle": "مقاييس الأداء والتحليلات على مستوى المؤسسة",
+		"refresh": "تحديث",
+		"loadFailed": "فشل تحميل بيانات لوحة التحكم التنفيذية.",
+		"kpi": {
+			"totalRevenue": "إجمالي الإيرادات",
+			"invoicesCount": "{{count}} فاتورة",
+			"collectionRate": "معدل التحصيل",
+			"collected": "تم تحصيل {{amount}}",
+			"fleetUtilization": "معدل استخدام الأسطول",
+			"rentedOfTotal": "{{rented}} مؤجرة / {{total}} إجمالاً",
+			"customers": "العملاء",
+			"activeCount": "{{count}} نشط",
+			"inventoryValue": "قيمة المخزون",
+			"partsCount": "{{count}} قطعة",
+			"conversionRate": "معدل التحويل",
+			"winRate": "معدل الفوز: {{rate}}"
+		},
+		"chart": {
+			"revenueTrend": "اتجاه الإيرادات",
+			"noRevenueData": "لا توجد بيانات إيرادات",
+			"invoiced": "تم فوترته",
+			"collected": "تم تحصيله",
+			"fleetStatus": "حالة الأسطول",
+			"noFleetData": "لا توجد بيانات أسطول",
+			"leadPipeline": "مسار العملاء المحتملين (12 شهرًا)",
+			"noLeadData": "لا توجد بيانات عملاء محتملين",
+			"newLeads": "عملاء محتملون جدد",
+			"customerGrowth": "نمو العملاء (12 شهرًا)",
+			"noCustomerData": "لا توجد بيانات عملاء",
+			"newCustomers": "عملاء جدد",
+			"months": {
+				"jan": "يناير",
+				"feb": "فبراير",
+				"mar": "مارس",
+				"apr": "أبريل",
+				"may": "مايو",
+				"jun": "يونيو",
+				"jul": "يوليو",
+				"aug": "أغسطس",
+				"sep": "سبتمبر",
+				"oct": "أكتوبر",
+				"nov": "نوفمبر",
+				"dec": "ديسمبر"
+			}
+		},
+		"export": {
+			"exportExcel": "تصدير إلى Excel",
+			"customers": "العملاء",
+			"leads": "العملاء المحتملون",
+			"sales": "المبيعات",
+			"downloaded": "تم تنزيل تقرير {{report}}",
+			"exportFailed": "فشل التصدير",
+			"exportReports": "تصدير التقارير",
+			"customersExcel": "العملاء (Excel)",
+			"leadsExcel": "العملاء المحتملون (Excel)",
+			"salesExcel": "المبيعات (Excel)",
+			"customersCsv": "العملاء (CSV)",
+			"leadsCsv": "العملاء المحتملون (CSV)",
+			"salesCsv": "المبيعات (CSV)"
+		}
+	},
+	"catalog": {
+		"saveFailed": "فشل الحفظ.",
+		"saveChanges": "حفظ التغييرات",
+		"resultsCount": "{{count}} نتيجة",
+		"pageOf": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})",
+		"viewAll": "عرض الكل ←",
+		"browseAllProducts": "تصفح جميع المنتجات ←",
+		"hero": {
+			"title": "كتالوج المنتجات",
+			"subtitle": "الرافعات الشوكية · معدات المستودعات · قطع الغيار · الملحقات",
+			"searchPlaceholder": "البحث ضمن {{count}} منتج بالاسم أو رمز SKU أو الموديل..."
+		},
+		"categorySlider": {
+			"title": "تصفح حسب الفئة"
+		},
+		"brandShowcase": {
+			"title": "تسوق حسب العلامة التجارية"
+		},
+		"megaMenu": {
+			"allCategories": "جميع الفئات"
+		},
+		"brands": {
+			"title": "العلامات التجارية",
+			"subtitle": "{{count}} علامة تجارية",
+			"newBrand": "علامة تجارية جديدة",
+			"searchPlaceholder": "البحث عن علامات تجارية…",
+			"editTitle": "تعديل العلامة التجارية",
+			"newTitle": "علامة تجارية جديدة",
+			"table": {
+				"brand": "العلامة التجارية",
+				"country": "البلد",
+				"role": "الدور"
+			},
+			"empty": {
+				"title": "لم يتم العثور على علامات تجارية",
+				"createHint": "أنشئ أول علامة تجارية لديك للبدء."
+			},
+			"roles": {
+				"primary": "أساسية",
+				"partsOnly": "قطع غيار فقط",
+				"both": "كلاهما"
+			},
+			"form": {
+				"nameRequired": "اسم العلامة التجارية مطلوب.",
+				"namePlaceholder": "اسم العلامة التجارية",
+				"countryLabel": "البلد",
+				"countryPlaceholder": "مثال: اليابان",
+				"roleLabel": "الدور",
+				"websiteLabel": "الموقع الإلكتروني",
+				"websitePlaceholder": "https://…",
+				"createBrand": "إنشاء علامة تجارية"
+			},
+			"deleteDialog": {
+				"title": "حذف العلامة التجارية",
+				"message": "حذف العلامة التجارية \"{{name}}\"؟ سيتم مسح العلامة التجارية من المنتجات التي تشير إليها."
+			},
+			"toast": {
+				"loadError": "فشل تحميل العلامات التجارية.",
+				"createSuccess": "تم إنشاء العلامة التجارية بنجاح.",
+				"createError": "فشل إنشاء العلامة التجارية.",
+				"updateSuccess": "تم تحديث العلامة التجارية بنجاح.",
+				"updateError": "فشل تحديث العلامة التجارية.",
+				"deleteSuccess": "تم حذف العلامة التجارية.",
+				"deleteError": "فشل حذف العلامة التجارية."
+			}
+		},
+		"categories": {
+			"title": "الفئات",
+			"subtitle": "{{count}} فئة (شجرة من 3 مستويات)",
+			"newCategory": "فئة جديدة",
+			"editTitle": "تعديل الفئة",
+			"newTitle": "فئة جديدة",
+			"table": {
+				"category": "الفئة",
+				"level": "المستوى",
+				"children": "الفئات الفرعية"
+			},
+			"empty": {
+				"title": "لم يتم العثور على فئات",
+				"createHint": "أنشئ أول فئة لديك للبدء."
+			},
+			"types": {
+				"division": "قسم",
+				"category": "فئة",
+				"subCategory": "فئة فرعية"
+			},
+			"levelLine": "المستوى {{level}} — {{type}}",
+			"form": {
+				"nameRequired": "الاسم بالإنجليزية مطلوب.",
+				"nameEnLabel": "الاسم (بالإنجليزية)",
+				"namePlaceholder": "اسم الفئة",
+				"nameLoLabel": "الاسم (باللاوية)",
+				"parentLabel": "الفئة الرئيسية",
+				"topLevelOption": "— مستوى أعلى (قسم) —",
+				"createCategory": "إنشاء فئة"
+			},
+			"deleteDialog": {
+				"title": "حذف الفئة",
+				"message": "حذف \"{{name}}\"؟ سيفشل هذا الإجراء إذا كانت الفئة تحتوي على فئات فرعية أو منتجات مرتبطة بها."
+			},
+			"toast": {
+				"loadError": "فشل تحميل الفئات.",
+				"createSuccess": "تم إنشاء الفئة بنجاح.",
+				"createError": "فشل إنشاء الفئة.",
+				"updateSuccess": "تم تحديث الفئة بنجاح.",
+				"updateError": "فشل تحديث الفئة.",
+				"deleteSuccess": "تم حذف الفئة.",
+				"deleteError": "فشل حذف الفئة."
+			}
+		},
+		"products": {
+			"filterAllTypes": "جميع الأنواع",
+			"forSale": "للبيع",
+			"forRental": "للتأجير",
+			"featured": "مميز",
+			"refresh": "تحديث",
+			"newProduct": "منتج جديد",
+			"productCount": "{{count}} منتج",
+			"pillSearch": "بحث: {{query}}",
+			"pillBrand": "العلامة التجارية: {{name}}",
+			"pillCategory": "الفئة: {{name}}",
+			"editTitle": "تعديل المنتج",
+			"newTitle": "منتج جديد",
+			"skuPrefix": "SKU: {{sku}}",
+			"empty": {
+				"title": "لم يتم العثور على منتجات",
+				"hint": "حاول تعديل عوامل التصفية أو إنشاء منتج جديد."
+			},
+			"table": {
+				"product": "المنتج",
+				"sku": "SKU",
+				"brand": "العلامة التجارية"
+			},
+			"badges": {
+				"sale": "بيع",
+				"rental": "تأجير",
+				"featured": "مميز"
+			},
+			"deleteDialog": {
+				"title": "حذف المنتج",
+				"message": "حذف \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+			},
+			"form": {
+				"nameRequired": "اسم المنتج مطلوب.",
+				"saveFailed": "فشل الحفظ. يرجى المحاولة مرة أخرى.",
+				"nameEnLabel": "الاسم (بالإنجليزية)",
+				"nameEnPlaceholder": "اسم المنتج بالإنجليزية",
+				"nameLoLabel": "الاسم (باللاوية)",
+				"skuPlaceholder": "يُنشأ تلقائيًا إذا تُرك فارغًا",
+				"modelNumberLabel": "رقم الموديل",
+				"modelNumberPlaceholder": "مثال: EFG115",
+				"brandLabel": "العلامة التجارية",
+				"noBrandOption": "— بدون علامة تجارية —",
+				"noCategoryOption": "— بدون فئة —",
+				"descriptionPlaceholder": "وصف المنتج…",
+				"attributesLabel": "الخصائص",
+				"usedAvailable": "متوفر كمستعمل",
+				"serviceItem": "بند خدمة",
+				"createProduct": "إنشاء منتج"
+			},
+			"toast": {
+				"loadError": "فشل تحميل المنتجات.",
+				"createSuccess": "تم إنشاء المنتج بنجاح.",
+				"createError": "فشل إنشاء المنتج.",
+				"updateSuccess": "تم تحديث المنتج بنجاح.",
+				"updateError": "فشل تحديث المنتج.",
+				"deleteSuccess": "تم حذف المنتج.",
+				"deleteError": "فشل حذف المنتج."
+			}
+		},
+		"productDetail": {
+			"loadError": "المنتج غير موجود أو فشل التحميل.",
+			"backToCatalog": "العودة إلى الكتالوج",
+			"notFound": "المنتج غير موجود.",
+			"model": "الموديل",
+			"compatibleWith": "متوافق مع",
+			"specifications": "المواصفات"
+		},
+		"import": {
+			"title": "استيراد المنتجات",
+			"subtitle": "قم بتحميل ملف Excel لاستيراد المنتجات والعلامات التجارية والفئات بشكل جماعي.",
+			"dropzoneText": "أفلت ملف Excel هنا، أو انقر للتصفح",
+			"dropzoneHint": "يدعم ملفات .xlsx و .xls من كتالوج منتجات DK LAO",
+			"clear": "مسح",
+			"supportedSheetsLabel": "الأوراق المدعومة:",
+			"supportedSheetsList": "رافعات Jungheinrich الشوكية، رافعات Mitsubishi الشوكية، الملحقات (ອຸປະກອນ)، المستودعات (ສາງ)، أجهزة الشفط (ດູດຝຸ່ນ)، منظفات الأرضيات (ເຊັດຄັດ)، العلامات التجارية (ບໍລິການ).",
+			"autoDetectHint": "يكتشف أداة الاستيراد الأوراق تلقائيًا بالاسم باللغتين الإنجليزية واللاوية.",
+			"importButton": "رفع واستيراد",
+			"importing": "جارٍ الاستيراد…",
+			"uploadingHint": "قد يستغرق هذا بضع ثوانٍ للملفات الأكبر حجمًا.",
+			"uploadFailed": "فشل الاستيراد. يرجى المحاولة مرة أخرى.",
+			"successBanner": "تم الاستيراد بنجاح",
+			"partialBanner": "اكتمل الاستيراد مع بعض الأخطاء",
+			"imported": "تم الاستيراد",
+			"errors": "الأخطاء",
+			"failedRows": "الصفوف الفاشلة",
+			"importAnother": "استيراد ملف آخر",
+			"viewCatalog": "عرض الكتالوج",
+			"successToast": "اكتمل الاستيراد: تم استيراد {{count}} منتج.",
+			"errorToast": "اكتمل الاستيراد مع {{count}} أخطاء.",
+			"table": {
+				"rowNum": "#",
+				"error": "الخطأ",
+				"sheet": "الورقة"
+			}
+		}
+	},
+	"quotations": {
+		"status": {
+			"draft": "مسودة",
+			"underReview": "قيد المراجعة",
+			"approved": "تمت الموافقة",
+			"revision": "مراجعة",
+			"sent": "مُرسَل",
+			"accepted": "مقبول",
+			"rejected": "مرفوض",
+			"expired": "منتهي الصلاحية",
+			"converted": "تم التحويل",
+			"cancelled": "ملغى"
+		},
+		"type": {
+			"rental": "تأجير",
+			"sales": "مبيعات",
+			"service": "خدمة",
+			"spareParts": "قطع غيار"
+		},
+		"itemType": {
+			"forkliftRental": "تأجير رافعة شوكية",
+			"forkliftSale": "بيع رافعة شوكية",
+			"service": "خدمة",
+			"sparePart": "قطعة غيار",
+			"delivery": "توصيل",
+			"insurance": "تأمين",
+			"custom": "مخصص"
+		},
+		"list": {
+			"title": "عروض الأسعار",
+			"totalCount": "{{count}} عرض سعر",
+			"refresh": "تحديث",
+			"newQuotation": "عرض سعر جديد",
+			"searchPlaceholder": "البحث بالرقم أو العنوان...",
+			"allStatuses": "جميع الحالات",
+			"allTypes": "جميع الأنواع",
+			"colQuotation": "عرض السعر",
+			"colCustomer": "العميل",
+			"colValidUntil": "صالح حتى",
+			"noQuotationsFound": "لم يتم العثور على عروض أسعار",
+			"createOrAdjust": "أنشئ عرض سعر جديد أو عدّل عوامل التصفية.",
+			"resultsCount": "{{count}} نتيجة",
+			"pageOf": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})",
+			"deleteConfirmTitle": "حذف عرض السعر",
+			"deleteConfirmMessage": "حذف \"{{number}}\"؟ لا يمكن التراجع عن هذا الإجراء.",
+			"toast": {
+				"loadError": "فشل تحميل عروض الأسعار.",
+				"createSuccess": "تم إنشاء عرض السعر.",
+				"createError": "فشل إنشاء عرض السعر.",
+				"deleteSuccess": "تم حذف عرض السعر.",
+				"deleteError": "فشل حذف عرض السعر."
+			}
+		},
+		"form": {
+			"backToQuotations": "العودة إلى عروض الأسعار",
+			"newQuotation": "عرض سعر جديد",
+			"typeLabel": "نوع عرض السعر",
+			"currencyLabel": "العملة",
+			"titleLabel": "العنوان",
+			"titlePlaceholder": "مثال: تأجير رافعة شوكية — فينتيان موتورز",
+			"contactNameLabel": "اسم جهة الاتصال",
+			"contactNamePlaceholder": "السيد / السيدة",
+			"contactEmailLabel": "البريد الإلكتروني لجهة الاتصال",
+			"contactEmailPlaceholder": "email@example.com",
+			"contactPhoneLabel": "هاتف جهة الاتصال",
+			"contactPhonePlaceholder": "+856 20 ...",
+			"taxRateLabel": "نسبة الضريبة (%)",
+			"validFromLabel": "صالح من",
+			"validUntilLabel": "صالح حتى",
+			"notesLabel": "ملاحظات (مرئية للعميل)",
+			"notesPlaceholder": "تظهر في ملف PDF لعرض السعر...",
+			"internalNotesLabel": "ملاحظات داخلية",
+			"internalNotesPlaceholder": "للاستخدام الداخلي فقط، لا تظهر للعميل...",
+			"creating": "جارٍ الإنشاء...",
+			"createQuotation": "إنشاء عرض سعر",
+			"titleRequired": "العنوان مطلوب.",
+			"createFailed": "فشل إنشاء عرض السعر.",
+			"createdToast": "تم إنشاء عرض السعر {{number}}.",
+			"typeOptions": {
+				"rental": "عرض سعر تأجير",
+				"sales": "عرض سعر مبيعات",
+				"service": "عرض سعر خدمة",
+				"spareParts": "عرض سعر قطع غيار"
+			},
+			"vehicleInfo": {
+				"title": "معلومات المركبة",
+				"make": "الصانع",
+				"model": "الطراز",
+				"vin": "رقم الهيكل (VIN)",
+				"engineNo": "رقم المحرك",
+				"regNo": "رقم التسجيل",
+				"jobNumber": "رقم المهمة"
+			},
+			"exchangeRateLabel": "سعر الصرف",
+			"bankDetails": "البيانات المصرفية",
+			"bankDetailsPlaceholder": "اسم البنك، اسم الحساب، رقم الحساب، SWIFT/BIC..."
+		},
+		"detail": {
+			"backToQuotations": "العودة إلى عروض الأسعار",
+			"notFoundError": "عرض السعر غير موجود أو فشل التحميل.",
+			"actionFailed": "فشل: {{action}}",
+			"rev": "المراجعة {{number}}",
+			"submit": "إرسال",
+			"approve": "موافقة",
+			"requestRevision": "طلب مراجعة",
+			"sendToCustomer": "إرسال إلى العميل",
+			"markAccepted": "وضع علامة مقبول",
+			"markRejected": "وضع علامة مرفوض",
+			"convert": "تحويل",
+			"reactivate": "إعادة تفعيل",
+			"taxWithRate": "الضريبة ({{rate}}%)",
+			"discount": "الخصم",
+			"customer": "العميل",
+			"contact": "جهة الاتصال",
+			"assignedTo": "المسؤول",
+			"validFrom": "صالح من",
+			"validUntil": "صالح حتى",
+			"convertedTo": "تم التحويل إلى",
+			"internalNote": "ملاحظة داخلية",
+			"lineItems": "بنود عرض السعر ({{count}})",
+			"addItem": "إضافة بند",
+			"colNumber": "#",
+			"colUnitPrice": "سعر الوحدة",
+			"colDiscount": "نسبة الخصم %",
+			"serialNumber": "الرقم التسلسلي: {{serial}}",
+			"sku": "SKU: {{sku}}",
+			"durationDays": "{{count}} يوم ({{period}})",
+			"noLineItems": "لا توجد بنود بعد.",
+			"addItemsHint": "أضف بنودًا لإنشاء عرض السعر.",
+			"statusHistory": "سجل الحالة",
+			"colFrom": "من",
+			"colTo": "إلى",
+			"colReason": "السبب",
+			"colBy": "بواسطة",
+			"approvalHistory": "سجل الموافقات",
+			"colRev": "المراجعة",
+			"colDecision": "القرار",
+			"colConditions": "الشروط",
+			"toasts": {
+				"submitted": "تم الإرسال للمراجعة",
+				"revisionRequested": "تم طلب المراجعة",
+				"sent": "تم الإرسال إلى العميل",
+				"markedAccepted": "تم وضع علامة مقبول",
+				"markedRejected": "تم وضع علامة مرفوض",
+				"converted": "تم التحويل",
+				"reactivated": "تمت إعادة التفعيل",
+				"itemRemoved": "تمت إزالة البند"
+			},
+			"addItemModal": {
+				"title": "إضافة بند",
+				"itemType": "نوع البند",
+				"unit": "الوحدة",
+				"descriptionPlaceholder": "وصف البند",
+				"unitPrice": "سعر الوحدة",
+				"discountPercent": "الخصم (%)",
+				"rentalDuration": "مدة التأجير (أيام)",
+				"ratePeriod": "فترة التسعير",
+				"selectRatePeriod": "— اختر —",
+				"daily": "يومي",
+				"weekly": "أسبوعي",
+				"monthly": "شهري",
+				"adding": "جارٍ الإضافة...",
+				"descriptionRequired": "الوصف مطلوب.",
+				"unitPriceRequired": "سعر الوحدة مطلوب.",
+				"itemAdded": "تمت إضافة البند.",
+				"addFailed": "فشل إضافة البند.",
+				"itemCode": "رمز الصنف"
+			},
+			"revisionNeededReason": "يلزم التعديل",
+			"colItemCode": "رمز الصنف"
+		}
+	},
+	"imageUpload": {
+		"invalidFormat": "يُسمح فقط بصور JPG وPNG وWebP.",
+		"fileTooLarge": "حجم الملف يتجاوز الحد المسموح به وهو {{size}} ميجابايت.",
+		"invalidImage": "الملف ليس صورة صالحة.",
+		"uploadFailed": "فشل الرفع. يرجى المحاولة مرة أخرى.",
+		"remove": "إزالة",
+		"uploadedSuccessfully": "تم الرفع بنجاح",
+		"clickOrDrag": "انقر أو اسحب صورة لرفعها",
+		"hint": "JPG، PNG، WebP · الحد الأقصى {{size}} ميجابايت",
+		"previewAlt": "معاينة الصورة المرفوعة"
+	},
+	"login": {
+		"subtitle": "سجّل الدخول للمتابعة",
+		"powerSwitch": "مفتاح التشغيل",
+		"username": "اسم المستخدم",
+		"usernamePlaceholder": "أدخل اسم المستخدم",
+		"password": "كلمة المرور",
+		"passwordPlaceholder": "أدخل كلمة المرور",
+		"rememberMe": "تذكرني",
+		"signIn": "تسجيل الدخول",
+		"signingIn": "جارٍ تسجيل الدخول…",
+		"invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة",
+		"footer": "© 2026 DK LAO Services. جميع الحقوق محفوظة."
+	},
+	"customer360": {
+		"backToCustomers": "العودة إلى العملاء",
+		"notFound": "العميل غير موجود.",
+		"loadError": "العميل غير موجود أو فشل التحميل.",
+		"forklifts": "الرافعات الشوكية",
+		"activeRentals": "عقود الإيجار النشطة",
+		"openWorkOrders": "أوامر العمل المفتوحة",
+		"outstanding": "المستحق",
+		"notes": "ملاحظات",
+		"rentalContracts": "عقود الإيجار",
+		"workOrders": "أوامر العمل",
+		"invoices": "الفواتير",
+		"noForklifts": "لا توجد رافعات شوكية مخصصة لهذا العميل.",
+		"noRentalContracts": "لا توجد عقود إيجار لهذا العميل.",
+		"noWorkOrders": "لا توجد أوامر عمل لمعدات هذا العميل.",
+		"noInvoices": "لا توجد فواتير لهذا العميل.",
+		"colSerialNumber": "الرقم التسلسلي",
+		"colName": "الاسم",
+		"colStatus": "الحالة",
+		"colHourMeter": "عداد الساعات",
+		"colContractNumber": "رقم العقد",
+		"colStartDate": "تاريخ البدء",
+		"colEndDate": "تاريخ الانتهاء",
+		"colTotalValue": "القيمة الإجمالية",
+		"colWorkOrderNumber": "رقم أمر العمل",
+		"colForklift": "الرافعة الشوكية",
+		"colTitle": "العنوان",
+		"colPriority": "الأولوية",
+		"colScheduledDate": "التاريخ المجدول",
+		"colInvoiceNumber": "رقم الفاتورة",
+		"colTotalAmount": "المبلغ الإجمالي",
+		"colBalanceDue": "الرصيد المستحق",
+		"colDueDate": "تاريخ الاستحقاق"
+	},
+	"projects": {
+		"title": "مشاريع المستودعات",
+		"totalCount": "الإجمالي: {{count}}",
+		"createProject": "إنشاء مشروع",
+		"allStatuses": "جميع الحالات",
+		"status": {
+			"draft": "مسودة",
+			"survey": "مسح",
+			"design": "تصميم",
+			"boq_approved": "تمت الموافقة على قائمة الكميات",
+			"installation": "تركيب",
+			"handover": "تسليم",
+			"completed": "مكتمل"
+		},
+		"milestoneStatus": {
+			"pending": "قيد الانتظار",
+			"in_progress": "قيد التنفيذ",
+			"completed": "مكتمل"
+		},
+		"colProject": "المشروع",
+		"colCustomer": "العميل",
+		"colStartEnd": "البدء / الانتهاء",
+		"colStatus": "الحالة",
+		"colProgress": "التقدم",
+		"noProjectsFound": "لم يتم العثور على مشاريع",
+		"createToGetStarted": "أنشئ مشروعًا للبدء.",
+		"noPermissionView": "ليس لديك صلاحية لعرض المشاريع.",
+		"loadFailed": "فشل تحميل المشاريع.",
+		"resultsCount": "النتائج: {{count}}",
+		"pageOf": "صفحة {{page}} من {{pages}} (الإجمالي {{total}})",
+		"milestonesOf": "{{completed}}/{{total}} معلم",
+		"form": {
+			"editProject": "تعديل المشروع",
+			"newProject": "مشروع جديد",
+			"cancel": "إلغاء",
+			"saving": "جارٍ الحفظ…",
+			"saveChanges": "حفظ التغييرات",
+			"createProject": "إنشاء مشروع",
+			"projectName": "اسم المشروع",
+			"projectNamePlaceholder": "أرفف مستودع فينتيان",
+			"customer": "العميل",
+			"selectCustomer": "اختر عميلاً…",
+			"status": "الحالة",
+			"startDate": "تاريخ البدء",
+			"endDate": "تاريخ الانتهاء",
+			"notes": "ملاحظات",
+			"notesPlaceholder": "أي ملاحظات إضافية…"
+		},
+		"detail": {
+			"backToProjects": "العودة إلى المشاريع",
+			"notFound": "المشروع غير موجود.",
+			"noPermissionView": "ليس لديك صلاحية لعرض هذا المشروع.",
+			"edit": "تعديل",
+			"approveBoq": "الموافقة على قائمة الكميات",
+			"delete": "حذف",
+			"startDate": "تاريخ البدء",
+			"endDate": "تاريخ الانتهاء",
+			"milestones": "المعالم",
+			"boqTotal": "إجمالي قائمة الكميات",
+			"notes": "ملاحظات",
+			"addMilestone": "إضافة معلم",
+			"noMilestonesYet": "لا توجد معالم بعد.",
+			"colMilestone": "المعلم",
+			"colDueDate": "تاريخ الاستحقاق",
+			"colStatus": "الحالة",
+			"markStatus": "وضع علامة {{status}}",
+			"addBoqItem": "إضافة بند لقائمة الكميات",
+			"noBoqItemsYet": "لا توجد بنود في قائمة الكميات بعد.",
+			"colDescription": "الوصف",
+			"colQty": "الكمية",
+			"colUnitPrice": "سعر الوحدة",
+			"colTotal": "الإجمالي",
+			"totalRow": "الإجمالي",
+			"billOfQuantities": "قائمة الكميات",
+			"deleteProjectTitle": "حذف المشروع",
+			"deleteMilestoneTitle": "حذف المعلم",
+			"deleteBoqItemTitle": "حذف بند قائمة الكميات",
+			"deleteProjectMessage": "سيؤدي هذا إلى حذف المشروع وجميع معالمه وبنود قائمة الكميات الخاصة به نهائيًا. لا يمكن التراجع عن هذا الإجراء.",
+			"deleteGenericMessage": "لا يمكن التراجع عن هذا الإجراء.",
+			"confirmDelete": "حذف",
+			"milestoneModalTitle": "إضافة معلم",
+			"milestoneName": "اسم المعلم",
+			"milestoneNamePlaceholder": "مسح الموقع",
+			"dueDate": "تاريخ الاستحقاق",
+			"adding": "جارٍ الإضافة…",
+			"boqModalTitle": "إضافة بند لقائمة الكميات",
+			"linkInventoryPart": "ربط بقطعة من المخزون (اختياري)",
+			"notLinked": "— غير مرتبط —",
+			"description": "الوصف",
+			"quantity": "الكمية",
+			"unitPrice": "سعر الوحدة",
+			"addItem": "إضافة بند",
+			"descriptionPriceRequired": "الوصف وسعر الوحدة مطلوبان.",
+			"projectUpdated": "تم تحديث المشروع.",
+			"projectUpdateFailed": "فشل تحديث المشروع.",
+			"boqApproved": "تمت الموافقة على قائمة الكميات.",
+			"boqApproveFailed": "فشلت الموافقة على قائمة الكميات.",
+			"projectDeleted": "تم حذف المشروع.",
+			"projectDeleteFailed": "فشل حذف المشروع.",
+			"milestoneStatusUpdateFailed": "فشل تحديث حالة المعلم.",
+			"milestoneRemoved": "تمت إزالة المعلم.",
+			"milestoneRemoveFailed": "فشلت إزالة المعلم.",
+			"boqItemRemoved": "تمت إزالة بند قائمة الكميات.",
+			"boqItemRemoveFailed": "فشلت إزالة بند قائمة الكميات.",
+			"milestoneAdded": "تمت إضافة المعلم.",
+			"milestoneAddFailed": "فشلت إضافة المعلم.",
+			"boqItemAdded": "تمت إضافة بند قائمة الكميات.",
+			"boqItemAddFailed": "فشلت إضافة بند قائمة الكميات.",
+			"projectCreated": "تم إنشاء المشروع.",
+			"projectCreateFailed": "فشل إنشاء المشروع."
+		}
+	},
+	"reports": {
+		"title": "التقارير",
+		"subtitle": "التحليلات، مقاييس التحويل، وتصدير البيانات",
+		"refresh": "تحديث",
+		"retry": "إعادة المحاولة",
+		"keyMetrics": "المقاييس الرئيسية",
+		"wonLeads": "العملاء المحتملون الفائزون",
+		"totalCustomers": "إجمالي العملاء",
+		"conversionRate": "معدل التحويل",
+		"winRate": "معدل الفوز",
+		"wonOverTotalLeads": "الفائزون ÷ إجمالي العملاء المحتملين",
+		"wonOverWonPlusLost": "الفائزون ÷ (الفائزون + الخاسرون)",
+		"exportData": "تصدير البيانات",
+		"downloadReports": "تنزيل التقارير",
+		"format": "الصيغة",
+		"fromDate": "من تاريخ",
+		"toDate": "إلى تاريخ",
+		"clearDates": "مسح التواريخ",
+		"downloading": "جارٍ التنزيل…",
+		"exportNote": "إذا لم تكن نقطة نهاية التقرير متاحة، يتم إنشاء ملف CSV ملخص من جهة العميل.",
+		"customers": "العملاء",
+		"leads": "العملاء المحتملون",
+		"sales": "المبيعات",
+		"downloadSuccess": "تم تنزيل تقرير {{type}}.",
+		"downloadError": "فشل تنزيل تقرير {{type}}.",
+		"trends": "الاتجاهات — آخر 12 شهرًا",
+		"syntheticPreview": "بيانات معاينة تجريبية",
+		"leadVolume": "حجم العملاء المحتملين",
+		"leadVolumeSub": "العملاء المحتملون الجدد شهريًا",
+		"noLeadTrend": "لا توجد بيانات اتجاه للعملاء المحتملين",
+		"leadTrendWillAppear": "سيظهر اتجاه العملاء المحتملين بمجرد ربط نقطة النهاية",
+		"customerGrowth": "نمو العملاء",
+		"customerGrowthSub": "العملاء الجدد شهريًا",
+		"noCustomerTrend": "لا توجد بيانات اتجاه للعملاء",
+		"customerTrendWillAppear": "سيظهر اتجاه العملاء بمجرد ربط نقطة النهاية",
+		"leadAnalysis": "تحليل العملاء المحتملين",
+		"statusDistribution": "توزيع الحالات",
+		"statusDistributionSub": "العملاء المحتملون حسب مرحلة المسار الحالية",
+		"noStatusData": "لا توجد بيانات حالة للعملاء المحتملين",
+		"createLeadsToSeeDistribution": "أنشئ عملاء محتملين لعرض التوزيع",
+		"sourceBreakdown": "تفصيل المصادر",
+		"sourceBreakdownSub": "من أين يأتي العملاء المحتملون",
+		"noSourceData": "لا توجد بيانات مصادر",
+		"addSourceWhenCreating": "أضف مصدرًا عند إنشاء العملاء المحتملين",
+		"conversionMetrics": "مقاييس التحويل",
+		"metric": "المقياس",
+		"rate": "المعدل",
+		"breakdown": "التفصيل",
+		"formula": "الصيغة",
+		"lostRate": "معدل الخسارة",
+		"activeCustomers": "العملاء النشطون",
+		"leadsInPipeline": "العملاء المحتملون في المسار",
+		"ofTotal": "من إجمالي {{count}}",
+		"wonOverTotalFormula": "الفائزون ÷ إجمالي العملاء المحتملين × 100",
+		"wonOverWonLostFormula": "الفائزون ÷ (الفائزون + الخاسرون) × 100",
+		"lostOverWonLostFormula": "الخاسرون ÷ (الفائزون + الخاسرون) × 100",
+		"activeOverTotalFormula": "النشطون ÷ إجمالي العملاء × 100",
+		"pipelineFormula": "جديد + تم التواصل + مؤهل + عرض مقدم",
+		"moduleRoadmap": "خارطة طريق الوحدات",
+		"sourceLabels": {
+			"website": "الموقع الإلكتروني",
+			"referral": "إحالة",
+			"coldCall": "اتصال مباشر",
+			"email": "البريد الإلكتروني",
+			"socialMedia": "وسائل التواصل الاجتماعي",
+			"other": "أخرى"
+		},
+		"modules": {
+			"projects": {
+				"label": "المشاريع",
+				"description": "إدارة المشاريع مع المعالم ولوحات الحالة وتعيين الفرق"
+			},
+			"services": {
+				"label": "الخدمات",
+				"description": "كتالوج الخدمات، مستويات التسعير، وتعيينات خدمة العملاء"
+			},
+			"tasks": {
+				"label": "المهام",
+				"description": "لوحة مهام مع التعيينات ومواعيد الاستحقاق ومستويات الأولوية"
+			},
+			"invoices": {
+				"label": "الفواتير",
+				"description": "إصدار الفواتير، تتبع المدفوعات، وتقارير الإيرادات"
+			}
+		},
+		"formatCsv": "CSV (.csv)",
+		"formatExcel": "Excel (.xlsx)"
+	},
+	"routes": {
+		"dashboard": "لوحة التحكم",
+		"customerDetail": "ملف العميل الشامل",
+		"customers": "العملاء",
+		"leads": "العملاء المحتملون",
+		"activity": "النشاط",
+		"reports": "التقارير",
+		"settings": "الإعدادات",
+		"products": "المنتجات",
+		"productDetail": "تفاصيل المنتج",
+		"brands": "العلامات التجارية",
+		"categories": "الفئات",
+		"import": "استيراد",
+		"equipmentRegistry": "سجل المعدات",
+		"equipmentDetail": "تفاصيل المعدة",
+		"quotations": "عروض الأسعار",
+		"newQuotation": "عرض سعر جديد",
+		"quotationDetail": "تفاصيل عرض السعر",
+		"rentalContracts": "عقود الإيجار",
+		"newContract": "عقد جديد",
+		"contractDetail": "تفاصيل العقد",
+		"movementControl": "التحكم بالحركات",
+		"newMovement": "حركة جديدة",
+		"movementDetail": "تفاصيل الحركة",
+		"billing": "الفواتير",
+		"invoices": "الفواتير",
+		"invoiceDetail": "تفاصيل الفاتورة",
+		"payments": "المدفوعات",
+		"paymentDetail": "تفاصيل الدفعة",
+		"deposits": "الودائع",
+		"depositDetail": "تفاصيل الوديعة",
+		"revenueRecognition": "الاعتراف بالإيراد",
+		"financeDashboard": "لوحة التحكم المالية",
+		"statements": "كشوف الحساب",
+		"paymentManager": "إدارة المدفوعات",
+		"depositManager": "إدارة الودائع",
+		"maintenancePm": "الصيانة والصيانة الوقائية",
+		"workOrders": "أوامر العمل",
+		"newWorkOrder": "أمر عمل جديد",
+		"workOrderDetail": "تفاصيل أمر العمل",
+		"pmSchedules": "جداول الصيانة الوقائية",
+		"inventory": "المخزون",
+		"spareParts": "قطع الغيار",
+		"newPart": "قطعة جديدة",
+		"partDetail": "تفاصيل القطعة",
+		"warehouses": "المستودعات",
+		"purchaseOrders": "أوامر الشراء",
+		"executiveDashboard": "لوحة التحكم التنفيذية",
+		"projects": "مشاريع المستودعات",
+		"projectDetail": "تفاصيل المشروع",
+		"iotManagement": "إدارة إنترنت الأشياء"
+	},
+	"iot": {
+		"title": "قياس إنترنت الأشياء عن بُعد",
+		"subtitle": "إدارة إقران أجهزة GPS/عداد الساعات ومراقبة الاتصال المباشر عبر الأسطول.",
+		"refresh": "تحديث",
+		"searchPlaceholder": "البحث باسم الرافعة الشوكية أو الرقم التسلسلي...",
+		"kpi": {
+			"totalPaired": "الأجهزة المقترنة",
+			"live": "متصل الآن",
+			"offline": "غير متصل",
+			"unpaired": "الوحدات غير المقترنة"
+		},
+		"table": {
+			"forklift": "الرافعة الشوكية",
+			"deviceId": "معرّف الجهاز",
+			"lastPing": "آخر إشارة",
+			"status": "الحالة"
+		},
+		"notPaired": "غير مقترن",
+		"never": "أبدًا",
+		"pairAction": "إقران جهاز",
+		"unpairAction": "إلغاء الإقران",
+		"noResults": "لم يتم العثور على رافعات شوكية.",
+		"pairModal": {
+			"title": "إقران جهاز إنترنت الأشياء — {{name}}",
+			"deviceIdLabel": "معرّف الجهاز",
+			"deviceIdPlaceholder": "مثال: DK-IOT-001",
+			"deviceIdRequired": "معرّف الجهاز مطلوب.",
+			"duplicateError": "معرّف الجهاز هذا مقترن بالفعل برافعة شوكية أخرى.",
+			"submitError": "فشل إقران الجهاز. يرجى المحاولة مرة أخرى.",
+			"submit": "إقران الجهاز",
+			"pairing": "جارٍ الإقران..."
+		},
+		"unpairConfirm": {
+			"title": "إلغاء إقران الجهاز",
+			"message": "إزالة الجهاز \"{{deviceId}}\" من {{name}}؟ سيتوقف عن إرسال تحديثات عداد الساعات التلقائية حتى تتم إعادة إقرانه."
+		}
+	},
+	"changePassword": {
+		"title": "تغيير كلمة المرور",
+		"subtitle": "قم بتحديث كلمة المرور للحفاظ على أمان حسابك.",
+		"currentPassword": "كلمة المرور الحالية",
+		"currentPasswordPlaceholder": "أدخل كلمة المرور الحالية",
+		"newPassword": "كلمة المرور الجديدة",
+		"newPasswordPlaceholder": "8 أحرف على الأقل",
+		"confirmPassword": "تأكيد كلمة المرور الجديدة",
+		"confirmPasswordPlaceholder": "أعد إدخال كلمة المرور الجديدة",
+		"submit": "تغيير كلمة المرور",
+		"submitting": "جارٍ تغيير كلمة المرور…",
+		"mismatchError": "كلمة المرور الجديدة والتأكيد غير متطابقين.",
+		"tooShortError": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+		"successToast": "تم تغيير كلمة المرور بنجاح.",
+		"incorrectCurrentError": "كلمة المرور الحالية غير صحيحة.",
+		"genericError": "فشل تغيير كلمة المرور. يرجى المحاولة مرة أخرى."
+	},
+	"documentPreview": {
+		"docTitle": {
+			"invoice": "فاتورة",
+			"quotation": "عرض سعر",
+			"purchaseOrder": "أمر شراء"
+		},
+		"customerDetails": "بيانات العميل",
+		"vendorDetails": "بيانات المورّد",
+		"vehicleInformation": "معلومات المركبة",
+		"vehicle": {
+			"make": "الصانع",
+			"model": "الطراز",
+			"vin": "رقم الهيكل (VIN)",
+			"engineNo": "رقم المحرك",
+			"regNo": "رقم التسجيل",
+			"jobNumber": "رقم المهمة"
+		},
+		"dateLabel": "التاريخ",
+		"docNumberLabel": "رقم المستند",
+		"unitPrice": "سعر الوحدة",
+		"bankDetails": "البيانات المصرفية",
+		"subtotal": "المجموع الفرعي",
+		"vatLabel": "ضريبة القيمة المضافة ({{rate}}%)",
+		"grandTotal": "الإجمالي الكلي",
+		"issuedBy": "صادر عن",
+		"approvedBy": "اعتمد من"
+	},
+	"modulePlaceholder": {
+		"badge": "قريبًا",
+		"emptyHint": "تم تجهيز هيكل هذه الوحدة — سير العمل الكامل قادم قريبًا."
+	},
+	"documentFlow": {
+		"title": "مسار المستند:"
+	}
+}

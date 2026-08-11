@@ -1,0 +1,1012 @@
+erDiagram
+    %% ═══════════════════════════════════════════════════════════════
+    %% AUTH DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    roles {
+        int id PK
+        varchar_50 name UK "super_admin|manager|sales|support"
+        varchar_255 description
+        bool is_active "DEFAULT true"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    users {
+        int id PK
+        varchar_255 email UK
+        varchar_100 username UK
+        varchar_255 hashed_password
+        varchar_255 full_name
+        bool is_active "DEFAULT true"
+        bool is_superuser "DEFAULT false"
+        int role_id FK
+        timestamptz last_login
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    revoked_tokens {
+        int id PK
+        varchar_255 jti UK
+        timestamptz revoked_at "DEFAULT NOW()"
+    }
+
+    roles ||--o{ users : "assigned to"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% CRM DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    customers {
+        int id PK
+        varchar_100 first_name
+        varchar_100 last_name
+        varchar_255 email UK
+        varchar_20 phone
+        varchar_255 company
+        varchar_20 status "DEFAULT prospect"
+        text notes
+        int assigned_to FK
+        int created_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    leads {
+        int id PK
+        varchar_255 title
+        text description
+        float value
+        varchar_50 source
+        varchar_20 status "DEFAULT new"
+        int customer_id FK
+        int assigned_to FK
+        int created_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    lead_notes {
+        int id PK
+        int lead_id FK "CASCADE"
+        int author_id FK "SET NULL"
+        text content
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    activity_logs {
+        int id PK
+        int user_id FK "SET NULL"
+        varchar_50 action
+        varchar_50 entity_type
+        int entity_id
+        jsonb details
+        timestamptz created_at "DEFAULT NOW()"
+    }
+
+    users ||--o{ customers : "assigned_to"
+    users ||--o{ leads : "assigned_to"
+    customers ||--o{ leads : "converted"
+    leads ||--o{ lead_notes : "has"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% CATALOG DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    brands {
+        int id PK
+        varchar_150 name UK
+        varchar_150 slug UK
+        varchar_20 brand_role "DEFAULT primary"
+        varchar_500 logo_url
+        varchar_100 country
+        varchar_255 website
+        text description
+        bool is_active "DEFAULT true"
+        int sort_order "DEFAULT 0"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    product_categories {
+        int id PK
+        int parent_id FK "RESTRICT, self-ref"
+        varchar_200 name_lo
+        varchar_200 name_en
+        varchar_200 slug UK
+        int level "DEFAULT 1"
+        text description
+        varchar_100 icon
+        int sort_order "DEFAULT 0"
+        bool is_active "DEFAULT true"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    products {
+        int id PK
+        varchar_100 sku UK
+        varchar_300 name_lo
+        varchar_300 name_en
+        varchar_300 slug UK
+        varchar_150 model_number
+        int brand_id FK "SET NULL"
+        int category_id FK "SET NULL"
+        text description_lo
+        text description_en
+        bool is_active "DEFAULT true"
+        bool is_featured "DEFAULT false"
+        bool is_sale "DEFAULT true"
+        bool is_rental "DEFAULT false"
+        bool is_used_available "DEFAULT false"
+        bool is_service_item "DEFAULT false"
+        int sort_order "DEFAULT 0"
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    product_specs {
+        int id PK
+        int product_id FK "CASCADE"
+        varchar_100 spec_group
+        varchar_100 spec_key
+        varchar_150 spec_label
+        varchar_500 spec_value
+        varchar_50 spec_unit
+        int sort_order "DEFAULT 0"
+    }
+    product_images {
+        int id PK
+        int product_id FK "CASCADE"
+        varchar_500 image_url
+        varchar_255 alt_text
+        bool is_primary "DEFAULT false"
+        int sort_order "DEFAULT 0"
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    product_compat_brands {
+        int id PK
+        int product_id FK "CASCADE"
+        int brand_id FK "CASCADE"
+        varchar_300 notes
+    }
+    import_jobs {
+        int id PK
+        varchar_255 original_filename
+        varchar_20 status "DEFAULT pending"
+        int total_rows "DEFAULT 0"
+        int processed_rows "DEFAULT 0"
+        int success_rows "DEFAULT 0"
+        int error_rows "DEFAULT 0"
+        jsonb preview_data
+        int created_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz completed_at
+    }
+    import_errors {
+        int id PK
+        int job_id FK "CASCADE"
+        varchar_200 sheet_name
+        int row_number
+        jsonb row_data
+        text error_message
+    }
+
+    brands ||--o{ products : "manufactures"
+    product_categories ||--o{ products : "contains"
+    product_categories ||--o{ product_categories : "parent"
+    products ||--o{ product_specs : "has"
+    products ||--o{ product_images : "has"
+    products ||--o{ product_compat_brands : "compatible"
+    brands ||--o{ product_compat_brands : "compatible"
+    import_jobs ||--o{ import_errors : "has"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% EQUIPMENT DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    forklift_models {
+        int id PK
+        int brand_id FK "SET NULL"
+        varchar_200 name
+        varchar_200 slug UK
+        varchar_100 series
+        varchar_20 fuel_type
+        float capacity_kg
+        int max_lift_height_mm
+        text description
+        bool is_active "DEFAULT true"
+        int sort_order "DEFAULT 0"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    forklifts {
+        int id PK
+        varchar_100 serial_number UK
+        varchar_300 slug UK
+        varchar_50 internal_code UK
+        int model_id FK "SET NULL"
+        int brand_id FK "SET NULL"
+        int customer_id FK "SET NULL"
+        varchar_300 name_en
+        varchar_300 name_lo
+        varchar_150 model_number
+        varchar_30 status "DEFAULT in_stock"
+        varchar_20 condition "DEFAULT new"
+        varchar_20 fuel_type
+        float capacity_kg
+        int year_manufactured
+        date purchase_date
+        date warranty_expiry
+        float initial_hour_meter "DEFAULT 0"
+        float current_hour_meter "DEFAULT 0"
+        text notes
+        bool is_active "DEFAULT true"
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    forklift_specs {
+        int id PK
+        int forklift_id FK "CASCADE"
+        varchar_50 mast_type
+        int max_lift_height_mm
+        varchar_50 front_tire
+        varchar_50 rear_tire
+        varchar_50 tire_type
+        int fork_length_mm
+        varchar_100 battery_type
+        varchar_100 attachment_type
+        text notes
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    forklift_photos {
+        int id PK
+        int forklift_id FK "CASCADE"
+        varchar_500 image_url
+        varchar_500 thumbnail_url
+        varchar_255 alt_text
+        varchar_500 caption
+        bool is_primary "DEFAULT false"
+        int sort_order "DEFAULT 0"
+        date taken_at
+        int uploaded_by FK
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    forklift_documents {
+        int id PK
+        int forklift_id FK "CASCADE"
+        varchar_30 document_type
+        varchar_300 title
+        varchar_500 file_url
+        int file_size_bytes
+        varchar_100 mime_type
+        date expiry_date
+        varchar_500 notes
+        int uploaded_by FK
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    forklift_locations {
+        int id PK
+        int forklift_id FK "CASCADE"
+        varchar_200 location_name
+        varchar_100 warehouse_zone
+        text address
+        int customer_id FK "SET NULL"
+        date effective_date
+        varchar_500 notes
+        int recorded_by FK
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    forklift_hour_meter_logs {
+        int id PK
+        int forklift_id FK "CASCADE"
+        float reading
+        timestamptz recorded_at "DEFAULT NOW()"
+        varchar_30 source "DEFAULT manual"
+        varchar_500 notes
+        int recorded_by FK
+    }
+    forklift_ownership_costs {
+        int id PK
+        int forklift_id FK "CASCADE"
+        varchar_30 cost_type
+        float amount
+        varchar_3 currency "DEFAULT LAK"
+        date cost_date
+        varchar_500 description
+        varchar_200 vendor
+        varchar_100 reference_number
+        int recorded_by FK
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    forklift_status_history {
+        int id PK
+        int forklift_id FK "CASCADE"
+        varchar_30 from_status
+        varchar_30 to_status
+        varchar_500 reason
+        int changed_by FK
+        timestamptz changed_at "DEFAULT NOW()"
+    }
+
+    brands ||--o{ forklift_models : "brand"
+    forklift_models ||--o{ forklifts : "model"
+    brands ||--o{ forklifts : "brand"
+    customers ||--o{ forklifts : "current_holder"
+    forklifts ||--o{ forklift_specs : "has"
+    forklifts ||--o{ forklift_photos : "has"
+    forklifts ||--o{ forklift_documents : "has"
+    forklifts ||--o{ forklift_locations : "tracked_at"
+    forklifts ||--o{ forklift_hour_meter_logs : "records"
+    forklifts ||--o{ forklift_ownership_costs : "incurs"
+    forklifts ||--o{ forklift_status_history : "transitions"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% QUOTATION DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    quotations {
+        int id PK
+        varchar_50 quotation_number UK
+        int revision_number "DEFAULT 1"
+        int parent_id FK "self-ref"
+        varchar_30 quotation_type
+        varchar_30 status "DEFAULT draft"
+        varchar_500 title
+        int customer_id FK
+        int lead_id FK
+        int assigned_to FK
+        varchar_200 contact_name
+        varchar_255 contact_email
+        varchar_50 contact_phone
+        float subtotal "DEFAULT 0"
+        float tax_rate "DEFAULT 0"
+        float tax_amount "DEFAULT 0"
+        float discount_amount "DEFAULT 0"
+        float total_amount "DEFAULT 0"
+        varchar_3 currency "DEFAULT LAK"
+        date valid_from
+        date valid_until
+        text notes
+        text internal_notes
+        varchar_30 converted_to_type
+        int converted_to_id
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+        bool is_active "DEFAULT true"
+    }
+    quotation_items {
+        int id PK
+        int quotation_id FK "CASCADE"
+        int line_number
+        varchar_30 item_type
+        int forklift_id FK "SET NULL"
+        int product_id FK "SET NULL"
+        varchar_1000 description
+        float quantity "DEFAULT 1"
+        varchar_50 unit "DEFAULT unit"
+        float unit_price
+        float discount_percent "DEFAULT 0"
+        float line_total
+        int rental_duration_days
+        varchar_20 rental_rate_period
+        varchar_500 notes
+        int sort_order "DEFAULT 0"
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    quotation_approvals {
+        int id PK
+        int quotation_id FK "CASCADE"
+        int revision_number
+        varchar_20 decision
+        text reason
+        text conditions
+        int decided_by FK
+        timestamptz decided_at "DEFAULT NOW()"
+    }
+    quotation_status_history {
+        int id PK
+        int quotation_id FK "CASCADE"
+        varchar_30 from_status
+        varchar_30 to_status
+        varchar_500 reason
+        int changed_by FK
+        timestamptz changed_at "DEFAULT NOW()"
+    }
+
+    customers ||--o{ quotations : "receives"
+    leads ||--o{ quotations : "generates"
+    quotations ||--o{ quotation_items : "contains"
+    quotations ||--o{ quotation_approvals : "approved_by"
+    quotations ||--o{ quotation_status_history : "tracks"
+    forklifts ||--o{ quotation_items : "quoted"
+    products ||--o{ quotation_items : "quoted"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% RENTAL DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    rental_contracts {
+        int id PK
+        varchar_50 contract_number UK
+        int quotation_id FK
+        int customer_id FK "RESTRICT"
+        int lead_id FK
+        varchar_30 status "DEFAULT reservation"
+        varchar_20 contract_type "DEFAULT short_term"
+        int revision_number "DEFAULT 1"
+        date start_date
+        date end_date
+        date actual_start_date
+        date actual_end_date
+        int billing_cycle_day "DEFAULT 1"
+        int payment_terms_days "DEFAULT 30"
+        float deposit_amount "DEFAULT 0"
+        varchar_20 deposit_status "DEFAULT pending"
+        float early_termination_fee_pct "DEFAULT 0"
+        float late_return_penalty_pct "DEFAULT 0"
+        float overtime_rate_pct "DEFAULT 150"
+        float subtotal "DEFAULT 0"
+        float tax_rate "DEFAULT 0"
+        float tax_amount "DEFAULT 0"
+        float discount_amount "DEFAULT 0"
+        float total_value "DEFAULT 0"
+        varchar_3 currency "DEFAULT LAK"
+        text delivery_address
+        varchar_200 delivery_contact_name
+        varchar_50 delivery_contact_phone
+        text notes
+        text internal_notes
+        text cancellation_reason
+        timestamptz reservation_expires_at
+        int assigned_to FK
+        int approved_by FK
+        timestamptz approved_at
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+        bool is_active "DEFAULT true"
+    }
+    rental_contract_items {
+        int id PK
+        int contract_id FK "CASCADE"
+        int forklift_id FK "SET NULL"
+        int quotation_item_id FK "SET NULL"
+        int line_number
+        varchar_1000 description
+        float monthly_rate
+        float daily_rate
+        float hourly_rate
+        float contracted_hours_limit
+        float maintenance_interval_hours
+        float departure_hour_meter
+        float return_hour_meter
+        float hours_used
+        varchar_20 line_status "DEFAULT reserved"
+        float line_total "DEFAULT 0"
+        int sort_order
+        text notes
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    rental_contract_terms {
+        int id PK
+        int contract_id FK "CASCADE"
+        varchar_30 term_category
+        varchar_100 term_key "UNIQUE(contract_id,term_key)"
+        varchar_300 term_label
+        text term_value
+        varchar_20 data_type "DEFAULT text"
+        float numeric_value
+        bool is_required
+        bool is_visible_to_customer
+        int sort_order
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    rental_contract_status_history {
+        int id PK
+        int contract_id FK "CASCADE"
+        varchar_30 from_status
+        varchar_30 to_status
+        varchar_500 reason
+        int changed_by FK
+        timestamptz changed_at "DEFAULT NOW()"
+    }
+    rental_extensions {
+        int id PK
+        int contract_id FK "CASCADE"
+        int extension_number
+        date original_end_date
+        date new_end_date
+        float rate_adjustment_pct "DEFAULT 0"
+        float new_monthly_rate
+        text reason
+        varchar_20 status "DEFAULT pending"
+        text conditions
+        int requested_by FK
+        int approved_by FK
+        timestamptz decided_at
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    rental_returns {
+        int id PK
+        varchar_50 return_number UK
+        int contract_id FK "CASCADE"
+        int contract_item_id FK "SET NULL"
+        int forklift_id FK "SET NULL"
+        varchar_20 return_type
+        varchar_20 status "DEFAULT requested"
+        bool is_early_termination "DEFAULT false"
+        text early_termination_reason
+        date requested_date
+        date scheduled_pickup_date
+        date actual_pickup_date
+        date actual_received_date
+        text pickup_address
+        float departure_hour_meter
+        float arrival_hour_meter
+        int condition_rating
+        varchar_20 overall_condition
+        text exterior_notes
+        bool mechanical_pass
+        bool safety_equipment_pass
+        jsonb photo_urls
+        varchar_500 customer_signoff_url
+        int assigned_driver FK
+        int inspected_by FK
+        text notes
+        int created_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    rental_damage_reports {
+        int id PK
+        varchar_50 report_number UK
+        int return_id FK "CASCADE"
+        int contract_id FK "CASCADE"
+        int forklift_id FK "SET NULL"
+        varchar_30 damage_category
+        varchar_100 component
+        text description
+        jsonb photo_urls
+        float repair_cost "DEFAULT 0"
+        float parts_cost "DEFAULT 0"
+        float downtime_cost "DEFAULT 0"
+        float total_charge "DEFAULT 0"
+        float final_charge
+        int downtime_days "DEFAULT 0"
+        bool is_customer_liable "DEFAULT true"
+        varchar_20 dispute_status "DEFAULT none"
+        text dispute_reason
+        text dispute_resolution
+        int dispute_resolved_by FK
+        timestamptz dispute_resolved_at
+        int assessed_by FK
+        timestamptz assessed_at
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    rental_billing_cycles {
+        int id PK
+        varchar_50 billing_number UK
+        int contract_id FK "CASCADE"
+        int contract_item_id FK "SET NULL"
+        varchar_30 billing_type
+        varchar_500 description
+        date period_start
+        date period_end
+        float quantity
+        float unit_rate
+        float amount
+        float tax_amount
+        float total_amount
+        varchar_3 currency "DEFAULT LAK"
+        bool is_credit "DEFAULT false"
+        varchar_20 payment_status "DEFAULT pending"
+        int invoice_id
+        date due_date
+        date paid_date
+        varchar_20 generated_by "DEFAULT system"
+        text notes
+        int created_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+
+    customers ||--o{ rental_contracts : "signs"
+    quotations ||--o| rental_contracts : "converts_to"
+    rental_contracts ||--o{ rental_contract_items : "contains"
+    rental_contracts ||--o{ rental_contract_terms : "has"
+    rental_contracts ||--o{ rental_contract_status_history : "tracks"
+    rental_contracts ||--o{ rental_extensions : "extended"
+    rental_contracts ||--o{ rental_returns : "returned"
+    rental_contracts ||--o{ rental_billing_cycles : "billed"
+    rental_contracts ||--o{ rental_damage_reports : "damaged"
+    forklifts ||--o{ rental_contract_items : "rented"
+    rental_returns ||--o{ rental_damage_reports : "reports"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% MOVEMENT DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    asset_movements {
+        int id PK
+        varchar_50 movement_number UK
+        varchar_30 movement_type
+        varchar_20 status "DEFAULT draft"
+        varchar_10 priority "DEFAULT normal"
+        int forklift_id FK "RESTRICT"
+        int rental_contract_id FK
+        int customer_id FK
+        varchar_200 from_location
+        text from_address
+        varchar_200 to_location
+        text to_address
+        date scheduled_date
+        timestamptz actual_departure
+        timestamptz actual_arrival
+        float departure_hour_meter
+        float arrival_hour_meter
+        int assigned_driver_id FK
+        varchar_100 tracking_code UK
+        text notes
+        text internal_notes
+        text cancellation_reason
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+        bool is_active "DEFAULT true"
+    }
+    movement_history {
+        int id PK
+        int movement_id FK "CASCADE"
+        varchar_20 from_status
+        varchar_20 to_status
+        varchar_200 location
+        float latitude
+        float longitude
+        text notes
+        int recorded_by FK
+        timestamptz recorded_at "DEFAULT NOW()"
+    }
+
+    forklifts ||--o{ asset_movements : "moved"
+    rental_contracts ||--o{ asset_movements : "triggers"
+    customers ||--o{ asset_movements : "destination"
+    asset_movements ||--o{ movement_history : "checkpoints"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% MAINTENANCE DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    maintenance_plans {
+        int id PK
+        varchar_50 plan_number UK
+        varchar_200 name
+        text description
+        varchar_20 service_type
+        varchar_10 interval_type
+        int interval_value
+        float estimated_duration_hours "DEFAULT 1"
+        float estimated_cost "DEFAULT 0"
+        jsonb checklist
+        bool is_active "DEFAULT true"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    maintenance_schedules {
+        int id PK
+        int forklift_id FK "CASCADE"
+        int plan_id FK "CASCADE"
+        varchar_20 status "DEFAULT active"
+        date next_due_date
+        float next_due_hours
+        date last_service_date
+        float last_service_hours
+        int times_serviced "DEFAULT 0"
+        text notes
+        bool is_active "DEFAULT true"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    work_orders {
+        int id PK
+        varchar_50 work_order_number UK
+        int forklift_id FK "RESTRICT"
+        int schedule_id FK "SET NULL"
+        int plan_id FK "SET NULL"
+        varchar_20 order_type
+        varchar_20 status "DEFAULT scheduled"
+        varchar_10 priority "DEFAULT normal"
+        varchar_300 title
+        text description
+        int assigned_to FK
+        date scheduled_date
+        timestamptz started_at
+        timestamptz completed_at
+        timestamptz verified_at
+        int verified_by FK
+        float hour_meter_at_service
+        float estimated_hours "DEFAULT 1"
+        float actual_hours
+        float estimated_cost "DEFAULT 0"
+        float actual_cost
+        text findings
+        text resolution
+        text cancellation_reason
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+        bool is_active "DEFAULT true"
+    }
+    service_history {
+        int id PK
+        int forklift_id FK "CASCADE"
+        int work_order_id FK "SET NULL"
+        varchar_20 service_type
+        date service_date
+        int technician_id FK
+        float hour_meter_reading
+        float duration_hours
+        float total_cost "DEFAULT 0"
+        varchar_3 currency "DEFAULT LAK"
+        text summary
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    maintenance_costs {
+        int id PK
+        int work_order_id FK "CASCADE"
+        varchar_20 cost_type
+        varchar_300 description
+        float quantity "DEFAULT 1"
+        float unit_rate "DEFAULT 0"
+        float amount "DEFAULT 0"
+        varchar_200 vendor
+        varchar_100 reference_number
+        varchar_3 currency "DEFAULT LAK"
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    part_consumptions {
+        int id PK
+        int spare_part_id FK "RESTRICT"
+        int warehouse_id FK "RESTRICT"
+        int work_order_id FK "SET NULL"
+        int forklift_id FK "SET NULL"
+        float quantity
+        float unit_cost "DEFAULT 0"
+        float total_cost "DEFAULT 0"
+        text notes
+        int consumed_by FK
+        timestamptz consumed_at "DEFAULT NOW()"
+    }
+
+    forklifts ||--o{ maintenance_schedules : "scheduled"
+    maintenance_plans ||--o{ maintenance_schedules : "creates"
+    forklifts ||--o{ work_orders : "serviced"
+    maintenance_schedules ||--o{ work_orders : "triggers"
+    work_orders ||--o{ maintenance_costs : "incurs"
+    work_orders ||--o{ service_history : "records"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% INVENTORY DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    spare_parts {
+        int id PK
+        varchar_100 part_number UK
+        varchar_300 name
+        text description
+        varchar_20 part_category "DEFAULT general"
+        int brand_id FK "SET NULL"
+        varchar_30 unit "DEFAULT piece"
+        float unit_price "DEFAULT 0"
+        varchar_3 currency "DEFAULT LAK"
+        int min_stock_level "DEFAULT 5"
+        int reorder_quantity "DEFAULT 10"
+        int lead_time_days "DEFAULT 7"
+        varchar_500 image_url
+        bool is_active "DEFAULT true"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    warehouses {
+        int id PK
+        varchar_20 code UK
+        varchar_200 name
+        text address
+        varchar_200 contact_name
+        varchar_50 contact_phone
+        bool is_active "DEFAULT true"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    inventory_balances {
+        int id PK
+        int spare_part_id FK "CASCADE"
+        int warehouse_id FK "CASCADE"
+        float quantity_on_hand "DEFAULT 0"
+        float quantity_reserved "DEFAULT 0"
+        float quantity_available "DEFAULT 0"
+        timestamptz last_count_date
+        timestamptz updated_at
+    }
+    inventory_transactions {
+        int id PK
+        varchar_50 transaction_number UK
+        varchar_20 transaction_type
+        int spare_part_id FK "RESTRICT"
+        int warehouse_id FK "RESTRICT"
+        float quantity
+        float unit_cost "DEFAULT 0"
+        float total_cost "DEFAULT 0"
+        varchar_30 reference_type
+        int reference_id
+        text notes
+        int created_by FK
+        timestamptz created_at "DEFAULT NOW()"
+    }
+    purchase_orders {
+        int id PK
+        varchar_50 po_number UK
+        varchar_25 status "DEFAULT draft"
+        varchar_200 vendor
+        int warehouse_id FK "RESTRICT"
+        date order_date
+        date expected_date
+        date received_date
+        float subtotal "DEFAULT 0"
+        float tax_amount "DEFAULT 0"
+        float total_amount "DEFAULT 0"
+        varchar_3 currency "DEFAULT LAK"
+        text notes
+        text cancellation_reason
+        int created_by FK
+        bool is_active "DEFAULT true"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    purchase_order_items {
+        int id PK
+        int purchase_order_id FK "CASCADE"
+        int spare_part_id FK "RESTRICT"
+        float quantity_ordered
+        float quantity_received
+        float unit_cost
+        float line_total
+        varchar_500 notes
+        timestamptz created_at "DEFAULT NOW()"
+    }
+
+    brands ||--o{ spare_parts : "supplies"
+    spare_parts ||--o{ inventory_balances : "stocked"
+    warehouses ||--o{ inventory_balances : "holds"
+    spare_parts ||--o{ inventory_transactions : "transacted"
+    spare_parts ||--o{ part_consumptions : "consumed"
+    warehouses ||--o{ purchase_orders : "receives_at"
+    purchase_orders ||--o{ purchase_order_items : "contains"
+    spare_parts ||--o{ purchase_order_items : "ordered"
+
+    %% ═══════════════════════════════════════════════════════════════
+    %% BILLING DOMAIN
+    %% ═══════════════════════════════════════════════════════════════
+    invoices {
+        int id PK
+        varchar_50 invoice_number UK
+        int contract_id FK "RESTRICT"
+        int customer_id FK "RESTRICT"
+        varchar_30 status "DEFAULT draft"
+        date issue_date
+        date due_date
+        date paid_date
+        float subtotal "DEFAULT 0"
+        float tax_rate "DEFAULT 0"
+        float tax_amount "DEFAULT 0"
+        float discount_amount "DEFAULT 0"
+        float total_amount "DEFAULT 0"
+        float amount_paid "DEFAULT 0"
+        float balance_due "DEFAULT 0"
+        varchar_3 currency "DEFAULT LAK"
+        date billing_period_start
+        date billing_period_end
+        text notes
+        text internal_notes
+        timestamptz sent_at
+        timestamptz cancelled_at
+        text cancellation_reason
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+        bool is_active "DEFAULT true"
+    }
+    invoice_items {
+        int id PK
+        int invoice_id FK "CASCADE"
+        int billing_cycle_id FK "SET NULL"
+        int line_number
+        varchar_500 description
+        float quantity "DEFAULT 1"
+        float unit_rate "DEFAULT 0"
+        float amount "DEFAULT 0"
+        float tax_amount "DEFAULT 0"
+        float line_total "DEFAULT 0"
+        int sort_order "DEFAULT 0"
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    payments {
+        int id PK
+        varchar_50 payment_number UK
+        int customer_id FK "RESTRICT"
+        int contract_id FK
+        varchar_30 payment_method
+        varchar_20 payment_status "DEFAULT pending"
+        float amount
+        varchar_3 currency "DEFAULT LAK"
+        date payment_date
+        date received_date
+        varchar_100 reference_number
+        text notes
+        int confirmed_by FK
+        timestamptz confirmed_at
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    payment_allocations {
+        int id PK
+        int payment_id FK "CASCADE"
+        int invoice_id FK "CASCADE"
+        float allocated_amount
+        timestamptz allocated_at
+        int allocated_by FK
+    }
+    deposits {
+        int id PK
+        varchar_50 deposit_number UK
+        int contract_id FK "RESTRICT"
+        int customer_id FK "RESTRICT"
+        varchar_20 deposit_type
+        varchar_30 deposit_status "DEFAULT pending"
+        float amount
+        varchar_3 currency "DEFAULT LAK"
+        date received_date
+        date refund_date
+        float refund_amount "DEFAULT 0"
+        float forfeit_amount "DEFAULT 0"
+        float applied_amount "DEFAULT 0"
+        int payment_id FK
+        int refund_payment_id FK
+        text notes
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+    revenue_recognitions {
+        int id PK
+        varchar_50 recognition_number UK
+        int invoice_id FK
+        int invoice_item_id FK
+        int contract_id FK "RESTRICT"
+        varchar_30 recognition_type
+        varchar_20 recognition_status "DEFAULT scheduled"
+        date recognition_date
+        float amount
+        varchar_3 currency "DEFAULT LAK"
+        date period_start
+        date period_end
+        varchar_500 description
+        text notes
+        int created_by FK
+        int updated_by FK
+        timestamptz created_at "DEFAULT NOW()"
+        timestamptz updated_at
+    }
+
+    rental_contracts ||--o{ invoices : "invoiced"
+    customers ||--o{ invoices : "billed"
+    invoices ||--o{ invoice_items : "contains"
+    rental_billing_cycles ||--o{ invoice_items : "generates"
+    customers ||--o{ payments : "pays"
+    payments ||--o{ payment_allocations : "allocated"
+    invoices ||--o{ payment_allocations : "receives"
+    rental_contracts ||--o{ deposits : "secured"
+    customers ||--o{ deposits : "deposits"
+    rental_contracts ||--o{ revenue_recognitions : "recognized"

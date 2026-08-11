@@ -1,0 +1,298 @@
+{
+  "batchIndex": 9,
+  "nodes": [
+    {
+      "id": "config:frontend/.env",
+      "type": "config",
+      "name": "Frontend Environment Config",
+      "summary": "Sets VITE_API_BASE_URL to http://localhost:8000/api/v1 for local development. Single variable consumed by the Vite build to configure the FastAPI backend base URL.",
+      "tags": ["env", "config", "vite", "api", "frontend"],
+      "filePath": "frontend/.env",
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/.env.example",
+      "type": "config",
+      "name": "Frontend Environment Example",
+      "summary": "Template .env file documenting the VITE_API_BASE_URL variable. Committed to source control as a reference for developers setting up local environments.",
+      "tags": ["env", "config", "template", "vite", "frontend"],
+      "filePath": "frontend/.env.example",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:frontend/CATALOG-JENSTORE.md",
+      "type": "document",
+      "name": "Catalog JenStore Architecture",
+      "summary": "JenStore Thailand-inspired product catalog component architecture for the DK CRM. Maps all available API fields (Product, ProductDetail, Brand, ProductCategory, filter params) to six page zones: hero banner, category slider, brand showcase, mega menu bar, filter sidebar, and product grid. Defines existing hooks (useCatalog, useBrands, useCategories) as the data layer contract. Zero backend changes constraint.",
+      "tags": ["catalog", "design", "architecture", "jenstore", "components", "wireframes", "forklift"],
+      "filePath": "frontend/CATALOG-JENSTORE.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/CATALOG-REDESIGN.md",
+      "type": "document",
+      "name": "Catalog Redesign Specification",
+      "summary": "Current-state vs JenStore-target gap analysis for the product catalog module. Documents existing 14 files (CatalogPage, ProductDetailPage, BrandsPage, CategoriesPage, ImportPage, ProductCard, etc.) and specifies redesigned page layout with ASCII wireframes: hero header, mega category menu, brand showcase carousel, active filters bar, filter sidebar with checkboxes, product grid, and pagination. Targets richer product cards with hover image swap, quick-view, type pills, and brand logo.",
+      "tags": ["catalog", "redesign", "gap-analysis", "wireframes", "components", "jenstore", "frontend"],
+      "filePath": "frontend/CATALOG-REDESIGN.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/DASHBOARD-REDESIGN.md",
+      "type": "document",
+      "name": "Dashboard Redesign Specification",
+      "summary": "Executive dashboard redesign for the forklift rental and material handling domain. Maps 7 API endpoints (dashboard/summary, forklifts, rental-contracts, quotations, activity, lead-trend, customer-trend) to 14 KPI widgets with explicit data computation strategy. Provides ASCII wireframe for 4 sections: KPI cards row, revenue area chart + fleet status donut, fleet breakdown by fuel type and brand, and recent activity feed. All metrics derived client-side from existing APIs.",
+      "tags": ["dashboard", "redesign", "kpi", "charts", "fleet", "rental", "wireframes"],
+      "filePath": "frontend/DASHBOARD-REDESIGN.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/DESIGN-SYSTEM.md",
+      "type": "document",
+      "name": "Design System Specification",
+      "summary": "Comprehensive design token specification for the DK Service Enterprise Platform. Defines a 4-color foundation (Blue for action, Bright Green for success, White for surfaces, Dark Gray for text) with 10-shade CSS custom property scales for primary, success, warning, danger, info, and purple. Includes neutral gray scale, semantic color aliases for light/dark themes, typography (Inter font), spacing, shadows, z-index, and transition tokens. Inspired by JenStore (warmth), Fleetio (operational density), and Linear (craft/precision).",
+      "tags": ["design-system", "tokens", "css-variables", "colors", "typography", "dark-mode", "frontend"],
+      "filePath": "frontend/DESIGN-SYSTEM.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/EQUIPMENT-FLEETIO.md",
+      "type": "document",
+      "name": "Equipment Registry Fleetio Architecture",
+      "summary": "Fleetio and Samsara-inspired equipment registry architecture for the forklift fleet management domain. Full data source inventory for Forklift list and ForkliftDetail API fields (status, condition, fuel_type, capacity_kg, hour_meter, photos, documents, status_history, location). Provides ASCII wireframe for list page with fleet status strip, stats bar (utilization, avg hours, PM due, avg age), toolbar, grid/list views, and pagination. Cross-module data from rental-contracts, quotations, and activity endpoints.",
+      "tags": ["equipment", "fleet", "fleetio", "samsara", "architecture", "wireframes", "forklift"],
+      "filePath": "frontend/EQUIPMENT-FLEETIO.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/EQUIPMENT-REDESIGN.md",
+      "type": "document",
+      "name": "Equipment Registry Redesign Specification",
+      "summary": "Equipment registry redesign comparing current implementation (EquipmentRegistryPage.tsx 350 lines, ForkliftCard, ForkliftDetailPage, ForkliftForm, badges) to Fleetio/Samsara-inspired target. Specifies redesigned list page with fleet summary strip (clickable status chips), toolbar with search+filters, grid and table views, plus redesigned detail page with tabbed layout (Overview, Photos, Documents, History, Location, Linked Records). Includes cost widget derivation strategy from rental contract items.",
+      "tags": ["equipment", "fleet", "redesign", "components", "fleetio", "samsara", "wireframes"],
+      "filePath": "frontend/EQUIPMENT-REDESIGN.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/IMPLEMENTATION-PLAN.md",
+      "type": "document",
+      "name": "UI Foundation Implementation Plan",
+      "summary": "Implementation plan for the UI shell and infrastructure (items 1-10). Inventories all 97 existing source files and identifies 9 architecture constraints: routing (eager imports to React.lazy), sidebar (binary to 3-state), hardcoded 240px/56px/768px values, theme (10 vars to full token system), z-index scale, Inter font, breakpoints, and Zustand stores (add themeStore, sidebarStore). Specifies new files: tokens.css, breakpoints.css, ThemeProvider, rewritten AppLayout/Sidebar/Topbar, GlobalSearch, and Breadcrumb. Pages are all preserved unchanged.",
+      "tags": ["implementation", "plan", "layout", "design-system", "frontend", "shell", "architecture"],
+      "filePath": "frontend/IMPLEMENTATION-PLAN.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/LAYOUT-ARCHITECTURE.md",
+      "type": "document",
+      "name": "Layout Architecture Blueprint",
+      "summary": "Principal React architecture blueprint for the layout shell migration. Identifies 7 blast-radius files (main.tsx, App.tsx, AppLayout, Sidebar, Topbar and their CSS). Documents all hardcoded values to extract (240px sidebar, 56px topbar, 768px breakpoint, #0f172a bg, z-index 200/100). Provides before/after render tree showing migration to ThemeProvider wrapping, 3-state collapsible sidebar with SidebarBrand/Search/Nav/Footer sub-components, and enterprise Header with Breadcrumb, SearchBar, NotificationCenter, and UserProfileDropdown. 101 files are untouched.",
+      "tags": ["layout", "architecture", "sidebar", "header", "react", "blueprint", "frontend"],
+      "filePath": "frontend/LAYOUT-ARCHITECTURE.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/MASTER-IMPLEMENTATION-PLAN.md",
+      "type": "document",
+      "name": "Master Implementation Plan",
+      "summary": "Master design system rollout plan with 5 execution rules (one step at a time, test after every step, one commit per step, no page logic changes, CSS variable aliases for backward compatibility). Phase 1 Layout Foundation steps: 1.1 create tokens.css with full color/spacing/radius/shadow/z-index/transition tokens plus dark-mode and prefers-reduced-motion blocks; 1.2 create breakpoints.css; 1.3 wire tokens into index.css by replacing 10 existing :root vars with @import. References DESIGN-SYSTEM.md as the token source of truth.",
+      "tags": ["implementation", "plan", "master", "phases", "design-system", "tokens", "frontend"],
+      "filePath": "frontend/MASTER-IMPLEMENTATION-PLAN.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/README.md",
+      "type": "document",
+      "name": "Frontend README",
+      "summary": "Standard Vite+React+TypeScript template README. Documents two HMR plugin options (plugin-react with Oxc, plugin-react-swc with SWC), ESLint type-aware configuration for production apps using tseslint.configs.recommendedTypeChecked, optional eslint-plugin-react-x and eslint-plugin-react-dom, and a note that the React Compiler is not enabled by default due to dev/build performance impact.",
+      "tags": ["readme", "vite", "react", "typescript", "eslint", "frontend"],
+      "filePath": "frontend/README.md",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:frontend/UX-AUDIT-REPORT.md",
+      "type": "document",
+      "name": "UX Audit Report",
+      "summary": "Comprehensive UX audit scoring the platform 52/100 across 7 weighted dimensions: Responsiveness 55, Accessibility 25, Performance 45, Navigation 40, Scalability 60, Maintainability 65, Design Consistency 55. Identifies 13+ critical accessibility violations (no focus trapping, no role=dialog, no keyboard table nav, no skip-navigation link), 7 responsiveness gaps (only 2 breakpoints, no tablet-collapsed sidebar), and performance issues (no code splitting, all 16 pages eager-imported). Concludes the architecture is sound but currently at prototype-to-MVP maturity.",
+      "tags": ["ux", "audit", "accessibility", "responsiveness", "performance", "wcag", "frontend"],
+      "filePath": "frontend/UX-AUDIT-REPORT.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:frontend/UX-SPECIFICATION.md",
+      "type": "document",
+      "name": "UX Specification",
+      "summary": "Enterprise UX specification covering the full frontend transformation. Inventories current state (React 19.2, TypeScript 6, Vite 8, Zustand, 108 files, 16 routes across 5 modules). Conducts 14-point gap analysis vs Fleetio/Samsara/HubSpot benchmarks (navigation, dashboard, tables, detail pages, forms, search, empty states, loading, errors, notifications, responsiveness, performance, accessibility, dark mode). Defines enterprise design system, dashboard architecture, navigation architecture, component library, responsive strategy, and migration plan.",
+      "tags": ["ux", "specification", "design-system", "gap-analysis", "enterprise", "frontend", "migration"],
+      "filePath": "frontend/UX-SPECIFICATION.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:frontend/index.html",
+      "type": "file",
+      "name": "Frontend HTML Entry Point",
+      "summary": "Vite HTML entry point for the DK Service Enterprise Platform. Sets data-theme=light, loads Inter (400/500/600/700) from Google Fonts via preconnect, mounts React app at #root div, and references /src/main.tsx as the ES module entry point.",
+      "tags": ["html", "entry-point", "vite", "react", "fonts", "inter", "frontend"],
+      "filePath": "frontend/index.html",
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/package.json",
+      "type": "config",
+      "name": "Frontend Package Config",
+      "summary": "Frontend npm package config for the Vite+React 19 project. Runtime dependencies: React 19.2, React Router DOM 7.17, Recharts 3.8, Zustand 5.0, Axios 1.18, Lucide React 1.18. Dev dependencies: Vite 8.0, TypeScript 6.0, @vitejs/plugin-react 6.0, ESLint 10 with react-hooks and react-refresh plugins. Build scripts: dev (vite), build (tsc -b && vite build), lint, preview.",
+      "tags": ["package", "dependencies", "vite", "react", "typescript", "zustand", "recharts", "frontend"],
+      "filePath": "frontend/package.json",
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/tsconfig.app.json",
+      "type": "config",
+      "name": "App TypeScript Config",
+      "summary": "TypeScript compiler config for the React application source. Targets ES2023 with DOM lib, bundler module resolution, react-jsx transform, noEmit (Vite handles bundling), strict linting (noUnusedLocals, noUnusedParameters, noFallthroughCasesInSwitch), path alias @/* mapped to src/*, and includes only the src/ directory.",
+      "tags": ["tsconfig", "typescript", "react", "vite", "paths", "frontend"],
+      "filePath": "frontend/tsconfig.app.json",
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/tsconfig.json",
+      "type": "config",
+      "name": "Root TypeScript Project Config",
+      "summary": "Root TypeScript project references config. Delegates compilation to two sub-configs: tsconfig.app.json for React source and tsconfig.node.json for Vite/Node tooling. Uses empty files array and references array pattern for composite project builds.",
+      "tags": ["tsconfig", "typescript", "project-references", "frontend"],
+      "filePath": "frontend/tsconfig.json",
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/tsconfig.node.json",
+      "type": "config",
+      "name": "Node TypeScript Config",
+      "summary": "TypeScript compiler config for Vite and Node tooling. Targets ES2023 with Node types (not DOM), bundler module resolution, strict linting, and includes only vite.config.ts. Paired with tsconfig.app.json via the root tsconfig.json project references.",
+      "tags": ["tsconfig", "typescript", "vite", "node", "config", "frontend"],
+      "filePath": "frontend/tsconfig.node.json",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:frontend/CATALOG-JENSTORE.md",
+      "target": "document:frontend/CATALOG-REDESIGN.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/EQUIPMENT-FLEETIO.md",
+      "target": "document:frontend/EQUIPMENT-REDESIGN.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/DESIGN-SYSTEM.md",
+      "target": "document:frontend/UX-SPECIFICATION.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/DESIGN-SYSTEM.md",
+      "target": "document:frontend/UX-AUDIT-REPORT.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/UX-SPECIFICATION.md",
+      "target": "document:frontend/UX-AUDIT-REPORT.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/IMPLEMENTATION-PLAN.md",
+      "target": "document:frontend/MASTER-IMPLEMENTATION-PLAN.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/IMPLEMENTATION-PLAN.md",
+      "target": "document:frontend/LAYOUT-ARCHITECTURE.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/MASTER-IMPLEMENTATION-PLAN.md",
+      "target": "document:frontend/LAYOUT-ARCHITECTURE.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/DESIGN-SYSTEM.md",
+      "target": "document:frontend/MASTER-IMPLEMENTATION-PLAN.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/DASHBOARD-REDESIGN.md",
+      "target": "document:frontend/UX-SPECIFICATION.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/CATALOG-REDESIGN.md",
+      "target": "document:frontend/UX-SPECIFICATION.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/EQUIPMENT-REDESIGN.md",
+      "target": "document:frontend/UX-SPECIFICATION.md",
+      "relationship": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/README.md",
+      "target": "config:frontend/package.json",
+      "relationship": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:frontend/tsconfig.app.json",
+      "target": "file:frontend/index.html",
+      "relationship": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/tsconfig.app.json",
+      "target": "config:frontend/package.json",
+      "relationship": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/tsconfig.node.json",
+      "target": "config:frontend/package.json",
+      "relationship": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/tsconfig.json",
+      "target": "config:frontend/tsconfig.app.json",
+      "relationship": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/tsconfig.json",
+      "target": "config:frontend/tsconfig.node.json",
+      "relationship": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/.env",
+      "target": "config:frontend/package.json",
+      "relationship": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/.env.example",
+      "target": "config:frontend/.env",
+      "relationship": "related",
+      "weight": 0.5
+    }
+  ]
+}

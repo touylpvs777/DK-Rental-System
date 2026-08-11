@@ -1,0 +1,67 @@
+graph TB
+    subgraph "Revenue Sources"
+        Contract[Active Rental Contract] -->|"monthly cycle"| BillCycle[Billing Cycle Generated]
+        DmgReport[Damage Report] -->|"on_damage_report_created()"| DmgInvoice[Damage Invoice]
+        EarlyTerm[Early Termination] -->|"on_early_termination()"| PenaltyInvoice[Penalty Invoice]
+        LateReturn[Late Return] -->|"on_late_return()"| LateInvoice[Late Return Invoice]
+        Overtime[Overtime Hours] -->|"on_overtime_hours()"| OvertimeInvoice[Overtime Invoice]
+    end
+
+    subgraph "Invoice Lifecycle"
+        BillCycle -->|"create_invoice_from_cycles()"| Draft[DRAFT]
+        DmgInvoice & PenaltyInvoice & LateInvoice & OvertimeInvoice --> Draft
+
+        Draft -->|"issue()"| Issued[ISSUED]
+        Issued -->|"send()"| Sent[SENT]
+        Sent --> DueCheck{Past due date?}
+        DueCheck -->|"mark_overdue_invoices()"| Overdue[OVERDUE]
+        DueCheck -->|"No"| WaitPay[Awaiting Payment]
+
+        WaitPay & Overdue -->|"payment received"| PartialCheck{Fully paid?}
+        PartialCheck -->|"No"| PartiallyPaid[PARTIALLY_PAID]
+        PartialCheck -->|"Yes"| Paid[PAID ✓]
+        PartiallyPaid -->|"more payment"| PartialCheck
+
+        Draft -->|"cancel(reason)"| Cancelled[CANCELLED]
+        Issued -->|"void()"| Voided[VOIDED]
+    end
+
+    subgraph "Payment Processing"
+        PayRecord[Record Payment] --> PayPending[PENDING]
+        PayPending -->|"confirm()"| PayConfirmed[CONFIRMED]
+        PayPending -->|"reject(reason)"| PayRejected[REJECTED]
+        PayConfirmed -->|"allocate()"| Allocation[Payment Allocation]
+        Allocation -->|"update invoice"| BalanceUpdate[balance_due -= allocated]
+        BalanceUpdate --> PartialCheck
+    end
+
+    subgraph "Deposit Management"
+        ContractDep[Contract Created] -->|"create deposit"| DepPending[PENDING]
+        DepPending -->|"receive()"| DepReceived[RECEIVED]
+        DepReceived -->|"refund(amount)"| DepRefunded[REFUNDED]
+        DepReceived -->|"forfeit(amount, reason)"| DepForfeited[FORFEITED]
+        DepReceived -->|"apply(amount, invoice)"| DepApplied[APPLIED]
+        DepReceived -->|"partial refund"| DepPartial[PARTIALLY_REFUNDED]
+    end
+
+    subgraph "Revenue Recognition"
+        Paid -->|"schedule()"| RevScheduled[SCHEDULED]
+        RevScheduled -->|"recognize()"| RevRecognized[RECOGNIZED]
+        RevRecognized -->|"reverse()"| RevReversed[REVERSED]
+    end
+
+    classDef draft fill:#94a3b8,color:#fff
+    classDef active fill:#3b82f6,color:#fff
+    classDef paid fill:#22c55e,color:#fff
+    classDef overdue fill:#ef4444,color:#fff
+    classDef cancel fill:#64748b,color:#fff
+    classDef deposit fill:#7c3aed,color:#fff
+    classDef revenue fill:#0891b2,color:#fff
+
+    class Draft draft
+    class Issued,Sent,WaitPay,PartiallyPaid active
+    class Paid paid
+    class Overdue overdue
+    class Cancelled,Voided cancel
+    class DepPending,DepReceived,DepRefunded,DepForfeited,DepApplied,DepPartial deposit
+    class RevScheduled,RevRecognized,RevReversed revenue

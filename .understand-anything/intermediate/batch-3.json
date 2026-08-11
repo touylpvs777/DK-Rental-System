@@ -1,0 +1,658 @@
+{
+  "batchIndex": 3,
+  "nodes": [
+    {
+      "id": "config:backend/.env.example",
+      "type": "config",
+      "name": "Backend Environment Config Example",
+      "summary": "Example environment variables for the FastAPI backend. Defines APP_NAME/VERSION/DEBUG, DATABASE_URL (SQLite for dev, PostgreSQL for prod), JWT security settings (SECRET_KEY, ALGORITHM, token expiry), and CORS allowed origins.",
+      "tags": ["config", "environment", "backend", "database", "security", "cors", "jwt"],
+      "filePath": "backend/.env.example",
+      "complexity": "simple"
+    },
+    {
+      "id": "config:backend/alembic.ini",
+      "type": "config",
+      "name": "Alembic Database Migration Config",
+      "summary": "Alembic migration tool configuration for the DK CRM backend. Sets script_location to the alembic/ directory, uses os path separator, and configures logging for root/sqlalchemy/alembic loggers. Database URL is injected dynamically from app settings in env.py rather than hardcoded here.",
+      "tags": ["config", "alembic", "migrations", "database", "backend", "sqlalchemy"],
+      "filePath": "backend/alembic.ini",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:backend/requirements.txt",
+      "type": "document",
+      "name": "Backend Python Dependencies",
+      "summary": "Python package requirements for the FastAPI backend. Key dependencies: fastapi + uvicorn[standard] (ASGI web framework), sqlalchemy[asyncio] + aiosqlite (async ORM with SQLite support, asyncpg commented out for PostgreSQL), pydantic[email] + pydantic-settings (data validation/settings), python-jose[cryptography] + bcrypt (JWT auth + password hashing), alembic (DB migrations), python-multipart (file uploads), openpyxl (Excel import/export).",
+      "tags": ["dependencies", "python", "backend", "fastapi", "sqlalchemy", "pydantic", "alembic"],
+      "filePath": "backend/requirements.txt",
+      "complexity": "simple"
+    },
+    {
+      "id": "schema:backend/schema_postgresql.sql",
+      "type": "schema",
+      "name": "PostgreSQL Database Schema",
+      "summary": "Full PostgreSQL schema for DK Service Enterprise Platform, auto-generated from SQLAlchemy models. Contains 55 tables covering: user/role management, customer CRM, lead tracking, product catalog (multilingual), forklift asset registry, spare parts inventory, maintenance planning and work orders, rental contract lifecycle, quotations, invoicing, payments, asset movements, and audit logging.",
+      "tags": ["database", "postgresql", "schema", "sql", "backend"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:users",
+      "type": "table",
+      "name": "users",
+      "summary": "System users with email, username, hashed password, full name, active/superuser flags, role FK, and last login timestamp. Central auth table referenced by almost every other table.",
+      "tags": ["table", "auth", "users", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:roles",
+      "type": "table",
+      "name": "roles",
+      "summary": "RBAC roles with name and description. Referenced by users table for role-based access control.",
+      "tags": ["table", "auth", "rbac", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:customers",
+      "type": "table",
+      "name": "customers",
+      "summary": "CRM customer records with contact info (first/last name, email, phone, company), status enum, notes, and assignment to a user. Referenced by leads, forklifts, quotations, rental contracts, invoices, and payments.",
+      "tags": ["table", "crm", "customers", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:leads",
+      "type": "table",
+      "name": "leads",
+      "summary": "Sales leads with title, description, monetary value, source channel, status enum (leadstatus type), customer FK, and user assignment. Linked to quotations and rental contracts.",
+      "tags": ["table", "crm", "leads", "sales", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:brands",
+      "type": "table",
+      "name": "brands",
+      "summary": "Equipment and parts brands with name, slug, brand_role (e.g. manufacturer/supplier), logo, country, website. Referenced by forklift_models, forklifts, spare_parts, products, and product_compat_brands.",
+      "tags": ["table", "catalog", "brands", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:product_categories",
+      "type": "table",
+      "name": "product_categories",
+      "summary": "Hierarchical product category tree with parent_id self-reference, multilingual names (name_lo/name_en), slug, level, icon, and sort order.",
+      "tags": ["table", "catalog", "categories", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:products",
+      "type": "table",
+      "name": "products",
+      "summary": "Product catalog items with SKU, multilingual names (name_lo/name_en), slug, model number, brand and category FKs, multilingual descriptions, and boolean flags for featured/sale/rental/used/service. Linked to product_images, product_specs, and product_compat_brands.",
+      "tags": ["table", "catalog", "products", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:forklift_models",
+      "type": "table",
+      "name": "forklift_models",
+      "summary": "Forklift model specifications: brand FK, name, slug, series, fuel type, capacity (kg), max lift height (mm). Template used to categorize individual forklift units.",
+      "tags": ["table", "assets", "forklifts", "catalog", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:forklifts",
+      "type": "table",
+      "name": "forklifts",
+      "summary": "Individual forklift asset registry: serial number, internal code, model and brand FKs, customer FK (current owner/user), multilingual names, status, condition, fuel type, capacity, mast type, lift height, manufacture year, purchase date, warranty, hour meter readings (initial + current), and active flag.",
+      "tags": ["table", "assets", "forklifts", "equipment", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:spare_parts",
+      "type": "table",
+      "name": "spare_parts",
+      "summary": "Spare parts catalog with part number, name, description, category, brand FK, unit of measure, unit price, currency, stock thresholds (min_stock_level, reorder_quantity), and lead time. Used in inventory_balances, inventory_transactions, purchase_order_items, and part_consumptions.",
+      "tags": ["table", "inventory", "spare-parts", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:warehouses",
+      "type": "table",
+      "name": "warehouses",
+      "summary": "Warehouse locations with unique code, name, address, and contact info. Used by inventory_balances, inventory_transactions, purchase_orders, and part_consumptions.",
+      "tags": ["table", "inventory", "warehouses", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:inventory_balances",
+      "type": "table",
+      "name": "inventory_balances",
+      "summary": "Current stock levels per spare_part per warehouse: quantity_on_hand, quantity_reserved, quantity_available. Unique constraint on (spare_part_id, warehouse_id).",
+      "tags": ["table", "inventory", "stock", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:inventory_transactions",
+      "type": "table",
+      "name": "inventory_transactions",
+      "summary": "Ledger of inventory movements: transaction_number, type (receipt/issue/adjustment), spare_part FK, warehouse FK, quantity, unit/total cost, optional reference to source document (work order, PO etc.).",
+      "tags": ["table", "inventory", "transactions", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:purchase_orders",
+      "type": "table",
+      "name": "purchase_orders",
+      "summary": "Supplier purchase orders with PO number, status, vendor name, warehouse FK, order/expected/received dates, subtotal/tax/total amounts, currency, and cancellation reason.",
+      "tags": ["table", "inventory", "procurement", "purchase-orders", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:maintenance_plans",
+      "type": "table",
+      "name": "maintenance_plans",
+      "summary": "Service plan templates with plan_number, name, service_type, interval type (hours/calendar), interval value, estimated duration and cost, and a JSON checklist of tasks.",
+      "tags": ["table", "maintenance", "service", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:maintenance_schedules",
+      "type": "table",
+      "name": "maintenance_schedules",
+      "summary": "Forklift-to-plan schedule assignments tracking next due date/hours, last service date/hours, and times serviced. Links a specific forklift to a maintenance plan.",
+      "tags": ["table", "maintenance", "scheduling", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:work_orders",
+      "type": "table",
+      "name": "work_orders",
+      "summary": "Service/maintenance work orders with work_order_number, forklift FK, optional schedule and plan FKs, type (preventive/corrective), status, priority, assigned technician, scheduled date, time tracking (started/completed/verified), hour meter, estimated vs actual hours and cost, findings, and resolution.",
+      "tags": ["table", "maintenance", "work-orders", "service", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:quotations",
+      "type": "table",
+      "name": "quotations",
+      "summary": "Sales quotations with quotation_number, revision_number, self-referential parent_id for revisions, type (sale/rental/service), status, customer and lead FKs, contact info, full pricing (subtotal/tax/discount/total), validity dates, conversion tracking, and approval workflow support.",
+      "tags": ["table", "sales", "quotations", "crm", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:quotation_items",
+      "type": "table",
+      "name": "quotation_items",
+      "summary": "Line items for quotations: type (product/service/forklift/rental), optional forklift and product FKs, quantity, unit, unit price, discount, line total, and optional rental duration/rate fields.",
+      "tags": ["table", "sales", "quotations", "line-items", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:rental_contracts",
+      "type": "table",
+      "name": "rental_contracts",
+      "summary": "Rental contract master record: contract_number, quotation and lead FKs, customer FK, status, type, revision tracking, start/end dates, billing cycle day, payment terms, deposit details, penalty and overtime rates, full financials (subtotal/tax/discount/total_value), delivery address/contact, approval workflow, and assignment.",
+      "tags": ["table", "rental", "contracts", "finance", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:rental_contract_items",
+      "type": "table",
+      "name": "rental_contract_items",
+      "summary": "Individual forklift line items within a rental contract: rates (monthly/daily/hourly), contracted hours, hour meter readings (departure/return/used), and line status.",
+      "tags": ["table", "rental", "contracts", "line-items", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:invoices",
+      "type": "table",
+      "name": "invoices",
+      "summary": "Rental billing invoices linked to a rental contract and customer: invoice_number, status, issue/due/paid dates, full pricing fields, amount paid, balance due, billing period, and cancellation tracking.",
+      "tags": ["table", "finance", "invoices", "billing", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:payments",
+      "type": "table",
+      "name": "payments",
+      "summary": "Customer payment records: payment_number, customer FK, optional contract FK, payment method, status, amount, currency, payment date, reference number, and confirmation tracking.",
+      "tags": ["table", "finance", "payments", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:asset_movements",
+      "type": "table",
+      "name": "asset_movements",
+      "summary": "Forklift logistics movements: movement_number, type (delivery/pickup/transfer), status, priority, forklift FK, optional rental_contract FK, customer FK, from/to locations with addresses, scheduled and actual departure/arrival timestamps, hour meter readings, assigned driver, and tracking code.",
+      "tags": ["table", "logistics", "asset-movements", "forklifts", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:backend/schema_postgresql.sql:activity_logs",
+      "type": "table",
+      "name": "activity_logs",
+      "summary": "Audit log of user actions: user FK, action verb, entity_type and entity_id for polymorphic reference, and JSON details payload.",
+      "tags": ["table", "audit", "logging", "database"],
+      "filePath": "backend/schema_postgresql.sql",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:backend/alembic.ini",
+      "target": "schema:backend/schema_postgresql.sql",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:backend/.env.example",
+      "target": "schema:backend/schema_postgresql.sql",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:backend/requirements.txt",
+      "target": "config:backend/alembic.ini",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:users",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:roles",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:customers",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:leads",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:brands",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:product_categories",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:products",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:forklift_models",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:forklifts",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:spare_parts",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:warehouses",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:inventory_balances",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:inventory_transactions",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:purchase_orders",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:maintenance_plans",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:maintenance_schedules",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:work_orders",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:quotations",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:quotation_items",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:rental_contracts",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:rental_contract_items",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:invoices",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:payments",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:asset_movements",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "schema:backend/schema_postgresql.sql",
+      "target": "table:backend/schema_postgresql.sql:activity_logs",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:users",
+      "target": "table:backend/schema_postgresql.sql:roles",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:forklift_models",
+      "target": "table:backend/schema_postgresql.sql:brands",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:forklifts",
+      "target": "table:backend/schema_postgresql.sql:forklift_models",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:forklifts",
+      "target": "table:backend/schema_postgresql.sql:brands",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:forklifts",
+      "target": "table:backend/schema_postgresql.sql:customers",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:spare_parts",
+      "target": "table:backend/schema_postgresql.sql:brands",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:products",
+      "target": "table:backend/schema_postgresql.sql:brands",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:products",
+      "target": "table:backend/schema_postgresql.sql:product_categories",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:leads",
+      "target": "table:backend/schema_postgresql.sql:customers",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:inventory_balances",
+      "target": "table:backend/schema_postgresql.sql:spare_parts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:inventory_balances",
+      "target": "table:backend/schema_postgresql.sql:warehouses",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:inventory_transactions",
+      "target": "table:backend/schema_postgresql.sql:spare_parts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:inventory_transactions",
+      "target": "table:backend/schema_postgresql.sql:warehouses",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:purchase_orders",
+      "target": "table:backend/schema_postgresql.sql:warehouses",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:maintenance_schedules",
+      "target": "table:backend/schema_postgresql.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:maintenance_schedules",
+      "target": "table:backend/schema_postgresql.sql:maintenance_plans",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:work_orders",
+      "target": "table:backend/schema_postgresql.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:work_orders",
+      "target": "table:backend/schema_postgresql.sql:maintenance_schedules",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:work_orders",
+      "target": "table:backend/schema_postgresql.sql:maintenance_plans",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:quotations",
+      "target": "table:backend/schema_postgresql.sql:customers",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:quotations",
+      "target": "table:backend/schema_postgresql.sql:leads",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:quotation_items",
+      "target": "table:backend/schema_postgresql.sql:quotations",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:quotation_items",
+      "target": "table:backend/schema_postgresql.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:quotation_items",
+      "target": "table:backend/schema_postgresql.sql:products",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:rental_contracts",
+      "target": "table:backend/schema_postgresql.sql:customers",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:rental_contracts",
+      "target": "table:backend/schema_postgresql.sql:quotations",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:rental_contracts",
+      "target": "table:backend/schema_postgresql.sql:leads",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:rental_contract_items",
+      "target": "table:backend/schema_postgresql.sql:rental_contracts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:rental_contract_items",
+      "target": "table:backend/schema_postgresql.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:invoices",
+      "target": "table:backend/schema_postgresql.sql:rental_contracts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:invoices",
+      "target": "table:backend/schema_postgresql.sql:customers",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:payments",
+      "target": "table:backend/schema_postgresql.sql:customers",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:payments",
+      "target": "table:backend/schema_postgresql.sql:rental_contracts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:asset_movements",
+      "target": "table:backend/schema_postgresql.sql:forklifts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:asset_movements",
+      "target": "table:backend/schema_postgresql.sql:rental_contracts",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:asset_movements",
+      "target": "table:backend/schema_postgresql.sql:customers",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "table:backend/schema_postgresql.sql:activity_logs",
+      "target": "table:backend/schema_postgresql.sql:users",
+      "type": "depends_on",
+      "weight": 0.6
+    }
+  ]
+}

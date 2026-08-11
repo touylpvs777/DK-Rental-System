@@ -1,0 +1,150 @@
+.search-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+}
+
+/* .search-trigger is the real, always-visible topbar <input> — the icon and
+   clear button are absolutely positioned over it (see below), so its own
+   left/right padding has to clear them or the icon overlaps the typed text. */
+.search-trigger {
+  display: block;
+  padding: 8px 34px 8px 38px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 13px;
+  transition: border-color var(--duration-fast), background var(--duration-fast);
+  width: 100%;
+}
+.search-trigger::placeholder { color: var(--color-text-muted); }
+.search-trigger:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface);
+}
+.search-trigger:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  background: var(--color-surface);
+}
+
+[data-theme="dark"] .search-trigger {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+[data-theme="dark"] .search-trigger:hover,
+[data-theme="dark"] .search-trigger:focus {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.search-input-clear {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none; background: none; padding: 4px;
+  color: var(--color-text-muted); cursor: pointer;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center;
+}
+.search-input-clear:hover { background: var(--color-bg-subtle); color: var(--color-text); }
+
+@media (max-width: 640px) {
+  .search-wrap { max-width: none; }
+  .search-trigger { padding: 6px 30px 6px 34px; }
+}
+
+/* ── Palette Dropdown ───────────────────────────────────────────────────
+   Anchored under .search-wrap (position: relative) instead of a
+   fixed-position, backdrop-centered modal — no portal, no full-screen
+   overlay. min-width guards against the panel shrinking to the trigger's
+   width on narrow layouts. ────────────────────────────────────────────── */
+.search-palette {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  width: 100%;
+  min-width: 350px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  max-height: 480px;
+  display: flex;
+  flex-direction: column;
+  animation: search-palette-in 0.18s ease;
+  overflow: hidden;
+  z-index: var(--z-dropdown);
+}
+[data-theme="dark"] .search-palette {
+  background: #1e293b; /* slate-800 */
+  border-color: #334155; /* slate-700 */
+}
+@keyframes search-palette-in { from { opacity: 0; transform: translateY(-8px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+.search-palette-results {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.search-group { margin-bottom: 8px; }
+.search-group-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-text-muted);
+  padding: 6px 8px 4px;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--duration-fast);
+}
+.search-result:hover,
+.search-result.active {
+  background: var(--color-primary-50);
+}
+.search-result-arrow { color: var(--color-text-muted); opacity: 0; transition: opacity var(--duration-fast); }
+.search-result.active .search-result-arrow { opacity: 1; color: var(--color-primary); }
+
+.search-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.search-palette-footer {
+  display: flex;
+  gap: 16px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--color-border);
+  font-size: 11px;
+  color: var(--color-text-muted);
+}

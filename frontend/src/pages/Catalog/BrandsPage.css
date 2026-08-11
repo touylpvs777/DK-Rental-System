@@ -1,0 +1,40 @@
+.brand-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  font-weight: 500;
+}
+.role-badge.role-primary    { background: var(--color-primary-50); color: var(--color-primary-700); }
+.role-badge.role-parts_only { background: var(--color-purple-50); color: var(--color-purple-600); }
+.role-badge.role-both       { background: var(--color-success-50); color: var(--color-success-700); }
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+}
+.status-dot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.status-dot.active   { color: var(--color-success-600); }
+.status-dot.inactive { color: var(--color-text-muted); }

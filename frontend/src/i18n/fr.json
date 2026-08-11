@@ -1,0 +1,3013 @@
+{
+  "common": {
+    "brandName": "DK Service",
+    "unassigned": "Non assigné",
+    "brandTagline": "Plateforme d'Entreprise",
+    "language": "Langue",
+    "noDataYet": "Aucune donnée pour le moment",
+    "dataWillAppear": "Les données apparaîtront ici une fois les enregistrements créés",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "deleting": "Suppression…",
+    "edit": "Modifier",
+    "create": "Créer",
+    "add": "Ajouter",
+    "remove": "Retirer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "filters": "Filtres",
+    "actions": "Actions",
+    "status": "Statut",
+    "loading": "Chargement…",
+    "close": "Fermer",
+    "confirm": "Confirmer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "submit": "Envoyer",
+    "view": "Voir",
+    "viewDetails": "Voir les détails",
+    "download": "Télécharger",
+    "upload": "Importer",
+    "yes": "Oui",
+    "no": "Non",
+    "required": "Obligatoire",
+    "optional": "Facultatif",
+    "name": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "date": "Date",
+    "description": "Description",
+    "notes": "Notes",
+    "total": "Total",
+    "subtotal": "Sous-total",
+    "quantity": "Quantité",
+    "price": "Prix",
+    "amount": "Montant",
+    "type": "Type",
+    "category": "Catégorie",
+    "all": "Tous",
+    "none": "Aucun",
+    "unknown": "Inconnu",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "pending": "En attente",
+    "approved": "Approuvé",
+    "rejected": "Rejeté",
+    "completed": "Terminé",
+    "cancelled": "Annulé",
+    "noResultsFound": "Aucun résultat trouvé",
+    "tryAdjustingFilters": "Essayez d'ajuster vos filtres ou termes de recherche",
+    "somethingWentWrong": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "clearFilters": "Effacer les filtres",
+    "export": "Exporter",
+    "print": "Imprimer",
+    "closeDialog": "Fermer la boîte de dialogue",
+    "closePanel": "Fermer le panneau",
+    "dismissNotification": "Ignorer la notification",
+    "gridView": "Vue en grille",
+    "listView": "Vue en liste",
+    "page": "Page",
+    "of": "sur",
+    "rowsPerPage": "Lignes par page",
+    "selectAll": "Tout sélectionner",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "mainNavigation": "Navigation principale",
+    "moreLanguages": "Autres langues",
+    "loadingApplication": "Chargement de l'application",
+    "skipToContent": "Passer au contenu",
+    "theme": "Thème",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "themeSystem": "Système",
+    "scrollLeft": "Défiler vers la gauche",
+    "scrollRight": "Défiler vers la droite",
+    "itemCode": "Code article",
+    "unit": "Unité",
+    "exportPdf": "Exporter en PDF",
+    "clear": "Effacer"
+  },
+  "leads": {
+    "status": {
+      "new": "Nouveau",
+      "contacted": "Contacté",
+      "qualified": "Qualifié",
+      "proposal": "Proposition commerciale",
+      "won": "Gagné",
+      "lost": "Perdu"
+    },
+    "form": {
+      "editTitle": "Modifier la piste commerciale",
+      "newTitle": "Nouvelle piste commerciale",
+      "saveChanges": "Enregistrer les modifications",
+      "createLead": "Créer une piste commerciale",
+      "titleLabel": "Titre",
+      "titlePlaceholder": "ex. Opportunité équipement entreprise",
+      "wonLeadsCannotChange": "Les opportunités commercialement gagnées ne peuvent pas changer de statut.",
+      "sourceLabel": "Source",
+      "sourceNone": "— Aucune —",
+      "valueLabel": "Valeur ($)",
+      "descriptionPlaceholder": "Notes brèves sur cette piste commerciale…"
+    },
+    "source": {
+      "website": "Site web",
+      "referral": "Recommandation",
+      "coldCall": "Appel à froid",
+      "email": "E-mail",
+      "socialMedia": "Réseaux sociaux",
+      "other": "Autre"
+    },
+    "list": {
+      "title": "Pistes commerciales",
+      "totalCount": "{{count}} pistes commerciales au total",
+      "newLead": "Nouvelle piste commerciale",
+      "searchPlaceholder": "Rechercher des pistes commerciales…",
+      "allSources": "Toutes les sources",
+      "resultsCount": "{{count}} résultats",
+      "colLead": "Piste commerciale",
+      "colSource": "Source",
+      "colValue": "Valeur",
+      "noLeadsFound": "Aucune piste commerciale trouvée",
+      "createFirstLead": "Créez votre première piste commerciale pour commencer.",
+      "showingRange": "Affichage de {{start}}–{{end}} sur {{total}}",
+      "deleteTitle": "Supprimer la piste commerciale",
+      "deleteMessage": "Voulez-vous vraiment supprimer « {{title}} » ? Cette action est irréversible.",
+      "toast": {
+        "loadError": "Échec du chargement des pistes commerciales.",
+        "createSuccess": "Piste commerciale créée.",
+        "createError": "Échec de la création de la piste commerciale.",
+        "updateSuccess": "Piste commerciale mise à jour.",
+        "updateError": "Échec de la mise à jour de la piste commerciale.",
+        "deleteSuccess": "Piste commerciale supprimée.",
+        "deleteError": "Échec de la suppression de la piste commerciale."
+      }
+    }
+  },
+  "nav": {
+    "groups": {
+      "dashboard": "Tableau de bord de direction",
+      "crm": "CRM",
+      "sales": "Ventes",
+      "purchasing": "Achats",
+      "equipment": "Parc d’équipements",
+      "rental": "Opérations de location",
+      "maintenance": "Service & maintenance",
+      "inventory": "Contrôle des stocks",
+      "finance": "Finance & comptabilité",
+      "executive": "Reporting exécutif",
+      "projects": "Portefeuille de projets"
+    },
+    "items": {
+      "overview": "Vue d’ensemble opérationnelle",
+      "customers": "Clients",
+      "leads": "Pistes commerciales",
+      "quotations": "Devis commerciaux",
+      "registry": "Registre d’actifs",
+      "movements": "Mouvements de stock",
+      "contracts": "Contrats de service",
+      "dashboard": "Tableau de bord de direction",
+      "maintenance": "Service & maintenance",
+      "inventory": "Gestion des stocks",
+      "billing": "Facturation & encours",
+      "products": "Catalogue de produits",
+      "invoices": "Factures",
+      "payments": "Paiements",
+      "deposits": "Cautions",
+      "statements": "Relevés de compte",
+      "activity": "Activité",
+      "reports": "Rapports",
+      "analytics": "Analytique commerciale",
+      "iotTelemetry": "Télémétrie IoT",
+      "settings": "Paramètres",
+      "warehouseProjects": "Projets d’entrepôt",
+      "purchaseOrders": "Bons de commande",
+      "salesOrders": "Commandes Clients",
+      "taxInvoices": "Factures Fiscales",
+      "creditNotes": "Avoirs",
+      "paymentVouchers": "Bons de Paiement",
+      "deliveryNotes": "Bons de Livraison",
+      "goodsReceive": "Réceptions de Marchandises",
+      "goodsIssue": "Sorties de Marchandises"
+    },
+    "expandSidebar": "Développer le panneau de navigation",
+    "collapseSidebar": "Réduire le panneau de navigation"
+  },
+  "movement": {
+    "status": {
+      "draft": "Brouillon",
+      "preparing": "En préparation",
+      "in_transit": "En transit",
+      "delivered": "Livré",
+      "completed": "Terminé",
+      "cancelled": "Annulé"
+    },
+    "type": {
+      "warehouse_transfer": "Transfert",
+      "customer_deployment": "Déploiement",
+      "customer_return": "Retour",
+      "internal_relocation": "Relocalisation interne"
+    },
+    "priority": {
+      "low": "Faible",
+      "normal": "Normale",
+      "high": "Élevée",
+      "urgent": "Urgente"
+    },
+    "card": {
+      "customer": "Client : {{name}}"
+    },
+    "timeline": {
+      "title": "Chronologie du mouvement",
+      "by": "par {{name}}"
+    },
+    "list": {
+      "title": "Contrôle des mouvements",
+      "totalCount": "{{count}} mouvements",
+      "refresh": "Actualiser",
+      "newMovement": "Nouveau mouvement",
+      "loadFailed": "Échec du chargement des mouvements.",
+      "searchPlaceholder": "Rechercher numéro, lieu, code...",
+      "allStatuses": "Tous les statuts",
+      "allTypes": "Tous les types",
+      "resultsCount": "{{count}} résultats",
+      "colMovement": "Mouvement",
+      "colEquipment": "Équipement",
+      "colFromTo": "De → À",
+      "colScheduled": "Prévu",
+      "colPriority": "Priorité",
+      "noMovementsFound": "Aucun mouvement trouvé",
+      "pageOf": "Page {{page}} sur {{pages}} ({{total}} au total)"
+    },
+    "form": {
+      "title": "Nouveau mouvement",
+      "backToMovements": "Retour aux mouvements",
+      "movementType": "Type de mouvement",
+      "priority": "Priorité",
+      "forkliftId": "ID du chariot élévateur",
+      "forkliftIdPlaceholder": "Saisir l'ID du chariot",
+      "customerId": "ID client",
+      "fromLocation": "Lieu de départ",
+      "fromLocationPlaceholder": "Entrepôt DK A",
+      "toLocation": "Lieu de destination",
+      "toLocationPlaceholder": "Site client X",
+      "fromAddress": "Adresse de départ",
+      "toAddress": "Adresse de destination",
+      "addressPlaceholder": "Adresse complète (facultatif)",
+      "scheduledDate": "Date prévue",
+      "trackingCode": "Code de suivi / QR",
+      "trackingCodePlaceholder": "Référence QR ou code-barres",
+      "notesPlaceholder": "Notes visibles...",
+      "internalNotes": "Notes internes",
+      "internalNotesPlaceholder": "Usage interne uniquement...",
+      "creating": "Création...",
+      "createMovement": "Créer le mouvement",
+      "created": "Mouvement {{number}} créé.",
+      "createFailed": "Échec de la création du mouvement.",
+      "errors": {
+        "forkliftRequired": "L'ID du chariot élévateur est requis.",
+        "fromLocationRequired": "Le lieu de départ est requis.",
+        "toLocationRequired": "Le lieu de destination est requis.",
+        "scheduledDateRequired": "La date prévue est requise."
+      }
+    },
+    "detail": {
+      "notFound": "Mouvement introuvable.",
+      "actionFailed": "Échec : {{action}}",
+      "actions": {
+        "startPreparing": "Commencer la préparation",
+        "recordDeparture": "Enregistrer le départ",
+        "recordArrival": "Enregistrer l'arrivée",
+        "markComplete": "Marquer comme terminé"
+      },
+      "toasts": {
+        "preparationStarted": "Préparation commencée",
+        "movementCompleted": "Mouvement terminé",
+        "cancelled": "Annulé",
+        "departed": "Parti",
+        "arrived": "Arrivé"
+      },
+      "cancelledByUser": "Annulé par l'utilisateur",
+      "from": "De",
+      "to": "À",
+      "scheduled": "Prévu",
+      "trackingCode": "Code de suivi",
+      "equipment": "Équipement",
+      "customer": "Client",
+      "contract": "Contrat",
+      "driver": "Chauffeur",
+      "departed": "Parti",
+      "arrived": "Arrivé",
+      "departureHours": "Heures au départ",
+      "arrivalHours": "Heures à l'arrivée",
+      "internalNote": "Note interne",
+      "cancellationReason": "Motif d'annulation",
+      "departureHourMeter": "Compteur horaire au départ",
+      "arrivalHourMeter": "Compteur horaire à l'arrivée"
+    }
+  },
+  "header": {
+    "appearance": "Apparence",
+    "settings": "Paramètres",
+    "logout": "Déconnexion",
+    "roleAdmin": "Administrateur",
+    "roleUser": "Utilisateur",
+    "myProfile": "Mon profil",
+    "changePassword": "Changer le mot de passe",
+    "searchPlaceholder": "Rechercher pages, actions...",
+    "searchTrigger": "Rechercher...",
+    "searchLabel": "Rechercher (Ctrl+K)",
+    "searchCommandsLabel": "Rechercher des commandes",
+    "clearSearch": "Effacer la recherche",
+    "noResults": "Aucun résultat pour « {{query}} »",
+    "navigate": "naviguer",
+    "select": "sélectionner",
+    "close": "fermer",
+    "toggleSidebar": "Basculer la barre latérale",
+    "groupNavigation": "Navigation",
+    "groupQuickActions": "Actions rapides",
+    "quickActionNewCustomer": "Nouveau client",
+    "quickActionNewQuotation": "Nouveau devis",
+    "quickActionNewContract": "Nouveau contrat",
+    "quickActionRegisterEquipment": "Enregistrer un équipement",
+    "justNow": "à l'instant",
+    "minutesAgo": "il y a {{count}} min",
+    "hoursAgo": "il y a {{count}} h",
+    "daysAgo": "il y a {{count}} j",
+    "notifications": "Notifications",
+    "notificationsUnread": "Notifications, {{count}} non lues",
+    "noRecentActivity": "Aucune activité récente",
+    "systemUser": "Système",
+    "viewAllActivity": "Voir toute l'activité →",
+    "searchResults": "Résultats de recherche",
+    "breadcrumb": "Fil d'Ariane",
+    "userActions": "Actions utilisateur",
+    "markAllRead": "Tout marquer comme lu",
+    "adminBroadcast": "Admin"
+  },
+  "dashboard": {
+    "exec": {
+      "eyebrow": "Aperçu Exécutif",
+      "title": "Centre de Commande Location",
+      "rentalMvpEyebrow": "DK Rental · Aperçu Exécutif",
+      "rentalMvpTitle": "Tableau de Bord Flotte & Location",
+      "kpi": {
+        "totalFleet": "Flotte Totale",
+        "totalFleetSub": "Chariots élévateurs enregistrés",
+        "activeRented": "En Location",
+        "activeRentedSub": "Unités actuellement louées",
+        "utilizationRate": "Taux d'Utilisation",
+        "utilizationRateSub": "Loués par rapport à la flotte totale",
+        "pendingMaintenance": "Maintenance en Attente",
+        "pendingMaintenanceSub": "Travaux PM / inspections ouverts",
+        "pendingMaintenanceCritical": "{{count}} en cours",
+        "totalStockValue": "Valeur Totale du Stock",
+        "totalStockValueSub": "Capital immobilisé en pièces détachées",
+        "lowStockAlerts": "Alertes Stock Faible",
+        "lowStockAlertsItems": "{{count}} articles",
+        "lowStockAlertsSub": "Sous le seuil de réapprovisionnement",
+        "lowStockAlertsCritical": "{{count}} critiques"
+      },
+      "chart": {
+        "utilizationTab": "Tendance d'Utilisation de la Flotte",
+        "revenueTab": "Revenus vs. Coût de Maintenance",
+        "last6Months": "6 derniers mois",
+        "utilizationSeries": "Utilisation %",
+        "revenueSeries": "Revenus",
+        "maintenanceSeries": "Coût de Maintenance",
+        "months": {
+          "jan": "Janv.",
+          "feb": "Févr.",
+          "mar": "Mars",
+          "apr": "Avr.",
+          "may": "Mai",
+          "jun": "Juin"
+        }
+      },
+      "contracts": {
+        "title": "Contrats de Location Actifs",
+        "columnContractId": "N° de Contrat",
+        "columnCustomerName": "Nom du Client",
+        "columnForkliftModel": "Modèle de Chariot",
+        "columnEndDate": "Date de Fin",
+        "columnStatus": "Statut"
+      },
+      "lowStock": {
+        "title": "Stock Critique",
+        "minSuffix": "min"
+      },
+      "status": {
+        "booked": "Réservé",
+        "onRent": "En Location",
+        "expiringSoon": "Expire Bientôt",
+        "overdue": "En Retard",
+        "returned": "Retourné",
+        "cancelled": "Annulé"
+      },
+      "customizer": {
+        "fontSize": "Taille du Texte",
+        "language": "Langue",
+        "small": "Petit",
+        "medium": "Moyen",
+        "large": "Grand"
+      },
+      "brandsWeService": "Marques que Nous Servons"
+    },
+    "title": "Tableau de bord",
+    "updated": "Mis à jour {{date}}",
+    "refresh": "Actualiser",
+    "retry": "Réessayer",
+    "keyMetrics": "Indicateurs clés",
+    "quickActions": "Actions rapides",
+    "revenueFleet": "Revenus et flotte",
+    "activityFleet": "Activité et flotte",
+    "fleetByFuelType": "Flotte par type de carburant",
+    "upcomingTasks": "Tâches à venir",
+    "customerOverview": "Aperçu des clients",
+    "leadPipeline": "Pipeline de prospects",
+    "resultsConversion": "Résultats et conversion",
+    "recentActivity": "Activité récente",
+    "viewAll": "Voir tout",
+    "noRecentActivity": "Aucune activité récente",
+    "loadError": "Échec du chargement des données du tableau de bord.",
+    "kpi": {
+      "totalRevenue": "Chiffre d'affaires total",
+      "activeRentals": "Locations actives",
+      "overdueCount": "{{count}} en retard",
+      "fleetUtilization": "Taux d'utilisation de la flotte",
+      "rentedOfFleet": "{{rented}} sur {{total}} loués",
+      "maintenanceDue": "Maintenance à prévoir",
+      "criticalCount": "{{count}} critiques",
+      "lowStock": "Stock faible",
+      "outstandingInvoices": "Factures impayées",
+      "amountOverdue": "{{amount}} en retard",
+      "totalCustomers": "Total des clients",
+      "active": "Actifs",
+      "percentOfTotal": "{{pct}} du total",
+      "prospects": "Prospects",
+      "totalLeads": "Total des prospects",
+      "new": "Nouveau",
+      "contacted": "Contacté",
+      "qualified": "Qualifié",
+      "proposal": "Proposition",
+      "won": "Gagné",
+      "lost": "Perdu",
+      "conversion": "Conversion",
+      "winRate": "Taux de réussite",
+      "lostRate": "Taux de perte",
+      "wonOverTotal": "Gagné / Total",
+      "wonOverWonLost": "Gagné / (Gagné+Perdu)",
+      "lostOverWonLost": "Perdu / (Gagné+Perdu)"
+    },
+    "quickAction": {
+      "createRental": "Créer une location",
+      "createRentalDesc": "Nouveau contrat de location",
+      "addEquipment": "Ajouter un équipement",
+      "addEquipmentDesc": "Enregistrer un chariot élévateur",
+      "createInvoice": "Créer une facture",
+      "createInvoiceDesc": "Générer la facturation",
+      "purchaseOrder": "Bon de commande",
+      "purchaseOrderDesc": "Commander des pièces détachées",
+      "maintenance": "Maintenance",
+      "maintenanceDesc": "Planifier un entretien"
+    },
+    "chart": {
+      "revenueTrend": "Tendance des revenus",
+      "revenueTrendSub": "Revenus facturés mensuellement",
+      "noRevenueData": "Aucune donnée de revenus pour le moment",
+      "rentalTrend": "Tendance des locations",
+      "rentalTrendSub": "Contrats actifs par mois",
+      "noRentalData": "Aucune donnée de location pour le moment",
+      "fleetUtilization": "Taux d'utilisation de la flotte",
+      "fleetUtilizationSub": "Équipement par statut",
+      "noFleetData": "Aucune donnée de flotte",
+      "total": "Total",
+      "maintenanceCost": "Coût de maintenance",
+      "maintenanceCostSub": "Dépenses de service mensuelles",
+      "noMaintenanceCostData": "Aucune donnée de coût de maintenance",
+      "fleetByFuelType": "Flotte par type de carburant",
+      "units": "Unités"
+    },
+    "task": {
+      "loading": "Chargement...",
+      "contractsExpiring": "Contrats arrivant à échéance",
+      "countInDays": "{{count}} dans {{days}} jours",
+      "noContractsExpiring": "Aucun contrat n'arrive à échéance prochainement",
+      "viewAllContracts": "Voir tous les contrats →",
+      "quotationsExpiring": "Devis arrivant à expiration",
+      "noQuotationsExpiring": "Aucun devis n'expire prochainement",
+      "viewAllQuotations": "Voir tous les devis →",
+      "pmServiceDue": "Entretien PM à prévoir",
+      "approaching": "{{count}} à venir",
+      "allWithinServiceRange": "Tous les chariots élévateurs sont dans la plage d'entretien",
+      "hoursMeter": "{{hours}} h",
+      "viewAllEquipment": "Voir tous les équipements →"
+    },
+    "fleetStatus": {
+      "inStock": "En stock",
+      "rented": "Loué",
+      "inService": "En service",
+      "reserved": "Réservé",
+      "sold": "Vendu",
+      "decommissioned": "Hors service"
+    },
+    "fuelType": {
+      "diesel": "Diesel",
+      "electric": "Électrique",
+      "lpg": "GPL",
+      "dualFuel": "Bicarburant",
+      "unknown": "Inconnu"
+    },
+    "catalog": {
+      "title": "Catalogue produits",
+      "viewCatalog": "Voir le catalogue →",
+      "loadError": "Échec du chargement des statistiques du catalogue.",
+      "totalProducts": "Total des produits",
+      "brands": "Marques",
+      "categories": "Catégories"
+    },
+    "store": {
+      "get": "Obtenir",
+      "free": "Gratuit",
+      "comingSoon": "Bientôt disponible",
+      "hero": {
+        "assets": {
+          "eyebrow": "Module en vedette",
+          "title": "Le registre des actifs, réinventé pour le terrain",
+          "desc": "Suivez chaque chariot élévateur, remorque et machine tout au long de son cycle de vie — propriété, statut et compteurs horaires dans un registre en temps réel."
+        },
+        "invoicing": {
+          "eyebrow": "Disponible maintenant",
+          "title": "Facturation intelligente avec TVA automatique",
+          "desc": "Générez bons de commande, devis et factures en un seul flux — sous-total, TVA et totaux calculés automatiquement."
+        },
+        "maintenance": {
+          "eyebrow": "Sélection de la rédaction",
+          "title": "Une planification de maintenance toujours en avance",
+          "desc": "Identifiez les machines à entretenir avant leur panne, grâce aux données en temps réel du compteur horaire et de l'historique."
+        }
+      },
+      "promo": {
+        "sale": {
+          "kicker": "Durée limitée",
+          "title": "Vente exceptionnelle — Jusqu'à 50 % de réduction sur les pièces"
+        },
+        "new": {
+          "kicker": "Tout juste lancé",
+          "title": "Nouveaux modules cette semaine"
+        },
+        "staffPicks": {
+          "kicker": "Sélection de l'équipe",
+          "title": "Les mieux notés en service terrain"
+        }
+      },
+      "rows": {
+        "mostUsed": "Modules les plus utilisés",
+        "recommended": "Modules recommandés",
+        "fieldService": "Populaire en service terrain"
+      },
+      "modules": {
+        "equipmentRegistry": {
+          "title": "DK Registre des équipements",
+          "sub": "Registre des équipements et véhicules"
+        },
+        "customers": {
+          "title": "DK Clients",
+          "sub": "Gérer les fiches clients"
+        },
+        "quotations": {
+          "title": "DK Devis",
+          "sub": "Devis"
+        },
+        "rentalContracts": {
+          "title": "DK Contrats de location",
+          "sub": "Contrats de location"
+        },
+        "movements": {
+          "title": "DK Mouvements",
+          "sub": "Mouvements d'équipement"
+        },
+        "projects": {
+          "title": "DK Projets",
+          "sub": "Projets et entrepôts"
+        },
+        "smartInvoicing": {
+          "title": "DK Facturation intelligente",
+          "sub": "Facturation automatique"
+        },
+        "payments": {
+          "title": "DK Paiements",
+          "sub": "Paiements"
+        },
+        "deposits": {
+          "title": "DK Cautions",
+          "sub": "Cautions"
+        },
+        "statements": {
+          "title": "DK Relevés",
+          "sub": "Relevés"
+        },
+        "inventory": {
+          "title": "DK Inventaire",
+          "sub": "Inventaire"
+        },
+        "purchaseOrders": {
+          "title": "DK Bons de commande",
+          "sub": "Commander des pièces détachées"
+        },
+        "workOrders": {
+          "title": "DK Ordres de travail",
+          "sub": "Planifier un entretien"
+        },
+        "assetRegistry": {
+          "title": "DK Registre des actifs",
+          "sub": "Registre des actifs"
+        },
+        "maintenanceSchedule": {
+          "title": "DK Programme de maintenance",
+          "sub": "Maintenance préventive"
+        }
+      },
+      "thirdParty": {
+        "routeWise": {
+          "title": "RouteWise",
+          "sub": "Meridian Labs"
+        },
+        "fleetPulse": {
+          "title": "FleetPulse",
+          "sub": "Orbit Communications"
+        },
+        "partsBin": {
+          "title": "PartsBin",
+          "sub": "Ironclad Systems"
+        }
+      }
+    },
+    "errors": {
+      "leadTrend": "Échec du chargement de la tendance des pistes commerciales.",
+      "customerTrend": "Échec du chargement de la tendance des clients.",
+      "leadMetrics": "Échec du chargement des indicateurs des pistes commerciales."
+    }
+  },
+  "equipment": {
+    "status": {
+      "inStock": "En Stock",
+      "sold": "Vendu",
+      "rented": "Loué",
+      "inService": "En Service",
+      "reserved": "Réservé",
+      "decommissioned": "Hors Service"
+    },
+    "ownership": {
+      "forSale": "À Vendre",
+      "rental": "Flotte de Location",
+      "customerOwned": "Propriété Client",
+      "retired": "Retiré"
+    },
+    "operationalStatus": {
+      "available": "Disponible",
+      "onRent": "En Location",
+      "inService": "En Service",
+      "sold": "Vendu"
+    },
+    "condition": {
+      "new": "Neuf",
+      "used": "Occasion",
+      "refurbished": "Remis à Neuf"
+    },
+    "fuel": {
+      "electric": "Électrique",
+      "diesel": "Diesel",
+      "lpg": "GPL",
+      "dualFuel": "Bicarburant",
+      "notSpecified": "— Non spécifié —"
+    },
+    "card": {
+      "hoursValue": "{{count}} h",
+      "editForklift": "Modifier le chariot",
+      "serial": "N° de Série",
+      "brand": "Marque",
+      "fuel": "Carburant",
+      "customer": "Client",
+      "iotLive": "En Ligne",
+      "iotOffline": "Hors Ligne",
+      "iotAutoSynced": "Synchronisé automatiquement via IoT"
+    },
+    "filters": {
+      "statusShort": {
+        "inService": "Service",
+        "decommissioned": "H.S."
+      },
+      "allFuelTypes": "Tous les Carburants",
+      "allConditions": "Tous les États",
+      "allOwnership": "Toutes les Propriétés",
+      "allBrands": "Toutes les Marques",
+      "clear": "Effacer",
+      "countLabel": "{{count}} équipements",
+      "noneFound": "Aucun équipement trouvé",
+      "noneFoundHint": "Essayez d'ajuster vos filtres ou d'ajouter un nouvel équipement",
+      "searchPlaceholder": "Rechercher un équipement..."
+    },
+    "quickActions": {
+      "register": {
+        "label": "Enregistrer un Équipement",
+        "desc": "Ajouter un nouveau chariot"
+      },
+      "movement": {
+        "label": "Créer un Mouvement",
+        "desc": "Transférer l'équipement"
+      },
+      "maintenance": {
+        "label": "Planifier un Entretien",
+        "desc": "Maintenance préventive"
+      },
+      "rental": {
+        "label": "Nouvelle Location",
+        "desc": "Assigner à un contrat"
+      }
+    },
+    "gallery": {
+      "noPhotos": "Aucune photo téléchargée",
+      "noPhotosHint": "Les photos aident à identifier et documenter cet équipement",
+      "previousPhoto": "Photo précédente",
+      "nextPhoto": "Photo suivante",
+      "viewFullscreen": "Voir en plein écran"
+    },
+    "timeline": {
+      "noHistory": "Aucun changement de statut enregistré pour le moment.",
+      "system": "Système"
+    },
+    "form": {
+      "serialRequired": "Le numéro de série est requis.",
+      "nameRequired": "Le nom est requis.",
+      "saveFailed": "Échec de l'enregistrement. Veuillez réessayer.",
+      "editTitle": "Modifier le Chariot",
+      "registerTitle": "Enregistrer un Chariot",
+      "serialNumber": "Numéro de Série",
+      "serialNumberPlaceholder": "ex. JH-2024-001",
+      "nameEnglish": "Nom (Anglais)",
+      "nameEnglishPlaceholder": "ex. Jungheinrich EFG 216k",
+      "nameLao": "Nom (Lao)",
+      "internalCode": "Code Interne",
+      "internalCodePlaceholder": "Étiquette d'actif DK",
+      "brand": "Marque",
+      "noBrand": "— Aucune marque —",
+      "modelNumber": "Numéro de Modèle",
+      "modelNumberPlaceholder": "ex. EFG 216k",
+      "condition": "État",
+      "operationalStatus": "Statut Opérationnel",
+      "ownershipState": "Statut de Propriété",
+      "fuelType": "Type de Carburant",
+      "capacityKg": "Capacité (kg)",
+      "yearManufactured": "Année de Fabrication",
+      "currentHourMeter": "Compteur Horaire Actuel",
+      "initialHourMeter": "Compteur Horaire Initial",
+      "purchaseDate": "Date d'Achat",
+      "warrantyExpiry": "Expiration de la Garantie",
+      "notesPlaceholder": "Notes facultatives...",
+      "saveChanges": "Enregistrer les Modifications",
+      "capacityKgPlaceholder": "ex. 1600",
+      "yearManufacturedPlaceholder": "ex. 2024"
+    },
+    "registry": {
+      "title": "Registre des Équipements",
+      "subtitle": "Gérez et surveillez votre flotte de chariots élévateurs",
+      "refresh": "Actualiser",
+      "registerForklift": "Enregistrer un Chariot",
+      "searchPlaceholder": "Rechercher n° de série, nom, modèle...",
+      "noForkliftsFound": "Aucun chariot élévateur trouvé",
+      "pageInfo": "Page {{page}} sur {{pages}} ({{total}} au total)",
+      "deleteTitle": "Supprimer le Chariot",
+      "deleteMessage": "Supprimer « {{name}} » (S/N : {{serial}}) ? Cette action est irréversible.",
+      "kpi": {
+        "utilization": "Utilisation",
+        "avgHours": "Heures Moy.",
+        "pmDue": "Entretien Prévu",
+        "critical": "{{count}} critiques",
+        "avgAge": "Âge Moyen",
+        "years": "{{count}} an(s)"
+      },
+      "table": {
+        "forklift": "Chariot",
+        "model": "Modèle",
+        "ownership": "Propriété",
+        "hours": "Heures Compteur"
+      },
+      "toast": {
+        "loadError": "Échec du chargement des chariots.",
+        "createSuccess": "Chariot enregistré avec succès.",
+        "createError": "Échec de l'enregistrement du chariot.",
+        "updateSuccess": "Chariot mis à jour avec succès.",
+        "updateError": "Échec de la mise à jour du chariot.",
+        "deleteSuccess": "Chariot supprimé.",
+        "deleteError": "Échec de la suppression du chariot."
+      }
+    },
+    "detail": {
+      "notFoundOrFailed": "Chariot introuvable ou échec du chargement.",
+      "backToEquipment": "Retour aux Équipements",
+      "notFound": "Chariot introuvable.",
+      "tabs": {
+        "overview": "Aperçu",
+        "photos": "Photos",
+        "timeline": "Chronologie",
+        "documents": "Documents",
+        "contracts": "Contrats"
+      },
+      "serialAbbrev": "N/S",
+      "newQuote": "Nouveau Devis",
+      "newContract": "Nouveau Contrat",
+      "specifications": "Spécifications",
+      "capacity": "Capacité",
+      "year": "Année",
+      "model": "Modèle",
+      "mastType": "Type de Mât",
+      "maxLiftHeight": "Hauteur de Levage Max.",
+      "currentLocation": "Emplacement Actuel",
+      "zone": "Zone",
+      "since": "Depuis",
+      "noLocationRecorded": "Aucun emplacement enregistré",
+      "hourMeter": "Compteur Horaire",
+      "hoursUnit": "h",
+      "pctOfThreshold": "{{pct}}% de {{threshold}} h",
+      "serviceInterval": "intervalle d'entretien",
+      "initial": "Initial",
+      "hoursUsed": "Heures Utilisées",
+      "dailyAvg": "Moy. Quotidienne",
+      "estService": "Entretien Est.",
+      "estServiceDays": "~{{count}} jours",
+      "assetSummary": "Résumé de l'Actif",
+      "assetAge": "Âge de l'Actif",
+      "years": "{{count}} ans",
+      "warranty": "Garantie",
+      "expired": "Expirée",
+      "valid": "Valide",
+      "statusChanges": "Changements de Statut",
+      "documents": "Documents",
+      "filesCount": "{{count}} fichiers",
+      "photos": "Photos",
+      "imagesCount": "{{count}} images",
+      "assignedCustomer": "Client Assigné",
+      "documentTitle": "Titre",
+      "expiry": "Expiration",
+      "uploaded": "Téléchargé",
+      "noDocumentsUploaded": "Aucun document téléchargé",
+      "viewContractsHint": "Voir les contrats de location liés à cet équipement",
+      "viewRentalContracts": "Voir les Contrats de Location"
+    }
+  },
+  "inventory": {
+    "common": {
+      "refresh": "Actualiser",
+      "resultCount_one": "{{count}} résultat",
+      "resultCount_other": "{{count}} résultats",
+      "paginationInfo": "Page {{page}} sur {{pages}}"
+    },
+    "dashboard": {
+      "title": "Inventaire des pièces détachées",
+      "subtitle": "Aperçu de la gestion des stocks et des achats",
+      "purchaseOrdersButton": "Bons de commande",
+      "sparePartsButton": "Inventaire des pièces détachées",
+      "quickAccess": "Accès rapide",
+      "loadError": "Échec du chargement des données de stock."
+    },
+    "purchaseOrder": {
+      "title": "Bons de commande",
+      "subtitle_one": "{{count}} commande",
+      "subtitle_other": "{{count}} commandes",
+      "loadError": "Échec du chargement des bons de commande.",
+      "status": {
+        "all": "Tous les statuts",
+        "draft": "Brouillon",
+        "ordered": "Commandé",
+        "partial": "Partiellement reçu",
+        "received": "Reçu",
+        "cancelled": "Annulé"
+      },
+      "newPO": "Nouveau bon de commande",
+      "form": {
+        "title": "Nouveau bon de commande",
+        "backToList": "Retour aux bons de commande",
+        "vendor": "Fournisseur",
+        "vendorRequired": "Le fournisseur est requis",
+        "warehouse": "Entrepôt",
+        "warehouseRequired": "L'entrepôt est requis",
+        "vendorAddress": "Adresse du fournisseur",
+        "vendorContact": "Contact du fournisseur",
+        "orderDate": "Date de commande",
+        "expectedDate": "Date prévue",
+        "taxRate": "Taux de taxe (%)",
+        "lineItems": "Lignes de commande",
+        "itemCode": "Code article",
+        "description": "Description",
+        "descriptionPlaceholder": "Description de l'article",
+        "qty": "Qté",
+        "unit": "Unité",
+        "unitCost": "Coût unitaire",
+        "linkCatalogPart": "Lier une pièce du catalogue",
+        "linkCatalogPartPlaceholder": "Rechercher une pièce…",
+        "noPartsFound": "Aucune pièce trouvée",
+        "addRow": "Ajouter une ligne",
+        "itemRequired": "Au moins une ligne est requise",
+        "created": "Bon de commande {{number}} créé",
+        "createFailed": "Échec de la création du bon de commande",
+        "creating": "Création...",
+        "createPO": "Créer le bon de commande"
+      },
+      "detail": {
+        "loadError": "Échec du chargement du bon de commande",
+        "notFound": "Bon de commande introuvable",
+        "actionFailed": "Échec : {{action}}",
+        "submitted": "Bon de commande soumis",
+        "submit": "Soumettre",
+        "receiveItems": "Réceptionner",
+        "receiveModalTitle": "Réceptionner les articles",
+        "received": "Articles réceptionnés",
+        "receivedDate": "Date de réception",
+        "qtyOrdered": "Qté commandée",
+        "qtyReceived": "Qté reçue"
+      }
+    },
+    "spareParts": {
+      "unitPrice": "Prix unitaire",
+      "unit": "Unité",
+      "categories": {
+        "all": "Toutes les catégories",
+        "filter": "Filtre",
+        "belt": "Courroie",
+        "brake": "Frein",
+        "hydraulic": "Hydraulique",
+        "electrical": "Électrique",
+        "engine": "Moteur",
+        "tire": "Pneu",
+        "chain": "Chaîne",
+        "battery": "Batterie",
+        "lubricant": "Lubrifiant",
+        "general": "Général"
+      },
+      "list": {
+        "title": "Inventaire des pièces détachées",
+        "subtitle_one": "{{count}} pièce",
+        "subtitle_other": "{{count}} pièces",
+        "addPart": "Ajouter une pièce",
+        "loadError": "Échec du chargement des pièces.",
+        "searchPlaceholder": "Rechercher numéro de pièce, nom...",
+        "noPartsFound": "Aucune pièce détachée trouvée",
+        "columns": {
+          "partNumber": "N° de pièce",
+          "minStock": "Stock min."
+        }
+      },
+      "detail": {
+        "backToList": "Retour aux pièces détachées",
+        "notFound": "Introuvable.",
+        "loadError": "Pièce introuvable.",
+        "totalStock": "Stock total",
+        "minLevel": "Niveau minimum",
+        "reorderQty": "Quantité de réapprovisionnement",
+        "brand": "Marque",
+        "leadTime": "Délai de livraison",
+        "leadTimeDays_one": "{{count}} jour",
+        "leadTimeDays_other": "{{count}} jours",
+        "created": "Créé le",
+        "active": "Actif",
+        "stockByWarehouse": "Stock par entrepôt",
+        "recentTransactions": "Transactions récentes",
+        "columns": {
+          "warehouse": "Entrepôt",
+          "onHand": "En stock",
+          "reserved": "Réservé",
+          "available": "Disponible",
+          "number": "Numéro",
+          "qty": "Qté",
+          "cost": "Coût"
+        }
+      }
+    },
+    "warehouse": {
+      "title": "Emplacements de stock",
+      "list": {
+        "subtitle_one": "{{count}} emplacement de stock",
+        "subtitle_other": "{{count}} emplacements de stock",
+        "addWarehouse": "Ajouter un emplacement de stock",
+        "loadError": "Échec du chargement des emplacements de stock."
+      },
+      "form": {
+        "codeLabel": "Code",
+        "codePlaceholder": "WH-A",
+        "namePlaceholder": "Entrepôt Alpha",
+        "addressPlaceholder": "Adresse complète (facultatif)",
+        "codeNameRequired": "Le code et le nom sont obligatoires.",
+        "createSuccess": "Entrepôt créé.",
+        "createError": "Échec de la création de l'entrepôt.",
+        "creating": "Création en cours..."
+      },
+      "detail": {
+        "backToList": "Retour aux emplacements de stock",
+        "loadError": "Échec du chargement de l'emplacement de stock.",
+        "notFound": "Emplacement de stock introuvable.",
+        "address": "Adresse",
+        "contactName": "Personne à contacter",
+        "contactPhone": "Téléphone de contact",
+        "distinctParts": "Pièces distinctes",
+        "totalStock": "Unités en stock total",
+        "stockTitle": "Stock dans cet emplacement de stock",
+        "noStock": "Aucun stock enregistré dans cet emplacement de stock pour le moment.",
+        "columns": {
+          "part": "Pièce"
+        }
+      }
+    },
+    "stockBadge": {
+      "inStock": "En stock",
+      "lowStock": "Stock faible",
+      "outOfStock": "Rupture de stock"
+    },
+    "reorderAlert": {
+      "title": "Alertes de réapprovisionnement ({{count}})",
+      "detail": "{{warehouseCode}} : {{available}} disponible (min : {{minLevel}}) — réapprovisionner {{reorderQuantity}}"
+    },
+    "kpi": {
+      "spareParts": "Pièces détachées",
+      "warehouses": "Entrepôts",
+      "stockValue": "Valeur du stock",
+      "lowStock": "Stock faible",
+      "belowMinimum": "{{count}} sous le minimum",
+      "pendingPOs": "Bons de commande en attente"
+    },
+    "quickNav": {
+      "parts": {
+        "label": "Inventaire des pièces détachées",
+        "desc": "Parcourir le stock"
+      },
+      "warehouses": {
+        "label": "Emplacements de stock",
+        "desc": "Gérer les emplacements"
+      },
+      "purchaseOrders": {
+        "label": "Bons de commande",
+        "desc": "Approvisionnement"
+      },
+      "catalog": {
+        "label": "Catalogue produits",
+        "desc": "Catalogue complet"
+      }
+    },
+    "lowStock": {
+      "title": "Alertes de stock faible",
+      "allHealthy": "Tous les niveaux de stock sont sains",
+      "viewAll": "Voir tout",
+      "min": "Min",
+      "reorder": "Réapprovisionner"
+    },
+    "purchaseOrderTable": {
+      "poNumber": "N° de bon de commande",
+      "vendor": "Fournisseur",
+      "warehouse": "Entrepôt",
+      "orderDate": "Date de commande",
+      "empty": "Aucun bon de commande trouvé",
+      "paginationInfo": "Page {{page}} sur {{pages}} ({{total}} au total)"
+    },
+    "stockDistributionChart": {
+      "title": "Stock par catégorie",
+      "subtitle": "Pièces par catégorie",
+      "empty": "Aucune donnée de stock"
+    },
+    "warehouseGrid": {
+      "noneFound": "Aucun entrepôt",
+      "noneFoundHint": "Créez votre premier entrepôt pour commencer à suivre le stock"
+    },
+    "import": {
+      "button": "Importer des données",
+      "title": "Importer des données de stock",
+      "subtitle": "Téléchargez un fichier CSV ou Excel (.xlsx) pour créer ou mettre à jour des pièces détachées en masse. Les numéros de pièce existants sont mis à jour ; les nouveaux sont créés.",
+      "dropzoneText": "Glissez-déposez votre fichier ici, ou cliquez pour parcourir",
+      "dropzoneHint": "Prend en charge les fichiers .csv et .xlsx, jusqu'à 10 Mo",
+      "clearFile": "Effacer",
+      "uploadButton": "Téléverser et importer",
+      "uploading": "Téléversement et traitement des données…",
+      "uploadingHint": "Cela peut prendre quelques secondes pour les fichiers plus volumineux.",
+      "uploadFailed": "Échec de l'importation. Veuillez réessayer.",
+      "successBanner": "Importation terminée avec succès",
+      "partialBanner": "Importation terminée avec quelques erreurs",
+      "resultSummary": "{{imported}} importé(s), {{updated}} mis à jour",
+      "rowErrorsTitle": "{{count}} lignes n'ont pas pu être importées",
+      "rowLabel": "Ligne {{row}} :",
+      "closeAndRefresh": "Fermer et actualiser"
+    }
+  },
+  "rental": {
+    "status": {
+      "reservation": "Réservation",
+      "draft": "Brouillon",
+      "pendingApproval": "En attente d'approbation",
+      "approved": "Approuvé",
+      "revision": "Révision",
+      "delivering": "En livraison",
+      "active": "Actif",
+      "overdue": "En retard",
+      "returning": "En retour",
+      "inspecting": "En inspection",
+      "settling": "En règlement",
+      "closed": "Clôturé",
+      "cancelled": "Annulé"
+    },
+    "contractType": {
+      "shortTerm": "Court terme",
+      "longTerm": "Long terme",
+      "project": "Projet"
+    },
+    "list": {
+      "title": "Contrats de location",
+      "totalCount": "{{count}} contrats",
+      "refresh": "Actualiser",
+      "newContract": "Nouveau contrat",
+      "searchPlaceholder": "Rechercher numéro, client...",
+      "allStatuses": "Tous les statuts",
+      "allTypes": "Tous les types",
+      "colContract": "Contrat",
+      "colCustomer": "Client",
+      "colTotalValue": "Valeur totale",
+      "colStartDate": "Date de début",
+      "colEndDate": "Date de fin",
+      "noContractsFound": "Aucun contrat de location trouvé",
+      "createOrAdjust": "Créez un nouveau contrat ou ajustez vos filtres.",
+      "resultsCount": "{{count}} résultats",
+      "pageOf": "Page {{page}} sur {{pages}} ({{total}} au total)",
+      "deleteConfirmTitle": "Supprimer le contrat de location",
+      "deleteConfirmMessage": "Supprimer « {{number}} » ? Cette action est irréversible.",
+      "toast": {
+        "loadError": "Échec du chargement des contrats de location.",
+        "createSuccess": "Contrat de location créé.",
+        "createError": "Échec de la création du contrat de location.",
+        "deleteSuccess": "Contrat de location supprimé.",
+        "deleteError": "Échec de la suppression du contrat de location."
+      }
+    },
+    "form": {
+      "backToContracts": "Retour aux contrats de location",
+      "newContract": "Nouveau contrat de location",
+      "contractType": "Type de contrat",
+      "currencyLabel": "Devise",
+      "customerId": "ID client",
+      "customerIdPlaceholder": "Saisir l'ID client",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "taxRateLabel": "Taux de taxe (%)",
+      "depositAmount": "Montant de la caution",
+      "deliveryAddress": "Adresse de livraison",
+      "deliveryAddressPlaceholder": "Adresse de livraison complète",
+      "deliveryContactName": "Nom du contact livraison",
+      "deliveryContactNamePlaceholder": "M. / Mme",
+      "deliveryContactPhone": "Téléphone du contact livraison",
+      "deliveryContactPhonePlaceholder": "+856 20 ...",
+      "notesLabel": "Notes (visibles par le client)",
+      "notesPlaceholder": "Visible sur le contrat...",
+      "internalNotesLabel": "Notes internes",
+      "internalNotesPlaceholder": "Usage interne uniquement, non visible du client...",
+      "creating": "Création en cours...",
+      "createContract": "Créer le contrat",
+      "customerIdRequired": "L'ID client est obligatoire.",
+      "startDateRequired": "La date de début est obligatoire.",
+      "endDateRequired": "La date de fin est obligatoire.",
+      "createFailed": "Échec de la création du contrat de location.",
+      "createdToast": "Contrat {{number}} créé."
+    },
+    "detail": {
+      "backToContracts": "Retour aux contrats de location",
+      "notFoundError": "Contrat de location introuvable ou échec du chargement.",
+      "actionFailed": "Échec : {{action}}",
+      "rev": "Rév. {{number}}",
+      "submit": "Soumettre",
+      "approve": "Approuver",
+      "requestRevision": "Demander une révision",
+      "activate": "Activer",
+      "requestReturn": "Demander un retour",
+      "requestExtension": "Demander une prolongation",
+      "completeInspection": "Terminer l'inspection",
+      "inspectionInfo": "Fin de l'inspection — utilisez le panneau Retour ci-dessous.",
+      "generateBilling": "Générer la facturation",
+      "billingInfo": "Génération de facturation — disponible en phase 4.",
+      "closeContract": "Clôturer le contrat",
+      "taxWithRate": "Taxe ({{rate}}%)",
+      "discount": "Remise",
+      "totalBilled": "Total facturé",
+      "totalPaid": "Total payé",
+      "outstanding": "Solde dû",
+      "customer": "Client",
+      "deliveryContact": "Contact de livraison",
+      "deliveryPhone": "Téléphone de livraison",
+      "assignedTo": "Assigné à",
+      "approvedBy": "Approuvé par",
+      "actualStart": "Début réel",
+      "actualEnd": "Fin réelle",
+      "deposit": "Caution",
+      "paymentTerms": "Conditions de paiement",
+      "daysCount": "{{count}} jours",
+      "internalNote": "Note interne",
+      "lineItems": "Lignes ({{count}})",
+      "addItem": "Ajouter un article",
+      "colNumber": "N°",
+      "colMonthlyRate": "Tarif mensuel",
+      "colDailyRate": "Tarif journalier",
+      "colLineTotal": "Total ligne",
+      "serialNumber": "N° de série : {{serial}}",
+      "hoursUsed": "Heures : {{count}}",
+      "noLineItems": "Aucune ligne pour le moment.",
+      "addItemsHint": "Ajoutez des articles pour construire le contrat.",
+      "extensions": "Prolongations ({{count}})",
+      "colOriginalEnd": "Fin initiale",
+      "colNewEnd": "Nouvelle fin",
+      "colReason": "Motif",
+      "activeReturns": "Retours en cours ({{count}})",
+      "colReturnNumber": "N° de retour",
+      "colRequested": "Demandé le",
+      "colScheduledPickup": "Enlèvement prévu",
+      "colForklift": "Chariot élévateur",
+      "statusHistory": "Historique des statuts",
+      "colFrom": "De",
+      "colTo": "À",
+      "colBy": "Par",
+      "reasons": {
+        "revisionNeeded": "Révision nécessaire",
+        "cancelledByUser": "Annulé par l'utilisateur",
+        "rejected": "Rejeté"
+      },
+      "toasts": {
+        "submitted": "Soumis pour approbation",
+        "revisionRequested": "Révision demandée",
+        "activated": "Activé",
+        "contractClosed": "Contrat clôturé",
+        "itemRemoved": "Article supprimé",
+        "extensionApproved": "Prolongation approuvée",
+        "extensionRejected": "Prolongation rejetée"
+      },
+      "addItemModal": {
+        "title": "Ajouter un article au contrat",
+        "forkliftId": "ID chariot élévateur",
+        "hourlyRate": "Tarif horaire",
+        "monthlyRate": "Tarif mensuel",
+        "dailyRate": "Tarif journalier",
+        "adding": "Ajout en cours...",
+        "forkliftIdRequired": "L'ID du chariot élévateur est obligatoire.",
+        "descriptionRequired": "La description est obligatoire.",
+        "monthlyRateRequired": "Le tarif mensuel est obligatoire.",
+        "dailyRateRequired": "Le tarif journalier est obligatoire.",
+        "itemAdded": "Article ajouté.",
+        "addFailed": "Échec de l'ajout de l'article."
+      },
+      "extensionModal": {
+        "title": "Demander une prolongation de contrat",
+        "currentEndDate": "Date de fin actuelle",
+        "newEndDate": "Nouvelle date de fin",
+        "rateAdjustment": "Ajustement du tarif (%)",
+        "reason": "Motif",
+        "reasonPlaceholder": "Motif de la demande de prolongation...",
+        "requesting": "Demande en cours...",
+        "requestExtension": "Demander une prolongation",
+        "newEndDateRequired": "La nouvelle date de fin est obligatoire.",
+        "newEndDateAfterCurrent": "La nouvelle date de fin doit être postérieure à la date de fin actuelle.",
+        "extensionRequested": "Prolongation demandée.",
+        "requestFailed": "Échec de la demande de prolongation."
+      },
+      "returnModal": {
+        "title": "Demander le retour d'équipement",
+        "returnType": "Type de retour",
+        "scheduled": "Planifié",
+        "early": "Anticipé",
+        "requestedDate": "Date demandée",
+        "equipmentToReturn": "Équipement à retourner",
+        "allEquipment": "— Tout l'équipement —",
+        "scheduledPickupDate": "Date d'enlèvement prévue",
+        "pickupAddress": "Adresse d'enlèvement",
+        "pickupAddressPlaceholder": "Adresse du site client",
+        "earlyTermination": "Résiliation anticipée (des pénalités peuvent s'appliquer)",
+        "notesPlaceholder": "Instructions supplémentaires...",
+        "requesting": "Demande en cours...",
+        "requestReturn": "Demander un retour",
+        "requestedDateRequired": "La date demandée est obligatoire.",
+        "returnRequested": "Retour demandé.",
+        "requestFailed": "Échec de la création de la demande de retour."
+      }
+    }
+  },
+  "settings": {
+    "title": "Paramètres Généraux",
+    "subtitle": "Gérez les paramètres par défaut de l'organisation dans l'ensemble de l'ERP.",
+    "loading": "Chargement des paramètres…",
+    "save": "Enregistrer les modifications",
+    "saving": "Enregistrement…",
+    "saveSuccess": "Paramètres mis à jour avec succès.",
+    "saveError": "Impossible d'enregistrer les paramètres pour le moment.",
+    "loadError": "Impossible de charger les paramètres pour le moment.",
+    "tabs": {
+      "company": "Profil de l'entreprise",
+      "financial": "Paramètres financiers par défaut",
+      "system": "Variables système",
+      "notifications": "Préférences de notification"
+    },
+    "company": {
+      "description": "Paramètres par défaut du profil de l'entreprise",
+      "companyName": "Nom de l'entreprise",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "fax": "Fax",
+      "website": "Site Web",
+      "email": "E-mail",
+      "logoUrl": "URL du logo",
+      "logoInvalidType": "Veuillez sélectionner un fichier image.",
+      "logoUploadError": "Impossible de téléverser le logo pour le moment.",
+      "logoUploading": "Téléversement du logo…",
+      "logoDropzoneText": "Cliquez ou glissez-déposez pour téléverser un logo",
+      "logoDropzoneHint": "PNG, JPG ou WebP",
+      "bankDetails": {
+        "title": "Coordonnées bancaires",
+        "bankName": "Nom de la banque",
+        "accountName": "Nom du titulaire",
+        "accountNumber": "Numéro de compte",
+        "swift": "Code SWIFT / BIC"
+      }
+    },
+    "financial": {
+      "description": "Paramètres financiers par défaut",
+      "vatRate": "Taux de TVA (%)",
+      "defaultCurrency": "Devise par défaut",
+      "defaultPaymentTerms": "Conditions de paiement par défaut"
+    },
+    "system": {
+      "description": "Variables système",
+      "equipmentTypes": "Types d'équipement",
+      "repairStatuses": "Statuts de réparation"
+    },
+    "notifications": {
+      "description": "Abonnez-vous aux alertes par e-mail pour les événements système importants. Vous serez notifié chaque fois qu'un événement suivi se produit, sauf pour les actions que vous effectuez vous-même.",
+      "loadError": "Impossible de charger les préférences de notification pour le moment.",
+      "saveError": "Impossible de mettre à jour cette préférence pour le moment.",
+      "groups": {
+        "critical": "Critique et suppressions",
+        "sales": "Ventes et locations",
+        "billing": "Facturation",
+        "operations": "Opérations"
+      },
+      "events": {
+        "customerDeleted": "Client supprimé",
+        "forkliftDeleted": "Chariot élévateur supprimé",
+        "productDeleted": "Produit du catalogue supprimé",
+        "quotationApproved": "Devis approuvé",
+        "quotationSent": "Devis envoyé au client",
+        "contractActivated": "Contrat de location activé",
+        "contractCancelled": "Contrat de location annulé",
+        "invoiceIssued": "Facture émise",
+        "paymentRecorded": "Paiement enregistré",
+        "paymentRejected": "Paiement rejeté",
+        "depositRefunded": "Caution remboursée",
+        "forkliftStatusChanged": "Statut du chariot élévateur modifié",
+        "inventoryImportExecuted": "Import en masse du stock exécuté",
+        "settingUpdated": "Paramètre global mis à jour"
+      }
+    }
+  },
+  "customers": {
+    "status": {
+      "active": "Actif",
+      "prospect": "Prospect",
+      "inactive": "Inactif",
+      "churned": "Perdu"
+    },
+    "form": {
+      "editTitle": "Modifier le client",
+      "newTitle": "Nouveau client",
+      "saveChanges": "Enregistrer les modifications",
+      "createCustomer": "Créer le client",
+      "firstNameLabel": "Prénom",
+      "firstNamePlaceholder": "Jean",
+      "lastNameLabel": "Nom",
+      "lastNamePlaceholder": "Dupont",
+      "emailPlaceholder": "jean@exemple.com",
+      "phonePlaceholder": "+856 20 000 0000",
+      "companyLabel": "Entreprise",
+      "companyPlaceholder": "Acme Corp",
+      "notesPlaceholder": "Notes supplémentaires…"
+    },
+    "list": {
+      "title": "Clients",
+      "totalCount": "{{count}} clients au total",
+      "newCustomer": "Nouveau client",
+      "searchPlaceholder": "Rechercher nom, e-mail, téléphone…",
+      "allStatuses": "Tous les statuts",
+      "resultsCount": "{{count}} résultats",
+      "colCustomer": "Client",
+      "noCustomersFound": "Aucun client trouvé",
+      "createFirstCustomer": "Créez votre premier client pour commencer.",
+      "showingRange": "Affichage de {{start}}–{{end}} sur {{total}}",
+      "deleteTitle": "Supprimer le client",
+      "deleteMessage": "Voulez-vous vraiment supprimer « {{name}} » ? Cette action est irréversible.",
+      "toast": {
+        "loadError": "Échec du chargement des clients.",
+        "createSuccess": "Client créé avec succès.",
+        "createError": "Échec de la création du client.",
+        "updateSuccess": "Client mis à jour avec succès.",
+        "updateError": "Échec de la mise à jour du client.",
+        "deleteSuccess": "Client supprimé.",
+        "deleteError": "Échec de la suppression du client."
+      }
+    }
+  },
+  "finance": {
+    "collectionRate": {
+      "title": "Taux de recouvrement",
+      "collected": "Recouvré",
+      "invoiced": "Facturé"
+    },
+    "kpi": {
+      "totalRevenue": "Chiffre d'affaires total",
+      "collected": "Recouvré",
+      "outstanding": "Solde dû",
+      "overdue": "En retard",
+      "pastDue": "{{amount}} en retard",
+      "invoices": "Factures",
+      "totalIssued": "Total émis",
+      "payments": "Paiements",
+      "received": "Reçu"
+    },
+    "quickNav": {
+      "invoices": {
+        "label": "Factures",
+        "desc": "Créer et gérer"
+      },
+      "payments": {
+        "label": "Paiements",
+        "desc": "Suivre le recouvrement"
+      },
+      "deposits": {
+        "label": "Cautions",
+        "desc": "Dépôts de garantie"
+      },
+      "statements": {
+        "label": "Relevés",
+        "desc": "Activité du compte"
+      },
+      "analytics": {
+        "label": "Analytique",
+        "desc": "Graphiques et tendances"
+      },
+      "revenue": {
+        "label": "Revenus",
+        "desc": "Calendrier de comptabilisation"
+      }
+    },
+    "invoiceStatusChart": {
+      "title": "Répartition par statut",
+      "totalCount": "{{count}} au total",
+      "empty": "Aucune facture"
+    },
+    "recentTransactions": {
+      "recentInvoices": "Factures récentes",
+      "recentPayments": "Paiements récents",
+      "viewAll": "Voir tout",
+      "noInvoicesYet": "Aucune facture pour le moment",
+      "noPaymentsYet": "Aucun paiement pour le moment"
+    },
+    "revenueChart": {
+      "title": "Tendance des revenus",
+      "subtitle": "6 derniers mois ({{currency}})",
+      "empty": "Aucune donnée de revenus pour le moment"
+    }
+  },
+  "billing": {
+    "common": {
+      "refresh": "Actualiser",
+      "markOverdue": "Marquer en retard",
+      "markOverdueSuccess": "{{count}} facture(s) marquée(s) en retard",
+      "markOverdueError": "Échec du marquage des factures en retard"
+    },
+    "dashboard": {
+      "title": "Facturation et paiements",
+      "subtitle": "Aperçu financier et actions rapides",
+      "quickAccess": "Accès rapide",
+      "loadError": "Échec du chargement du résumé de facturation."
+    },
+    "finance": {
+      "title": "Analytique financière",
+      "subtitle": "Performance des revenus, créances et suivi du recouvrement",
+      "loadError": "Échec du chargement des données financières."
+    },
+    "revenue": {
+      "title": "Comptabilisation des revenus",
+      "entriesCount": "{{count}} entrées",
+      "resultsCount": "{{count}} résultats",
+      "loadError": "Échec du chargement des comptabilisations de revenus.",
+      "actionError": "Échec de l'action.",
+      "empty": "Aucune entrée de comptabilisation de revenus",
+      "recognize": "Comptabiliser",
+      "reverse": "Annuler",
+      "paginationInfo": "Page {{page}} sur {{pages}} ({{total}} au total)",
+      "columns": {
+        "number": "N° REV",
+        "period": "Période"
+      },
+      "statusOptions": {
+        "all": "Tous les statuts",
+        "scheduled": "Planifié",
+        "recognized": "Comptabilisé",
+        "reversed": "Annulé"
+      },
+      "typeOptions": {
+        "all": "Tous les types",
+        "rentalIncome": "Revenu de location",
+        "serviceFee": "Frais de service",
+        "penaltyFee": "Pénalité",
+        "damageRecovery": "Récupération pour dommages",
+        "depositForfeiture": "Confiscation de caution"
+      },
+      "typeLabels": {
+        "rentalIncome": "Revenu de location",
+        "serviceFee": "Frais de service",
+        "penaltyFee": "Pénalité",
+        "damageRecovery": "Récupération pour dommages",
+        "depositForfeiture": "Confiscation de caution"
+      }
+    },
+    "statement": {
+      "title": "Relevé de compte",
+      "subtitle": "Toute l'activité de facturation avec solde courant",
+      "loadError": "Échec du chargement du relevé.",
+      "totalCharges": "Total des charges",
+      "totalPayments": "Total des paiements",
+      "outstandingBalance": "Solde dû",
+      "searchPlaceholder": "Rechercher des factures...",
+      "entriesCount": "{{count}} entrées",
+      "loading": "Chargement du relevé...",
+      "noEntries": "Aucune entrée de relevé",
+      "emptySub": "Aucune facture trouvée correspondant à votre recherche",
+      "columns": {
+        "invoiceNumber": "N° de facture",
+        "charges": "Charges",
+        "payments": "Paiements",
+        "balance": "Solde"
+      }
+    },
+    "aging": {
+      "title": "Balance âgée des créances",
+      "buckets": {
+        "current": "Courant",
+        "days1to30": "1-30 jours",
+        "days31to60": "31-60 jours",
+        "days61to90": "61-90 jours",
+        "days90plus": "90+ jours"
+      }
+    },
+    "revenueChart": {
+      "title": "Tendance des revenus (6 derniers mois)",
+      "empty": "Aucune donnée disponible",
+      "invoiced": "Facturé",
+      "paid": "Payé",
+      "invoicedTooltip": "Facturé : {{amount}}",
+      "paidTooltip": "Payé : {{amount}}"
+    },
+    "payment": {
+      "status": {
+        "pending": "En attente",
+        "confirmed": "Confirmé",
+        "rejected": "Rejeté",
+        "refunded": "Remboursé"
+      },
+      "method": {
+        "cash": "Espèces",
+        "bank_transfer": "Virement bancaire",
+        "check": "Chèque",
+        "credit_card": "Carte de crédit",
+        "mobile_payment": "Paiement mobile",
+        "mobile_paymentShort": "Mobile",
+        "other": "Autre"
+      },
+      "statusFilter": {
+        "all": "Tous les statuts"
+      },
+      "methodFilter": {
+        "all": "Tous les modes"
+      },
+      "fields": {
+        "method": "Mode",
+        "paymentDate": "Date de paiement",
+        "received": "Reçu",
+        "reference": "Référence",
+        "createdBy": "Créé par",
+        "confirmedAt": "Confirmé le",
+        "confirmedBy": "Confirmé par",
+        "contract": "Contrat"
+      },
+      "table": {
+        "number": "N° de paiement",
+        "customer": "Client"
+      },
+      "list": {
+        "title": "Paiements",
+        "subtitle": "{{count}} paiements",
+        "resultsCount": "{{count}} résultats"
+      },
+      "pagination": {
+        "pageOf": "Page {{page}} sur {{pages}} ({{total}} au total)"
+      },
+      "searchPlaceholder": "Rechercher paiement / référence...",
+      "empty": "Aucun paiement trouvé",
+      "notFound": "Paiement introuvable",
+      "actions": {
+        "reject": "Rejeter",
+        "allocateToInvoice": "Affecter à une facture"
+      },
+      "toast": {
+        "confirmed": "Paiement confirmé",
+        "rejected": "Paiement rejeté",
+        "allocated": "Paiement affecté",
+        "actionFailed": "Échec : {{action}}",
+        "loadFailed": "Échec du chargement du paiement.",
+        "loadPaymentsFailed": "Échec du chargement des paiements.",
+        "loadInvoicesFailed": "Échec du chargement des factures"
+      },
+      "allocate": {
+        "title": "Affecter le paiement à une facture",
+        "invoiceLabel": "Facture",
+        "selectPlaceholder": "Sélectionner une facture...",
+        "balance": "Solde",
+        "amountPlaceholder": "0,00",
+        "submit": "Affecter"
+      },
+      "summary": {
+        "title": "Paiements",
+        "transactions": "Transactions"
+      }
+    },
+    "invoice": {
+      "status": {
+        "draft": "Brouillon",
+        "issued": "Émise",
+        "sent": "Envoyée",
+        "partially_paid": "Partiel",
+        "paid": "Payée",
+        "overdue": "En retard",
+        "cancelled": "Annulée",
+        "voided": "Invalidée"
+      },
+      "summary": {
+        "title": "Factures",
+        "outstanding": "Solde dû",
+        "overdue": "En retard",
+        "count": "Nombre"
+      },
+      "filter": {
+        "all": "Tous les statuts",
+        "partially_paid": "Partiellement payée"
+      },
+      "list": {
+        "title": "Factures",
+        "subtitle": "{{count}} factures",
+        "newInvoice": "Nouvelle facture",
+        "loadError": "Échec du chargement des factures.",
+        "searchPlaceholder": "Rechercher n° de facture...",
+        "resultsCount": "{{count}} résultats",
+        "empty": "Aucune facture trouvée"
+      },
+      "table": {
+        "number": "N° de facture",
+        "customer": "Client",
+        "balance": "Solde"
+      },
+      "meta": {
+        "issueDate": "Date d'émission",
+        "dueDate": "Date d'échéance",
+        "paidDate": "Date de paiement",
+        "contract": "Contrat",
+        "referenceType": "Type de facture",
+        "period": "Période",
+        "createdBy": "Créé par"
+      },
+      "referenceType": {
+        "sales": "Vente",
+        "workOrder": "Ordre de travail",
+        "rental": "Location"
+      },
+      "form": {
+        "title": "Nouvelle facture",
+        "backToList": "Retour aux factures",
+        "customer": "Client",
+        "customerSearchPlaceholder": "Rechercher nom, entreprise...",
+        "noCustomersFound": "Aucun client trouvé",
+        "referenceType": "Type de facture",
+        "taxRate": "Taux de taxe (%)",
+        "description": "Description",
+        "descriptionPlaceholder": "Description de l'article ou du service",
+        "unitPrice": "Prix unitaire",
+        "lineTotal": "Total ligne",
+        "addRow": "Ajouter une ligne",
+        "subtotal": "Sous-total",
+        "grandTotal": "Total général",
+        "creating": "Création...",
+        "createInvoice": "Créer la facture",
+        "created": "Facture {{number}} créée.",
+        "createFailed": "Échec de la création de la facture.",
+        "errors": {
+          "customerRequired": "Veuillez sélectionner un client.",
+          "itemRequired": "Au moins une ligne avec une description est requise."
+        },
+        "itemCode": "Code article",
+        "itemCodePlaceholder": "ex. SKU-1000",
+        "unit": "Unité",
+        "currency": "Devise",
+        "exchangeRate": "Taux de change",
+        "bankDetails": "Coordonnées bancaires",
+        "bankDetailsPlaceholder": "Nom de la banque, nom du titulaire, numéro de compte, SWIFT/BIC...",
+        "grandTotalInLAK": "Total général en LAK (devise de base)",
+        "previewTitle": "Aperçu du document",
+        "previewPendingNumber": "(En attente)"
+      },
+      "pagination": {
+        "info": "Page {{page}} sur {{pages}} ({{total}} au total)"
+      },
+      "actions": {
+        "issue": "Émettre",
+        "send": "Envoyer",
+        "void": "Invalider"
+      },
+      "amountSummary": {
+        "tax": "Taxe ({{rate}}%)",
+        "discount": "Remise",
+        "paid": "Payé",
+        "balanceDue": "Solde dû"
+      },
+      "detail": {
+        "loadError": "Échec du chargement de la facture.",
+        "notFound": "Facture introuvable",
+        "actionFailed": "Échec : {{action}}",
+        "internalNotes": "Notes internes",
+        "cancellationReason": "Motif d'annulation"
+      },
+      "lineItems": {
+        "title": "Lignes",
+        "number": "N°",
+        "qty": "Qté",
+        "rate": "Tarif",
+        "tax": "Taxe",
+        "empty": "Aucune ligne"
+      },
+      "allocations": {
+        "title": "Affectations de paiement",
+        "payment": "Paiement",
+        "paymentLabel": "Paiement n°{{id}}"
+      },
+      "modal": {
+        "cancel": {
+          "title": "Annuler la facture",
+          "reasonLabel": "Motif de l'annulation",
+          "reasonPlaceholder": "Saisir le motif..."
+        }
+      },
+      "toast": {
+        "issued": "Facture émise",
+        "sent": "Facture envoyée",
+        "voided": "Facture invalidée",
+        "cancelled": "Facture annulée"
+      },
+      "card": {
+        "due": "Échéance {{date}}",
+        "balance": "Solde : {{amount}} {{currency}}"
+      },
+      "vehicleInfo": {
+        "title": "Informations sur le véhicule",
+        "make": "Marque",
+        "model": "Modèle",
+        "vin": "VIN",
+        "engineNo": "N° de moteur",
+        "regNo": "N° d'immatriculation",
+        "jobNumber": "N° de tâche"
+      }
+    },
+    "deposit": {
+      "status": {
+        "all": "Tous les statuts",
+        "pending": "En attente",
+        "received": "Reçue",
+        "partiallyRefunded": "Remboursement partiel",
+        "refunded": "Remboursée",
+        "forfeited": "Confisquée",
+        "applied": "Appliquée"
+      },
+      "type": {
+        "all": "Tous les types",
+        "security": "Dépôt de garantie",
+        "advance": "Avance",
+        "guarantee": "Garantie"
+      },
+      "list": {
+        "title": "Cautions",
+        "subtitle": "{{count}} cautions",
+        "loadError": "Échec du chargement des cautions.",
+        "resultsCount": "{{count}} résultats",
+        "empty": "Aucune caution trouvée"
+      },
+      "table": {
+        "number": "N° de caution",
+        "customer": "Client",
+        "contract": "Contrat",
+        "received": "Reçue"
+      },
+      "pagination": {
+        "info": "Page {{page}} sur {{pages}} ({{total}} au total)"
+      },
+      "actions": {
+        "markReceived": "Marquer comme reçue",
+        "refund": "Rembourser",
+        "forfeit": "Confisquer",
+        "applyToInvoice": "Appliquer à une facture"
+      },
+      "modal": {
+        "markReceived": {
+          "title": "Marquer la caution comme reçue",
+          "depositLabel": "Caution",
+          "receivedDateLabel": "Date de réception",
+          "confirm": "Confirmer la réception"
+        },
+        "refund": {
+          "title": "Rembourser la caution",
+          "amountLabel": "Montant du remboursement (max : {{max}})",
+          "dateLabel": "Date de remboursement"
+        },
+        "forfeit": {
+          "title": "Confisquer la caution",
+          "amountLabel": "Montant confisqué (max : {{max}})",
+          "reasonLabel": "Motif"
+        },
+        "apply": {
+          "title": "Appliquer la caution à une facture",
+          "invoiceLabel": "Facture",
+          "selectInvoicePlaceholder": "Sélectionner une facture...",
+          "invoiceOption": "{{number}} — Solde : {{balance}} {{currency}}",
+          "amountLabel": "Montant (max : {{max}})",
+          "confirm": "Appliquer"
+        }
+      },
+      "summary": {
+        "amount": "Montant de la caution",
+        "refunded": "Remboursée",
+        "forfeited": "Confisquée",
+        "applied": "Appliquée",
+        "remaining": "Restant"
+      },
+      "summaryCard": {
+        "title": "Cautions",
+        "active": "Actives"
+      },
+      "detail": {
+        "loadError": "Échec du chargement de la caution.",
+        "notFound": "Introuvable",
+        "actionFailed": "Échec de l'action.",
+        "invoicesLoadError": "Échec du chargement des factures.",
+        "receivedLabel": "Reçue le : {{date}}",
+        "refundDateLabel": "Date de remboursement : {{date}}",
+        "contractLabel": "Contrat :",
+        "notesLabel": "Notes :"
+      },
+      "toast": {
+        "received": "Caution marquée comme reçue",
+        "receiveError": "Échec de la réception de la caution"
+      }
+    }
+  },
+  "maintenance": {
+    "overdue": "En retard",
+    "actions": {
+      "refresh": "Actualiser"
+    },
+    "status": {
+      "scheduled": "Planifié",
+      "due": "Échu",
+      "inProgress": "En cours",
+      "verified": "Vérifié"
+    },
+    "type": {
+      "preventive": "Préventif",
+      "corrective": "Correctif",
+      "emergency": "Urgence",
+      "inspection": "Inspection",
+      "install": "Installation"
+    },
+    "priority": {
+      "low": "Faible",
+      "normal": "Normale",
+      "high": "Élevée",
+      "critical": "Critique"
+    },
+    "dashboard": {
+      "title": "Maintenance et entretien préventif",
+      "subtitle": "Tableau de bord de maintenance préventive",
+      "loadError": "Échec du chargement du tableau de bord.",
+      "pmSchedulesButton": "Programmes PM",
+      "workOrdersButton": "Ordres de travail",
+      "cards": {
+        "pmPlans": "Plans PM",
+        "activeSchedules": "Programmes actifs",
+        "completedThisMonth": "Terminés (Mois)",
+        "costThisMonth": "Coût (Mois)"
+      }
+    },
+    "schedule": {
+      "title": "Programmes PM",
+      "activeSchedules": "{{count}} programmes actifs",
+      "loadError": "Échec du chargement des programmes.",
+      "emptyState": "Aucun programme PM actif. Créez un plan de maintenance et associez-le à un équipement.",
+      "nextDue": "Prochaine échéance",
+      "interval": "Intervalle",
+      "serviced": "Entretenu"
+    },
+    "workOrders": {
+      "list": {
+        "title": "Ordres de travail",
+        "subtitle": "{{count}} ordres de travail",
+        "newWorkOrder": "Nouvel ordre de travail",
+        "loadError": "Échec du chargement des ordres de travail.",
+        "searchPlaceholder": "Rechercher numéro, titre...",
+        "resultsCount": "{{count}} résultats",
+        "allStatuses": "Tous les statuts",
+        "allTypes": "Tous les types",
+        "columns": {
+          "workOrder": "Ordre de travail",
+          "priority": "Priorité"
+        },
+        "paginationInfo": "Page {{page}} sur {{pages}} ({{total}} au total)"
+      },
+      "form": {
+        "title": "Nouvel ordre de travail",
+        "backToList": "Retour aux ordres de travail",
+        "workOrderTitle": "Titre",
+        "workOrderTitlePlaceholder": "ex. Entretien PM mensuel",
+        "asset": "Actif",
+        "assetSearchPlaceholder": "Rechercher numéro de série ou nom...",
+        "noAssetsFound": "Aucun actif trouvé",
+        "workType": "Type de travail",
+        "assignee": "Assigné à",
+        "unassigned": "— Non assigné —",
+        "schedule": "Date et heure prévues",
+        "creating": "Création...",
+        "createWorkOrder": "Créer l'ordre de travail",
+        "created": "Ordre de travail {{number}} créé.",
+        "createFailed": "Échec de la création de l'ordre de travail.",
+        "errors": {
+          "titleRequired": "Le titre est obligatoire.",
+          "assetRequired": "Veuillez sélectionner un actif.",
+          "scheduleRequired": "La date et l'heure prévues sont obligatoires."
+        }
+      },
+      "detail": {
+        "notFound": "Ordre de travail introuvable.",
+        "backToList": "Retour aux ordres de travail",
+        "startWork": "Démarrer le travail",
+        "completeAction": "Terminer",
+        "verify": "Vérifier",
+        "addCost": "Ajouter un coût",
+        "toastStarted": "Travail démarré",
+        "actionFailed": "Échec : {{label}}",
+        "fields": {
+          "equipment": "Équipement",
+          "technician": "Technicien",
+          "pmPlan": "Plan PM",
+          "hourMeter": "Compteur horaire",
+          "started": "Démarré",
+          "verifiedBy": "Vérifié par",
+          "created": "Créé",
+          "estHours": "Heures est.",
+          "actualHours": "Heures réelles",
+          "actualCost": "Coût réel"
+        },
+        "findings": "Constatations",
+        "resolution": "Résolution",
+        "cancellationReason": "Motif d'annulation",
+        "costBreakdown": "Détail des coûts ({{count}})",
+        "rate": "Tarif",
+        "startModal": {
+          "title": "Démarrer l'ordre de travail",
+          "hourMeterReading": "Relevé du compteur horaire",
+          "starting": "Démarrage...",
+          "start": "Démarrer"
+        },
+        "completeModal": {
+          "title": "Terminer l'ordre de travail",
+          "findingsPlaceholder": "Ce qui a été constaté lors de l'inspection...",
+          "resolutionPlaceholder": "Ce qui a été fait pour résoudre...",
+          "completing": "Finalisation..."
+        },
+        "costModal": {
+          "title": "Ajouter une entrée de coût",
+          "descRateRequired": "La description et le tarif sont obligatoires.",
+          "costAdded": "Coût ajouté.",
+          "failed": "Échec.",
+          "costType": "Type de coût",
+          "typeParts": "Pièces",
+          "typeLabor": "Main-d'œuvre",
+          "typeExternalService": "Service externe",
+          "typeOther": "Autre",
+          "unitRate": "Tarif unitaire",
+          "adding": "Ajout..."
+        },
+        "cancelReasonDefault": "Annulé par l'utilisateur"
+      }
+    }
+  },
+  "activity": {
+    "title": "Journal d'activité",
+    "eventsLoaded": "{{count}} événements chargés",
+    "refresh": "Actualiser",
+    "filters": {
+      "searchPlaceholder": "Rechercher un utilisateur ou une action…",
+      "action": "Action",
+      "allActions": "Toutes les actions",
+      "entityType": "Entité",
+      "allEntities": "Toutes les entités",
+      "dateFrom": "Du",
+      "dateTo": "Au"
+    },
+    "entity": {
+      "user": "Utilisateur",
+      "customer": "Client",
+      "lead": "Prospect",
+      "note": "Note",
+      "invoice": "Facture",
+      "payment": "Paiement",
+      "deposit": "Caution",
+      "revenue_recognition": "Comptabilisation des revenus",
+      "project": "Projet",
+      "project_milestone": "Jalon de projet",
+      "setting": "Paramètre",
+      "inventory_import": "Import de stock",
+      "notification_preference": "Préférence de notification"
+    },
+    "table": {
+      "timestamp": "Horodatage",
+      "user": "Utilisateur",
+      "action": "Action",
+      "entity": "Entité",
+      "id": "ID",
+      "details": "Détails",
+      "noActivityFound": "Aucune activité trouvée",
+      "noActivityYet": "L'activité apparaîtra ici dès que les utilisateurs interagiront avec le système.",
+      "ipAddress": "Adresse IP"
+    },
+    "details": {
+      "group": "Groupe : {{group}}",
+      "eventInfo": "Informations sur l'événement",
+      "systemOrDeletedUser": "Système / Utilisateur supprimé",
+      "title": "Détails",
+      "noneRecorded": "Aucun détail supplémentaire enregistré.",
+      "fieldsModified": "Champs modifiés :",
+      "drawerTitle": "Détails de l'activité",
+      "ipNotTracked": "Non suivie"
+    },
+    "pagination": {
+      "showing": "Affichage de {{start}}–{{end}} sur {{total}}"
+    },
+    "loadError": "Échec du chargement du journal d'activité.",
+    "action": {
+      "user_login": "Connexion",
+      "user_logout": "Déconnexion",
+      "user_created": "Utilisateur créé",
+      "user_updated": "Utilisateur mis à jour",
+      "user_deleted": "Utilisateur supprimé",
+      "customer_created": "Client créé",
+      "customer_updated": "Client mis à jour",
+      "customer_deleted": "Client supprimé",
+      "customer_status_changed": "Statut modifié",
+      "lead_created": "Piste commerciale créée",
+      "lead_updated": "Piste commerciale mise à jour",
+      "lead_deleted": "Piste commerciale supprimée",
+      "lead_status_changed": "Statut modifié",
+      "lead_note_added": "Note ajoutée",
+      "lead_note_deleted": "Note supprimée",
+      "catalog_product_created": "Produit créé",
+      "catalog_product_updated": "Produit mis à jour",
+      "catalog_product_deleted": "Produit supprimé",
+      "catalog_brand_created": "Marque créée",
+      "catalog_brand_updated": "Marque mise à jour",
+      "catalog_brand_deleted": "Marque supprimée",
+      "catalog_category_created": "Catégorie créée",
+      "catalog_category_updated": "Catégorie mise à jour",
+      "catalog_category_deleted": "Catégorie supprimée",
+      "catalog_import_previewed": "Import prévisualisé",
+      "catalog_import_executed": "Import exécuté",
+      "forklift_created": "Chariot ajouté",
+      "forklift_updated": "Chariot mis à jour",
+      "forklift_deleted": "Chariot supprimé",
+      "forklift_status_changed": "Statut modifié",
+      "quotation_created": "Devis créé",
+      "quotation_updated": "Devis mis à jour",
+      "quotation_deleted": "Devis supprimé",
+      "quotation_submitted": "Devis soumis",
+      "quotation_approved": "Devis approuvé",
+      "quotation_revision_requested": "Révision demandée",
+      "quotation_sent": "Devis envoyé",
+      "quotation_accepted": "Devis accepté",
+      "quotation_declined": "Devis rejeté",
+      "quotation_converted": "Devis converti",
+      "quotation_cancelled": "Devis annulé",
+      "quotation_reactivated": "Devis réactivé",
+      "rental_contract_created": "Contrat créé",
+      "rental_contract_updated": "Contrat mis à jour",
+      "rental_contract_deleted": "Contrat supprimé",
+      "rental_contract_submitted": "Contrat soumis",
+      "rental_contract_approved": "Contrat approuvé",
+      "rental_contract_revision": "Révision demandée",
+      "rental_contract_activated": "Contrat activé",
+      "rental_contract_cancelled": "Contrat annulé",
+      "rental_contract_closed": "Contrat clôturé",
+      "rental_return_requested": "Retour demandé",
+      "rental_return_picked_up": "Retour enlevé",
+      "rental_return_received": "Retour reçu",
+      "rental_return_completed": "Retour terminé",
+      "rental_damage_assessed": "Dommage évalué",
+      "rental_damage_disputed": "Dommage contesté",
+      "rental_damage_resolved": "Dommage résolu",
+      "rental_extension_requested": "Prolongation demandée",
+      "rental_extension_approved": "Prolongation approuvée",
+      "rental_extension_rejected": "Prolongation rejetée",
+      "rental_billing_created": "Facturation créée",
+      "invoice_created": "Facture créée",
+      "invoice_updated": "Facture mise à jour",
+      "invoice_issued": "Facture émise",
+      "invoice_sent": "Facture envoyée",
+      "invoice_cancelled": "Facture annulée",
+      "invoice_voided": "Facture invalidée",
+      "payment_recorded": "Paiement enregistré",
+      "payment_confirmed": "Paiement confirmé",
+      "payment_rejected": "Paiement rejeté",
+      "payment_allocated": "Paiement affecté",
+      "deposit_created": "Caution créée",
+      "deposit_received": "Caution reçue",
+      "deposit_refunded": "Caution remboursée",
+      "deposit_forfeited": "Caution confisquée",
+      "deposit_applied": "Caution appliquée",
+      "revenue_recognized": "Revenu comptabilisé",
+      "revenue_reversed": "Revenu annulé",
+      "project_created": "Projet créé",
+      "project_updated": "Projet mis à jour",
+      "project_deleted": "Projet supprimé",
+      "project_milestone_status_changed": "Statut du jalon modifié",
+      "setting_updated": "Paramètre mis à jour",
+      "inventory_import_executed": "Stock importé",
+      "notification_preference_created": "Alerte activée",
+      "notification_preference_updated": "Préférence d'alerte mise à jour",
+      "notification_preference_deleted": "Alerte désactivée"
+    },
+    "group": {
+      "user": "Utilisateur",
+      "customer": "Client",
+      "lead": "Piste commerciale",
+      "billing": "Facturation",
+      "project": "Projet",
+      "settings": "Paramètres",
+      "inventory": "Stock",
+      "notifications": "Notifications"
+    }
+  },
+  "executive": {
+    "title": "Tableau de bord exécutif",
+    "subtitle": "Indicateurs de performance et analytique à l'échelle de l'entreprise",
+    "refresh": "Actualiser",
+    "loadFailed": "Échec du chargement des données de direction.",
+    "kpi": {
+      "totalRevenue": "Chiffre d'affaires total",
+      "invoicesCount": "{{count}} factures",
+      "collectionRate": "Taux de recouvrement",
+      "collected": "{{amount}} recouvré",
+      "fleetUtilization": "Taux d'utilisation de la flotte",
+      "rentedOfTotal": "{{rented}} loués / {{total}} au total",
+      "customers": "Clients",
+      "activeCount": "{{count}} actifs",
+      "inventoryValue": "Valeur du stock",
+      "partsCount": "{{count}} pièces",
+      "conversionRate": "Taux de conversion",
+      "winRate": "Gagné : {{rate}}"
+    },
+    "chart": {
+      "revenueTrend": "Tendance des revenus",
+      "noRevenueData": "Aucune donnée de revenus",
+      "invoiced": "Facturé",
+      "collected": "Recouvré",
+      "fleetStatus": "Statut de la flotte",
+      "noFleetData": "Aucune donnée de flotte",
+      "leadPipeline": "Pipeline de prospects (12 mois)",
+      "noLeadData": "Aucune donnée de prospects",
+      "newLeads": "Nouveaux prospects",
+      "customerGrowth": "Croissance des clients (12 mois)",
+      "noCustomerData": "Aucune donnée client",
+      "newCustomers": "Nouveaux clients",
+      "months": {
+        "jan": "Janv.",
+        "feb": "Févr.",
+        "mar": "Mars",
+        "apr": "Avr.",
+        "may": "Mai",
+        "jun": "Juin",
+        "jul": "Juil.",
+        "aug": "Août",
+        "sep": "Sept.",
+        "oct": "Oct.",
+        "nov": "Nov.",
+        "dec": "Déc."
+      }
+    },
+    "export": {
+      "exportExcel": "Exporter Excel",
+      "customers": "Clients",
+      "leads": "Prospects",
+      "sales": "Ventes",
+      "downloaded": "Rapport {{report}} téléchargé",
+      "exportFailed": "Échec de l'export",
+      "exportReports": "Exporter les rapports",
+      "customersExcel": "Clients (Excel)",
+      "leadsExcel": "Prospects (Excel)",
+      "salesExcel": "Ventes (Excel)",
+      "customersCsv": "Clients (CSV)",
+      "leadsCsv": "Prospects (CSV)",
+      "salesCsv": "Ventes (CSV)"
+    }
+  },
+  "catalog": {
+    "saveFailed": "Échec de l'enregistrement.",
+    "saveChanges": "Enregistrer les modifications",
+    "resultsCount": "{{count}} résultats",
+    "pageOf": "Page {{page}} sur {{pages}} ({{total}} au total)",
+    "viewAll": "Voir tout →",
+    "browseAllProducts": "Parcourir tous les produits →",
+    "hero": {
+      "title": "Catalogue produits",
+      "subtitle": "Chariots élévateurs · Équipement d'entrepôt · Pièces détachées · Accessoires",
+      "searchPlaceholder": "Rechercher parmi {{count}} produits par nom, SKU, modèle..."
+    },
+    "categorySlider": {
+      "title": "Parcourir par catégorie"
+    },
+    "brandShowcase": {
+      "title": "Acheter par marque"
+    },
+    "megaMenu": {
+      "allCategories": "Toutes les catégories"
+    },
+    "brands": {
+      "title": "Marques",
+      "subtitle": "{{count}} marques",
+      "newBrand": "Nouvelle marque",
+      "searchPlaceholder": "Rechercher des marques…",
+      "editTitle": "Modifier la marque",
+      "newTitle": "Nouvelle marque",
+      "table": {
+        "brand": "Marque",
+        "country": "Pays",
+        "role": "Rôle"
+      },
+      "empty": {
+        "title": "Aucune marque trouvée",
+        "createHint": "Créez votre première marque pour commencer."
+      },
+      "roles": {
+        "primary": "Principale",
+        "partsOnly": "Pièces uniquement",
+        "both": "Les deux"
+      },
+      "form": {
+        "nameRequired": "Le nom de la marque est obligatoire.",
+        "namePlaceholder": "Nom de la marque",
+        "countryLabel": "Pays",
+        "countryPlaceholder": "ex. Japon",
+        "roleLabel": "Rôle",
+        "websiteLabel": "Site web",
+        "websitePlaceholder": "https://…",
+        "createBrand": "Créer la marque"
+      },
+      "deleteDialog": {
+        "title": "Supprimer la marque",
+        "message": "Supprimer la marque « {{name}} » ? Les produits référençant cette marque n'auront plus de marque associée."
+      },
+      "toast": {
+        "loadError": "Échec du chargement des marques.",
+        "createSuccess": "Marque créée avec succès.",
+        "createError": "Échec de la création de la marque.",
+        "updateSuccess": "Marque mise à jour avec succès.",
+        "updateError": "Échec de la mise à jour de la marque.",
+        "deleteSuccess": "Marque supprimée.",
+        "deleteError": "Échec de la suppression de la marque."
+      }
+    },
+    "categories": {
+      "title": "Catégories",
+      "subtitle": "{{count}} catégories (arborescence à 3 niveaux)",
+      "newCategory": "Nouvelle catégorie",
+      "editTitle": "Modifier la catégorie",
+      "newTitle": "Nouvelle catégorie",
+      "table": {
+        "category": "Catégorie",
+        "level": "Niveau",
+        "children": "Sous-catégories"
+      },
+      "empty": {
+        "title": "Aucune catégorie trouvée",
+        "createHint": "Créez votre première catégorie pour commencer."
+      },
+      "types": {
+        "division": "Division",
+        "category": "Catégorie",
+        "subCategory": "Sous-catégorie"
+      },
+      "levelLine": "N{{level}} — {{type}}",
+      "form": {
+        "nameRequired": "Le nom en anglais est obligatoire.",
+        "nameEnLabel": "Nom (Anglais)",
+        "namePlaceholder": "Nom de la catégorie",
+        "nameLoLabel": "Nom (Lao)",
+        "parentLabel": "Catégorie parente",
+        "topLevelOption": "— Niveau supérieur (Division) —",
+        "createCategory": "Créer la catégorie"
+      },
+      "deleteDialog": {
+        "title": "Supprimer la catégorie",
+        "message": "Supprimer « {{name}} » ? Cette action échouera si la catégorie possède des sous-catégories ou des produits associés."
+      },
+      "toast": {
+        "loadError": "Échec du chargement des catégories.",
+        "createSuccess": "Catégorie créée avec succès.",
+        "createError": "Échec de la création de la catégorie.",
+        "updateSuccess": "Catégorie mise à jour avec succès.",
+        "updateError": "Échec de la mise à jour de la catégorie.",
+        "deleteSuccess": "Catégorie supprimée.",
+        "deleteError": "Échec de la suppression de la catégorie."
+      }
+    },
+    "products": {
+      "filterAllTypes": "Tous les types",
+      "forSale": "À vendre",
+      "forRental": "En location",
+      "featured": "En vedette",
+      "refresh": "Actualiser",
+      "newProduct": "Nouveau produit",
+      "productCount": "{{count}} produits",
+      "pillSearch": "Recherche : {{query}}",
+      "pillBrand": "Marque : {{name}}",
+      "pillCategory": "Catégorie : {{name}}",
+      "editTitle": "Modifier le produit",
+      "newTitle": "Nouveau produit",
+      "skuPrefix": "SKU : {{sku}}",
+      "empty": {
+        "title": "Aucun produit trouvé",
+        "hint": "Essayez d'ajuster vos filtres ou créez un nouveau produit."
+      },
+      "table": {
+        "product": "Produit",
+        "sku": "SKU",
+        "brand": "Marque"
+      },
+      "badges": {
+        "sale": "Vente",
+        "rental": "Location",
+        "featured": "En vedette"
+      },
+      "deleteDialog": {
+        "title": "Supprimer le produit",
+        "message": "Supprimer « {{name}} » ? Cette action est irréversible."
+      },
+      "form": {
+        "nameRequired": "Le nom du produit est obligatoire.",
+        "saveFailed": "Échec de l'enregistrement. Veuillez réessayer.",
+        "nameEnLabel": "Nom (Anglais)",
+        "nameEnPlaceholder": "Nom du produit en anglais",
+        "nameLoLabel": "Nom (Lao)",
+        "skuPlaceholder": "Généré automatiquement si vide",
+        "modelNumberLabel": "Numéro de modèle",
+        "modelNumberPlaceholder": "ex. EFG115",
+        "brandLabel": "Marque",
+        "noBrandOption": "— Aucune marque —",
+        "noCategoryOption": "— Aucune catégorie —",
+        "descriptionPlaceholder": "Description du produit…",
+        "attributesLabel": "Attributs",
+        "usedAvailable": "Occasion disponible",
+        "serviceItem": "Article de service",
+        "createProduct": "Créer le produit"
+      },
+      "toast": {
+        "loadError": "Échec du chargement des produits.",
+        "createSuccess": "Produit créé avec succès.",
+        "createError": "Échec de la création du produit.",
+        "updateSuccess": "Produit mis à jour avec succès.",
+        "updateError": "Échec de la mise à jour du produit.",
+        "deleteSuccess": "Produit supprimé.",
+        "deleteError": "Échec de la suppression du produit."
+      }
+    },
+    "productDetail": {
+      "loadError": "Produit introuvable ou échec du chargement.",
+      "backToCatalog": "Retour au catalogue",
+      "notFound": "Produit introuvable.",
+      "model": "Modèle",
+      "compatibleWith": "Compatible avec",
+      "specifications": "Spécifications"
+    },
+    "import": {
+      "title": "Importer des produits",
+      "subtitle": "Téléchargez un fichier Excel pour importer en masse des produits, marques et catégories.",
+      "dropzoneText": "Déposez votre fichier Excel ici, ou cliquez pour parcourir",
+      "dropzoneHint": "Prend en charge les fichiers .xlsx et .xls du catalogue produits DK LAO",
+      "clear": "Effacer",
+      "supportedSheetsLabel": "Feuilles prises en charge :",
+      "supportedSheetsList": "Jungheinrich Forklift, Mitsubishi Forklift, Accessoires (ອຸປະກອນ), Entrepôt (ສາງ), Aspirateur (ດູດຝ่ຸນ), Nettoyeur de sol (ເຊັດຄັດ), Marques (ບໍລິການ).",
+      "autoDetectHint": "L'outil d'import détecte automatiquement les feuilles par leur nom, en anglais comme en lao.",
+      "importButton": "Téléverser et importer",
+      "importing": "Importation…",
+      "uploadingHint": "Cela peut prendre quelques secondes pour les fichiers plus volumineux.",
+      "uploadFailed": "Échec de l'importation. Veuillez réessayer.",
+      "successBanner": "Importation terminée avec succès",
+      "partialBanner": "Importation terminée avec des erreurs",
+      "imported": "Importés",
+      "errors": "Erreurs",
+      "failedRows": "Lignes échouées",
+      "importAnother": "Importer un autre fichier",
+      "viewCatalog": "Voir le catalogue",
+      "successToast": "Import terminé : {{count}} produits importés.",
+      "errorToast": "Import terminé avec {{count}} erreurs.",
+      "table": {
+        "rowNum": "#",
+        "error": "Erreur",
+        "sheet": "Feuille"
+      }
+    }
+  },
+  "quotations": {
+    "status": {
+      "draft": "Brouillon",
+      "underReview": "En cours d'examen",
+      "approved": "Approuvé",
+      "revision": "Révision",
+      "sent": "Envoyé",
+      "accepted": "Accepté",
+      "rejected": "Rejeté",
+      "expired": "Expiré",
+      "converted": "Converti",
+      "cancelled": "Annulé"
+    },
+    "type": {
+      "rental": "Location",
+      "sales": "Vente",
+      "service": "Service",
+      "spareParts": "Pièces détachées"
+    },
+    "itemType": {
+      "forkliftRental": "Location de chariot élévateur",
+      "forkliftSale": "Vente de chariot élévateur",
+      "service": "Service",
+      "sparePart": "Pièce détachée",
+      "delivery": "Livraison",
+      "insurance": "Assurance",
+      "custom": "Personnalisé"
+    },
+    "list": {
+      "title": "Devis",
+      "totalCount": "{{count}} devis",
+      "refresh": "Actualiser",
+      "newQuotation": "Nouveau devis",
+      "searchPlaceholder": "Rechercher numéro, titre...",
+      "allStatuses": "Tous les statuts",
+      "allTypes": "Tous les types",
+      "colQuotation": "Devis",
+      "colCustomer": "Client",
+      "colValidUntil": "Valide jusqu'au",
+      "noQuotationsFound": "Aucun devis trouvé",
+      "createOrAdjust": "Créez un nouveau devis ou ajustez vos filtres.",
+      "resultsCount": "{{count}} résultats",
+      "pageOf": "Page {{page}} sur {{pages}} ({{total}} au total)",
+      "deleteConfirmTitle": "Supprimer le devis",
+      "deleteConfirmMessage": "Supprimer « {{number}} » ? Cette action est irréversible.",
+      "toast": {
+        "loadError": "Échec du chargement des devis.",
+        "createSuccess": "Devis créé.",
+        "createError": "Échec de la création du devis.",
+        "deleteSuccess": "Devis supprimé.",
+        "deleteError": "Échec de la suppression du devis."
+      }
+    },
+    "form": {
+      "backToQuotations": "Retour aux devis",
+      "newQuotation": "Nouveau devis",
+      "typeLabel": "Type de devis",
+      "currencyLabel": "Devise",
+      "titleLabel": "Titre",
+      "titlePlaceholder": "ex. Location de chariot élévateur — Vientiane Motors",
+      "contactNameLabel": "Nom du contact",
+      "contactNamePlaceholder": "M. / Mme",
+      "contactEmailLabel": "E-mail du contact",
+      "contactEmailPlaceholder": "email@exemple.com",
+      "contactPhoneLabel": "Téléphone du contact",
+      "contactPhonePlaceholder": "+856 20 ...",
+      "taxRateLabel": "Taux de taxe (%)",
+      "validFromLabel": "Valide à partir du",
+      "validUntilLabel": "Valide jusqu'au",
+      "notesLabel": "Notes (visibles par le client)",
+      "notesPlaceholder": "Visible sur le PDF du devis...",
+      "internalNotesLabel": "Notes internes",
+      "internalNotesPlaceholder": "Usage interne uniquement, non visible du client...",
+      "creating": "Création...",
+      "createQuotation": "Créer le devis",
+      "titleRequired": "Le titre est obligatoire.",
+      "createFailed": "Échec de la création du devis.",
+      "createdToast": "Devis {{number}} créé.",
+      "typeOptions": {
+        "rental": "Devis de location",
+        "sales": "Devis de vente",
+        "service": "Devis de service",
+        "spareParts": "Devis de pièces détachées"
+      },
+      "vehicleInfo": {
+        "title": "Informations sur le véhicule",
+        "make": "Marque",
+        "model": "Modèle",
+        "vin": "VIN",
+        "engineNo": "N° de moteur",
+        "regNo": "N° d'immatriculation",
+        "jobNumber": "N° de tâche"
+      },
+      "exchangeRateLabel": "Taux de change",
+      "bankDetails": "Coordonnées bancaires",
+      "bankDetailsPlaceholder": "Nom de la banque, nom du titulaire, numéro de compte, SWIFT/BIC..."
+    },
+    "detail": {
+      "backToQuotations": "Retour aux devis",
+      "notFoundError": "Devis introuvable ou échec du chargement.",
+      "actionFailed": "Échec : {{action}}",
+      "rev": "Rév. {{number}}",
+      "submit": "Soumettre",
+      "approve": "Approuver",
+      "requestRevision": "Demander une révision",
+      "sendToCustomer": "Envoyer au client",
+      "markAccepted": "Marquer comme accepté",
+      "markRejected": "Marquer comme rejeté",
+      "convert": "Convertir",
+      "reactivate": "Réactiver",
+      "taxWithRate": "Taxe ({{rate}}%)",
+      "discount": "Remise",
+      "customer": "Client",
+      "contact": "Contact",
+      "assignedTo": "Assigné à",
+      "validFrom": "Valide à partir du",
+      "validUntil": "Valide jusqu'au",
+      "convertedTo": "Converti en",
+      "internalNote": "Note interne",
+      "lineItems": "Lignes ({{count}})",
+      "addItem": "Ajouter un article",
+      "colNumber": "N°",
+      "colUnitPrice": "Prix unitaire",
+      "colDiscount": "Remise %",
+      "serialNumber": "N/S : {{serial}}",
+      "sku": "SKU : {{sku}}",
+      "durationDays": "{{count}} jours ({{period}})",
+      "noLineItems": "Aucune ligne pour le moment.",
+      "addItemsHint": "Ajoutez des articles pour construire le devis.",
+      "statusHistory": "Historique des statuts",
+      "colFrom": "De",
+      "colTo": "À",
+      "colReason": "Motif",
+      "colBy": "Par",
+      "approvalHistory": "Historique des approbations",
+      "colRev": "Rév.",
+      "colDecision": "Décision",
+      "colConditions": "Conditions",
+      "toasts": {
+        "submitted": "Soumis pour examen",
+        "revisionRequested": "Révision demandée",
+        "sent": "Envoyé au client",
+        "markedAccepted": "Marqué comme accepté",
+        "markedRejected": "Marqué comme rejeté",
+        "converted": "Converti",
+        "reactivated": "Réactivé",
+        "itemRemoved": "Article supprimé"
+      },
+      "addItemModal": {
+        "title": "Ajouter une ligne",
+        "itemType": "Type d'article",
+        "unit": "Unité",
+        "descriptionPlaceholder": "Description de l'article",
+        "unitPrice": "Prix unitaire",
+        "discountPercent": "Remise (%)",
+        "rentalDuration": "Durée de location (jours)",
+        "ratePeriod": "Période tarifaire",
+        "selectRatePeriod": "— Sélectionner —",
+        "daily": "Journalier",
+        "weekly": "Hebdomadaire",
+        "monthly": "Mensuel",
+        "adding": "Ajout...",
+        "descriptionRequired": "La description est obligatoire.",
+        "unitPriceRequired": "Le prix unitaire est obligatoire.",
+        "itemAdded": "Article ajouté.",
+        "addFailed": "Échec de l'ajout de l'article.",
+        "itemCode": "Code article"
+      },
+      "revisionNeededReason": "Révision nécessaire",
+      "colItemCode": "Code article"
+    }
+  },
+  "imageUpload": {
+    "invalidFormat": "Seuls les formats JPG, PNG et WebP sont autorisés.",
+    "fileTooLarge": "La taille du fichier dépasse la limite de {{size}} Mo.",
+    "invalidImage": "Le fichier n'est pas une image valide.",
+    "uploadFailed": "Échec du téléversement. Veuillez réessayer.",
+    "remove": "Retirer",
+    "uploadedSuccessfully": "Téléversé avec succès",
+    "clickOrDrag": "Cliquez ou glissez une image pour la téléverser",
+    "hint": "JPG, PNG, WebP · Max {{size}} Mo",
+    "previewAlt": "Aperçu de l'image téléchargée"
+  },
+  "login": {
+    "subtitle": "Connectez-vous pour continuer",
+    "powerSwitch": "Interrupteur d'alimentation",
+    "username": "Nom d'utilisateur",
+    "usernamePlaceholder": "Saisissez votre nom d'utilisateur",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Saisissez votre mot de passe",
+    "rememberMe": "Se souvenir de moi",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion en cours…",
+    "invalidCredentials": "Nom d'utilisateur ou mot de passe invalide",
+    "footer": "© 2026 DK LAO Services. Tous droits réservés."
+  },
+  "customer360": {
+    "backToCustomers": "Retour aux clients",
+    "notFound": "Client introuvable.",
+    "loadError": "Client introuvable ou échec du chargement.",
+    "forklifts": "Chariots élévateurs",
+    "activeRentals": "Locations actives",
+    "openWorkOrders": "Ordres de travail ouverts",
+    "outstanding": "Solde dû",
+    "notes": "Notes",
+    "rentalContracts": "Contrats de location",
+    "workOrders": "Ordres de travail",
+    "invoices": "Factures",
+    "noForklifts": "Aucun chariot élévateur assigné à ce client.",
+    "noRentalContracts": "Aucun contrat de location pour ce client.",
+    "noWorkOrders": "Aucun ordre de travail pour l'équipement de ce client.",
+    "noInvoices": "Aucune facture pour ce client.",
+    "colSerialNumber": "Numéro de série",
+    "colName": "Nom",
+    "colStatus": "Statut",
+    "colHourMeter": "Compteur horaire",
+    "colContractNumber": "Numéro de contrat",
+    "colStartDate": "Date de début",
+    "colEndDate": "Date de fin",
+    "colTotalValue": "Valeur totale",
+    "colWorkOrderNumber": "Numéro d'ordre de travail",
+    "colForklift": "Chariot élévateur",
+    "colTitle": "Titre",
+    "colPriority": "Priorité",
+    "colScheduledDate": "Date prévue",
+    "colInvoiceNumber": "Numéro de facture",
+    "colTotalAmount": "Montant total",
+    "colBalanceDue": "Solde dû",
+    "colDueDate": "Date d'échéance"
+  },
+  "projects": {
+    "title": "Projets d'entrepôt",
+    "totalCount": "Total : {{count}}",
+    "createProject": "Créer un projet",
+    "allStatuses": "Tous les statuts",
+    "status": {
+      "draft": "Brouillon",
+      "survey": "Étude",
+      "design": "Conception",
+      "boq_approved": "BOQ approuvé",
+      "installation": "Installation",
+      "handover": "Remise",
+      "completed": "Terminé"
+    },
+    "milestoneStatus": {
+      "pending": "En attente",
+      "in_progress": "En cours",
+      "completed": "Terminé"
+    },
+    "colProject": "Projet",
+    "colCustomer": "Client",
+    "colStartEnd": "Début / Fin",
+    "colStatus": "Statut",
+    "colProgress": "Avancement",
+    "noProjectsFound": "Aucun projet trouvé",
+    "createToGetStarted": "Créez un projet pour commencer.",
+    "noPermissionView": "Vous n'avez pas la permission de consulter les projets.",
+    "loadFailed": "Échec du chargement des projets.",
+    "resultsCount": "Résultats : {{count}}",
+    "pageOf": "Page {{page}} sur {{pages}} ({{total}} au total)",
+    "milestonesOf": "{{completed}}/{{total}} jalons",
+    "form": {
+      "editProject": "Modifier le projet",
+      "newProject": "Nouveau projet",
+      "cancel": "Annuler",
+      "saving": "Enregistrement…",
+      "saveChanges": "Enregistrer les modifications",
+      "createProject": "Créer le projet",
+      "projectName": "Nom du projet",
+      "projectNamePlaceholder": "Rayonnage entrepôt Vientiane",
+      "customer": "Client",
+      "selectCustomer": "Sélectionner un client…",
+      "status": "Statut",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "notes": "Notes",
+      "notesPlaceholder": "Notes supplémentaires…"
+    },
+    "detail": {
+      "backToProjects": "Retour aux projets",
+      "notFound": "Projet introuvable.",
+      "noPermissionView": "Vous n'avez pas la permission de consulter ce projet.",
+      "edit": "Modifier",
+      "approveBoq": "Approuver le BOQ",
+      "delete": "Supprimer",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "milestones": "Jalons",
+      "boqTotal": "Total BOQ",
+      "notes": "Notes",
+      "addMilestone": "Ajouter un jalon",
+      "noMilestonesYet": "Aucun jalon pour le moment.",
+      "colMilestone": "Jalon",
+      "colDueDate": "Date d'échéance",
+      "colStatus": "Statut",
+      "markStatus": "Marquer {{status}}",
+      "addBoqItem": "Ajouter un article BOQ",
+      "noBoqItemsYet": "Aucun article BOQ pour le moment.",
+      "colDescription": "Description",
+      "colQty": "Qté",
+      "colUnitPrice": "Prix unitaire",
+      "colTotal": "Total",
+      "totalRow": "Total",
+      "billOfQuantities": "Bordereau quantitatif (BOQ)",
+      "deleteProjectTitle": "Supprimer le projet",
+      "deleteMilestoneTitle": "Supprimer le jalon",
+      "deleteBoqItemTitle": "Supprimer l'article BOQ",
+      "deleteProjectMessage": "Cela supprimera définitivement le projet ainsi que tous ses jalons et articles BOQ. Cette action est irréversible.",
+      "deleteGenericMessage": "Cette action est irréversible.",
+      "confirmDelete": "Supprimer",
+      "milestoneModalTitle": "Ajouter un jalon",
+      "milestoneName": "Nom du jalon",
+      "milestoneNamePlaceholder": "Étude",
+      "dueDate": "Date d'échéance",
+      "adding": "Ajout…",
+      "boqModalTitle": "Ajouter un article BOQ",
+      "linkInventoryPart": "Lier à une pièce en stock (facultatif)",
+      "notLinked": "— Non liée —",
+      "description": "Description",
+      "quantity": "Quantité",
+      "unitPrice": "Prix unitaire",
+      "addItem": "Ajouter un article",
+      "descriptionPriceRequired": "La description et le prix unitaire sont obligatoires.",
+      "projectUpdated": "Projet mis à jour.",
+      "projectUpdateFailed": "Échec de la mise à jour du projet.",
+      "boqApproved": "BOQ approuvé.",
+      "boqApproveFailed": "Échec de l'approbation du BOQ.",
+      "projectDeleted": "Projet supprimé.",
+      "projectDeleteFailed": "Échec de la suppression du projet.",
+      "milestoneStatusUpdateFailed": "Échec de la mise à jour du statut du jalon.",
+      "milestoneRemoved": "Jalon supprimé.",
+      "milestoneRemoveFailed": "Échec de la suppression du jalon.",
+      "boqItemRemoved": "Article BOQ supprimé.",
+      "boqItemRemoveFailed": "Échec de la suppression de l'article BOQ.",
+      "milestoneAdded": "Jalon ajouté.",
+      "milestoneAddFailed": "Échec de l'ajout du jalon.",
+      "boqItemAdded": "Article BOQ ajouté.",
+      "boqItemAddFailed": "Échec de l'ajout de l'article BOQ.",
+      "projectCreated": "Projet créé.",
+      "projectCreateFailed": "Échec de la création du projet."
+    }
+  },
+  "reports": {
+    "title": "Rapports",
+    "subtitle": "Analytique, indicateurs de conversion et exports de données",
+    "refresh": "Actualiser",
+    "retry": "Réessayer",
+    "keyMetrics": "Indicateurs clés",
+    "wonLeads": "Prospects gagnés",
+    "totalCustomers": "Total des clients",
+    "conversionRate": "Taux de conversion",
+    "winRate": "Taux de réussite",
+    "wonOverTotalLeads": "Gagnés ÷ Total prospects",
+    "wonOverWonPlusLost": "Gagnés ÷ (Gagnés + Perdus)",
+    "exportData": "Exporter les données",
+    "downloadReports": "Télécharger les rapports",
+    "format": "Format",
+    "fromDate": "Date de début",
+    "toDate": "Date de fin",
+    "clearDates": "Effacer les dates",
+    "downloading": "Téléchargement…",
+    "exportNote": "Si un point de terminaison de rapport est indisponible, un CSV récapitulatif est généré côté client.",
+    "customers": "Clients",
+    "leads": "Prospects",
+    "sales": "Ventes",
+    "downloadSuccess": "Rapport {{type}} téléchargé.",
+    "downloadError": "Échec du téléchargement du rapport {{type}}.",
+    "trends": "Tendances — 12 derniers mois",
+    "syntheticPreview": "Données d'aperçu synthétiques",
+    "leadVolume": "Volume de prospects",
+    "leadVolumeSub": "Nouveaux prospects créés par mois",
+    "noLeadTrend": "Aucune donnée de tendance des prospects",
+    "leadTrendWillAppear": "La tendance des prospects apparaîtra une fois le point de terminaison connecté",
+    "customerGrowth": "Croissance des clients",
+    "customerGrowthSub": "Nouveaux clients ajoutés par mois",
+    "noCustomerTrend": "Aucune donnée de tendance client",
+    "customerTrendWillAppear": "La tendance des clients apparaîtra une fois le point de terminaison connecté",
+    "leadAnalysis": "Analyse des prospects",
+    "statusDistribution": "Répartition par statut",
+    "statusDistributionSub": "Prospects par étape actuelle du pipeline",
+    "noStatusData": "Aucune donnée de statut des prospects",
+    "createLeadsToSeeDistribution": "Créez des prospects pour voir la répartition",
+    "sourceBreakdown": "Répartition par source",
+    "sourceBreakdownSub": "Origine des prospects",
+    "noSourceData": "Aucune donnée de source",
+    "addSourceWhenCreating": "Ajoutez une source lors de la création des prospects",
+    "conversionMetrics": "Indicateurs de conversion",
+    "metric": "Indicateur",
+    "rate": "Taux",
+    "breakdown": "Détail",
+    "formula": "Formule",
+    "lostRate": "Taux de perte",
+    "activeCustomers": "Clients actifs",
+    "leadsInPipeline": "Prospects dans le pipeline",
+    "ofTotal": "sur {{count}} au total",
+    "wonOverTotalFormula": "Gagnés ÷ Total prospects × 100",
+    "wonOverWonLostFormula": "Gagnés ÷ (Gagnés + Perdus) × 100",
+    "lostOverWonLostFormula": "Perdus ÷ (Gagnés + Perdus) × 100",
+    "activeOverTotalFormula": "Actifs ÷ Total clients × 100",
+    "pipelineFormula": "Nouveau + Contacté + Qualifié + Proposition",
+    "moduleRoadmap": "Feuille de route des modules",
+    "sourceLabels": {
+      "website": "Site web",
+      "referral": "Recommandation",
+      "coldCall": "Appel à froid",
+      "email": "E-mail",
+      "socialMedia": "Réseaux sociaux",
+      "other": "Autre"
+    },
+    "modules": {
+      "projects": {
+        "label": "Projets",
+        "description": "Gestion de projet avec jalons, tableaux de statut et affectation d'équipe"
+      },
+      "services": {
+        "label": "Services",
+        "description": "Catalogue de services, grilles tarifaires et affectations du service client"
+      },
+      "tasks": {
+        "label": "Tâches",
+        "description": "Tableau de tâches avec affectations, échéances et niveaux de priorité"
+      },
+      "invoices": {
+        "label": "Factures",
+        "description": "Génération de factures, suivi des paiements et rapports de revenus"
+      }
+    },
+    "formatCsv": "CSV (.csv)",
+    "formatExcel": "Excel (.xlsx)"
+  },
+  "routes": {
+    "dashboard": "Tableau de bord",
+    "customerDetail": "Vue client 360",
+    "customers": "Clients",
+    "leads": "Prospects",
+    "activity": "Activité",
+    "reports": "Rapports",
+    "settings": "Paramètres",
+    "products": "Produits",
+    "productDetail": "Détail du produit",
+    "brands": "Marques",
+    "categories": "Catégories",
+    "import": "Import",
+    "equipmentRegistry": "Registre des équipements",
+    "equipmentDetail": "Détail de l'équipement",
+    "quotations": "Devis",
+    "newQuotation": "Nouveau devis",
+    "quotationDetail": "Détail du devis",
+    "rentalContracts": "Contrats de location",
+    "newContract": "Nouveau contrat",
+    "contractDetail": "Détail du contrat",
+    "movementControl": "Contrôle des mouvements",
+    "newMovement": "Nouveau mouvement",
+    "movementDetail": "Détail du mouvement",
+    "billing": "Facturation",
+    "invoices": "Factures",
+    "invoiceDetail": "Détail de la facture",
+    "payments": "Paiements",
+    "paymentDetail": "Détail du paiement",
+    "deposits": "Cautions",
+    "depositDetail": "Détail de la caution",
+    "revenueRecognition": "Comptabilisation des revenus",
+    "financeDashboard": "Tableau de bord finance",
+    "statements": "Relevés",
+    "paymentManager": "Gestion des paiements",
+    "depositManager": "Gestion des cautions",
+    "maintenancePm": "Maintenance et entretien préventif",
+    "workOrders": "Ordres de travail",
+    "newWorkOrder": "Nouvel ordre de travail",
+    "workOrderDetail": "Détail de l'ordre de travail",
+    "pmSchedules": "Programmes PM",
+    "inventory": "Inventaire",
+    "spareParts": "Pièces détachées",
+    "newPart": "Nouvelle pièce",
+    "partDetail": "Détail de la pièce",
+    "warehouses": "Entrepôts",
+    "purchaseOrders": "Bons de commande",
+    "executiveDashboard": "Tableau de bord exécutif",
+    "projects": "Projets d'entrepôt",
+    "projectDetail": "Détail du projet",
+    "iotManagement": "Gestion IoT"
+  },
+  "iot": {
+    "title": "Télémétrie IoT",
+    "subtitle": "Gérez les appairages d'appareils GPS/compteur horaire et surveillez la connectivité en direct de la flotte.",
+    "refresh": "Actualiser",
+    "searchPlaceholder": "Rechercher par nom de chariot élévateur ou numéro de série...",
+    "kpi": {
+      "totalPaired": "Appareils appairés",
+      "live": "En direct",
+      "offline": "Hors ligne",
+      "unpaired": "Unités non appairées"
+    },
+    "table": {
+      "forklift": "Chariot élévateur",
+      "deviceId": "ID de l'appareil",
+      "lastPing": "Dernier ping",
+      "status": "Statut"
+    },
+    "notPaired": "Non appairé",
+    "never": "Jamais",
+    "pairAction": "Appairer l'appareil",
+    "unpairAction": "Désappairer",
+    "noResults": "Aucun chariot élévateur trouvé.",
+    "pairModal": {
+      "title": "Appairer un appareil IoT — {{name}}",
+      "deviceIdLabel": "ID de l'appareil",
+      "deviceIdPlaceholder": "ex. DK-IOT-001",
+      "deviceIdRequired": "L'ID de l'appareil est obligatoire.",
+      "duplicateError": "Cet ID d'appareil est déjà appairé à un autre chariot élévateur.",
+      "submitError": "Échec de l'appairage de l'appareil. Veuillez réessayer.",
+      "submit": "Appairer l'appareil",
+      "pairing": "Appairage..."
+    },
+    "unpairConfirm": {
+      "title": "Désappairer l'appareil",
+      "message": "Retirer l'appareil « {{deviceId}} » de {{name}} ? Il cessera d'envoyer des mises à jour automatiques du compteur horaire jusqu'à un nouvel appairage."
+    }
+  },
+  "changePassword": {
+    "title": "Changer le mot de passe",
+    "subtitle": "Mettez à jour votre mot de passe pour sécuriser votre compte.",
+    "currentPassword": "Mot de passe actuel",
+    "currentPasswordPlaceholder": "Saisissez votre mot de passe actuel",
+    "newPassword": "Nouveau mot de passe",
+    "newPasswordPlaceholder": "8 caractères minimum",
+    "confirmPassword": "Confirmer le nouveau mot de passe",
+    "confirmPasswordPlaceholder": "Ressaisissez le nouveau mot de passe",
+    "submit": "Changer le mot de passe",
+    "submitting": "Changement en cours…",
+    "mismatchError": "Le nouveau mot de passe et la confirmation ne correspondent pas.",
+    "tooShortError": "Le mot de passe doit contenir au moins 8 caractères.",
+    "successToast": "Mot de passe changé avec succès.",
+    "incorrectCurrentError": "Le mot de passe actuel est incorrect.",
+    "genericError": "Échec du changement de mot de passe. Veuillez réessayer."
+  },
+  "documentPreview": {
+    "docTitle": {
+      "invoice": "FACTURE",
+      "quotation": "DEVIS",
+      "purchaseOrder": "BON DE COMMANDE"
+    },
+    "customerDetails": "Coordonnées du client",
+    "vendorDetails": "Coordonnées du fournisseur",
+    "vehicleInformation": "Informations sur le véhicule",
+    "vehicle": {
+      "make": "Marque",
+      "model": "Modèle",
+      "vin": "VIN",
+      "engineNo": "N° de moteur",
+      "regNo": "N° d'immatriculation",
+      "jobNumber": "N° de tâche"
+    },
+    "dateLabel": "Date",
+    "docNumberLabel": "N° de document",
+    "unitPrice": "Prix unitaire",
+    "bankDetails": "Coordonnées bancaires",
+    "subtotal": "Sous-total",
+    "vatLabel": "TVA ({{rate}}%)",
+    "grandTotal": "Total général",
+    "issuedBy": "Émis par",
+    "approvedBy": "Approuvé par"
+  },
+  "modulePlaceholder": {
+    "badge": "Bientôt disponible",
+    "emptyHint": "Ce module est ébauché — le flux de travail complet arrive bientôt."
+  },
+  "documentFlow": {
+    "title": "Flux du document :"
+  }
+}

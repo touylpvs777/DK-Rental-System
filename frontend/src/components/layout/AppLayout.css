@@ -1,0 +1,33 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  margin-left: var(--sidebar-width, 280px);
+  padding-top: var(--topbar-height);
+  min-height: 100vh;
+  background: var(--color-bg);
+  transition: margin-left var(--duration-slow) var(--ease-default);
+}
+
+.app-content {
+  padding: 28px 24px;
+  max-width: var(--content-max-width);
+}
+
+@media (max-width: 1024px) {
+  .app-content {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    margin-left: 0;
+  }
+  .app-content {
+    padding: 20px 16px;
+  }
+}

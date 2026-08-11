@@ -1,0 +1,174 @@
+erDiagram
+    roles {
+        int id PK
+        string name
+        json permissions
+    }
+    users {
+        int id PK
+        string username UK
+        string email UK
+        string hashed_password
+        bool is_superuser
+        int role_id FK
+        datetime created_at
+    }
+    customers {
+        int id PK
+        string first_name
+        string last_name
+        string email UK
+        string company
+        string status
+        int assigned_to FK
+    }
+    leads {
+        int id PK
+        string title
+        float value
+        string status
+        string source
+        int customer_id FK
+        int assigned_to FK
+    }
+    forklifts {
+        int id PK
+        string serial_number UK
+        string name_en
+        string status
+        string condition
+        string fuel_type
+        float capacity_kg
+        int model_id FK
+        int brand_id FK
+    }
+    brands {
+        int id PK
+        string name UK
+        string slug UK
+    }
+    forklift_models {
+        int id PK
+        string name
+        int brand_id FK
+        float capacity_kg
+    }
+    quotations {
+        int id PK
+        string quotation_number UK
+        string quotation_type
+        string status
+        int customer_id FK
+        int lead_id FK
+        float total_amount
+        string currency
+        date valid_until
+    }
+    quotation_items {
+        int id PK
+        int quotation_id FK
+        string item_type
+        float unit_price
+        int quantity
+        float line_total
+    }
+    rental_contracts {
+        int id PK
+        string contract_number UK
+        string status
+        string contract_type
+        int customer_id FK
+        int quotation_id FK
+        date start_date
+        date end_date
+        float total_value
+        float deposit_amount
+    }
+    rental_contract_items {
+        int id PK
+        int contract_id FK
+        int forklift_id FK
+        float unit_price
+        int quantity
+    }
+    invoices {
+        int id PK
+        string invoice_number UK
+        int contract_id FK
+        int customer_id FK
+        string status
+        float total_amount
+        float amount_paid
+        float balance_due
+        date due_date
+    }
+    payments {
+        int id PK
+        string payment_reference UK
+        int customer_id FK
+        float amount
+        string payment_method
+        string status
+        date payment_date
+    }
+    payment_allocations {
+        int id PK
+        int payment_id FK
+        int invoice_id FK
+        float allocated_amount
+    }
+    work_orders {
+        int id PK
+        string work_order_number UK
+        int forklift_id FK
+        string order_type
+        string status
+        string priority
+        date scheduled_date
+        float actual_cost
+        int assigned_to FK
+    }
+    spare_parts {
+        int id PK
+        string part_number UK
+        string name
+        int brand_id FK
+        float unit_price
+        int min_stock_level
+    }
+    inventory_balance {
+        int id PK
+        int spare_part_id FK
+        int warehouse_id FK
+        int quantity_on_hand
+        int quantity_reserved
+    }
+    warehouses {
+        int id PK
+        string name UK
+        string location
+    }
+
+    roles ||--o{ users : "assigned to"
+    users ||--o{ customers : "assigned to"
+    users ||--o{ leads : "owns"
+    customers ||--o{ leads : "has"
+    customers ||--o{ quotations : "receives"
+    customers ||--o{ rental_contracts : "party to"
+    customers ||--o{ invoices : "billed"
+    customers ||--o{ payments : "makes"
+    leads ||--o{ quotations : "generates"
+    leads }o--|| rental_contracts : "leads to"
+    brands ||--o{ forklifts : "manufactures"
+    brands ||--o{ forklift_models : "produces"
+    forklift_models ||--o{ forklifts : "classifies"
+    forklifts ||--o{ work_orders : "serviced by"
+    forklifts ||--o{ rental_contract_items : "reserved in"
+    quotations ||--o{ quotation_items : "contains"
+    quotations |o--o| rental_contracts : "converts to"
+    rental_contracts ||--o{ rental_contract_items : "contains"
+    rental_contracts ||--o{ invoices : "generates"
+    invoices ||--o{ payment_allocations : "settled by"
+    payments ||--o{ payment_allocations : "applied via"
+    spare_parts ||--o{ inventory_balance : "tracked in"
+    warehouses ||--o{ inventory_balance : "holds"

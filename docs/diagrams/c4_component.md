@@ -1,0 +1,55 @@
+```mermaid
+C4Component
+    title Component Diagram — FastAPI Backend
+
+    Person(user, "CRM User")
+    Container(spa, "React SPA", "React 18")
+    ContainerDb(db, "PostgreSQL 16")
+    Container(storage, "File Storage", "uploads/")
+
+    Container_Boundary(api, "FastAPI Backend") {
+        Component(security, "Security Core", "python-jose + bcrypt", "JWT encode/decode, password hashing, get_current_user dependency")
+        Component(rbac, "RBAC Service", "Python + SQLAlchemy", "Role-based permission checks; seeds default roles on startup")
+        Component(auth, "Auth Router", "FastAPI APIRouter", "POST /auth/login, /logout, /refresh — issues and revokes JWT tokens")
+        Component(crm, "CRM Module", "FastAPI + SQLAlchemy", "Customers CRUD, Leads with status FSM, Lead Notes")
+        Component(fleet, "Fleet Module", "FastAPI + SQLAlchemy", "Forklifts, specs, photos, documents, locations, hour meter logs")
+        Component(catalog, "Catalog Module", "FastAPI + SQLAlchemy + openpyxl", "Products, brands, categories and Excel bulk import")
+        Component(quotes, "Quotation Module", "FastAPI + SQLAlchemy", "Quotation workflow, approval, status FSM and convert to contract")
+        Component(rentals, "Rental Module", "FastAPI + SQLAlchemy", "Rental contracts, items, extensions, returns, billing cycles")
+        Component(billing, "Billing Module", "FastAPI + SQLAlchemy", "Invoices, payments, allocation, deposits, revenue recognition")
+        Component(maintenance, "Maintenance Module", "FastAPI + SQLAlchemy", "Work orders, plans, schedules, costs, part consumption")
+        Component(inventory, "Inventory Module", "FastAPI + SQLAlchemy", "Spare parts, warehouses, stock levels, transactions, purchase orders")
+        Component(movements, "Movement Module", "FastAPI + SQLAlchemy", "Asset movement requests, delivery tracking, history")
+        Component(reports, "Reports Module", "FastAPI + openpyxl", "Excel and JSON export for fleet, revenue and maintenance")
+        Component(dashboard, "Dashboard Module", "FastAPI + SQLAlchemy", "Aggregated KPIs and chart data for executive view")
+        Component(uploads, "Upload Module", "FastAPI + aiofiles", "Multipart image and document upload with file validation")
+    }
+
+    Rel(spa, auth, "POST /api/v1/auth/*", "JSON")
+    Rel(spa, crm, "CRUD /api/v1/customers and /leads", "JSON")
+    Rel(spa, fleet, "CRUD /api/v1/forklifts", "JSON")
+    Rel(spa, catalog, "CRUD /api/v1/catalog", "JSON")
+    Rel(spa, quotes, "CRUD /api/v1/quotations", "JSON")
+    Rel(spa, rentals, "CRUD /api/v1/rentals", "JSON")
+    Rel(spa, billing, "CRUD /api/v1/billing", "JSON")
+    Rel(spa, maintenance, "CRUD /api/v1/maintenance", "JSON")
+    Rel(spa, inventory, "CRUD /api/v1/inventory", "JSON")
+    Rel(spa, reports, "GET /api/v1/reports", "JSON / XLSX")
+    Rel(spa, dashboard, "GET /api/v1/dashboard", "JSON")
+    Rel(spa, uploads, "POST /api/v1/uploads/images", "multipart/form-data")
+
+    Rel(auth, security, "Calls decode and hash")
+    Rel(auth, rbac, "Seeds and checks roles")
+    Rel(crm, db, "Reads and writes")
+    Rel(fleet, db, "Reads and writes")
+    Rel(catalog, db, "Reads and writes")
+    Rel(quotes, db, "Reads and writes")
+    Rel(rentals, db, "Reads and writes")
+    Rel(billing, db, "Reads and writes")
+    Rel(maintenance, db, "Reads and writes")
+    Rel(inventory, db, "Reads and writes")
+    Rel(movements, db, "Reads and writes")
+    Rel(reports, db, "Reads")
+    Rel(dashboard, db, "Reads aggregates")
+    Rel(uploads, storage, "Writes files")
+```

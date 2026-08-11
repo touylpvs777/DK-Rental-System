@@ -1,0 +1,85 @@
+sequenceDiagram
+    autonumber
+    actor Sales as Sales Staff
+    participant FE as React SPA
+    participant API as FastAPI Backend
+    participant DB as PostgreSQL
+
+    rect rgb(15,23,42)
+        Note over Sales,DB: STEP 1 — CREATE LEAD
+        Sales->>FE: Fill lead form
+        FE->>API: POST /api/v1/leads {title, customer_id, value}
+        API->>DB: INSERT leads status=NEW
+        DB-->>API: Lead row
+        API-->>FE: 201 Lead created
+    end
+
+    rect rgb(15,23,42)
+        Note over Sales,DB: STEP 2 — CREATE QUOTATION
+        Sales->>FE: Open Quotation Form
+        FE->>API: POST /api/v1/quotations {lead_id, customer_id, items}
+        API->>DB: INSERT quotations status=DRAFT
+        API->>DB: INSERT quotation_items forklift qty price
+        API-->>FE: 201 Quotation DRAFT
+    end
+
+    rect rgb(15,23,42)
+        Note over Sales,DB: STEP 3 — APPROVAL
+        Sales->>FE: Submit for review
+        FE->>API: PATCH /quotations/{id}/status {status=UNDER_REVIEW}
+        API->>DB: UPDATE quotations SET status=UNDER_REVIEW
+        API->>DB: INSERT quotation_status_history
+        API-->>FE: UNDER_REVIEW
+        Sales->>FE: Manager approves
+        FE->>API: POST /quotations/{id}/approve {decision=approved}
+        API->>DB: INSERT quotation_approvals
+        API->>DB: UPDATE quotations SET status=APPROVED
+        API-->>FE: APPROVED
+    end
+
+    rect rgb(15,23,42)
+        Note over Sales,DB: STEP 4 — SEND AND ACCEPT
+        Sales->>FE: Mark as Sent
+        FE->>API: PATCH /quotations/{id}/status {status=SENT}
+        API->>DB: UPDATE quotations status=SENT
+        API-->>FE: SENT
+        Note over Sales: Customer accepts
+        FE->>API: PATCH /quotations/{id}/status {status=ACCEPTED}
+        API->>DB: UPDATE quotations status=ACCEPTED
+        API-->>FE: ACCEPTED
+    end
+
+    rect rgb(15,23,42)
+        Note over Sales,DB: STEP 5 — CONVERT TO CONTRACT
+        Sales->>FE: Click Convert to Contract
+        FE->>API: POST /quotations/{id}/convert {type=rental}
+        API->>DB: INSERT rental_contracts status=RESERVATION
+        API->>DB: INSERT rental_contract_items forklift per item
+        API->>DB: UPDATE quotations status=CONVERTED
+        API->>DB: UPDATE forklifts status=RESERVED
+        API-->>FE: 201 Rental Contract created
+        FE-->>Sales: Redirect to Contract detail
+    end
+
+    rect rgb(15,23,42)
+        Note over Sales,DB: STEP 6 — DELIVER AND ACTIVATE
+        Sales->>FE: Approve and dispatch
+        FE->>API: PATCH /rentals/{id}/status {status=APPROVED}
+        API->>DB: UPDATE rental_contracts status=APPROVED
+        FE->>API: PATCH /rentals/{id}/status {status=DELIVERING}
+        API->>DB: INSERT asset_movements type=DELIVERY
+        API->>DB: UPDATE forklifts status=RENTED
+        API-->>FE: DELIVERING then ACTIVE
+    end
+
+    rect rgb(15,23,42)
+        Note over Sales,DB: STEP 7 — INVOICE
+        Sales->>FE: Create billing cycle invoice
+        FE->>API: POST /billing/invoices {contract_id, period}
+        API->>DB: INSERT invoices status=DRAFT
+        API->>DB: INSERT invoice_items
+        Sales->>FE: Issue and send
+        FE->>API: POST /billing/invoices/{id}/send
+        API->>DB: UPDATE invoices status=SENT
+        API-->>FE: Invoice SENT
+    end

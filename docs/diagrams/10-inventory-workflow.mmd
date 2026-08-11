@@ -1,0 +1,67 @@
+graph TB
+    subgraph "Procurement"
+        Need[Identify Need<br/>low stock / work order] --> POCreate[Create Purchase Order<br/>status: draft]
+        POCreate --> POSend[Send to Supplier<br/>status: ordered]
+        POSend --> POPartial[Partially Received]
+        POSend --> POFull[Fully Received]
+        POPartial --> POFull
+    end
+
+    subgraph "Receiving"
+        POFull --> Receive[Receive Items]
+        Receive --> InvTx_Receive[Inventory Transaction<br/>type: receive]
+        InvTx_Receive --> BalanceUp[Update Balance<br/>quantity_on_hand += qty]
+    end
+
+    subgraph "Stock Operations"
+        BalanceUp --> Stock[Inventory Balance<br/>part × warehouse]
+
+        Stock --> Issue[Issue to Work Order]
+        Issue --> InvTx_Issue[Transaction: issue]
+        InvTx_Issue --> PartConsume[Part Consumption Record]
+        InvTx_Issue --> BalanceDown[quantity_on_hand -= qty]
+
+        Stock --> Transfer[Transfer Between Warehouses]
+        Transfer --> InvTx_Out[Transaction: transfer_out]
+        Transfer --> InvTx_In[Transaction: transfer_in]
+
+        Stock --> Adjust[Stock Adjustment]
+        Adjust --> InvTx_Adjust[Transaction: adjust]
+
+        Stock --> Return[Return from Work Order]
+        Return --> InvTx_Return[Transaction: return]
+        InvTx_Return --> BalanceUp2[quantity_on_hand += qty]
+
+        Stock --> Consume[Consume on Site]
+        Consume --> InvTx_Consume[Transaction: consume]
+    end
+
+    subgraph "Monitoring"
+        Stock --> Check{qty <= min_stock?}
+        Check -->|"Yes"| LowAlert[Low Stock Alert]
+        LowAlert -.->|"Trigger"| Need
+
+        Stock --> Dashboard[Inventory Dashboard]
+        Dashboard --> TotalValue[Total Stock Value]
+        Dashboard --> TotalParts[Total Unique Parts]
+        Dashboard --> LowCount[Low Stock Count]
+        Dashboard --> RecentTx[Recent Transactions]
+    end
+
+    subgraph "Warehouse Management"
+        WH[Warehouses] --> Stock
+        WH --> WH_Active[Active Warehouses]
+        WH --> WH_Balance[Per-Warehouse Balances]
+    end
+
+    classDef po fill:#3b82f6,color:#fff
+    classDef tx fill:#7c3aed,color:#fff
+    classDef stock fill:#22c55e,color:#fff
+    classDef alert fill:#ef4444,color:#fff
+    classDef dash fill:#f59e0b,color:#000
+
+    class POCreate,POSend,POPartial,POFull po
+    class InvTx_Receive,InvTx_Issue,InvTx_Adjust,InvTx_Return,InvTx_Consume,InvTx_Out,InvTx_In tx
+    class Stock,BalanceUp,BalanceDown,BalanceUp2 stock
+    class LowAlert,Check alert
+    class Dashboard,TotalValue,TotalParts,LowCount,RecentTx dash

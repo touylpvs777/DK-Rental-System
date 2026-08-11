@@ -1,0 +1,21 @@
+C4Container
+    title DK Service Platform — Container Diagram
+
+    Person(user, "DK Staff", "Admin, Sales, Support")
+
+    System_Boundary(platform, "DK Service Platform") {
+        Container(spa, "React SPA", "React 19, TypeScript, Vite 8", "48 pages, Zustand state, Recharts visualizations")
+        Container(api, "FastAPI Backend", "Python 3.12, FastAPI 0.115, SQLAlchemy 2.0", "218 REST endpoints, JWT auth, RBAC, 22 services")
+        Container(nginx, "Nginx Reverse Proxy", "Nginx 1.25", "SPA routing, API proxy, static file serving")
+        ContainerDb(db, "Database", "SQLite / PostgreSQL 16", "56 tables, async sessions, Alembic migrations")
+        Container(files, "File Storage", "Local filesystem", "Upload images: UUID filenames, MIME validation")
+    }
+
+    Rel(user, nginx, "Uses", "HTTPS")
+    Rel(nginx, spa, "Serves SPA", "HTTP :80")
+    Rel(nginx, api, "Proxies API", "/api/v1/*")
+    Rel(spa, api, "API calls", "Axios, JWT Bearer")
+    Rel(api, db, "Reads/Writes", "AsyncSession")
+    Rel(api, files, "Stores uploads", "filesystem I/O")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")

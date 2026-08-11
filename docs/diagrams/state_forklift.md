@@ -1,0 +1,24 @@
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> IN_STOCK : Unit registered in fleet
+
+    IN_STOCK --> RESERVED : Rental contract approved
+    IN_STOCK --> IN_SERVICE : Work order created
+    IN_STOCK --> SOLD : Sale completed
+
+    RESERVED --> RENTED : Equipment delivered to customer
+    RESERVED --> IN_STOCK : Reservation cancelled
+
+    RENTED --> RETURNING : Contract return initiated
+    RENTED --> IN_SERVICE : Emergency maintenance while rented
+
+    RETURNING --> IN_STOCK : Return inspection passed
+    RETURNING --> IN_SERVICE : Damage found — repair required
+
+    IN_SERVICE --> IN_STOCK : Work order verified and closed
+
+    SOLD --> [*]
+    IN_STOCK --> DECOMMISSIONED : End of service life
+    DECOMMISSIONED --> [*]
+```

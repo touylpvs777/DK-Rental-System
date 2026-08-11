@@ -1,0 +1,501 @@
+erDiagram
+    %% ── Auth Domain ──
+    users {
+        int id PK
+        string username UK
+        string email UK
+        string hashed_password
+        string full_name
+        int role_id FK
+        bool is_active
+        bool is_superuser
+        datetime created_at
+    }
+    roles {
+        int id PK
+        string name UK
+        string description
+        bool is_active
+    }
+    revoked_tokens {
+        int id PK
+        string jti UK
+        datetime revoked_at
+    }
+
+    %% ── CRM Domain ──
+    customers {
+        int id PK
+        string first_name
+        string last_name
+        string company
+        string email
+        string phone
+        string status
+        string source
+        int assigned_to FK
+        datetime created_at
+    }
+    leads {
+        int id PK
+        string first_name
+        string last_name
+        string company
+        string email
+        string status
+        string source
+        int assigned_to FK
+        int customer_id FK
+        datetime created_at
+    }
+    lead_notes {
+        int id PK
+        int lead_id FK
+        int user_id FK
+        string content
+        datetime created_at
+    }
+    activity_logs {
+        int id PK
+        int user_id FK
+        string action
+        string entity_type
+        int entity_id
+        string details
+        datetime created_at
+    }
+
+    %% ── Catalog Domain ──
+    brands {
+        int id PK
+        string name UK
+        string slug UK
+        string logo_url
+    }
+    product_categories {
+        int id PK
+        string name
+        string slug UK
+        int parent_id FK
+        int depth
+    }
+    products {
+        int id PK
+        string sku UK
+        string name
+        int category_id FK
+        int brand_id FK
+        float price
+        string status
+    }
+    import_jobs {
+        int id PK
+        string filename
+        string status
+        int success_count
+        int error_count
+    }
+
+    %% ── Equipment Domain ──
+    forklift_models {
+        int id PK
+        string brand_name
+        string model_name
+    }
+    forklifts {
+        int id PK
+        string serial_number UK
+        string slug UK
+        int model_id FK
+        int brand_id FK
+        int customer_id FK
+        string status
+        string fuel_type
+        float capacity_kg
+        float current_hour_meter
+        datetime created_at
+    }
+    forklift_specs {
+        int id PK
+        int forklift_id FK
+        string mast_type
+        int max_lift_height_mm
+        string tire_type
+        string battery_type
+    }
+    forklift_photos {
+        int id PK
+        int forklift_id FK
+        string url
+        bool is_primary
+        int sort_order
+    }
+    forklift_documents {
+        int id PK
+        int forklift_id FK
+        string document_type
+        string url
+        date expiry_date
+    }
+    forklift_locations {
+        int id PK
+        int forklift_id FK
+        float latitude
+        float longitude
+        string address
+        date effective_date
+    }
+    forklift_hour_meter_logs {
+        int id PK
+        int forklift_id FK
+        float hours_reading
+        datetime recorded_at
+    }
+    forklift_ownership_costs {
+        int id PK
+        int forklift_id FK
+        string cost_type
+        float amount
+        date cost_date
+    }
+    forklift_status_history {
+        int id PK
+        int forklift_id FK
+        string old_status
+        string new_status
+        datetime changed_at
+    }
+
+    %% ── Quotation Domain ──
+    quotations {
+        int id PK
+        string quotation_number UK
+        string quotation_type
+        string status
+        int customer_id FK
+        int lead_id FK
+        float total_amount
+        date valid_until
+    }
+    quotation_items {
+        int id PK
+        int quotation_id FK
+        string item_type
+        string description
+        float quantity
+        float unit_rate
+        float line_total
+    }
+    quotation_approvals {
+        int id PK
+        int quotation_id FK
+        int approver_id FK
+        string decision
+        string comments
+    }
+    quotation_status_history {
+        int id PK
+        int quotation_id FK
+        string old_status
+        string new_status
+        datetime changed_at
+    }
+
+    %% ── Rental Domain ──
+    rental_contracts {
+        int id PK
+        string contract_number UK
+        string status
+        string contract_type
+        int customer_id FK
+        int quotation_id FK
+        date start_date
+        date end_date
+        float total_value
+    }
+    rental_contract_items {
+        int id PK
+        int contract_id FK
+        int forklift_id FK
+        string status
+        float monthly_rate
+    }
+    rental_contract_terms {
+        int id PK
+        int contract_id FK
+        string term_text
+    }
+    rental_contract_status_history {
+        int id PK
+        int contract_id FK
+        string old_status
+        string new_status
+        datetime changed_at
+    }
+    rental_extensions {
+        int id PK
+        int contract_id FK
+        string status
+        date new_end_date
+    }
+    rental_returns {
+        int id PK
+        int contract_id FK
+        int forklift_id FK
+        string status
+        string return_type
+        date requested_date
+    }
+    rental_damage_reports {
+        int id PK
+        int contract_id FK
+        int return_id FK
+        string dispute_status
+        float estimated_cost
+    }
+    rental_billing_cycles {
+        int id PK
+        int contract_id FK
+        string billing_type
+        date period_start
+        date period_end
+        float amount
+    }
+
+    %% ── Movement Domain ──
+    asset_movements {
+        int id PK
+        string movement_number UK
+        string movement_type
+        string status
+        int forklift_id FK
+        int contract_id FK
+        int customer_id FK
+        string from_location
+        string to_location
+    }
+    movement_history {
+        int id PK
+        int movement_id FK
+        string location
+        string notes
+        datetime recorded_at
+    }
+
+    %% ── Maintenance Domain ──
+    maintenance_plans {
+        int id PK
+        string name
+        string description
+        int interval_hours
+        int interval_days
+    }
+    maintenance_schedules {
+        int id PK
+        int forklift_id FK
+        int plan_id FK
+        date next_due_date
+        float next_due_hours
+    }
+    work_orders {
+        int id PK
+        string work_order_number UK
+        int forklift_id FK
+        int schedule_id FK
+        string order_type
+        string status
+        string priority
+        date scheduled_date
+    }
+    service_history {
+        int id PK
+        int forklift_id FK
+        int work_order_id FK
+        string service_type
+        string description
+        date service_date
+    }
+    maintenance_costs {
+        int id PK
+        int work_order_id FK
+        string cost_type
+        float amount
+        string description
+    }
+    part_consumptions {
+        int id PK
+        int work_order_id FK
+        int spare_part_id FK
+        float quantity
+        float unit_cost
+    }
+
+    %% ── Inventory Domain ──
+    spare_parts {
+        int id PK
+        string part_number UK
+        string name
+        string part_category
+        int brand_id FK
+        float unit_price
+        int min_stock_level
+    }
+    warehouses {
+        int id PK
+        string name
+        string location
+        bool is_active
+    }
+    inventory_balances {
+        int id PK
+        int spare_part_id FK
+        int warehouse_id FK
+        float quantity_on_hand
+        float quantity_reserved
+    }
+    inventory_transactions {
+        int id PK
+        int spare_part_id FK
+        int warehouse_id FK
+        string transaction_type
+        float quantity
+        datetime created_at
+    }
+    purchase_orders {
+        int id PK
+        string po_number UK
+        string status
+        string supplier
+        float total_amount
+    }
+    purchase_order_items {
+        int id PK
+        int purchase_order_id FK
+        int spare_part_id FK
+        float quantity
+        float unit_price
+    }
+
+    %% ── Billing Domain ──
+    invoices {
+        int id PK
+        string invoice_number UK
+        int contract_id FK
+        int customer_id FK
+        string status
+        float total_amount
+        float balance_due
+        date due_date
+    }
+    invoice_items {
+        int id PK
+        int invoice_id FK
+        int billing_cycle_id FK
+        string description
+        float quantity
+        float unit_rate
+        float line_total
+    }
+    payments {
+        int id PK
+        string payment_number UK
+        int customer_id FK
+        int contract_id FK
+        string payment_method
+        string payment_status
+        float amount
+        date payment_date
+    }
+    payment_allocations {
+        int id PK
+        int payment_id FK
+        int invoice_id FK
+        float allocated_amount
+    }
+    deposits {
+        int id PK
+        string deposit_number UK
+        int contract_id FK
+        int customer_id FK
+        string deposit_type
+        string deposit_status
+        float amount
+    }
+    revenue_recognitions {
+        int id PK
+        int contract_id FK
+        int invoice_id FK
+        string recognition_type
+        string recognition_status
+        float amount
+        date recognition_date
+    }
+
+    %% ── Relationships ──
+    users ||--o{ roles : "has role"
+    customers ||--o{ leads : "converted from"
+    customers ||--o{ rental_contracts : "signs"
+    customers ||--o{ quotations : "receives"
+    customers ||--o{ invoices : "billed to"
+    customers ||--o{ payments : "makes"
+    customers ||--o{ deposits : "pays"
+
+    leads ||--o{ lead_notes : "has"
+    leads ||--o{ quotations : "generates"
+
+    brands ||--o{ products : "manufactures"
+    brands ||--o{ forklifts : "makes"
+    brands ||--o{ spare_parts : "supplies"
+    product_categories ||--o{ products : "contains"
+    product_categories ||--o{ product_categories : "parent of"
+
+    forklifts ||--o{ forklift_specs : "has"
+    forklifts ||--o{ forklift_photos : "has"
+    forklifts ||--o{ forklift_documents : "has"
+    forklifts ||--o{ forklift_locations : "tracked at"
+    forklifts ||--o{ forklift_hour_meter_logs : "records"
+    forklifts ||--o{ forklift_ownership_costs : "costs"
+    forklifts ||--o{ forklift_status_history : "transitions"
+    forklifts ||--o{ rental_contract_items : "rented via"
+    forklifts ||--o{ asset_movements : "moved by"
+    forklifts ||--o{ work_orders : "serviced by"
+    forklifts ||--o{ maintenance_schedules : "scheduled for"
+    forklift_models ||--o{ forklifts : "template for"
+
+    quotations ||--o{ quotation_items : "contains"
+    quotations ||--o{ quotation_approvals : "approved by"
+    quotations ||--o{ quotation_status_history : "tracks"
+    quotations ||--o| rental_contracts : "converts to"
+
+    rental_contracts ||--o{ rental_contract_items : "contains"
+    rental_contracts ||--o{ rental_contract_terms : "has"
+    rental_contracts ||--o{ rental_contract_status_history : "tracks"
+    rental_contracts ||--o{ rental_extensions : "extended by"
+    rental_contracts ||--o{ rental_returns : "returned via"
+    rental_contracts ||--o{ rental_billing_cycles : "billed by"
+    rental_contracts ||--o{ rental_damage_reports : "damaged in"
+    rental_contracts ||--o{ invoices : "invoiced as"
+    rental_contracts ||--o{ asset_movements : "triggers"
+    rental_contracts ||--o{ deposits : "secured by"
+
+    rental_returns ||--o{ rental_damage_reports : "reports"
+
+    asset_movements ||--o{ movement_history : "checkpoints"
+
+    maintenance_plans ||--o{ maintenance_schedules : "creates"
+    maintenance_schedules ||--o{ work_orders : "triggers"
+    work_orders ||--o{ maintenance_costs : "incurs"
+    work_orders ||--o{ part_consumptions : "consumes"
+    work_orders ||--o{ service_history : "records"
+
+    spare_parts ||--o{ inventory_balances : "stocked at"
+    spare_parts ||--o{ inventory_transactions : "transacted"
+    spare_parts ||--o{ part_consumptions : "consumed"
+    spare_parts ||--o{ purchase_order_items : "ordered as"
+    warehouses ||--o{ inventory_balances : "holds"
+    purchase_orders ||--o{ purchase_order_items : "contains"
+
+    invoices ||--o{ invoice_items : "contains"
+    invoices ||--o{ payment_allocations : "allocated to"
+    payments ||--o{ payment_allocations : "allocated from"
+    rental_billing_cycles ||--o{ invoice_items : "generates"

@@ -1,0 +1,44 @@
+```mermaid
+flowchart TD
+    subgraph TR["Triggers"]
+        T1["Preventive\nhour meter interval"]
+        T2["Preventive\ncalendar interval"]
+        T3["Corrective\nbreakdown reported"]
+        T4["Emergency\ncritical failure"]
+        T5["Inspection\nregulatory audit"]
+    end
+
+    WO1["Create Work Order\nSCHEDULED\nAssign Technician"]
+    WO2{"Due Date\nReached?"}
+    WO3["Status DUE\nDashboard Alert"]
+    WO4["Start Work\nIN_PROGRESS\nForklift IN_SERVICE"]
+
+    subgraph EX["Execution"]
+        E1["Log Labour Hours"]
+        E2["Record Parts\nDeduct Inventory"]
+        E3["Add Costs"]
+        E4["Document Findings"]
+    end
+
+    WO5["Mark Completed\nCOMPLETED\nUpdate Hour Meter"]
+    WO6{"Manager\nVerifies?"}
+    WO7["Request Rework"]
+    WO8["VERIFIED\nForklift IN_STOCK"]
+
+    subgraph OUT["Outcomes"]
+        O1["Save Service History"]
+        O2["Schedule Next PM"]
+        O3["Generate Cost Report"]
+    end
+
+    T1 & T2 & T3 & T4 & T5 --> WO1
+    WO1 --> WO2
+    WO2 -->|"Not yet"| WO2
+    WO2 -->|"Yes"| WO3 --> WO4
+    WO4 --> E1 & E2 & E3 & E4
+    E1 & E2 & E3 & E4 --> WO5
+    WO5 --> WO6
+    WO6 -->|"Pass"| WO8
+    WO6 -->|"Fail"| WO7 --> WO4
+    WO8 --> O1 & O2 & O3
+```

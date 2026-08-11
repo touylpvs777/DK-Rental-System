@@ -1,0 +1,3552 @@
+{
+  "common": {
+    "brandName": "DK Service",
+    "unassigned": "ยังไม่ได้มอบหมาย",
+    "brandTagline": "แพลตฟอร์มองค์กร",
+    "language": "ภาษา",
+    "noDataYet": "ยังไม่มีข้อมูล",
+    "dataWillAppear": "ข้อมูลจะปรากฏที่นี่เมื่อมีรายการ",
+    "save": "บันทึก",
+    "saving": "กำลังบันทึก…",
+    "cancel": "ยกเลิก",
+    "delete": "ลบ",
+    "deleting": "กำลังลบ…",
+    "edit": "แก้ไข",
+    "create": "สร้าง",
+    "add": "เพิ่ม",
+    "remove": "นำออก",
+    "search": "ค้นหา",
+    "filter": "ตัวกรอง",
+    "filters": "ตัวกรอง",
+    "actions": "การดำเนินการ",
+    "status": "สถานะ",
+    "loading": "กำลังโหลด…",
+    "close": "ปิด",
+    "confirm": "ยืนยัน",
+    "back": "กลับ",
+    "next": "ถัดไป",
+    "previous": "ก่อนหน้า",
+    "submit": "ส่ง",
+    "view": "ดู",
+    "viewDetails": "ดูรายละเอียด",
+    "download": "ดาวน์โหลด",
+    "upload": "อัปโหลด",
+    "yes": "ใช่",
+    "no": "ไม่",
+    "required": "จำเป็น",
+    "optional": "ไม่บังคับ",
+    "name": "ชื่อ",
+    "email": "อีเมล",
+    "phone": "โทรศัพท์",
+    "address": "ที่อยู่",
+    "date": "วันที่",
+    "description": "รายละเอียด",
+    "notes": "หมายเหตุ",
+    "total": "รวม",
+    "subtotal": "ยอดรวมย่อย",
+    "quantity": "จำนวน",
+    "price": "ราคา",
+    "amount": "จำนวนเงิน",
+    "type": "ประเภท",
+    "category": "หมวดหมู่",
+    "all": "ทั้งหมด",
+    "none": "ไม่มี",
+    "unknown": "ไม่ทราบ",
+    "active": "ใช้งานอยู่",
+    "inactive": "ไม่ได้ใช้งาน",
+    "pending": "รอดำเนินการ",
+    "approved": "อนุมัติแล้ว",
+    "rejected": "ปฏิเสธแล้ว",
+    "completed": "เสร็จสมบูรณ์",
+    "cancelled": "ยกเลิกแล้ว",
+    "noResultsFound": "ไม่พบผลลัพธ์",
+    "tryAdjustingFilters": "ลองปรับตัวกรองหรือคำค้นหา",
+    "somethingWentWrong": "เกิดข้อผิดพลาด",
+    "retry": "ลองใหม่",
+    "clearFilters": "ล้างตัวกรอง",
+    "export": "ส่งออก",
+    "print": "พิมพ์",
+    "closeDialog": "ปิดกล่องโต้ตอบ",
+    "closePanel": "ปิดแผง",
+    "dismissNotification": "ปิดการแจ้งเตือน",
+    "gridView": "มุมมองตาราง",
+    "listView": "มุมมองรายการ",
+    "page": "หน้า",
+    "of": "จาก",
+    "rowsPerPage": "แถวต่อหน้า",
+    "selectAll": "เลือกทั้งหมด",
+    "createdAt": "สร้างเมื่อ",
+    "updatedAt": "อัปเดตเมื่อ",
+    "mainNavigation": "เมนูนำทางหลัก",
+    "moreLanguages": "ภาษาเพิ่มเติม",
+    "loadingApplication": "กำลังโหลดแอปพลิเคชัน",
+    "skipToContent": "ข้ามไปยังเนื้อหา",
+    "theme": "ธีม",
+    "themeLight": "โหมดสว่าง",
+    "themeDark": "โหมดมืด",
+    "themeSystem": "ตามระบบ",
+    "scrollLeft": "เลื่อนไปทางซ้าย",
+    "scrollRight": "เลื่อนไปทางขวา",
+    "itemCode": "รหัสสินค้า",
+    "unit": "หน่วย",
+    "exportPdf": "ส่งออกเป็น PDF",
+    "clear": "ล้าง"
+  },
+  "settings": {
+    "title": "การตั้งค่าทั่วโลก",
+    "subtitle": "จัดการค่าตั้งต้นหลักขององค์กรใน ERP",
+    "loading": "กำลังโหลดการตั้งค่า…",
+    "save": "บันทึกการเปลี่ยนแปลง",
+    "saving": "กำลังบันทึก…",
+    "saveSuccess": "อัปเดตการตั้งค่าเรียบร้อยแล้ว",
+    "saveError": "ไม่สามารถบันทึกการตั้งค่าได้ในขณะนี้",
+    "loadError": "ไม่สามารถโหลดการตั้งค่าได้ในขณะนี้",
+    "tabs": {
+      "company": "โปรไฟล์บริษัท",
+      "financial": "ค่าตั้งต้นทางการเงิน",
+      "system": "ตัวแปรระบบ",
+      "notifications": "การแจ้งเตือน"
+    },
+    "company": {
+      "description": "ค่าตั้งต้นโปรไฟล์บริษัท",
+      "companyName": "ชื่อบริษัท",
+      "address": "ที่อยู่",
+      "phone": "โทรศัพท์",
+      "fax": "แฟกซ์",
+      "website": "เว็บไซต์",
+      "email": "อีเมล",
+      "logoUrl": "URL โลโก้",
+      "logoInvalidType": "กรุณาเลือกไฟล์รูปภาพ",
+      "logoUploadError": "ไม่สามารถอัปโหลดโลโก้ได้ในขณะนี้",
+      "logoUploading": "กำลังอัปโหลดโลโก้…",
+      "logoDropzoneText": "คลิกหรือลากและวางเพื่ออัปโหลดโลโก้",
+      "logoDropzoneHint": "PNG, JPG หรือ WebP",
+      "bankDetails": {
+        "title": "ข้อมูลธนาคาร",
+        "bankName": "ชื่อธนาคาร",
+        "accountName": "ชื่อบัญชี",
+        "accountNumber": "เลขที่บัญชี",
+        "swift": "รหัส SWIFT / BIC"
+      }
+    },
+    "financial": {
+      "description": "ค่าตั้งต้นทางการเงิน",
+      "vatRate": "อัตรา VAT (%)",
+      "defaultCurrency": "สกุลเงินเริ่มต้น",
+      "defaultPaymentTerms": "เงื่อนไขการชำระเงินเริ่มต้น"
+    },
+    "system": {
+      "description": "ตัวแปรระบบ",
+      "equipmentTypes": "ประเภทอุปกรณ์",
+      "repairStatuses": "สถานะการซ่อมแซม"
+    },
+    "notifications": {
+      "description": "สมัครรับการแจ้งเตือนทางอีเมลสำหรับเหตุการณ์สำคัญของระบบ คุณจะได้รับการแจ้งเตือนทุกครั้งที่มีเหตุการณ์ที่ติดตามเกิดขึ้น ยกเว้นการกระทำของคุณเอง",
+      "loadError": "ไม่สามารถโหลดการตั้งค่าการแจ้งเตือนได้ในขณะนี้",
+      "saveError": "ไม่สามารถอัปเดตการตั้งค่านี้ได้ในขณะนี้",
+      "groups": {
+        "critical": "สำคัญและการลบ",
+        "sales": "การขายและการเช่า",
+        "billing": "การเงิน",
+        "operations": "การดำเนินงาน"
+      },
+      "events": {
+        "customerDeleted": "ลบลูกค้าแล้ว",
+        "forkliftDeleted": "ลบรถโฟล์คลิฟท์แล้ว",
+        "productDeleted": "ลบสินค้าในแคตตาล็อกแล้ว",
+        "quotationApproved": "ใบเสนอราคาได้รับการอนุมัติ",
+        "quotationSent": "ส่งใบเสนอราคาให้ลูกค้าแล้ว",
+        "contractActivated": "สัญญาเช่าเปิดใช้งานแล้ว",
+        "contractCancelled": "ยกเลิกสัญญาเช่าแล้ว",
+        "invoiceIssued": "ออกใบแจ้งหนี้แล้ว",
+        "paymentRecorded": "บันทึกการชำระเงินแล้ว",
+        "paymentRejected": "การชำระเงินถูกปฏิเสธ",
+        "depositRefunded": "คืนเงินมัดจำแล้ว",
+        "forkliftStatusChanged": "สถานะรถโฟล์คลิฟท์เปลี่ยนแปลง",
+        "inventoryImportExecuted": "นำเข้าข้อมูลคลังสินค้าแบบกลุ่มแล้ว",
+        "settingUpdated": "อัปเดตการตั้งค่าระบบแล้ว"
+      }
+    }
+  },
+  "customers": {
+    "status": {
+      "active": "ใช้งานอยู่",
+      "prospect": "ลูกค้าเป้าหมาย",
+      "inactive": "ไม่ได้ใช้งาน",
+      "churned": "เลิกใช้บริการ"
+    },
+    "form": {
+      "editTitle": "แก้ไขลูกค้า",
+      "newTitle": "ลูกค้าใหม่",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง",
+      "createCustomer": "สร้างลูกค้า",
+      "firstNameLabel": "ชื่อจริง",
+      "firstNamePlaceholder": "สมชาย",
+      "lastNameLabel": "นามสกุล",
+      "lastNamePlaceholder": "ใจดี",
+      "emailPlaceholder": "somchai@example.com",
+      "phonePlaceholder": "+1 555 000 0000",
+      "companyLabel": "บริษัท",
+      "companyPlaceholder": "บริษัท เอบีซี จำกัด",
+      "notesPlaceholder": "หมายเหตุเพิ่มเติม…"
+    },
+    "list": {
+      "title": "ลูกค้า",
+      "totalCount": "ลูกค้าทั้งหมด {{count}} ราย",
+      "newCustomer": "ลูกค้าใหม่",
+      "searchPlaceholder": "ค้นหาชื่อ, อีเมล, เบอร์โทร…",
+      "allStatuses": "สถานะทั้งหมด",
+      "resultsCount": "{{count}} รายการ",
+      "colCustomer": "ลูกค้า",
+      "noCustomersFound": "ไม่พบลูกค้า",
+      "createFirstCustomer": "สร้างลูกค้ารายแรกของคุณเพื่อเริ่มต้นใช้งาน",
+      "showingRange": "แสดง {{start}}–{{end}} จาก {{total}}",
+      "deleteTitle": "ลบลูกค้า",
+      "deleteMessage": "คุณแน่ใจหรือไม่ว่าต้องการลบ \"{{name}}\"? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+      "toast": {
+        "loadError": "โหลดลูกค้าไม่สำเร็จ",
+        "createSuccess": "สร้างลูกค้าสำเร็จแล้ว",
+        "createError": "สร้างลูกค้าไม่สำเร็จ",
+        "updateSuccess": "อัปเดตลูกค้าสำเร็จแล้ว",
+        "updateError": "อัปเดตลูกค้าไม่สำเร็จ",
+        "deleteSuccess": "ลบลูกค้าแล้ว",
+        "deleteError": "ลบลูกค้าไม่สำเร็จ"
+      }
+    }
+  },
+  "leads": {
+    "status": {
+      "new": "ใหม่",
+      "contacted": "ติดต่อแล้ว",
+      "qualified": "มีคุณสมบัติ",
+      "proposal": "เสนอราคา",
+      "won": "สำเร็จ",
+      "lost": "พลาดโอกาส"
+    },
+    "form": {
+      "editTitle": "แก้ไขลูกค้าเป้าหมาย",
+      "newTitle": "ลูกค้าเป้าหมายใหม่",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง",
+      "createLead": "สร้างลูกค้าเป้าหมาย",
+      "titleLabel": "หัวข้อ",
+      "titlePlaceholder": "เช่น ดีลซอฟต์แวร์สำหรับองค์กร",
+      "wonLeadsCannotChange": "ลูกค้าเป้าหมายที่ปิดการขายสำเร็จแล้วไม่สามารถเปลี่ยนสถานะได้",
+      "sourceLabel": "แหล่งที่มา",
+      "sourceNone": "— ไม่ระบุ —",
+      "valueLabel": "มูลค่า ($)",
+      "descriptionPlaceholder": "หมายเหตุโดยย่อเกี่ยวกับลูกค้าเป้าหมายนี้…"
+    },
+    "source": {
+      "website": "เว็บไซต์",
+      "referral": "การแนะนำ",
+      "coldCall": "โทรศัพท์เสนอขาย",
+      "email": "อีเมล",
+      "socialMedia": "โซเชียลมีเดีย",
+      "other": "อื่นๆ"
+    },
+    "list": {
+      "title": "ลูกค้าเป้าหมาย",
+      "totalCount": "ลูกค้าเป้าหมายทั้งหมด {{count}} ราย",
+      "newLead": "ลูกค้าเป้าหมายใหม่",
+      "searchPlaceholder": "ค้นหาลูกค้าเป้าหมาย…",
+      "allSources": "แหล่งที่มาทั้งหมด",
+      "resultsCount": "{{count}} รายการ",
+      "colLead": "ลูกค้าเป้าหมาย",
+      "colSource": "แหล่งที่มา",
+      "colValue": "มูลค่า",
+      "noLeadsFound": "ไม่พบลูกค้าเป้าหมาย",
+      "createFirstLead": "สร้างลูกค้าเป้าหมายรายแรกของคุณเพื่อเริ่มต้นใช้งาน",
+      "showingRange": "แสดง {{start}}–{{end}} จาก {{total}}",
+      "deleteTitle": "ลบลูกค้าเป้าหมาย",
+      "deleteMessage": "คุณแน่ใจหรือไม่ว่าต้องการลบ \"{{title}}\"? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+      "toast": {
+        "loadError": "โหลดลูกค้าเป้าหมายไม่สำเร็จ",
+        "createSuccess": "สร้างลูกค้าเป้าหมายแล้ว",
+        "createError": "สร้างลูกค้าเป้าหมายไม่สำเร็จ",
+        "updateSuccess": "อัปเดตลูกค้าเป้าหมายแล้ว",
+        "updateError": "อัปเดตลูกค้าเป้าหมายไม่สำเร็จ",
+        "deleteSuccess": "ลบลูกค้าเป้าหมายแล้ว",
+        "deleteError": "ลบลูกค้าเป้าหมายไม่สำเร็จ"
+      }
+    }
+  },
+  "imageUpload": {
+    "invalidFormat": "อนุญาตเฉพาะไฟล์ภาพ JPG, PNG และ WebP เท่านั้น",
+    "fileTooLarge": "ขนาดไฟล์เกินขีดจำกัด {{size}} MB",
+    "invalidImage": "ไฟล์นี้ไม่ใช่รูปภาพที่ถูกต้อง",
+    "uploadFailed": "อัปโหลดไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
+    "remove": "นำออก",
+    "uploadedSuccessfully": "อัปโหลดสำเร็จแล้ว",
+    "clickOrDrag": "คลิกหรือลากรูปภาพเพื่ออัปโหลด",
+    "hint": "JPG, PNG, WebP · สูงสุด {{size}} MB",
+    "previewAlt": "ตัวอย่างรูปที่อัปโหลด",
+    "orDivider": "หรือ",
+    "urlPlaceholder": "วาง URL รูปภาพ...",
+    "fetchButton": "ดึงข้อมูล",
+    "urlFetchFailed": "ไม่สามารถดึงรูปภาพจาก URL นี้ได้"
+  },
+  "nav": {
+    "groups": {
+      "dashboard": "แดชบอร์ดบริหาร",
+      "crm": "CRM",
+      "sales": "งานขาย",
+      "purchasing": "งานจัดซื้อ",
+      "equipment": "สินทรัพย์อุปกรณ์",
+      "rental": "การดำเนินงานเช่า",
+      "maintenance": "บริการและบำรุงรักษา",
+      "inventory": "ควบคุมสินค้าคงคลัง",
+      "finance": "การเงินและบัญชี",
+      "executive": "รายงานผู้บริหาร",
+      "projects": "พอร์ตโฟลิโoprojects"
+    },
+    "items": {
+      "overview": "ภาพรวมการดำเนินงาน",
+      "customers": "ลูกค้า",
+      "leads": "โอกาสทางการขาย",
+      "quotations": "ข้อเสนอเชิงพาณิชย์",
+      "registry": "ทะเบียนสินทรัพย์",
+      "movements": "การย้ายคลัง",
+      "contracts": "สัญญาบริการ",
+      "dashboard": "แดชบอร์ดบริหาร",
+      "maintenance": "บริการและบำรุงรักษา",
+      "inventory": "การจัดการสินค้าคงคลัง",
+      "partsPOS": "หน้าขายอะไหล่",
+      "billing": "ใบแจ้งหนี้และลูกหนี้",
+      "products": "แคตตาล็อกสินค้า",
+      "invoices": "ใบแจ้งหนี้",
+      "payments": "การชำระเงิน",
+      "deposits": "เงินมัดจำ",
+      "statements": "คำร้องแจ้งยอด",
+      "activity": "กิจกรรม",
+      "reports": "รายงาน",
+      "analytics": "การวิเคราะห์เชิงธุรกิจ",
+      "iotTelemetry": "ระบบ IoT",
+      "settings": "ตั้งค่า",
+      "warehouseProjects": "โครงการคลังสินค้า",
+      "purchaseOrders": "ใบสั่งซื้อ",
+      "salesOrders": "ใบสั่งขาย",
+      "workOrders": "ใบสั่งงาน",
+      "rentalContracts": "สัญญาเช่า",
+      "taxInvoices": "ใบกำกับภาษี",
+      "creditNotes": "ใบลดหนี้",
+      "paymentVouchers": "ใบสำคัญจ่าย",
+      "deliveryNotes": "ใบส่งของ",
+      "goodsReceive": "ใบรับสินค้า",
+      "goodsIssue": "ใบเบิกสินค้า",
+      "receipts": "ใบเสร็จรับเงิน"
+    },
+    "expandSidebar": "ขยายแผงนำทาง",
+    "collapseSidebar": "ย่อแผงนำทาง"
+  },
+  "header": {
+    "searchPlaceholder": "ค้นหาหน้า, การดำเนินการ...",
+    "searchTrigger": "ค้นหา...",
+    "searchLabel": "ค้นหา (Ctrl+K)",
+    "searchCommandsLabel": "ค้นหาคำสั่ง",
+    "clearSearch": "ล้างการค้นหา",
+    "noResults": "ไม่พบผลลัพธ์สำหรับ \"{{query}}\"",
+    "navigate": "นำทาง",
+    "select": "เลือก",
+    "close": "ปิด",
+    "toggleSidebar": "สลับแถบเมนู",
+    "groupNavigation": "การนำทาง",
+    "groupQuickActions": "การดำเนินการด่วน",
+    "quickActionNewCustomer": "ลูกค้าใหม่",
+    "quickActionNewQuotation": "ใบเสนอราคาใหม่",
+    "quickActionNewContract": "สัญญาใหม่",
+    "quickActionRegisterEquipment": "ลงทะเบียนอุปกรณ์",
+    "appearance": "รูปแบบการแสดงผล",
+    "settings": "ตั้งค่า",
+    "logout": "ออกจากระบบ",
+    "roleAdmin": "ผู้ดูแลระบบ",
+    "roleUser": "ผู้ใช้งาน",
+    "justNow": "เมื่อสักครู่",
+    "minutesAgo": "{{count}} นาทีที่แล้ว",
+    "hoursAgo": "{{count}} ชั่วโมงที่แล้ว",
+    "daysAgo": "{{count}} วันที่แล้ว",
+    "notifications": "การแจ้งเตือน",
+    "notificationsUnread": "การแจ้งเตือน, {{count}} รายการที่ยังไม่ได้อ่าน",
+    "noRecentActivity": "ไม่มีกิจกรรมล่าสุด",
+    "systemUser": "ระบบ",
+    "viewAllActivity": "ดูกิจกรรมทั้งหมด →",
+    "searchResults": "ผลการค้นหา",
+    "breadcrumb": "เส้นทางนำทาง",
+    "userActions": "การดำเนินการของผู้ใช้",
+    "markAllRead": "ทำเครื่องหมายว่าอ่านทั้งหมดแล้ว",
+    "myProfile": "โปรไฟล์ของฉัน",
+    "changePassword": "เปลี่ยนรหัสผ่าน",
+    "changePhoto": "เปลี่ยนรูปภาพ",
+    "adminBroadcast": "ผู้ดูแลระบบ"
+  },
+  "login": {
+    "subtitle": "เข้าสู่ระบบเพื่อดำเนินการต่อ",
+    "powerSwitch": "สวิตช์เปิดปิด",
+    "username": "ชื่อผู้ใช้",
+    "usernamePlaceholder": "กรอกชื่อผู้ใช้ของท่าน",
+    "password": "รหัสผ่าน",
+    "passwordPlaceholder": "กรอกรหัสผ่านของท่าน",
+    "rememberMe": "จดจำฉัน",
+    "signIn": "เข้าสู่ระบบ",
+    "signingIn": "กำลังเข้าสู่ระบบ…",
+    "invalidCredentials": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง",
+    "footer": "© 2026 DK LAO Services สงวนลิขสิทธิ์",
+    "forgotPassword": "ลืมรหัสผ่าน?",
+    "noAccount": "ยังไม่มีบัญชี?",
+    "signUp": "สมัครสมาชิก"
+  },
+  "dashboard": {
+    "title": "แดชบอร์ด",
+    "updated": "อัปเดตเมื่อ {{date}}",
+    "refresh": "รีเฟรช",
+    "retry": "ลองอีกครั้ง",
+    "keyMetrics": "ตัวชี้วัดหลัก",
+    "quickActions": "การดำเนินการด่วน",
+    "revenueFleet": "รายได้และยานพาหนะ",
+    "activityFleet": "กิจกรรมและยานพาหนะ",
+    "fleetByFuelType": "ยานพาหนะแยกตามประเภทเชื้อเพลิง",
+    "upcomingTasks": "งานที่กำลังจะมาถึง",
+    "customerOverview": "ภาพรวมลูกค้า",
+    "leadPipeline": "ไปป์ไลน์โอกาสการขาย",
+    "resultsConversion": "ผลลัพธ์และอัตราการแปลง",
+    "recentActivity": "กิจกรรมล่าสุด",
+    "viewAll": "ดูทั้งหมด",
+    "noRecentActivity": "ไม่มีกิจกรรมล่าสุด",
+    "loadError": "ไม่สามารถโหลดข้อมูลแดชบอร์ดได้",
+    "exec": {
+      "eyebrow": "ภาพรวมผู้บริหาร",
+      "title": "ศูนย์ควบคุมการเช่า",
+      "rentalMvpEyebrow": "DK Rental · ภาพรวมผู้บริหาร",
+      "rentalMvpTitle": "แดชบอร์ดยานพาหนะและการเช่า",
+      "kpi": {
+        "totalFleet": "จำนวนรถทั้งหมด",
+        "totalFleetSub": "จำนวนรถโฟล์คลิฟท์ที่ลงทะเบียน",
+        "activeRented": "กำลังให้เช่า",
+        "activeRentedSub": "หน่วยที่กำลังเช่าอยู่ในปัจจุบัน",
+        "utilizationRate": "อัตราการใช้งาน",
+        "utilizationRateSub": "สัดส่วนรถเช่าต่อรถทั้งหมด",
+        "pendingMaintenance": "รอซ่อมบำรุง",
+        "pendingMaintenanceSub": "งาน PM / ตรวจสอบที่ยังเปิดอยู่",
+        "pendingMaintenanceCritical": "{{count}} กำลังดำเนินการ",
+        "totalStockValue": "มูลค่าสต็อกทั้งหมด",
+        "totalStockValueSub": "เงินทุนที่ผูกอยู่ในอะไหล่",
+        "lowStockAlerts": "แจ้งเตือนสต็อกต่ำ",
+        "lowStockAlertsItems": "{{count}} รายการ",
+        "lowStockAlertsSub": "ต่ำกว่าจุดสั่งซื้อซ้ำ",
+        "lowStockAlertsCritical": "{{count}} วิกฤต"
+      },
+      "chart": {
+        "utilizationTab": "แนวโน้มการใช้งานรถ",
+        "revenueTab": "รายได้ เทียบกับ ค่าซ่อมบำรุง",
+        "last6Months": "6 เดือนล่าสุด",
+        "utilizationSeries": "อัตราการใช้งาน %",
+        "revenueSeries": "รายได้",
+        "maintenanceSeries": "ค่าซ่อมบำรุง",
+        "months": {
+          "jan": "ม.ค.",
+          "feb": "ก.พ.",
+          "mar": "มี.ค.",
+          "apr": "เม.ย.",
+          "may": "พ.ค.",
+          "jun": "มิ.ย."
+        }
+      },
+      "contracts": {
+        "title": "สัญญาเช่าที่กำลังดำเนินการ",
+        "columnContractId": "รหัสสัญญา",
+        "columnCustomerName": "ชื่อลูกค้า",
+        "columnForkliftModel": "รุ่นรถโฟล์คลิฟท์",
+        "columnEndDate": "วันที่สิ้นสุด",
+        "columnStatus": "สถานะ"
+      },
+      "lowStock": {
+        "title": "อะไหล่ใกล้หมดสต็อก",
+        "minSuffix": "ขั้นต่ำ"
+      },
+      "status": {
+        "booked": "จองแล้ว",
+        "onRent": "กำลังเช่า",
+        "expiringSoon": "ใกล้หมดอายุ",
+        "overdue": "เกินกำหนด",
+        "returned": "คืนแล้ว",
+        "cancelled": "ยกเลิก"
+      },
+      "customizer": {
+        "fontSize": "ขนาดตัวอักษร",
+        "language": "ภาษา",
+        "small": "เล็ก",
+        "medium": "กลาง",
+        "large": "ใหญ่"
+      },
+      "brandsWeService": "แบรนด์ที่เราให้บริการ"
+    },
+    "erp": {
+      "eyebrow": "ภาพรวมธุรกิจ",
+      "title": "แดชบอร์ดการเงินและการดำเนินงาน",
+      "loadError": "โหลดข้อมูลแดชบอร์ดไม่สำเร็จ",
+      "viewDetails": "ดูรายละเอียด",
+      "rollupCaption": "ข้อมูลรวมมาจาก:",
+      "sources": {
+        "invoices": "ใบแจ้งหนี้",
+        "purchaseOrders": "ใบสั่งซื้อ",
+        "workOrders": "ใบสั่งงานซ่อม",
+        "payments": "การชำระเงิน",
+        "inventory": "คลังสินค้า"
+      },
+      "tabs": {
+        "financial": "ภาพรวมการเงิน",
+        "operations": "คลังสินค้าและการดำเนินงาน",
+        "service": "บริการและซ่อมบำรุง"
+      },
+      "hero": {
+        "netSales": "ยอดขายสุทธิ",
+        "totalCost": "ต้นทุนรวม",
+        "netProfit": "กำไรสุทธิ",
+        "outstandingBalance": "ยอดค้างชำระ"
+      },
+      "sales": {
+        "title": "ยอดขาย",
+        "totalSales": "ยอดขายรวม",
+        "totalDiscount": "ส่วนลดรวม",
+        "totalTax": "ภาษีรวม",
+        "netSales": "ยอดขายสุทธิ",
+        "amountReceived": "ยอดรับชำระ",
+        "invoiceCount": "{{count}} ใบแจ้งหนี้"
+      },
+      "costs": {
+        "title": "ต้นทุน",
+        "purchasePrice": "ราคาซื้อ",
+        "importFees": "ค่าธรรมเนียมนำเข้า",
+        "shippingFees": "ค่าขนส่ง",
+        "totalCost": "ต้นทุนรวม",
+        "notTracked": "ยังไม่มีการบันทึก"
+      },
+      "profit": {
+        "title": "กำไร",
+        "profitPerItem": "กำไรต่อรายการ",
+        "profitPerInvoice": "กำไรต่อใบแจ้งหนี้",
+        "dailyProfit": "กำไรรายวัน",
+        "monthlyProfit": "กำไรรายเดือน"
+      },
+      "credit": {
+        "title": "เครดิตและหนี้สิน",
+        "totalCustomerDebt": "หนี้สินลูกค้ารวม",
+        "totalPaid": "ยอดชำระรวม",
+        "outstandingBalance": "ยอดค้างชำระ"
+      },
+      "revenue": {
+        "title": "แหล่งรายได้",
+        "partsRevenue": "รายได้จากอะไหล่",
+        "vehicleRevenue": "รายได้จากยานพาหนะ",
+        "serviceRevenue": "รายได้จากบริการ",
+        "otherRevenue": "รายได้อื่นๆ"
+      },
+      "inventory": {
+        "title": "คลังสินค้า",
+        "stockIn": "รับเข้าสต็อก",
+        "stockOut": "เบิกออกสต็อก",
+        "currentBalance": "ยอดคงเหลือ",
+        "lowStockAlerts": "แจ้งเตือนสต็อกต่ำ",
+        "thisMonth": "เดือนนี้",
+        "unitsSuffix": "หน่วย"
+      },
+      "service": {
+        "title": "บริการและซ่อมบำรุง",
+        "laborCost": "ค่าแรง",
+        "partsCost": "ค่าอะไหล่",
+        "otherServices": "บริการอื่นๆ",
+        "discount": "ส่วนลด",
+        "grandTotal": "ยอดรวมทั้งสิ้น"
+      },
+      "chart": {
+        "profitTrend": "แนวโน้มกำไรสุทธิ",
+        "last6Months": "6 เดือนล่าสุด",
+        "profitSeries": "กำไร",
+        "revenueBreakdown": "สัดส่วนรายได้",
+        "revenueBreakdownSub": "แยกตามแหล่งรายได้",
+        "revenueSeries": "รายได้",
+        "chartType": "ประเภทกราฟ",
+        "line": "เส้น",
+        "bar": "แท่ง",
+        "area": "พื้นที่",
+        "sampleBadge": "ข้อมูลตัวอย่าง",
+        "salesOpsTrend": "แนวโน้มการเงินและการดำเนินงาน",
+        "salesOpsTrendSub": "แนวโน้มรายเดือนตัวอย่าง — ข้อมูลสาธิต",
+        "salesSeries": "ยอดขาย",
+        "costsSeries": "ต้นทุน",
+        "timeRange": {
+          "week": "สัปดาห์นี้",
+          "month": "เดือนนี้",
+          "last_month": "เดือนที่แล้ว",
+          "year": "ปีนี้",
+          "all": "ทั้งหมด"
+        }
+      }
+    },
+    "iot": {
+      "title": "ข้อมูลโทรมาตร IoT และสถานะอุปกรณ์",
+      "live": "สด",
+      "viewAll": "ดูการจัดการ IoT",
+      "gps": "GPS",
+      "engineTemp": "อุณหภูมิเครื่องยนต์",
+      "hours": "ชั่วโมงการทำงาน"
+    },
+    "kpi": {
+      "totalRevenue": "รายได้รวม",
+      "activeRentals": "สัญญาเช่าที่ใช้งานอยู่",
+      "overdueCount": "{{count}} รายการเกินกำหนด",
+      "fleetUtilization": "การใช้ประโยชน์จากยานพาหนะ",
+      "rentedOfFleet": "{{rented}} จาก {{total}} คันถูกเช่า",
+      "maintenanceDue": "ครบกำหนดบำรุงรักษา",
+      "criticalCount": "{{count}} รายการวิกฤต",
+      "lowStock": "สต๊อกต่ำ",
+      "outstandingInvoices": "ใบแจ้งหนี้ค้างชำระ",
+      "amountOverdue": "{{amount}} เกินกำหนดชำระ",
+      "totalCustomers": "ลูกค้าทั้งหมด",
+      "active": "ใช้งานอยู่",
+      "percentOfTotal": "{{pct}} ของทั้งหมด",
+      "prospects": "ลูกค้าเป้าหมาย",
+      "totalLeads": "โอกาสการขายทั้งหมด",
+      "new": "ใหม่",
+      "contacted": "ติดต่อแล้ว",
+      "qualified": "ผ่านคุณสมบัติ",
+      "proposal": "เสนอราคาแล้ว",
+      "won": "ปิดการขายสำเร็จ",
+      "lost": "เสียโอกาส",
+      "conversion": "อัตราการแปลง",
+      "winRate": "อัตราการปิดการขาย",
+      "lostRate": "อัตราการเสียโอกาส",
+      "wonOverTotal": "ปิดการขายสำเร็จ / ทั้งหมด",
+      "wonOverWonLost": "ปิดการขายสำเร็จ / (สำเร็จ+เสียโอกาส)",
+      "lostOverWonLost": "เสียโอกาส / (สำเร็จ+เสียโอกาส)"
+    },
+    "quickAction": {
+      "createRental": "สร้างสัญญาเช่า",
+      "createRentalDesc": "สัญญาเช่าใหม่",
+      "addEquipment": "เพิ่มอุปกรณ์",
+      "addEquipmentDesc": "ลงทะเบียนรถโฟล์คลิฟท์",
+      "createInvoice": "สร้างใบแจ้งหนี้",
+      "createInvoiceDesc": "ออกใบแจ้งหนี้",
+      "purchaseOrder": "ใบสั่งซื้อ",
+      "purchaseOrderDesc": "สั่งซื้ออะไหล่",
+      "maintenance": "การบำรุงรักษา",
+      "maintenanceDesc": "จัดตารางบริการ"
+    },
+    "chart": {
+      "revenueTrend": "แนวโน้มรายได้",
+      "revenueTrendSub": "รายได้จากใบแจ้งหนี้รายเดือน",
+      "noRevenueData": "ยังไม่มีข้อมูลรายได้",
+      "rentalTrend": "แนวโน้มการเช่า",
+      "rentalTrendSub": "สัญญาที่ใช้งานอยู่ต่อเดือน",
+      "noRentalData": "ยังไม่มีข้อมูลการเช่า",
+      "fleetUtilization": "การใช้ประโยชน์จากยานพาหนะ",
+      "fleetUtilizationSub": "อุปกรณ์แยกตามสถานะ",
+      "noFleetData": "ไม่มีข้อมูลยานพาหนะ",
+      "total": "ทั้งหมด",
+      "maintenanceCost": "ค่าใช้จ่ายบำรุงรักษา",
+      "maintenanceCostSub": "ค่าใช้จ่ายบริการรายเดือน",
+      "noMaintenanceCostData": "ไม่มีข้อมูลค่าใช้จ่ายบำรุงรักษา",
+      "fleetByFuelType": "ยานพาหนะแยกตามประเภทเชื้อเพลิง",
+      "units": "หน่วย"
+    },
+    "task": {
+      "loading": "กำลังโหลด...",
+      "contractsExpiring": "สัญญาใกล้หมดอายุ",
+      "countInDays": "{{count}} รายการใน {{days}} วัน",
+      "noContractsExpiring": "ไม่มีสัญญาใกล้หมดอายุ",
+      "viewAllContracts": "ดูสัญญาทั้งหมด →",
+      "quotationsExpiring": "ใบเสนอราคาใกล้หมดอายุ",
+      "noQuotationsExpiring": "ไม่มีใบเสนอราคาใกล้หมดอายุ",
+      "viewAllQuotations": "ดูใบเสนอราคาทั้งหมด →",
+      "pmServiceDue": "ครบกำหนดบำรุงรักษา / บริการ",
+      "approaching": "{{count}} รายการใกล้ครบกำหนด",
+      "allWithinServiceRange": "รถโฟล์คลิฟท์ทั้งหมดอยู่ในช่วงบริการปกติ",
+      "hoursMeter": "{{hours}} ชั่วโมง",
+      "viewAllEquipment": "ดูอุปกรณ์ทั้งหมด →"
+    },
+    "fleetStatus": {
+      "inStock": "มีในสต๊อก",
+      "rented": "ถูกเช่า",
+      "inService": "อยู่ระหว่างบริการ",
+      "reserved": "จองแล้ว",
+      "sold": "ขายแล้ว",
+      "decommissioned": "ปลดระวาง"
+    },
+    "fuelType": {
+      "diesel": "ดีเซล",
+      "electric": "ไฟฟ้า",
+      "lpg": "แอลพีจี",
+      "dualFuel": "เชื้อเพลิงคู่",
+      "unknown": "ไม่ทราบ"
+    },
+    "catalog": {
+      "title": "แคตตาล็อกสินค้า",
+      "viewCatalog": "ดูแคตตาล็อก →",
+      "loadError": "ไม่สามารถโหลดสถิติแคตตาล็อกได้",
+      "totalProducts": "สินค้าทั้งหมด",
+      "brands": "แบรนด์",
+      "categories": "หมวดหมู่"
+    },
+    "store": {
+      "get": "รับ",
+      "free": "ฟรี",
+      "comingSoon": "เร็วๆ นี้",
+      "hero": {
+        "assets": {
+          "eyebrow": "โมดูลแนะนำ",
+          "title": "ทะเบียนทรัพย์สิน ออกแบบใหม่สำหรับภาคสนาม",
+          "desc": "ติดตามรถโฟล์คลิฟท์ รถพ่วง และเครื่องจักรทุกรายการตลอดอายุการใช้งาน — ความเป็นเจ้าของ สถานะ และชั่วโมงการใช้งานในทะเบียนเดียวแบบเรียลไทม์"
+        },
+        "invoicing": {
+          "eyebrow": "พร้อมใช้งานแล้ว",
+          "title": "ออกใบแจ้งหนี้อัจฉริยะ พร้อมภาษีมูลค่าเพิ่มอัตโนมัติ",
+          "desc": "สร้างใบสั่งซื้อ ใบเสนอราคา และใบแจ้งหนี้จากขั้นตอนเดียว — คำนวณยอดรวมย่อย ภาษีมูลค่าเพิ่ม และยอดรวมทั้งหมดให้อัตโนมัติ"
+        },
+        "maintenance": {
+          "eyebrow": "คัดสรรโดยทีมงาน",
+          "title": "จัดตารางบำรุงรักษาล่วงหน้า",
+          "desc": "ค้นหาเครื่องจักรที่ครบกำหนดบริการก่อนที่จะเสีย โดยใช้ข้อมูลชั่วโมงการใช้งานและประวัติแบบเรียลไทม์"
+        }
+      },
+      "promo": {
+        "sale": {
+          "kicker": "ช่วงเวลาจำกัด",
+          "title": "ลดสูงสุด — ลดถึง 50% อะไหล่"
+        },
+        "new": {
+          "kicker": "เปิดตัวใหม่",
+          "title": "โมดูลใหม่สัปดาห์นี้"
+        },
+        "staffPicks": {
+          "kicker": "ทีมงานแนะนำ",
+          "title": "ยอดนิยมในงานบริการภาคสนาม"
+        }
+      },
+      "rows": {
+        "mostUsed": "โมดูลที่ใช้มากที่สุด",
+        "recommended": "โมดูลที่แนะนำ",
+        "fieldService": "แอปยอดนิยมในงานบริการภาคสนาม"
+      },
+      "modules": {
+        "equipmentRegistry": {
+          "title": "DK Equipment Registry",
+          "sub": "ทะเบียนอุปกรณ์และยานพาหนะ"
+        },
+        "customers": {
+          "title": "DK Customers",
+          "sub": "จัดการข้อมูลลูกค้า"
+        },
+        "quotations": {
+          "title": "DK Quotations",
+          "sub": "ใบเสนอราคา"
+        },
+        "rentalContracts": {
+          "title": "DK Rental Contracts",
+          "sub": "สัญญาเช่า"
+        },
+        "movements": {
+          "title": "DK Movements",
+          "sub": "การเคลื่อนย้ายอุปกรณ์"
+        },
+        "projects": {
+          "title": "DK Projects",
+          "sub": "โครงการและคลังสินค้า"
+        },
+        "smartInvoicing": {
+          "title": "DK Smart Invoicing",
+          "sub": "ออกใบแจ้งหนี้อัตโนมัติ"
+        },
+        "payments": {
+          "title": "DK Payments",
+          "sub": "การชำระเงิน"
+        },
+        "deposits": {
+          "title": "DK Deposits",
+          "sub": "เงินมัดจำ"
+        },
+        "statements": {
+          "title": "DK Statements",
+          "sub": "ใบแจ้งยอด"
+        },
+        "inventory": {
+          "title": "DK Inventory",
+          "sub": "คลังสินค้า"
+        },
+        "purchaseOrders": {
+          "title": "DK Purchase Orders",
+          "sub": "สั่งซื้ออะไหล่"
+        },
+        "workOrders": {
+          "title": "DK Work Orders",
+          "sub": "จัดตารางบริการ"
+        },
+        "assetRegistry": {
+          "title": "DK Asset Registry",
+          "sub": "ทะเบียนทรัพย์สิน"
+        },
+        "maintenanceSchedule": {
+          "title": "DK Maintenance Schedule",
+          "sub": "การบำรุงรักษาเชิงป้องกัน"
+        }
+      },
+      "thirdParty": {
+        "routeWise": {
+          "title": "RouteWise",
+          "sub": "Meridian Labs"
+        },
+        "fleetPulse": {
+          "title": "FleetPulse",
+          "sub": "Orbit Communications"
+        },
+        "partsBin": {
+          "title": "PartsBin",
+          "sub": "Ironclad Systems"
+        }
+      }
+    },
+    "errors": {
+      "leadTrend": "โหลดแนวโน้มลูกค้าเป้าหมายไม่สำเร็จ",
+      "customerTrend": "โหลดแนวโน้มลูกค้าไม่สำเร็จ",
+      "leadMetrics": "โหลดตัวชี้วัดลูกค้าเป้าหมายไม่สำเร็จ"
+    }
+  },
+  "customer360": {
+    "backToCustomers": "กลับไปหน้าลูกค้า",
+    "notFound": "ไม่พบลูกค้า",
+    "loadError": "ไม่พบลูกค้าหรือโหลดข้อมูลไม่สำเร็จ",
+    "forklifts": "รถโฟล์คลิฟท์",
+    "activeRentals": "สัญญาเช่าที่ใช้งานอยู่",
+    "openWorkOrders": "ใบสั่งงานที่เปิดอยู่",
+    "outstanding": "ยอดค้างชำระ",
+    "notes": "หมายเหตุ",
+    "rentalContracts": "สัญญาเช่า",
+    "workOrders": "ใบสั่งงาน",
+    "invoices": "ใบแจ้งหนี้",
+    "noForklifts": "ไม่มีรถโฟล์คลิฟท์ที่มอบหมายให้ลูกค้ารายนี้",
+    "noRentalContracts": "ไม่มีสัญญาเช่าสำหรับลูกค้ารายนี้",
+    "noWorkOrders": "ไม่มีใบสั่งงานสำหรับอุปกรณ์ของลูกค้ารายนี้",
+    "noInvoices": "ไม่มีใบแจ้งหนี้สำหรับลูกค้ารายนี้",
+    "colSerialNumber": "หมายเลขเครื่อง",
+    "colName": "ชื่อ",
+    "colStatus": "สถานะ",
+    "colHourMeter": "ชั่วโมงการทำงาน",
+    "colContractNumber": "เลขที่สัญญา",
+    "colStartDate": "วันที่เริ่มต้น",
+    "colEndDate": "วันที่สิ้นสุด",
+    "colTotalValue": "มูลค่ารวม",
+    "colWorkOrderNumber": "เลขที่ใบสั่งงาน",
+    "colForklift": "รถโฟล์คลิฟท์",
+    "colTitle": "หัวข้อ",
+    "colPriority": "ลำดับความสำคัญ",
+    "colScheduledDate": "วันที่นัดหมาย",
+    "colInvoiceNumber": "เลขที่ใบแจ้งหนี้",
+    "colTotalAmount": "จำนวนเงินรวม",
+    "colBalanceDue": "ยอดคงเหลือ",
+    "colDueDate": "วันครบกำหนด"
+  },
+  "projects": {
+    "title": "โครงการคลังสินค้า",
+    "totalCount": "ทั้งหมด: {{count}}",
+    "createProject": "สร้างโครงการ",
+    "allStatuses": "ทุกสถานะ",
+    "status": {
+      "draft": "ร่าง",
+      "survey": "สำรวจ",
+      "design": "ออกแบบ",
+      "boq_approved": "อนุมัติ BOQ แล้ว",
+      "installation": "ติดตั้ง",
+      "handover": "ส่งมอบ",
+      "completed": "เสร็จสมบูรณ์"
+    },
+    "milestoneStatus": {
+      "pending": "รอดำเนินการ",
+      "in_progress": "กำลังดำเนินการ",
+      "completed": "เสร็จสมบูรณ์"
+    },
+    "colProject": "โครงการ",
+    "colCustomer": "ลูกค้า",
+    "colStartEnd": "เริ่มต้น / สิ้นสุด",
+    "colStatus": "สถานะ",
+    "colProgress": "ความคืบหน้า",
+    "noProjectsFound": "ไม่พบโครงการ",
+    "createToGetStarted": "สร้างโครงการเพื่อเริ่มต้นใช้งาน",
+    "noPermissionView": "ท่านไม่มีสิทธิ์เข้าดูโครงการ",
+    "loadFailed": "ไม่สามารถโหลดโครงการได้",
+    "resultsCount": "ผลลัพธ์: {{count}}",
+    "pageOf": "หน้า {{page}} จาก {{pages}} ({{total}} รายการ)",
+    "milestonesOf": "{{completed}}/{{total}} เป้าหมาย",
+    "form": {
+      "editProject": "แก้ไขโครงการ",
+      "newProject": "โครงการใหม่",
+      "cancel": "ยกเลิก",
+      "saving": "กำลังบันทึก…",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง",
+      "createProject": "สร้างโครงการ",
+      "projectName": "ชื่อโครงการ",
+      "projectNamePlaceholder": "ตัวอย่าง: โครงการชั้นวางสินค้าคลังเวียงจันทน์",
+      "customer": "ลูกค้า",
+      "selectCustomer": "เลือกลูกค้า…",
+      "status": "สถานะ",
+      "startDate": "วันที่เริ่มต้น",
+      "endDate": "วันที่สิ้นสุด",
+      "notes": "หมายเหตุ",
+      "notesPlaceholder": "หมายเหตุเพิ่มเติม…"
+    },
+    "detail": {
+      "backToProjects": "กลับไปหน้าโครงการ",
+      "notFound": "ไม่พบโครงการ",
+      "noPermissionView": "ท่านไม่มีสิทธิ์เข้าดูโครงการนี้",
+      "edit": "แก้ไข",
+      "approveBoq": "อนุมัติ BOQ",
+      "delete": "ลบ",
+      "startDate": "วันที่เริ่มต้น",
+      "endDate": "วันที่สิ้นสุด",
+      "milestones": "เป้าหมาย",
+      "boqTotal": "ยอดรวม BOQ",
+      "notes": "หมายเหตุ",
+      "addMilestone": "เพิ่มเป้าหมาย",
+      "noMilestonesYet": "ยังไม่มีเป้าหมาย",
+      "colMilestone": "เป้าหมาย",
+      "colDueDate": "วันครบกำหนด",
+      "colStatus": "สถานะ",
+      "markStatus": "ทำเครื่องหมายเป็น {{status}}",
+      "addBoqItem": "เพิ่มรายการ BOQ",
+      "noBoqItemsYet": "ยังไม่มีรายการ BOQ",
+      "colDescription": "รายละเอียด",
+      "colQty": "จำนวน",
+      "colUnitPrice": "ราคาต่อหน่วย",
+      "colTotal": "ยอดรวม",
+      "totalRow": "ยอดรวม",
+      "billOfQuantities": "รายการปริมาณงาน (BOQ)",
+      "deleteProjectTitle": "ลบโครงการ",
+      "deleteMilestoneTitle": "ลบเป้าหมาย",
+      "deleteBoqItemTitle": "ลบรายการ BOQ",
+      "deleteProjectMessage": "การดำเนินการนี้จะลบโครงการพร้อมเป้าหมายและรายการ BOQ ทั้งหมดอย่างถาวร ไม่สามารถย้อนกลับได้",
+      "deleteGenericMessage": "การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+      "confirmDelete": "ลบ",
+      "milestoneModalTitle": "เพิ่มเป้าหมาย",
+      "milestoneName": "ชื่อเป้าหมาย",
+      "milestoneNamePlaceholder": "สำรวจ",
+      "dueDate": "วันครบกำหนด",
+      "adding": "กำลังเพิ่ม…",
+      "boqModalTitle": "เพิ่มรายการ BOQ",
+      "linkInventoryPart": "เชื่อมโยงกับอะไหล่ในคลัง (ไม่บังคับ)",
+      "notLinked": "— ไม่เชื่อมโยง —",
+      "description": "รายละเอียด",
+      "quantity": "จำนวน",
+      "unitPrice": "ราคาต่อหน่วย",
+      "addItem": "เพิ่มรายการ",
+      "descriptionPriceRequired": "จำเป็นต้องระบุรายละเอียดและราคาต่อหน่วย",
+      "projectUpdated": "อัปเดตโครงการแล้ว",
+      "projectUpdateFailed": "ไม่สามารถอัปเดตโครงการได้",
+      "boqApproved": "อนุมัติ BOQ แล้ว",
+      "boqApproveFailed": "ไม่สามารถอนุมัติ BOQ ได้",
+      "projectDeleted": "ลบโครงการแล้ว",
+      "projectDeleteFailed": "ไม่สามารถลบโครงการได้",
+      "milestoneStatusUpdateFailed": "ไม่สามารถอัปเดตสถานะเป้าหมายได้",
+      "milestoneRemoved": "ลบเป้าหมายแล้ว",
+      "milestoneRemoveFailed": "ไม่สามารถลบเป้าหมายได้",
+      "boqItemRemoved": "ลบรายการ BOQ แล้ว",
+      "boqItemRemoveFailed": "ไม่สามารถลบรายการ BOQ ได้",
+      "milestoneAdded": "เพิ่มเป้าหมายแล้ว",
+      "milestoneAddFailed": "ไม่สามารถเพิ่มเป้าหมายได้",
+      "boqItemAdded": "เพิ่มรายการ BOQ แล้ว",
+      "boqItemAddFailed": "ไม่สามารถเพิ่มรายการ BOQ ได้",
+      "projectCreated": "สร้างโครงการแล้ว",
+      "projectCreateFailed": "ไม่สามารถสร้างโครงการได้"
+    }
+  },
+  "reports": {
+    "title": "รายงาน",
+    "subtitle": "การวิเคราะห์ ตัวชี้วัดการเปลี่ยนเป็นลูกค้า และการส่งออกข้อมูล",
+    "refresh": "รีเฟรช",
+    "retry": "ลองใหม่",
+    "keyMetrics": "ตัวชี้วัดหลัก",
+    "wonLeads": "โอกาสการขายที่สำเร็จ",
+    "totalCustomers": "ลูกค้าทั้งหมด",
+    "conversionRate": "อัตราการเปลี่ยนเป็นลูกค้า",
+    "winRate": "อัตราความสำเร็จ",
+    "wonOverTotalLeads": "สำเร็จ ÷ โอกาสการขายทั้งหมด",
+    "wonOverWonPlusLost": "สำเร็จ ÷ (สำเร็จ + พลาดโอกาส)",
+    "exportData": "ส่งออกข้อมูล",
+    "downloadReports": "ดาวน์โหลดรายงาน",
+    "format": "รูปแบบ",
+    "fromDate": "จากวันที่",
+    "toDate": "ถึงวันที่",
+    "clearDates": "ล้างวันที่",
+    "downloading": "กำลังดาวน์โหลด…",
+    "exportNote": "หากปลายทางรายงานไม่พร้อมใช้งาน ระบบจะสร้างไฟล์ CSV สรุปฝั่งไคลเอนต์แทน",
+    "customers": "ลูกค้า",
+    "leads": "โอกาสการขาย",
+    "sales": "การขาย",
+    "downloadSuccess": "ดาวน์โหลดรายงาน{{type}}สำเร็จแล้ว",
+    "downloadError": "ดาวน์โหลดรายงาน{{type}}ไม่สำเร็จ",
+    "trends": "แนวโน้ม — 12 เดือนล่าสุด",
+    "syntheticPreview": "ข้อมูลตัวอย่างจำลอง",
+    "leadVolume": "ปริมาณโอกาสการขาย",
+    "leadVolumeSub": "โอกาสการขายใหม่รายเดือน",
+    "noLeadTrend": "ไม่มีข้อมูลแนวโน้มโอกาสการขาย",
+    "leadTrendWillAppear": "แนวโน้มโอกาสการขายจะปรากฏเมื่อเชื่อมต่อปลายทางแล้ว",
+    "customerGrowth": "การเติบโตของลูกค้า",
+    "customerGrowthSub": "ลูกค้าใหม่รายเดือน",
+    "noCustomerTrend": "ไม่มีข้อมูลแนวโน้มลูกค้า",
+    "customerTrendWillAppear": "แนวโน้มลูกค้าจะปรากฏเมื่อเชื่อมต่อปลายทางแล้ว",
+    "leadAnalysis": "การวิเคราะห์โอกาสการขาย",
+    "statusDistribution": "การกระจายตามสถานะ",
+    "statusDistributionSub": "โอกาสการขายตามขั้นตอนปัจจุบัน",
+    "noStatusData": "ไม่มีข้อมูลสถานะโอกาสการขาย",
+    "createLeadsToSeeDistribution": "สร้างโอกาสการขายเพื่อดูการกระจาย",
+    "sourceBreakdown": "แหล่งที่มา",
+    "sourceBreakdownSub": "โอกาสการขายมาจากที่ใด",
+    "noSourceData": "ไม่มีข้อมูลแหล่งที่มา",
+    "addSourceWhenCreating": "เพิ่มแหล่งที่มาเมื่อสร้างโอกาสการขาย",
+    "conversionMetrics": "ตัวชี้วัดการเปลี่ยนเป็นลูกค้า",
+    "metric": "ตัวชี้วัด",
+    "rate": "อัตรา",
+    "breakdown": "รายละเอียด",
+    "formula": "สูตรคำนวณ",
+    "lostRate": "อัตราการพลาดโอกาส",
+    "activeCustomers": "ลูกค้าที่ใช้งานอยู่",
+    "leadsInPipeline": "โอกาสการขายในกระบวนการ",
+    "ofTotal": "จาก {{count}} ทั้งหมด",
+    "wonOverTotalFormula": "สำเร็จ ÷ โอกาสการขายทั้งหมด × 100",
+    "wonOverWonLostFormula": "สำเร็จ ÷ (สำเร็จ + พลาดโอกาส) × 100",
+    "lostOverWonLostFormula": "พลาดโอกาส ÷ (สำเร็จ + พลาดโอกาส) × 100",
+    "activeOverTotalFormula": "ใช้งานอยู่ ÷ ลูกค้าทั้งหมด × 100",
+    "pipelineFormula": "ใหม่ + ติดต่อแล้ว + มีคุณสมบัติ + เสนอราคา",
+    "moduleRoadmap": "แผนพัฒนาโมดูล",
+    "sourceLabels": {
+      "website": "เว็บไซต์",
+      "referral": "การแนะนำ",
+      "coldCall": "โทรติดต่อโดยตรง",
+      "email": "อีเมล",
+      "socialMedia": "โซเชียลมีเดีย",
+      "other": "อื่นๆ"
+    },
+    "modules": {
+      "projects": {
+        "label": "โครงการ",
+        "description": "การจัดการโครงการด้วยหลักไมล์ กระดานสถานะ และการมอบหมายทีม"
+      },
+      "services": {
+        "label": "บริการ",
+        "description": "รายการบริการ ระดับราคา และการมอบหมายบริการให้ลูกค้า"
+      },
+      "tasks": {
+        "label": "งาน",
+        "description": "กระดานงานพร้อมการมอบหมาย กำหนดวันครบกำหนด และระดับความสำคัญ"
+      },
+      "invoices": {
+        "label": "ใบแจ้งหนี้",
+        "description": "การออกใบแจ้งหนี้ การติดตามการชำระเงิน และการรายงานรายได้"
+      }
+    },
+    "formatCsv": "CSV (.csv)",
+    "formatExcel": "Excel (.xlsx)"
+  },
+  "routes": {
+    "dashboard": "แดชบอร์ด",
+    "customerDetail": "ข้อมูลลูกค้า 360",
+    "customers": "ลูกค้า",
+    "leads": "โอกาสการขาย",
+    "activity": "กิจกรรม",
+    "reports": "รายงาน",
+    "settings": "ตั้งค่า",
+    "products": "สินค้า",
+    "productDetail": "รายละเอียดสินค้า",
+    "brands": "แบรนด์",
+    "categories": "หมวดหมู่",
+    "import": "นำเข้า",
+    "equipmentRegistry": "ทะเบียนอุปกรณ์",
+    "equipmentDetail": "รายละเอียดอุปกรณ์",
+    "quotations": "ใบเสนอราคา",
+    "newQuotation": "ใบเสนอราคาใหม่",
+    "quotationDetail": "รายละเอียดใบเสนอราคา",
+    "rentalContracts": "สัญญาเช่า",
+    "newContract": "สัญญาใหม่",
+    "contractDetail": "รายละเอียดสัญญา",
+    "movementControl": "ควบคุมการเคลื่อนย้าย",
+    "newMovement": "การเคลื่อนย้ายใหม่",
+    "movementDetail": "รายละเอียดการเคลื่อนย้าย",
+    "billing": "การเรียกเก็บเงิน",
+    "invoices": "ใบแจ้งหนี้",
+    "invoiceDetail": "รายละเอียดใบแจ้งหนี้",
+    "payments": "การชำระเงิน",
+    "paymentDetail": "รายละเอียดการชำระเงิน",
+    "deposits": "เงินมัดจำ",
+    "depositDetail": "รายละเอียดเงินมัดจำ",
+    "revenueRecognition": "การรับรู้รายได้",
+    "financeDashboard": "แดชบอร์ดการเงิน",
+    "statements": "ใบแจ้งยอด",
+    "paymentManager": "จัดการการชำระเงิน",
+    "depositManager": "จัดการเงินมัดจำ",
+    "maintenancePm": "การบำรุงรักษาและ PM",
+    "workOrders": "ใบสั่งงาน",
+    "newWorkOrder": "ใบสั่งงานใหม่",
+    "workOrderDetail": "รายละเอียดใบสั่งงาน",
+    "pmSchedules": "ตารางบำรุงรักษา PM",
+    "inventory": "คลังสินค้า",
+    "spareParts": "อะไหล่",
+    "partsPOS": "หน้าขายอะไหล่",
+    "newPart": "อะไหล่ใหม่",
+    "partDetail": "รายละเอียดอะไหล่",
+    "warehouses": "คลังสินค้า",
+    "purchaseOrders": "ใบสั่งซื้อ",
+    "executiveDashboard": "แดชบอร์ดผู้บริหาร",
+    "projects": "โครงการคลังสินค้า",
+    "projectDetail": "รายละเอียดโครงการ",
+    "iotManagement": "การจัดการ IoT"
+  },
+  "inventory": {
+    "common": {
+      "refresh": "รีเฟรช",
+      "resultCount_one": "{{count}} รายการ",
+      "resultCount_other": "{{count}} รายการ",
+      "paginationInfo": "หน้า {{page}} จาก {{pages}}"
+    },
+    "dashboard": {
+      "title": "สินค้าคงคลังอะไหล่",
+      "subtitle": "ภาพรวมการบริหารสต๊อกและการจัดซื้อ",
+      "purchaseOrdersButton": "ใบสั่งซื้อ",
+      "sparePartsButton": "สินค้าคงคลังอะไหล่",
+      "quickAccess": "เข้าถึงด่วน",
+      "loadError": "ไม่สามารถโหลดข้อมูลคลังสินค้าได้"
+    },
+    "purchaseOrder": {
+      "title": "ใบสั่งซื้อ",
+      "subtitle_one": "{{count}} รายการสั่งซื้อ",
+      "subtitle_other": "{{count}} รายการสั่งซื้อ",
+      "loadError": "ไม่สามารถโหลดใบสั่งซื้อได้",
+      "status": {
+        "all": "สถานะทั้งหมด",
+        "draft": "ฉบับร่าง",
+        "ordered": "สั่งซื้อแล้ว",
+        "partial": "ได้รับบางส่วน",
+        "received": "ได้รับแล้ว",
+        "cancelled": "ยกเลิกแล้ว"
+      },
+      "newPO": "ใบสั่งซื้อใหม่",
+      "form": {
+        "title": "ใบสั่งซื้อใหม่",
+        "backToList": "กลับไปที่ใบสั่งซื้อ",
+        "vendor": "ผู้ขาย",
+        "vendorRequired": "กรุณาระบุผู้ขาย",
+        "warehouse": "คลังสินค้า",
+        "warehouseRequired": "กรุณาเลือกคลังสินค้า",
+        "vendorAddress": "ที่อยู่ผู้ขาย",
+        "vendorContact": "ข้อมูลติดต่อผู้ขาย",
+        "orderDate": "วันที่สั่งซื้อ",
+        "expectedDate": "วันที่คาดว่าจะได้รับ",
+        "taxRate": "อัตราภาษี (%)",
+        "lineItems": "รายการสินค้า",
+        "itemCode": "รหัสสินค้า",
+        "description": "รายละเอียด",
+        "descriptionPlaceholder": "รายละเอียดสินค้า",
+        "qty": "จำนวน",
+        "unit": "หน่วย",
+        "unitCost": "ราคาต่อหน่วย",
+        "linkCatalogPart": "เชื่อมโยงกับอะไหล่",
+        "linkCatalogPartPlaceholder": "ค้นหาอะไหล่…",
+        "noPartsFound": "ไม่พบอะไหล่",
+        "addRow": "เพิ่มแถว",
+        "itemRequired": "ต้องมีรายการอย่างน้อยหนึ่งรายการ",
+        "created": "สร้างใบสั่งซื้อ {{number}} สำเร็จแล้ว",
+        "createFailed": "ไม่สามารถสร้างใบสั่งซื้อได้",
+        "creating": "กำลังสร้าง...",
+        "createPO": "สร้างใบสั่งซื้อ"
+      },
+      "detail": {
+        "loadError": "ไม่สามารถโหลดใบสั่งซื้อได้",
+        "notFound": "ไม่พบใบสั่งซื้อ",
+        "actionFailed": "{{action}} ไม่สำเร็จ",
+        "submitted": "ส่งใบสั่งซื้อแล้ว",
+        "submit": "ส่ง",
+        "receiveItems": "รับสินค้า",
+        "receiveModalTitle": "รับสินค้า",
+        "received": "รับสินค้าแล้ว",
+        "receivedDate": "วันที่รับสินค้า",
+        "qtyOrdered": "จำนวนที่สั่ง",
+        "qtyReceived": "จำนวนที่รับ"
+      },
+      "editor": {
+        "newTitle": "ใบสั่งซื้อใหม่",
+        "partner": "ผู้จำหน่าย (Partner)",
+        "noPartner": "— เลือกผู้จำหน่าย —",
+        "headerLocked": "ข้อมูลส่วนหัวจะถูกล็อกหลังจากสร้างใบสั่งซื้อแล้ว",
+        "saveSuccess": "บันทึกใบสั่งซื้อแล้ว",
+        "saveFailed": "ไม่สามารถบันทึกใบสั่งซื้อได้",
+        "notFoundError": "ไม่พบใบสั่งซื้อ",
+        "saveItems": "บันทึกรายการสินค้า",
+        "itemsSaveSuccess": "อัปเดตรายการสินค้าแล้ว",
+        "itemsSaveFailed": "ไม่สามารถอัปเดตรายการสินค้าได้"
+      }
+    },
+    "spareParts": {
+      "unitPrice": "ราคาต่อหน่วย",
+      "unit": "หน่วย",
+      "categories": {
+        "all": "หมวดหมู่ทั้งหมด",
+        "filter": "กรอง",
+        "belt": "สายพาน",
+        "brake": "เบรก",
+        "hydraulic": "ไฮดรอลิก",
+        "electrical": "ระบบไฟฟ้า",
+        "engine": "เครื่องยนต์",
+        "tire": "ยาง",
+        "chain": "โซ่",
+        "battery": "แบตเตอรี่",
+        "lubricant": "น้ำมันหล่อลื่น",
+        "general": "ทั่วไป"
+      },
+      "list": {
+        "title": "สินค้าคงคลังอะไหล่",
+        "subtitle_one": "{{count}} รายการ",
+        "subtitle_other": "{{count}} รายการ",
+        "addPart": "เพิ่มอะไหล่",
+        "loadError": "ไม่สามารถโหลดรายการอะไหล่ได้",
+        "searchPlaceholder": "ค้นหาหมายเลขอะไหล่, ชื่อ...",
+        "noPartsFound": "ไม่พบอะไหล่",
+        "columns": {
+          "partNumber": "รหัสอะไหล่",
+          "minStock": "สต๊อกขั้นต่ำ"
+        }
+      },
+      "detail": {
+        "backToList": "กลับไปยังรายการอะไหล่",
+        "notFound": "ไม่พบข้อมูล",
+        "loadError": "ไม่พบอะไหล่",
+        "totalStock": "สต๊อกรวม",
+        "minLevel": "ระดับขั้นต่ำ",
+        "reorderQty": "จำนวนสั่งซื้อซ้ำ",
+        "brand": "ยี่ห้อ",
+        "leadTime": "ระยะเวลาจัดส่ง",
+        "leadTimeDays_one": "{{count}} วัน",
+        "leadTimeDays_other": "{{count}} วัน",
+        "created": "สร้างเมื่อ",
+        "active": "ใช้งานอยู่",
+        "stockByWarehouse": "สต๊อกแยกตามคลังสินค้า",
+        "recentTransactions": "รายการเคลื่อนไหวล่าสุด",
+        "columns": {
+          "warehouse": "คลังสินค้า",
+          "onHand": "คงเหลือ",
+          "reserved": "สำรองไว้",
+          "available": "พร้อมใช้งาน",
+          "number": "หมายเลข",
+          "qty": "จำนวน",
+          "cost": "ต้นทุน"
+        }
+      }
+    },
+    "pos": {
+      "title": "หน้าขายอะไหล่",
+      "subtitle_one": "{{count}} รายการ",
+      "subtitle_other": "{{count}} รายการ",
+      "searchPlaceholder": "สแกนบาร์โค้ด หรือค้นหาหมายเลข, ชื่ออะไหล่...",
+      "loadError": "ไม่สามารถโหลดข้อมูลอะไหล่ได้",
+      "noResults": "ไม่พบอะไหล่ที่ค้นหา"
+    },
+    "warehouse": {
+      "title": "สถานที่เก็บสินค้า",
+      "list": {
+        "subtitle_one": "{{count}} สถานที่เก็บสินค้า",
+        "subtitle_other": "{{count}} สถานที่เก็บสินค้า",
+        "addWarehouse": "เพิ่มสถานที่เก็บสินค้า",
+        "loadError": "ไม่สามารถโหลดสถานที่เก็บสินค้าได้"
+      },
+      "form": {
+        "codeLabel": "รหัส",
+        "codePlaceholder": "WH-A",
+        "namePlaceholder": "คลังสินค้าอัลฟา",
+        "addressPlaceholder": "ที่อยู่แบบเต็ม (ไม่บังคับ)",
+        "codeNameRequired": "ต้องระบุรหัสและชื่อ",
+        "createSuccess": "สร้างคลังสินค้าเรียบร้อยแล้ว",
+        "createError": "ไม่สามารถสร้างคลังสินค้าได้",
+        "creating": "กำลังสร้าง..."
+      },
+      "detail": {
+        "backToList": "กลับไปยังสถานที่เก็บสินค้า",
+        "loadError": "ไม่สามารถโหลดข้อมูลสถานที่เก็บสินค้าได้",
+        "notFound": "ไม่พบสถานที่เก็บสินค้า",
+        "address": "ที่อยู่",
+        "contactName": "ผู้ติดต่อ",
+        "contactPhone": "เบอร์โทรผู้ติดต่อ",
+        "distinctParts": "จำนวนอะไหล่",
+        "totalStock": "จำนวนสต็อกรวม",
+        "stockTitle": "สต็อกในสถานที่เก็บสินค้านี้",
+        "noStock": "ยังไม่มีสต็อกในสถานที่เก็บสินค้านี้",
+        "columns": {
+          "part": "อะไหล่"
+        }
+      }
+    },
+    "stockBadge": {
+      "inStock": "มีสินค้า",
+      "lowStock": "สินค้าใกล้หมด",
+      "outOfStock": "สินค้าหมด"
+    },
+    "reorderAlert": {
+      "title": "การแจ้งเตือนสั่งซื้อซ้ำ ({{count}})",
+      "detail": "{{warehouseCode}}: มี {{available}} ชิ้น (ขั้นต่ำ: {{minLevel}}) — สั่งซื้อซ้ำ {{reorderQuantity}}"
+    },
+    "kpi": {
+      "spareParts": "อะไหล่",
+      "warehouses": "คลังสินค้า",
+      "stockValue": "มูลค่าสต๊อก",
+      "lowStock": "สินค้าใกล้หมด",
+      "belowMinimum": "{{count}} รายการต่ำกว่าขั้นต่ำ",
+      "pendingPOs": "ใบสั่งซื้อรอดำเนินการ"
+    },
+    "quickNav": {
+      "parts": {
+        "label": "สินค้าคงคลังอะไหล่",
+        "desc": "เรียกดูสินค้าคงคลัง"
+      },
+      "warehouses": {
+        "label": "สถานที่เก็บสินค้า",
+        "desc": "จัดการสถานที่"
+      },
+      "purchaseOrders": {
+        "label": "ใบสั่งซื้อ",
+        "desc": "การจัดซื้อ"
+      },
+      "catalog": {
+        "label": "แคตตาล็อกสินค้า",
+        "desc": "แคตตาล็อกทั้งหมด"
+      }
+    },
+    "lowStock": {
+      "title": "การแจ้งเตือนสินค้าใกล้หมด",
+      "allHealthy": "ระดับสต๊อกทั้งหมดอยู่ในเกณฑ์ปกติ",
+      "viewAll": "ดูทั้งหมด",
+      "min": "ขั้นต่ำ",
+      "reorder": "สั่งซื้อซ้ำ"
+    },
+    "purchaseOrderTable": {
+      "poNumber": "เลขที่ใบสั่งซื้อ",
+      "vendor": "ผู้ขาย",
+      "warehouse": "คลังสินค้า",
+      "orderDate": "วันที่สั่งซื้อ",
+      "empty": "ไม่พบใบสั่งซื้อ",
+      "paginationInfo": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)"
+    },
+    "stockDistributionChart": {
+      "title": "สต๊อกแยกตามหมวดหมู่",
+      "subtitle": "อะไหล่ต่อหมวดหมู่",
+      "empty": "ไม่มีข้อมูลสต๊อก"
+    },
+    "warehouseGrid": {
+      "noneFound": "ไม่มีคลังสินค้า",
+      "noneFoundHint": "สร้างคลังสินค้าแรกของคุณเพื่อเริ่มติดตามสินค้าคงคลัง"
+    },
+    "import": {
+      "button": "นำเข้าข้อมูล",
+      "title": "นำเข้าข้อมูลคลังสินค้า",
+      "subtitle": "อัปโหลดไฟล์ CSV หรือ Excel (.xlsx) เพื่อสร้างหรืออัปเดตอะไหล่จำนวนมากพร้อมกัน รหัสอะไหล่ที่มีอยู่แล้วจะถูกอัปเดต ส่วนรหัสใหม่จะถูกสร้างขึ้น",
+      "dropzoneText": "ลากและวางไฟล์ของคุณที่นี่ หรือคลิกเพื่อเลือกไฟล์",
+      "dropzoneHint": "รองรับไฟล์ .csv และ .xlsx ขนาดไม่เกิน 10 MB",
+      "clearFile": "ล้าง",
+      "uploadButton": "อัปโหลดและนำเข้า",
+      "uploading": "กำลังอัปโหลดและประมวลผลข้อมูล…",
+      "uploadingHint": "อาจใช้เวลาสองสามวินาทีสำหรับไฟล์ขนาดใหญ่",
+      "uploadFailed": "การนำเข้าล้มเหลว กรุณาลองใหม่อีกครั้ง",
+      "successBanner": "นำเข้าข้อมูลสำเร็จแล้ว",
+      "partialBanner": "นำเข้าสำเร็จแต่มีบางรายการผิดพลาด",
+      "resultSummary": "นำเข้า {{imported}} รายการ, อัปเดต {{updated}} รายการ",
+      "rowErrorsTitle": "{{count}} แถวไม่สามารถนำเข้าได้",
+      "rowLabel": "แถว {{row}}:",
+      "closeAndRefresh": "ปิดและโหลดใหม่"
+    }
+  },
+  "billing": {
+    "common": {
+      "refresh": "รีเฟรช",
+      "markOverdue": "ทำเครื่องหมายว่าเกินกำหนด",
+      "markOverdueSuccess": "ทำเครื่องหมายใบแจ้งหนี้ {{count}} ฉบับว่าเกินกำหนดชำระแล้ว",
+      "markOverdueError": "ไม่สามารถทำเครื่องหมายใบแจ้งหนี้ที่เกินกำหนดได้"
+    },
+    "dashboard": {
+      "title": "การเรียกเก็บเงินและการชำระเงิน",
+      "subtitle": "ภาพรวมทางการเงินและการดำเนินการด่วน",
+      "quickAccess": "เข้าถึงด่วน",
+      "loadError": "ไม่สามารถโหลดสรุปการเรียกเก็บเงินได้"
+    },
+    "finance": {
+      "title": "การวิเคราะห์การเงิน",
+      "subtitle": "ผลการดำเนินงานด้านรายได้ ลูกหนี้ และการติดตามการเรียกเก็บเงิน",
+      "loadError": "ไม่สามารถโหลดข้อมูลการเงินได้"
+    },
+    "revenue": {
+      "title": "การรับรู้รายได้",
+      "entriesCount": "{{count}} รายการ",
+      "resultsCount": "{{count}} รายการ",
+      "loadError": "ไม่สามารถโหลดรายการรับรู้รายได้ได้",
+      "actionError": "การดำเนินการล้มเหลว",
+      "empty": "ไม่มีรายการรับรู้รายได้",
+      "recognize": "รับรู้รายได้",
+      "reverse": "กลับรายการ",
+      "paginationInfo": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)",
+      "columns": {
+        "number": "เลขที่ REV",
+        "period": "งวด"
+      },
+      "statusOptions": {
+        "all": "สถานะทั้งหมด",
+        "scheduled": "กำหนดการแล้ว",
+        "recognized": "รับรู้แล้ว",
+        "reversed": "กลับรายการแล้ว"
+      },
+      "typeOptions": {
+        "all": "ประเภททั้งหมด",
+        "rentalIncome": "รายได้ค่าเช่า",
+        "serviceFee": "ค่าบริการ",
+        "penaltyFee": "ค่าปรับ",
+        "damageRecovery": "ค่าชดใช้ความเสียหาย",
+        "depositForfeiture": "การริบเงินมัดจำ"
+      },
+      "typeLabels": {
+        "rentalIncome": "รายได้ค่าเช่า",
+        "serviceFee": "ค่าบริการ",
+        "penaltyFee": "ค่าปรับ",
+        "damageRecovery": "ค่าชดใช้ความเสียหาย",
+        "depositForfeiture": "การริบเงินมัดจำ"
+      }
+    },
+    "statement": {
+      "title": "รายการเดินบัญชี",
+      "subtitle": "กิจกรรมใบแจ้งหนี้ทั้งหมดพร้อมยอดคงเหลือสะสม",
+      "loadError": "ไม่สามารถโหลดข้อมูลรายการเดินบัญชีได้",
+      "totalCharges": "ยอดเรียกเก็บรวม",
+      "totalPayments": "ยอดชำระรวม",
+      "outstandingBalance": "ยอดคงค้างชำระ",
+      "searchPlaceholder": "ค้นหาใบแจ้งหนี้...",
+      "entriesCount": "{{count}} รายการ",
+      "loading": "กำลังโหลดรายการเดินบัญชี...",
+      "noEntries": "ไม่มีรายการในบัญชี",
+      "emptySub": "ไม่พบใบแจ้งหนี้ที่ตรงกับการค้นหาของคุณ",
+      "columns": {
+        "invoiceNumber": "เลขที่ใบแจ้งหนี้",
+        "charges": "ยอดเรียกเก็บ",
+        "payments": "ยอดชำระ",
+        "balance": "ยอดคงเหลือ"
+      }
+    },
+    "aging": {
+      "title": "ลูกหนี้ค้างชำระตามอายุหนี้",
+      "buckets": {
+        "current": "ยังไม่ครบกำหนด",
+        "days1to30": "1-30 วัน",
+        "days31to60": "31-60 วัน",
+        "days61to90": "61-90 วัน",
+        "days90plus": "มากกว่า 90 วัน"
+      }
+    },
+    "revenueChart": {
+      "title": "แนวโน้มรายได้ (6 เดือนล่าสุด)",
+      "empty": "ไม่มีข้อมูล",
+      "invoiced": "ออกใบแจ้งหนี้แล้ว",
+      "paid": "ชำระแล้ว",
+      "invoicedTooltip": "ออกใบแจ้งหนี้: {{amount}}",
+      "paidTooltip": "ชำระแล้ว: {{amount}}"
+    },
+    "payment": {
+      "status": {
+        "pending": "รอดำเนินการ",
+        "confirmed": "ยืนยันแล้ว",
+        "rejected": "ปฏิเสธแล้ว",
+        "refunded": "คืนเงินแล้ว"
+      },
+      "method": {
+        "cash": "เงินสด",
+        "bank_transfer": "โอนเงินผ่านธนาคาร",
+        "check": "เช็ค",
+        "credit_card": "บัตรเครดิต",
+        "mobile_payment": "การชำระเงินผ่านมือถือ",
+        "mobile_paymentShort": "มือถือ",
+        "other": "อื่นๆ"
+      },
+      "statusFilter": {
+        "all": "สถานะทั้งหมด"
+      },
+      "methodFilter": {
+        "all": "วิธีการทั้งหมด"
+      },
+      "fields": {
+        "method": "วิธีการ",
+        "paymentDate": "วันที่ชำระเงิน",
+        "received": "รับแล้ว",
+        "reference": "เลขที่อ้างอิง",
+        "createdBy": "สร้างโดย",
+        "confirmedAt": "ยืนยันเมื่อ",
+        "confirmedBy": "ยืนยันโดย",
+        "contract": "สัญญา"
+      },
+      "table": {
+        "number": "เลขที่การชำระเงิน",
+        "customer": "ลูกค้า"
+      },
+      "list": {
+        "title": "การชำระเงิน",
+        "subtitle": "การชำระเงิน {{count}} รายการ",
+        "resultsCount": "{{count}} รายการ"
+      },
+      "pagination": {
+        "pageOf": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)"
+      },
+      "searchPlaceholder": "ค้นหาการชำระเงิน / เลขที่อ้างอิง...",
+      "empty": "ไม่พบการชำระเงิน",
+      "notFound": "ไม่พบการชำระเงิน",
+      "actions": {
+        "reject": "ปฏิเสธ",
+        "allocateToInvoice": "จัดสรรให้ใบแจ้งหนี้"
+      },
+      "toast": {
+        "confirmed": "ยืนยันการชำระเงินแล้ว",
+        "rejected": "ปฏิเสธการชำระเงินแล้ว",
+        "allocated": "จัดสรรการชำระเงินแล้ว",
+        "actionFailed": "ล้มเหลว: {{action}}",
+        "loadFailed": "ไม่สามารถโหลดการชำระเงินได้",
+        "loadPaymentsFailed": "ไม่สามารถโหลดรายการชำระเงินได้",
+        "loadInvoicesFailed": "ไม่สามารถโหลดใบแจ้งหนี้ได้"
+      },
+      "allocate": {
+        "title": "จัดสรรการชำระเงินให้ใบแจ้งหนี้",
+        "invoiceLabel": "ใบแจ้งหนี้",
+        "selectPlaceholder": "เลือกใบแจ้งหนี้...",
+        "balance": "ยอดคงเหลือ",
+        "amountPlaceholder": "0.00",
+        "submit": "จัดสรร"
+      },
+      "summary": {
+        "title": "การชำระเงิน",
+        "transactions": "รายการธุรกรรม"
+      }
+    },
+    "invoice": {
+      "status": {
+        "draft": "ฉบับร่าง",
+        "issued": "ออกแล้ว",
+        "sent": "ส่งแล้ว",
+        "partially_paid": "ชำระบางส่วน",
+        "paid": "ชำระแล้ว",
+        "overdue": "เกินกำหนดชำระ",
+        "cancelled": "ยกเลิกแล้ว",
+        "voided": "เป็นโมฆะ"
+      },
+      "summary": {
+        "title": "ใบแจ้งหนี้",
+        "outstanding": "ค้างชำระ",
+        "overdue": "เกินกำหนดชำระ",
+        "count": "จำนวน"
+      },
+      "filter": {
+        "all": "สถานะทั้งหมด",
+        "partially_paid": "ชำระบางส่วนแล้ว"
+      },
+      "list": {
+        "title": "ใบแจ้งหนี้",
+        "subtitle": "ใบแจ้งหนี้ {{count}} ฉบับ",
+        "newInvoice": "ใบแจ้งหนี้ใหม่",
+        "loadError": "ไม่สามารถโหลดใบแจ้งหนี้ได้",
+        "searchPlaceholder": "ค้นหาเลขที่ใบแจ้งหนี้...",
+        "resultsCount": "{{count}} รายการ",
+        "empty": "ไม่พบใบแจ้งหนี้"
+      },
+      "table": {
+        "number": "เลขที่ใบแจ้งหนี้",
+        "customer": "ลูกค้า",
+        "balance": "ยอดคงเหลือ"
+      },
+      "meta": {
+        "issueDate": "วันที่ออก",
+        "dueDate": "วันครบกำหนด",
+        "paidDate": "วันที่ชำระ",
+        "contract": "สัญญา",
+        "referenceType": "ประเภทใบแจ้งหนี้",
+        "period": "งวด",
+        "createdBy": "สร้างโดย"
+      },
+      "referenceType": {
+        "sales": "การขาย",
+        "workOrder": "ใบสั่งงาน",
+        "rental": "การเช่า"
+      },
+      "pagination": {
+        "info": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)"
+      },
+      "actions": {
+        "issue": "ออกใบแจ้งหนี้",
+        "send": "ส่ง",
+        "void": "ยกเลิก (โมฆะ)"
+      },
+      "amountSummary": {
+        "tax": "ภาษี ({{rate}}%)",
+        "discount": "ส่วนลด",
+        "paid": "ชำระแล้ว",
+        "balanceDue": "ยอดคงเหลือที่ต้องชำระ"
+      },
+      "detail": {
+        "loadError": "ไม่สามารถโหลดใบแจ้งหนี้ได้",
+        "notFound": "ไม่พบใบแจ้งหนี้",
+        "actionFailed": "ล้มเหลว: {{action}}",
+        "internalNotes": "หมายเหตุภายใน",
+        "cancellationReason": "เหตุผลการยกเลิก"
+      },
+      "lineItems": {
+        "title": "รายการสินค้า/บริการ",
+        "number": "#",
+        "qty": "จำนวน",
+        "rate": "อัตรา",
+        "tax": "ภาษี",
+        "empty": "ไม่มีรายการสินค้า/บริการ"
+      },
+      "allocations": {
+        "title": "การจัดสรรการชำระเงิน",
+        "payment": "การชำระเงิน",
+        "paymentLabel": "การชำระเงิน #{{id}}"
+      },
+      "form": {
+        "title": "ใบแจ้งหนี้ใหม่",
+        "backToList": "กลับไปยังใบแจ้งหนี้",
+        "customer": "ลูกค้า",
+        "customerSearchPlaceholder": "ค้นหาชื่อ, บริษัท...",
+        "noCustomersFound": "ไม่พบลูกค้า",
+        "referenceType": "ประเภทใบแจ้งหนี้",
+        "taxRate": "อัตราภาษี (%)",
+        "description": "รายละเอียด",
+        "descriptionPlaceholder": "รายละเอียดสินค้าหรือบริการ",
+        "unitPrice": "ราคาต่อหน่วย",
+        "lineTotal": "ยอดรวมรายการ",
+        "addRow": "เพิ่มแถว",
+        "subtotal": "ยอดรวมย่อย",
+        "grandTotal": "ยอดรวมทั้งหมด",
+        "creating": "กำลังสร้าง...",
+        "createInvoice": "สร้างใบแจ้งหนี้",
+        "created": "สร้างใบแจ้งหนี้ {{number}} แล้ว",
+        "createFailed": "ไม่สามารถสร้างใบแจ้งหนี้ได้",
+        "errors": {
+          "customerRequired": "กรุณาเลือกลูกค้า",
+          "itemRequired": "ต้องมีอย่างน้อยหนึ่งรายการที่มีรายละเอียด"
+        },
+        "itemCode": "รหัสสินค้า",
+        "itemCodePlaceholder": "เช่น SKU-1000",
+        "unit": "หน่วย",
+        "currency": "สกุลเงิน",
+        "exchangeRate": "อัตราแลกเปลี่ยน",
+        "bankDetails": "ข้อมูลธนาคาร",
+        "bankDetailsPlaceholder": "ชื่อธนาคาร, ชื่อบัญชี, เลขที่บัญชี, SWIFT/BIC...",
+        "grandTotalInLAK": "ยอดรวมทั้งหมดเป็น LAK (สกุลเงินหลัก)",
+        "previewTitle": "ตัวอย่างเอกสาร",
+        "previewPendingNumber": "(รอดำเนินการ)"
+      },
+      "modal": {
+        "cancel": {
+          "title": "ยกเลิกใบแจ้งหนี้",
+          "reasonLabel": "เหตุผลในการยกเลิก",
+          "reasonPlaceholder": "ระบุเหตุผล..."
+        }
+      },
+      "toast": {
+        "issued": "ออกใบแจ้งหนี้แล้ว",
+        "sent": "ส่งใบแจ้งหนี้แล้ว",
+        "voided": "ยกเลิกใบแจ้งหนี้แล้ว (โมฆะ)",
+        "cancelled": "ยกเลิกใบแจ้งหนี้แล้ว"
+      },
+      "card": {
+        "due": "ครบกำหนด {{date}}",
+        "balance": "ยอดคงเหลือ: {{amount}} {{currency}}"
+      },
+      "vehicleInfo": {
+        "title": "ข้อมูลยานพาหนะ",
+        "make": "ยี่ห้อ",
+        "model": "รุ่น",
+        "vin": "หมายเลขตัวถัง (VIN)",
+        "engineNo": "หมายเลขเครื่องยนต์",
+        "regNo": "ทะเบียนรถ",
+        "jobNumber": "หมายเลขงาน"
+      },
+      "editor": {
+        "newTitle": "ใบแจ้งหนี้ใหม่",
+        "invoiceNumber": "เลขที่ใบแจ้งหนี้",
+        "notesLabel": "หมายเหตุ",
+        "internalNotesLabel": "หมายเหตุภายใน",
+        "receivedBy": "ผู้รับ (ลูกค้า)",
+        "referenceSalesOrder": "ใบสั่งขาย",
+        "noSalesOrder": "ไม่มีใบสั่งขายที่เชื่อมโยง",
+        "fromQuotation": "จาก {{number}}",
+        "saveDraft": "บันทึกแบบร่าง",
+        "saveSuccess": "บันทึกใบแจ้งหนี้แล้ว",
+        "saveFailed": "บันทึกใบแจ้งหนี้ไม่สำเร็จ",
+        "notFoundError": "ไม่พบใบแจ้งหนี้",
+        "actionFailed": "ดำเนินการ {{action}} ไม่สำเร็จ",
+        "prefilledFromSalesOrder": "เติมข้อมูลจากใบสั่งขาย {{number}} แล้ว"
+      }
+    },
+    "deposit": {
+      "status": {
+        "all": "สถานะทั้งหมด",
+        "pending": "รอดำเนินการ",
+        "received": "รับแล้ว",
+        "partiallyRefunded": "คืนเงินบางส่วน",
+        "refunded": "คืนเงินแล้ว",
+        "forfeited": "ถูกริบ",
+        "applied": "นำไปหักแล้ว"
+      },
+      "type": {
+        "all": "ประเภททั้งหมด",
+        "security": "เงินประกัน",
+        "advance": "เงินล่วงหน้า",
+        "guarantee": "เงินค้ำประกัน"
+      },
+      "list": {
+        "title": "เงินมัดจำ",
+        "subtitle": "เงินมัดจำ {{count}} รายการ",
+        "loadError": "ไม่สามารถโหลดเงินมัดจำได้",
+        "resultsCount": "{{count}} รายการ",
+        "empty": "ไม่พบเงินมัดจำ"
+      },
+      "table": {
+        "number": "เลขที่เงินมัดจำ",
+        "customer": "ลูกค้า",
+        "contract": "สัญญา",
+        "received": "รับแล้ว"
+      },
+      "pagination": {
+        "info": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)"
+      },
+      "actions": {
+        "markReceived": "ทำเครื่องหมายว่ารับแล้ว",
+        "refund": "คืนเงิน",
+        "forfeit": "ริบเงิน",
+        "applyToInvoice": "นำไปหักใบแจ้งหนี้"
+      },
+      "modal": {
+        "markReceived": {
+          "title": "ทำเครื่องหมายว่ารับเงินมัดจำแล้ว",
+          "depositLabel": "เงินมัดจำ",
+          "receivedDateLabel": "วันที่รับเงิน",
+          "confirm": "ยืนยันการรับเงิน"
+        },
+        "refund": {
+          "title": "คืนเงินมัดจำ",
+          "amountLabel": "จำนวนเงินคืน (สูงสุด: {{max}})",
+          "dateLabel": "วันที่คืนเงิน"
+        },
+        "forfeit": {
+          "title": "ริบเงินมัดจำ",
+          "amountLabel": "จำนวนเงินที่ริบ (สูงสุด: {{max}})",
+          "reasonLabel": "เหตุผล"
+        },
+        "apply": {
+          "title": "นำเงินมัดจำไปหักใบแจ้งหนี้",
+          "invoiceLabel": "ใบแจ้งหนี้",
+          "selectInvoicePlaceholder": "เลือกใบแจ้งหนี้...",
+          "invoiceOption": "{{number}} — ยอดคงเหลือ: {{balance}} {{currency}}",
+          "amountLabel": "จำนวนเงิน (สูงสุด: {{max}})",
+          "confirm": "นำไปหัก"
+        }
+      },
+      "summary": {
+        "amount": "จำนวนเงินมัดจำ",
+        "refunded": "คืนเงินแล้ว",
+        "forfeited": "ถูกริบ",
+        "applied": "นำไปหักแล้ว",
+        "remaining": "คงเหลือ"
+      },
+      "summaryCard": {
+        "title": "เงินมัดจำ",
+        "active": "ใช้งานอยู่"
+      },
+      "detail": {
+        "loadError": "ไม่สามารถโหลดเงินมัดจำได้",
+        "notFound": "ไม่พบข้อมูล",
+        "actionFailed": "การดำเนินการล้มเหลว",
+        "invoicesLoadError": "ไม่สามารถโหลดใบแจ้งหนี้ได้",
+        "receivedLabel": "รับเมื่อ: {{date}}",
+        "refundDateLabel": "วันที่คืนเงิน: {{date}}",
+        "contractLabel": "สัญญา:",
+        "notesLabel": "หมายเหตุ:"
+      },
+      "toast": {
+        "received": "ทำเครื่องหมายเงินมัดจำว่ารับแล้ว",
+        "receiveError": "ไม่สามารถรับเงินมัดจำได้"
+      }
+    }
+  },
+  "maintenance": {
+    "overdue": "เกินกำหนด",
+    "actions": {
+      "refresh": "รีเฟรช"
+    },
+    "status": {
+      "scheduled": "กำหนดการแล้ว",
+      "due": "ครบกำหนด",
+      "inProgress": "กำลังดำเนินการ",
+      "verified": "ตรวจสอบแล้ว"
+    },
+    "type": {
+      "preventive": "การบำรุงรักษาเชิงป้องกัน",
+      "corrective": "การบำรุงรักษาเชิงแก้ไข",
+      "emergency": "ฉุกเฉิน",
+      "inspection": "การตรวจสอบ",
+      "install": "การติดตั้ง"
+    },
+    "priority": {
+      "low": "ต่ำ",
+      "normal": "ปกติ",
+      "high": "สูง",
+      "critical": "วิกฤต"
+    },
+    "dashboard": {
+      "title": "การบำรุงรักษาและ PM",
+      "subtitle": "แดชบอร์ดการบำรุงรักษาเชิงป้องกัน",
+      "loadError": "ไม่สามารถโหลดแดชบอร์ดได้",
+      "pmSchedulesButton": "ตารางบำรุงรักษา PM",
+      "workOrdersButton": "ใบสั่งงาน",
+      "cards": {
+        "pmPlans": "แผนบำรุงรักษา PM",
+        "activeSchedules": "ตารางที่ใช้งานอยู่",
+        "completedThisMonth": "เสร็จสิ้น (เดือนนี้)",
+        "costThisMonth": "ค่าใช้จ่าย (เดือนนี้)"
+      }
+    },
+    "schedule": {
+      "title": "ตารางบำรุงรักษา PM",
+      "activeSchedules": "ตารางที่ใช้งานอยู่ {{count}} รายการ",
+      "loadError": "ไม่สามารถโหลดตารางบำรุงรักษาได้",
+      "emptyState": "ยังไม่มีตารางบำรุงรักษา PM ที่ใช้งานอยู่ กรุณาสร้างแผนบำรุงรักษาและกำหนดให้กับอุปกรณ์",
+      "nextDue": "กำหนดครั้งถัดไป",
+      "interval": "ช่วงเวลา",
+      "serviced": "ให้บริการแล้ว"
+    },
+    "workOrders": {
+      "list": {
+        "title": "ใบสั่งงาน",
+        "subtitle": "ใบสั่งงาน {{count}} รายการ",
+        "newWorkOrder": "ใบสั่งงานใหม่",
+        "loadError": "ไม่สามารถโหลดใบสั่งงานได้",
+        "searchPlaceholder": "ค้นหาหมายเลข, หัวข้อ...",
+        "resultsCount": "{{count}} รายการ",
+        "allStatuses": "สถานะทั้งหมด",
+        "allTypes": "ประเภททั้งหมด",
+        "columns": {
+          "workOrder": "ใบสั่งงาน",
+          "priority": "ความสำคัญ"
+        },
+        "paginationInfo": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)"
+      },
+      "form": {
+        "title": "ใบสั่งงานใหม่",
+        "backToList": "กลับไปยังใบสั่งงาน",
+        "workOrderTitle": "หัวข้อ",
+        "workOrderTitlePlaceholder": "เช่น บริการ PM ประจำเดือน",
+        "asset": "ทรัพย์สิน",
+        "assetSearchPlaceholder": "ค้นหาหมายเลขซีเรียลหรือชื่อ...",
+        "noAssetsFound": "ไม่พบทรัพย์สิน",
+        "workType": "ประเภทงาน",
+        "assignee": "ผู้รับผิดชอบ",
+        "unassigned": "— ยังไม่มอบหมาย —",
+        "schedule": "วันที่และเวลานัดหมาย",
+        "creating": "กำลังสร้าง...",
+        "createWorkOrder": "สร้างใบสั่งงาน",
+        "created": "สร้างใบสั่งงาน {{number}} แล้ว",
+        "createFailed": "ไม่สามารถสร้างใบสั่งงานได้",
+        "errors": {
+          "titleRequired": "ต้องระบุหัวข้อ",
+          "assetRequired": "กรุณาเลือกทรัพย์สิน",
+          "scheduleRequired": "ต้องระบุวันที่และเวลานัดหมาย"
+        }
+      },
+      "detail": {
+        "notFound": "ไม่พบใบสั่งงาน",
+        "backToList": "กลับไปยังใบสั่งงาน",
+        "startWork": "เริ่มงาน",
+        "completeAction": "เสร็จสิ้น",
+        "verify": "ตรวจสอบ",
+        "addCost": "เพิ่มค่าใช้จ่าย",
+        "toastStarted": "เริ่มงานแล้ว",
+        "actionFailed": "ล้มเหลว: {{label}}",
+        "fields": {
+          "equipment": "อุปกรณ์",
+          "technician": "ช่างเทคนิค",
+          "pmPlan": "แผนบำรุงรักษา PM",
+          "hourMeter": "มิเตอร์ชั่วโมง",
+          "started": "เริ่มเมื่อ",
+          "verifiedBy": "ตรวจสอบโดย",
+          "created": "สร้างเมื่อ",
+          "estHours": "ชั่วโมงโดยประมาณ",
+          "actualHours": "ชั่วโมงจริง",
+          "actualCost": "ค่าใช้จ่ายจริง"
+        },
+        "findings": "ผลการตรวจพบ",
+        "resolution": "การแก้ไข",
+        "cancellationReason": "เหตุผลการยกเลิก",
+        "costBreakdown": "รายละเอียดค่าใช้จ่าย ({{count}})",
+        "rate": "อัตรา",
+        "startModal": {
+          "title": "เริ่มใบสั่งงาน",
+          "hourMeterReading": "ค่ามิเตอร์ชั่วโมง",
+          "starting": "กำลังเริ่ม...",
+          "start": "เริ่ม"
+        },
+        "completeModal": {
+          "title": "ปิดใบสั่งงาน",
+          "findingsPlaceholder": "สิ่งที่พบระหว่างการตรวจสอบ...",
+          "resolutionPlaceholder": "สิ่งที่ดำเนินการเพื่อแก้ไข...",
+          "completing": "กำลังปิดงาน..."
+        },
+        "costModal": {
+          "title": "เพิ่มรายการค่าใช้จ่าย",
+          "descRateRequired": "ต้องระบุคำอธิบายและอัตรา",
+          "costAdded": "เพิ่มค่าใช้จ่ายแล้ว",
+          "failed": "ล้มเหลว",
+          "costType": "ประเภทค่าใช้จ่าย",
+          "typeParts": "อะไหล่",
+          "typeLabor": "ค่าแรง",
+          "typeExternalService": "บริการภายนอก",
+          "typeOther": "อื่นๆ",
+          "unitRate": "อัตราต่อหน่วย",
+          "adding": "กำลังเพิ่ม..."
+        },
+        "cancelReasonDefault": "ยกเลิกโดยผู้ใช้"
+      },
+      "editor": {
+        "priority": "ความสำคัญ",
+        "estimatedCost": "ค่าใช้จ่ายโดยประมาณ",
+        "saveChanges": "บันทึกการเปลี่ยนแปลง",
+        "saveSuccess": "บันทึกใบสั่งงานแล้ว",
+        "saveFailed": "ไม่สามารถบันทึกใบสั่งงานได้",
+        "notFoundError": "ไม่พบใบสั่งงาน",
+        "costsBulkEditNote": "การแก้ไข แถวใหม่ และแถวที่ลบจะถูกบันทึกพร้อมกันเมื่อคุณคลิกบันทึกการเปลี่ยนแปลง",
+        "confirmCancel": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกใบสั่งงานนี้?",
+        "serialNumber": "หมายเลขซีเรียล",
+        "equipmentName": "ชื่ออุปกรณ์",
+        "currentHourMeter": "มิเตอร์ชั่วโมงปัจจุบัน"
+      }
+    }
+  },
+  "movement": {
+    "status": {
+      "draft": "ฉบับร่าง",
+      "preparing": "กำลังเตรียมการ",
+      "in_transit": "อยู่ระหว่างขนส่ง",
+      "delivered": "จัดส่งแล้ว",
+      "completed": "เสร็จสิ้น",
+      "cancelled": "ยกเลิกแล้ว"
+    },
+    "type": {
+      "warehouse_transfer": "การโอนย้าย",
+      "customer_deployment": "การนำส่งลูกค้า",
+      "customer_return": "การคืนสินค้า",
+      "internal_relocation": "การย้ายภายใน"
+    },
+    "priority": {
+      "low": "ต่ำ",
+      "normal": "ปกติ",
+      "high": "สูง",
+      "urgent": "ด่วน"
+    },
+    "card": {
+      "customer": "ลูกค้า: {{name}}"
+    },
+    "timeline": {
+      "title": "ไทม์ไลน์การเคลื่อนย้าย",
+      "by": "โดย {{name}}"
+    },
+    "list": {
+      "title": "การควบคุมการเคลื่อนย้าย",
+      "totalCount": "การเคลื่อนย้าย {{count}} รายการ",
+      "refresh": "รีเฟรช",
+      "newMovement": "การเคลื่อนย้ายใหม่",
+      "loadFailed": "ไม่สามารถโหลดการเคลื่อนย้ายได้",
+      "searchPlaceholder": "ค้นหาหมายเลข, สถานที่, รหัส...",
+      "allStatuses": "สถานะทั้งหมด",
+      "allTypes": "ประเภททั้งหมด",
+      "resultsCount": "{{count}} รายการ",
+      "colMovement": "การเคลื่อนย้าย",
+      "colEquipment": "อุปกรณ์",
+      "colFromTo": "จาก → ถึง",
+      "colScheduled": "กำหนดการ",
+      "colPriority": "ความสำคัญ",
+      "noMovementsFound": "ไม่พบการเคลื่อนย้าย",
+      "pageOf": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)"
+    },
+    "form": {
+      "title": "การเคลื่อนย้ายใหม่",
+      "backToMovements": "กลับไปยังการเคลื่อนย้าย",
+      "movementType": "ประเภทการเคลื่อนย้าย",
+      "priority": "ความสำคัญ",
+      "forkliftId": "รหัสรถโฟล์คลิฟท์",
+      "forkliftIdPlaceholder": "กรอกรหัสรถโฟล์คลิฟท์",
+      "customerId": "รหัสลูกค้า",
+      "fromLocation": "สถานที่ต้นทาง",
+      "fromLocationPlaceholder": "คลังสินค้า DK A",
+      "toLocation": "สถานที่ปลายทาง",
+      "toLocationPlaceholder": "สถานที่ลูกค้า X",
+      "fromAddress": "ที่อยู่ต้นทาง",
+      "toAddress": "ที่อยู่ปลายทาง",
+      "addressPlaceholder": "ที่อยู่แบบเต็ม (ไม่บังคับ)",
+      "scheduledDate": "วันที่กำหนดการ",
+      "trackingCode": "รหัสติดตาม / QR Code",
+      "trackingCodePlaceholder": "อ้างอิงรหัส QR หรือบาร์โค้ด",
+      "notesPlaceholder": "หมายเหตุที่แสดงให้เห็น...",
+      "internalNotes": "หมายเหตุภายใน",
+      "internalNotesPlaceholder": "สำหรับใช้ภายในเท่านั้น...",
+      "creating": "กำลังสร้าง...",
+      "createMovement": "สร้างการเคลื่อนย้าย",
+      "created": "สร้างการเคลื่อนย้าย {{number}} แล้ว",
+      "createFailed": "ไม่สามารถสร้างการเคลื่อนย้ายได้",
+      "errors": {
+        "forkliftRequired": "ต้องระบุรหัสรถโฟล์คลิฟท์",
+        "fromLocationRequired": "ต้องระบุสถานที่ต้นทาง",
+        "toLocationRequired": "ต้องระบุสถานที่ปลายทาง",
+        "scheduledDateRequired": "ต้องระบุวันที่กำหนดการ"
+      }
+    },
+    "detail": {
+      "notFound": "ไม่พบการเคลื่อนย้าย",
+      "actionFailed": "ล้มเหลว: {{action}}",
+      "actions": {
+        "startPreparing": "เริ่มเตรียมการ",
+        "recordDeparture": "บันทึกการออกเดินทาง",
+        "recordArrival": "บันทึกการมาถึง",
+        "markComplete": "ทำเครื่องหมายว่าเสร็จสิ้น"
+      },
+      "toasts": {
+        "preparationStarted": "เริ่มการเตรียมการแล้ว",
+        "movementCompleted": "การเคลื่อนย้ายเสร็จสิ้นแล้ว",
+        "cancelled": "ยกเลิกแล้ว",
+        "departed": "ออกเดินทางแล้ว",
+        "arrived": "มาถึงแล้ว"
+      },
+      "cancelledByUser": "ยกเลิกโดยผู้ใช้",
+      "from": "จาก",
+      "to": "ถึง",
+      "scheduled": "กำหนดการ",
+      "trackingCode": "รหัสติดตาม",
+      "equipment": "อุปกรณ์",
+      "customer": "ลูกค้า",
+      "contract": "สัญญา",
+      "driver": "คนขับ",
+      "departed": "ออกเดินทางแล้ว",
+      "arrived": "มาถึงแล้ว",
+      "departureHours": "ชั่วโมงเมื่อออกเดินทาง",
+      "arrivalHours": "ชั่วโมงเมื่อมาถึง",
+      "internalNote": "หมายเหตุภายใน",
+      "cancellationReason": "เหตุผลการยกเลิก",
+      "departureHourMeter": "มิเตอร์ชั่วโมงเมื่อออกเดินทาง",
+      "arrivalHourMeter": "มิเตอร์ชั่วโมงเมื่อมาถึง"
+    }
+  },
+  "activity": {
+    "title": "บันทึกกิจกรรม",
+    "eventsLoaded": "โหลดเหตุการณ์แล้ว {{count}} รายการ",
+    "refresh": "รีเฟรช",
+    "filters": {
+      "searchPlaceholder": "ค้นหาผู้ใช้หรือการดำเนินการ…",
+      "action": "การดำเนินการ",
+      "allActions": "การดำเนินการทั้งหมด",
+      "entityType": "ประเภทข้อมูล",
+      "allEntities": "ประเภทข้อมูลทั้งหมด",
+      "dateFrom": "จากวันที่",
+      "dateTo": "ถึงวันที่"
+    },
+    "entity": {
+      "user": "ผู้ใช้",
+      "customer": "ลูกค้า",
+      "lead": "ลูกค้าเป้าหมาย",
+      "note": "หมายเหตุ",
+      "invoice": "ใบแจ้งหนี้",
+      "payment": "การชำระเงิน",
+      "deposit": "เงินมัดจำ",
+      "revenue_recognition": "การรับรู้รายได้",
+      "project": "โครงการ",
+      "project_milestone": "จุดสำคัญของโครงการ",
+      "setting": "การตั้งค่า",
+      "inventory_import": "การนำเข้าข้อมูลคลังสินค้า",
+      "notification_preference": "การตั้งค่าการแจ้งเตือน"
+    },
+    "table": {
+      "timestamp": "เวลาที่บันทึก",
+      "user": "ผู้ใช้",
+      "action": "การดำเนินการ",
+      "entity": "ประเภทข้อมูล",
+      "id": "รหัส",
+      "details": "รายละเอียด",
+      "noActivityFound": "ไม่พบกิจกรรม",
+      "noActivityYet": "กิจกรรมจะปรากฏที่นี่เมื่อผู้ใช้เริ่มใช้งานระบบ",
+      "ipAddress": "ที่อยู่ IP"
+    },
+    "details": {
+      "group": "กลุ่ม: {{group}}",
+      "eventInfo": "ข้อมูลเหตุการณ์",
+      "systemOrDeletedUser": "ระบบ / ผู้ใช้ที่ถูกลบ",
+      "title": "รายละเอียด",
+      "noneRecorded": "ไม่มีรายละเอียดเพิ่มเติมที่บันทึกไว้",
+      "fieldsModified": "ฟิลด์ที่แก้ไข:",
+      "drawerTitle": "รายละเอียดกิจกรรม",
+      "ipNotTracked": "ไม่ได้บันทึก"
+    },
+    "pagination": {
+      "showing": "แสดง {{start}}–{{end}} จาก {{total}}"
+    },
+    "loadError": "โหลดบันทึกกิจกรรมไม่สำเร็จ",
+    "action": {
+      "user_login": "เข้าสู่ระบบ",
+      "user_logout": "ออกจากระบบ",
+      "user_created": "สร้างผู้ใช้แล้ว",
+      "user_updated": "อัปเดตผู้ใช้แล้ว",
+      "user_deleted": "ลบผู้ใช้แล้ว",
+      "customer_created": "สร้างลูกค้าแล้ว",
+      "customer_updated": "อัปเดตลูกค้าแล้ว",
+      "customer_deleted": "ลบลูกค้าแล้ว",
+      "customer_status_changed": "เปลี่ยนสถานะแล้ว",
+      "lead_created": "สร้างลูกค้าเป้าหมายแล้ว",
+      "lead_updated": "อัปเดตลูกค้าเป้าหมายแล้ว",
+      "lead_deleted": "ลบลูกค้าเป้าหมายแล้ว",
+      "lead_status_changed": "เปลี่ยนสถานะแล้ว",
+      "lead_note_added": "เพิ่มหมายเหตุแล้ว",
+      "lead_note_deleted": "ลบหมายเหตุแล้ว",
+      "catalog_product_created": "สร้างสินค้าแล้ว",
+      "catalog_product_updated": "อัปเดตสินค้าแล้ว",
+      "catalog_product_deleted": "ลบสินค้าแล้ว",
+      "catalog_brand_created": "สร้างแบรนด์แล้ว",
+      "catalog_brand_updated": "อัปเดตแบรนด์แล้ว",
+      "catalog_brand_deleted": "ลบแบรนด์แล้ว",
+      "catalog_category_created": "สร้างหมวดหมู่แล้ว",
+      "catalog_category_updated": "อัปเดตหมวดหมู่แล้ว",
+      "catalog_category_deleted": "ลบหมวดหมู่แล้ว",
+      "catalog_import_previewed": "ดูตัวอย่างการนำเข้าสินค้าแล้ว",
+      "catalog_import_executed": "นำเข้าสินค้าแบบกลุ่มแล้ว",
+      "forklift_created": "ลงทะเบียนรถโฟล์คลิฟท์แล้ว",
+      "forklift_updated": "อัปเดตรถโฟล์คลิฟท์แล้ว",
+      "forklift_deleted": "ลบรถโฟล์คลิฟท์แล้ว",
+      "forklift_status_changed": "เปลี่ยนสถานะแล้ว",
+      "quotation_created": "สร้างใบเสนอราคาแล้ว",
+      "quotation_updated": "อัปเดตใบเสนอราคาแล้ว",
+      "quotation_deleted": "ลบใบเสนอราคาแล้ว",
+      "quotation_submitted": "ส่งเพื่อพิจารณาแล้ว",
+      "quotation_approved": "ใบเสนอราคาได้รับการอนุมัติแล้ว",
+      "quotation_revision_requested": "ขอแก้ไขแล้ว",
+      "quotation_sent": "ส่งใบเสนอราคาให้ลูกค้าแล้ว",
+      "quotation_accepted": "ทำเครื่องหมายว่ายอมรับแล้ว",
+      "quotation_declined": "ทำเครื่องหมายว่าปฏิเสธแล้ว",
+      "quotation_converted": "แปลงเป็นสัญญาแล้ว",
+      "quotation_cancelled": "ยกเลิกใบเสนอราคาแล้ว",
+      "quotation_reactivated": "เปิดใช้งานอีกครั้งแล้ว",
+      "rental_contract_created": "สร้างสัญญาเช่าแล้ว",
+      "rental_contract_updated": "อัปเดตสัญญาเช่าแล้ว",
+      "rental_contract_deleted": "ลบสัญญาเช่าแล้ว",
+      "rental_contract_submitted": "ส่งเพื่อพิจารณาแล้ว",
+      "rental_contract_approved": "อนุมัติสัญญาเช่าแล้ว",
+      "rental_contract_revision": "ขอแก้ไขแล้ว",
+      "rental_contract_activated": "เริ่มใช้งานสัญญาแล้ว",
+      "rental_contract_cancelled": "ยกเลิกสัญญาเช่าแล้ว",
+      "rental_contract_closed": "ปิดสัญญาแล้ว",
+      "rental_return_requested": "ส่งคำขอคืนอุปกรณ์แล้ว",
+      "rental_return_picked_up": "รับอุปกรณ์คืนจากลูกค้าแล้ว",
+      "rental_return_received": "ตรวจรับอุปกรณ์คืนแล้ว",
+      "rental_return_completed": "การคืนอุปกรณ์เสร็จสมบูรณ์แล้ว",
+      "rental_damage_assessed": "ประเมินความเสียหายแล้ว",
+      "rental_damage_disputed": "โต้แย้งการประเมินความเสียหายแล้ว",
+      "rental_damage_resolved": "ยุติกรณีความเสียหายแล้ว",
+      "rental_extension_requested": "ส่งคำขอขยายสัญญาแล้ว",
+      "rental_extension_approved": "อนุมัติการขยายสัญญาแล้ว",
+      "rental_extension_rejected": "ปฏิเสธการขยายสัญญาแล้ว",
+      "rental_billing_created": "สร้างใบเรียกเก็บเงินแล้ว",
+      "invoice_created": "สร้างใบแจ้งหนี้แล้ว",
+      "invoice_updated": "อัปเดตใบแจ้งหนี้แล้ว",
+      "invoice_issued": "ออกใบแจ้งหนี้แล้ว",
+      "invoice_sent": "ส่งใบแจ้งหนี้แล้ว",
+      "invoice_cancelled": "ยกเลิกใบแจ้งหนี้แล้ว",
+      "invoice_voided": "ยกเลิกใบแจ้งหนี้แล้ว (โมฆะ)",
+      "payment_recorded": "บันทึกการชำระเงินแล้ว",
+      "payment_confirmed": "ยืนยันการชำระเงินแล้ว",
+      "payment_rejected": "ปฏิเสธการชำระเงินแล้ว",
+      "payment_allocated": "จัดสรรการชำระเงินแล้ว",
+      "deposit_created": "สร้างเงินมัดจำแล้ว",
+      "deposit_received": "รับเงินมัดจำแล้ว",
+      "deposit_refunded": "คืนเงินมัดจำแล้ว",
+      "deposit_forfeited": "ริบเงินมัดจำแล้ว",
+      "deposit_applied": "นำเงินมัดจำไปหักแล้ว",
+      "revenue_recognized": "รับรู้รายได้แล้ว",
+      "revenue_reversed": "กลับรายการรายได้แล้ว",
+      "project_created": "สร้างโครงการแล้ว",
+      "project_updated": "อัปเดตโครงการแล้ว",
+      "project_deleted": "ลบโครงการแล้ว",
+      "project_milestone_status_changed": "เปลี่ยนสถานะเป้าหมายแล้ว",
+      "setting_updated": "อัปเดตการตั้งค่าระบบแล้ว",
+      "inventory_import_executed": "นำเข้าข้อมูลคลังสินค้าแบบกลุ่มแล้ว",
+      "notification_preference_created": "สมัครรับการแจ้งเตือนแล้ว",
+      "notification_preference_updated": "อัปเดตการตั้งค่าการแจ้งเตือนแล้ว",
+      "notification_preference_deleted": "ยกเลิกรับการแจ้งเตือนแล้ว"
+    },
+    "group": {
+      "user": "ผู้ใช้",
+      "customer": "ลูกค้า",
+      "lead": "ลูกค้าเป้าหมาย",
+      "billing": "การเงิน",
+      "project": "โครงการ",
+      "settings": "การตั้งค่า",
+      "inventory": "คลังสินค้า",
+      "notifications": "การแจ้งเตือน"
+    }
+  },
+  "equipment": {
+    "status": {
+      "inStock": "มีสินค้าในสต๊อก",
+      "sold": "ขายแล้ว",
+      "rented": "ให้เช่าอยู่",
+      "inService": "อยู่ระหว่างซ่อมบำรุง",
+      "reserved": "จองแล้ว",
+      "decommissioned": "ปลดระวางแล้ว"
+    },
+    "ownership": {
+      "forSale": "สำหรับขาย",
+      "rental": "กองรถให้เช่า",
+      "customerOwned": "ลูกค้าเป็นเจ้าของ",
+      "retired": "ปลดระวาง"
+    },
+    "operationalStatus": {
+      "available": "พร้อมใช้งาน",
+      "onRent": "ให้เช่าอยู่",
+      "inService": "อยู่ระหว่างซ่อมบำรุง",
+      "sold": "ขายแล้ว"
+    },
+    "condition": {
+      "new": "ใหม่",
+      "used": "มือสอง",
+      "refurbished": "ปรับปรุงสภาพแล้ว"
+    },
+    "fuel": {
+      "electric": "ไฟฟ้า",
+      "diesel": "ดีเซล",
+      "lpg": "แก๊ส LPG",
+      "dualFuel": "เชื้อเพลิงคู่",
+      "notSpecified": "— ไม่ระบุ —"
+    },
+    "card": {
+      "hoursValue": "{{count}} ชม.",
+      "editForklift": "แก้ไขรถโฟล์คลิฟท์",
+      "serial": "หมายเลขซีเรียล",
+      "brand": "ยี่ห้อ",
+      "fuel": "เชื้อเพลิง",
+      "customer": "ลูกค้า",
+      "iotLive": "ออนไลน์",
+      "iotOffline": "ออฟไลน์",
+      "iotAutoSynced": "ซิงค์อัตโนมัติผ่าน IoT"
+    },
+    "gallery": {
+      "noPhotos": "ยังไม่มีการอัปโหลดรูปภาพ",
+      "noPhotosHint": "รูปภาพช่วยในการระบุและบันทึกข้อมูลอุปกรณ์นี้",
+      "previousPhoto": "รูปก่อนหน้า",
+      "nextPhoto": "รูปถัดไป",
+      "viewFullscreen": "ดูแบบเต็มจอ"
+    },
+    "timeline": {
+      "noHistory": "ยังไม่มีการบันทึกการเปลี่ยนแปลงสถานะ",
+      "system": "ระบบ"
+    },
+    "form": {
+      "serialRequired": "ต้องระบุหมายเลขซีเรียล",
+      "nameRequired": "ต้องระบุชื่อ",
+      "saveFailed": "บันทึกไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
+      "editTitle": "แก้ไขรถโฟล์คลิฟท์",
+      "registerTitle": "ลงทะเบียนรถโฟล์คลิฟท์",
+      "serialNumber": "หมายเลขซีเรียล",
+      "serialNumberPlaceholder": "เช่น JH-2024-001",
+      "nameEnglish": "ชื่อ (ภาษาอังกฤษ)",
+      "nameEnglishPlaceholder": "เช่น Jungheinrich EFG 216k",
+      "nameLao": "ชื่อ (ภาษาลาว)",
+      "internalCode": "รหัสภายใน",
+      "internalCodePlaceholder": "รหัสทรัพย์สินของ DK",
+      "brand": "ยี่ห้อ",
+      "noBrand": "— ไม่มียี่ห้อ —",
+      "modelNumber": "หมายเลขรุ่น",
+      "modelNumberPlaceholder": "เช่น EFG 216k",
+      "condition": "สภาพ",
+      "operationalStatus": "สถานะการดำเนินงาน",
+      "ownershipState": "สถานะความเป็นเจ้าของ",
+      "fuelType": "ประเภทเชื้อเพลิง",
+      "capacityKg": "ความสามารถในการยก (กก.)",
+      "yearManufactured": "ปีที่ผลิต",
+      "currentHourMeter": "มิเตอร์ชั่วโมงปัจจุบัน",
+      "initialHourMeter": "มิเตอร์ชั่วโมงเริ่มต้น",
+      "purchaseDate": "วันที่ซื้อ",
+      "warrantyExpiry": "วันหมดประกัน",
+      "notesPlaceholder": "หมายเหตุ (ไม่บังคับ)...",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง",
+      "capacityKgPlaceholder": "เช่น 1600",
+      "yearManufacturedPlaceholder": "เช่น 2024"
+    },
+    "registry": {
+      "title": "ทะเบียนอุปกรณ์",
+      "subtitle": "จัดการและตรวจสอบกองรถโฟล์คลิฟท์ของคุณ",
+      "refresh": "รีเฟรช",
+      "registerForklift": "ลงทะเบียนรถโฟล์คลิฟท์",
+      "searchPlaceholder": "ค้นหาหมายเลขซีเรียล, ชื่อ, รุ่น...",
+      "noForkliftsFound": "ไม่พบรถโฟล์คลิฟท์",
+      "pageInfo": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)",
+      "deleteTitle": "ลบรถโฟล์คลิฟท์",
+      "deleteMessage": "ลบ \"{{name}}\" (S/N: {{serial}}) ใช่หรือไม่? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+      "kpi": {
+        "utilization": "อัตราการใช้งาน",
+        "avgHours": "ชั่วโมงเฉลี่ย",
+        "pmDue": "ครบกำหนด PM",
+        "critical": "{{count}} รายการวิกฤต",
+        "avgAge": "อายุเฉลี่ย",
+        "years": "{{count}} ปี"
+      },
+      "table": {
+        "forklift": "รถโฟล์คลิฟท์",
+        "model": "รุ่น",
+        "ownership": "ความเป็นเจ้าของ",
+        "hours": "ชั่วโมงมิเตอร์"
+      },
+      "toast": {
+        "loadError": "โหลดรถโฟล์คลิฟท์ไม่สำเร็จ",
+        "createSuccess": "ลงทะเบียนรถโฟล์คลิฟท์สำเร็จแล้ว",
+        "createError": "ลงทะเบียนรถโฟล์คลิฟท์ไม่สำเร็จ",
+        "updateSuccess": "อัปเดตรถโฟล์คลิฟท์สำเร็จแล้ว",
+        "updateError": "อัปเดตรถโฟล์คลิฟท์ไม่สำเร็จ",
+        "deleteSuccess": "ลบรถโฟล์คลิฟท์แล้ว",
+        "deleteError": "ลบรถโฟล์คลิฟท์ไม่สำเร็จ"
+      }
+    },
+    "detail": {
+      "notFoundOrFailed": "ไม่พบรถโฟล์คลิฟท์ หรือโหลดข้อมูลไม่สำเร็จ",
+      "backToEquipment": "กลับไปยังอุปกรณ์",
+      "notFound": "ไม่พบรถโฟล์คลิฟท์",
+      "tabs": {
+        "overview": "ภาพรวม",
+        "photos": "รูปภาพ",
+        "timeline": "ไทม์ไลน์",
+        "documents": "เอกสาร",
+        "contracts": "สัญญา"
+      },
+      "serialAbbrev": "S/N",
+      "newQuote": "ใบเสนอราคาใหม่",
+      "newContract": "สัญญาใหม่",
+      "specifications": "ข้อมูลจำเพาะ",
+      "capacity": "ความสามารถในการยก",
+      "year": "ปี",
+      "model": "รุ่น",
+      "mastType": "ประเภทเสา",
+      "maxLiftHeight": "ความสูงยกสูงสุด",
+      "currentLocation": "สถานที่ปัจจุบัน",
+      "zone": "โซน",
+      "since": "ตั้งแต่",
+      "noLocationRecorded": "ไม่มีการบันทึกสถานที่",
+      "hourMeter": "มิเตอร์ชั่วโมง",
+      "hoursUnit": "ชม.",
+      "pctOfThreshold": "{{pct}}% ของ {{threshold}} ชม.",
+      "serviceInterval": "รอบการบำรุงรักษา",
+      "initial": "เริ่มต้น",
+      "hoursUsed": "ชั่วโมงที่ใช้งาน",
+      "dailyAvg": "เฉลี่ยต่อวัน",
+      "estService": "กำหนดซ่อมบำรุงโดยประมาณ",
+      "estServiceDays": "~{{count}} วัน",
+      "assetSummary": "สรุปทรัพย์สิน",
+      "assetAge": "อายุทรัพย์สิน",
+      "years": "{{count}} ปี",
+      "warranty": "การรับประกัน",
+      "expired": "หมดอายุแล้ว",
+      "valid": "ยังไม่หมดอายุ",
+      "statusChanges": "การเปลี่ยนแปลงสถานะ",
+      "documents": "เอกสาร",
+      "filesCount": "{{count}} ไฟล์",
+      "photos": "รูปภาพ",
+      "imagesCount": "{{count}} รูปภาพ",
+      "assignedCustomer": "ลูกค้าที่กำหนด",
+      "documentTitle": "ชื่อเอกสาร",
+      "expiry": "วันหมดอายุ",
+      "uploaded": "อัปโหลดเมื่อ",
+      "noDocumentsUploaded": "ยังไม่มีการอัปโหลดเอกสาร",
+      "viewContractsHint": "ดูสัญญาเช่าที่เชื่อมโยงกับอุปกรณ์นี้",
+      "viewRentalContracts": "ดูสัญญาเช่า"
+    },
+    "filters": {
+      "statusShort": {
+        "inService": "ซ่อมบำรุง",
+        "decommissioned": "ปลดระวาง"
+      },
+      "allFuelTypes": "ประเภทเชื้อเพลิงทั้งหมด",
+      "allConditions": "สภาพทั้งหมด",
+      "allOwnership": "ความเป็นเจ้าของทั้งหมด",
+      "allBrands": "ยี่ห้อทั้งหมด",
+      "clear": "ล้าง",
+      "countLabel": "{{count}} อุปกรณ์",
+      "noneFound": "ไม่พบอุปกรณ์",
+      "noneFoundHint": "ลองปรับตัวกรองของคุณ หรือเพิ่มอุปกรณ์ใหม่",
+      "searchPlaceholder": "ค้นหาอุปกรณ์..."
+    },
+    "quickActions": {
+      "register": {
+        "label": "ลงทะเบียนอุปกรณ์",
+        "desc": "เพิ่มรถโฟล์คลิฟท์ใหม่"
+      },
+      "movement": {
+        "label": "สร้างการเคลื่อนย้าย",
+        "desc": "โอนย้ายอุปกรณ์"
+      },
+      "maintenance": {
+        "label": "กำหนดตารางบริการ",
+        "desc": "การบำรุงรักษาเชิงป้องกัน"
+      },
+      "rental": {
+        "label": "การเช่าใหม่",
+        "desc": "กำหนดให้กับสัญญา"
+      }
+    }
+  },
+  "executive": {
+    "title": "แดชบอร์ดผู้บริหาร",
+    "subtitle": "ตัวชี้วัดผลการดำเนินงานและการวิเคราะห์ระดับองค์กร",
+    "refresh": "รีเฟรช",
+    "loadFailed": "ไม่สามารถโหลดข้อมูลผู้บริหารได้",
+    "kpi": {
+      "totalRevenue": "รายได้รวม",
+      "invoicesCount": "{{count}} ใบแจ้งหนี้",
+      "collectionRate": "อัตราการเรียกเก็บเงิน",
+      "collected": "เรียกเก็บแล้ว {{amount}}",
+      "fleetUtilization": "การใช้ประโยชน์จากยานพาหนะ",
+      "rentedOfTotal": "{{rented}} เช่าอยู่ / {{total}} ทั้งหมด",
+      "customers": "ลูกค้า",
+      "activeCount": "{{count}} ใช้งานอยู่",
+      "inventoryValue": "มูลค่าสินค้าคงคลัง",
+      "partsCount": "{{count}} รายการอะไหล่",
+      "conversionRate": "อัตราการแปลงเป็นลูกค้า",
+      "winRate": "อัตราปิดการขาย: {{rate}}"
+    },
+    "chart": {
+      "revenueTrend": "แนวโน้มรายได้",
+      "noRevenueData": "ไม่มีข้อมูลรายได้",
+      "invoiced": "ออกใบแจ้งหนี้แล้ว",
+      "collected": "เรียกเก็บแล้ว",
+      "fleetStatus": "สถานะยานพาหนะ",
+      "noFleetData": "ไม่มีข้อมูลยานพาหนะ",
+      "leadPipeline": "ไปป์ไลน์โอกาสการขาย (12 เดือน)",
+      "noLeadData": "ไม่มีข้อมูลโอกาสการขาย",
+      "newLeads": "โอกาสการขายใหม่",
+      "customerGrowth": "การเติบโตของลูกค้า (12 เดือน)",
+      "noCustomerData": "ไม่มีข้อมูลลูกค้า",
+      "newCustomers": "ลูกค้าใหม่",
+      "months": {
+        "jan": "ม.ค.",
+        "feb": "ก.พ.",
+        "mar": "มี.ค.",
+        "apr": "เม.ย.",
+        "may": "พ.ค.",
+        "jun": "มิ.ย.",
+        "jul": "ก.ค.",
+        "aug": "ส.ค.",
+        "sep": "ก.ย.",
+        "oct": "ต.ค.",
+        "nov": "พ.ย.",
+        "dec": "ธ.ค."
+      }
+    },
+    "export": {
+      "exportExcel": "ส่งออก Excel",
+      "customers": "ลูกค้า",
+      "leads": "โอกาสการขาย",
+      "sales": "ยอดขาย",
+      "downloaded": "ดาวน์โหลดรายงาน{{report}}แล้ว",
+      "exportFailed": "การส่งออกล้มเหลว",
+      "exportReports": "ส่งออกรายงาน",
+      "customersExcel": "ลูกค้า (Excel)",
+      "leadsExcel": "โอกาสการขาย (Excel)",
+      "salesExcel": "ยอดขาย (Excel)",
+      "customersCsv": "ลูกค้า (CSV)",
+      "leadsCsv": "โอกาสการขาย (CSV)",
+      "salesCsv": "ยอดขาย (CSV)"
+    }
+  },
+  "catalog": {
+    "saveFailed": "บันทึกไม่สำเร็จ",
+    "saveChanges": "บันทึกการเปลี่ยนแปลง",
+    "resultsCount": "{{count}} รายการ",
+    "pageOf": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)",
+    "viewAll": "ดูทั้งหมด →",
+    "browseAllProducts": "เรียกดูสินค้าทั้งหมด →",
+    "hero": {
+      "title": "แคตตาล็อกสินค้า",
+      "subtitle": "รถโฟล์คลิฟท์ · อุปกรณ์คลังสินค้า · อะไหล่ · อุปกรณ์เสริม",
+      "searchPlaceholder": "ค้นหาสินค้า {{count}} รายการ ตามชื่อ, SKU, รุ่น..."
+    },
+    "categorySlider": {
+      "title": "เรียกดูตามหมวดหมู่"
+    },
+    "brandShowcase": {
+      "title": "เลือกซื้อตามแบรนด์"
+    },
+    "megaMenu": {
+      "allCategories": "หมวดหมู่ทั้งหมด"
+    },
+    "brands": {
+      "title": "แบรนด์",
+      "subtitle": "{{count}} แบรนด์",
+      "newBrand": "แบรนด์ใหม่",
+      "searchPlaceholder": "ค้นหาแบรนด์…",
+      "editTitle": "แก้ไขแบรนด์",
+      "newTitle": "แบรนด์ใหม่",
+      "table": {
+        "brand": "แบรนด์",
+        "country": "ประเทศ",
+        "role": "บทบาท"
+      },
+      "empty": {
+        "title": "ไม่พบแบรนด์",
+        "createHint": "สร้างแบรนด์แรกของคุณเพื่อเริ่มต้นใช้งาน"
+      },
+      "roles": {
+        "primary": "แบรนด์หลัก",
+        "partsOnly": "เฉพาะอะไหล่",
+        "both": "ทั้งสองอย่าง"
+      },
+      "form": {
+        "nameRequired": "ต้องระบุชื่อแบรนด์",
+        "namePlaceholder": "ชื่อแบรนด์",
+        "countryLabel": "ประเทศ",
+        "countryPlaceholder": "เช่น ญี่ปุ่น",
+        "roleLabel": "บทบาท",
+        "websiteLabel": "เว็บไซต์",
+        "websitePlaceholder": "https://…",
+        "createBrand": "สร้างแบรนด์"
+      },
+      "deleteDialog": {
+        "title": "ลบแบรนด์",
+        "message": "ลบแบรนด์ \"{{name}}\" ใช่หรือไม่? สินค้าที่อ้างอิงแบรนด์นี้จะถูกล้างข้อมูลแบรนด์"
+      },
+      "toast": {
+        "loadError": "โหลดแบรนด์ไม่สำเร็จ",
+        "createSuccess": "สร้างแบรนด์สำเร็จแล้ว",
+        "createError": "สร้างแบรนด์ไม่สำเร็จ",
+        "updateSuccess": "อัปเดตแบรนด์สำเร็จแล้ว",
+        "updateError": "อัปเดตแบรนด์ไม่สำเร็จ",
+        "deleteSuccess": "ลบแบรนด์แล้ว",
+        "deleteError": "ลบแบรนด์ไม่สำเร็จ"
+      }
+    },
+    "categories": {
+      "title": "หมวดหมู่",
+      "subtitle": "{{count}} หมวดหมู่ (โครงสร้าง 3 ระดับ)",
+      "newCategory": "หมวดหมู่ใหม่",
+      "editTitle": "แก้ไขหมวดหมู่",
+      "newTitle": "หมวดหมู่ใหม่",
+      "table": {
+        "category": "หมวดหมู่",
+        "level": "ระดับ",
+        "children": "หมวดหมู่ย่อย"
+      },
+      "empty": {
+        "title": "ไม่พบหมวดหมู่",
+        "createHint": "สร้างหมวดหมู่แรกของคุณเพื่อเริ่มต้นใช้งาน"
+      },
+      "types": {
+        "division": "กลุ่มสินค้า",
+        "category": "หมวดหมู่",
+        "subCategory": "หมวดหมู่ย่อย"
+      },
+      "levelLine": "L{{level}} — {{type}}",
+      "form": {
+        "nameRequired": "ต้องระบุชื่อภาษาอังกฤษ",
+        "nameEnLabel": "ชื่อ (ภาษาอังกฤษ)",
+        "namePlaceholder": "ชื่อหมวดหมู่",
+        "nameLoLabel": "ชื่อ (ภาษาลาว)",
+        "parentLabel": "หมวดหมู่หลัก",
+        "topLevelOption": "— ระดับบนสุด (กลุ่มสินค้า) —",
+        "createCategory": "สร้างหมวดหมู่"
+      },
+      "deleteDialog": {
+        "title": "ลบหมวดหมู่",
+        "message": "ลบ \"{{name}}\" ใช่หรือไม่? การดำเนินการนี้จะล้มเหลวหากหมวดหมู่นี้มีหมวดหมู่ย่อยหรือสินค้าที่กำหนดไว้"
+      },
+      "toast": {
+        "loadError": "โหลดหมวดหมู่ไม่สำเร็จ",
+        "createSuccess": "สร้างหมวดหมู่สำเร็จแล้ว",
+        "createError": "สร้างหมวดหมู่ไม่สำเร็จ",
+        "updateSuccess": "อัปเดตหมวดหมู่สำเร็จแล้ว",
+        "updateError": "อัปเดตหมวดหมู่ไม่สำเร็จ",
+        "deleteSuccess": "ลบหมวดหมู่แล้ว",
+        "deleteError": "ลบหมวดหมู่ไม่สำเร็จ"
+      }
+    },
+    "products": {
+      "filterAllTypes": "ประเภททั้งหมด",
+      "forSale": "สำหรับขาย",
+      "forRental": "สำหรับเช่า",
+      "featured": "สินค้าแนะนำ",
+      "refresh": "รีเฟรช",
+      "newProduct": "สินค้าใหม่",
+      "productCount": "{{count}} สินค้า",
+      "pillSearch": "ค้นหา: {{query}}",
+      "pillBrand": "แบรนด์: {{name}}",
+      "pillCategory": "หมวดหมู่: {{name}}",
+      "editTitle": "แก้ไขสินค้า",
+      "newTitle": "สินค้าใหม่",
+      "skuPrefix": "SKU: {{sku}}",
+      "empty": {
+        "title": "ไม่พบสินค้า",
+        "hint": "ลองปรับตัวกรองของคุณ หรือสร้างสินค้าใหม่"
+      },
+      "table": {
+        "product": "สินค้า",
+        "sku": "SKU",
+        "brand": "แบรนด์"
+      },
+      "badges": {
+        "sale": "ขาย",
+        "rental": "เช่า",
+        "featured": "แนะนำ"
+      },
+      "deleteDialog": {
+        "title": "ลบสินค้า",
+        "message": "ลบ \"{{name}}\" ใช่หรือไม่? การดำเนินการนี้ไม่สามารถย้อนกลับได้"
+      },
+      "form": {
+        "nameRequired": "ต้องระบุชื่อสินค้า",
+        "saveFailed": "บันทึกไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
+        "imageLabel": "รูปภาพสินค้า",
+        "imageSaveFailed": "บันทึกสินค้าแล้ว แต่ไม่สามารถบันทึกรูปภาพได้",
+        "nameEnLabel": "ชื่อ (ภาษาอังกฤษ)",
+        "nameEnPlaceholder": "ชื่อสินค้าเป็นภาษาอังกฤษ",
+        "nameLoLabel": "ชื่อ (ภาษาลาว)",
+        "skuPlaceholder": "สร้างอัตโนมัติหากเว้นว่าง",
+        "modelNumberLabel": "หมายเลขรุ่น",
+        "modelNumberPlaceholder": "เช่น EFG115",
+        "brandLabel": "แบรนด์",
+        "noBrandOption": "— ไม่มีแบรนด์ —",
+        "noCategoryOption": "— ไม่มีหมวดหมู่ —",
+        "descriptionPlaceholder": "รายละเอียดสินค้า…",
+        "attributesLabel": "คุณลักษณะ",
+        "usedAvailable": "มีสินค้ามือสอง",
+        "serviceItem": "รายการบริการ",
+        "createProduct": "สร้างสินค้า"
+      },
+      "toast": {
+        "loadError": "โหลดสินค้าไม่สำเร็จ",
+        "createSuccess": "สร้างสินค้าสำเร็จแล้ว",
+        "createError": "สร้างสินค้าไม่สำเร็จ",
+        "updateSuccess": "อัปเดตสินค้าสำเร็จแล้ว",
+        "updateError": "อัปเดตสินค้าไม่สำเร็จ",
+        "deleteSuccess": "ลบสินค้าแล้ว",
+        "deleteError": "ลบสินค้าไม่สำเร็จ"
+      }
+    },
+    "productDetail": {
+      "loadError": "ไม่พบสินค้า หรือโหลดข้อมูลไม่สำเร็จ",
+      "backToCatalog": "กลับไปยังแคตตาล็อก",
+      "notFound": "ไม่พบสินค้า",
+      "model": "รุ่น",
+      "compatibleWith": "ใช้งานร่วมกับ",
+      "specifications": "ข้อมูลจำเพาะ"
+    },
+    "import": {
+      "title": "นำเข้าสินค้า",
+      "subtitle": "อัปโหลดไฟล์ Excel เพื่อนำเข้าสินค้า, แบรนด์ และหมวดหมู่แบบกลุ่ม",
+      "dropzoneText": "วางไฟล์ Excel ของคุณที่นี่ หรือคลิกเพื่อเลือกไฟล์",
+      "dropzoneHint": "รองรับไฟล์ .xlsx และ .xls จากแคตตาล็อกสินค้า DK LAO",
+      "clear": "ล้าง",
+      "supportedSheetsLabel": "ชีตที่รองรับ:",
+      "supportedSheetsList": "รถโฟล์คลิฟท์ Jungheinrich, รถโฟล์คลิฟท์ Mitsubishi, อุปกรณ์เสริม (ອຸປະກອນ), คลังสินค้า (ສາງ), เครื่องดูดฝุ่น (ດູດຝຸ່ນ), เครื่องทำความสะอาดพื้น (ເຊັດຄັດ), แบรนด์ (ບໍລິການ)",
+      "autoDetectHint": "ระบบนำเข้าจะตรวจจับชีตโดยอัตโนมัติจากชื่อทั้งภาษาอังกฤษและภาษาลาว",
+      "importButton": "อัปโหลดและนำเข้า",
+      "importing": "กำลังนำเข้า…",
+      "uploadingHint": "อาจใช้เวลาสองสามวินาทีสำหรับไฟล์ขนาดใหญ่",
+      "uploadFailed": "การนำเข้าล้มเหลว กรุณาลองใหม่อีกครั้ง",
+      "successBanner": "นำเข้าสำเร็จเรียบร้อยแล้ว",
+      "partialBanner": "การนำเข้าเสร็จสิ้นโดยมีข้อผิดพลาด",
+      "imported": "นำเข้าแล้ว",
+      "errors": "ข้อผิดพลาด",
+      "failedRows": "แถวที่ล้มเหลว",
+      "importAnother": "นำเข้าไฟล์อื่น",
+      "viewCatalog": "ดูแคตตาล็อก",
+      "successToast": "นำเข้าเสร็จสมบูรณ์: นำเข้าสินค้า {{count}} รายการ",
+      "errorToast": "การนำเข้าเสร็จสิ้นโดยมีข้อผิดพลาด {{count}} รายการ",
+      "table": {
+        "rowNum": "#",
+        "error": "ข้อผิดพลาด",
+        "sheet": "ชีต"
+      }
+    }
+  },
+  "quotations": {
+    "status": {
+      "draft": "ฉบับร่าง",
+      "underReview": "อยู่ระหว่างตรวจสอบ",
+      "approved": "อนุมัติแล้ว",
+      "revision": "ขอแก้ไข",
+      "sent": "ส่งแล้ว",
+      "accepted": "ยอมรับแล้ว",
+      "rejected": "ปฏิเสธแล้ว",
+      "expired": "หมดอายุแล้ว",
+      "converted": "แปลงเป็นสัญญาแล้ว",
+      "cancelled": "ยกเลิกแล้ว"
+    },
+    "type": {
+      "rental": "การเช่า",
+      "sales": "การขาย",
+      "service": "บริการ",
+      "spareParts": "อะไหล่"
+    },
+    "itemType": {
+      "forkliftRental": "การเช่ารถโฟล์คลิฟท์",
+      "forkliftSale": "การขายรถโฟล์คลิฟท์",
+      "service": "บริการ",
+      "sparePart": "อะไหล่",
+      "delivery": "การจัดส่ง",
+      "insurance": "ประกันภัย",
+      "custom": "กำหนดเอง"
+    },
+    "list": {
+      "title": "ใบเสนอราคา",
+      "totalCount": "ใบเสนอราคา {{count}} ฉบับ",
+      "refresh": "รีเฟรช",
+      "newQuotation": "ใบเสนอราคาใหม่",
+      "searchPlaceholder": "ค้นหาหมายเลข, หัวข้อ...",
+      "allStatuses": "สถานะทั้งหมด",
+      "allTypes": "ประเภททั้งหมด",
+      "colQuotation": "ใบเสนอราคา",
+      "colCustomer": "ลูกค้า",
+      "colValidUntil": "ใช้ได้ถึง",
+      "noQuotationsFound": "ไม่พบใบเสนอราคา",
+      "createOrAdjust": "สร้างใบเสนอราคาใหม่หรือปรับตัวกรองของคุณ",
+      "resultsCount": "{{count}} รายการ",
+      "pageOf": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)",
+      "deleteConfirmTitle": "ลบใบเสนอราคา",
+      "deleteConfirmMessage": "ลบ \"{{number}}\" ใช่หรือไม่? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+      "toast": {
+        "loadError": "โหลดใบเสนอราคาไม่สำเร็จ",
+        "createSuccess": "สร้างใบเสนอราคาแล้ว",
+        "createError": "สร้างใบเสนอราคาไม่สำเร็จ",
+        "deleteSuccess": "ลบใบเสนอราคาแล้ว",
+        "deleteError": "ลบใบเสนอราคาไม่สำเร็จ"
+      }
+    },
+    "form": {
+      "backToQuotations": "กลับไปยังใบเสนอราคา",
+      "newQuotation": "ใบเสนอราคาใหม่",
+      "typeLabel": "ประเภทใบเสนอราคา",
+      "currencyLabel": "สกุลเงิน",
+      "titleLabel": "หัวข้อ",
+      "titlePlaceholder": "เช่น เช่ารถโฟล์คลิฟท์ — เวียงจันทน์ มอเตอร์ส",
+      "contactNameLabel": "ชื่อผู้ติดต่อ",
+      "contactNamePlaceholder": "นาย / นาง / นางสาว",
+      "contactEmailLabel": "อีเมลผู้ติดต่อ",
+      "contactEmailPlaceholder": "email@example.com",
+      "contactPhoneLabel": "เบอร์โทรผู้ติดต่อ",
+      "contactPhonePlaceholder": "+856 20 ...",
+      "taxRateLabel": "อัตราภาษี (%)",
+      "validFromLabel": "มีผลตั้งแต่",
+      "validUntilLabel": "ใช้ได้ถึง",
+      "notesLabel": "หมายเหตุ (แสดงให้ลูกค้าเห็น)",
+      "notesPlaceholder": "แสดงบนไฟล์ PDF ใบเสนอราคา...",
+      "internalNotesLabel": "หมายเหตุภายใน",
+      "internalNotesPlaceholder": "สำหรับใช้ภายในเท่านั้น ไม่แสดงให้ลูกค้าเห็น...",
+      "creating": "กำลังสร้าง...",
+      "createQuotation": "สร้างใบเสนอราคา",
+      "titleRequired": "ต้องระบุหัวข้อ",
+      "createFailed": "ไม่สามารถสร้างใบเสนอราคาได้",
+      "createdToast": "สร้างใบเสนอราคา {{number}} แล้ว",
+      "typeOptions": {
+        "rental": "ใบเสนอราคาเช่า",
+        "sales": "ใบเสนอราคาขาย",
+        "service": "ใบเสนอราคาบริการ",
+        "spareParts": "ใบเสนอราคาอะไหล่"
+      },
+      "vehicleInfo": {
+        "title": "ข้อมูลยานพาหนะ",
+        "make": "ยี่ห้อ",
+        "model": "รุ่น",
+        "vin": "หมายเลขตัวถัง (VIN)",
+        "engineNo": "หมายเลขเครื่องยนต์",
+        "regNo": "ทะเบียนรถ",
+        "jobNumber": "หมายเลขงาน"
+      },
+      "exchangeRateLabel": "อัตราแลกเปลี่ยน",
+      "bankDetails": "ข้อมูลธนาคาร",
+      "bankDetailsPlaceholder": "ชื่อธนาคาร, ชื่อบัญชี, เลขที่บัญชี, SWIFT/BIC..."
+    },
+    "detail": {
+      "backToQuotations": "กลับไปยังใบเสนอราคา",
+      "notFoundError": "ไม่พบใบเสนอราคา หรือโหลดข้อมูลไม่สำเร็จ",
+      "actionFailed": "ล้มเหลว: {{action}}",
+      "rev": "แก้ไขครั้งที่ {{number}}",
+      "submit": "ส่งเพื่อพิจารณา",
+      "approve": "อนุมัติ",
+      "requestRevision": "ขอแก้ไข",
+      "sendToCustomer": "ส่งให้ลูกค้า",
+      "markAccepted": "ทำเครื่องหมายว่ายอมรับ",
+      "markRejected": "ทำเครื่องหมายว่าปฏิเสธ",
+      "convert": "แปลงเป็นสัญญา",
+      "reactivate": "เปิดใช้งานอีกครั้ง",
+      "taxWithRate": "ภาษี ({{rate}}%)",
+      "discount": "ส่วนลด",
+      "customer": "ลูกค้า",
+      "contact": "ผู้ติดต่อ",
+      "assignedTo": "ผู้รับผิดชอบ",
+      "validFrom": "มีผลตั้งแต่",
+      "validUntil": "ใช้ได้ถึง",
+      "convertedTo": "แปลงเป็น",
+      "internalNote": "หมายเหตุภายใน",
+      "lineItems": "รายการสินค้า/บริการ ({{count}})",
+      "addItem": "เพิ่มรายการ",
+      "colNumber": "#",
+      "colUnitPrice": "ราคาต่อหน่วย",
+      "colDiscount": "ส่วนลด %",
+      "serialNumber": "S/N: {{serial}}",
+      "sku": "SKU: {{sku}}",
+      "durationDays": "{{count}} วัน ({{period}})",
+      "noLineItems": "ยังไม่มีรายการสินค้า/บริการ",
+      "addItemsHint": "เพิ่มรายการเพื่อสร้างใบเสนอราคา",
+      "statusHistory": "ประวัติสถานะ",
+      "colFrom": "จาก",
+      "colTo": "ถึง",
+      "colReason": "เหตุผล",
+      "colBy": "โดย",
+      "approvalHistory": "ประวัติการอนุมัติ",
+      "colRev": "ครั้งที่แก้ไข",
+      "colDecision": "การตัดสินใจ",
+      "colConditions": "เงื่อนไข",
+      "toasts": {
+        "submitted": "ส่งเพื่อพิจารณาแล้ว",
+        "revisionRequested": "ขอแก้ไขแล้ว",
+        "sent": "ส่งให้ลูกค้าแล้ว",
+        "markedAccepted": "ทำเครื่องหมายว่ายอมรับแล้ว",
+        "markedRejected": "ทำเครื่องหมายว่าปฏิเสธแล้ว",
+        "converted": "แปลงเป็นสัญญาแล้ว",
+        "reactivated": "เปิดใช้งานอีกครั้งแล้ว",
+        "itemRemoved": "ลบรายการแล้ว"
+      },
+      "addItemModal": {
+        "title": "เพิ่มรายการสินค้า/บริการ",
+        "itemType": "ประเภทรายการ",
+        "unit": "หน่วย",
+        "descriptionPlaceholder": "คำอธิบายรายการ",
+        "unitPrice": "ราคาต่อหน่วย",
+        "discountPercent": "ส่วนลด (%)",
+        "rentalDuration": "ระยะเวลาเช่า (วัน)",
+        "ratePeriod": "ช่วงเวลาคิดอัตรา",
+        "selectRatePeriod": "— เลือก —",
+        "daily": "รายวัน",
+        "weekly": "รายสัปดาห์",
+        "monthly": "รายเดือน",
+        "adding": "กำลังเพิ่ม...",
+        "descriptionRequired": "ต้องระบุคำอธิบาย",
+        "unitPriceRequired": "ต้องระบุราคาต่อหน่วย",
+        "itemAdded": "เพิ่มรายการแล้ว",
+        "addFailed": "ไม่สามารถเพิ่มรายการได้",
+        "itemCode": "รหัสสินค้า"
+      },
+      "revisionNeededReason": "ต้องการแก้ไข",
+      "colItemCode": "รหัสสินค้า"
+    },
+    "editor": {
+      "newTitle": "ใบเสนอราคาใหม่",
+      "printPreview": "ดูตัวอย่างก่อนพิมพ์",
+      "backToEdit": "กลับไปแก้ไข",
+      "portrait": "แนวตั้ง",
+      "landscape": "แนวนอน",
+      "exportExcel": "ส่งออก Excel",
+      "saveDraft": "บันทึกฉบับร่าง",
+      "saveSuccess": "บันทึกใบเสนอราคาแล้ว",
+      "saveFailed": "บันทึกใบเสนอราคาไม่สำเร็จ",
+      "title": "ใบเสนอราคา",
+      "voidReasonLabel": "เหตุผลในการยกเลิก",
+      "actions": {
+        "void": "ยกเลิก (Void)",
+        "voided": "ยกเลิกใบเสนอราคาแล้ว",
+        "approved": "อนุมัติแล้ว",
+        "convertToSalesOrder": "แปลงเป็นใบสั่งขาย"
+      },
+      "header": {
+        "quotationNo": "เลขที่ใบเสนอราคา"
+      },
+      "grid": {
+        "title": "รายการสินค้า",
+        "type": "ประเภท",
+        "itemCode": "รหัสสินค้า",
+        "qty": "จำนวน",
+        "unit": "หน่วย",
+        "unitPrice": "ราคาต่อหน่วย",
+        "discountPercent": "ส่วนลด %",
+        "discountAmount": "จำนวนส่วนลด",
+        "taxPercent": "ภาษี %",
+        "taxAmount": "จำนวนภาษี"
+      }
+    }
+  },
+  "rental": {
+    "status": {
+      "reservation": "การจอง",
+      "draft": "ฉบับร่าง",
+      "pendingApproval": "รออนุมัติ",
+      "approved": "อนุมัติแล้ว",
+      "revision": "ขอแก้ไข",
+      "delivering": "กำลังจัดส่ง",
+      "active": "ใช้งานอยู่",
+      "overdue": "เกินกำหนด",
+      "returning": "กำลังคืน",
+      "inspecting": "กำลังตรวจสอบ",
+      "settling": "กำลังปิดยอด",
+      "closed": "ปิดสัญญาแล้ว",
+      "cancelled": "ยกเลิกแล้ว"
+    },
+    "contractType": {
+      "shortTerm": "ระยะสั้น",
+      "longTerm": "ระยะยาว",
+      "project": "ตามโครงการ"
+    },
+    "list": {
+      "title": "สัญญาเช่า",
+      "totalCount": "สัญญา {{count}} ฉบับ",
+      "refresh": "รีเฟรช",
+      "newContract": "สัญญาใหม่",
+      "searchPlaceholder": "ค้นหาหมายเลข, ลูกค้า...",
+      "allStatuses": "สถานะทั้งหมด",
+      "allTypes": "ประเภททั้งหมด",
+      "colContract": "สัญญา",
+      "colCustomer": "ลูกค้า",
+      "colTotalValue": "มูลค่ารวม",
+      "colStartDate": "วันที่เริ่ม",
+      "colEndDate": "วันที่สิ้นสุด",
+      "noContractsFound": "ไม่พบสัญญาเช่า",
+      "createOrAdjust": "สร้างสัญญาใหม่หรือปรับตัวกรองของคุณ",
+      "resultsCount": "{{count}} รายการ",
+      "pageOf": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)",
+      "deleteConfirmTitle": "ลบสัญญาเช่า",
+      "deleteConfirmMessage": "ลบ \"{{number}}\" ใช่หรือไม่? การดำเนินการนี้ไม่สามารถย้อนกลับได้",
+      "toast": {
+        "loadError": "โหลดสัญญาเช่าไม่สำเร็จ",
+        "createSuccess": "สร้างสัญญาเช่าแล้ว",
+        "createError": "สร้างสัญญาเช่าไม่สำเร็จ",
+        "deleteSuccess": "ลบสัญญาเช่าแล้ว",
+        "deleteError": "ลบสัญญาเช่าไม่สำเร็จ"
+      }
+    },
+    "form": {
+      "backToContracts": "กลับไปยังสัญญาเช่า",
+      "newContract": "สัญญาเช่าใหม่",
+      "contractType": "ประเภทสัญญา",
+      "currencyLabel": "สกุลเงิน",
+      "customerId": "รหัสลูกค้า",
+      "customerIdPlaceholder": "กรอกรหัสลูกค้า",
+      "startDate": "วันที่เริ่ม",
+      "endDate": "วันที่สิ้นสุด",
+      "taxRateLabel": "อัตราภาษี (%)",
+      "depositAmount": "จำนวนเงินมัดจำ",
+      "deliveryAddress": "ที่อยู่จัดส่ง",
+      "deliveryAddressPlaceholder": "ที่อยู่จัดส่งแบบเต็ม",
+      "deliveryContactName": "ชื่อผู้ติดต่อรับสินค้า",
+      "deliveryContactNamePlaceholder": "นาย / นาง / นางสาว",
+      "deliveryContactPhone": "เบอร์โทรผู้ติดต่อรับสินค้า",
+      "deliveryContactPhonePlaceholder": "+856 20 ...",
+      "notesLabel": "หมายเหตุ (แสดงให้ลูกค้าเห็น)",
+      "notesPlaceholder": "แสดงบนสัญญา...",
+      "internalNotesLabel": "หมายเหตุภายใน",
+      "internalNotesPlaceholder": "สำหรับใช้ภายในเท่านั้น ไม่แสดงให้ลูกค้าเห็น...",
+      "creating": "กำลังสร้าง...",
+      "createContract": "สร้างสัญญา",
+      "customerIdRequired": "ต้องระบุรหัสลูกค้า",
+      "startDateRequired": "ต้องระบุวันที่เริ่ม",
+      "endDateRequired": "ต้องระบุวันที่สิ้นสุด",
+      "createFailed": "ไม่สามารถสร้างสัญญาเช่าได้",
+      "createdToast": "สร้างสัญญา {{number}} แล้ว",
+      "billingCycleDay": "วันรอบบิล",
+      "earlyTerminationFee": "ค่าธรรมเนียมยกเลิกก่อนกำหนด",
+      "lateReturnPenalty": "ค่าปรับคืนล่าช้า",
+      "overtimeRate": "อัตราล่วงเวลา"
+    },
+    "editor": {
+      "notFoundError": "ไม่พบสัญญาเช่า",
+      "saveSuccess": "บันทึกสัญญาเช่าแล้ว",
+      "saveFailed": "ไม่สามารถบันทึกสัญญาเช่าได้",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง",
+      "itemRequired": "ต้องมีรายการอุปกรณ์อย่างน้อยหนึ่งรายการ",
+      "itemsBulkEditNote": "การแก้ไข แถวใหม่ และแถวที่ลบจะถูกบันทึกพร้อมกันเมื่อคุณคลิกบันทึกการเปลี่ยนแปลง",
+      "keyTerms": "เงื่อนไขสำคัญ",
+      "confirmCancel": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกสัญญาเช่านี้?",
+      "itemWarning": "รายการหนึ่งหรือมากกว่าอาจไม่ได้ถูกบันทึก — กรุณาโหลดใหม่และตรวจสอบก่อนดำเนินการต่อ",
+      "refreshFailed": "ไม่สามารถโหลดข้อมูลล่าสุดได้ — การเปลี่ยนแปลงล่าสุดของคุณอาจยังบันทึกไว้ กรุณาโหลดใหม่เพื่อตรวจสอบ"
+    },
+    "detail": {
+      "backToContracts": "กลับไปยังสัญญาเช่า",
+      "notFoundError": "ไม่พบสัญญาเช่า หรือโหลดข้อมูลไม่สำเร็จ",
+      "actionFailed": "ล้มเหลว: {{action}}",
+      "rev": "แก้ไขครั้งที่ {{number}}",
+      "submit": "ส่งเพื่อพิจารณา",
+      "approve": "อนุมัติ",
+      "requestRevision": "ขอแก้ไข",
+      "activate": "เริ่มใช้งานสัญญา",
+      "requestReturn": "ขอคืนอุปกรณ์",
+      "requestExtension": "ขอขยายสัญญา",
+      "completeInspection": "ตรวจสอบเสร็จสิ้น",
+      "inspectionInfo": "การตรวจสอบเสร็จสิ้น — ใช้แผงการคืนสินค้าด้านล่าง",
+      "generateBilling": "สร้างใบเรียกเก็บเงิน",
+      "billingInfo": "การสร้างใบเรียกเก็บเงิน — จะพร้อมใช้งานในระยะที่ 4",
+      "closeContract": "ปิดสัญญา",
+      "taxWithRate": "ภาษี ({{rate}}%)",
+      "discount": "ส่วนลด",
+      "totalBilled": "ยอดเรียกเก็บรวม",
+      "totalPaid": "ยอดชำระรวม",
+      "outstanding": "ค้างชำระ",
+      "customer": "ลูกค้า",
+      "deliveryContact": "ผู้ติดต่อรับสินค้า",
+      "deliveryPhone": "เบอร์โทรรับสินค้า",
+      "assignedTo": "ผู้รับผิดชอบ",
+      "approvedBy": "อนุมัติโดย",
+      "actualStart": "วันที่เริ่มจริง",
+      "actualEnd": "วันที่สิ้นสุดจริง",
+      "deposit": "เงินมัดจำ",
+      "paymentTerms": "เงื่อนไขการชำระเงิน",
+      "daysCount": "{{count}} วัน",
+      "internalNote": "หมายเหตุภายใน",
+      "lineItems": "รายการสินค้า/บริการ ({{count}})",
+      "addItem": "เพิ่มรายการ",
+      "colNumber": "#",
+      "colMonthlyRate": "อัตรารายเดือน",
+      "colDailyRate": "อัตรารายวัน",
+      "colLineTotal": "ยอดรวมรายการ",
+      "serialNumber": "S/N: {{serial}}",
+      "hoursUsed": "ชั่วโมง: {{count}}",
+      "noLineItems": "ยังไม่มีรายการสินค้า/บริการ",
+      "addItemsHint": "เพิ่มรายการเพื่อสร้างสัญญา",
+      "extensions": "การขยายสัญญา ({{count}})",
+      "colOriginalEnd": "วันสิ้นสุดเดิม",
+      "colNewEnd": "วันสิ้นสุดใหม่",
+      "colReason": "เหตุผล",
+      "activeReturns": "การคืนสินค้าที่ดำเนินอยู่ ({{count}})",
+      "colReturnNumber": "เลขที่การคืน",
+      "colRequested": "ร้องขอเมื่อ",
+      "colScheduledPickup": "กำหนดรับคืน",
+      "colForklift": "รถโฟล์คลิฟท์",
+      "statusHistory": "ประวัติสถานะ",
+      "colFrom": "จาก",
+      "colTo": "ถึง",
+      "colBy": "โดย",
+      "toasts": {
+        "submitted": "ส่งเพื่อพิจารณาแล้ว",
+        "revisionRequested": "ขอแก้ไขแล้ว",
+        "activated": "เริ่มใช้งานสัญญาแล้ว",
+        "contractClosed": "ปิดสัญญาแล้ว",
+        "itemRemoved": "ลบรายการแล้ว",
+        "extensionApproved": "อนุมัติการขยายสัญญาแล้ว",
+        "extensionRejected": "ปฏิเสธการขยายสัญญาแล้ว"
+      },
+      "addItemModal": {
+        "title": "เพิ่มรายการในสัญญา",
+        "forkliftId": "รหัสรถโฟล์คลิฟท์",
+        "hourlyRate": "อัตรารายชั่วโมง",
+        "monthlyRate": "อัตรารายเดือน",
+        "dailyRate": "อัตรารายวัน",
+        "adding": "กำลังเพิ่ม...",
+        "forkliftIdRequired": "ต้องระบุรหัสรถโฟล์คลิฟท์",
+        "descriptionRequired": "ต้องระบุคำอธิบาย",
+        "monthlyRateRequired": "ต้องระบุอัตรารายเดือน",
+        "dailyRateRequired": "ต้องระบุอัตรารายวัน",
+        "itemAdded": "เพิ่มรายการแล้ว",
+        "addFailed": "ไม่สามารถเพิ่มรายการได้"
+      },
+      "extensionModal": {
+        "title": "ขอขยายสัญญา",
+        "currentEndDate": "วันสิ้นสุดปัจจุบัน",
+        "newEndDate": "วันสิ้นสุดใหม่",
+        "rateAdjustment": "การปรับอัตรา (%)",
+        "reason": "เหตุผล",
+        "reasonPlaceholder": "เหตุผลในการขอขยายสัญญา...",
+        "requesting": "กำลังส่งคำขอ...",
+        "requestExtension": "ขอขยายสัญญา",
+        "newEndDateRequired": "ต้องระบุวันสิ้นสุดใหม่",
+        "newEndDateAfterCurrent": "วันสิ้นสุดใหม่ต้องอยู่หลังวันสิ้นสุดปัจจุบัน",
+        "extensionRequested": "ส่งคำขอขยายสัญญาแล้ว",
+        "requestFailed": "ไม่สามารถส่งคำขอขยายสัญญาได้"
+      },
+      "returnModal": {
+        "title": "ขอคืนอุปกรณ์",
+        "returnType": "ประเภทการคืน",
+        "scheduled": "ตามกำหนดการ",
+        "early": "คืนก่อนกำหนด",
+        "requestedDate": "วันที่ร้องขอ",
+        "equipmentToReturn": "อุปกรณ์ที่จะคืน",
+        "allEquipment": "— อุปกรณ์ทั้งหมด —",
+        "scheduledPickupDate": "วันที่กำหนดรับคืน",
+        "pickupAddress": "ที่อยู่รับคืน",
+        "pickupAddressPlaceholder": "ที่อยู่สถานที่ลูกค้า",
+        "earlyTermination": "ยกเลิกสัญญาก่อนกำหนด (อาจมีค่าปรับ)",
+        "notesPlaceholder": "คำแนะนำเพิ่มเติม...",
+        "requesting": "กำลังส่งคำขอ...",
+        "requestReturn": "ขอคืนอุปกรณ์",
+        "requestedDateRequired": "ต้องระบุวันที่ร้องขอ",
+        "returnRequested": "ส่งคำขอคืนอุปกรณ์แล้ว",
+        "requestFailed": "ไม่สามารถสร้างคำขอคืนอุปกรณ์ได้"
+      },
+      "reasons": {
+        "revisionNeeded": "ต้องการแก้ไข",
+        "cancelledByUser": "ยกเลิกโดยผู้ใช้",
+        "rejected": "ปฏิเสธ"
+      }
+    }
+  },
+  "finance": {
+    "collectionRate": {
+      "title": "อัตราการเรียกเก็บเงิน",
+      "collected": "เรียกเก็บแล้ว",
+      "invoiced": "ออกใบแจ้งหนี้แล้ว"
+    },
+    "kpi": {
+      "totalRevenue": "รายได้รวม",
+      "collected": "เรียกเก็บแล้ว",
+      "outstanding": "ค้างชำระ",
+      "overdue": "เกินกำหนดชำระ",
+      "pastDue": "{{amount}} เกินกำหนดชำระ",
+      "invoices": "ใบแจ้งหนี้",
+      "totalIssued": "ยอดออกทั้งหมด",
+      "payments": "การชำระเงิน",
+      "received": "รับแล้ว"
+    },
+    "quickNav": {
+      "invoices": {
+        "label": "ใบแจ้งหนี้",
+        "desc": "สร้างและจัดการ"
+      },
+      "payments": {
+        "label": "การชำระเงิน",
+        "desc": "ติดตามการเรียกเก็บเงิน"
+      },
+      "deposits": {
+        "label": "เงินมัดจำ",
+        "desc": "เงินประกัน"
+      },
+      "statements": {
+        "label": "รายการเดินบัญชี",
+        "desc": "กิจกรรมในบัญชี"
+      },
+      "analytics": {
+        "label": "การวิเคราะห์",
+        "desc": "แผนภูมิและแนวโน้ม"
+      },
+      "revenue": {
+        "label": "รายได้",
+        "desc": "กำหนดการรับรู้รายได้"
+      }
+    },
+    "invoiceStatusChart": {
+      "title": "การกระจายตามสถานะ",
+      "totalCount": "{{count}} ทั้งหมด",
+      "empty": "ไม่มีใบแจ้งหนี้"
+    },
+    "recentTransactions": {
+      "recentInvoices": "ใบแจ้งหนี้ล่าสุด",
+      "recentPayments": "การชำระเงินล่าสุด",
+      "viewAll": "ดูทั้งหมด",
+      "noInvoicesYet": "ยังไม่มีใบแจ้งหนี้",
+      "noPaymentsYet": "ยังไม่มีการชำระเงิน"
+    },
+    "revenueChart": {
+      "title": "แนวโน้มรายได้",
+      "subtitle": "6 เดือนล่าสุด ({{currency}})",
+      "empty": "ยังไม่มีข้อมูลรายได้"
+    }
+  },
+  "iot": {
+    "title": "การจัดการ IoT",
+    "subtitle": "จัดการการจับคู่อุปกรณ์ GPS/มิเตอร์ชั่วโมง และติดตามการเชื่อมต่อแบบสดของกองยานพาหนะ",
+    "refresh": "รีเฟรช",
+    "searchPlaceholder": "ค้นหาด้วยชื่อรถโฟล์คลิฟท์หรือหมายเลขซีเรียล...",
+    "kpi": {
+      "totalPaired": "อุปกรณ์ที่จับคู่แล้ว",
+      "live": "ออนไลน์ตอนนี้",
+      "offline": "ออฟไลน์",
+      "unpaired": "หน่วยที่ยังไม่จับคู่"
+    },
+    "table": {
+      "forklift": "รถโฟล์คลิฟท์",
+      "deviceId": "รหัสอุปกรณ์",
+      "lastPing": "ส่งข้อมูลล่าสุด",
+      "status": "สถานะ"
+    },
+    "notPaired": "ยังไม่จับคู่",
+    "never": "ไม่เคย",
+    "pairAction": "จับคู่อุปกรณ์",
+    "unpairAction": "ยกเลิกการจับคู่",
+    "noResults": "ไม่พบรถโฟล์คลิฟท์",
+    "pairModal": {
+      "title": "จับคู่อุปกรณ์ IoT — {{name}}",
+      "deviceIdLabel": "รหัสอุปกรณ์",
+      "deviceIdPlaceholder": "เช่น DK-IOT-001",
+      "deviceIdRequired": "กรุณาระบุรหัสอุปกรณ์",
+      "duplicateError": "รหัสอุปกรณ์นี้ถูกจับคู่กับรถคันอื่นแล้ว",
+      "submitError": "จับคู่อุปกรณ์ไม่สำเร็จ กรุณาลองใหม่",
+      "submit": "จับคู่อุปกรณ์",
+      "pairing": "กำลังจับคู่..."
+    },
+    "unpairConfirm": {
+      "title": "ยกเลิกการจับคู่อุปกรณ์",
+      "message": "ลบอุปกรณ์ \"{{deviceId}}\" ออกจาก {{name}} หรือไม่? ระบบจะหยุดส่งข้อมูลชั่วโมงอัตโนมัติจนกว่าจะจับคู่ใหม่"
+    }
+  },
+  "changePassword": {
+    "title": "เปลี่ยนรหัสผ่าน",
+    "subtitle": "อัปเดตรหัสผ่านของคุณเพื่อความปลอดภัยของบัญชี",
+    "currentPassword": "รหัสผ่านปัจจุบัน",
+    "currentPasswordPlaceholder": "กรอกรหัสผ่านปัจจุบันของคุณ",
+    "newPassword": "รหัสผ่านใหม่",
+    "newPasswordPlaceholder": "อย่างน้อย 8 ตัวอักษร",
+    "confirmPassword": "ยืนยันรหัสผ่านใหม่",
+    "confirmPasswordPlaceholder": "กรอกรหัสผ่านใหม่อีกครั้ง",
+    "submit": "เปลี่ยนรหัสผ่าน",
+    "submitting": "กำลังเปลี่ยนรหัสผ่าน…",
+    "mismatchError": "รหัสผ่านใหม่และการยืนยันไม่ตรงกัน",
+    "tooShortError": "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร",
+    "successToast": "เปลี่ยนรหัสผ่านสำเร็จแล้ว",
+    "incorrectCurrentError": "รหัสผ่านปัจจุบันไม่ถูกต้อง",
+    "genericError": "เปลี่ยนรหัสผ่านไม่สำเร็จ กรุณาลองใหม่อีกครั้ง"
+  },
+  "profile": {
+    "title": "โปรไฟล์ของฉัน",
+    "subtitle": "จัดการข้อมูลส่วนตัวและความปลอดภัยของบัญชี",
+    "uploadPhoto": "อัปโหลดรูปภาพ",
+    "saveChanges": "บันทึกการเปลี่ยนแปลง",
+    "savedToast": "อัปเดตโปรไฟล์แล้ว",
+    "personalDetails": {
+      "title": "ข้อมูลส่วนตัว",
+      "firstName": "ชื่อจริง",
+      "lastName": "นามสกุล",
+      "email": "อีเมล",
+      "phone": "หมายเลขโทรศัพท์",
+      "phonePlaceholder": "เช่น +856 20 1234 5678"
+    },
+    "security": {
+      "title": "ความปลอดภัย",
+      "currentPassword": "รหัสผ่านปัจจุบัน",
+      "newPassword": "รหัสผ่านใหม่",
+      "confirmPassword": "ยืนยันรหัสผ่าน",
+      "mismatchError": "รหัสผ่านใหม่และการยืนยันไม่ตรงกัน",
+      "tooShortError": "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"
+    }
+  },
+  "documentPreview": {
+    "docTitle": {
+      "invoice": "ใบแจ้งหนี้",
+      "quotation": "ใบเสนอราคา",
+      "purchaseOrder": "ใบสั่งซื้อ"
+    },
+    "customerDetails": "ข้อมูลลูกค้า",
+    "vendorDetails": "ข้อมูลผู้ขาย",
+    "vehicleInformation": "ข้อมูลยานพาหนะ",
+    "vehicle": {
+      "make": "ยี่ห้อ",
+      "model": "รุ่น",
+      "vin": "หมายเลขตัวถัง (VIN)",
+      "engineNo": "หมายเลขเครื่องยนต์",
+      "regNo": "ทะเบียนรถ",
+      "jobNumber": "หมายเลขงาน"
+    },
+    "dateLabel": "วันที่",
+    "docNumberLabel": "เลขที่เอกสาร",
+    "unitPrice": "ราคาต่อหน่วย",
+    "bankDetails": "ข้อมูลธนาคาร",
+    "subtotal": "ยอดรวมย่อย",
+    "vatLabel": "ภาษี ({{rate}}%)",
+    "grandTotal": "ยอดรวมทั้งหมด",
+    "issuedBy": "ผู้ออกเอกสาร",
+    "approvedBy": "ผู้อนุมัติ"
+  },
+  "modulePlaceholder": {
+    "badge": "เร็วๆ นี้",
+    "emptyHint": "โมดูลนี้ถูกจัดโครงสร้างไว้แล้ว — ระบบการทำงานแบบเต็มรูปแบบจะมาเร็วๆ นี้"
+  },
+  "documentFlow": {
+    "title": "ลำดับเอกสาร:"
+  },
+  "salesOrders": {
+    "list": {
+      "title": "ใบสั่งขาย",
+      "subtitle": "คำสั่งซื้อของลูกค้าที่ยืนยันแล้ว แปลงมาจากใบเสนอราคา",
+      "empty": "ยังไม่มีใบสั่งขาย",
+      "totalCount": "{{count}} ใบสั่งขาย",
+      "allStatuses": "ทุกสถานะ",
+      "searchPlaceholder": "ค้นหาเลขที่หรือชื่อใบสั่งขาย...",
+      "newSalesOrder": "ใบสั่งขายใหม่",
+      "createOrAdjust": "สร้างใบสั่งขายใหม่ หรือปรับตัวกรองของคุณ",
+      "deleteConfirmTitle": "ลบใบสั่งขาย?",
+      "deleteConfirmMessage": "การดำเนินการนี้จะลบใบสั่งขาย {{number}} อย่างถาวร ไม่สามารถย้อนกลับได้",
+      "loadError": "โหลดรายการใบสั่งขายล้มเหลว"
+    },
+    "table": {
+      "number": "เลขที่ใบสั่งขาย",
+      "customer": "ลูกค้า",
+      "quotationRef": "อ้างอิงใบเสนอราคา",
+      "orderDate": "วันที่สั่งซื้อ"
+    },
+    "status": {
+      "draft": "ฉบับร่าง",
+      "confirmed": "ยืนยันแล้ว",
+      "completed": "เสร็จสมบูรณ์",
+      "cancelled": "ยกเลิกแล้ว"
+    },
+    "editor": {
+      "newTitle": "ใบสั่งขายใหม่",
+      "title": "ใบสั่งขาย",
+      "titleLabel": "หัวข้อ",
+      "titlePlaceholder": "เช่น ซื้อรถโฟล์คลิฟท์ — บริษัท วอง โลจิสติกส์",
+      "quotationRef": "อ้างอิงใบเสนอราคา",
+      "noQuotation": "ไม่มีใบเสนอราคาที่เชื่อมโยง",
+      "soNumber": "เลขที่ใบสั่งขาย",
+      "orderDate": "วันที่สั่งซื้อ",
+      "expectedDelivery": "วันที่คาดว่าจะจัดส่ง",
+      "saveDraft": "บันทึกฉบับร่าง",
+      "saveSuccess": "บันทึกใบสั่งขายสำเร็จ",
+      "saveFailed": "บันทึกใบสั่งขายล้มเหลว",
+      "notFoundError": "ไม่พบใบสั่งขาย",
+      "actionFailed": "ดำเนินการ {{action}} ล้มเหลว",
+      "actions": {
+        "confirm": "ยืนยัน",
+        "confirmed": "ยืนยันใบสั่งขายแล้ว",
+        "complete": "ทำเครื่องหมายว่าเสร็จสมบูรณ์",
+        "completed": "ใบสั่งขายเสร็จสมบูรณ์แล้ว",
+        "void": "ยกเลิก",
+        "voided": "ยกเลิกใบสั่งขายแล้ว",
+        "convertToInvoice": "แปลงเป็นใบแจ้งหนี้"
+      },
+      "prefilledFromQuotation": "กรอกข้อมูลล่วงหน้าจากใบเสนอราคา {{number}}"
+    }
+  },
+  "taxInvoices": {
+    "list": {
+      "title": "ใบกำกับภาษี",
+      "subtitle": "ใบกำกับภาษีมูลค่าเพิ่มที่ออกให้ลูกค้า",
+      "empty": "ยังไม่มีใบกำกับภาษี"
+    },
+    "table": {
+      "number": "เลขที่ใบกำกับภาษี",
+      "customer": "ลูกค้า",
+      "invoiceRef": "อ้างอิงใบแจ้งหนี้",
+      "issueDate": "วันที่ออก",
+      "taxId": "เลขประจำตัวผู้เสียภาษี"
+    }
+  },
+  "creditNotes": {
+    "list": {
+      "title": "ใบลดหนี้",
+      "subtitle": "การปรับปรุงและการคืนเงินที่ออกอ้างอิงใบแจ้งหนี้",
+      "empty": "ยังไม่มีใบลดหนี้"
+    },
+    "table": {
+      "number": "เลขที่ใบลดหนี้",
+      "customer": "ลูกค้า",
+      "issueDate": "วันที่ออก",
+      "relatedInvoice": "ใบแจ้งหนี้ที่เกี่ยวข้อง"
+    }
+  },
+  "paymentVouchers": {
+    "list": {
+      "title": "ใบสำคัญจ่าย",
+      "subtitle": "การจ่ายเงินให้ผู้ขายและซัพพลายเออร์",
+      "empty": "ยังไม่มีใบสำคัญจ่าย"
+    },
+    "table": {
+      "number": "เลขที่ใบสำคัญจ่าย",
+      "vendor": "ผู้ขาย",
+      "poRef": "อ้างอิงใบสั่งซื้อ / ใบรับสินค้า",
+      "paymentDate": "วันที่จ่ายเงิน",
+      "method": "วิธีการชำระเงิน"
+    }
+  },
+  "deliveryNotes": {
+    "list": {
+      "title": "ใบส่งของ",
+      "subtitle": "สินค้าที่จัดส่งให้ลูกค้าตามใบสั่งขาย",
+      "empty": "ยังไม่มีใบส่งของ",
+      "totalCount": "{{count}} ใบส่งของ",
+      "searchPlaceholder": "ค้นหาเลขที่ใบส่งของ...",
+      "newDeliveryNote": "ใบส่งของใหม่",
+      "createOrAdjust": "สร้างใบส่งของใหม่ หรือปรับตัวกรองของคุณ",
+      "deleteConfirmTitle": "ลบใบส่งของ?",
+      "deleteConfirmMessage": "การดำเนินการนี้จะลบใบส่งของ {{number}} อย่างถาวร ไม่สามารถย้อนกลับได้",
+      "loadError": "โหลดรายการใบส่งของล้มเหลว"
+    },
+    "table": {
+      "number": "เลขที่ใบส่งของ",
+      "customer": "ลูกค้า",
+      "soRef": "อ้างอิงใบสั่งขาย",
+      "deliveryDate": "วันที่จัดส่ง",
+      "warehouse": "คลังสินค้า"
+    },
+    "status": {
+      "draft": "ฉบับร่าง",
+      "dispatched": "จัดส่งออกแล้ว",
+      "delivered": "ส่งถึงแล้ว",
+      "cancelled": "ยกเลิกแล้ว"
+    },
+    "editor": {
+      "newTitle": "ใบส่งของใหม่",
+      "dnNumber": "เลขที่ใบส่งของ",
+      "salesOrderRef": "ใบสั่งขาย",
+      "selectSalesOrder": "เลือกใบสั่งขาย...",
+      "salesOrderRequired": "ต้องเลือกใบสั่งขายก่อนบันทึก",
+      "deliveryDate": "วันที่จัดส่ง",
+      "warehouse": "คลังสินค้า",
+      "driverName": "ชื่อผู้ขับ",
+      "vehiclePlate": "ทะเบียนรถ",
+      "deliveryAddress": "ที่อยู่จัดส่ง",
+      "saveDraft": "บันทึกฉบับร่าง",
+      "saveSuccess": "บันทึกใบส่งของสำเร็จ",
+      "saveFailed": "บันทึกใบส่งของล้มเหลว",
+      "notFoundError": "ไม่พบใบส่งของ",
+      "actionFailed": "ดำเนินการ {{action}} ล้มเหลว",
+      "grid": {
+        "qtyOrdered": "จำนวนสั่งซื้อ",
+        "qtyDelivered": "จำนวนที่จัดส่ง"
+      },
+      "actions": {
+        "dispatch": "จัดส่งออก",
+        "dispatched": "จัดส่งใบส่งของออกแล้ว",
+        "deliver": "ทำเครื่องหมายว่าส่งถึงแล้ว",
+        "delivered": "ใบส่งของถึงแล้ว",
+        "void": "ยกเลิก",
+        "voided": "ยกเลิกใบส่งของแล้ว"
+      }
+    }
+  },
+  "goodsReceive": {
+    "list": {
+      "title": "ใบรับสินค้า",
+      "subtitle": "สินค้าที่รับจากผู้ขายตามใบสั่งซื้อ",
+      "empty": "ยังไม่มีใบรับสินค้า"
+    },
+    "table": {
+      "number": "เลขที่ใบรับสินค้า",
+      "vendor": "ผู้ขาย",
+      "poRef": "อ้างอิงใบสั่งซื้อ",
+      "receivedDate": "วันที่รับสินค้า",
+      "warehouse": "คลังสินค้า"
+    }
+  },
+  "goodsIssue": {
+    "list": {
+      "title": "ใบเบิกสินค้า",
+      "subtitle": "สินค้าที่เบิกออกจากคลังเพื่อใช้ภายในหรืองานต่างๆ",
+      "empty": "ยังไม่มีใบเบิกสินค้า"
+    },
+    "table": {
+      "number": "เลขที่ใบเบิกสินค้า",
+      "issuedTo": "เบิกให้",
+      "dnRef": "อ้างอิงใบส่งของ",
+      "issueDate": "วันที่เบิก",
+      "warehouse": "คลังสินค้า"
+    }
+  },
+  "documentEditor": {
+    "header": {
+      "telephone": "โทรศัพท์",
+      "customer": "ลูกค้า",
+      "selectCustomer": "เลือกลูกค้า...",
+      "address": "ที่อยู่",
+      "validFrom": "วันที่",
+      "validUntil": "วันหมดอายุ",
+      "reference": "อ้างอิง",
+      "currency": "สกุลเงิน",
+      "salesPerson": "พนักงานขาย",
+      "autoGenerated": "จะสร้างอัตโนมัติเมื่อบันทึก"
+    },
+    "vehicle": {
+      "title": "ข้อมูลรถ / อุปกรณ์",
+      "jobNumber": "หมายเลขงาน",
+      "machine": "เครื่องจักร",
+      "brand": "ยี่ห้อ",
+      "model": "รุ่น",
+      "vin": "VIN",
+      "engineNo": "เลขเครื่องยนต์",
+      "hourMeter": "ชั่วโมงการใช้งาน",
+      "plateNumber": "ทะเบียนรถ",
+      "location": "สถานที่"
+    },
+    "totals": {
+      "subtotal": "ยอดรวมย่อย",
+      "discount": "ส่วนลด",
+      "vat": "ภาษี",
+      "defaultTaxRate": "อัตราภาษีเริ่มต้นสำหรับแถวใหม่:",
+      "roundAmount": "จำนวนปัดเศษ",
+      "grandTotal": "ยอดรวมทั้งหมด",
+      "balanceDue": "ยอดค้างชำระ"
+    },
+    "footer": {
+      "remark": "หมายเหตุ",
+      "termsConditions": "ข้อกำหนดและเงื่อนไข",
+      "issuedBy": "ผู้ออกเอกสาร",
+      "reviewedBy": "ผู้ตรวจสอบ",
+      "approvedBy": "ผู้อนุมัติ",
+      "customerSignature": "ลายเซ็นลูกค้า"
+    }
+  },
+  "lineItemsGrid": {
+    "filterPlaceholder": "กรองตามรายละเอียด...",
+    "no": "ลำดับ",
+    "actions": "การจัดการ",
+    "addRow": "เพิ่มแถว",
+    "copyRow": "คัดลอกแถว",
+    "pasteRow": "วางแถว",
+    "duplicateRow": "ทำซ้ำแถว",
+    "deleteRow": "ลบแถว"
+  },
+  "receipts": {
+    "list": {
+      "title": "ใบเสร็จรับเงิน",
+      "subtitle": "การชำระเงินที่ได้รับตามใบแจ้งหนี้ลูกค้า",
+      "empty": "ยังไม่มีใบเสร็จรับเงิน",
+      "totalCount": "{{count}} ใบเสร็จรับเงิน",
+      "allStatuses": "ทุกสถานะ",
+      "searchPlaceholder": "ค้นหาเลขที่ใบเสร็จรับเงิน...",
+      "newReceipt": "ใบเสร็จรับเงินใหม่",
+      "createOrAdjust": "สร้างใบเสร็จรับเงินใหม่ หรือปรับตัวกรองของคุณ",
+      "deleteConfirmTitle": "ลบใบเสร็จรับเงิน?",
+      "deleteConfirmMessage": "การดำเนินการนี้จะลบใบเสร็จรับเงิน {{number}} อย่างถาวร ไม่สามารถยกเลิกได้",
+      "loadError": "ไม่สามารถโหลดใบเสร็จรับเงินได้"
+    },
+    "table": {
+      "number": "เลขที่ใบเสร็จรับเงิน",
+      "customer": "ลูกค้า",
+      "invoiceRef": "อ้างอิงใบแจ้งหนี้",
+      "paymentDate": "วันที่ชำระ"
+    },
+    "status": {
+      "draft": "ฉบับร่าง",
+      "confirmed": "ยืนยันแล้ว",
+      "cancelled": "ยกเลิกแล้ว"
+    },
+    "editor": {
+      "newTitle": "ใบเสร็จรับเงินใหม่",
+      "title": "ใบเสร็จรับเงิน",
+      "receiptNumber": "เลขที่ใบเสร็จรับเงิน",
+      "invoiceRef": "ใบแจ้งหนี้",
+      "selectInvoice": "เลือกใบแจ้งหนี้...",
+      "invoiceRequired": "ต้องเลือกใบแจ้งหนี้ก่อนบันทึก",
+      "paymentDetails": "รายละเอียดการชำระเงิน",
+      "paymentDate": "วันที่ชำระ",
+      "paymentMethod": "วิธีการชำระเงิน",
+      "paymentMethods": {
+        "cash": "เงินสด",
+        "transfer": "โอนผ่านธนาคาร",
+        "cheque": "เช็ค"
+      },
+      "bankAccount": "บัญชีธนาคาร",
+      "selectBankAccount": "เลือกบัญชีธนาคาร...",
+      "referenceNumber": "เลขที่อ้างอิง / ธุรกรรม",
+      "referenceNumberPlaceholder": "เลขที่ธุรกรรมหรือเช็ค",
+      "amountReceived": "จำนวนเงินที่ได้รับ",
+      "invoiceBalanceDue": "ยอดค้างชำระใบแจ้งหนี้",
+      "saveDraft": "บันทึกฉบับร่าง",
+      "saveSuccess": "บันทึกใบเสร็จรับเงินแล้ว",
+      "saveFailed": "ไม่สามารถบันทึกใบเสร็จรับเงินได้",
+      "notFoundError": "ไม่พบใบเสร็จรับเงิน",
+      "actionFailed": "ไม่สามารถ {{action}} ได้",
+      "paymentAgainstInvoice": "ชำระเงินตามใบแจ้งหนี้ {{number}}",
+      "actions": {
+        "confirm": "ยืนยัน",
+        "confirmed": "ยืนยันใบเสร็จรับเงินแล้ว",
+        "void": "ยกเลิก",
+        "voided": "ใบเสร็จรับเงินถูกยกเลิกแล้ว"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@"
+__pycache__/
+*.pyc
+.vscode/
+dk_service.db
+"@ | Out-File .gitignore -Encoding utf8

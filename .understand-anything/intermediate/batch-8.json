@@ -1,0 +1,131 @@
+{
+  "batchIndex": 8,
+  "nodes": [
+    {
+      "id": "document:docs/gap-analysis.md",
+      "type": "document",
+      "name": "Gap Analysis",
+      "summary": "Comprehensive gap analysis comparing current implementation to target architecture (as of 2026-06-28). Backend is 100% complete (218 endpoints, 56 tables, 33 service classes). Frontend is functionally complete (48 pages, all CRUD) but only 40% of the design target (JenStore/Fleetio) is delivered. Phases 3-6 of the master plan are 0-15% complete. Identifies 14 technical debt items, 8 missing modules, and 4 tiers of prioritized remediation tasks. Overall platform score: 72%.",
+      "tags": ["gap-analysis", "technical-debt", "planning", "architecture", "frontend", "backend", "production-readiness"],
+      "filePath": "docs/gap-analysis.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/implementation-backlog.md",
+      "type": "document",
+      "name": "Implementation Backlog",
+      "summary": "Ordered backlog of 59 discrete, shippable work items (P0–P3 priority) with effort estimates and sprint assignments. P0 blockers: CSS extraction, shared types, alert→toast. P1 critical: work order form, spare part form, settings page, permission-aware sidebar. Covers profitability engine (Phase 9), executive BI (Phase 10), test infrastructure, and CI/CD. Total estimated effort: ~81.5 days (16 weeks, 1 developer). Includes 8-sprint execution plan and acceptance criteria template.",
+      "tags": ["backlog", "sprint-planning", "tasks", "priorities", "effort-estimation", "project-management"],
+      "filePath": "docs/implementation-backlog.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/index.html",
+      "type": "file",
+      "name": "Architecture Documentation Portal",
+      "summary": "Self-contained dark-themed HTML documentation portal for DK CRM architecture diagrams. Features a fixed sidebar navigation, card-based diagram grid with SVG/PNG download buttons, and a fullscreen zoom modal. Serves as a visual index for all architecture diagrams (ER diagrams, system architecture, data flow, etc.) generated alongside the markdown docs.",
+      "tags": ["documentation", "architecture", "diagrams", "portal", "html", "ui"],
+      "filePath": "docs/index.html",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/refactor-plan.md",
+      "type": "document",
+      "name": "Refactor Plan",
+      "summary": "10-phase refactor plan with file-level change specifications for the entire frontend and backend. Baseline: 218 endpoints, 56 tables, 48 pages, 0 tests, 491 inline styles, 5 cross-module CSS imports. Cross-cutting work (CSS extraction, shared types, alert→toast, permission-aware sidebar, settings page) precedes module phases. Phases 1-8 harden existing modules (catalog, equipment, quotation, rental, movement, maintenance, inventory, billing). Phases 9-10 add profitability analysis engine and executive BI. Total: 12 new files, 38 modified files, 8 weeks estimated.",
+      "tags": ["refactor", "technical-debt", "implementation", "phases", "frontend", "backend", "css", "forms"],
+      "filePath": "docs/refactor-plan.md",
+      "complexity": "very-complex"
+    },
+    {
+      "id": "document:docs/roadmap.md",
+      "type": "document",
+      "name": "Product Roadmap",
+      "summary": "Version-by-version product roadmap for the DK Service Enterprise Platform (FastAPI + React 19 + TypeScript). Tracks v1.0–v1.9 by module: Product Catalog (95%), Equipment Registry (95%), Quotation (95%), Rental (95%), Movement (90%), Maintenance (85%), Spare Parts (85%), Billing (90%), Profitability (20%), Executive BI (40%). Overall: 218 endpoints, 56 models, 48+ pages, 79% complete. Identifies remaining gaps per version and cross-cutting concerns (tests, permissions, CI/CD, rate limiting). Provides recommended execution order.",
+      "tags": ["roadmap", "versioning", "product-planning", "modules", "completion-tracking", "milestones"],
+      "filePath": "docs/roadmap.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/testing-strategy.md",
+      "type": "document",
+      "name": "Testing Strategy",
+      "summary": "4-layer testing architecture for the DK CRM platform. Current state: 0 tests, 0 frameworks installed, no CI/CD. Targets: 80 backend tests (pytest + httpx + factory-boy), 30 frontend tests (vitest + React Testing Library), 5 E2E journeys (Playwright). Coverage targets: 80% backend API, 70% backend services, 90% frontend stores. Includes conftest.py fixtures, test file structure, critical scenario examples (rental activation chain, RBAC parametrize), GitHub Actions CI/CD YAML, and a 4-week ramp-up timeline.",
+      "tags": ["testing", "pytest", "vitest", "playwright", "ci-cd", "quality", "coverage", "e2e"],
+      "filePath": "docs/testing-strategy.md",
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/gap-analysis.md",
+      "target": "document:docs/roadmap.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "gap analysis feeds into roadmap priorities and version scores"
+    },
+    {
+      "source": "document:docs/gap-analysis.md",
+      "target": "document:docs/implementation-backlog.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "gap analysis drives backlog item prioritization"
+    },
+    {
+      "source": "document:docs/gap-analysis.md",
+      "target": "document:docs/refactor-plan.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "gap analysis identifies technical debt addressed in refactor plan"
+    },
+    {
+      "source": "document:docs/roadmap.md",
+      "target": "document:docs/implementation-backlog.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "roadmap version gaps correspond to backlog P1/P2 items"
+    },
+    {
+      "source": "document:docs/roadmap.md",
+      "target": "document:docs/refactor-plan.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "roadmap phases map to refactor plan phase numbering"
+    },
+    {
+      "source": "document:docs/implementation-backlog.md",
+      "target": "document:docs/refactor-plan.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "backlog items reference refactor plan phases (Ph1–Ph10)"
+    },
+    {
+      "source": "document:docs/testing-strategy.md",
+      "target": "document:docs/implementation-backlog.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "testing strategy details the infrastructure items in the backlog (items 048–055)"
+    },
+    {
+      "source": "document:docs/testing-strategy.md",
+      "target": "document:docs/roadmap.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "testing is a cross-cutting concern tracked in the roadmap"
+    },
+    {
+      "source": "file:docs/index.html",
+      "target": "document:docs/gap-analysis.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "portal provides visual diagrams referenced by gap analysis"
+    },
+    {
+      "source": "file:docs/index.html",
+      "target": "document:docs/roadmap.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "portal visualizes architecture documented in roadmap"
+    }
+  ]
+}

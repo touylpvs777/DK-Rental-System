@@ -1,0 +1,140 @@
+{
+  "batchIndex": 11,
+  "nodes": [
+    {
+      "id": "file:frontend/src/components/layout/AppLayout.css",
+      "type": "file",
+      "name": "AppLayout CSS",
+      "summary": "Defines the top-level application shell layout using flexbox. Sets up .app-shell (full-height flex container), .app-main (content area with margin-left offset equal to sidebar width and padding-top for the fixed header), and .app-content (inner padding with max-width constraint). Includes responsive breakpoints at 1024px and 768px that reduce padding and collapse the sidebar margin on mobile. Uses CSS custom properties (--sidebar-width, --topbar-height, --color-bg, --content-max-width) and a slow transition for sidebar animation.",
+      "tags": ["css", "layout", "styles", "responsive", "flexbox", "shell"],
+      "filePath": "frontend/src/components/layout/AppLayout.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/layout/Breadcrumb.css",
+      "type": "file",
+      "name": "Breadcrumb CSS",
+      "summary": "Styles the breadcrumb navigation trail rendered in the header. Defines .breadcrumb (flex row with small gap at 14px font), .breadcrumb-title (bold 15px page title), .breadcrumb-segment (individual crumb with separator), .breadcrumb-sep (muted/semi-transparent divider), .breadcrumb-link (muted link with hover color transition to primary), and .breadcrumb-current (bold active segment). Relies on CSS variables --color-text, --color-text-muted, --color-primary, and --duration-fast.",
+      "tags": ["css", "layout", "styles", "breadcrumb", "navigation"],
+      "filePath": "frontend/src/components/layout/Breadcrumb.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/layout/Header.css",
+      "type": "file",
+      "name": "Header CSS",
+      "summary": "Styles the fixed top application header bar. Positions .header as fixed (top:0, left equals sidebar width, right:0) at --topbar-height, applying a frosted-glass effect via backdrop-filter:blur(8px) and semi-transparent background (rgba white at 0.85). Includes a dark-mode override via [data-theme='dark']. Lays out three flex children: .header-left (flex:1 for breadcrumb/title), .header-center (shrink-0), and .header-right (shrink-0 for action buttons). Styles .header-menu-btn with hover state. Mobile breakpoint at 768px resets left to 0 and reduces padding.",
+      "tags": ["css", "layout", "styles", "header", "responsive", "dark-mode", "glass-effect"],
+      "filePath": "frontend/src/components/layout/Header.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/layout/Sidebar.css",
+      "type": "file",
+      "name": "Sidebar CSS",
+      "summary": "Comprehensive styles for the fixed left navigation sidebar. Manages three display states via data-state attribute: default (expanded, --sidebar-width-expanded), 'collapsed' (icon-only, --sidebar-width-collapsed, centered items), and 'hidden' (translateX off-screen for mobile). Sections include: brand area (.sidebar-brand with icon gradient and text), scrollable nav (.sidebar-nav) with collapsible group headers (.sidebar-group-header with rotating arrow), nav items (.sidebar-nav-item) featuring active state with primary left-border accent and hover highlight, dividers, and a footer with avatar, user info (name/role), and a collapse toggle button. Includes a mobile overlay (.sidebar-overlay) with backdrop-filter blur. Extensively uses sidebar-specific CSS custom properties (--sidebar-bg, --sidebar-text, --sidebar-text-hover, --sidebar-active-bg, etc.).",
+      "tags": ["css", "layout", "styles", "sidebar", "navigation", "responsive", "collapsible", "dark-mode"],
+      "filePath": "frontend/src/components/layout/Sidebar.css",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/components/layout/SidebarMenu.css",
+      "type": "file",
+      "name": "SidebarMenu CSS",
+      "summary": "CSS file for sidebar menu sub-component styles (file not found on disk at time of analysis; may have been merged into Sidebar.css or not yet created). Expected to contain styles for nested menu items, sub-navigation lists, or contextual menu overlays within the sidebar navigation system.",
+      "tags": ["css", "layout", "styles", "sidebar", "navigation", "menu"],
+      "filePath": "frontend/src/components/layout/SidebarMenu.css",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:applayout--related--breadcrumb",
+      "source": "file:frontend/src/components/layout/AppLayout.css",
+      "target": "file:frontend/src/components/layout/Breadcrumb.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "same layout component family"
+    },
+    {
+      "id": "edge:applayout--related--header",
+      "source": "file:frontend/src/components/layout/AppLayout.css",
+      "target": "file:frontend/src/components/layout/Header.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "same layout component family"
+    },
+    {
+      "id": "edge:applayout--related--sidebar",
+      "source": "file:frontend/src/components/layout/AppLayout.css",
+      "target": "file:frontend/src/components/layout/Sidebar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "same layout component family; AppLayout offsets margin by sidebar width"
+    },
+    {
+      "id": "edge:applayout--related--sidebarmenu",
+      "source": "file:frontend/src/components/layout/AppLayout.css",
+      "target": "file:frontend/src/components/layout/SidebarMenu.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "same layout component family"
+    },
+    {
+      "id": "edge:breadcrumb--related--header",
+      "source": "file:frontend/src/components/layout/Breadcrumb.css",
+      "target": "file:frontend/src/components/layout/Header.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Breadcrumb is rendered inside Header"
+    },
+    {
+      "id": "edge:breadcrumb--related--sidebar",
+      "source": "file:frontend/src/components/layout/Breadcrumb.css",
+      "target": "file:frontend/src/components/layout/Sidebar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "same layout component family"
+    },
+    {
+      "id": "edge:breadcrumb--related--sidebarmenu",
+      "source": "file:frontend/src/components/layout/Breadcrumb.css",
+      "target": "file:frontend/src/components/layout/SidebarMenu.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "same layout component family"
+    },
+    {
+      "id": "edge:header--related--sidebar",
+      "source": "file:frontend/src/components/layout/Header.css",
+      "target": "file:frontend/src/components/layout/Sidebar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Header left offset tracks sidebar width; both are fixed-positioned chrome"
+    },
+    {
+      "id": "edge:header--related--sidebarmenu",
+      "source": "file:frontend/src/components/layout/Header.css",
+      "target": "file:frontend/src/components/layout/SidebarMenu.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "same layout component family"
+    },
+    {
+      "id": "edge:sidebar--related--sidebarmenu",
+      "source": "file:frontend/src/components/layout/Sidebar.css",
+      "target": "file:frontend/src/components/layout/SidebarMenu.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "same layout component family; SidebarMenu extends sidebar navigation"
+    },
+    {
+      "id": "edge:sidebar--similar_to--sidebarmenu",
+      "source": "file:frontend/src/components/layout/Sidebar.css",
+      "target": "file:frontend/src/components/layout/SidebarMenu.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "both are navigation-related sidebar components"
+    }
+  ]
+}

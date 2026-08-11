@@ -1,0 +1,580 @@
+{
+  "batchIndex": 15,
+  "nodes": [
+    {
+      "id": "config:.claude/settings.json",
+      "type": "config",
+      "name": "Claude Code Settings",
+      "summary": "Claude Code project settings enabling the understand-anything plugin.",
+      "tags": ["config", "claude", "plugins"],
+      "filePath": ".claude/settings.json",
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:.understand-anything/.understandignore",
+      "type": "config",
+      "name": "Understand-Anything Ignore Rules",
+      "summary": "Gitignore-style exclusion patterns for the understand-anything analysis tool. Most entries are commented out; currently excludes default build artifacts.",
+      "tags": ["config", "understand-anything", "ignore", "analysis"],
+      "filePath": ".understand-anything/.understandignore",
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:backend/alembic/env.py",
+      "type": "file",
+      "name": "Alembic Migration Environment",
+      "summary": "Alembic environment configuration that wires async SQLAlchemy engine to the migration runner. Reads DATABASE_URL from settings, loads all models to populate Base.metadata, and supports both offline and online (async) migration modes.",
+      "tags": ["alembic", "database", "migration", "async", "sqlalchemy", "backend"],
+      "filePath": "backend/alembic/env.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/alembic/script.py.mako",
+      "type": "file",
+      "name": "Alembic Migration Script Template",
+      "summary": "Mako template used by Alembic to auto-generate new migration revision files with upgrade() and downgrade() stubs.",
+      "tags": ["alembic", "migration", "template", "mako"],
+      "filePath": "backend/alembic/script.py.mako",
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:backend/alembic/versions/0b24e4aaa242_move_mast_type_and_max_lift_height_mm_.py",
+      "type": "file",
+      "name": "Migration: Move Forklift Fields to forklift_specs",
+      "summary": "Alembic migration (rev 0b24e4aaa242, parent fbd2d0a45d80) that moves mast_type and max_lift_height_mm columns from the forklifts table into forklift_specs, migrating existing data in-place.",
+      "tags": ["alembic", "migration", "forklift", "schema", "backend"],
+      "filePath": "backend/alembic/versions/0b24e4aaa242_move_mast_type_and_max_lift_height_mm_.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/alembic/versions/425b763888ef_initial_schema_55_tables.py",
+      "type": "file",
+      "name": "Migration: Initial Schema (55 Tables)",
+      "summary": "First Alembic migration (rev 425b763888ef, no parent) that establishes the baseline schema — converts activity_logs.details from TEXT to JSON, adds indexes on activity_logs and leads tables, and updates foreign key constraints.",
+      "tags": ["alembic", "migration", "schema", "initial", "backend"],
+      "filePath": "backend/alembic/versions/425b763888ef_initial_schema_55_tables.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/alembic/versions/fbd2d0a45d80_add_forklift_specs_table.py",
+      "type": "file",
+      "name": "Migration: Add forklift_specs Table",
+      "summary": "Alembic migration (rev fbd2d0a45d80, parent 425b763888ef) that creates the forklift_specs table with tire, battery, and attachment columns, linked to forklifts via CASCADE foreign key.",
+      "tags": ["alembic", "migration", "forklift", "schema", "backend"],
+      "filePath": "backend/alembic/versions/fbd2d0a45d80_add_forklift_specs_table.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/app/__init__.py",
+      "type": "file",
+      "name": "App Package Init",
+      "summary": "Empty package initializer for the backend app module.",
+      "tags": ["python", "package", "backend"],
+      "filePath": "backend/app/__init__.py",
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:backend/app/api/import_excel.py",
+      "type": "file",
+      "name": "Excel Customer Import API",
+      "summary": "FastAPI router providing a POST /customers endpoint to bulk-import customers from an uploaded .xlsx/.xls file using pandas. Validates required columns, deduplicates by email, maps status enum values, and returns import statistics.",
+      "tags": ["fastapi", "api", "import", "excel", "pandas", "customer", "backend"],
+      "filePath": "backend/app/api/import_excel.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/core/__init__.py",
+      "type": "file",
+      "name": "Core Package Init",
+      "summary": "Empty package initializer for the backend core module.",
+      "tags": ["python", "package", "backend", "core"],
+      "filePath": "backend/app/core/__init__.py",
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:backend/app/core/config.py",
+      "type": "file",
+      "name": "Application Configuration",
+      "summary": "Pydantic-settings based configuration for the DK CRM API. Loads from .env and provides defaults for database URL, JWT secret/algorithm/expiry, file upload settings, and CORS allowed origins.",
+      "tags": ["config", "pydantic", "settings", "jwt", "cors", "database", "backend"],
+      "filePath": "backend/app/core/config.py",
+      "complexity": "low"
+    },
+    {
+      "id": "class:backend/app/core/config.py:Settings",
+      "type": "class",
+      "name": "Settings",
+      "summary": "Pydantic BaseSettings subclass that centralizes all application configuration: app metadata, DATABASE_URL, JWT parameters (SECRET_KEY, ALGORITHM, expiry times), upload constraints, and CORS origins.",
+      "tags": ["pydantic", "config", "settings", "jwt", "cors"],
+      "filePath": "backend/app/core/config.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/app/core/middleware.py",
+      "type": "file",
+      "name": "Production HTTP Middleware",
+      "summary": "Starlette middleware for security headers (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, etc.) and request correlation IDs with per-request timing logs.",
+      "tags": ["middleware", "security", "http", "starlette", "logging", "backend"],
+      "filePath": "backend/app/core/middleware.py",
+      "complexity": "low"
+    },
+    {
+      "id": "class:backend/app/core/middleware.py:SecurityHeadersMiddleware",
+      "type": "class",
+      "name": "SecurityHeadersMiddleware",
+      "summary": "BaseHTTPMiddleware that injects hardened HTTP security headers (nosniff, DENY frame, XSS protection, referrer policy, permissions policy, no-store cache) on every response.",
+      "tags": ["middleware", "security", "http", "starlette"],
+      "filePath": "backend/app/core/middleware.py",
+      "complexity": "low"
+    },
+    {
+      "id": "class:backend/app/core/middleware.py:RequestIdMiddleware",
+      "type": "class",
+      "name": "RequestIdMiddleware",
+      "summary": "BaseHTTPMiddleware that assigns a unique X-Request-ID to each request, measures elapsed time, and emits a structured log line per request.",
+      "tags": ["middleware", "logging", "http", "request-id", "starlette"],
+      "filePath": "backend/app/core/middleware.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/app/core/permissions.py",
+      "type": "file",
+      "name": "RBAC Permissions",
+      "summary": "Defines the PermissionName enum (28 permissions covering customers, leads, forklifts, quotations, rentals, billing), the ROLE_PERMISSIONS mapping for SUPER_ADMIN/MANAGER/SALES/SUPPORT roles, and the require_permission FastAPI dependency factory.",
+      "tags": ["rbac", "permissions", "auth", "fastapi", "backend"],
+      "filePath": "backend/app/core/permissions.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/core/permissions.py:PermissionName",
+      "type": "class",
+      "name": "PermissionName",
+      "summary": "String enum defining all 28 fine-grained permissions for the CRM system, covering dashboard, customer, lead, forklift, quotation, rental, and billing operations.",
+      "tags": ["rbac", "permissions", "enum"],
+      "filePath": "backend/app/core/permissions.py",
+      "complexity": "low"
+    },
+    {
+      "id": "function:backend/app/core/permissions.py:require_permission",
+      "type": "function",
+      "name": "require_permission",
+      "summary": "FastAPI dependency factory that returns a Depends checking whether the current user's role includes the specified PermissionName. Superusers bypass all checks; missing/inactive roles and insufficient permissions raise HTTP 403.",
+      "tags": ["rbac", "permissions", "fastapi", "dependency", "auth"],
+      "filePath": "backend/app/core/permissions.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/core/security.py",
+      "type": "file",
+      "name": "Security Utilities (JWT + bcrypt)",
+      "summary": "Core security functions: bcrypt password hashing/verification, JWT access token creation (with JTI for revocation), refresh token creation, and token decoding with error normalization.",
+      "tags": ["security", "jwt", "bcrypt", "auth", "backend"],
+      "filePath": "backend/app/core/security.py",
+      "complexity": "low"
+    },
+    {
+      "id": "function:backend/app/core/security.py:hash_password",
+      "type": "function",
+      "name": "hash_password",
+      "summary": "Hashes a plaintext password using bcrypt with auto-generated salt.",
+      "tags": ["security", "bcrypt", "password"],
+      "filePath": "backend/app/core/security.py",
+      "complexity": "trivial"
+    },
+    {
+      "id": "function:backend/app/core/security.py:create_access_token",
+      "type": "function",
+      "name": "create_access_token",
+      "summary": "Creates a signed HS256 JWT access token with sub, exp, type=access, and a unique JTI for revocation tracking.",
+      "tags": ["security", "jwt", "auth", "token"],
+      "filePath": "backend/app/core/security.py",
+      "complexity": "low"
+    },
+    {
+      "id": "function:backend/app/core/security.py:decode_token",
+      "type": "function",
+      "name": "decode_token",
+      "summary": "Decodes and validates a JWT token using the configured SECRET_KEY and ALGORITHM; raises ValueError on invalid/expired tokens.",
+      "tags": ["security", "jwt", "auth", "token"],
+      "filePath": "backend/app/core/security.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/app/database/__init__.py",
+      "type": "file",
+      "name": "Database Package Init",
+      "summary": "Empty package initializer for the database module.",
+      "tags": ["python", "package", "database", "backend"],
+      "filePath": "backend/app/database/__init__.py",
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:backend/app/database/base.py",
+      "type": "file",
+      "name": "SQLAlchemy Declarative Base",
+      "summary": "Defines the single SQLAlchemy DeclarativeBase subclass (Base) shared by all ORM models in the application.",
+      "tags": ["sqlalchemy", "orm", "database", "base", "backend"],
+      "filePath": "backend/app/database/base.py",
+      "complexity": "trivial"
+    },
+    {
+      "id": "class:backend/app/database/base.py:Base",
+      "type": "class",
+      "name": "Base",
+      "summary": "SQLAlchemy DeclarativeBase subclass used as the parent for every ORM model in the DK CRM, enabling shared metadata and table registry.",
+      "tags": ["sqlalchemy", "orm", "database", "declarative"],
+      "filePath": "backend/app/database/base.py",
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:backend/app/database/database.py",
+      "type": "file",
+      "name": "Database Module (Empty)",
+      "summary": "Empty placeholder file in the database package.",
+      "tags": ["database", "backend", "python"],
+      "filePath": "backend/app/database/database.py",
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:backend/app/database/session.py",
+      "type": "file",
+      "name": "Async Database Session Factory",
+      "summary": "Creates the async SQLAlchemy engine (with SQLite and PostgreSQL-specific pool configuration), the AsyncSessionLocal session maker, and the get_db dependency generator used throughout the API.",
+      "tags": ["sqlalchemy", "async", "session", "database", "backend", "fastapi"],
+      "filePath": "backend/app/database/session.py",
+      "complexity": "low"
+    },
+    {
+      "id": "function:backend/app/database/session.py:get_db",
+      "type": "function",
+      "name": "get_db",
+      "summary": "Async generator FastAPI dependency that yields an AsyncSession and automatically rolls back on exceptions.",
+      "tags": ["sqlalchemy", "async", "session", "fastapi", "dependency"],
+      "filePath": "backend/app/database/session.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/app/dependencies.py",
+      "type": "file",
+      "name": "FastAPI Auth Dependencies",
+      "summary": "Provides get_current_user (validates Bearer JWT, checks JTI revocation list, loads active User) and get_current_superuser (enforces is_superuser flag) FastAPI dependencies.",
+      "tags": ["fastapi", "auth", "jwt", "dependency", "bearer", "backend"],
+      "filePath": "backend/app/dependencies.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/dependencies.py:get_current_user",
+      "type": "function",
+      "name": "get_current_user",
+      "summary": "FastAPI dependency that extracts and validates a Bearer JWT, checks the JTI against the RevokedToken table, and returns the active User or raises HTTP 401.",
+      "tags": ["auth", "jwt", "fastapi", "dependency", "user"],
+      "filePath": "backend/app/dependencies.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/dependencies.py:get_current_superuser",
+      "type": "function",
+      "name": "get_current_superuser",
+      "summary": "FastAPI dependency wrapping get_current_user that additionally enforces is_superuser=True, raising HTTP 403 otherwise.",
+      "tags": ["auth", "superuser", "fastapi", "dependency"],
+      "filePath": "backend/app/dependencies.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/app/main.py",
+      "type": "file",
+      "name": "FastAPI Application Entry Point",
+      "summary": "Main FastAPI application: registers lifespan (DB create_all + SQLite idempotent migrations + RBAC seed), adds CORS and custom security/request-id middleware, mounts all API routers under /api/v1, serves static uploads, and provides /health check and global exception handlers.",
+      "tags": ["fastapi", "backend", "entrypoint", "middleware", "lifespan", "cors", "routing"],
+      "filePath": "backend/app/main.py",
+      "complexity": "high"
+    },
+    {
+      "id": "function:backend/app/main.py:lifespan",
+      "type": "function",
+      "name": "lifespan",
+      "summary": "Async context manager that runs on app startup: executes Base.metadata.create_all, applies idempotent SQLite schema migrations (_apply_sqlite_migrations), seeds RBAC roles, then disposes the engine on shutdown.",
+      "tags": ["fastapi", "lifespan", "startup", "database", "rbac"],
+      "filePath": "backend/app/main.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/main.py:health_check",
+      "type": "function",
+      "name": "health_check",
+      "summary": "GET /health endpoint that probes the database with SELECT 1 and returns JSON with status (healthy/degraded), API version, and database reachability.",
+      "tags": ["fastapi", "health", "monitoring", "backend"],
+      "filePath": "backend/app/main.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/debug_activity.py",
+      "type": "file",
+      "name": "Debug Activity Script",
+      "summary": "One-off debug script that launches uvicorn in a subprocess, logs in as admin, and performs a single GET /api/v1/activity/?limit=5 to inspect activity log responses with server logs visible.",
+      "tags": ["debug", "script", "activity", "backend"],
+      "filePath": "backend/debug_activity.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/debug_activity2.py",
+      "type": "file",
+      "name": "Debug Activity Script 2",
+      "summary": "Debug script that replicates a failing test sequence: login, create customer, update customer, create lead, update lead, add note, then fetch activity log — all against a subprocess-managed uvicorn server.",
+      "tags": ["debug", "script", "activity", "backend"],
+      "filePath": "backend/debug_activity2.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/diagnose_me.py",
+      "type": "file",
+      "name": "User Serialization Diagnosis Script",
+      "summary": "Standalone async diagnostic script that loads the admin user from the database and attempts UserOut.model_validate to isolate Pydantic serialization failures on the User model.",
+      "tags": ["debug", "script", "diagnostic", "pydantic", "user", "backend"],
+      "filePath": "backend/diagnose_me.py",
+      "complexity": "low"
+    },
+    {
+      "id": "file:backend/e2e_final.py",
+      "type": "file",
+      "name": "E2E Final Test Suite",
+      "summary": "Comprehensive end-to-end test script using httpx against a running API server. Covers authentication, customer CRUD, lead lifecycle/transitions/notes, activity log filtering, report exports (CSV/Excel), token revocation, and edge cases with pass/fail/warn reporting.",
+      "tags": ["e2e", "test", "httpx", "customer", "lead", "activity", "reports", "auth", "backend"],
+      "filePath": "backend/e2e_final.py",
+      "complexity": "high"
+    },
+    {
+      "id": "file:backend/e2e_test.py",
+      "type": "file",
+      "name": "E2E Basic Test Script",
+      "summary": "Simple end-to-end test script using urllib that starts uvicorn in a subprocess, performs health check, admin login, and GET /users/me validation, then prints full JSON response.",
+      "tags": ["e2e", "test", "auth", "backend", "uvicorn"],
+      "filePath": "backend/e2e_test.py",
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:.claude/settings.json",
+      "target": "file:backend/app/main.py",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:backend/app/core/config.py",
+      "target": "class:backend/app/core/config.py:Settings",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/core/middleware.py",
+      "target": "class:backend/app/core/middleware.py:SecurityHeadersMiddleware",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/core/middleware.py",
+      "target": "class:backend/app/core/middleware.py:RequestIdMiddleware",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/core/permissions.py",
+      "target": "class:backend/app/core/permissions.py:PermissionName",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/core/permissions.py",
+      "target": "function:backend/app/core/permissions.py:require_permission",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/core/security.py",
+      "target": "function:backend/app/core/security.py:hash_password",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/core/security.py",
+      "target": "function:backend/app/core/security.py:create_access_token",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/core/security.py",
+      "target": "function:backend/app/core/security.py:decode_token",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/database/base.py",
+      "target": "class:backend/app/database/base.py:Base",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/database/session.py",
+      "target": "function:backend/app/database/session.py:get_db",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/dependencies.py",
+      "target": "function:backend/app/dependencies.py:get_current_user",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/dependencies.py",
+      "target": "function:backend/app/dependencies.py:get_current_superuser",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:lifespan",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:health_check",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/alembic/env.py",
+      "target": "file:backend/app/core/config.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/alembic/env.py",
+      "target": "file:backend/app/database/base.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/core/security.py",
+      "target": "file:backend/app/core/config.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/database/session.py",
+      "target": "file:backend/app/core/config.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/core/permissions.py",
+      "target": "file:backend/app/database/session.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/core/permissions.py",
+      "target": "file:backend/app/dependencies.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/dependencies.py",
+      "target": "file:backend/app/core/security.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/dependencies.py",
+      "target": "file:backend/app/database/session.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/import_excel.py",
+      "target": "file:backend/app/database/session.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/core/config.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/core/middleware.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/database/base.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/database/session.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "function:backend/app/core/permissions.py:require_permission",
+      "target": "function:backend/app/dependencies.py:get_current_user",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/dependencies.py:get_current_user",
+      "target": "function:backend/app/core/security.py:decode_token",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/dependencies.py:get_current_superuser",
+      "target": "function:backend/app/dependencies.py:get_current_user",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/alembic/versions/0b24e4aaa242_move_mast_type_and_max_lift_height_mm_.py",
+      "target": "file:backend/alembic/versions/fbd2d0a45d80_add_forklift_specs_table.py",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/alembic/versions/fbd2d0a45d80_add_forklift_specs_table.py",
+      "target": "file:backend/alembic/versions/425b763888ef_initial_schema_55_tables.py",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/dependencies.py",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/e2e_final.py",
+      "target": "file:backend/app/main.py",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/e2e_test.py",
+      "target": "file:backend/app/main.py",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/diagnose_me.py",
+      "target": "file:backend/app/database/session.py",
+      "type": "imports",
+      "weight": 0.7
+    }
+  ]
+}

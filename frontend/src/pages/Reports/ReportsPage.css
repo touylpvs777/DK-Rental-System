@@ -1,0 +1,245 @@
+/* Reports page — page-specific styles only.
+   Shared:  src/styles/shared.css
+   Charts:  src/components/charts/ChartCard.css */
+
+.rp-page { }
+
+/* ── Section wrapper ───────────────────────────────────── */
+.rp-section {
+  margin-bottom: 36px;
+}
+
+.rp-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-text-muted);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: 16px;
+}
+
+/* Synthetic-data badge shown next to Trends heading */
+.rp-mock-badge {
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--color-warning-50);
+  color: var(--color-warning-700);
+  border: 1px solid var(--color-warning-200);
+}
+
+/* ── KPI stat grid ─────────────────────────────────────── */
+.rp-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* ── 2-col chart grid ──────────────────────────────────── */
+.rp-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Table card wrapper ────────────────────────────────── */
+.rp-table-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* ── Conversion metrics table ──────────────────────────── */
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.metrics-table th {
+  text-align: left;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-text-muted);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+.metrics-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  vertical-align: middle;
+}
+.metrics-table tr:last-child td { border-bottom: none; }
+.metrics-table tr:hover td { background: var(--color-gray-50); }
+
+.metric-value {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.metric-bar-wrap   { display: flex; align-items: center; gap: 10px; }
+.metric-bar-track  { flex: 1; height: 6px; border-radius: 3px; background: var(--color-gray-200); overflow: hidden; }
+.metric-bar-fill   { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
+.metric-bar-detail { font-size: 11px; color: var(--color-text-muted); white-space: nowrap; }
+
+/* ── Export card ───────────────────────────────────────── */
+.export-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+}
+.export-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.export-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.export-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.export-field label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background 0.13s, border-color 0.13s, color 0.13s;
+}
+.export-btn:hover:not(:disabled) {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.export-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.export-btn-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--btn-icon-bg, var(--color-primary-50));
+  color: var(--btn-icon-color, var(--color-primary-600));
+  flex-shrink: 0;
+}
+
+.export-note {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+  margin-top: 12px;
+}
+
+/* ── Module roadmap ────────────────────────────────────── */
+.rp-roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+.rp-roadmap-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 0.13s;
+}
+.rp-roadmap-card:hover { box-shadow: var(--shadow-md); }
+
+.rp-roadmap-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rp-roadmap-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rp-roadmap-version {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+.rp-roadmap-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.rp-roadmap-desc {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+.rp-hide-sm { }
+
+@media (max-width: 860px) {
+  .rp-chart-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .rp-hide-sm { display: none; }
+  .export-controls { flex-direction: column; align-items: stretch; }
+  .export-buttons  { flex-direction: column; }
+  .export-btn      { justify-content: center; }
+}

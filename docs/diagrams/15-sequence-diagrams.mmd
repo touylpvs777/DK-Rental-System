@@ -1,0 +1,202 @@
+%% This file contains multiple sequence diagrams separated by comments.
+%% Render each section independently.
+
+%% ============================================================================
+%% SEQUENCE 1: Create Quotation and Convert to Rental Contract
+%% ============================================================================
+
+sequenceDiagram
+    autonumber
+    participant U as Sales User
+    participant SPA as React SPA
+    participant QR as /quotations
+    participant QS as QuotationService
+    participant QWS as QuotationWorkflowService
+    participant RCS as RentalContractService
+    participant DB as Database
+    participant AL as ActivityLogService
+
+    U->>SPA: Fill quotation form
+    SPA->>QR: POST /quotations {customer_id, items[], title}
+    QR->>QS: create(data, user)
+    QS->>DB: INSERT quotation (status=draft)
+    QS->>DB: INSERT quotation_items[]
+    QS->>QS: recalculate_totals()
+    QS->>AL: log(QUOTATION_CREATED)
+    QS-->>QR: QuotationDetail
+    QR-->>SPA: 201 Created
+
+    U->>SPA: Click "Submit for Review"
+    SPA->>QR: POST /quotations/:id/workflow {action: submit}
+    QR->>QWS: execute_workflow(id, submit, user)
+    QWS->>DB: UPDATE status = under_review
+    QWS->>DB: INSERT quotation_status_history
+    QWS-->>QR: Updated quotation
+    QR-->>SPA: 200 OK
+
+    Note over U,DB: Manager approves
+    U->>SPA: Click "Approve"
+    SPA->>QR: POST /quotations/:id/approve {comments}
+    QR->>QWS: approve(id, user, comments)
+    QWS->>DB: UPDATE status = approved
+    QWS->>DB: INSERT quotation_approval
+    QWS->>DB: INSERT quotation_status_history
+    QWS-->>SPA: 200 OK
+
+    Note over U,DB: Customer accepts → Convert
+    U->>SPA: Click "Convert to Contract"
+    SPA->>QR: POST /quotations/:id/convert {start_date, end_date}
+    QR->>QWS: convert_to_contract(id, data, user)
+    QWS->>RCS: create_from_quotation(quotation, data)
+    RCS->>DB: INSERT rental_contract (status=reservation)
+    RCS->>DB: INSERT rental_contract_items[]
+    RCS-->>QWS: RentalContract
+    QWS->>DB: UPDATE quotation status = converted
+    QWS->>AL: log(QUOTATION_CONVERTED)
+    QWS-->>SPA: {contract_id: N}
+
+---
+
+%% ============================================================================
+%% SEQUENCE 2: Activate Contract → Delivery → First Invoice
+%% ============================================================================
+
+sequenceDiagram
+    autonumber
+    participant U as Manager
+    participant SPA as React SPA
+    participant RR as /rental-contracts
+    participant RWS as RentalWorkflowService
+    participant BS as BillingService
+    participant MS as MovementService
+    participant FS as ForkliftService
+    participant DB as Database
+
+    U->>SPA: Approve contract
+    SPA->>RR: POST /:id/approve
+    RR->>RWS: approve(id, user)
+    RWS->>DB: UPDATE status = approved
+    RWS->>FS: update forklift status = reserved
+    RWS-->>SPA: 200 OK
+
+    U->>SPA: Activate contract
+    SPA->>RR: POST /:id/activate {actual_start_date}
+    RR->>RWS: activate(id, data, user)
+    RWS->>DB: UPDATE status = active
+    RWS->>FS: update forklift status = rented
+    RWS->>BS: on_contract_activated(contract)
+    BS->>DB: INSERT deposit (status=pending)
+    BS->>DB: INSERT billing_cycle (month 1)
+    BS->>DB: INSERT invoice (status=draft)
+    BS->>DB: INSERT invoice_items[]
+    BS-->>RWS: Invoice created
+    RWS->>MS: create delivery movement
+    MS->>DB: INSERT asset_movement (status=draft)
+    RWS-->>SPA: 200 {invoice_id, movement_id}
+
+    Note over U,DB: Driver delivers forklift
+    U->>SPA: Mark movement departed
+    SPA->>RR: POST /movements/:id/depart
+    U->>SPA: Mark movement arrived
+    SPA->>RR: POST /movements/:id/arrive
+    U->>SPA: Mark movement completed
+    SPA->>RR: POST /movements/:id/complete
+
+---
+
+%% ============================================================================
+%% SEQUENCE 3: Payment → Allocation → Invoice Paid
+%% ============================================================================
+
+sequenceDiagram
+    autonumber
+    participant U as Finance Staff
+    participant SPA as React SPA
+    participant BR as /billing
+    participant BS as BillingService
+    participant DB as Database
+
+    U->>SPA: Record customer payment
+    SPA->>BR: POST /payments {customer_id, amount, method, date}
+    BR->>BS: record_payment(data, user)
+    BS->>DB: INSERT payment (status=pending)
+    BS-->>SPA: PaymentOut {id, payment_number}
+
+    U->>SPA: Confirm payment
+    SPA->>BR: POST /payments/:id/confirm
+    BR->>BS: confirm_payment(id, user)
+    BS->>DB: UPDATE payment status = confirmed
+    BS-->>SPA: 200 OK
+
+    U->>SPA: Allocate to invoice
+    SPA->>BR: POST /payments/:id/allocate {invoice_id, amount}
+    BR->>BS: allocate_payment(payment_id, data, user)
+    BS->>DB: INSERT payment_allocation
+    BS->>DB: UPDATE invoice amount_paid += allocated
+    BS->>DB: UPDATE invoice balance_due -= allocated
+    BS->>BS: Check: balance_due == 0?
+
+    alt Fully paid
+        BS->>DB: UPDATE invoice status = paid, paid_date = today
+    else Partially paid
+        BS->>DB: UPDATE invoice status = partially_paid
+    end
+
+    BS-->>SPA: PaymentAllocationOut
+
+---
+
+%% ============================================================================
+%% SEQUENCE 4: Work Order → Part Consumption → Service History
+%% ============================================================================
+
+sequenceDiagram
+    autonumber
+    participant U as Technician
+    participant SPA as React SPA
+    participant MR as /maintenance
+    participant MS as MaintenanceService
+    participant IS as InventoryService
+    participant DB as Database
+
+    U->>SPA: Create work order
+    SPA->>MR: POST /work-orders {forklift_id, type, title, scheduled_date}
+    MR->>MS: create_work_order(data, user)
+    MS->>DB: INSERT work_order (status=scheduled)
+    MS-->>SPA: WorkOrderOut
+
+    U->>SPA: Start work
+    SPA->>MR: POST /work-orders/:id/start
+    MR->>MS: start(id, user)
+    MS->>DB: UPDATE status = in_progress, started_at = now
+    MS-->>SPA: 200 OK
+
+    U->>SPA: Consume spare part
+    SPA->>MR: POST /work-orders/:id/consume {part_id, quantity}
+    MR->>MS: consume_part(wo_id, data)
+    MS->>IS: deduct_stock(part_id, warehouse_id, qty)
+    IS->>DB: INSERT inventory_transaction (type=issue)
+    IS->>DB: UPDATE inventory_balance (qty -= consumed)
+    MS->>DB: INSERT part_consumption
+    MS-->>SPA: ConsumptionOut
+
+    U->>SPA: Log maintenance cost
+    SPA->>MR: POST /work-orders/:id/costs {type: labor, amount, description}
+    MR->>MS: add_cost(wo_id, data)
+    MS->>DB: INSERT maintenance_cost
+    MS-->>SPA: CostOut
+
+    U->>SPA: Complete work order
+    SPA->>MR: POST /work-orders/:id/complete {findings, resolution, actual_hours}
+    MR->>MS: complete(id, data, user)
+    MS->>DB: UPDATE status = completed, completed_at = now
+    MS->>DB: INSERT service_history
+    MS->>DB: UPDATE forklift current_hour_meter
+    MS-->>SPA: 200 OK
+
+    U->>SPA: Verify (supervisor)
+    SPA->>MR: POST /work-orders/:id/verify
+    MR->>MS: verify(id, user)
+    MS->>DB: UPDATE status = verified, verified_at = now
+    MS->>DB: UPDATE maintenance_schedule next_due_date
+    MS-->>SPA: 200 OK

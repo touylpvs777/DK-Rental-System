@@ -1,0 +1,25 @@
+```mermaid
+C4Context
+    title System Context — DK CRM Platform
+
+    Person(admin, "System Admin", "Manages users, roles and system configuration")
+    Person(sales, "Sales Staff", "Creates leads, quotations and rental contracts")
+    Person(ops, "Operations Staff", "Manages fleet movements and deliveries")
+    Person(tech, "Technician", "Executes work orders and records maintenance")
+    Person(finance, "Finance Staff", "Processes invoices, payments and deposits")
+
+    Enterprise_Boundary(dkco, "DK Service Co.") {
+        System(crm, "DK CRM System", "Forklift fleet management, rental operations and CRM platform")
+    }
+
+    System_Ext(excel, "Excel / Spreadsheets", "Bulk data import and export of customers, catalog and reports")
+
+    Rel(admin, crm, "Administers users and roles")
+    Rel(sales, crm, "Manages leads, quotes and contracts")
+    Rel(ops, crm, "Tracks fleet movements and deliveries")
+    Rel(tech, crm, "Records work orders and maintenance")
+    Rel(finance, crm, "Processes billing and payments")
+    Rel(crm, excel, "Imports and exports data")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+```

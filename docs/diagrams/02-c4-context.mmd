@@ -1,0 +1,24 @@
+C4Context
+    title DK Service Enterprise Platform — System Context
+
+    Person(admin, "DK Admin / Manager", "Manages fleet, contracts, billing, users")
+    Person(sales, "Sales Staff", "Creates quotations, manages leads and customers")
+    Person(support, "Support / Technician", "Views equipment, logs maintenance work")
+    Person_Ext(customer, "DK Customer", "Rents forklifts, receives invoices")
+
+    System(dk_platform, "DK Service CRM Platform", "FastAPI + React enterprise application for forklift rental and service management in Laos")
+
+    System_Ext(excel, "Excel Workbooks", "Existing DK LAO operational data (8 workbooks)")
+    System_Ext(email, "Email System", "Future: invoice delivery, alerts")
+    System_Ext(bank, "Banking / Payment", "Future: payment gateway integration")
+
+    Rel(admin, dk_platform, "Manages all modules", "HTTPS")
+    Rel(sales, dk_platform, "CRM, quotations, contracts", "HTTPS")
+    Rel(support, dk_platform, "Views equipment, logs work", "HTTPS")
+    Rel_Back(dk_platform, customer, "Invoices, statements", "Future")
+
+    Rel(excel, dk_platform, "Catalog import, data migration", "Excel upload")
+    Rel(dk_platform, email, "Notifications, reports", "Future SMTP")
+    Rel(dk_platform, bank, "Payment processing", "Future API")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")

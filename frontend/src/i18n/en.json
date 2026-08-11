@@ -1,0 +1,3570 @@
+{
+  "common": {
+    "brandName": "DK Service",
+    "unassigned": "Unassigned",
+    "brandTagline": "Enterprise Platform",
+    "language": "Language",
+    "noDataYet": "No data yet",
+    "dataWillAppear": "Data will appear here once records exist",
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "edit": "Edit",
+    "create": "Create",
+    "add": "Add",
+    "remove": "Remove",
+    "search": "Search",
+    "filter": "Filter",
+    "filters": "Filters",
+    "actions": "Actions",
+    "status": "Status",
+    "loading": "Loading…",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "view": "View",
+    "viewDetails": "View Details",
+    "download": "Download",
+    "upload": "Upload",
+    "yes": "Yes",
+    "no": "No",
+    "required": "Required",
+    "optional": "Optional",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "date": "Date",
+    "description": "Description",
+    "notes": "Notes",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "quantity": "Quantity",
+    "price": "Price",
+    "amount": "Amount",
+    "type": "Type",
+    "category": "Category",
+    "all": "All",
+    "none": "None",
+    "unknown": "Unknown",
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "noResultsFound": "No results found",
+    "tryAdjustingFilters": "Try adjusting your filters or search terms",
+    "somethingWentWrong": "Something went wrong",
+    "retry": "Retry",
+    "clearFilters": "Clear filters",
+    "export": "Export",
+    "print": "Print",
+    "closeDialog": "Close dialog",
+    "closePanel": "Close panel",
+    "dismissNotification": "Dismiss notification",
+    "gridView": "Grid view",
+    "listView": "List view",
+    "page": "Page",
+    "of": "of",
+    "rowsPerPage": "Rows per page",
+    "selectAll": "Select all",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "mainNavigation": "Main navigation",
+    "moreLanguages": "More languages",
+    "loadingApplication": "Loading application",
+    "skipToContent": "Skip to content",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "itemCode": "Item Code",
+    "unit": "Unit",
+    "exportPdf": "Export to PDF",
+    "clear": "Clear"
+  },
+  "settings": {
+    "title": "Global Settings",
+    "subtitle": "Manage the core organization defaults across the ERP.",
+    "loading": "Loading settings…",
+    "save": "Save changes",
+    "saving": "Saving…",
+    "saveSuccess": "Settings updated successfully.",
+    "saveError": "Unable to save settings right now.",
+    "loadError": "Unable to load settings right now.",
+    "tabs": {
+      "company": "Company Profile",
+      "financial": "Financial Defaults",
+      "system": "System Variables",
+      "notifications": "Notification Preferences"
+    },
+    "company": {
+      "description": "Company profile defaults",
+      "companyName": "Company Name",
+      "address": "Address",
+      "phone": "Phone",
+      "fax": "Fax",
+      "website": "Website",
+      "email": "Email",
+      "logoUrl": "Logo URL",
+      "logoInvalidType": "Please select an image file.",
+      "logoUploadError": "Unable to upload the logo right now.",
+      "logoUploading": "Uploading logo…",
+      "logoDropzoneText": "Click or drag & drop to upload a logo",
+      "logoDropzoneHint": "PNG, JPG, or WebP",
+      "bankDetails": {
+        "title": "Bank Details",
+        "bankName": "Bank Name",
+        "accountName": "Account Name",
+        "accountNumber": "Account Number",
+        "swift": "SWIFT / BIC Code"
+      }
+    },
+    "financial": {
+      "description": "Financial defaults",
+      "vatRate": "VAT Rate (%)",
+      "defaultCurrency": "Default Currency",
+      "defaultPaymentTerms": "Default Payment Terms"
+    },
+    "system": {
+      "description": "System variables",
+      "equipmentTypes": "Equipment Types",
+      "repairStatuses": "Repair Statuses"
+    },
+    "notifications": {
+      "description": "Subscribe to email alerts for important system events. You'll be notified whenever a tracked event occurs, except for actions you perform yourself.",
+      "loadError": "Unable to load notification preferences right now.",
+      "saveError": "Unable to update this preference right now.",
+      "groups": {
+        "critical": "Critical & Deletions",
+        "sales": "Sales & Rentals",
+        "billing": "Billing",
+        "operations": "Operations"
+      },
+      "events": {
+        "customerDeleted": "Customer deleted",
+        "forkliftDeleted": "Forklift deleted",
+        "productDeleted": "Catalog product deleted",
+        "quotationApproved": "Quotation approved",
+        "quotationSent": "Quotation sent to customer",
+        "contractActivated": "Rental contract activated",
+        "contractCancelled": "Rental contract cancelled",
+        "invoiceIssued": "Invoice issued",
+        "paymentRecorded": "Payment recorded",
+        "paymentRejected": "Payment rejected",
+        "depositRefunded": "Deposit refunded",
+        "forkliftStatusChanged": "Forklift status changed",
+        "inventoryImportExecuted": "Inventory bulk import executed",
+        "settingUpdated": "Global setting updated"
+      }
+    }
+  },
+  "customers": {
+    "status": {
+      "active": "Active",
+      "prospect": "Prospect",
+      "inactive": "Inactive",
+      "churned": "Churned"
+    },
+    "form": {
+      "editTitle": "Edit Customer",
+      "newTitle": "New Customer",
+      "saveChanges": "Save Changes",
+      "createCustomer": "Create Customer",
+      "firstNameLabel": "First Name",
+      "firstNamePlaceholder": "John",
+      "lastNameLabel": "Last Name",
+      "lastNamePlaceholder": "Doe",
+      "emailPlaceholder": "john@example.com",
+      "phonePlaceholder": "+1 555 000 0000",
+      "companyLabel": "Company",
+      "companyPlaceholder": "Acme Corp",
+      "notesPlaceholder": "Any additional notes…"
+    },
+    "list": {
+      "title": "Customers",
+      "totalCount": "{{count}} total customers",
+      "newCustomer": "New Customer",
+      "searchPlaceholder": "Search name, email, phone…",
+      "allStatuses": "All Statuses",
+      "resultsCount": "{{count}} results",
+      "colCustomer": "Customer",
+      "noCustomersFound": "No customers found",
+      "createFirstCustomer": "Create your first customer to get started.",
+      "showingRange": "Showing {{start}}–{{end}} of {{total}}",
+      "deleteTitle": "Delete Customer",
+      "deleteMessage": "Are you sure you want to delete \"{{name}}\"? This cannot be undone.",
+      "toast": {
+        "loadError": "Failed to load customers.",
+        "createSuccess": "Customer created successfully.",
+        "createError": "Failed to create customer.",
+        "updateSuccess": "Customer updated successfully.",
+        "updateError": "Failed to update customer.",
+        "deleteSuccess": "Customer deleted.",
+        "deleteError": "Failed to delete customer."
+      }
+    }
+  },
+  "leads": {
+    "status": {
+      "new": "New",
+      "contacted": "Contacted",
+      "qualified": "Qualified",
+      "proposal": "Commercial Proposal",
+      "won": "Won",
+      "lost": "Lost"
+    },
+    "form": {
+      "editTitle": "Edit Sales Lead",
+      "newTitle": "New Sales Lead",
+      "saveChanges": "Save Changes",
+      "createLead": "Create Sales Lead",
+      "titleLabel": "Title",
+      "titlePlaceholder": "e.g. Enterprise Equipment Opportunity",
+      "wonLeadsCannotChange": "Won sales opportunities cannot be moved to another status.",
+      "sourceLabel": "Source",
+      "sourceNone": "— None —",
+      "valueLabel": "Value ($)",
+      "descriptionPlaceholder": "Brief notes about this sales lead…"
+    },
+    "source": {
+      "website": "Website",
+      "referral": "Referral",
+      "coldCall": "Cold Call",
+      "email": "Email",
+      "socialMedia": "Social Media",
+      "other": "Other"
+    },
+    "list": {
+      "title": "Sales Leads",
+      "totalCount": "{{count}} sales leads",
+      "newLead": "New Sales Lead",
+      "searchPlaceholder": "Search sales leads…",
+      "allSources": "All Sources",
+      "resultsCount": "{{count}} results",
+      "colLead": "Sales Lead",
+      "colSource": "Source",
+      "colValue": "Value",
+      "noLeadsFound": "No sales leads found",
+      "createFirstLead": "Create your first sales lead to get started.",
+      "showingRange": "Showing {{start}}–{{end}} of {{total}}",
+      "deleteTitle": "Delete Sales Lead",
+      "deleteMessage": "Are you sure you want to delete \"{{title}}\"? This cannot be undone.",
+      "toast": {
+        "loadError": "Failed to load leads.",
+        "createSuccess": "Lead created.",
+        "createError": "Failed to create lead.",
+        "updateSuccess": "Lead updated.",
+        "updateError": "Failed to update lead.",
+        "deleteSuccess": "Lead deleted.",
+        "deleteError": "Failed to delete lead."
+      }
+    }
+  },
+  "inventory": {
+    "common": {
+      "refresh": "Refresh",
+      "resultCount_one": "{{count}} result",
+      "resultCount_other": "{{count}} results",
+      "paginationInfo": "Page {{page}} of {{pages}}"
+    },
+    "dashboard": {
+      "title": "Spare Parts Inventory",
+      "subtitle": "Stock management and procurement overview",
+      "purchaseOrdersButton": "POs",
+      "sparePartsButton": "Spare Parts Inventory",
+      "quickAccess": "Quick Access",
+      "loadError": "Failed to load inventory data."
+    },
+    "purchaseOrder": {
+      "title": "Purchase Orders",
+      "subtitle_one": "{{count}} order",
+      "subtitle_other": "{{count}} orders",
+      "loadError": "Failed to load purchase orders.",
+      "status": {
+        "all": "All Statuses",
+        "draft": "Draft",
+        "ordered": "Ordered",
+        "partial": "Partial",
+        "received": "Received",
+        "cancelled": "Cancelled"
+      },
+      "newPO": "New Purchase Order",
+      "form": {
+        "title": "New Purchase Order",
+        "backToList": "Back to Purchase Orders",
+        "vendor": "Vendor",
+        "vendorRequired": "Vendor is required",
+        "warehouse": "Warehouse",
+        "warehouseRequired": "Warehouse is required",
+        "vendorAddress": "Vendor Address",
+        "vendorContact": "Vendor Contact",
+        "orderDate": "Order Date",
+        "expectedDate": "Expected Date",
+        "taxRate": "Tax Rate (%)",
+        "lineItems": "Line Items",
+        "itemCode": "Item Code",
+        "description": "Description",
+        "descriptionPlaceholder": "Item description",
+        "qty": "Qty",
+        "unit": "Unit",
+        "unitCost": "Unit Cost",
+        "linkCatalogPart": "Link Catalog Part",
+        "linkCatalogPartPlaceholder": "Search spare parts…",
+        "noPartsFound": "No parts found",
+        "addRow": "Add Row",
+        "itemRequired": "At least one line item is required",
+        "created": "Purchase order {{number}} created",
+        "createFailed": "Failed to create purchase order",
+        "creating": "Creating...",
+        "createPO": "Create Purchase Order"
+      },
+      "detail": {
+        "loadError": "Failed to load purchase order",
+        "notFound": "Purchase order not found",
+        "actionFailed": "{{action}} failed",
+        "submitted": "Purchase order submitted",
+        "submit": "Submit",
+        "receiveItems": "Receive Items",
+        "receiveModalTitle": "Receive Items",
+        "received": "Items received",
+        "receivedDate": "Received Date",
+        "qtyOrdered": "Qty Ordered",
+        "qtyReceived": "Qty Received"
+      },
+      "editor": {
+        "newTitle": "New Purchase Order",
+        "partner": "Vendor (Partner)",
+        "noPartner": "— Select a partner —",
+        "headerLocked": "Header fields are locked after the purchase order is created.",
+        "saveSuccess": "Purchase order saved",
+        "saveFailed": "Failed to save purchase order",
+        "notFoundError": "Purchase order not found",
+        "saveItems": "Save Line Items",
+        "itemsSaveSuccess": "Line items updated",
+        "itemsSaveFailed": "Failed to update line items"
+      }
+    },
+    "spareParts": {
+      "unitPrice": "Unit Price",
+      "unit": "Unit",
+      "categories": {
+        "all": "All Categories",
+        "filter": "Filter",
+        "belt": "Belt",
+        "brake": "Brake",
+        "hydraulic": "Hydraulic",
+        "electrical": "Electrical",
+        "engine": "Engine",
+        "tire": "Tire",
+        "chain": "Chain",
+        "battery": "Battery",
+        "lubricant": "Lubricant",
+        "general": "General"
+      },
+      "list": {
+        "title": "Spare Parts Inventory",
+        "subtitle_one": "{{count}} part",
+        "subtitle_other": "{{count}} parts",
+        "addPart": "Add Part",
+        "loadError": "Failed to load parts.",
+        "searchPlaceholder": "Search part number, name...",
+        "noPartsFound": "No spare parts found",
+        "columns": {
+          "partNumber": "Part #",
+          "minStock": "Min Stock"
+        }
+      },
+      "detail": {
+        "backToList": "Back to Spare Parts",
+        "notFound": "Not found.",
+        "loadError": "Part not found.",
+        "totalStock": "Total Stock",
+        "minLevel": "Min Level",
+        "reorderQty": "Reorder Qty",
+        "brand": "Brand",
+        "leadTime": "Lead Time",
+        "leadTimeDays_one": "{{count}} day",
+        "leadTimeDays_other": "{{count}} days",
+        "created": "Created",
+        "active": "Active",
+        "stockByWarehouse": "Stock by Warehouse",
+        "recentTransactions": "Recent Transactions",
+        "columns": {
+          "warehouse": "Warehouse",
+          "onHand": "On Hand",
+          "reserved": "Reserved",
+          "available": "Available",
+          "number": "Number",
+          "qty": "Qty",
+          "cost": "Cost"
+        }
+      }
+    },
+    "pos": {
+      "title": "Parts POS",
+      "subtitle_one": "{{count}} part",
+      "subtitle_other": "{{count}} parts",
+      "searchPlaceholder": "Scan barcode or search part number, name...",
+      "loadError": "Failed to load parts.",
+      "noResults": "No parts match your search."
+    },
+    "warehouse": {
+      "title": "Stock Locations",
+      "list": {
+        "subtitle_one": "{{count}} stock location",
+        "subtitle_other": "{{count}} stock locations",
+        "addWarehouse": "Add Stock Location",
+        "loadError": "Failed to load stock locations."
+      },
+      "form": {
+        "codeLabel": "Code",
+        "codePlaceholder": "WH-A",
+        "namePlaceholder": "Warehouse Alpha",
+        "addressPlaceholder": "Full address (optional)",
+        "codeNameRequired": "Code and name are required.",
+        "createSuccess": "Warehouse created.",
+        "createError": "Failed to create warehouse.",
+        "creating": "Creating..."
+      },
+      "detail": {
+        "backToList": "Back to Stock Locations",
+        "loadError": "Failed to load stock location.",
+        "notFound": "Stock location not found.",
+        "address": "Address",
+        "contactName": "Contact Person",
+        "contactPhone": "Contact Phone",
+        "distinctParts": "Distinct Parts",
+        "totalStock": "Total Stock Units",
+        "stockTitle": "Stock in this Stock Location",
+        "noStock": "No stock recorded in this stock location yet.",
+        "columns": {
+          "part": "Part"
+        }
+      }
+    },
+    "stockBadge": {
+      "inStock": "In Stock",
+      "lowStock": "Low Stock",
+      "outOfStock": "Out of Stock"
+    },
+    "reorderAlert": {
+      "title": "Reorder Alerts ({{count}})",
+      "detail": "{{warehouseCode}}: {{available}} available (min: {{minLevel}}) — reorder {{reorderQuantity}}"
+    },
+    "kpi": {
+      "spareParts": "Spare Parts",
+      "warehouses": "Warehouses",
+      "stockValue": "Stock Value",
+      "lowStock": "Low Stock",
+      "belowMinimum": "{{count}} below minimum",
+      "pendingPOs": "Pending POs"
+    },
+    "quickNav": {
+      "parts": {
+        "label": "Spare Parts Inventory",
+        "desc": "Browse inventory"
+      },
+      "warehouses": {
+        "label": "Stock Locations",
+        "desc": "Manage locations"
+      },
+      "purchaseOrders": {
+        "label": "Purchase Orders",
+        "desc": "Procurement"
+      },
+      "catalog": {
+        "label": "Product Catalog",
+        "desc": "Full catalog"
+      }
+    },
+    "lowStock": {
+      "title": "Low Stock Alerts",
+      "allHealthy": "All stock levels healthy",
+      "viewAll": "View All",
+      "min": "Min",
+      "reorder": "Reorder"
+    },
+    "purchaseOrderTable": {
+      "poNumber": "PO Number",
+      "vendor": "Vendor",
+      "warehouse": "Warehouse",
+      "orderDate": "Order Date",
+      "empty": "No purchase orders found",
+      "paginationInfo": "Page {{page}} of {{pages}} ({{total}} total)"
+    },
+    "stockDistributionChart": {
+      "title": "Stock by Category",
+      "subtitle": "Parts per category",
+      "empty": "No stock data"
+    },
+    "warehouseGrid": {
+      "noneFound": "No warehouses",
+      "noneFoundHint": "Create your first warehouse to start tracking inventory"
+    },
+    "import": {
+      "button": "Import Data",
+      "title": "Import Inventory Data",
+      "subtitle": "Upload a CSV or Excel (.xlsx) file to bulk create or update spare parts. Existing part numbers are updated; new ones are created.",
+      "dropzoneText": "Drag & drop your file here, or click to browse",
+      "dropzoneHint": "Supports .csv and .xlsx files, up to 10 MB",
+      "clearFile": "Clear",
+      "uploadButton": "Upload & Import",
+      "uploading": "Uploading and processing data…",
+      "uploadingHint": "This can take a few seconds for larger files.",
+      "uploadFailed": "Import failed. Please try again.",
+      "successBanner": "Import completed successfully",
+      "partialBanner": "Import completed with some errors",
+      "resultSummary": "{{imported}} imported, {{updated}} updated",
+      "rowErrorsTitle": "{{count}} rows could not be imported",
+      "rowLabel": "Row {{row}}:",
+      "closeAndRefresh": "Close & Refresh"
+    }
+  },
+  "finance": {
+    "collectionRate": {
+      "title": "Collection Rate",
+      "collected": "Collected",
+      "invoiced": "Invoiced"
+    },
+    "kpi": {
+      "totalRevenue": "Total Revenue",
+      "collected": "Collected",
+      "outstanding": "Outstanding",
+      "overdue": "Overdue",
+      "pastDue": "{{amount}} past due",
+      "invoices": "Invoices",
+      "totalIssued": "Total issued",
+      "payments": "Payments",
+      "received": "Received"
+    },
+    "quickNav": {
+      "invoices": {
+        "label": "Invoices",
+        "desc": "Create and manage"
+      },
+      "payments": {
+        "label": "Payments",
+        "desc": "Track collection"
+      },
+      "deposits": {
+        "label": "Deposits",
+        "desc": "Security deposits"
+      },
+      "statements": {
+        "label": "Statements",
+        "desc": "Account activity"
+      },
+      "analytics": {
+        "label": "Analytics",
+        "desc": "Charts & trends"
+      },
+      "revenue": {
+        "label": "Revenue",
+        "desc": "Recognition schedule"
+      }
+    },
+    "invoiceStatusChart": {
+      "title": "Status Distribution",
+      "totalCount": "{{count}} total",
+      "empty": "No invoices"
+    },
+    "recentTransactions": {
+      "recentInvoices": "Recent Invoices",
+      "recentPayments": "Recent Payments",
+      "viewAll": "View All",
+      "noInvoicesYet": "No invoices yet",
+      "noPaymentsYet": "No payments yet"
+    },
+    "revenueChart": {
+      "title": "Revenue Trend",
+      "subtitle": "Last 6 months ({{currency}})",
+      "empty": "No revenue data yet"
+    }
+  },
+  "billing": {
+    "common": {
+      "refresh": "Refresh",
+      "markOverdue": "Mark Overdue",
+      "markOverdueSuccess": "Marked {{count}} invoice(s) as overdue",
+      "markOverdueError": "Failed to mark overdue invoices"
+    },
+    "dashboard": {
+      "title": "Billing & Payments",
+      "subtitle": "Financial overview and quick actions",
+      "quickAccess": "Quick Access",
+      "loadError": "Failed to load billing summary."
+    },
+    "finance": {
+      "title": "Finance Analytics",
+      "subtitle": "Revenue performance, receivables, and collection tracking",
+      "loadError": "Failed to load finance data."
+    },
+    "revenue": {
+      "title": "Revenue Recognition",
+      "entriesCount": "{{count}} entries",
+      "resultsCount": "{{count}} results",
+      "loadError": "Failed to load revenue recognitions.",
+      "actionError": "Action failed.",
+      "empty": "No revenue recognition entries",
+      "recognize": "Recognize",
+      "reverse": "Reverse",
+      "paginationInfo": "Page {{page}} of {{pages}} ({{total}} total)",
+      "columns": {
+        "number": "REV #",
+        "period": "Period"
+      },
+      "statusOptions": {
+        "all": "All Statuses",
+        "scheduled": "Scheduled",
+        "recognized": "Recognized",
+        "reversed": "Reversed"
+      },
+      "typeOptions": {
+        "all": "All Types",
+        "rentalIncome": "Rental Income",
+        "serviceFee": "Service Fee",
+        "penaltyFee": "Penalty Fee",
+        "damageRecovery": "Damage Recovery",
+        "depositForfeiture": "Deposit Forfeiture"
+      },
+      "typeLabels": {
+        "rentalIncome": "Rental Income",
+        "serviceFee": "Service Fee",
+        "penaltyFee": "Penalty",
+        "damageRecovery": "Damage Recovery",
+        "depositForfeiture": "Deposit Forfeiture"
+      }
+    },
+    "statement": {
+      "title": "Account Statement",
+      "subtitle": "All invoice activity with running balance",
+      "loadError": "Failed to load statement data.",
+      "totalCharges": "Total Charges",
+      "totalPayments": "Total Payments",
+      "outstandingBalance": "Outstanding Balance",
+      "searchPlaceholder": "Search invoices...",
+      "entriesCount": "{{count}} entries",
+      "loading": "Loading statement...",
+      "noEntries": "No statement entries",
+      "emptySub": "No invoices found matching your search",
+      "columns": {
+        "invoiceNumber": "Invoice #",
+        "charges": "Charges",
+        "payments": "Payments",
+        "balance": "Balance"
+      }
+    },
+    "aging": {
+      "title": "Aging Receivables",
+      "buckets": {
+        "current": "Current",
+        "days1to30": "1-30 days",
+        "days31to60": "31-60 days",
+        "days61to90": "61-90 days",
+        "days90plus": "90+ days"
+      }
+    },
+    "revenueChart": {
+      "title": "Revenue Trend (Last 6 Months)",
+      "empty": "No data available",
+      "invoiced": "Invoiced",
+      "paid": "Paid",
+      "invoicedTooltip": "Invoiced: {{amount}}",
+      "paidTooltip": "Paid: {{amount}}"
+    },
+    "payment": {
+      "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "rejected": "Rejected",
+        "refunded": "Refunded"
+      },
+      "method": {
+        "cash": "Cash",
+        "bank_transfer": "Bank Transfer",
+        "check": "Check",
+        "credit_card": "Credit Card",
+        "mobile_payment": "Mobile Payment",
+        "mobile_paymentShort": "Mobile",
+        "other": "Other"
+      },
+      "statusFilter": {
+        "all": "All Statuses"
+      },
+      "methodFilter": {
+        "all": "All Methods"
+      },
+      "fields": {
+        "method": "Method",
+        "paymentDate": "Payment Date",
+        "received": "Received",
+        "reference": "Reference",
+        "createdBy": "Created By",
+        "confirmedAt": "Confirmed",
+        "confirmedBy": "Confirmed By",
+        "contract": "Contract"
+      },
+      "table": {
+        "number": "Payment #",
+        "customer": "Customer"
+      },
+      "list": {
+        "title": "Payments",
+        "subtitle": "{{count}} payments",
+        "resultsCount": "{{count}} results"
+      },
+      "pagination": {
+        "pageOf": "Page {{page}} of {{pages}} ({{total}} total)"
+      },
+      "searchPlaceholder": "Search payment / reference...",
+      "empty": "No payments found",
+      "notFound": "Payment not found",
+      "actions": {
+        "reject": "Reject",
+        "allocateToInvoice": "Allocate to Invoice"
+      },
+      "toast": {
+        "confirmed": "Payment confirmed",
+        "rejected": "Payment rejected",
+        "allocated": "Payment allocated",
+        "actionFailed": "Failed: {{action}}",
+        "loadFailed": "Failed to load payment.",
+        "loadPaymentsFailed": "Failed to load payments.",
+        "loadInvoicesFailed": "Failed to load invoices"
+      },
+      "allocate": {
+        "title": "Allocate Payment to Invoice",
+        "invoiceLabel": "Invoice",
+        "selectPlaceholder": "Select invoice...",
+        "balance": "Balance",
+        "amountPlaceholder": "0.00",
+        "submit": "Allocate"
+      },
+      "summary": {
+        "title": "Payments",
+        "transactions": "Transactions"
+      }
+    },
+    "invoice": {
+      "status": {
+        "draft": "Draft",
+        "issued": "Issued",
+        "sent": "Sent",
+        "partially_paid": "Partial",
+        "paid": "Paid",
+        "overdue": "Overdue",
+        "cancelled": "Cancelled",
+        "voided": "Voided"
+      },
+      "summary": {
+        "title": "Invoices",
+        "outstanding": "Outstanding",
+        "overdue": "Overdue",
+        "count": "Count"
+      },
+      "filter": {
+        "all": "All Statuses",
+        "partially_paid": "Partially Paid"
+      },
+      "list": {
+        "title": "Invoices",
+        "subtitle": "{{count}} invoices",
+        "newInvoice": "New Invoice",
+        "loadError": "Failed to load invoices.",
+        "searchPlaceholder": "Search invoice #...",
+        "resultsCount": "{{count}} results",
+        "empty": "No invoices found"
+      },
+      "table": {
+        "number": "Invoice #",
+        "customer": "Customer",
+        "balance": "Balance"
+      },
+      "meta": {
+        "issueDate": "Issue Date",
+        "dueDate": "Due Date",
+        "paidDate": "Paid Date",
+        "contract": "Contract",
+        "referenceType": "Invoice Type",
+        "period": "Period",
+        "createdBy": "Created By"
+      },
+      "referenceType": {
+        "sales": "Sales",
+        "workOrder": "Work Order",
+        "rental": "Rental"
+      },
+      "form": {
+        "title": "New Invoice",
+        "backToList": "Back to Invoices",
+        "customer": "Customer",
+        "customerSearchPlaceholder": "Search name, company...",
+        "noCustomersFound": "No customers found",
+        "referenceType": "Invoice Type",
+        "taxRate": "Tax Rate (%)",
+        "description": "Description",
+        "descriptionPlaceholder": "Item or service description",
+        "unitPrice": "Unit Price",
+        "lineTotal": "Line Total",
+        "addRow": "Add Row",
+        "subtotal": "Subtotal",
+        "grandTotal": "Grand Total",
+        "creating": "Creating...",
+        "createInvoice": "Create Invoice",
+        "created": "Invoice {{number}} created.",
+        "createFailed": "Failed to create invoice.",
+        "errors": {
+          "customerRequired": "Please select a customer.",
+          "itemRequired": "At least one line item with a description is required."
+        },
+        "itemCode": "Item Code",
+        "itemCodePlaceholder": "e.g. SKU-1000",
+        "unit": "Unit",
+        "currency": "Currency",
+        "exchangeRate": "Exchange Rate",
+        "bankDetails": "Bank Details",
+        "bankDetailsPlaceholder": "Bank name, account name, account number, SWIFT/BIC...",
+        "grandTotalInLAK": "Grand Total in LAK (Base Currency)",
+        "previewTitle": "Document Preview",
+        "previewPendingNumber": "(Pending)"
+      },
+      "pagination": {
+        "info": "Page {{page}} of {{pages}} ({{total}} total)"
+      },
+      "actions": {
+        "issue": "Issue",
+        "send": "Send",
+        "void": "Void"
+      },
+      "amountSummary": {
+        "tax": "Tax ({{rate}}%)",
+        "discount": "Discount",
+        "paid": "Paid",
+        "balanceDue": "Balance Due"
+      },
+      "detail": {
+        "loadError": "Failed to load invoice.",
+        "notFound": "Invoice not found",
+        "actionFailed": "Failed: {{action}}",
+        "internalNotes": "Internal Notes",
+        "cancellationReason": "Cancellation Reason"
+      },
+      "lineItems": {
+        "title": "Line Items",
+        "number": "#",
+        "qty": "Qty",
+        "rate": "Rate",
+        "tax": "Tax",
+        "empty": "No line items"
+      },
+      "allocations": {
+        "title": "Payment Allocations",
+        "payment": "Payment",
+        "paymentLabel": "Payment #{{id}}"
+      },
+      "modal": {
+        "cancel": {
+          "title": "Cancel Invoice",
+          "reasonLabel": "Reason for cancellation",
+          "reasonPlaceholder": "Enter reason..."
+        }
+      },
+      "toast": {
+        "issued": "Invoice issued",
+        "sent": "Invoice sent",
+        "voided": "Invoice voided",
+        "cancelled": "Invoice cancelled"
+      },
+      "card": {
+        "due": "Due {{date}}",
+        "balance": "Balance: {{amount}} {{currency}}"
+      },
+      "vehicleInfo": {
+        "title": "Vehicle Information",
+        "make": "Make",
+        "model": "Model",
+        "vin": "VIN",
+        "engineNo": "Engine No.",
+        "regNo": "Registration No.",
+        "jobNumber": "Job Number"
+      },
+      "editor": {
+        "newTitle": "New Invoice",
+        "invoiceNumber": "Invoice Number",
+        "notesLabel": "Notes",
+        "internalNotesLabel": "Internal Notes",
+        "receivedBy": "Received By (Customer)",
+        "referenceSalesOrder": "Sales Order",
+        "noSalesOrder": "No linked sales order",
+        "fromQuotation": "from {{number}}",
+        "saveDraft": "Save Draft",
+        "saveSuccess": "Invoice saved",
+        "saveFailed": "Failed to save invoice",
+        "notFoundError": "Invoice not found",
+        "actionFailed": "Failed to {{action}}",
+        "prefilledFromSalesOrder": "Pre-filled from sales order {{number}}"
+      }
+    },
+    "deposit": {
+      "status": {
+        "all": "All Statuses",
+        "pending": "Pending",
+        "received": "Received",
+        "partiallyRefunded": "Partial Refund",
+        "refunded": "Refunded",
+        "forfeited": "Forfeited",
+        "applied": "Applied"
+      },
+      "type": {
+        "all": "All Types",
+        "security": "Security",
+        "advance": "Advance",
+        "guarantee": "Guarantee"
+      },
+      "list": {
+        "title": "Deposits",
+        "subtitle": "{{count}} deposits",
+        "loadError": "Failed to load deposits.",
+        "resultsCount": "{{count}} results",
+        "empty": "No deposits found"
+      },
+      "table": {
+        "number": "Deposit #",
+        "customer": "Customer",
+        "contract": "Contract",
+        "received": "Received"
+      },
+      "pagination": {
+        "info": "Page {{page}} of {{pages}} ({{total}} total)"
+      },
+      "actions": {
+        "markReceived": "Mark Received",
+        "refund": "Refund",
+        "forfeit": "Forfeit",
+        "applyToInvoice": "Apply to Invoice"
+      },
+      "modal": {
+        "markReceived": {
+          "title": "Mark Deposit Received",
+          "depositLabel": "Deposit",
+          "receivedDateLabel": "Received Date",
+          "confirm": "Confirm Receipt"
+        },
+        "refund": {
+          "title": "Refund Deposit",
+          "amountLabel": "Refund Amount (max: {{max}})",
+          "dateLabel": "Refund Date"
+        },
+        "forfeit": {
+          "title": "Forfeit Deposit",
+          "amountLabel": "Forfeit Amount (max: {{max}})",
+          "reasonLabel": "Reason"
+        },
+        "apply": {
+          "title": "Apply Deposit to Invoice",
+          "invoiceLabel": "Invoice",
+          "selectInvoicePlaceholder": "Select invoice...",
+          "invoiceOption": "{{number}} — Balance: {{balance}} {{currency}}",
+          "amountLabel": "Amount (max: {{max}})",
+          "confirm": "Apply"
+        }
+      },
+      "summary": {
+        "amount": "Deposit Amount",
+        "refunded": "Refunded",
+        "forfeited": "Forfeited",
+        "applied": "Applied",
+        "remaining": "Remaining"
+      },
+      "summaryCard": {
+        "title": "Deposits",
+        "active": "Active"
+      },
+      "detail": {
+        "loadError": "Failed to load deposit.",
+        "notFound": "Not found",
+        "actionFailed": "Action failed.",
+        "invoicesLoadError": "Failed to load invoices.",
+        "receivedLabel": "Received: {{date}}",
+        "refundDateLabel": "Refund Date: {{date}}",
+        "contractLabel": "Contract:",
+        "notesLabel": "Notes:"
+      },
+      "toast": {
+        "received": "Deposit marked as received",
+        "receiveError": "Failed to receive deposit"
+      }
+    }
+  },
+  "maintenance": {
+    "overdue": "Overdue",
+    "actions": {
+      "refresh": "Refresh"
+    },
+    "status": {
+      "scheduled": "Scheduled",
+      "due": "Due",
+      "inProgress": "In Progress",
+      "verified": "Verified"
+    },
+    "type": {
+      "preventive": "Preventive",
+      "corrective": "Corrective",
+      "emergency": "Emergency",
+      "inspection": "Inspection",
+      "install": "Install"
+    },
+    "priority": {
+      "low": "Low",
+      "normal": "Normal",
+      "high": "High",
+      "critical": "Critical"
+    },
+    "dashboard": {
+      "title": "Maintenance & PM",
+      "subtitle": "Preventive maintenance dashboard",
+      "loadError": "Failed to load dashboard.",
+      "pmSchedulesButton": "PM Schedules",
+      "workOrdersButton": "Work Orders",
+      "cards": {
+        "pmPlans": "PM Plans",
+        "activeSchedules": "Active Schedules",
+        "completedThisMonth": "Completed (Month)",
+        "costThisMonth": "Cost (Month)"
+      }
+    },
+    "schedule": {
+      "title": "PM Schedules",
+      "activeSchedules": "{{count}} active schedules",
+      "loadError": "Failed to load schedules.",
+      "emptyState": "No active PM schedules. Create a maintenance plan and assign it to equipment.",
+      "nextDue": "Next Due",
+      "interval": "Interval",
+      "serviced": "Serviced"
+    },
+    "workOrders": {
+      "list": {
+        "title": "Work Orders",
+        "subtitle": "{{count}} work orders",
+        "newWorkOrder": "New Work Order",
+        "loadError": "Failed to load work orders.",
+        "searchPlaceholder": "Search number, title...",
+        "resultsCount": "{{count}} results",
+        "allStatuses": "All Statuses",
+        "allTypes": "All Types",
+        "columns": {
+          "workOrder": "Work Order",
+          "priority": "Priority"
+        },
+        "paginationInfo": "Page {{page}} of {{pages}} ({{total}} total)"
+      },
+      "form": {
+        "title": "New Work Order",
+        "backToList": "Back to Work Orders",
+        "workOrderTitle": "Title",
+        "workOrderTitlePlaceholder": "e.g. Monthly PM Service",
+        "asset": "Asset",
+        "assetSearchPlaceholder": "Search serial number or name...",
+        "noAssetsFound": "No assets found",
+        "workType": "Work Type",
+        "assignee": "Assignee",
+        "unassigned": "— Unassigned —",
+        "schedule": "Scheduled Date & Time",
+        "creating": "Creating...",
+        "createWorkOrder": "Create Work Order",
+        "created": "Work order {{number}} created.",
+        "createFailed": "Failed to create work order.",
+        "errors": {
+          "titleRequired": "Title is required.",
+          "assetRequired": "Please select an asset.",
+          "scheduleRequired": "Scheduled date and time is required."
+        }
+      },
+      "detail": {
+        "notFound": "Work order not found.",
+        "backToList": "Back to Work Orders",
+        "startWork": "Start Work",
+        "completeAction": "Complete",
+        "verify": "Verify",
+        "addCost": "Add Cost",
+        "toastStarted": "Work started",
+        "actionFailed": "Failed: {{label}}",
+        "fields": {
+          "equipment": "Equipment",
+          "technician": "Technician",
+          "pmPlan": "PM Plan",
+          "hourMeter": "Hour Meter",
+          "started": "Started",
+          "verifiedBy": "Verified By",
+          "created": "Created",
+          "estHours": "Est. Hours",
+          "actualHours": "Actual Hours",
+          "actualCost": "Actual Cost"
+        },
+        "findings": "Findings",
+        "resolution": "Resolution",
+        "cancellationReason": "Cancellation Reason",
+        "costBreakdown": "Cost Breakdown ({{count}})",
+        "rate": "Rate",
+        "startModal": {
+          "title": "Start Work Order",
+          "hourMeterReading": "Hour Meter Reading",
+          "starting": "Starting...",
+          "start": "Start"
+        },
+        "completeModal": {
+          "title": "Complete Work Order",
+          "findingsPlaceholder": "What was found during inspection...",
+          "resolutionPlaceholder": "What was done to resolve...",
+          "completing": "Completing..."
+        },
+        "costModal": {
+          "title": "Add Cost Entry",
+          "descRateRequired": "Description and rate required.",
+          "costAdded": "Cost added.",
+          "failed": "Failed.",
+          "costType": "Cost Type",
+          "typeParts": "Parts",
+          "typeLabor": "Labor",
+          "typeExternalService": "External Service",
+          "typeOther": "Other",
+          "unitRate": "Unit Rate",
+          "adding": "Adding..."
+        },
+        "cancelReasonDefault": "Cancelled by user"
+      },
+      "editor": {
+        "priority": "Priority",
+        "estimatedCost": "Estimated Cost",
+        "saveChanges": "Save Changes",
+        "saveSuccess": "Work order saved",
+        "saveFailed": "Failed to save work order",
+        "notFoundError": "Work order not found",
+        "costsBulkEditNote": "Edits, new rows, and removed rows are all saved together when you click Save Changes.",
+        "confirmCancel": "Are you sure you want to cancel this work order?",
+        "serialNumber": "Serial Number",
+        "equipmentName": "Equipment Name",
+        "currentHourMeter": "Current Hour Meter"
+      }
+    }
+  },
+  "movement": {
+    "status": {
+      "draft": "Draft",
+      "preparing": "Preparing",
+      "in_transit": "In Transit",
+      "delivered": "Delivered",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "type": {
+      "warehouse_transfer": "Transfer",
+      "customer_deployment": "Deployment",
+      "customer_return": "Return",
+      "internal_relocation": "Relocation"
+    },
+    "priority": {
+      "low": "Low",
+      "normal": "Normal",
+      "high": "High",
+      "urgent": "Urgent"
+    },
+    "card": {
+      "customer": "Customer: {{name}}"
+    },
+    "timeline": {
+      "title": "Movement Timeline",
+      "by": "by {{name}}"
+    },
+    "list": {
+      "title": "Movement Control",
+      "totalCount": "{{count}} movements",
+      "refresh": "Refresh",
+      "newMovement": "New Movement",
+      "loadFailed": "Failed to load movements.",
+      "searchPlaceholder": "Search number, location, code...",
+      "allStatuses": "All Statuses",
+      "allTypes": "All Types",
+      "resultsCount": "{{count}} results",
+      "colMovement": "Movement",
+      "colEquipment": "Equipment",
+      "colFromTo": "From → To",
+      "colScheduled": "Scheduled",
+      "colPriority": "Priority",
+      "noMovementsFound": "No movements found",
+      "pageOf": "Page {{page}} of {{pages}} ({{total}} total)"
+    },
+    "form": {
+      "title": "New Movement",
+      "backToMovements": "Back to Movements",
+      "movementType": "Movement Type",
+      "priority": "Priority",
+      "forkliftId": "Forklift ID",
+      "forkliftIdPlaceholder": "Enter forklift ID",
+      "customerId": "Customer ID",
+      "fromLocation": "From Location",
+      "fromLocationPlaceholder": "DK Warehouse A",
+      "toLocation": "To Location",
+      "toLocationPlaceholder": "Customer Site X",
+      "fromAddress": "From Address",
+      "toAddress": "To Address",
+      "addressPlaceholder": "Full address (optional)",
+      "scheduledDate": "Scheduled Date",
+      "trackingCode": "Tracking / QR Code",
+      "trackingCodePlaceholder": "QR or barcode reference",
+      "notesPlaceholder": "Visible notes...",
+      "internalNotes": "Internal Notes",
+      "internalNotesPlaceholder": "Internal only...",
+      "creating": "Creating...",
+      "createMovement": "Create Movement",
+      "created": "Movement {{number}} created.",
+      "createFailed": "Failed to create movement.",
+      "errors": {
+        "forkliftRequired": "Forklift ID is required.",
+        "fromLocationRequired": "From location is required.",
+        "toLocationRequired": "To location is required.",
+        "scheduledDateRequired": "Scheduled date is required."
+      }
+    },
+    "detail": {
+      "notFound": "Movement not found.",
+      "actionFailed": "Failed: {{action}}",
+      "actions": {
+        "startPreparing": "Start Preparing",
+        "recordDeparture": "Record Departure",
+        "recordArrival": "Record Arrival",
+        "markComplete": "Mark Complete"
+      },
+      "toasts": {
+        "preparationStarted": "Preparation started",
+        "movementCompleted": "Movement completed",
+        "cancelled": "Cancelled",
+        "departed": "Departed",
+        "arrived": "Arrived"
+      },
+      "cancelledByUser": "Cancelled by user",
+      "from": "From",
+      "to": "To",
+      "scheduled": "Scheduled",
+      "trackingCode": "Tracking Code",
+      "equipment": "Equipment",
+      "customer": "Customer",
+      "contract": "Contract",
+      "driver": "Driver",
+      "departed": "Departed",
+      "arrived": "Arrived",
+      "departureHours": "Departure Hours",
+      "arrivalHours": "Arrival Hours",
+      "internalNote": "Internal Note",
+      "cancellationReason": "Cancellation Reason",
+      "departureHourMeter": "Departure Hour Meter",
+      "arrivalHourMeter": "Arrival Hour Meter"
+    }
+  },
+  "activity": {
+    "title": "Activity Log",
+    "eventsLoaded": "{{count}} events loaded",
+    "refresh": "Refresh",
+    "filters": {
+      "searchPlaceholder": "Search user or action…",
+      "action": "Action",
+      "allActions": "All Actions",
+      "entityType": "Entity",
+      "allEntities": "All Entities",
+      "dateFrom": "From",
+      "dateTo": "To"
+    },
+    "entity": {
+      "user": "User",
+      "customer": "Customer",
+      "lead": "Lead",
+      "note": "Note",
+      "invoice": "Invoice",
+      "payment": "Payment",
+      "deposit": "Deposit",
+      "revenue_recognition": "Revenue Recognition",
+      "project": "Project",
+      "project_milestone": "Project Milestone",
+      "setting": "Setting",
+      "inventory_import": "Inventory Import",
+      "notification_preference": "Notification Preference"
+    },
+    "table": {
+      "timestamp": "Timestamp",
+      "user": "User",
+      "action": "Action",
+      "entity": "Entity",
+      "id": "ID",
+      "details": "Details",
+      "noActivityFound": "No activity found",
+      "noActivityYet": "Activity will appear here once users interact with the system.",
+      "ipAddress": "IP Address"
+    },
+    "details": {
+      "group": "Group: {{group}}",
+      "eventInfo": "Event Info",
+      "systemOrDeletedUser": "System / Deleted User",
+      "title": "Details",
+      "noneRecorded": "No additional details recorded.",
+      "fieldsModified": "Fields modified:",
+      "drawerTitle": "Activity Details",
+      "ipNotTracked": "Not tracked"
+    },
+    "pagination": {
+      "showing": "Showing {{start}}–{{end}} of {{total}}"
+    },
+    "loadError": "Failed to load activity log.",
+    "action": {
+      "user_login": "Login",
+      "user_logout": "Logout",
+      "user_created": "User Created",
+      "user_updated": "User Updated",
+      "user_deleted": "User Deleted",
+      "customer_created": "Customer Created",
+      "customer_updated": "Customer Updated",
+      "customer_deleted": "Customer Deleted",
+      "customer_status_changed": "Status Changed",
+      "lead_created": "Lead Created",
+      "lead_updated": "Lead Updated",
+      "lead_deleted": "Lead Deleted",
+      "lead_status_changed": "Status Changed",
+      "lead_note_added": "Note Added",
+      "lead_note_deleted": "Note Deleted",
+      "catalog_product_created": "Product Created",
+      "catalog_product_updated": "Product Updated",
+      "catalog_product_deleted": "Product Deleted",
+      "catalog_brand_created": "Brand Created",
+      "catalog_brand_updated": "Brand Updated",
+      "catalog_brand_deleted": "Brand Deleted",
+      "catalog_category_created": "Category Created",
+      "catalog_category_updated": "Category Updated",
+      "catalog_category_deleted": "Category Deleted",
+      "catalog_import_previewed": "Import Previewed",
+      "catalog_import_executed": "Import Executed",
+      "forklift_created": "Forklift Added",
+      "forklift_updated": "Forklift Updated",
+      "forklift_deleted": "Forklift Deleted",
+      "forklift_status_changed": "Status Changed",
+      "quotation_created": "Quote Created",
+      "quotation_updated": "Quote Updated",
+      "quotation_deleted": "Quote Deleted",
+      "quotation_submitted": "Quote Submitted",
+      "quotation_approved": "Quote Approved",
+      "quotation_revision_requested": "Revision Requested",
+      "quotation_sent": "Quote Sent",
+      "quotation_accepted": "Quote Accepted",
+      "quotation_declined": "Quote Declined",
+      "quotation_converted": "Quote Converted",
+      "quotation_cancelled": "Quote Cancelled",
+      "quotation_reactivated": "Quote Reactivated",
+      "rental_contract_created": "Contract Created",
+      "rental_contract_updated": "Contract Updated",
+      "rental_contract_deleted": "Contract Deleted",
+      "rental_contract_submitted": "Contract Submitted",
+      "rental_contract_approved": "Contract Approved",
+      "rental_contract_revision": "Revision Requested",
+      "rental_contract_activated": "Contract Activated",
+      "rental_contract_cancelled": "Contract Cancelled",
+      "rental_contract_closed": "Contract Closed",
+      "rental_return_requested": "Return Requested",
+      "rental_return_picked_up": "Return Picked Up",
+      "rental_return_received": "Return Received",
+      "rental_return_completed": "Return Completed",
+      "rental_damage_assessed": "Damage Assessed",
+      "rental_damage_disputed": "Damage Disputed",
+      "rental_damage_resolved": "Damage Resolved",
+      "rental_extension_requested": "Extension Requested",
+      "rental_extension_approved": "Extension Approved",
+      "rental_extension_rejected": "Extension Rejected",
+      "rental_billing_created": "Billing Created",
+      "invoice_created": "Invoice Created",
+      "invoice_updated": "Invoice Updated",
+      "invoice_issued": "Invoice Issued",
+      "invoice_sent": "Invoice Sent",
+      "invoice_cancelled": "Invoice Cancelled",
+      "invoice_voided": "Invoice Voided",
+      "payment_recorded": "Payment Recorded",
+      "payment_confirmed": "Payment Confirmed",
+      "payment_rejected": "Payment Rejected",
+      "payment_allocated": "Payment Allocated",
+      "deposit_created": "Deposit Created",
+      "deposit_received": "Deposit Received",
+      "deposit_refunded": "Deposit Refunded",
+      "deposit_forfeited": "Deposit Forfeited",
+      "deposit_applied": "Deposit Applied",
+      "revenue_recognized": "Revenue Recognized",
+      "revenue_reversed": "Revenue Reversed",
+      "project_created": "Project Created",
+      "project_updated": "Project Updated",
+      "project_deleted": "Project Deleted",
+      "project_milestone_status_changed": "Milestone Status Changed",
+      "setting_updated": "Setting Updated",
+      "inventory_import_executed": "Inventory Imported",
+      "notification_preference_created": "Alert Subscribed",
+      "notification_preference_updated": "Alert Preference Updated",
+      "notification_preference_deleted": "Alert Unsubscribed"
+    },
+    "group": {
+      "user": "User",
+      "customer": "Customer",
+      "lead": "Lead",
+      "billing": "Billing",
+      "project": "Project",
+      "settings": "Settings",
+      "inventory": "Inventory",
+      "notifications": "Notifications"
+    }
+  },
+  "equipment": {
+    "status": {
+      "inStock": "In Stock",
+      "sold": "Sold",
+      "rented": "Rented",
+      "inService": "In Service",
+      "reserved": "Reserved",
+      "decommissioned": "Decommissioned"
+    },
+    "ownership": {
+      "forSale": "For Sale",
+      "rental": "Rental Fleet",
+      "customerOwned": "Customer Owned",
+      "retired": "Retired"
+    },
+    "operationalStatus": {
+      "available": "Available",
+      "onRent": "On Rent",
+      "inService": "In Service",
+      "sold": "Sold"
+    },
+    "condition": {
+      "new": "New",
+      "used": "Used",
+      "refurbished": "Refurbished"
+    },
+    "fuel": {
+      "electric": "Electric",
+      "diesel": "Diesel",
+      "lpg": "LPG",
+      "dualFuel": "Dual Fuel",
+      "notSpecified": "— Not specified —"
+    },
+    "card": {
+      "hoursValue": "{{count}} hrs",
+      "editForklift": "Edit forklift",
+      "serial": "Serial",
+      "brand": "Brand",
+      "fuel": "Fuel",
+      "customer": "Customer",
+      "iotLive": "Live",
+      "iotOffline": "Offline",
+      "iotAutoSynced": "Auto-synced via IoT"
+    },
+    "filters": {
+      "statusShort": {
+        "inService": "Service",
+        "decommissioned": "Decom."
+      },
+      "allFuelTypes": "All Fuel Types",
+      "allConditions": "All Conditions",
+      "allOwnership": "All Ownership",
+      "allBrands": "All Brands",
+      "clear": "Clear",
+      "countLabel": "{{count}} equipment",
+      "noneFound": "No equipment found",
+      "noneFoundHint": "Try adjusting your filters or add new equipment",
+      "searchPlaceholder": "Search equipment..."
+    },
+    "quickActions": {
+      "register": {
+        "label": "Register Equipment",
+        "desc": "Add new forklift"
+      },
+      "movement": {
+        "label": "Create Movement",
+        "desc": "Transfer equipment"
+      },
+      "maintenance": {
+        "label": "Schedule Service",
+        "desc": "Preventive maintenance"
+      },
+      "rental": {
+        "label": "New Rental",
+        "desc": "Assign to contract"
+      }
+    },
+    "gallery": {
+      "noPhotos": "No photos uploaded",
+      "noPhotosHint": "Photos help identify and document this equipment",
+      "previousPhoto": "Previous photo",
+      "nextPhoto": "Next photo",
+      "viewFullscreen": "View fullscreen"
+    },
+    "timeline": {
+      "noHistory": "No status changes recorded yet.",
+      "system": "System"
+    },
+    "form": {
+      "serialRequired": "Serial number is required.",
+      "nameRequired": "Name is required.",
+      "saveFailed": "Save failed. Please try again.",
+      "editTitle": "Edit Forklift",
+      "registerTitle": "Register Forklift",
+      "serialNumber": "Serial Number",
+      "serialNumberPlaceholder": "e.g. JH-2024-001",
+      "nameEnglish": "Name (English)",
+      "nameEnglishPlaceholder": "e.g. Jungheinrich EFG 216k",
+      "nameLao": "Name (Lao)",
+      "internalCode": "Internal Code",
+      "internalCodePlaceholder": "DK asset tag",
+      "brand": "Brand",
+      "noBrand": "— No brand —",
+      "modelNumber": "Model Number",
+      "modelNumberPlaceholder": "e.g. EFG 216k",
+      "condition": "Condition",
+      "operationalStatus": "Operational Status",
+      "ownershipState": "Ownership State",
+      "fuelType": "Fuel Type",
+      "capacityKg": "Capacity (kg)",
+      "yearManufactured": "Year Manufactured",
+      "currentHourMeter": "Current Hour Meter",
+      "initialHourMeter": "Initial Hour Meter",
+      "purchaseDate": "Purchase Date",
+      "warrantyExpiry": "Warranty Expiry",
+      "notesPlaceholder": "Optional notes...",
+      "saveChanges": "Save Changes",
+      "capacityKgPlaceholder": "e.g. 1600",
+      "yearManufacturedPlaceholder": "e.g. 2024"
+    },
+    "registry": {
+      "title": "Equipment Registry",
+      "subtitle": "Manage and monitor your forklift fleet",
+      "refresh": "Refresh",
+      "registerForklift": "Register Forklift",
+      "searchPlaceholder": "Search serial number, name, model...",
+      "noForkliftsFound": "No forklifts found",
+      "pageInfo": "Page {{page}} of {{pages}} ({{total}} total)",
+      "deleteTitle": "Delete Forklift",
+      "deleteMessage": "Delete \"{{name}}\" (S/N: {{serial}})? This cannot be undone.",
+      "kpi": {
+        "utilization": "Utilization",
+        "avgHours": "Avg Hours",
+        "pmDue": "PM Due",
+        "critical": "{{count}} critical",
+        "avgAge": "Avg Age",
+        "years": "{{count}} yr"
+      },
+      "table": {
+        "forklift": "Forklift",
+        "model": "Model",
+        "ownership": "Ownership",
+        "hours": "Meter Hours"
+      },
+      "toast": {
+        "loadError": "Failed to load forklifts.",
+        "createSuccess": "Forklift registered successfully.",
+        "createError": "Failed to register forklift.",
+        "updateSuccess": "Forklift updated successfully.",
+        "updateError": "Failed to update forklift.",
+        "deleteSuccess": "Forklift deleted.",
+        "deleteError": "Failed to delete forklift."
+      }
+    },
+    "detail": {
+      "notFoundOrFailed": "Forklift not found or failed to load.",
+      "backToEquipment": "Back to Equipment",
+      "notFound": "Forklift not found.",
+      "tabs": {
+        "overview": "Overview",
+        "photos": "Photos",
+        "timeline": "Timeline",
+        "documents": "Documents",
+        "contracts": "Contracts"
+      },
+      "serialAbbrev": "S/N",
+      "newQuote": "New Quote",
+      "newContract": "New Contract",
+      "specifications": "Specifications",
+      "capacity": "Capacity",
+      "year": "Year",
+      "model": "Model",
+      "mastType": "Mast Type",
+      "maxLiftHeight": "Max Lift Height",
+      "currentLocation": "Current Location",
+      "zone": "Zone",
+      "since": "Since",
+      "noLocationRecorded": "No location recorded",
+      "hourMeter": "Hour Meter",
+      "hoursUnit": "hrs",
+      "pctOfThreshold": "{{pct}}% of {{threshold}} hrs",
+      "serviceInterval": "service interval",
+      "initial": "Initial",
+      "hoursUsed": "Hours Used",
+      "dailyAvg": "Daily Avg",
+      "estService": "Est. Service",
+      "estServiceDays": "~{{count}} days",
+      "assetSummary": "Asset Summary",
+      "assetAge": "Asset Age",
+      "years": "{{count}} years",
+      "warranty": "Warranty",
+      "expired": "Expired",
+      "valid": "Valid",
+      "statusChanges": "Status Changes",
+      "documents": "Documents",
+      "filesCount": "{{count}} files",
+      "photos": "Photos",
+      "imagesCount": "{{count}} images",
+      "assignedCustomer": "Assigned Customer",
+      "documentTitle": "Title",
+      "expiry": "Expiry",
+      "uploaded": "Uploaded",
+      "noDocumentsUploaded": "No documents uploaded",
+      "viewContractsHint": "View rental contracts linked to this equipment",
+      "viewRentalContracts": "View Rental Contracts"
+    }
+  },
+  "executive": {
+    "title": "Executive Dashboard",
+    "subtitle": "Enterprise-wide performance metrics and analytics",
+    "refresh": "Refresh",
+    "loadFailed": "Failed to load executive data.",
+    "kpi": {
+      "totalRevenue": "Total Revenue",
+      "invoicesCount": "{{count}} invoices",
+      "collectionRate": "Collection Rate",
+      "collected": "{{amount}} collected",
+      "fleetUtilization": "Fleet Utilization",
+      "rentedOfTotal": "{{rented}} rented / {{total}} total",
+      "customers": "Customers",
+      "activeCount": "{{count}} active",
+      "inventoryValue": "Inventory Value",
+      "partsCount": "{{count}} parts",
+      "conversionRate": "Conversion Rate",
+      "winRate": "Win: {{rate}}"
+    },
+    "chart": {
+      "revenueTrend": "Revenue Trend",
+      "noRevenueData": "No revenue data",
+      "invoiced": "Invoiced",
+      "collected": "Collected",
+      "fleetStatus": "Fleet Status",
+      "noFleetData": "No fleet data",
+      "leadPipeline": "Lead Pipeline (12 mo)",
+      "noLeadData": "No lead data",
+      "newLeads": "New Leads",
+      "customerGrowth": "Customer Growth (12 mo)",
+      "noCustomerData": "No customer data",
+      "newCustomers": "New Customers",
+      "months": {
+        "jan": "Jan",
+        "feb": "Feb",
+        "mar": "Mar",
+        "apr": "Apr",
+        "may": "May",
+        "jun": "Jun",
+        "jul": "Jul",
+        "aug": "Aug",
+        "sep": "Sep",
+        "oct": "Oct",
+        "nov": "Nov",
+        "dec": "Dec"
+      }
+    },
+    "export": {
+      "exportExcel": "Export Excel",
+      "customers": "Customers",
+      "leads": "Leads",
+      "sales": "Sales",
+      "downloaded": "{{report}} report downloaded",
+      "exportFailed": "Export failed",
+      "exportReports": "Export Reports",
+      "customersExcel": "Customers (Excel)",
+      "leadsExcel": "Leads (Excel)",
+      "salesExcel": "Sales (Excel)",
+      "customersCsv": "Customers (CSV)",
+      "leadsCsv": "Leads (CSV)",
+      "salesCsv": "Sales (CSV)"
+    }
+  },
+  "catalog": {
+    "saveFailed": "Save failed.",
+    "saveChanges": "Save Changes",
+    "resultsCount": "{{count}} results",
+    "pageOf": "Page {{page}} of {{pages}} ({{total}} total)",
+    "viewAll": "View All →",
+    "browseAllProducts": "Browse All Products →",
+    "hero": {
+      "title": "Product Catalog",
+      "subtitle": "Forklifts · Warehouse Equipment · Spare Parts · Attachments",
+      "searchPlaceholder": "Search {{count}} products by name, SKU, model..."
+    },
+    "categorySlider": {
+      "title": "Browse by Category"
+    },
+    "brandShowcase": {
+      "title": "Shop by Brand"
+    },
+    "megaMenu": {
+      "allCategories": "All Categories"
+    },
+    "brands": {
+      "title": "Brands",
+      "subtitle": "{{count}} brands",
+      "newBrand": "New Brand",
+      "searchPlaceholder": "Search brands…",
+      "editTitle": "Edit Brand",
+      "newTitle": "New Brand",
+      "table": {
+        "brand": "Brand",
+        "country": "Country",
+        "role": "Role"
+      },
+      "empty": {
+        "title": "No brands found",
+        "createHint": "Create your first brand to get started."
+      },
+      "roles": {
+        "primary": "Primary",
+        "partsOnly": "Parts Only",
+        "both": "Both"
+      },
+      "form": {
+        "nameRequired": "Brand name is required.",
+        "namePlaceholder": "Brand name",
+        "countryLabel": "Country",
+        "countryPlaceholder": "e.g. Japan",
+        "roleLabel": "Role",
+        "websiteLabel": "Website",
+        "websitePlaceholder": "https://…",
+        "createBrand": "Create Brand"
+      },
+      "deleteDialog": {
+        "title": "Delete Brand",
+        "message": "Delete brand \"{{name}}\"? Products referencing this brand will have their brand cleared."
+      },
+      "toast": {
+        "loadError": "Failed to load brands.",
+        "createSuccess": "Brand created successfully.",
+        "createError": "Failed to create brand.",
+        "updateSuccess": "Brand updated successfully.",
+        "updateError": "Failed to update brand.",
+        "deleteSuccess": "Brand deleted.",
+        "deleteError": "Failed to delete brand."
+      }
+    },
+    "categories": {
+      "title": "Categories",
+      "subtitle": "{{count}} categories (3-level tree)",
+      "newCategory": "New Category",
+      "editTitle": "Edit Category",
+      "newTitle": "New Category",
+      "table": {
+        "category": "Category",
+        "level": "Level",
+        "children": "Children"
+      },
+      "empty": {
+        "title": "No categories found",
+        "createHint": "Create your first category to get started."
+      },
+      "types": {
+        "division": "Division",
+        "category": "Category",
+        "subCategory": "Sub-category"
+      },
+      "levelLine": "L{{level}} — {{type}}",
+      "form": {
+        "nameRequired": "English name is required.",
+        "nameEnLabel": "Name (English)",
+        "namePlaceholder": "Category name",
+        "nameLoLabel": "Name (Lao)",
+        "parentLabel": "Parent Category",
+        "topLevelOption": "— Top-level (Division) —",
+        "createCategory": "Create Category"
+      },
+      "deleteDialog": {
+        "title": "Delete Category",
+        "message": "Delete \"{{name}}\"? This will fail if the category has children or products assigned to it."
+      },
+      "toast": {
+        "loadError": "Failed to load categories.",
+        "createSuccess": "Category created successfully.",
+        "createError": "Failed to create category.",
+        "updateSuccess": "Category updated successfully.",
+        "updateError": "Failed to update category.",
+        "deleteSuccess": "Category deleted.",
+        "deleteError": "Failed to delete category."
+      }
+    },
+    "products": {
+      "filterAllTypes": "All Types",
+      "forSale": "For Sale",
+      "forRental": "For Rental",
+      "featured": "Featured",
+      "refresh": "Refresh",
+      "newProduct": "New Product",
+      "productCount": "{{count}} products",
+      "pillSearch": "Search: {{query}}",
+      "pillBrand": "Brand: {{name}}",
+      "pillCategory": "Category: {{name}}",
+      "editTitle": "Edit Product",
+      "newTitle": "New Product",
+      "skuPrefix": "SKU: {{sku}}",
+      "empty": {
+        "title": "No products found",
+        "hint": "Try adjusting your filters or create a new product."
+      },
+      "table": {
+        "product": "Product",
+        "sku": "SKU",
+        "brand": "Brand"
+      },
+      "badges": {
+        "sale": "Sale",
+        "rental": "Rental",
+        "featured": "Featured"
+      },
+      "deleteDialog": {
+        "title": "Delete Product",
+        "message": "Delete \"{{name}}\"? This cannot be undone."
+      },
+      "form": {
+        "nameRequired": "Product name is required.",
+        "saveFailed": "Save failed. Please try again.",
+        "imageLabel": "Product Image",
+        "imageSaveFailed": "Product saved, but the image could not be saved.",
+        "nameEnLabel": "Name (English)",
+        "nameEnPlaceholder": "Product name in English",
+        "nameLoLabel": "Name (Lao)",
+        "skuPlaceholder": "Auto-generated if blank",
+        "modelNumberLabel": "Model Number",
+        "modelNumberPlaceholder": "e.g. EFG115",
+        "brandLabel": "Brand",
+        "noBrandOption": "— No brand —",
+        "noCategoryOption": "— No category —",
+        "descriptionPlaceholder": "Product description…",
+        "attributesLabel": "Attributes",
+        "usedAvailable": "Used Available",
+        "serviceItem": "Service Item",
+        "createProduct": "Create Product"
+      },
+      "toast": {
+        "loadError": "Failed to load products.",
+        "createSuccess": "Product created successfully.",
+        "createError": "Failed to create product.",
+        "updateSuccess": "Product updated successfully.",
+        "updateError": "Failed to update product.",
+        "deleteSuccess": "Product deleted.",
+        "deleteError": "Failed to delete product."
+      }
+    },
+    "productDetail": {
+      "loadError": "Product not found or failed to load.",
+      "backToCatalog": "Back to Catalog",
+      "notFound": "Product not found.",
+      "model": "Model",
+      "compatibleWith": "Compatible with",
+      "specifications": "Specifications"
+    },
+    "import": {
+      "title": "Import Products",
+      "subtitle": "Upload an Excel file to bulk-import products, brands, and categories.",
+      "dropzoneText": "Drop your Excel file here, or click to browse",
+      "dropzoneHint": "Supports .xlsx and .xls files from DK LAO product catalog",
+      "clear": "Clear",
+      "supportedSheetsLabel": "Supported sheets:",
+      "supportedSheetsList": "Jungheinrich Forklift, Mitsubishi Forklift, Accessories (ອຸປະກອນ), Warehouse (ສາງ), Vacuum (ດູດຝຸ່ນ), Floor Cleaner (ເຊັດຄັດ), Brands (ບໍລິການ).",
+      "autoDetectHint": "The importer auto-detects sheets by name in both English and Lao.",
+      "importButton": "Upload & Import",
+      "importing": "Importing…",
+      "uploadingHint": "This can take a few seconds for larger files.",
+      "uploadFailed": "Import failed. Please try again.",
+      "successBanner": "Import completed successfully",
+      "partialBanner": "Import finished with errors",
+      "imported": "Imported",
+      "errors": "Errors",
+      "failedRows": "Failed Rows",
+      "importAnother": "Import Another File",
+      "viewCatalog": "View Catalog",
+      "successToast": "Import complete: {{count}} products imported.",
+      "errorToast": "Import finished with {{count}} errors.",
+      "table": {
+        "rowNum": "#",
+        "error": "Error",
+        "sheet": "Sheet"
+      }
+    }
+  },
+  "quotations": {
+    "status": {
+      "draft": "Draft",
+      "underReview": "Under Review",
+      "approved": "Approved",
+      "revision": "Revision",
+      "sent": "Sent",
+      "accepted": "Accepted",
+      "rejected": "Rejected",
+      "expired": "Expired",
+      "converted": "Converted",
+      "cancelled": "Cancelled"
+    },
+    "type": {
+      "rental": "Rental",
+      "sales": "Sales",
+      "service": "Service",
+      "spareParts": "Spare Parts"
+    },
+    "itemType": {
+      "forkliftRental": "Forklift Rental",
+      "forkliftSale": "Forklift Sale",
+      "service": "Service",
+      "sparePart": "Spare Part",
+      "delivery": "Delivery",
+      "insurance": "Insurance",
+      "custom": "Custom"
+    },
+    "list": {
+      "title": "Quotations",
+      "totalCount": "{{count}} quotations",
+      "refresh": "Refresh",
+      "newQuotation": "New Quotation",
+      "searchPlaceholder": "Search number, title...",
+      "allStatuses": "All Statuses",
+      "allTypes": "All Types",
+      "colQuotation": "Quotation",
+      "colCustomer": "Customer",
+      "colValidUntil": "Valid Until",
+      "noQuotationsFound": "No quotations found",
+      "createOrAdjust": "Create a new quotation or adjust your filters.",
+      "resultsCount": "{{count}} results",
+      "pageOf": "Page {{page}} of {{pages}} ({{total}} total)",
+      "deleteConfirmTitle": "Delete Quotation",
+      "deleteConfirmMessage": "Delete \"{{number}}\"? This cannot be undone.",
+      "toast": {
+        "loadError": "Failed to load quotations.",
+        "createSuccess": "Quotation created.",
+        "createError": "Failed to create quotation.",
+        "deleteSuccess": "Quotation deleted.",
+        "deleteError": "Failed to delete quotation."
+      }
+    },
+    "form": {
+      "backToQuotations": "Back to Quotations",
+      "newQuotation": "New Quotation",
+      "typeLabel": "Quotation Type",
+      "currencyLabel": "Currency",
+      "titleLabel": "Title",
+      "titlePlaceholder": "e.g. Forklift Rental — Vientiane Motors",
+      "contactNameLabel": "Contact Name",
+      "contactNamePlaceholder": "Mr. / Ms.",
+      "contactEmailLabel": "Contact Email",
+      "contactEmailPlaceholder": "email@example.com",
+      "contactPhoneLabel": "Contact Phone",
+      "contactPhonePlaceholder": "+856 20 ...",
+      "taxRateLabel": "Tax Rate (%)",
+      "validFromLabel": "Valid From",
+      "validUntilLabel": "Valid Until",
+      "notesLabel": "Notes (customer-visible)",
+      "notesPlaceholder": "Visible on quotation PDF...",
+      "internalNotesLabel": "Internal Notes",
+      "internalNotesPlaceholder": "Internal only, not shown to customer...",
+      "creating": "Creating...",
+      "createQuotation": "Create Quotation",
+      "titleRequired": "Title is required.",
+      "createFailed": "Failed to create quotation.",
+      "createdToast": "Quotation {{number}} created.",
+      "typeOptions": {
+        "rental": "Rental Quotation",
+        "sales": "Sales Quotation",
+        "service": "Service Quotation",
+        "spareParts": "Spare Parts Quotation"
+      },
+      "vehicleInfo": {
+        "title": "Vehicle Information",
+        "make": "Make",
+        "model": "Model",
+        "vin": "VIN",
+        "engineNo": "Engine No.",
+        "regNo": "Registration No.",
+        "jobNumber": "Job Number"
+      },
+      "exchangeRateLabel": "Exchange Rate",
+      "bankDetails": "Bank Details",
+      "bankDetailsPlaceholder": "Bank name, account name, account number, SWIFT/BIC..."
+    },
+    "detail": {
+      "backToQuotations": "Back to Quotations",
+      "notFoundError": "Quotation not found or failed to load.",
+      "actionFailed": "Failed: {{action}}",
+      "rev": "Rev {{number}}",
+      "submit": "Submit",
+      "approve": "Approve",
+      "requestRevision": "Request Revision",
+      "sendToCustomer": "Send to Customer",
+      "markAccepted": "Mark Accepted",
+      "markRejected": "Mark Rejected",
+      "convert": "Convert",
+      "reactivate": "Reactivate",
+      "taxWithRate": "Tax ({{rate}}%)",
+      "discount": "Discount",
+      "customer": "Customer",
+      "contact": "Contact",
+      "assignedTo": "Assigned To",
+      "validFrom": "Valid From",
+      "validUntil": "Valid Until",
+      "convertedTo": "Converted To",
+      "internalNote": "Internal Note",
+      "lineItems": "Line Items ({{count}})",
+      "addItem": "Add Item",
+      "colNumber": "#",
+      "colUnitPrice": "Unit Price",
+      "colDiscount": "Disc %",
+      "serialNumber": "S/N: {{serial}}",
+      "sku": "SKU: {{sku}}",
+      "durationDays": "{{count}} days ({{period}})",
+      "noLineItems": "No line items yet.",
+      "addItemsHint": "Add items to build the quotation.",
+      "statusHistory": "Status History",
+      "colFrom": "From",
+      "colTo": "To",
+      "colReason": "Reason",
+      "colBy": "By",
+      "approvalHistory": "Approval History",
+      "colRev": "Rev",
+      "colDecision": "Decision",
+      "colConditions": "Conditions",
+      "toasts": {
+        "submitted": "Submitted for review",
+        "revisionRequested": "Revision requested",
+        "sent": "Sent to customer",
+        "markedAccepted": "Marked as accepted",
+        "markedRejected": "Marked as rejected",
+        "converted": "Converted",
+        "reactivated": "Reactivated",
+        "itemRemoved": "Item removed"
+      },
+      "addItemModal": {
+        "title": "Add Line Item",
+        "itemType": "Item Type",
+        "unit": "Unit",
+        "descriptionPlaceholder": "Item description",
+        "unitPrice": "Unit Price",
+        "discountPercent": "Discount (%)",
+        "rentalDuration": "Rental Duration (days)",
+        "ratePeriod": "Rate Period",
+        "selectRatePeriod": "— Select —",
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "adding": "Adding...",
+        "descriptionRequired": "Description is required.",
+        "unitPriceRequired": "Unit price is required.",
+        "itemAdded": "Item added.",
+        "addFailed": "Failed to add item.",
+        "itemCode": "Item Code"
+      },
+      "revisionNeededReason": "Revision needed",
+      "colItemCode": "Item Code"
+    },
+    "editor": {
+      "newTitle": "New Quotation",
+      "printPreview": "Print Preview",
+      "backToEdit": "Back to Edit",
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "exportExcel": "Export Excel",
+      "saveDraft": "Save Draft",
+      "saveSuccess": "Quotation saved.",
+      "saveFailed": "Failed to save quotation.",
+      "title": "Quotation",
+      "voidReasonLabel": "Reason for voiding",
+      "actions": {
+        "void": "Void",
+        "voided": "Quotation voided",
+        "approved": "Approved",
+        "convertToSalesOrder": "Convert to Sales Order"
+      },
+      "header": {
+        "quotationNo": "Quotation No."
+      },
+      "grid": {
+        "title": "Line Items",
+        "type": "Type",
+        "itemCode": "Item Code",
+        "qty": "Qty",
+        "unit": "Unit",
+        "unitPrice": "Unit Price",
+        "discountPercent": "Discount %",
+        "discountAmount": "Discount Amount",
+        "taxPercent": "Tax %",
+        "taxAmount": "Tax Amount"
+      }
+    }
+  },
+  "rental": {
+    "status": {
+      "reservation": "Reservation",
+      "draft": "Draft",
+      "pendingApproval": "Pending Approval",
+      "approved": "Approved",
+      "revision": "Revision",
+      "delivering": "Delivering",
+      "active": "Active",
+      "overdue": "Overdue",
+      "returning": "Returning",
+      "inspecting": "Inspecting",
+      "settling": "Settling",
+      "closed": "Closed",
+      "cancelled": "Cancelled"
+    },
+    "contractType": {
+      "shortTerm": "Short Term",
+      "longTerm": "Long Term",
+      "project": "Project"
+    },
+    "list": {
+      "title": "Rental Contracts",
+      "totalCount": "{{count}} contracts",
+      "refresh": "Refresh",
+      "newContract": "New Contract",
+      "searchPlaceholder": "Search number, customer...",
+      "allStatuses": "All Statuses",
+      "allTypes": "All Types",
+      "colContract": "Contract",
+      "colCustomer": "Customer",
+      "colTotalValue": "Total Value",
+      "colStartDate": "Start Date",
+      "colEndDate": "End Date",
+      "noContractsFound": "No rental contracts found",
+      "createOrAdjust": "Create a new contract or adjust your filters.",
+      "resultsCount": "{{count}} results",
+      "pageOf": "Page {{page}} of {{pages}} ({{total}} total)",
+      "deleteConfirmTitle": "Delete Rental Contract",
+      "deleteConfirmMessage": "Delete \"{{number}}\"? This cannot be undone.",
+      "toast": {
+        "loadError": "Failed to load rental contracts.",
+        "createSuccess": "Rental contract created.",
+        "createError": "Failed to create rental contract.",
+        "deleteSuccess": "Rental contract deleted.",
+        "deleteError": "Failed to delete rental contract."
+      }
+    },
+    "form": {
+      "backToContracts": "Back to Rental Contracts",
+      "newContract": "New Rental Contract",
+      "contractType": "Contract Type",
+      "currencyLabel": "Currency",
+      "customerId": "Customer ID",
+      "customerIdPlaceholder": "Enter customer ID",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "taxRateLabel": "Tax Rate (%)",
+      "depositAmount": "Deposit Amount",
+      "deliveryAddress": "Delivery Address",
+      "deliveryAddressPlaceholder": "Full delivery address",
+      "deliveryContactName": "Delivery Contact Name",
+      "deliveryContactNamePlaceholder": "Mr. / Ms.",
+      "deliveryContactPhone": "Delivery Contact Phone",
+      "deliveryContactPhonePlaceholder": "+856 20 ...",
+      "notesLabel": "Notes (customer-visible)",
+      "notesPlaceholder": "Visible on contract...",
+      "internalNotesLabel": "Internal Notes",
+      "internalNotesPlaceholder": "Internal only, not shown to customer...",
+      "creating": "Creating...",
+      "createContract": "Create Contract",
+      "customerIdRequired": "Customer ID is required.",
+      "startDateRequired": "Start date is required.",
+      "endDateRequired": "End date is required.",
+      "createFailed": "Failed to create rental contract.",
+      "createdToast": "Contract {{number}} created.",
+      "billingCycleDay": "Billing Cycle Day",
+      "earlyTerminationFee": "Early Termination Fee",
+      "lateReturnPenalty": "Late Return Penalty",
+      "overtimeRate": "Overtime Rate"
+    },
+    "editor": {
+      "notFoundError": "Rental contract not found",
+      "saveSuccess": "Rental contract saved",
+      "saveFailed": "Failed to save rental contract",
+      "saveChanges": "Save Changes",
+      "itemRequired": "At least one equipment line item is required",
+      "itemsBulkEditNote": "Edits, new rows, and removed rows are all saved together when you click Save Changes.",
+      "keyTerms": "Key Terms",
+      "confirmCancel": "Are you sure you want to cancel this rental contract?",
+      "itemWarning": "One or more line items may not have saved — please reload and verify before continuing.",
+      "refreshFailed": "Couldn't refresh the latest data — your last change may still have saved. Reload to check."
+    },
+    "detail": {
+      "backToContracts": "Back to Rental Contracts",
+      "notFoundError": "Rental contract not found or failed to load.",
+      "actionFailed": "Failed: {{action}}",
+      "rev": "Rev {{number}}",
+      "submit": "Submit",
+      "approve": "Approve",
+      "requestRevision": "Request Revision",
+      "activate": "Activate",
+      "requestReturn": "Request Return",
+      "requestExtension": "Request Extension",
+      "completeInspection": "Complete Inspection",
+      "inspectionInfo": "Inspection completion — use Return panel below.",
+      "generateBilling": "Generate Billing",
+      "billingInfo": "Billing generation — coming in Phase 4.",
+      "closeContract": "Close Contract",
+      "taxWithRate": "Tax ({{rate}}%)",
+      "discount": "Discount",
+      "totalBilled": "Total Billed",
+      "totalPaid": "Total Paid",
+      "outstanding": "Outstanding",
+      "customer": "Customer",
+      "deliveryContact": "Delivery Contact",
+      "deliveryPhone": "Delivery Phone",
+      "assignedTo": "Assigned To",
+      "approvedBy": "Approved By",
+      "actualStart": "Actual Start",
+      "actualEnd": "Actual End",
+      "deposit": "Deposit",
+      "paymentTerms": "Payment Terms",
+      "daysCount": "{{count}} days",
+      "internalNote": "Internal Note",
+      "lineItems": "Line Items ({{count}})",
+      "addItem": "Add Item",
+      "colNumber": "#",
+      "colMonthlyRate": "Monthly Rate",
+      "colDailyRate": "Daily Rate",
+      "colLineTotal": "Line Total",
+      "serialNumber": "S/N: {{serial}}",
+      "hoursUsed": "Hours: {{count}}",
+      "noLineItems": "No line items yet.",
+      "addItemsHint": "Add items to build the contract.",
+      "extensions": "Extensions ({{count}})",
+      "colOriginalEnd": "Original End",
+      "colNewEnd": "New End",
+      "colReason": "Reason",
+      "activeReturns": "Active Returns ({{count}})",
+      "colReturnNumber": "Return #",
+      "colRequested": "Requested",
+      "colScheduledPickup": "Scheduled Pickup",
+      "colForklift": "Forklift",
+      "statusHistory": "Status History",
+      "colFrom": "From",
+      "colTo": "To",
+      "colBy": "By",
+      "toasts": {
+        "submitted": "Submitted for approval",
+        "revisionRequested": "Revision requested",
+        "activated": "Activated",
+        "contractClosed": "Contract closed",
+        "itemRemoved": "Item removed",
+        "extensionApproved": "Extension approved",
+        "extensionRejected": "Extension rejected"
+      },
+      "addItemModal": {
+        "title": "Add Contract Item",
+        "forkliftId": "Forklift ID",
+        "hourlyRate": "Hourly Rate",
+        "monthlyRate": "Monthly Rate",
+        "dailyRate": "Daily Rate",
+        "adding": "Adding...",
+        "forkliftIdRequired": "Forklift ID is required.",
+        "descriptionRequired": "Description is required.",
+        "monthlyRateRequired": "Monthly rate is required.",
+        "dailyRateRequired": "Daily rate is required.",
+        "itemAdded": "Item added.",
+        "addFailed": "Failed to add item."
+      },
+      "extensionModal": {
+        "title": "Request Contract Extension",
+        "currentEndDate": "Current End Date",
+        "newEndDate": "New End Date",
+        "rateAdjustment": "Rate Adjustment (%)",
+        "reason": "Reason",
+        "reasonPlaceholder": "Reason for extension request...",
+        "requesting": "Requesting...",
+        "requestExtension": "Request Extension",
+        "newEndDateRequired": "New end date is required.",
+        "newEndDateAfterCurrent": "New end date must be after current end date.",
+        "extensionRequested": "Extension requested.",
+        "requestFailed": "Failed to request extension."
+      },
+      "returnModal": {
+        "title": "Request Equipment Return",
+        "returnType": "Return Type",
+        "scheduled": "Scheduled",
+        "early": "Early",
+        "requestedDate": "Requested Date",
+        "equipmentToReturn": "Equipment to Return",
+        "allEquipment": "— All equipment —",
+        "scheduledPickupDate": "Scheduled Pickup Date",
+        "pickupAddress": "Pickup Address",
+        "pickupAddressPlaceholder": "Customer site address",
+        "earlyTermination": "Early termination (penalty may apply)",
+        "notesPlaceholder": "Additional instructions...",
+        "requesting": "Requesting...",
+        "requestReturn": "Request Return",
+        "requestedDateRequired": "Requested date is required.",
+        "returnRequested": "Return requested.",
+        "requestFailed": "Failed to create return request."
+      },
+      "reasons": {
+        "revisionNeeded": "Revision needed",
+        "cancelledByUser": "Cancelled by user",
+        "rejected": "Rejected"
+      }
+    }
+  },
+  "imageUpload": {
+    "invalidFormat": "Only JPG, PNG, and WebP images are allowed.",
+    "fileTooLarge": "File size exceeds {{size}} MB limit.",
+    "invalidImage": "File is not a valid image.",
+    "uploadFailed": "Upload failed. Please try again.",
+    "remove": "Remove",
+    "uploadedSuccessfully": "Uploaded successfully",
+    "clickOrDrag": "Click or drag an image to upload",
+    "hint": "JPG, PNG, WebP · Max {{size}} MB",
+    "previewAlt": "Upload preview",
+    "orDivider": "Or",
+    "urlPlaceholder": "Paste an image URL...",
+    "fetchButton": "Fetch",
+    "urlFetchFailed": "Could not fetch the image from that URL."
+  },
+  "nav": {
+    "groups": {
+      "dashboard": "Executive Dashboard",
+      "crm": "CRM",
+      "sales": "Sales",
+      "purchasing": "Purchasing",
+      "equipment": "Fleet & Equipment",
+      "rental": "Rental Operations",
+      "maintenance": "Service & Maintenance",
+      "inventory": "Inventory Control",
+      "finance": "Finance & Accounting",
+      "executive": "Executive Reporting",
+      "projects": "Project Portfolio"
+    },
+    "items": {
+      "overview": "Operations Overview",
+      "customers": "Customers",
+      "leads": "Sales Leads",
+      "quotations": "Commercial Quotations",
+      "registry": "Asset Register",
+      "movements": "Stock Movements",
+      "contracts": "Service Contracts",
+      "dashboard": "Executive Dashboard",
+      "maintenance": "Service & Maintenance",
+      "inventory": "Inventory Control",
+      "partsPOS": "Parts POS",
+      "billing": "Billing & Receivables",
+      "products": "Product Catalog",
+      "invoices": "Invoices",
+      "payments": "Payments",
+      "deposits": "Deposits",
+      "statements": "Account Statements",
+      "activity": "Activity",
+      "reports": "Reports",
+      "analytics": "Business Analytics",
+      "iotTelemetry": "IoT Telemetry",
+      "settings": "Settings",
+      "warehouseProjects": "Warehouse Projects",
+      "purchaseOrders": "Purchase Orders",
+      "salesOrders": "Sales Orders",
+      "workOrders": "Work Orders",
+      "rentalContracts": "Rental Contracts",
+      "taxInvoices": "Tax Invoices",
+      "creditNotes": "Credit Notes",
+      "paymentVouchers": "Payment Vouchers",
+      "deliveryNotes": "Delivery Notes",
+      "goodsReceive": "Goods Receive",
+      "goodsIssue": "Goods Issue",
+      "receipts": "Receipts"
+    },
+    "expandSidebar": "Expand navigation pane",
+    "collapseSidebar": "Collapse navigation pane"
+  },
+  "header": {
+    "searchPlaceholder": "Search pages, actions...",
+    "searchTrigger": "Search...",
+    "searchLabel": "Search (Ctrl+K)",
+    "searchCommandsLabel": "Search commands",
+    "clearSearch": "Clear search",
+    "noResults": "No results for \"{{query}}\"",
+    "navigate": "navigate",
+    "select": "select",
+    "close": "close",
+    "toggleSidebar": "Toggle sidebar",
+    "groupNavigation": "Navigation",
+    "groupQuickActions": "Quick Actions",
+    "quickActionNewCustomer": "New Customer",
+    "quickActionNewQuotation": "New Quotation",
+    "quickActionNewContract": "New Contract",
+    "quickActionRegisterEquipment": "Register Equipment",
+    "appearance": "Appearance",
+    "settings": "Settings",
+    "logout": "Log out",
+    "roleAdmin": "Administrator",
+    "roleUser": "User",
+    "justNow": "just now",
+    "minutesAgo": "{{count}}m ago",
+    "hoursAgo": "{{count}}h ago",
+    "daysAgo": "{{count}}d ago",
+    "notifications": "Notifications",
+    "notificationsUnread": "Notifications, {{count}} unread",
+    "noRecentActivity": "No recent activity",
+    "systemUser": "System",
+    "viewAllActivity": "View all activity →",
+    "searchResults": "Search results",
+    "breadcrumb": "Breadcrumb",
+    "userActions": "User actions",
+    "markAllRead": "Mark all as read",
+    "myProfile": "My Profile",
+    "changePassword": "Change Password",
+    "changePhoto": "Change Photo",
+    "adminBroadcast": "Admin"
+  },
+  "login": {
+    "subtitle": "Sign in to continue",
+    "powerSwitch": "Power switch",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "signIn": "Sign In",
+    "signingIn": "Signing in…",
+    "invalidCredentials": "Invalid username or password",
+    "footer": "© 2026 DK LAO Services. All rights reserved.",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "updated": "Updated {{date}}",
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "keyMetrics": "Key Metrics",
+    "quickActions": "Quick Actions",
+    "revenueFleet": "Revenue & Fleet",
+    "activityFleet": "Activity & Fleet",
+    "fleetByFuelType": "Fleet by Fuel Type",
+    "upcomingTasks": "Upcoming Tasks",
+    "customerOverview": "Customer Overview",
+    "leadPipeline": "Lead Pipeline",
+    "resultsConversion": "Results & Conversion",
+    "recentActivity": "Recent Activity",
+    "viewAll": "View All",
+    "noRecentActivity": "No recent activity",
+    "loadError": "Failed to load dashboard data.",
+    "exec": {
+      "eyebrow": "Executive Overview",
+      "title": "Rental Command Center",
+      "rentalMvpEyebrow": "DK Rental · Executive Overview",
+      "rentalMvpTitle": "Fleet & Rental Dashboard",
+      "kpi": {
+        "totalFleet": "Total Fleet",
+        "totalFleetSub": "Forklift units registered",
+        "activeRented": "Active Rented",
+        "activeRentedSub": "Units currently on rent",
+        "utilizationRate": "Utilization Rate",
+        "utilizationRateSub": "Rented vs. total fleet",
+        "pendingMaintenance": "Pending Maintenance",
+        "pendingMaintenanceSub": "Open PM / inspection jobs",
+        "pendingMaintenanceCritical": "{{count}} in progress",
+        "totalStockValue": "Total Stock Value",
+        "totalStockValueSub": "Capital tied up in spare parts",
+        "lowStockAlerts": "Low Stock Alerts",
+        "lowStockAlertsItems": "{{count}} Items",
+        "lowStockAlertsSub": "Below reorder threshold",
+        "lowStockAlertsCritical": "{{count}} critical"
+      },
+      "chart": {
+        "utilizationTab": "Fleet Utilization Trend",
+        "revenueTab": "Revenue vs. Maintenance Cost",
+        "last6Months": "Last 6 months",
+        "utilizationSeries": "Utilization %",
+        "revenueSeries": "Revenue",
+        "maintenanceSeries": "Maintenance Cost",
+        "months": {
+          "jan": "Jan",
+          "feb": "Feb",
+          "mar": "Mar",
+          "apr": "Apr",
+          "may": "May",
+          "jun": "Jun"
+        }
+      },
+      "contracts": {
+        "title": "Active Rental Contracts",
+        "columnContractId": "Contract ID",
+        "columnCustomerName": "Customer Name",
+        "columnForkliftModel": "Forklift Model",
+        "columnEndDate": "End Date",
+        "columnStatus": "Status"
+      },
+      "lowStock": {
+        "title": "Critical Low Stock",
+        "minSuffix": "min"
+      },
+      "status": {
+        "booked": "Booked",
+        "onRent": "On Rent",
+        "expiringSoon": "Expiring Soon",
+        "overdue": "Overdue",
+        "returned": "Returned",
+        "cancelled": "Cancelled"
+      },
+      "customizer": {
+        "fontSize": "Font Size",
+        "language": "Language",
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large"
+      },
+      "brandsWeService": "Brands We Service"
+    },
+    "erp": {
+      "eyebrow": "Business Overview",
+      "title": "Financial & Operational Dashboard",
+      "loadError": "Failed to load dashboard data.",
+      "viewDetails": "View details",
+      "rollupCaption": "Live rollup from:",
+      "sources": {
+        "invoices": "Invoices",
+        "purchaseOrders": "Purchase Orders",
+        "workOrders": "Work Orders",
+        "payments": "Payments",
+        "inventory": "Inventory"
+      },
+      "tabs": {
+        "financial": "Financial Overview",
+        "operations": "Inventory & Operations",
+        "service": "Services & Repairs"
+      },
+      "hero": {
+        "netSales": "Net Sales",
+        "totalCost": "Total Cost",
+        "netProfit": "Net Profit",
+        "outstandingBalance": "Outstanding Balance"
+      },
+      "sales": {
+        "title": "Sales",
+        "totalSales": "Total Sales",
+        "totalDiscount": "Total Discount",
+        "totalTax": "Total Tax",
+        "netSales": "Net Sales",
+        "amountReceived": "Amount Received",
+        "invoiceCount": "{{count}} invoices"
+      },
+      "costs": {
+        "title": "Costs",
+        "purchasePrice": "Purchase Price",
+        "importFees": "Import Fees",
+        "shippingFees": "Shipping Fees",
+        "totalCost": "Total Cost",
+        "notTracked": "Not tracked yet"
+      },
+      "profit": {
+        "title": "Profit",
+        "profitPerItem": "Profit per Item",
+        "profitPerInvoice": "Profit per Invoice",
+        "dailyProfit": "Daily Profit",
+        "monthlyProfit": "Monthly Profit"
+      },
+      "credit": {
+        "title": "Credit & Debt",
+        "totalCustomerDebt": "Total Customer Debt",
+        "totalPaid": "Total Paid",
+        "outstandingBalance": "Outstanding Balance"
+      },
+      "revenue": {
+        "title": "Revenue Streams",
+        "partsRevenue": "Parts Revenue",
+        "vehicleRevenue": "Vehicle Revenue",
+        "serviceRevenue": "Service Revenue",
+        "otherRevenue": "Other Revenue"
+      },
+      "inventory": {
+        "title": "Inventory",
+        "stockIn": "Stock In",
+        "stockOut": "Stock Out",
+        "currentBalance": "Current Balance",
+        "lowStockAlerts": "Low Stock Alerts",
+        "thisMonth": "This month",
+        "unitsSuffix": "units"
+      },
+      "service": {
+        "title": "Service & Repair",
+        "laborCost": "Labor Cost",
+        "partsCost": "Parts Cost",
+        "otherServices": "Other Services",
+        "discount": "Discount",
+        "grandTotal": "Grand Total"
+      },
+      "chart": {
+        "profitTrend": "Net Profit Trend",
+        "last6Months": "Last 6 months",
+        "profitSeries": "Profit",
+        "revenueBreakdown": "Revenue Breakdown",
+        "revenueBreakdownSub": "By income stream",
+        "revenueSeries": "Revenue",
+        "chartType": "Chart Type",
+        "line": "Line",
+        "bar": "Bar",
+        "area": "Area",
+        "sampleBadge": "Sample Data",
+        "salesOpsTrend": "Financial & Operational Trends",
+        "salesOpsTrendSub": "Illustrative monthly trend — sample data for demonstration",
+        "salesSeries": "Sales",
+        "costsSeries": "Costs",
+        "timeRange": {
+          "week": "This Week",
+          "month": "This Month",
+          "last_month": "Last Month",
+          "year": "This Year",
+          "all": "All Time"
+        }
+      }
+    },
+    "iot": {
+      "title": "IoT Telemetry & Equipment Status",
+      "live": "LIVE",
+      "viewAll": "View IoT Management",
+      "gps": "GPS",
+      "engineTemp": "Engine Temp",
+      "hours": "Operating Hours"
+    },
+    "kpi": {
+      "totalRevenue": "Total Revenue",
+      "activeRentals": "Active Rentals",
+      "overdueCount": "{{count}} overdue",
+      "fleetUtilization": "Fleet Utilization",
+      "rentedOfFleet": "{{rented}} of {{total}} rented",
+      "maintenanceDue": "Maintenance Due",
+      "criticalCount": "{{count}} critical",
+      "lowStock": "Low Stock",
+      "outstandingInvoices": "Outstanding Invoices",
+      "amountOverdue": "{{amount}} overdue",
+      "totalCustomers": "Total Customers",
+      "active": "Active",
+      "percentOfTotal": "{{pct}} of total",
+      "prospects": "Prospects",
+      "totalLeads": "Total Leads",
+      "new": "New",
+      "contacted": "Contacted",
+      "qualified": "Qualified",
+      "proposal": "Proposal",
+      "won": "Won",
+      "lost": "Lost",
+      "conversion": "Conversion",
+      "winRate": "Win Rate",
+      "lostRate": "Lost Rate",
+      "wonOverTotal": "Won / Total",
+      "wonOverWonLost": "Won / (Won+Lost)",
+      "lostOverWonLost": "Lost / (Won+Lost)"
+    },
+    "quickAction": {
+      "createRental": "Create Rental",
+      "createRentalDesc": "New rental contract",
+      "addEquipment": "Add Equipment",
+      "addEquipmentDesc": "Register forklift",
+      "createInvoice": "Create Invoice",
+      "createInvoiceDesc": "Generate billing",
+      "purchaseOrder": "Purchase Order",
+      "purchaseOrderDesc": "Order spare parts",
+      "maintenance": "Maintenance",
+      "maintenanceDesc": "Schedule service"
+    },
+    "chart": {
+      "revenueTrend": "Revenue Trend",
+      "revenueTrendSub": "Monthly invoiced revenue",
+      "noRevenueData": "No revenue data yet",
+      "rentalTrend": "Rental Trend",
+      "rentalTrendSub": "Active contracts per month",
+      "noRentalData": "No rental data yet",
+      "fleetUtilization": "Fleet Utilization",
+      "fleetUtilizationSub": "Equipment by status",
+      "noFleetData": "No fleet data",
+      "total": "Total",
+      "maintenanceCost": "Maintenance Cost",
+      "maintenanceCostSub": "Monthly service expenditure",
+      "noMaintenanceCostData": "No maintenance cost data",
+      "fleetByFuelType": "Fleet by Fuel Type",
+      "units": "Units"
+    },
+    "task": {
+      "loading": "Loading...",
+      "contractsExpiring": "Contracts Expiring",
+      "countInDays": "{{count}} in {{days}} days",
+      "noContractsExpiring": "No contracts expiring soon",
+      "viewAllContracts": "View All Contracts →",
+      "quotationsExpiring": "Quotations Expiring",
+      "noQuotationsExpiring": "No quotations expiring soon",
+      "viewAllQuotations": "View All Quotations →",
+      "pmServiceDue": "PM / Service Due",
+      "approaching": "{{count}} approaching",
+      "allWithinServiceRange": "All forklifts within service range",
+      "hoursMeter": "{{hours}} hrs",
+      "viewAllEquipment": "View All Equipment →"
+    },
+    "fleetStatus": {
+      "inStock": "In Stock",
+      "rented": "Rented",
+      "inService": "In Service",
+      "reserved": "Reserved",
+      "sold": "Sold",
+      "decommissioned": "Decommissioned"
+    },
+    "fuelType": {
+      "diesel": "Diesel",
+      "electric": "Electric",
+      "lpg": "LPG",
+      "dualFuel": "Dual Fuel",
+      "unknown": "Unknown"
+    },
+    "catalog": {
+      "title": "Product Catalog",
+      "viewCatalog": "View Catalog →",
+      "loadError": "Failed to load catalog stats.",
+      "totalProducts": "Total Products",
+      "brands": "Brands",
+      "categories": "Categories"
+    },
+    "store": {
+      "get": "Get",
+      "free": "Free",
+      "comingSoon": "Coming Soon",
+      "hero": {
+        "assets": {
+          "eyebrow": "Featured Module",
+          "title": "Asset Registry, reimagined for the field",
+          "desc": "Track every forklift, trailer, and machine across its full lifecycle — ownership, status, and hour meters in one live registry."
+        },
+        "invoicing": {
+          "eyebrow": "Now Available",
+          "title": "Smart Invoicing with automatic VAT",
+          "desc": "Generate Purchase Orders, Quotations, and Invoices from one flow — subtotal, VAT, and totals calculated for you."
+        },
+        "maintenance": {
+          "eyebrow": "Editor's Pick",
+          "title": "Maintenance scheduling that stays ahead",
+          "desc": "Surface machines that are due for service before they break down, using live hour-meter and history data."
+        }
+      },
+      "promo": {
+        "sale": {
+          "kicker": "Limited Time",
+          "title": "Ultimate Sale — Up to 50% Off Parts"
+        },
+        "new": {
+          "kicker": "Just Launched",
+          "title": "New Modules This Week"
+        },
+        "staffPicks": {
+          "kicker": "Staff Picks",
+          "title": "Top Rated in Field Service"
+        }
+      },
+      "rows": {
+        "mostUsed": "Most Used Modules",
+        "recommended": "Recommended Modules",
+        "fieldService": "Popular in Field Service"
+      },
+      "modules": {
+        "equipmentRegistry": {
+          "title": "DK Equipment Registry",
+          "sub": "Equipment & vehicle registry"
+        },
+        "customers": {
+          "title": "DK Customers",
+          "sub": "Manage customer records"
+        },
+        "quotations": {
+          "title": "DK Quotations",
+          "sub": "Quotations"
+        },
+        "rentalContracts": {
+          "title": "DK Rental Contracts",
+          "sub": "Rental contracts"
+        },
+        "movements": {
+          "title": "DK Movements",
+          "sub": "Equipment movements"
+        },
+        "projects": {
+          "title": "DK Projects",
+          "sub": "Projects & warehouses"
+        },
+        "smartInvoicing": {
+          "title": "DK Smart Invoicing",
+          "sub": "Automatic invoicing"
+        },
+        "payments": {
+          "title": "DK Payments",
+          "sub": "Payments"
+        },
+        "deposits": {
+          "title": "DK Deposits",
+          "sub": "Deposits"
+        },
+        "statements": {
+          "title": "DK Statements",
+          "sub": "Statements"
+        },
+        "inventory": {
+          "title": "DK Inventory",
+          "sub": "Inventory"
+        },
+        "purchaseOrders": {
+          "title": "DK Purchase Orders",
+          "sub": "Order spare parts"
+        },
+        "workOrders": {
+          "title": "DK Work Orders",
+          "sub": "Schedule service"
+        },
+        "assetRegistry": {
+          "title": "DK Asset Registry",
+          "sub": "Asset registry"
+        },
+        "maintenanceSchedule": {
+          "title": "DK Maintenance Schedule",
+          "sub": "Preventive maintenance"
+        }
+      },
+      "thirdParty": {
+        "routeWise": {
+          "title": "RouteWise",
+          "sub": "Meridian Labs"
+        },
+        "fleetPulse": {
+          "title": "FleetPulse",
+          "sub": "Orbit Communications"
+        },
+        "partsBin": {
+          "title": "PartsBin",
+          "sub": "Ironclad Systems"
+        }
+      }
+    },
+    "errors": {
+      "leadTrend": "Failed to load lead trend.",
+      "customerTrend": "Failed to load customer trend.",
+      "leadMetrics": "Failed to load lead metrics."
+    }
+  },
+  "customer360": {
+    "backToCustomers": "Back to Customers",
+    "notFound": "Customer not found.",
+    "loadError": "Customer not found or failed to load.",
+    "forklifts": "Forklifts",
+    "activeRentals": "Active Rentals",
+    "openWorkOrders": "Open Work Orders",
+    "outstanding": "Outstanding",
+    "notes": "Notes",
+    "rentalContracts": "Rental Contracts",
+    "workOrders": "Work Orders",
+    "invoices": "Invoices",
+    "noForklifts": "No forklifts assigned to this customer.",
+    "noRentalContracts": "No rental contracts for this customer.",
+    "noWorkOrders": "No work orders for this customer's equipment.",
+    "noInvoices": "No invoices for this customer.",
+    "colSerialNumber": "Serial Number",
+    "colName": "Name",
+    "colStatus": "Status",
+    "colHourMeter": "Hour Meter",
+    "colContractNumber": "Contract Number",
+    "colStartDate": "Start Date",
+    "colEndDate": "End Date",
+    "colTotalValue": "Total Value",
+    "colWorkOrderNumber": "Work Order Number",
+    "colForklift": "Forklift",
+    "colTitle": "Title",
+    "colPriority": "Priority",
+    "colScheduledDate": "Scheduled Date",
+    "colInvoiceNumber": "Invoice Number",
+    "colTotalAmount": "Total Amount",
+    "colBalanceDue": "Balance Due",
+    "colDueDate": "Due Date"
+  },
+  "projects": {
+    "title": "Warehouse Projects",
+    "totalCount": "Total: {{count}}",
+    "createProject": "Create Project",
+    "allStatuses": "All Statuses",
+    "status": {
+      "draft": "Draft",
+      "survey": "Survey",
+      "design": "Design",
+      "boq_approved": "BOQ Approved",
+      "installation": "Installation",
+      "handover": "Handover",
+      "completed": "Completed"
+    },
+    "milestoneStatus": {
+      "pending": "Pending",
+      "in_progress": "In Progress",
+      "completed": "Completed"
+    },
+    "colProject": "Project",
+    "colCustomer": "Customer",
+    "colStartEnd": "Start / End",
+    "colStatus": "Status",
+    "colProgress": "Progress",
+    "noProjectsFound": "No projects found",
+    "createToGetStarted": "Create a project to get started.",
+    "noPermissionView": "You don't have permission to view projects.",
+    "loadFailed": "Failed to load projects.",
+    "resultsCount": "Results: {{count}}",
+    "pageOf": "Page {{page}} of {{pages}} ({{total}} total)",
+    "milestonesOf": "{{completed}}/{{total}} milestones",
+    "form": {
+      "editProject": "Edit Project",
+      "newProject": "New Project",
+      "cancel": "Cancel",
+      "saving": "Saving…",
+      "saveChanges": "Save Changes",
+      "createProject": "Create Project",
+      "projectName": "Project Name",
+      "projectNamePlaceholder": "Vientiane Warehouse Racking",
+      "customer": "Customer",
+      "selectCustomer": "Select a customer…",
+      "status": "Status",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "notes": "Notes",
+      "notesPlaceholder": "Any additional notes…"
+    },
+    "detail": {
+      "backToProjects": "Back to Projects",
+      "notFound": "Project not found.",
+      "noPermissionView": "You don't have permission to view this project.",
+      "edit": "Edit",
+      "approveBoq": "Approve BOQ",
+      "delete": "Delete",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "milestones": "Milestones",
+      "boqTotal": "BOQ Total",
+      "notes": "Notes",
+      "addMilestone": "Add Milestone",
+      "noMilestonesYet": "No milestones yet.",
+      "colMilestone": "Milestone",
+      "colDueDate": "Due Date",
+      "colStatus": "Status",
+      "markStatus": "Mark {{status}}",
+      "addBoqItem": "Add BOQ Item",
+      "noBoqItemsYet": "No BOQ items yet.",
+      "colDescription": "Description",
+      "colQty": "Qty",
+      "colUnitPrice": "Unit Price",
+      "colTotal": "Total",
+      "totalRow": "Total",
+      "billOfQuantities": "Bill of Quantities",
+      "deleteProjectTitle": "Delete Project",
+      "deleteMilestoneTitle": "Delete Milestone",
+      "deleteBoqItemTitle": "Delete BOQ Item",
+      "deleteProjectMessage": "This will permanently delete the project and all its milestones and BOQ items. This cannot be undone.",
+      "deleteGenericMessage": "This action cannot be undone.",
+      "confirmDelete": "Delete",
+      "milestoneModalTitle": "Add Milestone",
+      "milestoneName": "Milestone Name",
+      "milestoneNamePlaceholder": "Survey",
+      "dueDate": "Due Date",
+      "adding": "Adding…",
+      "boqModalTitle": "Add BOQ Item",
+      "linkInventoryPart": "Link to Inventory Part (optional)",
+      "notLinked": "— Not linked —",
+      "description": "Description",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "addItem": "Add Item",
+      "descriptionPriceRequired": "Description and unit price are required.",
+      "projectUpdated": "Project updated.",
+      "projectUpdateFailed": "Failed to update project.",
+      "boqApproved": "BOQ approved.",
+      "boqApproveFailed": "Failed to approve BOQ.",
+      "projectDeleted": "Project deleted.",
+      "projectDeleteFailed": "Failed to delete project.",
+      "milestoneStatusUpdateFailed": "Failed to update milestone status.",
+      "milestoneRemoved": "Milestone removed.",
+      "milestoneRemoveFailed": "Failed to remove milestone.",
+      "boqItemRemoved": "BOQ item removed.",
+      "boqItemRemoveFailed": "Failed to remove BOQ item.",
+      "milestoneAdded": "Milestone added.",
+      "milestoneAddFailed": "Failed to add milestone.",
+      "boqItemAdded": "BOQ item added.",
+      "boqItemAddFailed": "Failed to add BOQ item.",
+      "projectCreated": "Project created.",
+      "projectCreateFailed": "Failed to create project."
+    }
+  },
+  "reports": {
+    "title": "Reports",
+    "subtitle": "Analytics, conversion metrics, and data exports",
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "keyMetrics": "Key Metrics",
+    "wonLeads": "Won Leads",
+    "totalCustomers": "Total Customers",
+    "conversionRate": "Conversion Rate",
+    "winRate": "Win Rate",
+    "wonOverTotalLeads": "Won ÷ Total Leads",
+    "wonOverWonPlusLost": "Won ÷ (Won + Lost)",
+    "exportData": "Export Data",
+    "downloadReports": "Download Reports",
+    "format": "Format",
+    "fromDate": "From Date",
+    "toDate": "To Date",
+    "clearDates": "Clear dates",
+    "downloading": "Downloading…",
+    "exportNote": "If a report endpoint is unavailable, a summary CSV is generated client-side.",
+    "customers": "Customers",
+    "leads": "Leads",
+    "sales": "Sales",
+    "downloadSuccess": "{{type}} report downloaded.",
+    "downloadError": "Failed to download {{type}} report.",
+    "trends": "Trends — Last 12 Months",
+    "syntheticPreview": "Synthetic preview data",
+    "leadVolume": "Lead Volume",
+    "leadVolumeSub": "Monthly new leads created",
+    "noLeadTrend": "No lead trend data",
+    "leadTrendWillAppear": "Lead trend will appear once the endpoint is connected",
+    "customerGrowth": "Customer Growth",
+    "customerGrowthSub": "Monthly new customers added",
+    "noCustomerTrend": "No customer trend data",
+    "customerTrendWillAppear": "Customer trend will appear once the endpoint is connected",
+    "leadAnalysis": "Lead Analysis",
+    "statusDistribution": "Status Distribution",
+    "statusDistributionSub": "Leads by current pipeline stage",
+    "noStatusData": "No lead status data",
+    "createLeadsToSeeDistribution": "Create leads to see the distribution",
+    "sourceBreakdown": "Source Breakdown",
+    "sourceBreakdownSub": "Where leads are coming from",
+    "noSourceData": "No source data",
+    "addSourceWhenCreating": "Add a source when creating leads",
+    "conversionMetrics": "Conversion Metrics",
+    "metric": "Metric",
+    "rate": "Rate",
+    "breakdown": "Breakdown",
+    "formula": "Formula",
+    "lostRate": "Lost Rate",
+    "activeCustomers": "Active Customers",
+    "leadsInPipeline": "Leads in Pipeline",
+    "ofTotal": "of {{count}} total",
+    "wonOverTotalFormula": "Won ÷ Total Leads × 100",
+    "wonOverWonLostFormula": "Won ÷ (Won + Lost) × 100",
+    "lostOverWonLostFormula": "Lost ÷ (Won + Lost) × 100",
+    "activeOverTotalFormula": "Active ÷ Total Customers × 100",
+    "pipelineFormula": "New + Contacted + Qualified + Proposal",
+    "moduleRoadmap": "Module Roadmap",
+    "sourceLabels": {
+      "website": "Website",
+      "referral": "Referral",
+      "coldCall": "Cold Call",
+      "email": "Email",
+      "socialMedia": "Social Media",
+      "other": "Other"
+    },
+    "modules": {
+      "projects": {
+        "label": "Projects",
+        "description": "Project management with milestones, status boards, and team assignment"
+      },
+      "services": {
+        "label": "Services",
+        "description": "Service catalog, pricing tiers, and customer service assignments"
+      },
+      "tasks": {
+        "label": "Tasks",
+        "description": "Task board with assignments, due dates, and priority levels"
+      },
+      "invoices": {
+        "label": "Invoices",
+        "description": "Invoice generation, payment tracking, and revenue reporting"
+      }
+    },
+    "formatCsv": "CSV (.csv)",
+    "formatExcel": "Excel (.xlsx)"
+  },
+  "routes": {
+    "dashboard": "Dashboard",
+    "customerDetail": "Customer 360",
+    "customers": "Customers",
+    "leads": "Leads",
+    "activity": "Activity",
+    "reports": "Reports",
+    "settings": "Settings",
+    "products": "Products",
+    "productDetail": "Product Detail",
+    "brands": "Brands",
+    "categories": "Categories",
+    "import": "Import",
+    "equipmentRegistry": "Equipment Registry",
+    "equipmentDetail": "Equipment Detail",
+    "quotations": "Quotations",
+    "newQuotation": "New Quotation",
+    "quotationDetail": "Quotation Detail",
+    "rentalContracts": "Rental Contracts",
+    "newContract": "New Contract",
+    "contractDetail": "Contract Detail",
+    "movementControl": "Movement Control",
+    "newMovement": "New Movement",
+    "movementDetail": "Movement Detail",
+    "billing": "Billing",
+    "invoices": "Invoices",
+    "invoiceDetail": "Invoice Detail",
+    "payments": "Payments",
+    "paymentDetail": "Payment Detail",
+    "deposits": "Deposits",
+    "depositDetail": "Deposit Detail",
+    "revenueRecognition": "Revenue Recognition",
+    "financeDashboard": "Finance Dashboard",
+    "statements": "Statements",
+    "paymentManager": "Payment Manager",
+    "depositManager": "Deposit Manager",
+    "maintenancePm": "Maintenance & PM",
+    "workOrders": "Work Orders",
+    "newWorkOrder": "New Work Order",
+    "workOrderDetail": "Work Order Detail",
+    "pmSchedules": "PM Schedules",
+    "inventory": "Inventory",
+    "spareParts": "Spare Parts",
+    "partsPOS": "Parts POS",
+    "newPart": "New Part",
+    "partDetail": "Part Detail",
+    "warehouses": "Warehouses",
+    "purchaseOrders": "Purchase Orders",
+    "salesOrders": "Sales Orders",
+    "taxInvoices": "Tax Invoices",
+    "creditNotes": "Credit Notes",
+    "paymentVouchers": "Payment Vouchers",
+    "goodsReceive": "Goods Receive",
+    "goodsIssue": "Goods Issue",
+    "deliveryNotes": "Delivery Notes",
+    "executiveDashboard": "Executive Dashboard",
+    "projects": "Warehouse Projects",
+    "projectDetail": "Project Detail",
+    "iotManagement": "IoT Management"
+  },
+  "iot": {
+    "title": "IoT Telemetry",
+    "subtitle": "Manage GPS/hour-meter device pairings and monitor live connectivity across the fleet.",
+    "refresh": "Refresh",
+    "searchPlaceholder": "Search by forklift name or serial number...",
+    "map": {
+      "title": "Live Fleet Map",
+      "count": "{{count}} reporting GPS",
+      "empty": "No forklifts currently reporting GPS location."
+    },
+    "detailModal": {
+      "gpsLabel": "GPS Coordinates",
+      "noGps": "Not reporting",
+      "lastLocationUpdate": "Location Updated",
+      "mapCentered": "Map centered on this forklift's last known location."
+    },
+    "kpi": {
+      "totalPaired": "Devices Paired",
+      "live": "Live Now",
+      "offline": "Offline",
+      "unpaired": "Unpaired Units"
+    },
+    "table": {
+      "forklift": "Forklift",
+      "deviceId": "Device ID",
+      "lastPing": "Last Ping",
+      "status": "Status"
+    },
+    "notPaired": "Not paired",
+    "never": "Never",
+    "pairAction": "Pair device",
+    "unpairAction": "Unpair",
+    "noResults": "No forklifts found.",
+    "pairModal": {
+      "title": "Pair IoT Device — {{name}}",
+      "deviceIdLabel": "Device ID",
+      "deviceIdPlaceholder": "e.g. DK-IOT-001",
+      "deviceIdRequired": "Device ID is required.",
+      "duplicateError": "This device ID is already paired to another forklift.",
+      "submitError": "Failed to pair device. Please try again.",
+      "submit": "Pair Device",
+      "pairing": "Pairing..."
+    },
+    "unpairConfirm": {
+      "title": "Unpair device",
+      "message": "Remove device \"{{deviceId}}\" from {{name}}? It will stop sending automated hour-meter updates until re-paired."
+    }
+  },
+  "changePassword": {
+    "title": "Change Password",
+    "subtitle": "Update your password to keep your account secure.",
+    "currentPassword": "Current Password",
+    "currentPasswordPlaceholder": "Enter your current password",
+    "newPassword": "New Password",
+    "newPasswordPlaceholder": "At least 8 characters",
+    "confirmPassword": "Confirm New Password",
+    "confirmPasswordPlaceholder": "Re-enter the new password",
+    "submit": "Change Password",
+    "submitting": "Changing Password…",
+    "mismatchError": "New password and confirmation do not match.",
+    "tooShortError": "Password must be at least 8 characters.",
+    "successToast": "Password changed successfully.",
+    "incorrectCurrentError": "Current password is incorrect.",
+    "genericError": "Failed to change password. Please try again."
+  },
+  "profile": {
+    "title": "My Profile",
+    "subtitle": "Manage your personal information and account security.",
+    "uploadPhoto": "Upload Photo",
+    "saveChanges": "Save Changes",
+    "savedToast": "Profile updated.",
+    "personalDetails": {
+      "title": "Personal Details",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "phonePlaceholder": "e.g. +856 20 1234 5678"
+    },
+    "security": {
+      "title": "Security",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "mismatchError": "New password and confirmation do not match.",
+      "tooShortError": "Password must be at least 8 characters."
+    }
+  },
+  "documentPreview": {
+    "docTitle": {
+      "invoice": "INVOICE",
+      "quotation": "QUOTATION",
+      "purchaseOrder": "PURCHASE ORDER"
+    },
+    "customerDetails": "Customer Details",
+    "vendorDetails": "Vendor Details",
+    "vehicleInformation": "Vehicle Information",
+    "vehicle": {
+      "make": "Make",
+      "model": "Model",
+      "vin": "VIN",
+      "engineNo": "Engine No.",
+      "regNo": "Reg. No.",
+      "jobNumber": "Job No."
+    },
+    "dateLabel": "Date",
+    "docNumberLabel": "Document No.",
+    "unitPrice": "Unit Price",
+    "bankDetails": "Bank Details",
+    "subtotal": "Subtotal",
+    "vatLabel": "VAT ({{rate}}%)",
+    "grandTotal": "Grand Total",
+    "issuedBy": "Issued By",
+    "approvedBy": "Approved By"
+  },
+  "modulePlaceholder": {
+    "badge": "Coming Soon",
+    "emptyHint": "This module is scaffolded — full workflow coming soon."
+  },
+  "documentFlow": {
+    "title": "Document Flow:"
+  },
+  "salesOrders": {
+    "list": {
+      "title": "Sales Orders",
+      "subtitle": "Confirmed customer orders converted from quotations",
+      "empty": "No sales orders yet",
+      "totalCount": "{{count}} sales orders",
+      "allStatuses": "All statuses",
+      "searchPlaceholder": "Search SO number or title...",
+      "newSalesOrder": "New Sales Order",
+      "createOrAdjust": "Create a new sales order or adjust your filters",
+      "deleteConfirmTitle": "Delete sales order?",
+      "deleteConfirmMessage": "This will permanently delete sales order {{number}}. This cannot be undone.",
+      "loadError": "Failed to load sales orders"
+    },
+    "table": {
+      "number": "SO Number",
+      "customer": "Customer",
+      "quotationRef": "Quotation Ref.",
+      "orderDate": "Order Date"
+    },
+    "status": {
+      "draft": "Draft",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "editor": {
+      "newTitle": "New Sales Order",
+      "title": "Sales Order",
+      "titleLabel": "Title",
+      "titlePlaceholder": "e.g. Forklift purchase — Vong Logistics",
+      "quotationRef": "Quotation Ref.",
+      "noQuotation": "No linked quotation",
+      "soNumber": "SO Number",
+      "orderDate": "Order Date",
+      "expectedDelivery": "Expected Delivery",
+      "saveDraft": "Save Draft",
+      "saveSuccess": "Sales order saved",
+      "saveFailed": "Failed to save sales order",
+      "notFoundError": "Sales order not found",
+      "actionFailed": "Failed to {{action}}",
+      "actions": {
+        "confirm": "Confirm",
+        "confirmed": "Sales order confirmed",
+        "complete": "Mark Completed",
+        "completed": "Sales order completed",
+        "void": "Void",
+        "voided": "Sales order voided",
+        "convertToInvoice": "Convert to Invoice"
+      },
+      "prefilledFromQuotation": "Pre-filled from quotation {{number}}"
+    }
+  },
+  "taxInvoices": {
+    "list": {
+      "title": "Tax Invoices",
+      "subtitle": "VAT-compliant tax invoices issued to customers",
+      "empty": "No tax invoices yet"
+    },
+    "table": {
+      "number": "Tax Invoice No.",
+      "customer": "Customer",
+      "invoiceRef": "Invoice Ref.",
+      "issueDate": "Issue Date",
+      "taxId": "Tax ID"
+    }
+  },
+  "creditNotes": {
+    "list": {
+      "title": "Credit Notes",
+      "subtitle": "Adjustments and refunds issued against invoices",
+      "empty": "No credit notes yet"
+    },
+    "table": {
+      "number": "Credit Note No.",
+      "customer": "Customer",
+      "issueDate": "Issue Date",
+      "relatedInvoice": "Related Invoice"
+    }
+  },
+  "paymentVouchers": {
+    "list": {
+      "title": "Payment Vouchers",
+      "subtitle": "Outgoing payments to vendors and suppliers",
+      "empty": "No payment vouchers yet"
+    },
+    "table": {
+      "number": "Voucher No.",
+      "vendor": "Vendor",
+      "poRef": "PO / GRN Ref.",
+      "paymentDate": "Payment Date",
+      "method": "Method"
+    }
+  },
+  "deliveryNotes": {
+    "list": {
+      "title": "Delivery Notes",
+      "subtitle": "Goods dispatched to customers against sales orders",
+      "empty": "No delivery notes yet",
+      "totalCount": "{{count}} delivery notes",
+      "searchPlaceholder": "Search DN number...",
+      "newDeliveryNote": "New Delivery Note",
+      "createOrAdjust": "Create a new delivery note or adjust your filters",
+      "deleteConfirmTitle": "Delete delivery note?",
+      "deleteConfirmMessage": "This will permanently delete delivery note {{number}}. This cannot be undone.",
+      "loadError": "Failed to load delivery notes"
+    },
+    "table": {
+      "number": "DN Number",
+      "customer": "Customer",
+      "soRef": "Sales Order Ref.",
+      "deliveryDate": "Delivery Date",
+      "warehouse": "Warehouse"
+    },
+    "status": {
+      "draft": "Draft",
+      "dispatched": "Dispatched",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    },
+    "editor": {
+      "newTitle": "New Delivery Note",
+      "dnNumber": "DN Number",
+      "salesOrderRef": "Sales Order",
+      "selectSalesOrder": "Select a sales order...",
+      "salesOrderRequired": "A sales order must be selected before saving.",
+      "deliveryDate": "Delivery Date",
+      "warehouse": "Warehouse",
+      "driverName": "Driver Name",
+      "vehiclePlate": "Vehicle Plate No.",
+      "deliveryAddress": "Delivery Address",
+      "saveDraft": "Save Draft",
+      "saveSuccess": "Delivery note saved",
+      "saveFailed": "Failed to save delivery note",
+      "notFoundError": "Delivery note not found",
+      "actionFailed": "Failed to {{action}}",
+      "grid": {
+        "qtyOrdered": "Qty Ordered",
+        "qtyDelivered": "Qty Delivered"
+      },
+      "actions": {
+        "dispatch": "Dispatch",
+        "dispatched": "Delivery note dispatched",
+        "deliver": "Mark Delivered",
+        "delivered": "Delivery note delivered",
+        "void": "Void",
+        "voided": "Delivery note voided"
+      }
+    }
+  },
+  "goodsReceive": {
+    "list": {
+      "title": "Goods Receive",
+      "subtitle": "Stock received from vendors against purchase orders",
+      "empty": "No goods receive notes yet"
+    },
+    "table": {
+      "number": "GRN Number",
+      "vendor": "Vendor",
+      "poRef": "PO Ref.",
+      "receivedDate": "Received Date",
+      "warehouse": "Warehouse"
+    }
+  },
+  "goodsIssue": {
+    "list": {
+      "title": "Goods Issue",
+      "subtitle": "Stock issued out of the warehouse for internal use or jobs",
+      "empty": "No goods issue notes yet"
+    },
+    "table": {
+      "number": "GI Number",
+      "issuedTo": "Issued To",
+      "dnRef": "Delivery Note Ref.",
+      "issueDate": "Issue Date",
+      "warehouse": "Warehouse"
+    }
+  },
+  "documentEditor": {
+    "header": {
+      "telephone": "Telephone",
+      "customer": "Customer",
+      "selectCustomer": "Select a customer...",
+      "address": "Address",
+      "validFrom": "Date",
+      "validUntil": "Expiry Date",
+      "reference": "Reference",
+      "currency": "Currency",
+      "salesPerson": "Sales Person",
+      "autoGenerated": "Auto-generated on save"
+    },
+    "vehicle": {
+      "title": "Vehicle / Equipment Information",
+      "jobNumber": "Job Number",
+      "machine": "Machine",
+      "brand": "Brand",
+      "model": "Model",
+      "vin": "VIN",
+      "engineNo": "Engine No.",
+      "hourMeter": "Hour Meter",
+      "plateNumber": "Plate Number",
+      "location": "Location"
+    },
+    "totals": {
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "vat": "VAT",
+      "defaultTaxRate": "Default tax rate for new rows:",
+      "roundAmount": "Round Amount",
+      "grandTotal": "Grand Total",
+      "balanceDue": "Balance Due"
+    },
+    "footer": {
+      "remark": "Remark",
+      "termsConditions": "Terms & Conditions",
+      "issuedBy": "Issued By",
+      "reviewedBy": "Reviewed By",
+      "approvedBy": "Approved By",
+      "customerSignature": "Customer Signature"
+    }
+  },
+  "lineItemsGrid": {
+    "filterPlaceholder": "Filter by description...",
+    "no": "No.",
+    "actions": "Actions",
+    "addRow": "Add Row",
+    "copyRow": "Copy Row",
+    "pasteRow": "Paste Row",
+    "duplicateRow": "Duplicate Row",
+    "deleteRow": "Delete Row"
+  },
+  "receipts": {
+    "list": {
+      "title": "Receipts",
+      "subtitle": "Payments received against customer invoices",
+      "empty": "No receipts yet",
+      "totalCount": "{{count}} receipts",
+      "allStatuses": "All statuses",
+      "searchPlaceholder": "Search receipt number...",
+      "newReceipt": "New Receipt",
+      "createOrAdjust": "Create a new receipt or adjust your filters",
+      "deleteConfirmTitle": "Delete receipt?",
+      "deleteConfirmMessage": "This will permanently delete receipt {{number}}. This cannot be undone.",
+      "loadError": "Failed to load receipts"
+    },
+    "table": {
+      "number": "Receipt Number",
+      "customer": "Customer",
+      "invoiceRef": "Invoice Ref.",
+      "paymentDate": "Payment Date"
+    },
+    "status": {
+      "draft": "Draft",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled"
+    },
+    "editor": {
+      "newTitle": "New Receipt",
+      "title": "Receipt",
+      "receiptNumber": "Receipt Number",
+      "invoiceRef": "Invoice",
+      "selectInvoice": "Select an invoice...",
+      "invoiceRequired": "An invoice must be selected before saving.",
+      "paymentDetails": "Payment Details",
+      "paymentDate": "Payment Date",
+      "paymentMethod": "Payment Method",
+      "paymentMethods": {
+        "cash": "Cash",
+        "transfer": "Bank Transfer",
+        "cheque": "Cheque"
+      },
+      "bankAccount": "Bank Account",
+      "selectBankAccount": "Select a bank account...",
+      "referenceNumber": "Reference / Txn No.",
+      "referenceNumberPlaceholder": "Transaction or cheque number",
+      "amountReceived": "Amount Received",
+      "invoiceBalanceDue": "Invoice Balance Due",
+      "saveDraft": "Save Draft",
+      "saveSuccess": "Receipt saved",
+      "saveFailed": "Failed to save receipt",
+      "notFoundError": "Receipt not found",
+      "actionFailed": "Failed to {{action}}",
+      "paymentAgainstInvoice": "Payment received against invoice {{number}}",
+      "actions": {
+        "confirm": "Confirm",
+        "confirmed": "Receipt confirmed",
+        "void": "Void",
+        "voided": "Receipt voided"
+      }
+    }
+  }
+}

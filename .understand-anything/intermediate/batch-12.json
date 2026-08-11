@@ -1,0 +1,400 @@
+{
+  "batchIndex": 12,
+  "nodes": [
+    {
+      "id": "file:frontend/src/components/ui/Drawer.css",
+      "type": "file",
+      "name": "Drawer CSS",
+      "summary": "Styles the right-side panel overlay (Drawer) that slides in from the right with a cubic-bezier animation. Defines the semi-transparent backdrop, scrollable body, section/label grid layout for detail rows, status-diff display, changed-field chips, and a JSON syntax-highlight block with token color classes.",
+      "tags": ["css", "ui", "drawer", "overlay", "animation", "panel", "styles"],
+      "filePath": "frontend/src/components/ui/Drawer.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/ui/ImageUpload.css",
+      "type": "file",
+      "name": "ImageUpload CSS",
+      "summary": "Styles the drag-and-drop image upload zone: dashed border that shifts to primary color on hover or active drag, preview thumbnail with overflow hidden and an absolute-positioned remove button, a slim progress bar with animated fill, and inline error/success text feedback.",
+      "tags": ["css", "ui", "image-upload", "drag-drop", "preview", "progress", "styles"],
+      "filePath": "frontend/src/components/ui/ImageUpload.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/ui/Modal.css",
+      "type": "file",
+      "name": "Modal CSS",
+      "summary": "Styles the centered modal dialog overlay: fixed full-screen backdrop with fade-in keyframe, a flex-column dialog panel with scale+translate entrance animation, structured header/body/footer zones with border separators, and a close button with hover state.",
+      "tags": ["css", "ui", "modal", "overlay", "dialog", "animation", "styles"],
+      "filePath": "frontend/src/components/ui/Modal.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/ui/MultiSelect.css",
+      "type": "file",
+      "name": "MultiSelect CSS",
+      "summary": "Planned stylesheet for the MultiSelect dropdown component (file not present in the codebase at analysis time; component may be unstyled or styles may be inlined).",
+      "tags": ["css", "ui", "multiselect", "dropdown", "styles", "planned"],
+      "filePath": "frontend/src/components/ui/MultiSelect.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/ui/Pagination.css",
+      "type": "file",
+      "name": "Pagination CSS",
+      "summary": "Planned stylesheet for the Pagination navigation component (file not present in the codebase at analysis time; component may be unstyled or styles may be inlined).",
+      "tags": ["css", "ui", "pagination", "navigation", "styles", "planned"],
+      "filePath": "frontend/src/components/ui/Pagination.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/ui/RichTextEditor.css",
+      "type": "file",
+      "name": "RichTextEditor CSS",
+      "summary": "Planned stylesheet for the RichTextEditor component (file not present in the codebase at analysis time; editor styles may be provided by a third-party library or inlined).",
+      "tags": ["css", "ui", "rich-text-editor", "editor", "styles", "planned"],
+      "filePath": "frontend/src/components/ui/RichTextEditor.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/ui/SearchBar.css",
+      "type": "file",
+      "name": "SearchBar CSS",
+      "summary": "Styles the command-palette style search bar: a compact trigger button with keyboard shortcut badge that hides on mobile, a full-screen animated backdrop, and a floating palette panel with grouped result rows that highlight on active state with a primary-colored arrow indicator.",
+      "tags": ["css", "ui", "search", "command-palette", "overlay", "animation", "responsive", "styles"],
+      "filePath": "frontend/src/components/ui/SearchBar.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/ui/Table.css",
+      "type": "file",
+      "name": "Table CSS",
+      "summary": "Planned stylesheet for the Table data-grid component (file not present in the codebase at analysis time; table styles may be inlined or handled by a shared stylesheet).",
+      "tags": ["css", "ui", "table", "data-grid", "styles", "planned"],
+      "filePath": "frontend/src/components/ui/Table.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/ui/Toast.css",
+      "type": "file",
+      "name": "Toast CSS",
+      "summary": "Styles the fixed bottom-right toast notification stack: flex column container with pointer-events passthrough, individual toast cards with slide-up entrance animation, and three semantic variants (success, error, info) each mapped to themed CSS custom-property color tokens.",
+      "tags": ["css", "ui", "toast", "notification", "animation", "feedback", "styles"],
+      "filePath": "frontend/src/components/ui/Toast.css",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "id": "related-drawer-imageupload",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/ImageUpload.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-drawer-modal",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/Modal.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-drawer-multiselect",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/MultiSelect.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-drawer-pagination",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/Pagination.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-drawer-richtexteditor",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/RichTextEditor.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-drawer-searchbar",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/SearchBar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-drawer-table",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/Table.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-drawer-toast",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/Toast.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-imageupload-modal",
+      "source": "file:frontend/src/components/ui/ImageUpload.css",
+      "target": "file:frontend/src/components/ui/Modal.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-imageupload-multiselect",
+      "source": "file:frontend/src/components/ui/ImageUpload.css",
+      "target": "file:frontend/src/components/ui/MultiSelect.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-imageupload-pagination",
+      "source": "file:frontend/src/components/ui/ImageUpload.css",
+      "target": "file:frontend/src/components/ui/Pagination.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-imageupload-richtexteditor",
+      "source": "file:frontend/src/components/ui/ImageUpload.css",
+      "target": "file:frontend/src/components/ui/RichTextEditor.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-imageupload-searchbar",
+      "source": "file:frontend/src/components/ui/ImageUpload.css",
+      "target": "file:frontend/src/components/ui/SearchBar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-imageupload-table",
+      "source": "file:frontend/src/components/ui/ImageUpload.css",
+      "target": "file:frontend/src/components/ui/Table.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-imageupload-toast",
+      "source": "file:frontend/src/components/ui/ImageUpload.css",
+      "target": "file:frontend/src/components/ui/Toast.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-modal-multiselect",
+      "source": "file:frontend/src/components/ui/Modal.css",
+      "target": "file:frontend/src/components/ui/MultiSelect.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-modal-pagination",
+      "source": "file:frontend/src/components/ui/Modal.css",
+      "target": "file:frontend/src/components/ui/Pagination.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-modal-richtexteditor",
+      "source": "file:frontend/src/components/ui/Modal.css",
+      "target": "file:frontend/src/components/ui/RichTextEditor.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-modal-searchbar",
+      "source": "file:frontend/src/components/ui/Modal.css",
+      "target": "file:frontend/src/components/ui/SearchBar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-modal-table",
+      "source": "file:frontend/src/components/ui/Modal.css",
+      "target": "file:frontend/src/components/ui/Table.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-modal-toast",
+      "source": "file:frontend/src/components/ui/Modal.css",
+      "target": "file:frontend/src/components/ui/Toast.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-multiselect-pagination",
+      "source": "file:frontend/src/components/ui/MultiSelect.css",
+      "target": "file:frontend/src/components/ui/Pagination.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-multiselect-richtexteditor",
+      "source": "file:frontend/src/components/ui/MultiSelect.css",
+      "target": "file:frontend/src/components/ui/RichTextEditor.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-multiselect-searchbar",
+      "source": "file:frontend/src/components/ui/MultiSelect.css",
+      "target": "file:frontend/src/components/ui/SearchBar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-multiselect-table",
+      "source": "file:frontend/src/components/ui/MultiSelect.css",
+      "target": "file:frontend/src/components/ui/Table.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-multiselect-toast",
+      "source": "file:frontend/src/components/ui/MultiSelect.css",
+      "target": "file:frontend/src/components/ui/Toast.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-pagination-richtexteditor",
+      "source": "file:frontend/src/components/ui/Pagination.css",
+      "target": "file:frontend/src/components/ui/RichTextEditor.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-pagination-searchbar",
+      "source": "file:frontend/src/components/ui/Pagination.css",
+      "target": "file:frontend/src/components/ui/SearchBar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-pagination-table",
+      "source": "file:frontend/src/components/ui/Pagination.css",
+      "target": "file:frontend/src/components/ui/Table.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-pagination-toast",
+      "source": "file:frontend/src/components/ui/Pagination.css",
+      "target": "file:frontend/src/components/ui/Toast.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-richtexteditor-searchbar",
+      "source": "file:frontend/src/components/ui/RichTextEditor.css",
+      "target": "file:frontend/src/components/ui/SearchBar.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-richtexteditor-table",
+      "source": "file:frontend/src/components/ui/RichTextEditor.css",
+      "target": "file:frontend/src/components/ui/Table.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-richtexteditor-toast",
+      "source": "file:frontend/src/components/ui/RichTextEditor.css",
+      "target": "file:frontend/src/components/ui/Toast.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-searchbar-table",
+      "source": "file:frontend/src/components/ui/SearchBar.css",
+      "target": "file:frontend/src/components/ui/Table.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-searchbar-toast",
+      "source": "file:frontend/src/components/ui/SearchBar.css",
+      "target": "file:frontend/src/components/ui/Toast.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "related-table-toast",
+      "source": "file:frontend/src/components/ui/Table.css",
+      "target": "file:frontend/src/components/ui/Toast.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Same UI component library"
+    },
+    {
+      "id": "similar-drawer-modal",
+      "source": "file:frontend/src/components/ui/Drawer.css",
+      "target": "file:frontend/src/components/ui/Modal.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "Both are overlay-based panels with animated backdrops and structured header/body layouts"
+    },
+    {
+      "id": "similar-searchbar-table",
+      "source": "file:frontend/src/components/ui/SearchBar.css",
+      "target": "file:frontend/src/components/ui/Table.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "Commonly paired: search/filter UI drives the data displayed in a table"
+    },
+    {
+      "id": "similar-toast-modal",
+      "source": "file:frontend/src/components/ui/Toast.css",
+      "target": "file:frontend/src/components/ui/Modal.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "Both are notification/interrupt patterns using fixed positioning and CSS animation for entrance"
+    }
+  ]
+}

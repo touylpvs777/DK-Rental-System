@@ -1,0 +1,85 @@
+{
+  "batchIndex": 10,
+  "nodes": [
+    {
+      "id": "file:frontend/src/components/equipment/FleetCard.css",
+      "type": "file",
+      "name": "FleetCard CSS",
+      "summary": "Styles for the FleetCard component displaying forklift/equipment summary in a clickable card grid. Covers card layout with a 4:3 image wrapper, status badges, body area (brand label, name with line-clamp, serial number, meta chips), an hour-meter progress bar with fill animation, a customer attribution row, and hover-revealed action buttons. Uses CSS custom properties throughout for theming.",
+      "tags": ["css", "styles", "equipment", "fleet", "card", "hover", "progress-bar", "badges"],
+      "filePath": "frontend/src/components/equipment/FleetCard.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/equipment/ForkliftCard.css",
+      "type": "file",
+      "name": "ForkliftCard CSS",
+      "summary": "Styles for the ForkliftCard component showing a forklift summary card with lift-on-hover transform. Covers card layout with a 4:3 image wrapper, status badges, body section (brand label, model name, serial number with tabular numerals, meta items, hour meter text), and a hover-revealed edit button. Structurally very similar to FleetCard.css but uses a translateY hover effect instead of a box-shadow-only change. Uses CSS custom properties for theming.",
+      "tags": ["css", "styles", "equipment", "forklift", "card", "hover", "badges"],
+      "filePath": "frontend/src/components/equipment/ForkliftCard.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/equipment/PhotoGallery.css",
+      "type": "file",
+      "name": "PhotoGallery CSS",
+      "summary": "Styles for the PhotoGallery component used to display equipment photos. Covers the main 16:10 image view with left/right navigation arrows and a counter overlay, a hover-revealed fullscreen button, a thumbnail strip with active-state highlight, image caption, dashed empty-state panel, and a full-screen lightbox overlay (dark backdrop, large image, close button, arrow navigation, thumbnail row). Uses CSS custom properties and fixed z-index layering for the lightbox.",
+      "tags": ["css", "styles", "equipment", "gallery", "photo", "lightbox", "thumbnails", "overlay"],
+      "filePath": "frontend/src/components/equipment/PhotoGallery.css",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/equipment/StatusTimeline.css",
+      "type": "file",
+      "name": "StatusTimeline CSS",
+      "summary": "Styles for the StatusTimeline component showing a vertical chronological history of equipment status changes. Covers timeline entry rows with a rail column (12px dot + 2px connecting line), content area (date label, bordered card with status badges, transition arrow, reason text in italics, user attribution), latest-entry dot variant highlighted in primary color, and a dashed empty-state panel. Uses CSS custom properties for colors and radii.",
+      "tags": ["css", "styles", "equipment", "timeline", "status", "history", "badges"],
+      "filePath": "frontend/src/components/equipment/StatusTimeline.css",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:frontend/src/components/equipment/FleetCard.css",
+      "target": "file:frontend/src/components/equipment/ForkliftCard.css",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "Both are equipment card components with identical structural layout (image wrap, badges, body, hover action) and near-identical class naming conventions"
+    },
+    {
+      "source": "file:frontend/src/components/equipment/FleetCard.css",
+      "target": "file:frontend/src/components/equipment/PhotoGallery.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both are equipment component styles used together on equipment detail/list views"
+    },
+    {
+      "source": "file:frontend/src/components/equipment/FleetCard.css",
+      "target": "file:frontend/src/components/equipment/StatusTimeline.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both are equipment component styles used together on equipment detail/list views"
+    },
+    {
+      "source": "file:frontend/src/components/equipment/ForkliftCard.css",
+      "target": "file:frontend/src/components/equipment/PhotoGallery.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both are equipment component styles used together on equipment detail/list views"
+    },
+    {
+      "source": "file:frontend/src/components/equipment/ForkliftCard.css",
+      "target": "file:frontend/src/components/equipment/StatusTimeline.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both are equipment component styles used together on equipment detail/list views"
+    },
+    {
+      "source": "file:frontend/src/components/equipment/PhotoGallery.css",
+      "target": "file:frontend/src/components/equipment/StatusTimeline.css",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both are equipment component styles used together on equipment detail/list views"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+.theme-toggle {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--color-bg-subtle);
+}
+
+.theme-toggle-btn {
+  width: 30px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+.theme-toggle-btn:hover:not(.active) {
+  color: var(--color-text);
+}
+.theme-toggle-btn.active {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}

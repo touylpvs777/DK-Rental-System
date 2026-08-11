@@ -1,0 +1,133 @@
+{
+  "batchIndex": 2,
+  "nodes": [
+    {
+      "id": "service:Dockerfile.backend",
+      "type": "service",
+      "name": "Backend Dockerfile",
+      "summary": "Multi-step Docker image for the FastAPI backend. Uses python:3.12-slim, installs system deps (gcc, libpq-dev), copies backend/requirements.txt and source, then starts uvicorn on port 8000.",
+      "tags": ["docker", "backend", "fastapi", "python", "uvicorn"],
+      "filePath": "Dockerfile.backend",
+      "complexity": "simple"
+    },
+    {
+      "id": "service:Dockerfile.frontend",
+      "type": "service",
+      "name": "Frontend Dockerfile",
+      "summary": "Multi-stage Docker image for the React frontend. Stage 1 uses node:20-alpine to run 'npm run build', Stage 2 copies the dist output into an nginx:alpine image served on port 80.",
+      "tags": ["docker", "frontend", "react", "nginx", "node", "multi-stage"],
+      "filePath": "Dockerfile.frontend",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README",
+      "summary": "Project README file (currently empty — no content yet committed).",
+      "tags": ["readme", "docs"],
+      "filePath": "README.md",
+      "complexity": "simple"
+    },
+    {
+      "id": "service:docker-compose.yml",
+      "type": "service",
+      "name": "Docker Compose",
+      "summary": "Orchestrates three services: 'backend' (FastAPI on port 8000, depends on db health), 'frontend' (nginx on port 80, depends on backend), and 'db' (postgres:16-alpine on port 5432 with a named volume 'pgdata'). Includes health checks for both backend and db.",
+      "tags": ["docker", "compose", "orchestration", "postgres", "backend", "frontend"],
+      "filePath": "docker-compose.yml",
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:puppeteer-config.json",
+      "type": "config",
+      "name": "Puppeteer Config",
+      "summary": "Points Puppeteer / mermaid-cli to the local Windows chrome-headless-shell executable used for headless diagram rendering.",
+      "tags": ["puppeteer", "mermaid", "headless-chrome", "config"],
+      "filePath": "puppeteer-config.json",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:render_diagrams.ps1",
+      "type": "file",
+      "name": "Render Diagrams Script",
+      "summary": "PowerShell script that batch-renders 16 Mermaid architecture diagrams (C4, ER, sequence, state, workflow) from docs/diagrams/*.md into SVG and PNG via @mermaid-js/mermaid-cli, using puppeteer-config.json for headless Chrome.",
+      "tags": ["powershell", "mermaid", "diagrams", "build-script", "documentation"],
+      "filePath": "render_diagrams.ps1",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:requirements.txt",
+      "type": "document",
+      "name": "Python Requirements",
+      "summary": "Pinned Python package list for the FastAPI backend: alembic, fastapi, SQLAlchemy (async), pydantic v2, uvicorn, bcrypt, python-jose, passlib, asyncpg driver (psycopg2-binary), python-dotenv, and related utilities.",
+      "tags": ["python", "dependencies", "fastapi", "sqlalchemy", "pydantic", "alembic"],
+      "filePath": "requirements.txt",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:setup.md",
+      "type": "document",
+      "name": "Setup Guide",
+      "summary": "Comprehensive Windows developer setup guide covering: PostgreSQL installation and database/user creation, .env configuration with DATABASE_URL and JWT secrets, Python dependency installation, Alembic migration setup (async mode), running the backend with uvicorn, and API verification via curl/Swagger UI.",
+      "tags": ["setup", "postgresql", "alembic", "backend", "windows", "docs"],
+      "filePath": "setup.md",
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:docker-compose.yml",
+      "target": "service:Dockerfile.backend",
+      "type": "deploys",
+      "weight": 0.5
+    },
+    {
+      "source": "service:docker-compose.yml",
+      "target": "service:Dockerfile.frontend",
+      "type": "deploys",
+      "weight": 0.5
+    },
+    {
+      "source": "service:Dockerfile.frontend",
+      "target": "service:Dockerfile.backend",
+      "type": "depends_on",
+      "weight": 0.6
+    },
+    {
+      "source": "service:Dockerfile.backend",
+      "target": "document:requirements.txt",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:render_diagrams.ps1",
+      "target": "config:puppeteer-config.json",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "document:setup.md",
+      "target": "service:Dockerfile.backend",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:setup.md",
+      "target": "document:requirements.txt",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:setup.md",
+      "target": "service:docker-compose.yml",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "service:docker-compose.yml",
+      "type": "documents",
+      "weight": 0.5
+    }
+  ]
+}

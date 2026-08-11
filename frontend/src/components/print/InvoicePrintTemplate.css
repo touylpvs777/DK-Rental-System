@@ -1,0 +1,31 @@
+/* Forces background colors (table headers, brand strip, totals band) to
+   actually print instead of being stripped out by the browser's default
+   "save ink" behavior. Applied narrowly via .invoice-print-force-color
+   rather than globally so screen rendering is unaffected. */
+.invoice-print-force-color {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+@media print {
+  .invoice-print-root {
+    width: 210mm;
+    min-height: 297mm;
+  }
+
+  .invoice-print-root tr,
+  .invoice-print-root table {
+    break-inside: avoid;
+  }
+
+  /* Repeats at the bottom of every printed page, mirroring how
+     PrintHeader.tsx pins the company header to the top-right. */
+  .invoice-print-tagline {
+    position: fixed;
+    left: 12mm;
+    right: 12mm;
+    bottom: 8mm;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,3013 @@
+{
+  "common": {
+    "brandName": "DK Service",
+    "unassigned": "未分配",
+    "brandTagline": "企业管理平台",
+    "language": "语言",
+    "noDataYet": "暂无数据",
+    "dataWillAppear": "创建记录后数据将显示在此处",
+    "save": "保存",
+    "saving": "保存中…",
+    "cancel": "取消",
+    "delete": "删除",
+    "deleting": "删除中…",
+    "edit": "编辑",
+    "create": "创建",
+    "add": "添加",
+    "remove": "移除",
+    "search": "搜索",
+    "filter": "筛选",
+    "filters": "筛选条件",
+    "actions": "操作",
+    "status": "状态",
+    "loading": "加载中…",
+    "close": "关闭",
+    "confirm": "确认",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "submit": "提交",
+    "view": "查看",
+    "viewDetails": "查看详情",
+    "download": "下载",
+    "upload": "上传",
+    "yes": "是",
+    "no": "否",
+    "required": "必填",
+    "optional": "可选",
+    "name": "姓名",
+    "email": "邮箱",
+    "phone": "电话",
+    "address": "地址",
+    "date": "日期",
+    "description": "描述",
+    "notes": "备注",
+    "total": "总计",
+    "subtotal": "小计",
+    "quantity": "数量",
+    "price": "单价",
+    "amount": "金额",
+    "type": "类型",
+    "category": "分类",
+    "all": "全部",
+    "none": "无",
+    "unknown": "未知",
+    "active": "启用",
+    "inactive": "停用",
+    "pending": "待处理",
+    "approved": "已批准",
+    "rejected": "已拒绝",
+    "completed": "已完成",
+    "cancelled": "已取消",
+    "noResultsFound": "未找到结果",
+    "tryAdjustingFilters": "请尝试调整筛选条件或搜索词",
+    "somethingWentWrong": "出现错误",
+    "retry": "重试",
+    "clearFilters": "清除筛选",
+    "export": "导出",
+    "print": "打印",
+    "closeDialog": "关闭对话框",
+    "closePanel": "关闭面板",
+    "dismissNotification": "关闭通知",
+    "gridView": "网格视图",
+    "listView": "列表视图",
+    "page": "页",
+    "of": "共",
+    "rowsPerPage": "每页行数",
+    "selectAll": "全选",
+    "createdAt": "创建时间",
+    "updatedAt": "更新时间",
+    "mainNavigation": "主导航",
+    "moreLanguages": "更多语言",
+    "loadingApplication": "正在加载应用程序",
+    "skipToContent": "跳至内容",
+    "theme": "主题",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "themeSystem": "跟随系统",
+    "scrollLeft": "向左滚动",
+    "scrollRight": "向右滚动",
+    "itemCode": "货号",
+    "unit": "单位",
+    "exportPdf": "导出为PDF",
+    "clear": "清除"
+  },
+  "leads": {
+    "status": {
+      "new": "新建",
+      "contacted": "已联系",
+      "qualified": "已确认",
+      "proposal": "商务方案",
+      "won": "已成交",
+      "lost": "已流失"
+    },
+    "form": {
+      "editTitle": "编辑销售机会",
+      "newTitle": "新建销售机会",
+      "saveChanges": "保存更改",
+      "createLead": "创建销售机会",
+      "titleLabel": "标题",
+      "titlePlaceholder": "例如：企业设备租赁项目",
+      "wonLeadsCannotChange": "已成交的销售机会无法更改为其他状态。",
+      "sourceLabel": "来源",
+      "sourceNone": "— 无 —",
+      "valueLabel": "价值（$）",
+      "descriptionPlaceholder": "关于此销售机会的简要说明…"
+    },
+    "source": {
+      "website": "网站",
+      "referral": "转介绍",
+      "coldCall": "陌生电话",
+      "email": "电子邮件",
+      "socialMedia": "社交媒体",
+      "other": "其他"
+    },
+    "list": {
+      "title": "销售机会",
+      "totalCount": "共 {{count}} 条销售机会",
+      "newLead": "新建销售机会",
+      "searchPlaceholder": "搜索销售机会…",
+      "allSources": "所有来源",
+      "resultsCount": "{{count}} 条结果",
+      "colLead": "销售机会",
+      "colSource": "来源",
+      "colValue": "价值",
+      "noLeadsFound": "未找到销售机会",
+      "createFirstLead": "创建您的第一条销售机会以开始使用。",
+      "showingRange": "显示第 {{start}}–{{end}} 条，共 {{total}} 条",
+      "deleteTitle": "删除销售机会",
+      "deleteMessage": "确定要删除“{{title}}”吗？此操作无法撤销。",
+      "toast": {
+        "loadError": "加载销售机会失败。",
+        "createSuccess": "销售机会已创建。",
+        "createError": "创建销售机会失败。",
+        "updateSuccess": "销售机会已更新。",
+        "updateError": "更新销售机会失败。",
+        "deleteSuccess": "销售机会已删除。",
+        "deleteError": "删除销售机会失败。"
+      }
+    }
+  },
+  "nav": {
+    "groups": {
+      "dashboard": "经营仪表板",
+      "crm": "客户关系管理",
+      "sales": "销售",
+      "purchasing": "采购",
+      "equipment": "设备资产",
+      "rental": "租赁运营",
+      "maintenance": "服务与维护",
+      "inventory": "库存控制",
+      "finance": "财务与会计",
+      "executive": "经营报表",
+      "projects": "项目组合"
+    },
+    "items": {
+      "overview": "运营总览",
+      "customers": "客户",
+      "leads": "销售线索",
+      "quotations": "商务报价",
+      "registry": "资产台账",
+      "movements": "库存调拨",
+      "contracts": "服务合同",
+      "dashboard": "经营仪表板",
+      "maintenance": "服务与维护",
+      "inventory": "库存管理",
+      "billing": "开票与应收",
+      "products": "产品目录",
+      "invoices": "发票",
+      "payments": "付款",
+      "deposits": "押金",
+      "statements": "对账单",
+      "activity": "操作记录",
+      "reports": "报表",
+      "analytics": "业务分析",
+      "iotTelemetry": "IoT 遥测",
+      "settings": "设置",
+      "warehouseProjects": "仓储项目",
+      "purchaseOrders": "采购订单",
+      "salesOrders": "销售订单",
+      "taxInvoices": "税务发票",
+      "creditNotes": "贷项通知单",
+      "paymentVouchers": "付款凭证",
+      "deliveryNotes": "送货单",
+      "goodsReceive": "收货单",
+      "goodsIssue": "发货单"
+    },
+    "expandSidebar": "展开导航面板",
+    "collapseSidebar": "收起导航面板"
+  },
+  "movement": {
+    "status": {
+      "draft": "草稿",
+      "preparing": "准备中",
+      "in_transit": "运输中",
+      "delivered": "已送达",
+      "completed": "已完成",
+      "cancelled": "已取消"
+    },
+    "type": {
+      "warehouse_transfer": "仓库调拨",
+      "customer_deployment": "客户部署",
+      "customer_return": "客户退回",
+      "internal_relocation": "内部调动"
+    },
+    "priority": {
+      "low": "低",
+      "normal": "普通",
+      "high": "高",
+      "urgent": "紧急"
+    },
+    "card": {
+      "customer": "客户：{{name}}"
+    },
+    "timeline": {
+      "title": "调拨时间线",
+      "by": "由 {{name}}"
+    },
+    "list": {
+      "title": "调拨管理",
+      "totalCount": "共 {{count}} 条调拨",
+      "refresh": "刷新",
+      "newMovement": "新建调拨",
+      "loadFailed": "加载调拨记录失败。",
+      "searchPlaceholder": "搜索编号、地点、代码...",
+      "allStatuses": "所有状态",
+      "allTypes": "所有类型",
+      "resultsCount": "{{count}} 条结果",
+      "colMovement": "调拨",
+      "colEquipment": "设备",
+      "colFromTo": "从 → 到",
+      "colScheduled": "计划时间",
+      "colPriority": "优先级",
+      "noMovementsFound": "未找到调拨记录",
+      "pageOf": "第 {{page}} / {{pages}} 页（共 {{total}} 条）"
+    },
+    "form": {
+      "title": "新建调拨",
+      "backToMovements": "返回调拨列表",
+      "movementType": "调拨类型",
+      "priority": "优先级",
+      "forkliftId": "叉车编号",
+      "forkliftIdPlaceholder": "输入叉车编号",
+      "customerId": "客户编号",
+      "fromLocation": "起始地点",
+      "fromLocationPlaceholder": "DK 仓库 A",
+      "toLocation": "目的地点",
+      "toLocationPlaceholder": "客户现场 X",
+      "fromAddress": "起始地址",
+      "toAddress": "目的地址",
+      "addressPlaceholder": "完整地址（可选）",
+      "scheduledDate": "计划日期",
+      "trackingCode": "跟踪码 / 二维码",
+      "trackingCodePlaceholder": "二维码或条形码参考",
+      "notesPlaceholder": "可见备注...",
+      "internalNotes": "内部备注",
+      "internalNotesPlaceholder": "仅供内部使用...",
+      "creating": "创建中...",
+      "createMovement": "创建调拨",
+      "created": "调拨 {{number}} 已创建。",
+      "createFailed": "创建调拨失败。",
+      "errors": {
+        "forkliftRequired": "请输入叉车编号。",
+        "fromLocationRequired": "请输入起始地点。",
+        "toLocationRequired": "请输入目的地点。",
+        "scheduledDateRequired": "请选择计划日期。"
+      }
+    },
+    "detail": {
+      "notFound": "未找到该调拨记录。",
+      "actionFailed": "操作失败：{{action}}",
+      "actions": {
+        "startPreparing": "开始准备",
+        "recordDeparture": "记录出发",
+        "recordArrival": "记录到达",
+        "markComplete": "标记完成"
+      },
+      "toasts": {
+        "preparationStarted": "已开始准备",
+        "movementCompleted": "调拨已完成",
+        "cancelled": "已取消",
+        "departed": "已出发",
+        "arrived": "已到达"
+      },
+      "cancelledByUser": "已由用户取消",
+      "from": "起始地",
+      "to": "目的地",
+      "scheduled": "计划时间",
+      "trackingCode": "跟踪码",
+      "equipment": "设备",
+      "customer": "客户",
+      "contract": "合同",
+      "driver": "司机",
+      "departed": "已出发",
+      "arrived": "已到达",
+      "departureHours": "出发时小时数",
+      "arrivalHours": "到达时小时数",
+      "internalNote": "内部备注",
+      "cancellationReason": "取消原因",
+      "departureHourMeter": "出发时小时计",
+      "arrivalHourMeter": "到达时小时计"
+    }
+  },
+  "header": {
+    "appearance": "外观",
+    "settings": "设置",
+    "logout": "退出登录",
+    "roleAdmin": "管理员",
+    "roleUser": "用户",
+    "myProfile": "我的资料",
+    "changePassword": "修改密码",
+    "searchPlaceholder": "搜索页面、操作...",
+    "searchTrigger": "搜索...",
+    "searchLabel": "搜索（Ctrl+K）",
+    "searchCommandsLabel": "搜索命令",
+    "clearSearch": "清除搜索",
+    "noResults": "未找到与“{{query}}”相关的结果",
+    "navigate": "导航",
+    "select": "选择",
+    "close": "关闭",
+    "toggleSidebar": "切换侧边栏",
+    "groupNavigation": "导航",
+    "groupQuickActions": "快捷操作",
+    "quickActionNewCustomer": "新建客户",
+    "quickActionNewQuotation": "新建报价单",
+    "quickActionNewContract": "新建合同",
+    "quickActionRegisterEquipment": "登记设备",
+    "justNow": "刚刚",
+    "minutesAgo": "{{count}} 分钟前",
+    "hoursAgo": "{{count}} 小时前",
+    "daysAgo": "{{count}} 天前",
+    "notifications": "通知",
+    "notificationsUnread": "通知，{{count}} 条未读",
+    "noRecentActivity": "暂无最近活动",
+    "systemUser": "系统",
+    "viewAllActivity": "查看全部活动 →",
+    "searchResults": "搜索结果",
+    "breadcrumb": "面包屑导航",
+    "userActions": "用户操作",
+    "markAllRead": "全部标记为已读",
+    "adminBroadcast": "管理员"
+  },
+  "dashboard": {
+    "exec": {
+      "eyebrow": "管理层概览",
+      "title": "租赁指挥中心",
+      "rentalMvpEyebrow": "DK Rental · 管理层概览",
+      "rentalMvpTitle": "车队与租赁仪表盘",
+      "kpi": {
+        "totalFleet": "车队总数",
+        "totalFleetSub": "已登记的叉车数量",
+        "activeRented": "出租中",
+        "activeRentedSub": "当前正在出租的车辆",
+        "utilizationRate": "使用率",
+        "utilizationRateSub": "出租车辆占车队总数的比例",
+        "pendingMaintenance": "待维护",
+        "pendingMaintenanceSub": "待处理的保养/检查工单",
+        "pendingMaintenanceCritical": "{{count}} 项进行中",
+        "totalStockValue": "库存总值",
+        "totalStockValueSub": "占用于备件的资金",
+        "lowStockAlerts": "低库存警报",
+        "lowStockAlertsItems": "{{count}} 项",
+        "lowStockAlertsSub": "低于再订购点",
+        "lowStockAlertsCritical": "{{count}} 项紧急"
+      },
+      "chart": {
+        "utilizationTab": "车队使用率趋势",
+        "revenueTab": "收入 与 维护成本对比",
+        "last6Months": "最近6个月",
+        "utilizationSeries": "使用率 %",
+        "revenueSeries": "收入",
+        "maintenanceSeries": "维护成本",
+        "months": {
+          "jan": "1月",
+          "feb": "2月",
+          "mar": "3月",
+          "apr": "4月",
+          "may": "5月",
+          "jun": "6月"
+        }
+      },
+      "contracts": {
+        "title": "进行中的租赁合同",
+        "columnContractId": "合同编号",
+        "columnCustomerName": "客户名称",
+        "columnForkliftModel": "叉车型号",
+        "columnEndDate": "结束日期",
+        "columnStatus": "状态"
+      },
+      "lowStock": {
+        "title": "库存紧张备件",
+        "minSuffix": "最低"
+      },
+      "status": {
+        "booked": "已预订",
+        "onRent": "出租中",
+        "expiringSoon": "即将到期",
+        "overdue": "已逾期",
+        "returned": "已归还",
+        "cancelled": "已取消"
+      },
+      "customizer": {
+        "fontSize": "字体大小",
+        "language": "语言",
+        "small": "小",
+        "medium": "中",
+        "large": "大"
+      },
+      "brandsWeService": "我们服务的品牌"
+    },
+    "title": "仪表盘",
+    "updated": "更新于 {{date}}",
+    "refresh": "刷新",
+    "retry": "重试",
+    "keyMetrics": "关键指标",
+    "quickActions": "快捷操作",
+    "revenueFleet": "收入与车队",
+    "activityFleet": "活动与车队",
+    "fleetByFuelType": "按燃料类型划分的车队",
+    "upcomingTasks": "待办任务",
+    "customerOverview": "客户概览",
+    "leadPipeline": "销售线索漏斗",
+    "resultsConversion": "结果与转化",
+    "recentActivity": "最近活动",
+    "viewAll": "查看全部",
+    "noRecentActivity": "暂无最近活动",
+    "loadError": "加载仪表盘数据失败。",
+    "kpi": {
+      "totalRevenue": "总收入",
+      "activeRentals": "使用中的租赁",
+      "overdueCount": "{{count}} 项逾期",
+      "fleetUtilization": "车队使用率",
+      "rentedOfFleet": "共 {{total}} 台中已租出 {{rented}} 台",
+      "maintenanceDue": "待保养",
+      "criticalCount": "{{count}} 项紧急",
+      "lowStock": "库存不足",
+      "outstandingInvoices": "未结发票",
+      "amountOverdue": "逾期 {{amount}}",
+      "totalCustomers": "客户总数",
+      "active": "活跃",
+      "percentOfTotal": "占总数的 {{pct}}",
+      "prospects": "潜在客户",
+      "totalLeads": "线索总数",
+      "new": "新建",
+      "contacted": "已联系",
+      "qualified": "已确认",
+      "proposal": "已提案",
+      "won": "已成交",
+      "lost": "已流失",
+      "conversion": "转化率",
+      "winRate": "成交率",
+      "lostRate": "流失率",
+      "wonOverTotal": "成交 / 总数",
+      "wonOverWonLost": "成交 /（成交+流失）",
+      "lostOverWonLost": "流失 /（成交+流失）"
+    },
+    "quickAction": {
+      "createRental": "创建租赁",
+      "createRentalDesc": "新建租赁合同",
+      "addEquipment": "添加设备",
+      "addEquipmentDesc": "登记叉车",
+      "createInvoice": "创建发票",
+      "createInvoiceDesc": "生成账单",
+      "purchaseOrder": "采购订单",
+      "purchaseOrderDesc": "订购备件",
+      "maintenance": "维护保养",
+      "maintenanceDesc": "安排保养"
+    },
+    "chart": {
+      "revenueTrend": "收入趋势",
+      "revenueTrendSub": "每月开票收入",
+      "noRevenueData": "暂无收入数据",
+      "rentalTrend": "租赁趋势",
+      "rentalTrendSub": "每月生效合同数",
+      "noRentalData": "暂无租赁数据",
+      "fleetUtilization": "车队使用率",
+      "fleetUtilizationSub": "按状态划分的设备",
+      "noFleetData": "暂无车队数据",
+      "total": "总计",
+      "maintenanceCost": "维护费用",
+      "maintenanceCostSub": "每月保养支出",
+      "noMaintenanceCostData": "暂无维护费用数据",
+      "fleetByFuelType": "按燃料类型划分的车队",
+      "units": "台数"
+    },
+    "task": {
+      "loading": "加载中...",
+      "contractsExpiring": "即将到期的合同",
+      "countInDays": "{{count}} 份将在 {{days}} 天内到期",
+      "noContractsExpiring": "暂无即将到期的合同",
+      "viewAllContracts": "查看全部合同 →",
+      "quotationsExpiring": "即将到期的报价单",
+      "noQuotationsExpiring": "暂无即将到期的报价单",
+      "viewAllQuotations": "查看全部报价单 →",
+      "pmServiceDue": "保养 / 服务到期",
+      "approaching": "{{count}} 项临近到期",
+      "allWithinServiceRange": "所有叉车均在保养周期内",
+      "hoursMeter": "{{hours}} 小时",
+      "viewAllEquipment": "查看全部设备 →"
+    },
+    "fleetStatus": {
+      "inStock": "在库",
+      "rented": "已租出",
+      "inService": "维修中",
+      "reserved": "已预留",
+      "sold": "已售",
+      "decommissioned": "已报废"
+    },
+    "fuelType": {
+      "diesel": "柴油",
+      "electric": "电动",
+      "lpg": "液化气",
+      "dualFuel": "双燃料",
+      "unknown": "未知"
+    },
+    "catalog": {
+      "title": "产品目录",
+      "viewCatalog": "查看产品目录 →",
+      "loadError": "加载目录统计数据失败。",
+      "totalProducts": "产品总数",
+      "brands": "品牌",
+      "categories": "类别"
+    },
+    "store": {
+      "get": "获取",
+      "free": "免费",
+      "comingSoon": "即将推出",
+      "hero": {
+        "assets": {
+          "eyebrow": "重点模块",
+          "title": "为一线作业而生的资产登记系统",
+          "desc": "在一个实时登记系统中，跟踪每台叉车、拖车和机械的完整生命周期——所有权、状态和小时计数据一目了然。"
+        },
+        "invoicing": {
+          "eyebrow": "现已上线",
+          "title": "自动计算增值税的智能开票",
+          "desc": "在一个流程中生成采购订单、报价单和发票——小计、增值税和总额均自动计算。"
+        },
+        "maintenance": {
+          "eyebrow": "编辑推荐",
+          "title": "领先一步的保养排期",
+          "desc": "利用实时小时计和历史数据，在设备发生故障前找出需要保养的机械。"
+        }
+      },
+      "promo": {
+        "sale": {
+          "kicker": "限时优惠",
+          "title": "超值促销——备件低至5折"
+        },
+        "new": {
+          "kicker": "全新上线",
+          "title": "本周新增模块"
+        },
+        "staffPicks": {
+          "kicker": "员工推荐",
+          "title": "现场服务热门之选"
+        }
+      },
+      "rows": {
+        "mostUsed": "最常用模块",
+        "recommended": "推荐模块",
+        "fieldService": "现场服务热门"
+      },
+      "modules": {
+        "equipmentRegistry": {
+          "title": "DK 设备登记",
+          "sub": "设备与车辆登记"
+        },
+        "customers": {
+          "title": "DK 客户管理",
+          "sub": "管理客户记录"
+        },
+        "quotations": {
+          "title": "DK 报价单",
+          "sub": "报价单"
+        },
+        "rentalContracts": {
+          "title": "DK 租赁合同",
+          "sub": "租赁合同"
+        },
+        "movements": {
+          "title": "DK 调拨管理",
+          "sub": "设备调拨"
+        },
+        "projects": {
+          "title": "DK 项目",
+          "sub": "项目与仓储"
+        },
+        "smartInvoicing": {
+          "title": "DK 智能开票",
+          "sub": "自动开票"
+        },
+        "payments": {
+          "title": "DK 付款管理",
+          "sub": "付款"
+        },
+        "deposits": {
+          "title": "DK 押金管理",
+          "sub": "押金"
+        },
+        "statements": {
+          "title": "DK 对账单",
+          "sub": "对账单"
+        },
+        "inventory": {
+          "title": "DK 库存管理",
+          "sub": "库存"
+        },
+        "purchaseOrders": {
+          "title": "DK 采购订单",
+          "sub": "订购备件"
+        },
+        "workOrders": {
+          "title": "DK 工单管理",
+          "sub": "安排保养"
+        },
+        "assetRegistry": {
+          "title": "DK 资产登记",
+          "sub": "资产登记"
+        },
+        "maintenanceSchedule": {
+          "title": "DK 保养计划",
+          "sub": "预防性维护"
+        }
+      },
+      "thirdParty": {
+        "routeWise": {
+          "title": "RouteWise",
+          "sub": "Meridian Labs"
+        },
+        "fleetPulse": {
+          "title": "FleetPulse",
+          "sub": "Orbit Communications"
+        },
+        "partsBin": {
+          "title": "PartsBin",
+          "sub": "Ironclad Systems"
+        }
+      }
+    },
+    "errors": {
+      "leadTrend": "加载销售机会趋势失败。",
+      "customerTrend": "加载客户趋势失败。",
+      "leadMetrics": "加载销售机会指标失败。"
+    }
+  },
+  "equipment": {
+    "status": {
+      "inStock": "在库",
+      "sold": "已售",
+      "rented": "已租出",
+      "inService": "维修中",
+      "reserved": "已预留",
+      "decommissioned": "已报废"
+    },
+    "ownership": {
+      "forSale": "待售",
+      "rental": "租赁车队",
+      "customerOwned": "客户自有",
+      "retired": "已退役"
+    },
+    "operationalStatus": {
+      "available": "可用",
+      "onRent": "租赁中",
+      "inService": "维修中",
+      "sold": "已售"
+    },
+    "condition": {
+      "new": "全新",
+      "used": "二手",
+      "refurbished": "翻新"
+    },
+    "fuel": {
+      "electric": "电动",
+      "diesel": "柴油",
+      "lpg": "液化气",
+      "dualFuel": "双燃料",
+      "notSpecified": "— 未指定 —"
+    },
+    "card": {
+      "hoursValue": "{{count}} 小时",
+      "editForklift": "编辑叉车",
+      "serial": "序列号",
+      "brand": "品牌",
+      "fuel": "燃料",
+      "customer": "客户",
+      "iotLive": "在线",
+      "iotOffline": "离线",
+      "iotAutoSynced": "通过 IoT 自动同步"
+    },
+    "filters": {
+      "statusShort": {
+        "inService": "维修",
+        "decommissioned": "报废"
+      },
+      "allFuelTypes": "所有燃料类型",
+      "allConditions": "所有状态",
+      "allOwnership": "所有所有权",
+      "allBrands": "所有品牌",
+      "clear": "清除",
+      "countLabel": "{{count}} 台设备",
+      "noneFound": "未找到设备",
+      "noneFoundHint": "请尝试调整筛选条件或添加新设备",
+      "searchPlaceholder": "搜索设备..."
+    },
+    "quickActions": {
+      "register": {
+        "label": "登记设备",
+        "desc": "添加新叉车"
+      },
+      "movement": {
+        "label": "创建调拨",
+        "desc": "转移设备"
+      },
+      "maintenance": {
+        "label": "安排保养",
+        "desc": "预防性维护"
+      },
+      "rental": {
+        "label": "新建租赁",
+        "desc": "分配到合同"
+      }
+    },
+    "gallery": {
+      "noPhotos": "尚未上传照片",
+      "noPhotosHint": "照片有助于识别和记录此设备",
+      "previousPhoto": "上一张",
+      "nextPhoto": "下一张",
+      "viewFullscreen": "全屏查看"
+    },
+    "timeline": {
+      "noHistory": "尚无状态变更记录。",
+      "system": "系统"
+    },
+    "form": {
+      "serialRequired": "序列号为必填项。",
+      "nameRequired": "名称为必填项。",
+      "saveFailed": "保存失败，请重试。",
+      "editTitle": "编辑叉车",
+      "registerTitle": "登记叉车",
+      "serialNumber": "序列号",
+      "serialNumberPlaceholder": "例如：JH-2024-001",
+      "nameEnglish": "名称（英文）",
+      "nameEnglishPlaceholder": "例如：Jungheinrich EFG 216k",
+      "nameLao": "名称（老挝语）",
+      "internalCode": "内部编码",
+      "internalCodePlaceholder": "DK 资产标签",
+      "brand": "品牌",
+      "noBrand": "— 无品牌 —",
+      "modelNumber": "型号",
+      "modelNumberPlaceholder": "例如：EFG 216k",
+      "condition": "状态",
+      "operationalStatus": "运行状态",
+      "ownershipState": "所有权状态",
+      "fuelType": "燃料类型",
+      "capacityKg": "载重（kg）",
+      "yearManufactured": "生产年份",
+      "currentHourMeter": "当前小时数",
+      "initialHourMeter": "初始小时数",
+      "purchaseDate": "购买日期",
+      "warrantyExpiry": "保修到期日",
+      "notesPlaceholder": "备注（可选）...",
+      "saveChanges": "保存更改",
+      "capacityKgPlaceholder": "例如：1600",
+      "yearManufacturedPlaceholder": "例如：2024"
+    },
+    "registry": {
+      "title": "设备登记",
+      "subtitle": "管理并监控您的叉车车队",
+      "refresh": "刷新",
+      "registerForklift": "登记叉车",
+      "searchPlaceholder": "搜索序列号、名称、型号...",
+      "noForkliftsFound": "未找到叉车",
+      "pageInfo": "第 {{page}} / {{pages}} 页（共 {{total}} 条）",
+      "deleteTitle": "删除叉车",
+      "deleteMessage": "删除 \"{{name}}\"（序列号：{{serial}}）？此操作无法撤销。",
+      "kpi": {
+        "utilization": "利用率",
+        "avgHours": "平均小时数",
+        "pmDue": "待保养",
+        "critical": "{{count}} 项紧急",
+        "avgAge": "平均车龄",
+        "years": "{{count}} 年"
+      },
+      "table": {
+        "forklift": "叉车",
+        "model": "型号",
+        "ownership": "所有权",
+        "hours": "计时器小时数"
+      },
+      "toast": {
+        "loadError": "加载叉车失败。",
+        "createSuccess": "叉车登记成功。",
+        "createError": "登记叉车失败。",
+        "updateSuccess": "叉车更新成功。",
+        "updateError": "更新叉车失败。",
+        "deleteSuccess": "叉车已删除。",
+        "deleteError": "删除叉车失败。"
+      }
+    },
+    "detail": {
+      "notFoundOrFailed": "未找到叉车或加载失败。",
+      "backToEquipment": "返回设备列表",
+      "notFound": "未找到叉车。",
+      "tabs": {
+        "overview": "概览",
+        "photos": "照片",
+        "timeline": "时间线",
+        "documents": "文档",
+        "contracts": "合同"
+      },
+      "serialAbbrev": "序列号",
+      "newQuote": "新建报价",
+      "newContract": "新建合同",
+      "specifications": "技术规格",
+      "capacity": "载重",
+      "year": "年份",
+      "model": "型号",
+      "mastType": "门架类型",
+      "maxLiftHeight": "最大起升高度",
+      "currentLocation": "当前位置",
+      "zone": "区域",
+      "since": "自",
+      "noLocationRecorded": "暂无位置记录",
+      "hourMeter": "小时计",
+      "hoursUnit": "小时",
+      "pctOfThreshold": "{{pct}}%（共 {{threshold}} 小时）",
+      "serviceInterval": "保养周期",
+      "initial": "初始",
+      "hoursUsed": "已用小时数",
+      "dailyAvg": "日均",
+      "estService": "预计保养",
+      "estServiceDays": "约 {{count}} 天",
+      "assetSummary": "资产摘要",
+      "assetAge": "资产使用年限",
+      "years": "{{count}} 年",
+      "warranty": "保修",
+      "expired": "已过期",
+      "valid": "有效",
+      "statusChanges": "状态变更",
+      "documents": "文档",
+      "filesCount": "{{count}} 个文件",
+      "photos": "照片",
+      "imagesCount": "{{count}} 张照片",
+      "assignedCustomer": "指定客户",
+      "documentTitle": "标题",
+      "expiry": "到期日",
+      "uploaded": "上传时间",
+      "noDocumentsUploaded": "尚未上传文档",
+      "viewContractsHint": "查看与此设备关联的租赁合同",
+      "viewRentalContracts": "查看租赁合同"
+    }
+  },
+  "inventory": {
+    "common": {
+      "refresh": "刷新",
+      "resultCount_one": "{{count}} 个结果",
+      "resultCount_other": "{{count}} 个结果",
+      "paginationInfo": "第 {{page}} 页，共 {{pages}} 页"
+    },
+    "dashboard": {
+      "title": "备件库存",
+      "subtitle": "库存管理与采购概览",
+      "purchaseOrdersButton": "采购单",
+      "sparePartsButton": "备件库存",
+      "quickAccess": "快捷访问",
+      "loadError": "加载库存数据失败。"
+    },
+    "purchaseOrder": {
+      "title": "采购订单",
+      "subtitle_one": "{{count}} 个订单",
+      "subtitle_other": "{{count}} 个订单",
+      "loadError": "加载采购订单失败。",
+      "status": {
+        "all": "所有状态",
+        "draft": "草稿",
+        "ordered": "已下单",
+        "partial": "部分到货",
+        "received": "已收货",
+        "cancelled": "已取消"
+      },
+      "newPO": "新建采购订单",
+      "form": {
+        "title": "新建采购订单",
+        "backToList": "返回采购订单",
+        "vendor": "供应商",
+        "vendorRequired": "请填写供应商",
+        "warehouse": "仓库",
+        "warehouseRequired": "请选择仓库",
+        "vendorAddress": "供应商地址",
+        "vendorContact": "供应商联系方式",
+        "orderDate": "下单日期",
+        "expectedDate": "预计到货日期",
+        "taxRate": "税率 (%)",
+        "lineItems": "订单明细",
+        "itemCode": "货号",
+        "description": "描述",
+        "descriptionPlaceholder": "商品描述",
+        "qty": "数量",
+        "unit": "单位",
+        "unitCost": "单价",
+        "linkCatalogPart": "关联库存备件",
+        "linkCatalogPartPlaceholder": "搜索备件…",
+        "noPartsFound": "未找到备件",
+        "addRow": "添加行",
+        "itemRequired": "至少需要一项明细",
+        "created": "采购订单 {{number}} 已创建",
+        "createFailed": "创建采购订单失败",
+        "creating": "创建中...",
+        "createPO": "创建采购订单"
+      },
+      "detail": {
+        "loadError": "加载采购订单失败",
+        "notFound": "未找到采购订单",
+        "actionFailed": "{{action}}失败",
+        "submitted": "采购订单已提交",
+        "submit": "提交",
+        "receiveItems": "收货",
+        "receiveModalTitle": "收货",
+        "received": "收货完成",
+        "receivedDate": "收货日期",
+        "qtyOrdered": "订购数量",
+        "qtyReceived": "已收数量"
+      }
+    },
+    "spareParts": {
+      "unitPrice": "单价",
+      "unit": "单位",
+      "categories": {
+        "all": "所有类别",
+        "filter": "滤芯",
+        "belt": "皮带",
+        "brake": "刹车",
+        "hydraulic": "液压",
+        "electrical": "电气",
+        "engine": "发动机",
+        "tire": "轮胎",
+        "chain": "链条",
+        "battery": "电池",
+        "lubricant": "润滑油",
+        "general": "通用"
+      },
+      "list": {
+        "title": "备件库存",
+        "subtitle_one": "{{count}} 个备件",
+        "subtitle_other": "{{count}} 个备件",
+        "addPart": "添加备件",
+        "loadError": "加载备件失败。",
+        "searchPlaceholder": "搜索备件编号、名称...",
+        "noPartsFound": "未找到备件",
+        "columns": {
+          "partNumber": "备件编号",
+          "minStock": "最低库存"
+        }
+      },
+      "detail": {
+        "backToList": "返回备件列表",
+        "notFound": "未找到。",
+        "loadError": "未找到该备件。",
+        "totalStock": "总库存",
+        "minLevel": "最低库存量",
+        "reorderQty": "补货数量",
+        "brand": "品牌",
+        "leadTime": "交货期",
+        "leadTimeDays_one": "{{count}} 天",
+        "leadTimeDays_other": "{{count}} 天",
+        "created": "创建时间",
+        "active": "启用",
+        "stockByWarehouse": "各仓库库存",
+        "recentTransactions": "最近交易记录",
+        "columns": {
+          "warehouse": "仓库",
+          "onHand": "现有库存",
+          "reserved": "已预留",
+          "available": "可用",
+          "number": "编号",
+          "qty": "数量",
+          "cost": "成本"
+        }
+      }
+    },
+    "warehouse": {
+      "title": "库存地点",
+      "list": {
+        "subtitle_one": "{{count}} 个库存地点",
+        "subtitle_other": "{{count}} 个库存地点",
+        "addWarehouse": "添加库存地点",
+        "loadError": "加载库存地点失败。"
+      },
+      "form": {
+        "codeLabel": "编码",
+        "codePlaceholder": "WH-A",
+        "namePlaceholder": "一号仓库",
+        "addressPlaceholder": "完整地址（可选）",
+        "codeNameRequired": "编码和名称为必填项。",
+        "createSuccess": "仓库创建成功。",
+        "createError": "创建仓库失败。",
+        "creating": "创建中..."
+      },
+      "detail": {
+        "backToList": "返回库存地点列表",
+        "loadError": "加载库存地点失败。",
+        "notFound": "未找到该库存地点。",
+        "address": "地址",
+        "contactName": "联系人",
+        "contactPhone": "联系电话",
+        "distinctParts": "备件种类数",
+        "totalStock": "总库存数量",
+        "stockTitle": "该库存地点库存",
+        "noStock": "该库存地点暂无库存记录。",
+        "columns": {
+          "part": "备件"
+        }
+      }
+    },
+    "stockBadge": {
+      "inStock": "有库存",
+      "lowStock": "库存不足",
+      "outOfStock": "缺货"
+    },
+    "reorderAlert": {
+      "title": "补货提醒 ({{count}})",
+      "detail": "{{warehouseCode}}：可用 {{available}}（最低：{{minLevel}}）— 补货 {{reorderQuantity}}"
+    },
+    "kpi": {
+      "spareParts": "备件",
+      "warehouses": "仓库",
+      "stockValue": "库存价值",
+      "lowStock": "库存不足",
+      "belowMinimum": "{{count}} 项低于最低库存",
+      "pendingPOs": "待处理采购单"
+    },
+    "quickNav": {
+      "parts": {
+        "label": "备件库存",
+        "desc": "浏览库存"
+      },
+      "warehouses": {
+        "label": "库存地点",
+        "desc": "管理库存地点"
+      },
+      "purchaseOrders": {
+        "label": "采购订单",
+        "desc": "采购流程"
+      },
+      "catalog": {
+        "label": "产品目录",
+        "desc": "完整目录"
+      }
+    },
+    "lowStock": {
+      "title": "库存不足提醒",
+      "allHealthy": "所有库存水平正常",
+      "viewAll": "查看全部",
+      "min": "最低",
+      "reorder": "补货"
+    },
+    "purchaseOrderTable": {
+      "poNumber": "采购单号",
+      "vendor": "供应商",
+      "warehouse": "仓库",
+      "orderDate": "下单日期",
+      "empty": "未找到采购订单",
+      "paginationInfo": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）"
+    },
+    "stockDistributionChart": {
+      "title": "按类别分类库存",
+      "subtitle": "各类别备件数量",
+      "empty": "暂无库存数据"
+    },
+    "warehouseGrid": {
+      "noneFound": "暂无仓库",
+      "noneFoundHint": "创建您的第一个仓库以开始跟踪库存"
+    },
+    "import": {
+      "button": "导入数据",
+      "title": "导入库存数据",
+      "subtitle": "上传 CSV 或 Excel（.xlsx）文件以批量创建或更新备件。已存在的备件编号将被更新，新的将被创建。",
+      "dropzoneText": "将文件拖放到此处，或点击浏览",
+      "dropzoneHint": "支持 .csv 和 .xlsx 文件，最大 10 MB",
+      "clearFile": "清除",
+      "uploadButton": "上传并导入",
+      "uploading": "正在上传并处理数据…",
+      "uploadingHint": "较大文件可能需要几秒钟。",
+      "uploadFailed": "导入失败，请重试。",
+      "successBanner": "导入成功完成",
+      "partialBanner": "导入完成但存在部分错误",
+      "resultSummary": "已导入 {{imported}} 条，已更新 {{updated}} 条",
+      "rowErrorsTitle": "{{count}} 行无法导入",
+      "rowLabel": "第 {{row}} 行：",
+      "closeAndRefresh": "关闭并刷新"
+    }
+  },
+  "rental": {
+    "status": {
+      "reservation": "预订",
+      "draft": "草稿",
+      "pendingApproval": "待审批",
+      "approved": "已批准",
+      "revision": "修订中",
+      "delivering": "配送中",
+      "active": "使用中",
+      "overdue": "逾期",
+      "returning": "归还中",
+      "inspecting": "验收中",
+      "settling": "结算中",
+      "closed": "已关闭",
+      "cancelled": "已取消"
+    },
+    "contractType": {
+      "shortTerm": "短期",
+      "longTerm": "长期",
+      "project": "项目"
+    },
+    "list": {
+      "title": "租赁合同",
+      "totalCount": "{{count}} 份合同",
+      "refresh": "刷新",
+      "newContract": "新建合同",
+      "searchPlaceholder": "搜索编号、客户...",
+      "allStatuses": "所有状态",
+      "allTypes": "所有类型",
+      "colContract": "合同",
+      "colCustomer": "客户",
+      "colTotalValue": "总金额",
+      "colStartDate": "开始日期",
+      "colEndDate": "结束日期",
+      "noContractsFound": "未找到租赁合同",
+      "createOrAdjust": "创建新合同或调整筛选条件。",
+      "resultsCount": "{{count}} 条结果",
+      "pageOf": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）",
+      "deleteConfirmTitle": "删除租赁合同",
+      "deleteConfirmMessage": "删除“{{number}}”？此操作无法撤销。",
+      "toast": {
+        "loadError": "加载租赁合同失败。",
+        "createSuccess": "租赁合同已创建。",
+        "createError": "创建租赁合同失败。",
+        "deleteSuccess": "租赁合同已删除。",
+        "deleteError": "删除租赁合同失败。"
+      }
+    },
+    "form": {
+      "backToContracts": "返回租赁合同",
+      "newContract": "新建租赁合同",
+      "contractType": "合同类型",
+      "currencyLabel": "货币",
+      "customerId": "客户编号",
+      "customerIdPlaceholder": "输入客户编号",
+      "startDate": "开始日期",
+      "endDate": "结束日期",
+      "taxRateLabel": "税率 (%)",
+      "depositAmount": "押金金额",
+      "deliveryAddress": "送货地址",
+      "deliveryAddressPlaceholder": "完整送货地址",
+      "deliveryContactName": "送货联系人姓名",
+      "deliveryContactNamePlaceholder": "先生 / 女士",
+      "deliveryContactPhone": "送货联系电话",
+      "deliveryContactPhonePlaceholder": "+856 20 ...",
+      "notesLabel": "备注（客户可见）",
+      "notesPlaceholder": "将显示在合同上...",
+      "internalNotesLabel": "内部备注",
+      "internalNotesPlaceholder": "仅内部使用，不对客户显示...",
+      "creating": "创建中...",
+      "createContract": "创建合同",
+      "customerIdRequired": "客户编号为必填项。",
+      "startDateRequired": "开始日期为必填项。",
+      "endDateRequired": "结束日期为必填项。",
+      "createFailed": "创建租赁合同失败。",
+      "createdToast": "合同 {{number}} 已创建。"
+    },
+    "detail": {
+      "backToContracts": "返回租赁合同",
+      "notFoundError": "未找到租赁合同或加载失败。",
+      "actionFailed": "失败：{{action}}",
+      "rev": "修订版 {{number}}",
+      "submit": "提交",
+      "approve": "批准",
+      "requestRevision": "请求修订",
+      "activate": "激活",
+      "requestReturn": "申请归还",
+      "requestExtension": "申请延期",
+      "completeInspection": "完成验收",
+      "inspectionInfo": "完成验收——请使用下方的归还面板。",
+      "generateBilling": "生成账单",
+      "billingInfo": "账单生成功能——第四阶段推出。",
+      "closeContract": "关闭合同",
+      "taxWithRate": "税费 ({{rate}}%)",
+      "discount": "折扣",
+      "totalBilled": "已开票总额",
+      "totalPaid": "已付总额",
+      "outstanding": "未结余额",
+      "customer": "客户",
+      "deliveryContact": "送货联系人",
+      "deliveryPhone": "送货电话",
+      "assignedTo": "负责人",
+      "approvedBy": "批准人",
+      "actualStart": "实际开始",
+      "actualEnd": "实际结束",
+      "deposit": "押金",
+      "paymentTerms": "付款条件",
+      "daysCount": "{{count}} 天",
+      "internalNote": "内部备注",
+      "lineItems": "明细项目 ({{count}})",
+      "addItem": "添加项目",
+      "colNumber": "#",
+      "colMonthlyRate": "月租金",
+      "colDailyRate": "日租金",
+      "colLineTotal": "明细合计",
+      "serialNumber": "序列号：{{serial}}",
+      "hoursUsed": "工时：{{count}}",
+      "noLineItems": "暂无明细项目。",
+      "addItemsHint": "添加项目以构建合同。",
+      "extensions": "延期记录 ({{count}})",
+      "colOriginalEnd": "原结束日期",
+      "colNewEnd": "新结束日期",
+      "colReason": "原因",
+      "activeReturns": "进行中的归还 ({{count}})",
+      "colReturnNumber": "归还编号",
+      "colRequested": "申请日期",
+      "colScheduledPickup": "预定取件",
+      "colForklift": "叉车",
+      "statusHistory": "状态历史",
+      "colFrom": "从",
+      "colTo": "到",
+      "colBy": "操作人",
+      "reasons": {
+        "revisionNeeded": "需要修订",
+        "cancelledByUser": "用户已取消",
+        "rejected": "已拒绝"
+      },
+      "toasts": {
+        "submitted": "已提交审批",
+        "revisionRequested": "已请求修订",
+        "activated": "已激活",
+        "contractClosed": "合同已关闭",
+        "itemRemoved": "项目已移除",
+        "extensionApproved": "延期已批准",
+        "extensionRejected": "延期已拒绝"
+      },
+      "addItemModal": {
+        "title": "添加合同项目",
+        "forkliftId": "叉车编号",
+        "hourlyRate": "小时租金",
+        "monthlyRate": "月租金",
+        "dailyRate": "日租金",
+        "adding": "添加中...",
+        "forkliftIdRequired": "叉车编号为必填项。",
+        "descriptionRequired": "描述为必填项。",
+        "monthlyRateRequired": "月租金为必填项。",
+        "dailyRateRequired": "日租金为必填项。",
+        "itemAdded": "项目已添加。",
+        "addFailed": "添加项目失败。"
+      },
+      "extensionModal": {
+        "title": "申请合同延期",
+        "currentEndDate": "当前结束日期",
+        "newEndDate": "新结束日期",
+        "rateAdjustment": "费率调整 (%)",
+        "reason": "原因",
+        "reasonPlaceholder": "延期申请原因...",
+        "requesting": "申请中...",
+        "requestExtension": "申请延期",
+        "newEndDateRequired": "新结束日期为必填项。",
+        "newEndDateAfterCurrent": "新结束日期必须晚于当前结束日期。",
+        "extensionRequested": "延期申请已提交。",
+        "requestFailed": "申请延期失败。"
+      },
+      "returnModal": {
+        "title": "申请设备归还",
+        "returnType": "归还类型",
+        "scheduled": "已安排",
+        "early": "提前",
+        "requestedDate": "申请日期",
+        "equipmentToReturn": "待归还设备",
+        "allEquipment": "— 全部设备 —",
+        "scheduledPickupDate": "预定取件日期",
+        "pickupAddress": "取件地址",
+        "pickupAddressPlaceholder": "客户现场地址",
+        "earlyTermination": "提前终止（可能收取违约金）",
+        "notesPlaceholder": "补充说明...",
+        "requesting": "申请中...",
+        "requestReturn": "申请归还",
+        "requestedDateRequired": "申请日期为必填项。",
+        "returnRequested": "归还申请已提交。",
+        "requestFailed": "创建归还申请失败。"
+      }
+    }
+  },
+  "settings": {
+    "title": "全局设置",
+    "subtitle": "管理整个 ERP 系统的核心组织默认值。",
+    "loading": "正在加载设置…",
+    "save": "保存更改",
+    "saving": "保存中…",
+    "saveSuccess": "设置已成功更新。",
+    "saveError": "当前无法保存设置。",
+    "loadError": "当前无法加载设置。",
+    "tabs": {
+      "company": "公司档案",
+      "financial": "财务默认值",
+      "system": "系统变量",
+      "notifications": "通知偏好设置"
+    },
+    "company": {
+      "description": "公司档案默认值",
+      "companyName": "公司名称",
+      "address": "地址",
+      "phone": "电话",
+      "fax": "传真",
+      "website": "网站",
+      "email": "电子邮箱",
+      "logoUrl": "Logo 网址",
+      "logoInvalidType": "请选择图片文件。",
+      "logoUploadError": "当前无法上传 Logo。",
+      "logoUploading": "正在上传 Logo…",
+      "logoDropzoneText": "点击或拖放以上传 Logo",
+      "logoDropzoneHint": "PNG、JPG 或 WebP",
+      "bankDetails": {
+        "title": "银行信息",
+        "bankName": "银行名称",
+        "accountName": "账户名称",
+        "accountNumber": "账号",
+        "swift": "SWIFT/BIC代码"
+      }
+    },
+    "financial": {
+      "description": "财务默认值",
+      "vatRate": "增值税税率 (%)",
+      "defaultCurrency": "默认货币",
+      "defaultPaymentTerms": "默认付款条件"
+    },
+    "system": {
+      "description": "系统变量",
+      "equipmentTypes": "设备类型",
+      "repairStatuses": "维修状态"
+    },
+    "notifications": {
+      "description": "订阅重要系统事件的邮件提醒。每当发生受监控的事件时都会通知您，但您自己执行的操作除外。",
+      "loadError": "当前无法加载通知偏好设置。",
+      "saveError": "当前无法更新此偏好设置。",
+      "groups": {
+        "critical": "关键操作与删除",
+        "sales": "销售与租赁",
+        "billing": "账单",
+        "operations": "运营"
+      },
+      "events": {
+        "customerDeleted": "客户已删除",
+        "forkliftDeleted": "叉车已删除",
+        "productDeleted": "目录产品已删除",
+        "quotationApproved": "报价单已批准",
+        "quotationSent": "报价单已发送给客户",
+        "contractActivated": "租赁合同已激活",
+        "contractCancelled": "租赁合同已取消",
+        "invoiceIssued": "发票已开具",
+        "paymentRecorded": "付款已记录",
+        "paymentRejected": "付款已拒绝",
+        "depositRefunded": "押金已退还",
+        "forkliftStatusChanged": "叉车状态已变更",
+        "inventoryImportExecuted": "库存批量导入已执行",
+        "settingUpdated": "全局设置已更新"
+      }
+    }
+  },
+  "customers": {
+    "status": {
+      "active": "活跃",
+      "prospect": "潜在客户",
+      "inactive": "非活跃",
+      "churned": "已流失"
+    },
+    "form": {
+      "editTitle": "编辑客户",
+      "newTitle": "新建客户",
+      "saveChanges": "保存更改",
+      "createCustomer": "创建客户",
+      "firstNameLabel": "名字",
+      "firstNamePlaceholder": "John",
+      "lastNameLabel": "姓氏",
+      "lastNamePlaceholder": "Doe",
+      "emailPlaceholder": "john@example.com",
+      "phonePlaceholder": "+1 555 000 0000",
+      "companyLabel": "公司",
+      "companyPlaceholder": "Acme Corp",
+      "notesPlaceholder": "其他备注…"
+    },
+    "list": {
+      "title": "客户",
+      "totalCount": "共 {{count}} 位客户",
+      "newCustomer": "新建客户",
+      "searchPlaceholder": "搜索姓名、邮箱、电话…",
+      "allStatuses": "所有状态",
+      "resultsCount": "{{count}} 条结果",
+      "colCustomer": "客户",
+      "noCustomersFound": "未找到客户",
+      "createFirstCustomer": "创建您的第一位客户以开始使用。",
+      "showingRange": "显示第 {{start}}–{{end}} 条，共 {{total}} 条",
+      "deleteTitle": "删除客户",
+      "deleteMessage": "确定要删除“{{name}}”吗？此操作无法撤销。",
+      "toast": {
+        "loadError": "加载客户失败。",
+        "createSuccess": "客户创建成功。",
+        "createError": "创建客户失败。",
+        "updateSuccess": "客户更新成功。",
+        "updateError": "更新客户失败。",
+        "deleteSuccess": "客户已删除。",
+        "deleteError": "删除客户失败。"
+      }
+    }
+  },
+  "finance": {
+    "collectionRate": {
+      "title": "回款率",
+      "collected": "已收款",
+      "invoiced": "已开票"
+    },
+    "kpi": {
+      "totalRevenue": "总收入",
+      "collected": "已收款",
+      "outstanding": "未结余额",
+      "overdue": "逾期",
+      "pastDue": "逾期 {{amount}}",
+      "invoices": "发票",
+      "totalIssued": "累计开具",
+      "payments": "付款",
+      "received": "已收到"
+    },
+    "quickNav": {
+      "invoices": {
+        "label": "发票",
+        "desc": "创建和管理"
+      },
+      "payments": {
+        "label": "付款",
+        "desc": "跟踪回款"
+      },
+      "deposits": {
+        "label": "押金",
+        "desc": "保证金"
+      },
+      "statements": {
+        "label": "对账单",
+        "desc": "账户活动"
+      },
+      "analytics": {
+        "label": "数据分析",
+        "desc": "图表与趋势"
+      },
+      "revenue": {
+        "label": "收入",
+        "desc": "确认计划"
+      }
+    },
+    "invoiceStatusChart": {
+      "title": "状态分布",
+      "totalCount": "共 {{count}} 条",
+      "empty": "暂无发票"
+    },
+    "recentTransactions": {
+      "recentInvoices": "最近发票",
+      "recentPayments": "最近付款",
+      "viewAll": "查看全部",
+      "noInvoicesYet": "暂无发票",
+      "noPaymentsYet": "暂无付款"
+    },
+    "revenueChart": {
+      "title": "收入趋势",
+      "subtitle": "最近6个月（{{currency}}）",
+      "empty": "暂无收入数据"
+    }
+  },
+  "billing": {
+    "common": {
+      "refresh": "刷新",
+      "markOverdue": "标记为逾期",
+      "markOverdueSuccess": "已将 {{count}} 张发票标记为逾期",
+      "markOverdueError": "标记逾期发票失败"
+    },
+    "dashboard": {
+      "title": "账单与付款",
+      "subtitle": "财务概览与快捷操作",
+      "quickAccess": "快捷访问",
+      "loadError": "加载账单摘要失败。"
+    },
+    "finance": {
+      "title": "财务分析",
+      "subtitle": "收入表现、应收账款与回款跟踪",
+      "loadError": "加载财务数据失败。"
+    },
+    "revenue": {
+      "title": "收入确认",
+      "entriesCount": "{{count}} 条记录",
+      "resultsCount": "{{count}} 条结果",
+      "loadError": "加载收入确认记录失败。",
+      "actionError": "操作失败。",
+      "empty": "暂无收入确认记录",
+      "recognize": "确认收入",
+      "reverse": "冲销",
+      "paginationInfo": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）",
+      "columns": {
+        "number": "确认单号",
+        "period": "期间"
+      },
+      "statusOptions": {
+        "all": "所有状态",
+        "scheduled": "已排期",
+        "recognized": "已确认",
+        "reversed": "已冲销"
+      },
+      "typeOptions": {
+        "all": "所有类型",
+        "rentalIncome": "租赁收入",
+        "serviceFee": "服务费",
+        "penaltyFee": "违约金",
+        "damageRecovery": "损坏赔偿",
+        "depositForfeiture": "押金没收"
+      },
+      "typeLabels": {
+        "rentalIncome": "租赁收入",
+        "serviceFee": "服务费",
+        "penaltyFee": "违约金",
+        "damageRecovery": "损坏赔偿",
+        "depositForfeiture": "押金没收"
+      }
+    },
+    "statement": {
+      "title": "对账单",
+      "subtitle": "所有发票活动及滚动结余",
+      "loadError": "加载对账单数据失败。",
+      "totalCharges": "总费用",
+      "totalPayments": "总付款",
+      "outstandingBalance": "未结余额",
+      "searchPlaceholder": "搜索发票...",
+      "entriesCount": "{{count}} 条记录",
+      "loading": "正在加载对账单...",
+      "noEntries": "暂无对账单记录",
+      "emptySub": "未找到符合搜索条件的发票",
+      "columns": {
+        "invoiceNumber": "发票号",
+        "charges": "费用",
+        "payments": "付款",
+        "balance": "结余"
+      }
+    },
+    "aging": {
+      "title": "账龄分析",
+      "buckets": {
+        "current": "当前",
+        "days1to30": "1-30天",
+        "days31to60": "31-60天",
+        "days61to90": "61-90天",
+        "days90plus": "90天以上"
+      }
+    },
+    "revenueChart": {
+      "title": "收入趋势（最近6个月）",
+      "empty": "暂无数据",
+      "invoiced": "已开票",
+      "paid": "已付款",
+      "invoicedTooltip": "已开票：{{amount}}",
+      "paidTooltip": "已付款：{{amount}}"
+    },
+    "payment": {
+      "status": {
+        "pending": "待处理",
+        "confirmed": "已确认",
+        "rejected": "已拒绝",
+        "refunded": "已退款"
+      },
+      "method": {
+        "cash": "现金",
+        "bank_transfer": "银行转账",
+        "check": "支票",
+        "credit_card": "信用卡",
+        "mobile_payment": "移动支付",
+        "mobile_paymentShort": "移动支付",
+        "other": "其他"
+      },
+      "statusFilter": {
+        "all": "所有状态"
+      },
+      "methodFilter": {
+        "all": "所有方式"
+      },
+      "fields": {
+        "method": "方式",
+        "paymentDate": "付款日期",
+        "received": "已收到",
+        "reference": "参考号",
+        "createdBy": "创建人",
+        "confirmedAt": "确认时间",
+        "confirmedBy": "确认人",
+        "contract": "合同"
+      },
+      "table": {
+        "number": "付款单号",
+        "customer": "客户"
+      },
+      "list": {
+        "title": "付款",
+        "subtitle": "{{count}} 笔付款",
+        "resultsCount": "{{count}} 条结果"
+      },
+      "pagination": {
+        "pageOf": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）"
+      },
+      "searchPlaceholder": "搜索付款 / 参考号...",
+      "empty": "未找到付款记录",
+      "notFound": "未找到该付款",
+      "actions": {
+        "reject": "拒绝",
+        "allocateToInvoice": "分配至发票"
+      },
+      "toast": {
+        "confirmed": "付款已确认",
+        "rejected": "付款已拒绝",
+        "allocated": "付款已分配",
+        "actionFailed": "失败：{{action}}",
+        "loadFailed": "加载付款失败。",
+        "loadPaymentsFailed": "加载付款列表失败。",
+        "loadInvoicesFailed": "加载发票失败"
+      },
+      "allocate": {
+        "title": "将付款分配至发票",
+        "invoiceLabel": "发票",
+        "selectPlaceholder": "选择发票...",
+        "balance": "结余",
+        "amountPlaceholder": "0.00",
+        "submit": "分配"
+      },
+      "summary": {
+        "title": "付款",
+        "transactions": "交易笔数"
+      }
+    },
+    "invoice": {
+      "status": {
+        "draft": "草稿",
+        "issued": "已开具",
+        "sent": "已发送",
+        "partially_paid": "部分付款",
+        "paid": "已付款",
+        "overdue": "已逾期",
+        "cancelled": "已取消",
+        "voided": "已作废"
+      },
+      "summary": {
+        "title": "发票",
+        "outstanding": "未结余额",
+        "overdue": "已逾期",
+        "count": "数量"
+      },
+      "filter": {
+        "all": "所有状态",
+        "partially_paid": "部分付款"
+      },
+      "list": {
+        "title": "发票",
+        "subtitle": "{{count}} 张发票",
+        "newInvoice": "新建发票",
+        "loadError": "加载发票失败。",
+        "searchPlaceholder": "搜索发票号...",
+        "resultsCount": "{{count}} 条结果",
+        "empty": "未找到发票"
+      },
+      "table": {
+        "number": "发票号",
+        "customer": "客户",
+        "balance": "结余"
+      },
+      "meta": {
+        "issueDate": "开票日期",
+        "dueDate": "到期日",
+        "paidDate": "付款日期",
+        "contract": "合同",
+        "referenceType": "发票类型",
+        "period": "期间",
+        "createdBy": "创建人"
+      },
+      "referenceType": {
+        "sales": "销售",
+        "workOrder": "工单",
+        "rental": "租赁"
+      },
+      "form": {
+        "title": "新建发票",
+        "backToList": "返回发票列表",
+        "customer": "客户",
+        "customerSearchPlaceholder": "搜索姓名、公司...",
+        "noCustomersFound": "未找到客户",
+        "referenceType": "发票类型",
+        "taxRate": "税率 (%)",
+        "description": "描述",
+        "descriptionPlaceholder": "产品或服务描述",
+        "unitPrice": "单价",
+        "lineTotal": "行合计",
+        "addRow": "添加行",
+        "subtotal": "小计",
+        "grandTotal": "总计",
+        "creating": "创建中...",
+        "createInvoice": "创建发票",
+        "created": "发票 {{number}} 已创建。",
+        "createFailed": "创建发票失败。",
+        "errors": {
+          "customerRequired": "请选择客户。",
+          "itemRequired": "至少需要一个包含描述的明细项目。"
+        },
+        "itemCode": "货号",
+        "itemCodePlaceholder": "例如 SKU-1000",
+        "unit": "单位",
+        "currency": "货币",
+        "exchangeRate": "汇率",
+        "bankDetails": "银行信息",
+        "bankDetailsPlaceholder": "银行名称、账户名称、账号、SWIFT/BIC……",
+        "grandTotalInLAK": "折合基准货币(LAK)总计",
+        "previewTitle": "单据预览",
+        "previewPendingNumber": "(待生成)"
+      },
+      "pagination": {
+        "info": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）"
+      },
+      "actions": {
+        "issue": "开具",
+        "send": "发送",
+        "void": "作废"
+      },
+      "amountSummary": {
+        "tax": "税费 ({{rate}}%)",
+        "discount": "折扣",
+        "paid": "已付款",
+        "balanceDue": "应付余额"
+      },
+      "detail": {
+        "loadError": "加载发票失败。",
+        "notFound": "未找到发票",
+        "actionFailed": "失败：{{action}}",
+        "internalNotes": "内部备注",
+        "cancellationReason": "取消原因"
+      },
+      "lineItems": {
+        "title": "明细项目",
+        "number": "#",
+        "qty": "数量",
+        "rate": "费率",
+        "tax": "税费",
+        "empty": "暂无明细项目"
+      },
+      "allocations": {
+        "title": "付款分配",
+        "payment": "付款",
+        "paymentLabel": "付款单 #{{id}}"
+      },
+      "modal": {
+        "cancel": {
+          "title": "取消发票",
+          "reasonLabel": "取消原因",
+          "reasonPlaceholder": "请输入原因..."
+        }
+      },
+      "toast": {
+        "issued": "发票已开具",
+        "sent": "发票已发送",
+        "voided": "发票已作废",
+        "cancelled": "发票已取消"
+      },
+      "card": {
+        "due": "到期日 {{date}}",
+        "balance": "结余：{{amount}} {{currency}}"
+      },
+      "vehicleInfo": {
+        "title": "车辆信息",
+        "make": "品牌",
+        "model": "型号",
+        "vin": "车架号(VIN)",
+        "engineNo": "发动机号",
+        "regNo": "车牌号",
+        "jobNumber": "工单编号"
+      }
+    },
+    "deposit": {
+      "status": {
+        "all": "所有状态",
+        "pending": "待处理",
+        "received": "已收取",
+        "partiallyRefunded": "部分退还",
+        "refunded": "已退还",
+        "forfeited": "已没收",
+        "applied": "已抵扣"
+      },
+      "type": {
+        "all": "所有类型",
+        "security": "保证金",
+        "advance": "预付款",
+        "guarantee": "担保金"
+      },
+      "list": {
+        "title": "押金",
+        "subtitle": "{{count}} 笔押金",
+        "loadError": "加载押金失败。",
+        "resultsCount": "{{count}} 条结果",
+        "empty": "未找到押金"
+      },
+      "table": {
+        "number": "押金单号",
+        "customer": "客户",
+        "contract": "合同",
+        "received": "已收取"
+      },
+      "pagination": {
+        "info": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）"
+      },
+      "actions": {
+        "markReceived": "标记为已收取",
+        "refund": "退还",
+        "forfeit": "没收",
+        "applyToInvoice": "抵扣发票"
+      },
+      "modal": {
+        "markReceived": {
+          "title": "标记押金为已收取",
+          "depositLabel": "押金",
+          "receivedDateLabel": "收取日期",
+          "confirm": "确认收取"
+        },
+        "refund": {
+          "title": "退还押金",
+          "amountLabel": "退还金额（最高：{{max}}）",
+          "dateLabel": "退还日期"
+        },
+        "forfeit": {
+          "title": "没收押金",
+          "amountLabel": "没收金额（最高：{{max}}）",
+          "reasonLabel": "原因"
+        },
+        "apply": {
+          "title": "将押金抵扣发票",
+          "invoiceLabel": "发票",
+          "selectInvoicePlaceholder": "选择发票...",
+          "invoiceOption": "{{number}} — 结余：{{balance}} {{currency}}",
+          "amountLabel": "金额（最高：{{max}}）",
+          "confirm": "抵扣"
+        }
+      },
+      "summary": {
+        "amount": "押金金额",
+        "refunded": "已退还",
+        "forfeited": "已没收",
+        "applied": "已抵扣",
+        "remaining": "剩余"
+      },
+      "summaryCard": {
+        "title": "押金",
+        "active": "生效中"
+      },
+      "detail": {
+        "loadError": "加载押金失败。",
+        "notFound": "未找到",
+        "actionFailed": "操作失败。",
+        "invoicesLoadError": "加载发票失败。",
+        "receivedLabel": "收取日期：{{date}}",
+        "refundDateLabel": "退还日期：{{date}}",
+        "contractLabel": "合同：",
+        "notesLabel": "备注："
+      },
+      "toast": {
+        "received": "押金已标记为已收取",
+        "receiveError": "标记押金为已收取失败"
+      }
+    }
+  },
+  "maintenance": {
+    "overdue": "已逾期",
+    "actions": {
+      "refresh": "刷新"
+    },
+    "status": {
+      "scheduled": "已排期",
+      "due": "到期",
+      "inProgress": "进行中",
+      "verified": "已核实"
+    },
+    "type": {
+      "preventive": "预防性",
+      "corrective": "纠正性",
+      "emergency": "紧急",
+      "inspection": "检查",
+      "install": "安装"
+    },
+    "priority": {
+      "low": "低",
+      "normal": "普通",
+      "high": "高",
+      "critical": "紧急"
+    },
+    "dashboard": {
+      "title": "维护与保养",
+      "subtitle": "预防性维护仪表盘",
+      "loadError": "加载仪表盘失败。",
+      "pmSchedulesButton": "保养计划",
+      "workOrdersButton": "工单",
+      "cards": {
+        "pmPlans": "保养方案",
+        "activeSchedules": "生效中的计划",
+        "completedThisMonth": "本月已完成",
+        "costThisMonth": "本月费用"
+      }
+    },
+    "schedule": {
+      "title": "保养计划",
+      "activeSchedules": "{{count}} 个生效计划",
+      "loadError": "加载保养计划失败。",
+      "emptyState": "暂无生效的保养计划。请创建维护方案并分配给设备。",
+      "nextDue": "下次到期",
+      "interval": "周期",
+      "serviced": "已保养"
+    },
+    "workOrders": {
+      "list": {
+        "title": "工单",
+        "subtitle": "{{count}} 个工单",
+        "newWorkOrder": "新建工单",
+        "loadError": "加载工单失败。",
+        "searchPlaceholder": "搜索编号、标题...",
+        "resultsCount": "{{count}} 条结果",
+        "allStatuses": "所有状态",
+        "allTypes": "所有类型",
+        "columns": {
+          "workOrder": "工单",
+          "priority": "优先级"
+        },
+        "paginationInfo": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）"
+      },
+      "form": {
+        "title": "新建工单",
+        "backToList": "返回工单列表",
+        "workOrderTitle": "标题",
+        "workOrderTitlePlaceholder": "例如：月度保养服务",
+        "asset": "资产",
+        "assetSearchPlaceholder": "搜索序列号或名称...",
+        "noAssetsFound": "未找到资产",
+        "workType": "工作类型",
+        "assignee": "负责人",
+        "unassigned": "— 未分配 —",
+        "schedule": "计划日期和时间",
+        "creating": "创建中...",
+        "createWorkOrder": "创建工单",
+        "created": "工单 {{number}} 已创建。",
+        "createFailed": "创建工单失败。",
+        "errors": {
+          "titleRequired": "标题为必填项。",
+          "assetRequired": "请选择资产。",
+          "scheduleRequired": "计划日期和时间为必填项。"
+        }
+      },
+      "detail": {
+        "notFound": "未找到该工单。",
+        "backToList": "返回工单列表",
+        "startWork": "开始作业",
+        "completeAction": "完成",
+        "verify": "核实",
+        "addCost": "添加费用",
+        "toastStarted": "作业已开始",
+        "actionFailed": "失败：{{label}}",
+        "fields": {
+          "equipment": "设备",
+          "technician": "技术员",
+          "pmPlan": "保养方案",
+          "hourMeter": "小时计",
+          "started": "开始时间",
+          "verifiedBy": "核实人",
+          "created": "创建时间",
+          "estHours": "预计工时",
+          "actualHours": "实际工时",
+          "actualCost": "实际费用"
+        },
+        "findings": "检查结果",
+        "resolution": "处理方案",
+        "cancellationReason": "取消原因",
+        "costBreakdown": "费用明细 ({{count}})",
+        "rate": "费率",
+        "startModal": {
+          "title": "开始工单",
+          "hourMeterReading": "小时计读数",
+          "starting": "启动中...",
+          "start": "开始"
+        },
+        "completeModal": {
+          "title": "完成工单",
+          "findingsPlaceholder": "检查中发现的问题...",
+          "resolutionPlaceholder": "已采取的处理措施...",
+          "completing": "完成中..."
+        },
+        "costModal": {
+          "title": "添加费用条目",
+          "descRateRequired": "描述和费率为必填项。",
+          "costAdded": "费用已添加。",
+          "failed": "操作失败。",
+          "costType": "费用类型",
+          "typeParts": "配件",
+          "typeLabor": "人工",
+          "typeExternalService": "外包服务",
+          "typeOther": "其他",
+          "unitRate": "单价",
+          "adding": "添加中..."
+        },
+        "cancelReasonDefault": "由用户取消"
+      }
+    }
+  },
+  "activity": {
+    "title": "操作记录",
+    "eventsLoaded": "已加载 {{count}} 条事件",
+    "refresh": "刷新",
+    "filters": {
+      "searchPlaceholder": "搜索用户或操作…",
+      "action": "操作",
+      "allActions": "所有操作",
+      "entityType": "对象类型",
+      "allEntities": "所有对象",
+      "dateFrom": "起始日期",
+      "dateTo": "结束日期"
+    },
+    "entity": {
+      "user": "用户",
+      "customer": "客户",
+      "lead": "销售线索",
+      "note": "备注",
+      "invoice": "发票",
+      "payment": "付款",
+      "deposit": "押金",
+      "revenue_recognition": "收入确认",
+      "project": "项目",
+      "project_milestone": "项目里程碑",
+      "setting": "设置",
+      "inventory_import": "库存导入",
+      "notification_preference": "通知偏好设置"
+    },
+    "table": {
+      "timestamp": "时间戳",
+      "user": "用户",
+      "action": "操作",
+      "entity": "对象",
+      "id": "ID",
+      "details": "详情",
+      "noActivityFound": "未找到操作记录",
+      "noActivityYet": "用户与系统交互后，操作记录将显示在此处。",
+      "ipAddress": "IP 地址"
+    },
+    "details": {
+      "group": "分组：{{group}}",
+      "eventInfo": "事件信息",
+      "systemOrDeletedUser": "系统 / 已删除用户",
+      "title": "详情",
+      "noneRecorded": "未记录其他详情。",
+      "fieldsModified": "已修改字段：",
+      "drawerTitle": "操作详情",
+      "ipNotTracked": "未记录"
+    },
+    "pagination": {
+      "showing": "显示第 {{start}}–{{end}} 条，共 {{total}} 条"
+    },
+    "loadError": "加载活动日志失败。",
+    "action": {
+      "user_login": "登录",
+      "user_logout": "退出登录",
+      "user_created": "用户已创建",
+      "user_updated": "用户已更新",
+      "user_deleted": "用户已删除",
+      "customer_created": "客户已创建",
+      "customer_updated": "客户已更新",
+      "customer_deleted": "客户已删除",
+      "customer_status_changed": "状态已变更",
+      "lead_created": "销售线索已创建",
+      "lead_updated": "销售线索已更新",
+      "lead_deleted": "销售线索已删除",
+      "lead_status_changed": "状态已变更",
+      "lead_note_added": "备注已添加",
+      "lead_note_deleted": "备注已删除",
+      "catalog_product_created": "产品已创建",
+      "catalog_product_updated": "产品已更新",
+      "catalog_product_deleted": "产品已删除",
+      "catalog_brand_created": "品牌已创建",
+      "catalog_brand_updated": "品牌已更新",
+      "catalog_brand_deleted": "品牌已删除",
+      "catalog_category_created": "类别已创建",
+      "catalog_category_updated": "类别已更新",
+      "catalog_category_deleted": "类别已删除",
+      "catalog_import_previewed": "导入已预览",
+      "catalog_import_executed": "导入已执行",
+      "forklift_created": "叉车已登记",
+      "forklift_updated": "叉车已更新",
+      "forklift_deleted": "叉车已删除",
+      "forklift_status_changed": "状态已变更",
+      "quotation_created": "报价单已创建",
+      "quotation_updated": "报价单已更新",
+      "quotation_deleted": "报价单已删除",
+      "quotation_submitted": "报价单已提交",
+      "quotation_approved": "报价单已批准",
+      "quotation_revision_requested": "已请求修订",
+      "quotation_sent": "报价单已发送",
+      "quotation_accepted": "报价单已接受",
+      "quotation_declined": "报价单已拒绝",
+      "quotation_converted": "报价单已转化",
+      "quotation_cancelled": "报价单已取消",
+      "quotation_reactivated": "报价单已重新激活",
+      "rental_contract_created": "合同已创建",
+      "rental_contract_updated": "合同已更新",
+      "rental_contract_deleted": "合同已删除",
+      "rental_contract_submitted": "合同已提交",
+      "rental_contract_approved": "合同已批准",
+      "rental_contract_revision": "已请求修订",
+      "rental_contract_activated": "合同已激活",
+      "rental_contract_cancelled": "合同已取消",
+      "rental_contract_closed": "合同已关闭",
+      "rental_return_requested": "归还已申请",
+      "rental_return_picked_up": "归还已取件",
+      "rental_return_received": "归还已接收",
+      "rental_return_completed": "归还已完成",
+      "rental_damage_assessed": "损坏已评估",
+      "rental_damage_disputed": "损坏已申诉",
+      "rental_damage_resolved": "损坏已处理",
+      "rental_extension_requested": "延期已申请",
+      "rental_extension_approved": "延期已批准",
+      "rental_extension_rejected": "延期已拒绝",
+      "rental_billing_created": "账单已生成",
+      "invoice_created": "发票已创建",
+      "invoice_updated": "发票已更新",
+      "invoice_issued": "发票已开具",
+      "invoice_sent": "发票已发送",
+      "invoice_cancelled": "发票已取消",
+      "invoice_voided": "发票已作废",
+      "payment_recorded": "付款已记录",
+      "payment_confirmed": "付款已确认",
+      "payment_rejected": "付款已拒绝",
+      "payment_allocated": "付款已分配",
+      "deposit_created": "押金已创建",
+      "deposit_received": "押金已收取",
+      "deposit_refunded": "押金已退还",
+      "deposit_forfeited": "押金已没收",
+      "deposit_applied": "押金已抵扣",
+      "revenue_recognized": "收入已确认",
+      "revenue_reversed": "收入已冲销",
+      "project_created": "项目已创建",
+      "project_updated": "项目已更新",
+      "project_deleted": "项目已删除",
+      "project_milestone_status_changed": "里程碑状态已变更",
+      "setting_updated": "设置已更新",
+      "inventory_import_executed": "库存已导入",
+      "notification_preference_created": "已订阅提醒",
+      "notification_preference_updated": "提醒偏好已更新",
+      "notification_preference_deleted": "已取消提醒订阅"
+    },
+    "group": {
+      "user": "用户",
+      "customer": "客户",
+      "lead": "销售线索",
+      "billing": "账单",
+      "project": "项目",
+      "settings": "设置",
+      "inventory": "库存",
+      "notifications": "通知"
+    }
+  },
+  "executive": {
+    "title": "经营分析仪表盘",
+    "subtitle": "全企业绩效指标与数据分析",
+    "refresh": "刷新",
+    "loadFailed": "加载经营分析数据失败。",
+    "kpi": {
+      "totalRevenue": "总收入",
+      "invoicesCount": "{{count}} 张发票",
+      "collectionRate": "回款率",
+      "collected": "已收款 {{amount}}",
+      "fleetUtilization": "车队使用率",
+      "rentedOfTotal": "{{rented}} 台出租 / 共 {{total}} 台",
+      "customers": "客户",
+      "activeCount": "{{count}} 位活跃",
+      "inventoryValue": "库存价值",
+      "partsCount": "{{count}} 项备件",
+      "conversionRate": "转化率",
+      "winRate": "成交率：{{rate}}"
+    },
+    "chart": {
+      "revenueTrend": "收入趋势",
+      "noRevenueData": "暂无收入数据",
+      "invoiced": "已开票",
+      "collected": "已收款",
+      "fleetStatus": "车队状态",
+      "noFleetData": "暂无车队数据",
+      "leadPipeline": "销售线索漏斗（近12个月）",
+      "noLeadData": "暂无线索数据",
+      "newLeads": "新增线索",
+      "customerGrowth": "客户增长（近12个月）",
+      "noCustomerData": "暂无客户数据",
+      "newCustomers": "新增客户",
+      "months": {
+        "jan": "1月",
+        "feb": "2月",
+        "mar": "3月",
+        "apr": "4月",
+        "may": "5月",
+        "jun": "6月",
+        "jul": "7月",
+        "aug": "8月",
+        "sep": "9月",
+        "oct": "10月",
+        "nov": "11月",
+        "dec": "12月"
+      }
+    },
+    "export": {
+      "exportExcel": "导出 Excel",
+      "customers": "客户",
+      "leads": "销售线索",
+      "sales": "销售",
+      "downloaded": "{{report}} 报表已下载",
+      "exportFailed": "导出失败",
+      "exportReports": "导出报表",
+      "customersExcel": "客户（Excel）",
+      "leadsExcel": "销售线索（Excel）",
+      "salesExcel": "销售（Excel）",
+      "customersCsv": "客户（CSV）",
+      "leadsCsv": "销售线索（CSV）",
+      "salesCsv": "销售（CSV）"
+    }
+  },
+  "catalog": {
+    "saveFailed": "保存失败。",
+    "saveChanges": "保存更改",
+    "resultsCount": "{{count}} 条结果",
+    "pageOf": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）",
+    "viewAll": "查看全部 →",
+    "browseAllProducts": "浏览全部产品 →",
+    "hero": {
+      "title": "产品目录",
+      "subtitle": "叉车 · 仓储设备 · 备件 · 属具",
+      "searchPlaceholder": "在 {{count}} 件产品中按名称、SKU、型号搜索..."
+    },
+    "categorySlider": {
+      "title": "按类别浏览"
+    },
+    "brandShowcase": {
+      "title": "按品牌选购"
+    },
+    "megaMenu": {
+      "allCategories": "所有类别"
+    },
+    "brands": {
+      "title": "品牌",
+      "subtitle": "{{count}} 个品牌",
+      "newBrand": "新建品牌",
+      "searchPlaceholder": "搜索品牌…",
+      "editTitle": "编辑品牌",
+      "newTitle": "新建品牌",
+      "table": {
+        "brand": "品牌",
+        "country": "国家",
+        "role": "角色"
+      },
+      "empty": {
+        "title": "未找到品牌",
+        "createHint": "创建您的第一个品牌以开始使用。"
+      },
+      "roles": {
+        "primary": "主要",
+        "partsOnly": "仅配件",
+        "both": "两者兼有"
+      },
+      "form": {
+        "nameRequired": "品牌名称为必填项。",
+        "namePlaceholder": "品牌名称",
+        "countryLabel": "国家",
+        "countryPlaceholder": "例如：日本",
+        "roleLabel": "角色",
+        "websiteLabel": "网站",
+        "websitePlaceholder": "https://…",
+        "createBrand": "创建品牌"
+      },
+      "deleteDialog": {
+        "title": "删除品牌",
+        "message": "删除品牌“{{name}}”？引用此品牌的产品将清除其品牌信息。"
+      },
+      "toast": {
+        "loadError": "加载品牌失败。",
+        "createSuccess": "品牌创建成功。",
+        "createError": "创建品牌失败。",
+        "updateSuccess": "品牌更新成功。",
+        "updateError": "更新品牌失败。",
+        "deleteSuccess": "品牌已删除。",
+        "deleteError": "删除品牌失败。"
+      }
+    },
+    "categories": {
+      "title": "类别",
+      "subtitle": "{{count}} 个类别（三级结构）",
+      "newCategory": "新建类别",
+      "editTitle": "编辑类别",
+      "newTitle": "新建类别",
+      "table": {
+        "category": "类别",
+        "level": "层级",
+        "children": "子类别数"
+      },
+      "empty": {
+        "title": "未找到类别",
+        "createHint": "创建您的第一个类别以开始使用。"
+      },
+      "types": {
+        "division": "大类",
+        "category": "类别",
+        "subCategory": "子类别"
+      },
+      "levelLine": "L{{level}} — {{type}}",
+      "form": {
+        "nameRequired": "英文名称为必填项。",
+        "nameEnLabel": "名称（英文）",
+        "namePlaceholder": "类别名称",
+        "nameLoLabel": "名称（老挝语）",
+        "parentLabel": "上级类别",
+        "topLevelOption": "— 顶级（大类）—",
+        "createCategory": "创建类别"
+      },
+      "deleteDialog": {
+        "title": "删除类别",
+        "message": "删除“{{name}}”？如果该类别下存在子类别或已分配产品，删除将失败。"
+      },
+      "toast": {
+        "loadError": "加载类别失败。",
+        "createSuccess": "类别创建成功。",
+        "createError": "创建类别失败。",
+        "updateSuccess": "类别更新成功。",
+        "updateError": "更新类别失败。",
+        "deleteSuccess": "类别已删除。",
+        "deleteError": "删除类别失败。"
+      }
+    },
+    "products": {
+      "filterAllTypes": "所有类型",
+      "forSale": "可销售",
+      "forRental": "可租赁",
+      "featured": "推荐",
+      "refresh": "刷新",
+      "newProduct": "新建产品",
+      "productCount": "{{count}} 件产品",
+      "pillSearch": "搜索：{{query}}",
+      "pillBrand": "品牌：{{name}}",
+      "pillCategory": "类别：{{name}}",
+      "editTitle": "编辑产品",
+      "newTitle": "新建产品",
+      "skuPrefix": "SKU：{{sku}}",
+      "empty": {
+        "title": "未找到产品",
+        "hint": "请尝试调整筛选条件或创建新产品。"
+      },
+      "table": {
+        "product": "产品",
+        "sku": "SKU",
+        "brand": "品牌"
+      },
+      "badges": {
+        "sale": "促销",
+        "rental": "租赁",
+        "featured": "推荐"
+      },
+      "deleteDialog": {
+        "title": "删除产品",
+        "message": "删除“{{name}}”？此操作无法撤销。"
+      },
+      "form": {
+        "nameRequired": "产品名称为必填项。",
+        "saveFailed": "保存失败，请重试。",
+        "nameEnLabel": "名称（英文）",
+        "nameEnPlaceholder": "产品英文名称",
+        "nameLoLabel": "名称（老挝语）",
+        "skuPlaceholder": "留空则自动生成",
+        "modelNumberLabel": "型号",
+        "modelNumberPlaceholder": "例如：EFG115",
+        "brandLabel": "品牌",
+        "noBrandOption": "— 无品牌 —",
+        "noCategoryOption": "— 无类别 —",
+        "descriptionPlaceholder": "产品描述…",
+        "attributesLabel": "属性",
+        "usedAvailable": "提供二手",
+        "serviceItem": "服务项目",
+        "createProduct": "创建产品"
+      },
+      "toast": {
+        "loadError": "加载产品失败。",
+        "createSuccess": "产品创建成功。",
+        "createError": "创建产品失败。",
+        "updateSuccess": "产品更新成功。",
+        "updateError": "更新产品失败。",
+        "deleteSuccess": "产品已删除。",
+        "deleteError": "删除产品失败。"
+      }
+    },
+    "productDetail": {
+      "loadError": "未找到产品或加载失败。",
+      "backToCatalog": "返回产品目录",
+      "notFound": "未找到产品。",
+      "model": "型号",
+      "compatibleWith": "适配于",
+      "specifications": "技术规格"
+    },
+    "import": {
+      "title": "导入产品",
+      "subtitle": "上传 Excel 文件以批量导入产品、品牌和类别。",
+      "dropzoneText": "将 Excel 文件拖放到此处，或点击浏览",
+      "dropzoneHint": "支持来自 DK LAO 产品目录的 .xlsx 和 .xls 文件",
+      "clear": "清除",
+      "supportedSheetsLabel": "支持的工作表：",
+      "supportedSheetsList": "Jungheinrich 叉车、Mitsubishi 叉车、附件（ອຸປະກອນ）、仓储（ສາງ）、吸尘设备（ດູດຝຸ່ນ）、地面清洁设备（ເຊັດຄັດ）、品牌（ບໍລິການ）。",
+      "autoDetectHint": "导入工具会自动按英文和老挝语名称识别工作表。",
+      "importButton": "上传并导入",
+      "importing": "导入中…",
+      "uploadingHint": "较大文件可能需要几秒钟。",
+      "uploadFailed": "导入失败，请重试。",
+      "successBanner": "导入成功完成",
+      "partialBanner": "导入完成但存在错误",
+      "imported": "已导入",
+      "errors": "错误",
+      "failedRows": "失败行数",
+      "importAnother": "导入其他文件",
+      "viewCatalog": "查看产品目录",
+      "successToast": "导入完成：已导入 {{count}} 件产品。",
+      "errorToast": "导入完成，但有 {{count}} 个错误。",
+      "table": {
+        "rowNum": "#",
+        "error": "错误",
+        "sheet": "工作表"
+      }
+    }
+  },
+  "quotations": {
+    "status": {
+      "draft": "草稿",
+      "underReview": "审核中",
+      "approved": "已批准",
+      "revision": "修订中",
+      "sent": "已发送",
+      "accepted": "已接受",
+      "rejected": "已拒绝",
+      "expired": "已过期",
+      "converted": "已转化",
+      "cancelled": "已取消"
+    },
+    "type": {
+      "rental": "租赁",
+      "sales": "销售",
+      "service": "服务",
+      "spareParts": "备件"
+    },
+    "itemType": {
+      "forkliftRental": "叉车租赁",
+      "forkliftSale": "叉车销售",
+      "service": "服务",
+      "sparePart": "备件",
+      "delivery": "运输",
+      "insurance": "保险",
+      "custom": "自定义"
+    },
+    "list": {
+      "title": "报价单",
+      "totalCount": "共 {{count}} 份报价单",
+      "refresh": "刷新",
+      "newQuotation": "新建报价单",
+      "searchPlaceholder": "搜索编号、标题...",
+      "allStatuses": "所有状态",
+      "allTypes": "所有类型",
+      "colQuotation": "报价单",
+      "colCustomer": "客户",
+      "colValidUntil": "有效期至",
+      "noQuotationsFound": "未找到报价单",
+      "createOrAdjust": "创建新报价单或调整筛选条件。",
+      "resultsCount": "{{count}} 条结果",
+      "pageOf": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）",
+      "deleteConfirmTitle": "删除报价单",
+      "deleteConfirmMessage": "删除“{{number}}”？此操作无法撤销。",
+      "toast": {
+        "loadError": "加载报价单失败。",
+        "createSuccess": "报价单已创建。",
+        "createError": "创建报价单失败。",
+        "deleteSuccess": "报价单已删除。",
+        "deleteError": "删除报价单失败。"
+      }
+    },
+    "form": {
+      "backToQuotations": "返回报价单列表",
+      "newQuotation": "新建报价单",
+      "typeLabel": "报价单类型",
+      "currencyLabel": "货币",
+      "titleLabel": "标题",
+      "titlePlaceholder": "例如：叉车租赁——万象汽车",
+      "contactNameLabel": "联系人姓名",
+      "contactNamePlaceholder": "先生 / 女士",
+      "contactEmailLabel": "联系邮箱",
+      "contactEmailPlaceholder": "email@example.com",
+      "contactPhoneLabel": "联系电话",
+      "contactPhonePlaceholder": "+856 20 ...",
+      "taxRateLabel": "税率 (%)",
+      "validFromLabel": "生效日期",
+      "validUntilLabel": "有效期至",
+      "notesLabel": "备注（客户可见）",
+      "notesPlaceholder": "将显示在报价单 PDF 上...",
+      "internalNotesLabel": "内部备注",
+      "internalNotesPlaceholder": "仅供内部使用，不对客户显示...",
+      "creating": "创建中...",
+      "createQuotation": "创建报价单",
+      "titleRequired": "标题为必填项。",
+      "createFailed": "创建报价单失败。",
+      "createdToast": "报价单 {{number}} 已创建。",
+      "typeOptions": {
+        "rental": "租赁报价单",
+        "sales": "销售报价单",
+        "service": "服务报价单",
+        "spareParts": "备件报价单"
+      },
+      "vehicleInfo": {
+        "title": "车辆信息",
+        "make": "品牌",
+        "model": "型号",
+        "vin": "车架号(VIN)",
+        "engineNo": "发动机号",
+        "regNo": "车牌号",
+        "jobNumber": "工单编号"
+      },
+      "exchangeRateLabel": "汇率",
+      "bankDetails": "银行信息",
+      "bankDetailsPlaceholder": "银行名称、账户名称、账号、SWIFT/BIC……"
+    },
+    "detail": {
+      "backToQuotations": "返回报价单列表",
+      "notFoundError": "未找到报价单或加载失败。",
+      "actionFailed": "失败：{{action}}",
+      "rev": "修订版 {{number}}",
+      "submit": "提交",
+      "approve": "批准",
+      "requestRevision": "请求修订",
+      "sendToCustomer": "发送给客户",
+      "markAccepted": "标记为已接受",
+      "markRejected": "标记为已拒绝",
+      "convert": "转化",
+      "reactivate": "重新激活",
+      "taxWithRate": "税费 ({{rate}}%)",
+      "discount": "折扣",
+      "customer": "客户",
+      "contact": "联系人",
+      "assignedTo": "负责人",
+      "validFrom": "生效日期",
+      "validUntil": "有效期至",
+      "convertedTo": "已转化为",
+      "internalNote": "内部备注",
+      "lineItems": "明细项目 ({{count}})",
+      "addItem": "添加项目",
+      "colNumber": "#",
+      "colUnitPrice": "单价",
+      "colDiscount": "折扣 %",
+      "serialNumber": "序列号：{{serial}}",
+      "sku": "SKU：{{sku}}",
+      "durationDays": "{{count}} 天（{{period}}）",
+      "noLineItems": "暂无明细项目。",
+      "addItemsHint": "添加项目以构建报价单。",
+      "statusHistory": "状态历史",
+      "colFrom": "从",
+      "colTo": "到",
+      "colReason": "原因",
+      "colBy": "操作人",
+      "approvalHistory": "审批历史",
+      "colRev": "修订版",
+      "colDecision": "决定",
+      "colConditions": "条件",
+      "toasts": {
+        "submitted": "已提交审批",
+        "revisionRequested": "已请求修订",
+        "sent": "已发送给客户",
+        "markedAccepted": "已标记为接受",
+        "markedRejected": "已标记为拒绝",
+        "converted": "已转化",
+        "reactivated": "已重新激活",
+        "itemRemoved": "项目已移除"
+      },
+      "addItemModal": {
+        "title": "添加明细项目",
+        "itemType": "项目类型",
+        "unit": "单位",
+        "descriptionPlaceholder": "项目描述",
+        "unitPrice": "单价",
+        "discountPercent": "折扣 (%)",
+        "rentalDuration": "租赁期限（天）",
+        "ratePeriod": "计费周期",
+        "selectRatePeriod": "— 请选择 —",
+        "daily": "按日",
+        "weekly": "按周",
+        "monthly": "按月",
+        "adding": "添加中...",
+        "descriptionRequired": "描述为必填项。",
+        "unitPriceRequired": "单价为必填项。",
+        "itemAdded": "项目已添加。",
+        "addFailed": "添加项目失败。",
+        "itemCode": "货号"
+      },
+      "revisionNeededReason": "需要修订",
+      "colItemCode": "货号"
+    }
+  },
+  "imageUpload": {
+    "invalidFormat": "仅支持 JPG、PNG 和 WebP 格式的图片。",
+    "fileTooLarge": "文件大小超过 {{size}} MB 限制。",
+    "invalidImage": "文件不是有效的图片。",
+    "uploadFailed": "上传失败，请重试。",
+    "remove": "移除",
+    "uploadedSuccessfully": "上传成功",
+    "clickOrDrag": "点击或拖放图片以上传",
+    "hint": "JPG、PNG、WebP · 最大 {{size}} MB",
+    "previewAlt": "上传预览"
+  },
+  "login": {
+    "subtitle": "登录以继续",
+    "powerSwitch": "电源开关",
+    "username": "用户名",
+    "usernamePlaceholder": "请输入用户名",
+    "password": "密码",
+    "passwordPlaceholder": "请输入密码",
+    "rememberMe": "记住我",
+    "signIn": "登录",
+    "signingIn": "登录中…",
+    "invalidCredentials": "用户名或密码错误",
+    "footer": "© 2026 DK LAO Services. 保留所有权利。"
+  },
+  "customer360": {
+    "backToCustomers": "返回客户列表",
+    "notFound": "未找到该客户。",
+    "loadError": "未找到客户或加载失败。",
+    "forklifts": "叉车",
+    "activeRentals": "使用中的租赁",
+    "openWorkOrders": "未结工单",
+    "outstanding": "未结余额",
+    "notes": "备注",
+    "rentalContracts": "租赁合同",
+    "workOrders": "工单",
+    "invoices": "发票",
+    "noForklifts": "该客户暂无分配的叉车。",
+    "noRentalContracts": "该客户暂无租赁合同。",
+    "noWorkOrders": "该客户的设备暂无工单。",
+    "noInvoices": "该客户暂无发票。",
+    "colSerialNumber": "序列号",
+    "colName": "名称",
+    "colStatus": "状态",
+    "colHourMeter": "小时计",
+    "colContractNumber": "合同编号",
+    "colStartDate": "开始日期",
+    "colEndDate": "结束日期",
+    "colTotalValue": "总金额",
+    "colWorkOrderNumber": "工单编号",
+    "colForklift": "叉车",
+    "colTitle": "标题",
+    "colPriority": "优先级",
+    "colScheduledDate": "计划日期",
+    "colInvoiceNumber": "发票号",
+    "colTotalAmount": "总金额",
+    "colBalanceDue": "应付余额",
+    "colDueDate": "到期日"
+  },
+  "projects": {
+    "title": "仓储项目",
+    "totalCount": "总计：{{count}}",
+    "createProject": "创建项目",
+    "allStatuses": "所有状态",
+    "status": {
+      "draft": "草稿",
+      "survey": "勘察",
+      "design": "设计",
+      "boq_approved": "工程量清单已批准",
+      "installation": "安装中",
+      "handover": "交接",
+      "completed": "已完成"
+    },
+    "milestoneStatus": {
+      "pending": "待处理",
+      "in_progress": "进行中",
+      "completed": "已完成"
+    },
+    "colProject": "项目",
+    "colCustomer": "客户",
+    "colStartEnd": "开始 / 结束",
+    "colStatus": "状态",
+    "colProgress": "进度",
+    "noProjectsFound": "未找到项目",
+    "createToGetStarted": "创建一个项目以开始使用。",
+    "noPermissionView": "您没有权限查看项目。",
+    "loadFailed": "加载项目失败。",
+    "resultsCount": "结果：{{count}}",
+    "pageOf": "第 {{page}} 页，共 {{pages}} 页（共 {{total}} 条）",
+    "milestonesOf": "{{completed}}/{{total}} 个里程碑",
+    "form": {
+      "editProject": "编辑项目",
+      "newProject": "新建项目",
+      "cancel": "取消",
+      "saving": "保存中…",
+      "saveChanges": "保存更改",
+      "createProject": "创建项目",
+      "projectName": "项目名称",
+      "projectNamePlaceholder": "万象仓库货架项目",
+      "customer": "客户",
+      "selectCustomer": "请选择客户…",
+      "status": "状态",
+      "startDate": "开始日期",
+      "endDate": "结束日期",
+      "notes": "备注",
+      "notesPlaceholder": "其他备注…"
+    },
+    "detail": {
+      "backToProjects": "返回项目列表",
+      "notFound": "未找到该项目。",
+      "noPermissionView": "您没有权限查看此项目。",
+      "edit": "编辑",
+      "approveBoq": "批准工程量清单",
+      "delete": "删除",
+      "startDate": "开始日期",
+      "endDate": "结束日期",
+      "milestones": "里程碑",
+      "boqTotal": "工程量清单总额",
+      "notes": "备注",
+      "addMilestone": "添加里程碑",
+      "noMilestonesYet": "暂无里程碑。",
+      "colMilestone": "里程碑",
+      "colDueDate": "到期日",
+      "colStatus": "状态",
+      "markStatus": "标记为 {{status}}",
+      "addBoqItem": "添加清单项目",
+      "noBoqItemsYet": "暂无工程量清单项目。",
+      "colDescription": "描述",
+      "colQty": "数量",
+      "colUnitPrice": "单价",
+      "colTotal": "合计",
+      "totalRow": "总计",
+      "billOfQuantities": "工程量清单（BOQ）",
+      "deleteProjectTitle": "删除项目",
+      "deleteMilestoneTitle": "删除里程碑",
+      "deleteBoqItemTitle": "删除清单项目",
+      "deleteProjectMessage": "此操作将永久删除该项目及其所有里程碑和工程量清单项目，且无法撤销。",
+      "deleteGenericMessage": "此操作无法撤销。",
+      "confirmDelete": "删除",
+      "milestoneModalTitle": "添加里程碑",
+      "milestoneName": "里程碑名称",
+      "milestoneNamePlaceholder": "勘察",
+      "dueDate": "到期日",
+      "adding": "添加中…",
+      "boqModalTitle": "添加清单项目",
+      "linkInventoryPart": "关联库存备件（可选）",
+      "notLinked": "— 未关联 —",
+      "description": "描述",
+      "quantity": "数量",
+      "unitPrice": "单价",
+      "addItem": "添加项目",
+      "descriptionPriceRequired": "描述和单价为必填项。",
+      "projectUpdated": "项目已更新。",
+      "projectUpdateFailed": "更新项目失败。",
+      "boqApproved": "工程量清单已批准。",
+      "boqApproveFailed": "批准工程量清单失败。",
+      "projectDeleted": "项目已删除。",
+      "projectDeleteFailed": "删除项目失败。",
+      "milestoneStatusUpdateFailed": "更新里程碑状态失败。",
+      "milestoneRemoved": "里程碑已移除。",
+      "milestoneRemoveFailed": "移除里程碑失败。",
+      "boqItemRemoved": "清单项目已移除。",
+      "boqItemRemoveFailed": "移除清单项目失败。",
+      "milestoneAdded": "里程碑已添加。",
+      "milestoneAddFailed": "添加里程碑失败。",
+      "boqItemAdded": "清单项目已添加。",
+      "boqItemAddFailed": "添加清单项目失败。",
+      "projectCreated": "项目已创建。",
+      "projectCreateFailed": "创建项目失败。"
+    }
+  },
+  "reports": {
+    "title": "报表",
+    "subtitle": "数据分析、转化指标与数据导出",
+    "refresh": "刷新",
+    "retry": "重试",
+    "keyMetrics": "关键指标",
+    "wonLeads": "成交线索",
+    "totalCustomers": "客户总数",
+    "conversionRate": "转化率",
+    "winRate": "成交率",
+    "wonOverTotalLeads": "成交数 ÷ 线索总数",
+    "wonOverWonPlusLost": "成交数 ÷（成交数 + 流失数）",
+    "exportData": "导出数据",
+    "downloadReports": "下载报表",
+    "format": "格式",
+    "fromDate": "起始日期",
+    "toDate": "结束日期",
+    "clearDates": "清除日期",
+    "downloading": "下载中…",
+    "exportNote": "如果报表接口不可用，将在客户端生成摘要 CSV 文件。",
+    "customers": "客户",
+    "leads": "销售线索",
+    "sales": "销售",
+    "downloadSuccess": "{{type}} 报表已下载。",
+    "downloadError": "下载 {{type}} 报表失败。",
+    "trends": "趋势——最近12个月",
+    "syntheticPreview": "模拟预览数据",
+    "leadVolume": "线索数量",
+    "leadVolumeSub": "每月新增线索",
+    "noLeadTrend": "暂无线索趋势数据",
+    "leadTrendWillAppear": "接口连接后将显示线索趋势",
+    "customerGrowth": "客户增长",
+    "customerGrowthSub": "每月新增客户",
+    "noCustomerTrend": "暂无客户趋势数据",
+    "customerTrendWillAppear": "接口连接后将显示客户趋势",
+    "leadAnalysis": "线索分析",
+    "statusDistribution": "状态分布",
+    "statusDistributionSub": "按当前销售阶段划分的线索",
+    "noStatusData": "暂无线索状态数据",
+    "createLeadsToSeeDistribution": "创建线索以查看分布情况",
+    "sourceBreakdown": "来源分布",
+    "sourceBreakdownSub": "线索来源渠道",
+    "noSourceData": "暂无来源数据",
+    "addSourceWhenCreating": "创建线索时添加来源信息",
+    "conversionMetrics": "转化指标",
+    "metric": "指标",
+    "rate": "比率",
+    "breakdown": "明细",
+    "formula": "计算公式",
+    "lostRate": "流失率",
+    "activeCustomers": "活跃客户",
+    "leadsInPipeline": "漏斗中的线索",
+    "ofTotal": "占总数 {{count}} 的比例",
+    "wonOverTotalFormula": "成交数 ÷ 线索总数 × 100",
+    "wonOverWonLostFormula": "成交数 ÷（成交数 + 流失数）× 100",
+    "lostOverWonLostFormula": "流失数 ÷（成交数 + 流失数）× 100",
+    "activeOverTotalFormula": "活跃客户数 ÷ 客户总数 × 100",
+    "pipelineFormula": "新建 + 已联系 + 已确认 + 已提案",
+    "moduleRoadmap": "模块路线图",
+    "sourceLabels": {
+      "website": "网站",
+      "referral": "转介绍",
+      "coldCall": "陌生电话",
+      "email": "电子邮件",
+      "socialMedia": "社交媒体",
+      "other": "其他"
+    },
+    "modules": {
+      "projects": {
+        "label": "项目",
+        "description": "项目管理，包含里程碑、状态看板和团队分配"
+      },
+      "services": {
+        "label": "服务",
+        "description": "服务目录、定价方案和客户服务分配"
+      },
+      "tasks": {
+        "label": "任务",
+        "description": "任务看板，支持分配、截止日期和优先级设置"
+      },
+      "invoices": {
+        "label": "发票",
+        "description": "发票生成、付款跟踪和收入报表"
+      }
+    },
+    "formatCsv": "CSV (.csv)",
+    "formatExcel": "Excel (.xlsx)"
+  },
+  "routes": {
+    "dashboard": "仪表盘",
+    "customerDetail": "客户360视图",
+    "customers": "客户",
+    "leads": "销售线索",
+    "activity": "操作记录",
+    "reports": "报表",
+    "settings": "设置",
+    "products": "产品",
+    "productDetail": "产品详情",
+    "brands": "品牌",
+    "categories": "类别",
+    "import": "导入",
+    "equipmentRegistry": "设备登记",
+    "equipmentDetail": "设备详情",
+    "quotations": "报价单",
+    "newQuotation": "新建报价单",
+    "quotationDetail": "报价单详情",
+    "rentalContracts": "租赁合同",
+    "newContract": "新建合同",
+    "contractDetail": "合同详情",
+    "movementControl": "调拨管理",
+    "newMovement": "新建调拨",
+    "movementDetail": "调拨详情",
+    "billing": "账单",
+    "invoices": "发票",
+    "invoiceDetail": "发票详情",
+    "payments": "付款",
+    "paymentDetail": "付款详情",
+    "deposits": "押金",
+    "depositDetail": "押金详情",
+    "revenueRecognition": "收入确认",
+    "financeDashboard": "财务仪表盘",
+    "statements": "对账单",
+    "paymentManager": "付款管理",
+    "depositManager": "押金管理",
+    "maintenancePm": "维护与保养",
+    "workOrders": "工单",
+    "newWorkOrder": "新建工单",
+    "workOrderDetail": "工单详情",
+    "pmSchedules": "保养计划",
+    "inventory": "库存",
+    "spareParts": "备件",
+    "newPart": "新建备件",
+    "partDetail": "备件详情",
+    "warehouses": "仓库",
+    "purchaseOrders": "采购订单",
+    "executiveDashboard": "经营分析仪表盘",
+    "projects": "仓储项目",
+    "projectDetail": "项目详情",
+    "iotManagement": "IoT 管理"
+  },
+  "iot": {
+    "title": "IoT 遥测",
+    "subtitle": "管理 GPS/小时计设备配对，并实时监控整个车队的连接状态。",
+    "refresh": "刷新",
+    "searchPlaceholder": "按叉车名称或序列号搜索...",
+    "kpi": {
+      "totalPaired": "已配对设备",
+      "live": "当前在线",
+      "offline": "离线",
+      "unpaired": "未配对设备"
+    },
+    "table": {
+      "forklift": "叉车",
+      "deviceId": "设备编号",
+      "lastPing": "最后连接时间",
+      "status": "状态"
+    },
+    "notPaired": "未配对",
+    "never": "从未",
+    "pairAction": "配对设备",
+    "unpairAction": "取消配对",
+    "noResults": "未找到叉车。",
+    "pairModal": {
+      "title": "配对 IoT 设备 — {{name}}",
+      "deviceIdLabel": "设备编号",
+      "deviceIdPlaceholder": "例如：DK-IOT-001",
+      "deviceIdRequired": "设备编号为必填项。",
+      "duplicateError": "该设备编号已配对至其他叉车。",
+      "submitError": "配对设备失败，请重试。",
+      "submit": "配对设备",
+      "pairing": "配对中..."
+    },
+    "unpairConfirm": {
+      "title": "取消设备配对",
+      "message": "从 {{name}} 移除设备“{{deviceId}}”？移除后将停止自动更新小时计数据，直至重新配对。"
+    }
+  },
+  "changePassword": {
+    "title": "修改密码",
+    "subtitle": "更新您的密码以保护账户安全。",
+    "currentPassword": "当前密码",
+    "currentPasswordPlaceholder": "请输入当前密码",
+    "newPassword": "新密码",
+    "newPasswordPlaceholder": "至少8个字符",
+    "confirmPassword": "确认新密码",
+    "confirmPasswordPlaceholder": "请再次输入新密码",
+    "submit": "修改密码",
+    "submitting": "正在修改密码…",
+    "mismatchError": "新密码与确认密码不一致。",
+    "tooShortError": "密码长度至少为8个字符。",
+    "successToast": "密码修改成功。",
+    "incorrectCurrentError": "当前密码不正确。",
+    "genericError": "修改密码失败，请重试。"
+  },
+  "documentPreview": {
+    "docTitle": {
+      "invoice": "发票",
+      "quotation": "报价单",
+      "purchaseOrder": "采购订单"
+    },
+    "customerDetails": "客户信息",
+    "vendorDetails": "供应商信息",
+    "vehicleInformation": "车辆信息",
+    "vehicle": {
+      "make": "品牌",
+      "model": "型号",
+      "vin": "车架号(VIN)",
+      "engineNo": "发动机号",
+      "regNo": "车牌号",
+      "jobNumber": "工单号"
+    },
+    "dateLabel": "日期",
+    "docNumberLabel": "单据编号",
+    "unitPrice": "单价",
+    "bankDetails": "银行信息",
+    "subtotal": "小计",
+    "vatLabel": "增值税 ({{rate}}%)",
+    "grandTotal": "总计",
+    "issuedBy": "开单人",
+    "approvedBy": "审批人"
+  },
+  "modulePlaceholder": {
+    "badge": "即将上线",
+    "emptyHint": "该模块已完成界面搭建 — 完整工作流程即将上线。"
+  },
+  "documentFlow": {
+    "title": "单据流程："
+  }
+}

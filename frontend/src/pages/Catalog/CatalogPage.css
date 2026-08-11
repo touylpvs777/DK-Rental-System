@@ -1,0 +1,66 @@
+/* Grid for product cards — now handled by CatalogComponents.css */
+/* Keep these classes for any remaining consumers */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.product-card-skeleton {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.skeleton-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--color-gray-200);
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+.skeleton-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.catalog-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+.catalog-empty svg { margin-bottom: 14px; opacity: 0.3; }
+.catalog-empty p { font-size: 14px; }
+.catalog-empty small { font-size: 12px; opacity: 0.7; }
+
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.view-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+.view-btn + .view-btn { border-left: 1px solid var(--color-border); }
+.view-btn.active { background: var(--color-primary); color: var(--color-on-primary); }
+.view-btn:hover:not(.active) { background: var(--color-bg-subtle); color: var(--color-text); }
+
+@media (max-width: 640px) {
+  .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+}

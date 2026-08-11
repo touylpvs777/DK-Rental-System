@@ -1,0 +1,77 @@
+graph LR
+    subgraph "Client"
+        SPA["React SPA"]
+    end
+
+    subgraph "API Gateway"
+        CORS["CORS Middleware"]
+        ReqID["RequestID Middleware"]
+        SecH["Security Headers"]
+    end
+
+    subgraph "Authentication"
+        Bearer["HTTPBearer"]
+        JWT["JWT Decode"]
+        Revoke["Token Revocation Check"]
+        UserLookup["User Lookup"]
+    end
+
+    subgraph "Authorization"
+        PermCheck["require_permission()"]
+        RoleMap["ROLE_PERMISSIONS map"]
+    end
+
+    subgraph "Route Layer — 218 Endpoints"
+        R_Auth["POST /auth/login<br/>POST /auth/register<br/>POST /auth/refresh"]
+        R_CRM["GET/POST /customers<br/>GET/POST /leads<br/>GET /activity-logs"]
+        R_Catalog["GET/POST /catalog/products<br/>GET/POST /catalog/brands<br/>POST /catalog/products/import"]
+        R_Equipment["GET/POST /forklifts<br/>GET/PUT /forklifts/:id<br/>POST /forklifts/:id/specs"]
+        R_Quote["GET/POST /quotations<br/>POST /quotations/:id/approve<br/>POST /quotations/:id/convert"]
+        R_Rental["GET/POST /rental-contracts<br/>POST /:id/activate<br/>POST /:id/returns"]
+        R_Move["GET/POST /movements<br/>POST /:id/depart<br/>POST /:id/arrive"]
+        R_Maint["GET/POST /maintenance/work-orders<br/>POST /:id/start<br/>POST /:id/complete"]
+        R_Inv["GET/POST /inventory/parts<br/>GET/POST /inventory/purchase-orders<br/>POST /inventory/transactions"]
+        R_Bill["GET/POST /billing/invoices<br/>POST /billing/payments<br/>POST /billing/deposits"]
+        R_Report["GET /dashboard/summary<br/>GET /reports/customers<br/>GET /reports/leads"]
+    end
+
+    subgraph "Service Layer"
+        SVC["22 Service Classes<br/>Business Logic + Workflows"]
+    end
+
+    subgraph "Repository Layer"
+        REPO["16 Repositories<br/>Query Building + Eager Loading"]
+    end
+
+    subgraph "Data"
+        DB[(Database)]
+    end
+
+    SPA -->|"HTTP + Bearer Token"| CORS
+    CORS --> ReqID --> SecH
+    SecH --> Bearer --> JWT --> Revoke --> UserLookup
+    UserLookup --> PermCheck --> RoleMap
+
+    RoleMap --> R_Auth & R_CRM & R_Catalog & R_Equipment
+    RoleMap --> R_Quote & R_Rental & R_Move & R_Maint
+    RoleMap --> R_Inv & R_Bill & R_Report
+
+    R_Auth & R_CRM & R_Catalog & R_Equipment --> SVC
+    R_Quote & R_Rental & R_Move & R_Maint --> SVC
+    R_Inv & R_Bill & R_Report --> SVC
+
+    SVC --> REPO --> DB
+
+    classDef client fill:#3b82f6,color:#fff
+    classDef mw fill:#64748b,color:#fff
+    classDef auth fill:#ef4444,color:#fff
+    classDef route fill:#059669,color:#fff
+    classDef svc fill:#7c3aed,color:#fff
+    classDef data fill:#d97706,color:#fff
+
+    class SPA client
+    class CORS,ReqID,SecH mw
+    class Bearer,JWT,Revoke,UserLookup,PermCheck,RoleMap auth
+    class R_Auth,R_CRM,R_Catalog,R_Equipment,R_Quote,R_Rental,R_Move,R_Maint,R_Inv,R_Bill,R_Report route
+    class SVC,REPO svc
+    class DB data

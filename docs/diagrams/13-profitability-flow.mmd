@@ -1,0 +1,67 @@
+graph TB
+    subgraph "Revenue Streams"
+        Rental[Rental Revenue<br/>invoices from billing cycles]
+        Penalty[Penalty Fees<br/>early termination, late return]
+        Overtime[Overtime Charges<br/>excess hour usage]
+        Damage[Damage Recovery<br/>damage report invoices]
+        DepForfeit[Forfeited Deposits<br/>contract violations]
+    end
+
+    subgraph "Cost Centers"
+        Purchase[Purchase Cost<br/>forklift_ownership_costs<br/>type: purchase]
+        MaintLabor[Maintenance Labor<br/>maintenance_costs<br/>type: labor]
+        MaintParts[Maintenance Parts<br/>maintenance_costs<br/>type: parts + part_consumptions]
+        ExtService[External Service<br/>maintenance_costs<br/>type: external_service]
+        Insurance[Insurance<br/>forklift_ownership_costs<br/>type: insurance]
+        Inspection[Inspection<br/>forklift_ownership_costs<br/>type: inspection]
+        Transport[Transport<br/>asset_movements<br/>fuel + driver costs]
+    end
+
+    subgraph "Aggregation Layer (v1.8 — To Build)"
+        direction TB
+        Rental & Penalty & Overtime & Damage & DepForfeit --> TotalRev[Total Revenue<br/>per asset / per contract / per period]
+        Purchase & MaintLabor & MaintParts & ExtService & Insurance & Inspection & Transport --> TotalCost[Total Cost<br/>per asset / per contract / per period]
+
+        TotalRev --> Margin[Gross Margin<br/>Revenue - Cost]
+        TotalCost --> Margin
+        Margin --> MarginPct[Margin %<br/>Margin / Revenue × 100]
+    end
+
+    subgraph "Analysis Views (v1.8 — To Build)"
+        MarginPct --> AssetView[Per-Asset P&L<br/>Each forklift: revenue vs TCO]
+        MarginPct --> ContractView[Per-Contract P&L<br/>Each rental: billing vs costs incurred]
+        MarginPct --> CustomerView[Per-Customer P&L<br/>Customer lifetime value vs cost to serve]
+        MarginPct --> PeriodView[Period Analysis<br/>Monthly/quarterly margin trends]
+    end
+
+    subgraph "Existing Data Sources (Built)"
+        InvTable[(invoices table<br/>total_amount, amount_paid)]
+        OwnerCost[(forklift_ownership_costs<br/>cost_type, amount, cost_date)]
+        MaintCostT[(maintenance_costs<br/>cost_type, amount, work_order_id)]
+        PartConsT[(part_consumptions<br/>quantity, unit_cost)]
+        DepositT[(deposits<br/>forfeit_amount)]
+        RevRecT[(revenue_recognitions<br/>amount, recognition_type)]
+    end
+
+    InvTable -.->|"data source"| Rental
+    InvTable -.->|"data source"| Penalty
+    InvTable -.->|"data source"| Damage
+    OwnerCost -.->|"data source"| Purchase
+    OwnerCost -.->|"data source"| Insurance
+    OwnerCost -.->|"data source"| Inspection
+    MaintCostT -.->|"data source"| MaintLabor
+    MaintCostT -.->|"data source"| ExtService
+    PartConsT -.->|"data source"| MaintParts
+    DepositT -.->|"data source"| DepForfeit
+
+    classDef revenue fill:#22c55e,color:#fff,stroke:#16a34a
+    classDef cost fill:#ef4444,color:#fff,stroke:#dc2626
+    classDef calc fill:#3b82f6,color:#fff,stroke:#2563eb
+    classDef view fill:#7c3aed,color:#fff,stroke:#6d28d9
+    classDef source fill:#64748b,color:#fff,stroke:#475569
+
+    class Rental,Penalty,Overtime,Damage,DepForfeit,TotalRev revenue
+    class Purchase,MaintLabor,MaintParts,ExtService,Insurance,Inspection,Transport,TotalCost cost
+    class Margin,MarginPct calc
+    class AssetView,ContractView,CustomerView,PeriodView view
+    class InvTable,OwnerCost,MaintCostT,PartConsT,DepositT,RevRecT source

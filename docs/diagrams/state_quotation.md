@@ -1,0 +1,28 @@
+```mermaid
+stateDiagram-v2
+    [*] --> DRAFT : Quotation created
+
+    DRAFT --> UNDER_REVIEW : Submitted for review
+    DRAFT --> CANCELLED : Withdrawn
+
+    UNDER_REVIEW --> APPROVED : Manager approves
+    UNDER_REVIEW --> REVISION : Changes requested
+    UNDER_REVIEW --> CANCELLED : Cancelled
+
+    REVISION --> DRAFT : Revised and resubmitted
+
+    APPROVED --> SENT : Sent to customer
+    APPROVED --> CANCELLED : Cancelled before sending
+
+    SENT --> ACCEPTED : Customer accepts
+    SENT --> REJECTED : Customer rejects
+    SENT --> EXPIRED : Valid-until date passed
+
+    ACCEPTED --> CONVERTED : Converted to rental contract
+
+    REJECTED --> DRAFT : Rework and resubmit
+    EXPIRED --> DRAFT : Recreate with new dates
+
+    CONVERTED --> [*]
+    CANCELLED --> [*]
+```

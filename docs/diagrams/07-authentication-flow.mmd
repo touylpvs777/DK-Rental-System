@@ -1,0 +1,68 @@
+sequenceDiagram
+    autonumber
+    participant U as User Browser
+    participant SPA as React SPA
+    participant Store as Zustand authStore
+    participant API as FastAPI /api/v1
+    participant Sec as security.py
+    participant DB as Database
+
+    Note over U,DB: Login Flow
+    U->>SPA: Enter username + password
+    SPA->>API: POST /auth/login {username, password}
+    API->>DB: SELECT user WHERE username = ?
+    DB-->>API: User record
+    API->>Sec: verify_password(plain, hashed)
+    Sec-->>API: true/false
+
+    alt Invalid credentials
+        API-->>SPA: 401 Unauthorized
+        SPA-->>U: Show error toast
+    else Valid credentials
+        API->>Sec: create_access_token(user.id)
+        Sec-->>API: JWT (HS256, 30min TTL, JTI)
+        API->>Sec: create_refresh_token(user.id)
+        Sec-->>API: Refresh JWT (7-day TTL)
+        API-->>SPA: {access_token, refresh_token, user}
+        SPA->>Store: login(user, tokens)
+        Store->>Store: Persist to localStorage
+        SPA-->>U: Redirect to /dashboard
+    end
+
+    Note over U,DB: Authenticated Request
+    U->>SPA: Navigate to /equipment
+    SPA->>Store: getToken()
+    Store-->>SPA: access_token
+    SPA->>API: GET /forklifts (Authorization: Bearer <token>)
+    API->>Sec: decode_token(token)
+    Sec-->>API: {sub: user_id, type: access, jti: uuid}
+    API->>DB: SELECT revoked_tokens WHERE jti = ?
+    DB-->>API: null (not revoked)
+    API->>DB: SELECT user WHERE id = user_id
+    DB-->>API: User with role_id
+    API->>API: require_permission(FORKLIFT_READ)
+    API->>DB: SELECT role WHERE id = role_id
+    DB-->>API: Role {name: "manager"}
+    API->>API: Check FORKLIFT_READ in ROLE_PERMISSIONS["manager"]
+    API-->>SPA: 200 {items: [...], total: N}
+    SPA-->>U: Render equipment list
+
+    Note over U,DB: Token Refresh
+    SPA->>SPA: Axios interceptor detects 401
+    SPA->>API: POST /auth/refresh {refresh_token}
+    API->>Sec: decode_token(refresh_token)
+    Sec-->>API: {sub: user_id, type: refresh}
+    API->>Sec: create_access_token(user_id)
+    API-->>SPA: {access_token: new_token}
+    SPA->>Store: updateToken(new_token)
+    SPA->>API: Retry original request with new token
+
+    Note over U,DB: Logout
+    U->>SPA: Click logout
+    SPA->>API: POST /auth/logout (Bearer <token>)
+    API->>Sec: decode_token(token)
+    API->>DB: INSERT revoked_tokens (jti)
+    API-->>SPA: 200 OK
+    SPA->>Store: logout()
+    Store->>Store: Clear localStorage
+    SPA-->>U: Redirect to /login

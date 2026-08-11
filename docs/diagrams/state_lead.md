@@ -1,0 +1,20 @@
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> NEW : Lead created
+
+    NEW --> CONTACTED : First contact made
+    NEW --> LOST : Immediately disqualified
+
+    CONTACTED --> QUALIFIED : Needs confirmed
+    CONTACTED --> LOST : Not interested
+
+    QUALIFIED --> PROPOSAL : Quotation prepared
+    QUALIFIED --> LOST : Budget or fit issues
+
+    PROPOSAL --> WON : Customer accepts quote
+    PROPOSAL --> LOST : Rejected
+
+    WON --> [*] : Deal closed
+    LOST --> NEW : Re-opened
+```

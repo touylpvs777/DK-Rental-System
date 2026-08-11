@@ -1,0 +1,58 @@
+graph TB
+    subgraph "PM Setup"
+        Plan[Create Maintenance Plan<br/>name, interval_hours, interval_days]
+        Plan --> Assign[Assign to Forklift]
+        Assign --> Schedule[Create Schedule<br/>next_due_date / next_due_hours]
+    end
+
+    subgraph "Trigger"
+        Schedule -->|"date reached OR<br/>hours exceeded"| Trigger{Trigger Type}
+        Trigger -->|"Preventive"| WO_PM[Work Order: Preventive]
+        Manual[Manual Request] -->|"Corrective"| WO_Corr[Work Order: Corrective]
+        Emergency[Equipment Failure] -->|"Emergency"| WO_Emerg[Work Order: Emergency]
+        Inspection[Periodic Check] -->|"Inspection"| WO_Insp[Work Order: Inspection]
+    end
+
+    subgraph "Work Order Lifecycle"
+        WO_PM & WO_Corr & WO_Emerg & WO_Insp --> Scheduled[SCHEDULED]
+
+        Scheduled -->|"start()"| InProgress[IN_PROGRESS]
+
+        InProgress -->|"consume parts"| Parts[Part Consumption]
+        Parts -->|"deduct from inventory"| InvTx[Inventory Transaction<br/>type: issue]
+
+        InProgress -->|"log costs"| Costs[Maintenance Costs]
+        Costs --> Labor[Labor Cost]
+        Costs --> PartsCost[Parts Cost]
+        Costs --> External[External Service]
+
+        InProgress -->|"complete()"| Completed[COMPLETED]
+        Completed -->|"record findings"| SvcHist[Service History Record]
+        Completed -->|"update hours"| HourMeter[Update Hour Meter]
+
+        Completed -->|"verify()"| Verified[VERIFIED]
+        Verified -->|"update schedule"| NextDue[Update next_due_date<br/>next_due_hours]
+        NextDue --> Schedule
+    end
+
+    subgraph "Cancellation"
+        Scheduled -->|"cancel()"| Cancelled[CANCELLED]
+        InProgress -->|"cancel()"| Cancelled
+    end
+
+    subgraph "Equipment Impact"
+        InProgress -->|"forklift status"| FK_Service["Forklift: in_service"]
+        Verified -->|"forklift status"| FK_Stock["Forklift: in_stock"]
+    end
+
+    classDef scheduled fill:#3b82f6,color:#fff
+    classDef progress fill:#f59e0b,color:#000
+    classDef done fill:#22c55e,color:#fff
+    classDef cancel fill:#ef4444,color:#fff
+    classDef side fill:#7c3aed,color:#fff
+
+    class Scheduled scheduled
+    class InProgress progress
+    class Completed,Verified done
+    class Cancelled cancel
+    class Parts,Costs,InvTx,Labor,PartsCost,External,SvcHist,HourMeter,NextDue side

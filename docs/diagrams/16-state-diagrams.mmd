@@ -1,0 +1,285 @@
+%% This file contains multiple state diagrams separated by comments.
+%% Render each section independently.
+
+%% ============================================================================
+%% STATE 1: Lead Status
+%% ============================================================================
+
+stateDiagram-v2
+    [*] --> new : Lead captured
+
+    new --> contacted : First outreach
+    contacted --> qualified : Meets criteria
+    contacted --> lost : No interest
+
+    qualified --> proposal : Quotation sent
+    proposal --> won : Deal closed
+    proposal --> lost : Rejected
+
+    won --> [*] : Convert to Customer
+    lost --> [*] : Archive
+
+%% ============================================================================
+%% STATE 2: Quotation Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> draft : Create quotation
+
+    draft --> under_review : Submit for review
+    draft --> cancelled : Cancel
+
+    under_review --> approved : Manager approves
+    under_review --> revision : Needs changes
+
+    revision --> draft : Revise and resubmit
+
+    approved --> sent : Send to customer
+
+    sent --> accepted : Customer accepts
+    sent --> rejected : Customer declines
+    sent --> expired : Past valid_until date
+
+    accepted --> converted : Convert to rental contract
+
+    converted --> [*]
+    cancelled --> [*]
+    rejected --> [*]
+    expired --> [*]
+
+%% ============================================================================
+%% STATE 3: Rental Contract Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> reservation : From quotation or direct
+
+    reservation --> draft : Fill contract details
+    draft --> pending_approval : Submit
+    draft --> cancelled : Cancel
+
+    pending_approval --> approved : Manager approves
+    pending_approval --> revision : Needs changes
+    pending_approval --> cancelled : Reject
+
+    revision --> draft : Revise
+
+    approved --> delivering : Activate + create delivery
+    approved --> cancelled : Cancel before delivery
+
+    delivering --> active : Delivery completed
+
+    active --> returning : Return requested
+    active --> overdue : Past end_date + no extension
+    active --> active : Extension approved
+
+    overdue --> returning : Late return initiated
+
+    returning --> inspecting : Equipment received
+
+    inspecting --> settling : Inspection complete
+    inspecting --> settling : Damage assessed + invoiced
+
+    settling --> closed : All invoices paid + deposits resolved
+
+    cancelled --> [*]
+    closed --> [*]
+
+%% ============================================================================
+%% STATE 4: Invoice Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> draft : Invoice created
+
+    draft --> issued : Issue invoice
+    draft --> cancelled : Cancel
+
+    issued --> sent : Send to customer
+    issued --> voided : Void
+
+    sent --> overdue : Past due_date
+    sent --> partially_paid : Partial payment allocated
+    sent --> paid : Full payment allocated
+
+    overdue --> partially_paid : Partial payment
+    overdue --> paid : Full payment
+
+    partially_paid --> paid : Remaining balance paid
+    partially_paid --> overdue : Past due + still outstanding
+
+    paid --> [*]
+    cancelled --> [*]
+    voided --> [*]
+
+%% ============================================================================
+%% STATE 5: Payment Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> pending : Record payment
+
+    pending --> confirmed : Finance confirms receipt
+    pending --> rejected : Payment bounced / invalid
+
+    confirmed --> confirmed : Allocate to invoice(s)
+    confirmed --> refunded : Full refund processed
+
+    rejected --> [*]
+    refunded --> [*]
+
+%% ============================================================================
+%% STATE 6: Deposit Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> pending : Deposit created with contract
+
+    pending --> received : Payment received
+
+    received --> refunded : Full refund on contract close
+    received --> partially_refunded : Partial refund (deductions)
+    received --> forfeited : Contract violation
+    received --> applied : Applied to invoice
+
+    partially_refunded --> [*]
+    refunded --> [*]
+    forfeited --> [*]
+    applied --> [*]
+
+%% ============================================================================
+%% STATE 7: Work Order Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> scheduled : Work order created
+
+    scheduled --> in_progress : Technician starts work
+    scheduled --> cancelled : Cancel before start
+
+    in_progress --> completed : Work finished
+    in_progress --> cancelled : Cancel (rare)
+
+    completed --> verified : Supervisor verifies
+
+    verified --> [*] : Schedule updated
+    cancelled --> [*]
+
+    state in_progress {
+        [*] --> working
+        working --> consuming_parts : Use spare parts
+        consuming_parts --> working
+        working --> logging_costs : Record costs
+        logging_costs --> working
+    }
+
+%% ============================================================================
+%% STATE 8: Asset Movement Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> draft : Movement created
+
+    draft --> preparing : Assign driver + prep
+    draft --> cancelled : Cancel
+
+    preparing --> in_transit : Depart from origin
+    preparing --> cancelled : Cancel before departure
+
+    in_transit --> delivered : Arrive at destination
+
+    delivered --> completed : Confirm + close
+
+    completed --> [*]
+    cancelled --> [*]
+
+    state in_transit {
+        [*] --> moving
+        moving --> checkpoint : Log checkpoint
+        checkpoint --> moving
+    }
+
+%% ============================================================================
+%% STATE 9: Forklift Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> in_stock : Register forklift
+
+    in_stock --> reserved : Contract approved
+    in_stock --> rented : Direct activation
+    in_stock --> in_service : Maintenance started
+    in_stock --> sold : Asset sold
+    in_stock --> decommissioned : End of life
+
+    reserved --> rented : Contract activated
+    reserved --> in_stock : Contract cancelled
+
+    rented --> in_stock : Return completed
+    rented --> in_service : Emergency maintenance
+
+    in_service --> in_stock : Maintenance complete
+    in_service --> rented : Back to active rental
+
+    sold --> [*]
+    decommissioned --> [*]
+
+%% ============================================================================
+%% STATE 10: Rental Return Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> requested : Return initiated
+
+    requested --> scheduled : Pickup date set
+    scheduled --> picked_up : Driver picks up
+    picked_up --> received : Arrives at warehouse
+    received --> inspected : Condition checked
+
+    inspected --> completed : No damage / damage resolved
+
+    completed --> [*]
+    requested --> cancelled : Cancel return
+    cancelled --> [*]
+
+%% ============================================================================
+%% STATE 11: Purchase Order Status
+%% ============================================================================
+
+---
+
+stateDiagram-v2
+    [*] --> draft : PO created
+
+    draft --> ordered : Send to supplier
+    ordered --> partially_received : Some items received
+    partially_received --> received : All items received
+    ordered --> received : All items received at once
+    ordered --> cancelled : Cancel order
+
+    received --> [*]
+    cancelled --> [*]
+
+    state partially_received {
+        [*] --> awaiting_remaining
+        awaiting_remaining --> receive_batch : Receive more items
+        receive_batch --> awaiting_remaining : Still missing items
+    }

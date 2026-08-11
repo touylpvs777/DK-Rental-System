@@ -1,0 +1,347 @@
+{
+  "batchIndex": 7,
+  "nodes": [
+    {
+      "id": "document:docs/diagrams/c4_component.md",
+      "type": "document",
+      "name": "C4 Component Diagram",
+      "summary": "C4 component-level diagram of the FastAPI backend showing 14 internal components: Security Core (JWT/bcrypt), RBAC Service, Auth Router, CRM, Fleet, Catalog, Quotation, Rental, Billing, Maintenance, Inventory, Movement, Reports, Dashboard, and Upload modules. Maps each component's relationships to the React SPA (via REST JSON), PostgreSQL, and file storage.",
+      "tags": ["c4", "architecture", "diagram", "component", "backend"],
+      "filePath": "docs/diagrams/c4_component.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/c4_container.md",
+      "type": "document",
+      "name": "C4 Container Diagram",
+      "summary": "C4 container-level diagram of the DK CRM platform showing five containers: React SPA (React 18 + TypeScript + Vite), Nginx reverse proxy, FastAPI backend (Python 3.12 + Uvicorn), PostgreSQL 16 (60+ tables), and file storage volume. Shows how the user reaches the SPA via HTTPS, Nginx proxies API and upload requests, and the backend writes files and reads/writes the database.",
+      "tags": ["c4", "architecture", "diagram", "container", "deployment"],
+      "filePath": "docs/diagrams/c4_container.md",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/diagrams/c4_context.md",
+      "type": "document",
+      "name": "C4 Context Diagram",
+      "summary": "C4 system-context diagram for the DK CRM platform. Identifies five user personas (System Admin, Sales Staff, Operations Staff, Technician, Finance Staff) and one external system (Excel/Spreadsheets for bulk import/export). Shows top-level responsibilities each persona has within the DK CRM boundary.",
+      "tags": ["c4", "architecture", "diagram", "context", "actors"],
+      "filePath": "docs/diagrams/c4_context.md",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/diagrams/er_diagram.md",
+      "type": "document",
+      "name": "Entity-Relationship Diagram",
+      "summary": "Full entity-relationship diagram covering the core database schema: roles, users, customers, leads, forklifts, brands, forklift_models, quotations, quotation_items, rental_contracts, rental_contract_items, invoices, payments, payment_allocations, work_orders, spare_parts, inventory_balance, and warehouses. Defines primary keys, foreign keys, and cardinality (one-to-many and optional) across all business domains.",
+      "tags": ["database", "entity-relationship", "diagram", "schema", "data-model"],
+      "filePath": "docs/diagrams/er_diagram.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/diagrams/infrastructure.md",
+      "type": "document",
+      "name": "Infrastructure Diagram",
+      "summary": "Docker Compose infrastructure diagram for the dk-service stack. Shows three named services: dk-frontend (Nginx 1.25 Alpine serving React dist/ on port 80), dk-backend (Uvicorn 4-workers + FastAPI on port 8000 with uploads/ volume), and dk-db (PostgreSQL 16 Alpine on port 5432 with pgdata volume). Documents health checks, environment variables (DATABASE_URL, SECRET_KEY, token expiry), and startup dependency order.",
+      "tags": ["infrastructure", "docker", "deployment", "diagram", "devops"],
+      "filePath": "docs/diagrams/infrastructure.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/seq_auth.md",
+      "type": "document",
+      "name": "Authentication Sequence Diagram",
+      "summary": "Mermaid sequence diagram covering the full JWT authentication lifecycle across four phases: Login (credential validation, bcrypt check, token issuance, activity log), Authenticated Request (Bearer token extraction, JWT decode, jti revocation check, user lookup), Token Refresh (refresh token validation, new token pair issuance), and Logout (jti insertion into revoked_tokens, cleanup, activity log, client-side token removal).",
+      "tags": ["sequence", "workflow", "authentication", "jwt", "security"],
+      "filePath": "docs/diagrams/seq_auth.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/seq_maintenance.md",
+      "type": "document",
+      "name": "Maintenance Sequence Diagram",
+      "summary": "Mermaid sequence diagram for the maintenance work-order lifecycle across four phases: PM trigger detection (overdue schedules flagged as DUE), Manager creates work order (forklift set IN_SERVICE, status SCHEDULED), Technician executes work (transitions to IN_PROGRESS, records parts consumption, deducts inventory, logs hours/findings), and Manager verifies and closes (status VERIFIED, costs recorded, forklift returned to IN_STOCK, next schedule updated).",
+      "tags": ["sequence", "workflow", "maintenance", "work-order"],
+      "filePath": "docs/diagrams/seq_maintenance.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/seq_rental.md",
+      "type": "document",
+      "name": "Rental Sequence Diagram",
+      "summary": "Mermaid sequence diagram covering the full rental sales cycle across seven steps: Create Lead (status NEW), Create Quotation (DRAFT with items), Approval workflow (UNDER_REVIEW → APPROVED), Send and Accept (SENT → ACCEPTED), Convert to Contract (rental_contracts RESERVATION, forklifts RESERVED), Deliver and Activate (DELIVERING → ACTIVE, asset movement recorded), and Invoice (billing cycle invoice DRAFT → SENT).",
+      "tags": ["sequence", "workflow", "rental", "sales", "billing"],
+      "filePath": "docs/diagrams/seq_rental.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/diagrams/state_forklift.md",
+      "type": "document",
+      "name": "Forklift State Machine",
+      "summary": "State diagram for forklift equipment lifecycle with seven states: IN_STOCK (initial), RESERVED (rental contract approved), RENTED (delivered to customer), RETURNING (return initiated), IN_SERVICE (work order active or damage repair), SOLD, and DECOMMISSIONED. Captures all valid transitions including emergency maintenance during active rental and damage-driven repair on return.",
+      "tags": ["state-machine", "forklift", "diagram", "fleet"],
+      "filePath": "docs/diagrams/state_forklift.md",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/diagrams/state_invoice.md",
+      "type": "document",
+      "name": "Invoice State Machine",
+      "summary": "State diagram for the invoice lifecycle with eight states: DRAFT, ISSUED, SENT, PARTIALLY_PAID, PAID, OVERDUE, VOIDED, and CANCELLED. Models partial payment progression to full settlement, overdue recovery paths, voiding after dispute, and terminal states (PAID, VOIDED, CANCELLED).",
+      "tags": ["state-machine", "invoice", "diagram", "billing"],
+      "filePath": "docs/diagrams/state_invoice.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/state_lead.md",
+      "type": "document",
+      "name": "Lead State Machine",
+      "summary": "State diagram for the CRM lead lifecycle with six states: NEW, CONTACTED, QUALIFIED, PROPOSAL, WON, and LOST. Shows the linear sales progression and branching loss conditions at each stage, plus the re-open transition from LOST back to NEW for recycled leads.",
+      "tags": ["state-machine", "lead", "diagram", "crm"],
+      "filePath": "docs/diagrams/state_lead.md",
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/diagrams/state_quotation.md",
+      "type": "document",
+      "name": "Quotation State Machine",
+      "summary": "State diagram for the quotation approval lifecycle with nine states: DRAFT, UNDER_REVIEW, APPROVED, REVISION, SENT, ACCEPTED, REJECTED, EXPIRED, and CONVERTED. Covers internal review loop (UNDER_REVIEW → REVISION → DRAFT), customer decision (ACCEPTED/REJECTED/EXPIRED), and final conversion to rental contract. CANCELLED is a terminal state reachable from multiple stages.",
+      "tags": ["state-machine", "quotation", "diagram", "sales"],
+      "filePath": "docs/diagrams/state_quotation.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/state_rental.md",
+      "type": "document",
+      "name": "Rental Contract State Machine",
+      "summary": "State diagram for the rental contract lifecycle with twelve states: RESERVATION, DRAFT, PENDING_APPROVAL, APPROVED, DELIVERING, ACTIVE, OVERDUE, RETURNING, INSPECTING, SETTLING, CLOSED, and CANCELLED. Models the full arc from reservation through delivery, active billing with overdue recovery, physical return inspection, damage rework, and final settlement closure.",
+      "tags": ["state-machine", "rental", "diagram", "contract"],
+      "filePath": "docs/diagrams/state_rental.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/workflow_inventory.md",
+      "type": "document",
+      "name": "Inventory Workflow",
+      "summary": "Flowchart for spare-parts inventory management covering two parallel paths: replenishment (low-stock detection against min_stock_level, purchase order lifecycle DRAFT → SUBMITTED → CONFIRMED/alternative supplier → RECEIVED, goods receipt transaction, inventory_balance update, unit cost update) and consumption (work order parts reservation, issuance with part_consumption record, and balance deduction feeding back into the stock check).",
+      "tags": ["workflow", "business-process", "inventory", "spare-parts"],
+      "filePath": "docs/diagrams/workflow_inventory.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/workflow_maintenance.md",
+      "type": "document",
+      "name": "Maintenance Workflow",
+      "summary": "Flowchart for the complete maintenance process. Five trigger types (preventive by hour meter, preventive by calendar, corrective breakdown, emergency critical failure, regulatory inspection) feed into work order creation (SCHEDULED). Execution phase covers labour hours, parts (with inventory deduction), costs, and findings logging. Completion triggers manager verification — failure loops back to IN_PROGRESS; pass produces three outcomes: service history, next PM scheduling, and cost report.",
+      "tags": ["workflow", "business-process", "maintenance", "work-order"],
+      "filePath": "docs/diagrams/workflow_maintenance.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/diagrams/workflow_sales.md",
+      "type": "document",
+      "name": "Sales Workflow",
+      "summary": "End-to-end sales and rental lifecycle flowchart spanning four colour-coded sub-workflows: Lead Management (NEW → CONTACTED → QUALIFIED → PROPOSAL → WON/LOST with re-open path), Quotation Workflow (DRAFT → review → APPROVED → SENT → ACCEPTED/REJECTED with revision loop), Rental Contract (RESERVATION → DRAFT → PENDING_APPROVAL → APPROVED → DELIVERING → ACTIVE), and Billing (DRAFT invoice → SENT → PAID or OVERDUE collection loop).",
+      "tags": ["workflow", "business-process", "sales", "rental", "billing"],
+      "filePath": "docs/diagrams/workflow_sales.md",
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/diagrams/c4_context.md",
+      "target": "document:docs/diagrams/c4_container.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "C4 context expands to container view"
+    },
+    {
+      "source": "document:docs/diagrams/c4_container.md",
+      "target": "document:docs/diagrams/c4_component.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "C4 container expands to component view"
+    },
+    {
+      "source": "document:docs/diagrams/c4_context.md",
+      "target": "document:docs/diagrams/c4_component.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "C4 context and component are part of the same C4 model"
+    },
+    {
+      "source": "document:docs/diagrams/seq_auth.md",
+      "target": "document:docs/diagrams/seq_maintenance.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both are sequence diagrams in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/seq_auth.md",
+      "target": "document:docs/diagrams/seq_rental.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both are sequence diagrams in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/seq_maintenance.md",
+      "target": "document:docs/diagrams/seq_rental.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both are sequence diagrams in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/state_forklift.md",
+      "target": "document:docs/diagrams/state_invoice.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "State machines in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/state_forklift.md",
+      "target": "document:docs/diagrams/state_lead.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "State machines in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/state_forklift.md",
+      "target": "document:docs/diagrams/state_quotation.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "State machines in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/state_forklift.md",
+      "target": "document:docs/diagrams/state_rental.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Forklift status transitions driven by rental contract lifecycle"
+    },
+    {
+      "source": "document:docs/diagrams/state_invoice.md",
+      "target": "document:docs/diagrams/state_quotation.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "State machines in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/state_invoice.md",
+      "target": "document:docs/diagrams/state_rental.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Invoice states are driven by rental contract billing cycles"
+    },
+    {
+      "source": "document:docs/diagrams/state_lead.md",
+      "target": "document:docs/diagrams/state_quotation.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Lead WON triggers quotation creation"
+    },
+    {
+      "source": "document:docs/diagrams/state_lead.md",
+      "target": "document:docs/diagrams/state_rental.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Lead pipeline leads to rental contract"
+    },
+    {
+      "source": "document:docs/diagrams/state_quotation.md",
+      "target": "document:docs/diagrams/state_rental.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Accepted quotation converts to rental contract"
+    },
+    {
+      "source": "document:docs/diagrams/workflow_inventory.md",
+      "target": "document:docs/diagrams/workflow_maintenance.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Maintenance work orders consume inventory spare parts"
+    },
+    {
+      "source": "document:docs/diagrams/workflow_inventory.md",
+      "target": "document:docs/diagrams/workflow_sales.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Business process workflows in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/workflow_maintenance.md",
+      "target": "document:docs/diagrams/workflow_sales.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Business process workflows in the same system"
+    },
+    {
+      "source": "document:docs/diagrams/infrastructure.md",
+      "target": "document:docs/diagrams/c4_container.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Infrastructure diagram documents the Docker deployment of C4 containers"
+    },
+    {
+      "source": "document:docs/diagrams/er_diagram.md",
+      "target": "document:docs/diagrams/c4_component.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "ER diagram documents the data model behind the backend components"
+    },
+    {
+      "source": "document:docs/diagrams/seq_auth.md",
+      "target": "document:docs/diagrams/c4_component.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Auth sequence documents the runtime behaviour of the Security Core and Auth Router components"
+    },
+    {
+      "source": "document:docs/diagrams/seq_maintenance.md",
+      "target": "document:docs/diagrams/workflow_maintenance.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Maintenance sequence documents the API-level implementation of the maintenance workflow"
+    },
+    {
+      "source": "document:docs/diagrams/seq_rental.md",
+      "target": "document:docs/diagrams/workflow_sales.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Rental sequence documents the API-level implementation of the end-to-end sales workflow"
+    },
+    {
+      "source": "document:docs/diagrams/state_forklift.md",
+      "target": "document:docs/diagrams/seq_maintenance.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Forklift state machine documents the status transitions triggered in the maintenance sequence"
+    },
+    {
+      "source": "document:docs/diagrams/state_rental.md",
+      "target": "document:docs/diagrams/seq_rental.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Rental contract state machine documents the status transitions in the rental sequence"
+    },
+    {
+      "source": "document:docs/diagrams/state_lead.md",
+      "target": "document:docs/diagrams/workflow_sales.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Lead state machine documents the Lead Management sub-workflow within the sales workflow"
+    },
+    {
+      "source": "document:docs/diagrams/state_quotation.md",
+      "target": "document:docs/diagrams/workflow_sales.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Quotation state machine documents the Quotation Workflow sub-workflow within the sales workflow"
+    },
+    {
+      "source": "document:docs/diagrams/state_invoice.md",
+      "target": "document:docs/diagrams/workflow_sales.md",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "Invoice state machine documents the Billing sub-workflow within the sales workflow"
+    }
+  ]
+}

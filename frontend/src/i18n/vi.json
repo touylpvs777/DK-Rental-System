@@ -1,0 +1,3013 @@
+{
+  "common": {
+    "brandName": "DK Service",
+    "unassigned": "Chưa Phân Công",
+    "brandTagline": "Nền Tảng Doanh Nghiệp",
+    "language": "Ngôn Ngữ",
+    "noDataYet": "Chưa có dữ liệu",
+    "dataWillAppear": "Dữ liệu sẽ hiển thị khi có bản ghi",
+    "save": "Lưu",
+    "saving": "Đang lưu…",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "deleting": "Đang xóa…",
+    "edit": "Sửa",
+    "create": "Tạo",
+    "add": "Thêm",
+    "remove": "Loại bỏ",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "filters": "Bộ lọc",
+    "actions": "Thao tác",
+    "status": "Trạng thái",
+    "loading": "Đang tải…",
+    "close": "Đóng",
+    "confirm": "Xác nhận",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "previous": "Trước đó",
+    "submit": "Gửi",
+    "view": "Xem",
+    "viewDetails": "Xem chi tiết",
+    "download": "Tải xuống",
+    "upload": "Tải lên",
+    "yes": "Có",
+    "no": "Không",
+    "required": "Bắt buộc",
+    "optional": "Tùy chọn",
+    "name": "Tên",
+    "email": "Email",
+    "phone": "Điện thoại",
+    "address": "Địa chỉ",
+    "date": "Ngày",
+    "description": "Mô tả",
+    "notes": "Ghi chú",
+    "total": "Tổng cộng",
+    "subtotal": "Tạm tính",
+    "quantity": "Số lượng",
+    "price": "Giá",
+    "amount": "Số tiền",
+    "type": "Loại",
+    "category": "Danh mục",
+    "all": "Tất cả",
+    "none": "Không có",
+    "unknown": "Không xác định",
+    "active": "Hoạt động",
+    "inactive": "Ngừng hoạt động",
+    "pending": "Đang chờ",
+    "approved": "Đã duyệt",
+    "rejected": "Đã từ chối",
+    "completed": "Hoàn thành",
+    "cancelled": "Đã hủy",
+    "noResultsFound": "Không tìm thấy kết quả",
+    "tryAdjustingFilters": "Hãy thử điều chỉnh bộ lọc hoặc từ khóa tìm kiếm",
+    "somethingWentWrong": "Đã xảy ra lỗi",
+    "retry": "Thử lại",
+    "clearFilters": "Xóa bộ lọc",
+    "export": "Xuất",
+    "print": "In",
+    "closeDialog": "Đóng hộp thoại",
+    "closePanel": "Đóng bảng",
+    "dismissNotification": "Bỏ qua thông báo",
+    "gridView": "Xem dạng lưới",
+    "listView": "Xem dạng danh sách",
+    "page": "Trang",
+    "of": "trên",
+    "rowsPerPage": "Số dòng mỗi trang",
+    "selectAll": "Chọn tất cả",
+    "createdAt": "Ngày tạo",
+    "updatedAt": "Cập nhật",
+    "mainNavigation": "Điều hướng chính",
+    "moreLanguages": "Ngôn ngữ khác",
+    "loadingApplication": "Đang tải ứng dụng",
+    "skipToContent": "Bỏ qua đến nội dung",
+    "theme": "Giao diện",
+    "themeLight": "Sáng",
+    "themeDark": "Tối",
+    "themeSystem": "Theo hệ thống",
+    "scrollLeft": "Cuộn sang trái",
+    "scrollRight": "Cuộn sang phải",
+    "itemCode": "Mã hàng",
+    "unit": "Đơn vị",
+    "exportPdf": "Xuất PDF",
+    "clear": "Xóa"
+  },
+  "leads": {
+    "status": {
+      "new": "Mới",
+      "contacted": "Đã liên hệ",
+      "qualified": "Đủ điều kiện",
+      "proposal": "Đề xuất thương mại",
+      "won": "Thành công",
+      "lost": "Thất bại"
+    },
+    "form": {
+      "editTitle": "Sửa Tiềm Năng Bán Hàng",
+      "newTitle": "Tiềm Năng Bán Hàng Mới",
+      "saveChanges": "Lưu Thay Đổi",
+      "createLead": "Tạo Tiềm Năng Bán Hàng",
+      "titleLabel": "Tiêu Đề",
+      "titlePlaceholder": "vd: Cơ Hội Thiết Bị Doanh Nghiệp",
+      "wonLeadsCannotChange": "Tiềm năng bán hàng đã thành công không thể chuyển sang trạng thái khác.",
+      "sourceLabel": "Nguồn",
+      "sourceNone": "— Không có —",
+      "valueLabel": "Giá Trị ($)",
+      "descriptionPlaceholder": "Ghi chú ngắn gọn về tiềm năng bán hàng này…"
+    },
+    "source": {
+      "website": "Website",
+      "referral": "Giới Thiệu",
+      "coldCall": "Gọi Điện Trực Tiếp",
+      "email": "Email",
+      "socialMedia": "Mạng Xã Hội",
+      "other": "Khác"
+    },
+    "list": {
+      "title": "Tiềm Năng Bán Hàng",
+      "totalCount": "{{count}} tiềm năng bán hàng",
+      "newLead": "Tiềm Năng Bán Hàng Mới",
+      "searchPlaceholder": "Tìm kiếm tiềm năng bán hàng…",
+      "allSources": "Tất Cả Nguồn",
+      "resultsCount": "{{count}} kết quả",
+      "colLead": "Tiềm Năng Bán Hàng",
+      "colSource": "Nguồn",
+      "colValue": "Giá Trị",
+      "noLeadsFound": "Không tìm thấy tiềm năng bán hàng nào",
+      "createFirstLead": "Tạo tiềm năng bán hàng đầu tiên của bạn để bắt đầu.",
+      "showingRange": "Hiển thị {{start}}–{{end}} trong {{total}}",
+      "deleteTitle": "Xóa Tiềm Năng Bán Hàng",
+      "deleteMessage": "Bạn có chắc chắn muốn xóa \"{{title}}\"? Hành động này không thể hoàn tác.",
+      "toast": {
+        "loadError": "Không thể tải danh sách tiềm năng bán hàng.",
+        "createSuccess": "Đã tạo tiềm năng bán hàng.",
+        "createError": "Không thể tạo tiềm năng bán hàng.",
+        "updateSuccess": "Đã cập nhật tiềm năng bán hàng.",
+        "updateError": "Không thể cập nhật tiềm năng bán hàng.",
+        "deleteSuccess": "Đã xóa tiềm năng bán hàng.",
+        "deleteError": "Không thể xóa tiềm năng bán hàng."
+      }
+    }
+  },
+  "nav": {
+    "groups": {
+      "dashboard": "Bảng điều khiển điều hành",
+      "crm": "CRM",
+      "sales": "Bán Hàng",
+      "purchasing": "Mua Hàng",
+      "equipment": "Tài sản thiết bị",
+      "rental": "Hoạt động cho thuê",
+      "maintenance": "Dịch vụ & bảo trì",
+      "inventory": "Kiểm soát tồn kho",
+      "finance": "Tài chính & kế toán",
+      "executive": "Báo cáo điều hành",
+      "projects": "Danh mục dự án"
+    },
+    "items": {
+      "overview": "Tổng quan vận hành",
+      "customers": "Khách hàng",
+      "leads": "Tiềm năng bán hàng",
+      "quotations": "Báo giá thương mại",
+      "registry": "Sổ đăng ký tài sản",
+      "movements": "Di chuyển kho",
+      "contracts": "Hợp đồng dịch vụ",
+      "dashboard": "Bảng điều khiển điều hành",
+      "maintenance": "Dịch vụ & bảo trì",
+      "inventory": "Quản trị tồn kho",
+      "billing": "Hóa đơn & phải thu",
+      "products": "Danh mục sản phẩm",
+      "invoices": "Hóa đơn",
+      "payments": "Thanh toán",
+      "deposits": "Tiền đặt cọc",
+      "statements": "Sao kê tài khoản",
+      "activity": "Hoạt động",
+      "reports": "Báo cáo",
+      "analytics": "Phân tích kinh doanh",
+      "iotTelemetry": "Hệ thống IoT",
+      "settings": "Cài đặt",
+      "warehouseProjects": "Dự án kho bãi",
+      "purchaseOrders": "Đơn Mua Hàng",
+      "salesOrders": "Đơn Đặt Hàng Bán",
+      "taxInvoices": "Hóa Đơn Thuế",
+      "creditNotes": "Giấy Báo Có",
+      "paymentVouchers": "Phiếu Chi",
+      "deliveryNotes": "Phiếu Giao Hàng",
+      "goodsReceive": "Phiếu Nhập Kho",
+      "goodsIssue": "Phiếu Xuất Kho"
+    },
+    "expandSidebar": "Mở rộng panel điều hướng",
+    "collapseSidebar": "Thu gọn panel điều hướng"
+  },
+  "movement": {
+    "status": {
+      "draft": "Bản Nháp",
+      "preparing": "Đang Chuẩn Bị",
+      "in_transit": "Đang Vận Chuyển",
+      "delivered": "Đã Giao",
+      "completed": "Hoàn Thành",
+      "cancelled": "Đã Hủy"
+    },
+    "type": {
+      "warehouse_transfer": "Chuyển Kho",
+      "customer_deployment": "Triển Khai",
+      "customer_return": "Trả Hàng",
+      "internal_relocation": "Di Chuyển Nội Bộ"
+    },
+    "priority": {
+      "low": "Thấp",
+      "normal": "Bình Thường",
+      "high": "Cao",
+      "urgent": "Khẩn Cấp"
+    },
+    "card": {
+      "customer": "Khách hàng: {{name}}"
+    },
+    "timeline": {
+      "title": "Dòng Thời Gian Di Chuyển",
+      "by": "bởi {{name}}"
+    },
+    "list": {
+      "title": "Kiểm Soát Di Chuyển",
+      "totalCount": "{{count}} lượt di chuyển",
+      "refresh": "Làm Mới",
+      "newMovement": "Di Chuyển Mới",
+      "loadFailed": "Không thể tải danh sách di chuyển.",
+      "searchPlaceholder": "Tìm số, vị trí, mã...",
+      "allStatuses": "Tất Cả Trạng Thái",
+      "allTypes": "Tất Cả Loại",
+      "resultsCount": "{{count}} kết quả",
+      "colMovement": "Di Chuyển",
+      "colEquipment": "Thiết Bị",
+      "colFromTo": "Từ → Đến",
+      "colScheduled": "Lịch Trình",
+      "colPriority": "Ưu Tiên",
+      "noMovementsFound": "Không tìm thấy lượt di chuyển nào",
+      "pageOf": "Trang {{page}} / {{pages}} ({{total}} tổng)"
+    },
+    "form": {
+      "title": "Di Chuyển Mới",
+      "backToMovements": "Quay Lại Danh Sách Di Chuyển",
+      "movementType": "Loại Di Chuyển",
+      "priority": "Ưu Tiên",
+      "forkliftId": "Mã Xe Nâng",
+      "forkliftIdPlaceholder": "Nhập mã xe nâng",
+      "customerId": "Mã Khách Hàng",
+      "fromLocation": "Vị Trí Xuất Phát",
+      "fromLocationPlaceholder": "Kho DK A",
+      "toLocation": "Vị Trí Đến",
+      "toLocationPlaceholder": "Địa Điểm Khách Hàng X",
+      "fromAddress": "Địa Chỉ Xuất Phát",
+      "toAddress": "Địa Chỉ Đến",
+      "addressPlaceholder": "Địa chỉ đầy đủ (tùy chọn)",
+      "scheduledDate": "Ngày Dự Kiến",
+      "trackingCode": "Mã Theo Dõi / QR",
+      "trackingCodePlaceholder": "Mã QR hoặc mã vạch tham chiếu",
+      "notesPlaceholder": "Ghi chú hiển thị...",
+      "internalNotes": "Ghi Chú Nội Bộ",
+      "internalNotesPlaceholder": "Chỉ dành cho nội bộ...",
+      "creating": "Đang tạo...",
+      "createMovement": "Tạo Di Chuyển",
+      "created": "Đã tạo lượt di chuyển {{number}}.",
+      "createFailed": "Không thể tạo lượt di chuyển.",
+      "errors": {
+        "forkliftRequired": "Vui lòng nhập mã xe nâng.",
+        "fromLocationRequired": "Vui lòng nhập vị trí xuất phát.",
+        "toLocationRequired": "Vui lòng nhập vị trí đến.",
+        "scheduledDateRequired": "Vui lòng chọn ngày dự kiến."
+      }
+    },
+    "detail": {
+      "notFound": "Không tìm thấy lượt di chuyển.",
+      "actionFailed": "Thất bại: {{action}}",
+      "actions": {
+        "startPreparing": "Bắt Đầu Chuẩn Bị",
+        "recordDeparture": "Ghi Nhận Xuất Phát",
+        "recordArrival": "Ghi Nhận Đến Nơi",
+        "markComplete": "Đánh Dấu Hoàn Thành"
+      },
+      "toasts": {
+        "preparationStarted": "Đã bắt đầu chuẩn bị",
+        "movementCompleted": "Đã hoàn thành di chuyển",
+        "cancelled": "Đã hủy",
+        "departed": "Đã xuất phát",
+        "arrived": "Đã đến nơi"
+      },
+      "cancelledByUser": "Đã hủy bởi người dùng",
+      "from": "Từ",
+      "to": "Đến",
+      "scheduled": "Dự Kiến",
+      "trackingCode": "Mã Theo Dõi",
+      "equipment": "Thiết Bị",
+      "customer": "Khách Hàng",
+      "contract": "Hợp Đồng",
+      "driver": "Tài Xế",
+      "departed": "Đã Xuất Phát",
+      "arrived": "Đã Đến",
+      "departureHours": "Giờ Xuất Phát",
+      "arrivalHours": "Giờ Đến Nơi",
+      "internalNote": "Ghi Chú Nội Bộ",
+      "cancellationReason": "Lý Do Hủy",
+      "departureHourMeter": "Đồng Hồ Giờ Lúc Xuất Phát",
+      "arrivalHourMeter": "Đồng Hồ Giờ Lúc Đến Nơi"
+    }
+  },
+  "header": {
+    "appearance": "Giao Diện",
+    "settings": "Cài Đặt",
+    "logout": "Đăng Xuất",
+    "roleAdmin": "Quản Trị Viên",
+    "roleUser": "Người Dùng",
+    "myProfile": "Hồ Sơ Của Tôi",
+    "changePassword": "Đổi Mật Khẩu",
+    "searchPlaceholder": "Tìm trang, thao tác...",
+    "searchTrigger": "Tìm kiếm...",
+    "searchLabel": "Tìm Kiếm (Ctrl+K)",
+    "searchCommandsLabel": "Tìm Lệnh",
+    "clearSearch": "Xóa Tìm Kiếm",
+    "noResults": "Không có kết quả cho \"{{query}}\"",
+    "navigate": "điều hướng",
+    "select": "chọn",
+    "close": "đóng",
+    "toggleSidebar": "Bật/Tắt Thanh Bên",
+    "groupNavigation": "Điều Hướng",
+    "groupQuickActions": "Thao Tác Nhanh",
+    "quickActionNewCustomer": "Khách Hàng Mới",
+    "quickActionNewQuotation": "Báo Giá Mới",
+    "quickActionNewContract": "Hợp Đồng Mới",
+    "quickActionRegisterEquipment": "Đăng Ký Thiết Bị",
+    "justNow": "vừa xong",
+    "minutesAgo": "{{count}} phút trước",
+    "hoursAgo": "{{count}} giờ trước",
+    "daysAgo": "{{count}} ngày trước",
+    "notifications": "Thông Báo",
+    "notificationsUnread": "Thông Báo, {{count}} chưa đọc",
+    "noRecentActivity": "Không có hoạt động gần đây",
+    "systemUser": "Hệ Thống",
+    "viewAllActivity": "Xem tất cả hoạt động →",
+    "searchResults": "Kết Quả Tìm Kiếm",
+    "breadcrumb": "Đường Dẫn",
+    "userActions": "Thao Tác Người Dùng",
+    "markAllRead": "Đánh Dấu Đã Đọc Tất Cả",
+    "adminBroadcast": "Quản Trị"
+  },
+  "dashboard": {
+    "exec": {
+      "eyebrow": "Tổng Quan Điều Hành",
+      "title": "Trung Tâm Điều Hành Cho Thuê",
+      "rentalMvpEyebrow": "DK Rental · Tổng Quan Điều Hành",
+      "rentalMvpTitle": "Bảng Điều Khiển Đội Xe & Cho Thuê",
+      "kpi": {
+        "totalFleet": "Tổng Số Xe",
+        "totalFleetSub": "Số xe nâng đã đăng ký",
+        "activeRented": "Đang Cho Thuê",
+        "activeRentedSub": "Số xe đang được thuê",
+        "utilizationRate": "Tỷ Lệ Sử Dụng",
+        "utilizationRateSub": "Tỷ lệ xe cho thuê trên tổng số xe",
+        "pendingMaintenance": "Chờ Bảo Trì",
+        "pendingMaintenanceSub": "Công việc PM / kiểm tra đang mở",
+        "pendingMaintenanceCritical": "{{count}} đang thực hiện",
+        "totalStockValue": "Tổng Giá Trị Tồn Kho",
+        "totalStockValueSub": "Vốn đọng trong phụ tùng",
+        "lowStockAlerts": "Cảnh Báo Tồn Kho Thấp",
+        "lowStockAlertsItems": "{{count}} mục",
+        "lowStockAlertsSub": "Dưới ngưỡng đặt hàng lại",
+        "lowStockAlertsCritical": "{{count}} nghiêm trọng"
+      },
+      "chart": {
+        "utilizationTab": "Xu Hướng Sử Dụng Xe",
+        "revenueTab": "Doanh Thu so với Chi Phí Bảo Trì",
+        "last6Months": "6 tháng gần nhất",
+        "utilizationSeries": "Tỷ lệ sử dụng %",
+        "revenueSeries": "Doanh thu",
+        "maintenanceSeries": "Chi phí bảo trì",
+        "months": {
+          "jan": "Th1",
+          "feb": "Th2",
+          "mar": "Th3",
+          "apr": "Th4",
+          "may": "Th5",
+          "jun": "Th6"
+        }
+      },
+      "contracts": {
+        "title": "Hợp Đồng Cho Thuê Đang Hoạt Động",
+        "columnContractId": "Mã Hợp Đồng",
+        "columnCustomerName": "Tên Khách Hàng",
+        "columnForkliftModel": "Model Xe Nâng",
+        "columnEndDate": "Ngày Kết Thúc",
+        "columnStatus": "Trạng Thái"
+      },
+      "lowStock": {
+        "title": "Phụ Tùng Sắp Hết",
+        "minSuffix": "tối thiểu"
+      },
+      "status": {
+        "booked": "Đã Đặt",
+        "onRent": "Đang Thuê",
+        "expiringSoon": "Sắp Hết Hạn",
+        "overdue": "Quá Hạn",
+        "returned": "Đã Trả",
+        "cancelled": "Đã Hủy"
+      },
+      "customizer": {
+        "fontSize": "Cỡ Chữ",
+        "language": "Ngôn Ngữ",
+        "small": "Nhỏ",
+        "medium": "Vừa",
+        "large": "Lớn"
+      },
+      "brandsWeService": "Thương Hiệu Chúng Tôi Phục Vụ"
+    },
+    "title": "Bảng Điều Khiển",
+    "updated": "Cập nhật {{date}}",
+    "refresh": "Làm Mới",
+    "retry": "Thử Lại",
+    "keyMetrics": "Chỉ Số Chính",
+    "quickActions": "Thao Tác Nhanh",
+    "revenueFleet": "Doanh Thu & Đội Xe",
+    "activityFleet": "Hoạt Động & Đội Xe",
+    "fleetByFuelType": "Đội Xe Theo Loại Nhiên Liệu",
+    "upcomingTasks": "Công Việc Sắp Tới",
+    "customerOverview": "Tổng Quan Khách Hàng",
+    "leadPipeline": "Kênh Cơ Hội",
+    "resultsConversion": "Kết Quả & Chuyển Đổi",
+    "recentActivity": "Hoạt Động Gần Đây",
+    "viewAll": "Xem Tất Cả",
+    "noRecentActivity": "Không có hoạt động gần đây",
+    "loadError": "Không thể tải dữ liệu bảng điều khiển.",
+    "kpi": {
+      "totalRevenue": "Tổng Doanh Thu",
+      "activeRentals": "Hợp Đồng Đang Thuê",
+      "overdueCount": "{{count}} quá hạn",
+      "fleetUtilization": "Tỷ Lệ Sử Dụng Đội Xe",
+      "rentedOfFleet": "{{rented}}/{{total}} đang thuê",
+      "maintenanceDue": "Đến Hạn Bảo Trì",
+      "criticalCount": "{{count}} nghiêm trọng",
+      "lowStock": "Sắp Hết Hàng",
+      "outstandingInvoices": "Hóa Đơn Còn Nợ",
+      "amountOverdue": "{{amount}} quá hạn",
+      "totalCustomers": "Tổng Khách Hàng",
+      "active": "Đang Hoạt Động",
+      "percentOfTotal": "{{pct}} trên tổng",
+      "prospects": "Tiềm Năng",
+      "totalLeads": "Tổng Cơ Hội",
+      "new": "Mới",
+      "contacted": "Đã Liên Hệ",
+      "qualified": "Đủ Điều Kiện",
+      "proposal": "Đề Xuất",
+      "won": "Thành Công",
+      "lost": "Thất Bại",
+      "conversion": "Chuyển Đổi",
+      "winRate": "Tỷ Lệ Thắng",
+      "lostRate": "Tỷ Lệ Thất Bại",
+      "wonOverTotal": "Thành công / Tổng",
+      "wonOverWonLost": "Thành công / (Thành công+Thất bại)",
+      "lostOverWonLost": "Thất bại / (Thành công+Thất bại)"
+    },
+    "quickAction": {
+      "createRental": "Tạo Hợp Đồng Thuê",
+      "createRentalDesc": "Hợp đồng thuê mới",
+      "addEquipment": "Thêm Thiết Bị",
+      "addEquipmentDesc": "Đăng ký xe nâng",
+      "createInvoice": "Tạo Hóa Đơn",
+      "createInvoiceDesc": "Lập hóa đơn",
+      "purchaseOrder": "Đơn Mua Hàng",
+      "purchaseOrderDesc": "Đặt mua phụ tùng",
+      "maintenance": "Bảo Trì",
+      "maintenanceDesc": "Lên lịch bảo trì"
+    },
+    "chart": {
+      "revenueTrend": "Xu Hướng Doanh Thu",
+      "revenueTrendSub": "Doanh thu hóa đơn theo tháng",
+      "noRevenueData": "Chưa có dữ liệu doanh thu",
+      "rentalTrend": "Xu Hướng Cho Thuê",
+      "rentalTrendSub": "Số hợp đồng đang hoạt động theo tháng",
+      "noRentalData": "Chưa có dữ liệu cho thuê",
+      "fleetUtilization": "Tỷ Lệ Sử Dụng Đội Xe",
+      "fleetUtilizationSub": "Thiết bị theo trạng thái",
+      "noFleetData": "Không có dữ liệu đội xe",
+      "total": "Tổng Cộng",
+      "maintenanceCost": "Chi Phí Bảo Trì",
+      "maintenanceCostSub": "Chi phí bảo trì theo tháng",
+      "noMaintenanceCostData": "Không có dữ liệu chi phí bảo trì",
+      "fleetByFuelType": "Đội Xe Theo Loại Nhiên Liệu",
+      "units": "Số Lượng"
+    },
+    "task": {
+      "loading": "Đang tải...",
+      "contractsExpiring": "Hợp Đồng Sắp Hết Hạn",
+      "countInDays": "{{count}} trong {{days}} ngày",
+      "noContractsExpiring": "Không có hợp đồng nào sắp hết hạn",
+      "viewAllContracts": "Xem Tất Cả Hợp Đồng →",
+      "quotationsExpiring": "Báo Giá Sắp Hết Hạn",
+      "noQuotationsExpiring": "Không có báo giá nào sắp hết hạn",
+      "viewAllQuotations": "Xem Tất Cả Báo Giá →",
+      "pmServiceDue": "Đến Hạn PM / Bảo Trì",
+      "approaching": "{{count}} sắp đến hạn",
+      "allWithinServiceRange": "Tất cả xe nâng đều trong phạm vi bảo trì",
+      "hoursMeter": "{{hours}} giờ",
+      "viewAllEquipment": "Xem Tất Cả Thiết Bị →"
+    },
+    "fleetStatus": {
+      "inStock": "Còn Hàng",
+      "rented": "Đang Cho Thuê",
+      "inService": "Đang Bảo Trì",
+      "reserved": "Đã Đặt Trước",
+      "sold": "Đã Bán",
+      "decommissioned": "Đã Ngừng Sử Dụng"
+    },
+    "fuelType": {
+      "diesel": "Dầu Diesel",
+      "electric": "Điện",
+      "lpg": "Gas LPG",
+      "dualFuel": "Nhiên Liệu Kép",
+      "unknown": "Không Xác Định"
+    },
+    "catalog": {
+      "title": "Danh Mục Sản Phẩm",
+      "viewCatalog": "Xem Danh Mục →",
+      "loadError": "Không thể tải thống kê danh mục.",
+      "totalProducts": "Tổng Sản Phẩm",
+      "brands": "Thương Hiệu",
+      "categories": "Danh Mục"
+    },
+    "store": {
+      "get": "Nhận",
+      "free": "Miễn Phí",
+      "comingSoon": "Sắp Ra Mắt",
+      "hero": {
+        "assets": {
+          "eyebrow": "Mô-đun Nổi Bật",
+          "title": "Danh Mục Tài Sản, tái thiết kế cho hiện trường",
+          "desc": "Theo dõi từng xe nâng, rơ-moóc và máy móc trong suốt vòng đời — quyền sở hữu, trạng thái và đồng hồ giờ trong một danh mục trực tiếp duy nhất."
+        },
+        "invoicing": {
+          "eyebrow": "Hiện Đã Có",
+          "title": "Lập Hóa Đơn Thông Minh với VAT tự động",
+          "desc": "Tạo Đơn Mua Hàng, Báo Giá và Hóa Đơn chỉ trong một quy trình — tạm tính, VAT và tổng cộng được tính toán tự động."
+        },
+        "maintenance": {
+          "eyebrow": "Được Đề Xuất",
+          "title": "Lên Lịch Bảo Trì luôn đi trước một bước",
+          "desc": "Phát hiện các máy móc sắp đến hạn bảo trì trước khi hỏng hóc, dựa trên dữ liệu đồng hồ giờ và lịch sử trực tiếp."
+        }
+      },
+      "promo": {
+        "sale": {
+          "kicker": "Thời Gian Có Hạn",
+          "title": "Đại Tiệc Giảm Giá — Giảm Đến 50% Phụ Tùng"
+        },
+        "new": {
+          "kicker": "Vừa Ra Mắt",
+          "title": "Mô-đun Mới Trong Tuần"
+        },
+        "staffPicks": {
+          "kicker": "Lựa Chọn Của Đội Ngũ",
+          "title": "Đánh Giá Cao Nhất Về Dịch Vụ Hiện Trường"
+        }
+      },
+      "rows": {
+        "mostUsed": "Mô-đun Dùng Nhiều Nhất",
+        "recommended": "Mô-đun Được Đề Xuất",
+        "fieldService": "Phổ Biến Trong Dịch Vụ Hiện Trường"
+      },
+      "modules": {
+        "equipmentRegistry": {
+          "title": "DK Danh Mục Thiết Bị",
+          "sub": "Danh mục thiết bị & phương tiện"
+        },
+        "customers": {
+          "title": "DK Khách Hàng",
+          "sub": "Quản lý hồ sơ khách hàng"
+        },
+        "quotations": {
+          "title": "DK Báo Giá",
+          "sub": "Báo giá"
+        },
+        "rentalContracts": {
+          "title": "DK Hợp Đồng Thuê",
+          "sub": "Hợp đồng thuê"
+        },
+        "movements": {
+          "title": "DK Di Chuyển",
+          "sub": "Di chuyển thiết bị"
+        },
+        "projects": {
+          "title": "DK Dự Án",
+          "sub": "Dự án & kho bãi"
+        },
+        "smartInvoicing": {
+          "title": "DK Hóa Đơn Thông Minh",
+          "sub": "Lập hóa đơn tự động"
+        },
+        "payments": {
+          "title": "DK Thanh Toán",
+          "sub": "Thanh toán"
+        },
+        "deposits": {
+          "title": "DK Tiền Đặt Cọc",
+          "sub": "Tiền đặt cọc"
+        },
+        "statements": {
+          "title": "DK Sao Kê",
+          "sub": "Sao kê"
+        },
+        "inventory": {
+          "title": "DK Kho Hàng",
+          "sub": "Kho hàng"
+        },
+        "purchaseOrders": {
+          "title": "DK Đơn Mua Hàng",
+          "sub": "Đặt mua phụ tùng"
+        },
+        "workOrders": {
+          "title": "DK Lệnh Công Việc",
+          "sub": "Lên lịch bảo trì"
+        },
+        "assetRegistry": {
+          "title": "DK Danh Mục Tài Sản",
+          "sub": "Danh mục tài sản"
+        },
+        "maintenanceSchedule": {
+          "title": "DK Lịch Bảo Trì",
+          "sub": "Bảo trì phòng ngừa"
+        }
+      },
+      "thirdParty": {
+        "routeWise": {
+          "title": "RouteWise",
+          "sub": "Meridian Labs"
+        },
+        "fleetPulse": {
+          "title": "FleetPulse",
+          "sub": "Orbit Communications"
+        },
+        "partsBin": {
+          "title": "PartsBin",
+          "sub": "Ironclad Systems"
+        }
+      }
+    },
+    "errors": {
+      "leadTrend": "Không thể tải xu hướng tiềm năng bán hàng.",
+      "customerTrend": "Không thể tải xu hướng khách hàng.",
+      "leadMetrics": "Không thể tải chỉ số tiềm năng bán hàng."
+    }
+  },
+  "equipment": {
+    "status": {
+      "inStock": "Còn Hàng",
+      "sold": "Đã Bán",
+      "rented": "Đang Cho Thuê",
+      "inService": "Đang Bảo Trì",
+      "reserved": "Đã Đặt Trước",
+      "decommissioned": "Đã Ngừng Sử Dụng"
+    },
+    "ownership": {
+      "forSale": "Để Bán",
+      "rental": "Đội Xe Cho Thuê",
+      "customerOwned": "Thuộc Sở Hữu Khách Hàng",
+      "retired": "Đã Ngừng Hoạt Động"
+    },
+    "operationalStatus": {
+      "available": "Sẵn Sàng",
+      "onRent": "Đang Cho Thuê",
+      "inService": "Đang Bảo Trì",
+      "sold": "Đã Bán"
+    },
+    "condition": {
+      "new": "Mới",
+      "used": "Đã Qua Sử Dụng",
+      "refurbished": "Tân Trang"
+    },
+    "fuel": {
+      "electric": "Điện",
+      "diesel": "Dầu Diesel",
+      "lpg": "Gas LPG",
+      "dualFuel": "Nhiên Liệu Kép",
+      "notSpecified": "— Chưa xác định —"
+    },
+    "card": {
+      "hoursValue": "{{count}} giờ",
+      "editForklift": "Sửa xe nâng",
+      "serial": "Số Sê-ri",
+      "brand": "Thương hiệu",
+      "fuel": "Nhiên liệu",
+      "customer": "Khách hàng",
+      "iotLive": "Trực Tuyến",
+      "iotOffline": "Ngoại Tuyến",
+      "iotAutoSynced": "Tự động đồng bộ qua IoT"
+    },
+    "filters": {
+      "statusShort": {
+        "inService": "Bảo trì",
+        "decommissioned": "Ngừng SD"
+      },
+      "allFuelTypes": "Tất Cả Nhiên Liệu",
+      "allConditions": "Tất Cả Tình Trạng",
+      "allOwnership": "Tất Cả Sở Hữu",
+      "allBrands": "Tất Cả Thương Hiệu",
+      "clear": "Xóa",
+      "countLabel": "{{count}} thiết bị",
+      "noneFound": "Không tìm thấy thiết bị",
+      "noneFoundHint": "Hãy thử điều chỉnh bộ lọc hoặc thêm thiết bị mới",
+      "searchPlaceholder": "Tìm kiếm thiết bị..."
+    },
+    "quickActions": {
+      "register": {
+        "label": "Đăng Ký Thiết Bị",
+        "desc": "Thêm xe nâng mới"
+      },
+      "movement": {
+        "label": "Tạo Di Chuyển",
+        "desc": "Chuyển thiết bị"
+      },
+      "maintenance": {
+        "label": "Lên Lịch Bảo Trì",
+        "desc": "Bảo trì phòng ngừa"
+      },
+      "rental": {
+        "label": "Cho Thuê Mới",
+        "desc": "Gán vào hợp đồng"
+      }
+    },
+    "gallery": {
+      "noPhotos": "Chưa có ảnh nào",
+      "noPhotosHint": "Ảnh giúp nhận diện và ghi lại thông tin thiết bị này",
+      "previousPhoto": "Ảnh trước",
+      "nextPhoto": "Ảnh tiếp theo",
+      "viewFullscreen": "Xem toàn màn hình"
+    },
+    "timeline": {
+      "noHistory": "Chưa có thay đổi trạng thái nào được ghi nhận.",
+      "system": "Hệ thống"
+    },
+    "form": {
+      "serialRequired": "Số sê-ri là bắt buộc.",
+      "nameRequired": "Tên là bắt buộc.",
+      "saveFailed": "Lưu thất bại. Vui lòng thử lại.",
+      "editTitle": "Sửa Xe Nâng",
+      "registerTitle": "Đăng Ký Xe Nâng",
+      "serialNumber": "Số Sê-ri",
+      "serialNumberPlaceholder": "vd: JH-2024-001",
+      "nameEnglish": "Tên (Tiếng Anh)",
+      "nameEnglishPlaceholder": "vd: Jungheinrich EFG 216k",
+      "nameLao": "Tên (Tiếng Lào)",
+      "internalCode": "Mã Nội Bộ",
+      "internalCodePlaceholder": "Thẻ tài sản DK",
+      "brand": "Thương Hiệu",
+      "noBrand": "— Không có thương hiệu —",
+      "modelNumber": "Số Model",
+      "modelNumberPlaceholder": "vd: EFG 216k",
+      "condition": "Tình Trạng",
+      "operationalStatus": "Trạng Thái Vận Hành",
+      "ownershipState": "Trạng Thái Sở Hữu",
+      "fuelType": "Loại Nhiên Liệu",
+      "capacityKg": "Sức Nâng (kg)",
+      "yearManufactured": "Năm Sản Xuất",
+      "currentHourMeter": "Đồng Hồ Giờ Hiện Tại",
+      "initialHourMeter": "Đồng Hồ Giờ Ban Đầu",
+      "purchaseDate": "Ngày Mua",
+      "warrantyExpiry": "Ngày Hết Bảo Hành",
+      "notesPlaceholder": "Ghi chú tùy chọn...",
+      "saveChanges": "Lưu Thay Đổi",
+      "capacityKgPlaceholder": "vd: 1600",
+      "yearManufacturedPlaceholder": "vd: 2024"
+    },
+    "registry": {
+      "title": "Danh Mục Thiết Bị",
+      "subtitle": "Quản lý và theo dõi đội xe nâng của bạn",
+      "refresh": "Làm Mới",
+      "registerForklift": "Đăng Ký Xe Nâng",
+      "searchPlaceholder": "Tìm số sê-ri, tên, model...",
+      "noForkliftsFound": "Không tìm thấy xe nâng nào",
+      "pageInfo": "Trang {{page}} / {{pages}} ({{total}} tổng)",
+      "deleteTitle": "Xóa Xe Nâng",
+      "deleteMessage": "Xóa \"{{name}}\" (S/N: {{serial}})? Hành động này không thể hoàn tác.",
+      "kpi": {
+        "utilization": "Tỷ Lệ Sử Dụng",
+        "avgHours": "Giờ TB",
+        "pmDue": "Đến Hạn BT",
+        "critical": "{{count}} nghiêm trọng",
+        "avgAge": "Tuổi TB",
+        "years": "{{count}} năm"
+      },
+      "table": {
+        "forklift": "Xe Nâng",
+        "model": "Model",
+        "ownership": "Sở Hữu",
+        "hours": "Giờ Đồng Hồ"
+      },
+      "toast": {
+        "loadError": "Không thể tải danh sách xe nâng.",
+        "createSuccess": "Đã đăng ký xe nâng thành công.",
+        "createError": "Không thể đăng ký xe nâng.",
+        "updateSuccess": "Đã cập nhật xe nâng thành công.",
+        "updateError": "Không thể cập nhật xe nâng.",
+        "deleteSuccess": "Đã xóa xe nâng.",
+        "deleteError": "Không thể xóa xe nâng."
+      }
+    },
+    "detail": {
+      "notFoundOrFailed": "Không tìm thấy xe nâng hoặc tải thất bại.",
+      "backToEquipment": "Quay Lại Thiết Bị",
+      "notFound": "Không tìm thấy xe nâng.",
+      "tabs": {
+        "overview": "Tổng Quan",
+        "photos": "Ảnh",
+        "timeline": "Dòng Thời Gian",
+        "documents": "Tài Liệu",
+        "contracts": "Hợp Đồng"
+      },
+      "serialAbbrev": "S/N",
+      "newQuote": "Báo Giá Mới",
+      "newContract": "Hợp Đồng Mới",
+      "specifications": "Thông Số Kỹ Thuật",
+      "capacity": "Sức Nâng",
+      "year": "Năm",
+      "model": "Model",
+      "mastType": "Loại Khung Nâng",
+      "maxLiftHeight": "Chiều Cao Nâng Tối Đa",
+      "currentLocation": "Vị Trí Hiện Tại",
+      "zone": "Khu Vực",
+      "since": "Từ",
+      "noLocationRecorded": "Chưa ghi nhận vị trí",
+      "hourMeter": "Đồng Hồ Giờ",
+      "hoursUnit": "giờ",
+      "pctOfThreshold": "{{pct}}% của {{threshold}} giờ",
+      "serviceInterval": "chu kỳ bảo trì",
+      "initial": "Ban Đầu",
+      "hoursUsed": "Số Giờ Đã Dùng",
+      "dailyAvg": "TB Hàng Ngày",
+      "estService": "Dự Kiến Bảo Trì",
+      "estServiceDays": "~{{count}} ngày",
+      "assetSummary": "Tóm Tắt Tài Sản",
+      "assetAge": "Tuổi Tài Sản",
+      "years": "{{count}} năm",
+      "warranty": "Bảo Hành",
+      "expired": "Hết Hạn",
+      "valid": "Còn Hiệu Lực",
+      "statusChanges": "Thay Đổi Trạng Thái",
+      "documents": "Tài Liệu",
+      "filesCount": "{{count}} tệp",
+      "photos": "Ảnh",
+      "imagesCount": "{{count}} ảnh",
+      "assignedCustomer": "Khách Hàng Được Gán",
+      "documentTitle": "Tiêu Đề",
+      "expiry": "Hết Hạn",
+      "uploaded": "Đã Tải Lên",
+      "noDocumentsUploaded": "Chưa có tài liệu nào được tải lên",
+      "viewContractsHint": "Xem các hợp đồng cho thuê liên kết với thiết bị này",
+      "viewRentalContracts": "Xem Hợp Đồng Cho Thuê"
+    }
+  },
+  "inventory": {
+    "common": {
+      "refresh": "Làm mới",
+      "resultCount_one": "{{count}} kết quả",
+      "resultCount_other": "{{count}} kết quả",
+      "paginationInfo": "Trang {{page}}/{{pages}}"
+    },
+    "dashboard": {
+      "title": "Tồn kho phụ tùng",
+      "subtitle": "Tổng quan quản lý kho và mua sắm",
+      "purchaseOrdersButton": "Đơn mua hàng",
+      "sparePartsButton": "Tồn kho phụ tùng",
+      "quickAccess": "Truy cập nhanh",
+      "loadError": "Không thể tải dữ liệu kho."
+    },
+    "purchaseOrder": {
+      "title": "Đơn mua hàng",
+      "subtitle_one": "{{count}} đơn hàng",
+      "subtitle_other": "{{count}} đơn hàng",
+      "loadError": "Không thể tải đơn mua hàng.",
+      "status": {
+        "all": "Tất cả trạng thái",
+        "draft": "Bản nháp",
+        "ordered": "Đã đặt hàng",
+        "partial": "Nhận một phần",
+        "received": "Đã nhận hàng",
+        "cancelled": "Đã hủy"
+      },
+      "newPO": "Đơn Mua Hàng Mới",
+      "form": {
+        "title": "Đơn Mua Hàng Mới",
+        "backToList": "Quay Lại Đơn Mua Hàng",
+        "vendor": "Nhà Cung Cấp",
+        "vendorRequired": "Vui lòng nhập nhà cung cấp",
+        "warehouse": "Nhà Kho",
+        "warehouseRequired": "Vui lòng chọn nhà kho",
+        "vendorAddress": "Địa Chỉ Nhà Cung Cấp",
+        "vendorContact": "Liên Hệ Nhà Cung Cấp",
+        "orderDate": "Ngày Đặt Hàng",
+        "expectedDate": "Ngày Dự Kiến Nhận",
+        "taxRate": "Thuế Suất (%)",
+        "lineItems": "Danh Sách Hàng Hóa",
+        "itemCode": "Mã Hàng",
+        "description": "Mô Tả",
+        "descriptionPlaceholder": "Mô tả hàng hóa",
+        "qty": "SL",
+        "unit": "Đơn Vị",
+        "unitCost": "Đơn Giá",
+        "linkCatalogPart": "Liên Kết Phụ Tùng",
+        "linkCatalogPartPlaceholder": "Tìm phụ tùng…",
+        "noPartsFound": "Không tìm thấy phụ tùng",
+        "addRow": "Thêm Dòng",
+        "itemRequired": "Cần ít nhất một dòng hàng hóa",
+        "created": "Đã tạo đơn mua hàng {{number}}",
+        "createFailed": "Tạo đơn mua hàng thất bại",
+        "creating": "Đang tạo...",
+        "createPO": "Tạo Đơn Mua Hàng"
+      },
+      "detail": {
+        "loadError": "Không thể tải đơn mua hàng",
+        "notFound": "Không tìm thấy đơn mua hàng",
+        "actionFailed": "{{action}} thất bại",
+        "submitted": "Đã gửi đơn mua hàng",
+        "submit": "Gửi",
+        "receiveItems": "Nhận Hàng",
+        "receiveModalTitle": "Nhận Hàng",
+        "received": "Đã nhận hàng",
+        "receivedDate": "Ngày Nhận Hàng",
+        "qtyOrdered": "SL Đặt",
+        "qtyReceived": "SL Đã Nhận"
+      }
+    },
+    "spareParts": {
+      "unitPrice": "Đơn giá",
+      "unit": "Đơn vị",
+      "categories": {
+        "all": "Tất cả danh mục",
+        "filter": "Bộ lọc",
+        "belt": "Dây đai",
+        "brake": "Phanh",
+        "hydraulic": "Thủy lực",
+        "electrical": "Điện",
+        "engine": "Động cơ",
+        "tire": "Lốp xe",
+        "chain": "Xích",
+        "battery": "Ắc quy",
+        "lubricant": "Dầu bôi trơn",
+        "general": "Chung"
+      },
+      "list": {
+        "title": "Tồn kho phụ tùng",
+        "subtitle_one": "{{count}} phụ tùng",
+        "subtitle_other": "{{count}} phụ tùng",
+        "addPart": "Thêm phụ tùng",
+        "loadError": "Không thể tải phụ tùng.",
+        "searchPlaceholder": "Tìm mã phụ tùng, tên...",
+        "noPartsFound": "Không tìm thấy phụ tùng",
+        "columns": {
+          "partNumber": "Mã phụ tùng",
+          "minStock": "Tồn kho tối thiểu"
+        }
+      },
+      "detail": {
+        "backToList": "Quay lại danh sách phụ tùng",
+        "notFound": "Không tìm thấy.",
+        "loadError": "Không tìm thấy phụ tùng.",
+        "totalStock": "Tổng tồn kho",
+        "minLevel": "Mức tối thiểu",
+        "reorderQty": "Số lượng đặt lại",
+        "brand": "Thương hiệu",
+        "leadTime": "Thời gian giao hàng",
+        "leadTimeDays_one": "{{count}} ngày",
+        "leadTimeDays_other": "{{count}} ngày",
+        "created": "Ngày tạo",
+        "active": "Đang hoạt động",
+        "stockByWarehouse": "Tồn kho theo nhà kho",
+        "recentTransactions": "Giao dịch gần đây",
+        "columns": {
+          "warehouse": "Nhà kho",
+          "onHand": "Tồn hiện có",
+          "reserved": "Đã giữ",
+          "available": "Khả dụng",
+          "number": "Số",
+          "qty": "SL",
+          "cost": "Chi phí"
+        }
+      }
+    },
+    "warehouse": {
+      "title": "Địa điểm tồn kho",
+      "list": {
+        "subtitle_one": "{{count}} địa điểm tồn kho",
+        "subtitle_other": "{{count}} địa điểm tồn kho",
+        "addWarehouse": "Thêm địa điểm tồn kho",
+        "loadError": "Không thể tải địa điểm tồn kho."
+      },
+      "form": {
+        "codeLabel": "Mã",
+        "codePlaceholder": "WH-A",
+        "namePlaceholder": "Kho Alpha",
+        "addressPlaceholder": "Địa chỉ đầy đủ (tùy chọn)",
+        "codeNameRequired": "Mã và tên là bắt buộc.",
+        "createSuccess": "Đã tạo nhà kho.",
+        "createError": "Không thể tạo nhà kho.",
+        "creating": "Đang tạo..."
+      },
+      "detail": {
+        "backToList": "Quay lại danh sách địa điểm tồn kho",
+        "loadError": "Không thể tải địa điểm tồn kho.",
+        "notFound": "Không tìm thấy địa điểm tồn kho.",
+        "address": "Địa chỉ",
+        "contactName": "Người liên hệ",
+        "contactPhone": "Số điện thoại liên hệ",
+        "distinctParts": "Số loại phụ tùng",
+        "totalStock": "Tổng số lượng tồn kho",
+        "stockTitle": "Tồn kho tại địa điểm này",
+        "noStock": "Chưa có dữ liệu tồn kho tại địa điểm này.",
+        "columns": {
+          "part": "Phụ tùng"
+        }
+      }
+    },
+    "stockBadge": {
+      "inStock": "Còn hàng",
+      "lowStock": "Sắp hết hàng",
+      "outOfStock": "Hết hàng"
+    },
+    "reorderAlert": {
+      "title": "Cảnh báo đặt lại hàng ({{count}})",
+      "detail": "{{warehouseCode}}: còn {{available}} (tối thiểu: {{minLevel}}) — đặt lại {{reorderQuantity}}"
+    },
+    "kpi": {
+      "spareParts": "Phụ tùng",
+      "warehouses": "Nhà kho",
+      "stockValue": "Giá trị tồn kho",
+      "lowStock": "Sắp hết hàng",
+      "belowMinimum": "{{count}} mặt hàng dưới mức tối thiểu",
+      "pendingPOs": "Đơn mua hàng đang chờ"
+    },
+    "quickNav": {
+      "parts": {
+        "label": "Tồn kho phụ tùng",
+        "desc": "Xem kho hàng"
+      },
+      "warehouses": {
+        "label": "Địa điểm tồn kho",
+        "desc": "Quản lý vị trí"
+      },
+      "purchaseOrders": {
+        "label": "Đơn mua hàng",
+        "desc": "Thu mua"
+      },
+      "catalog": {
+        "label": "Danh mục sản phẩm",
+        "desc": "Toàn bộ danh mục"
+      }
+    },
+    "lowStock": {
+      "title": "Cảnh báo sắp hết hàng",
+      "allHealthy": "Tất cả mức tồn kho đều ổn",
+      "viewAll": "Xem tất cả",
+      "min": "Tối thiểu",
+      "reorder": "Đặt lại"
+    },
+    "purchaseOrderTable": {
+      "poNumber": "Số đơn mua hàng",
+      "vendor": "Nhà cung cấp",
+      "warehouse": "Nhà kho",
+      "orderDate": "Ngày đặt hàng",
+      "empty": "Không tìm thấy đơn mua hàng",
+      "paginationInfo": "Trang {{page}}/{{pages}} (tổng {{total}})"
+    },
+    "stockDistributionChart": {
+      "title": "Tồn kho theo danh mục",
+      "subtitle": "Số phụ tùng theo danh mục",
+      "empty": "Không có dữ liệu tồn kho"
+    },
+    "warehouseGrid": {
+      "noneFound": "Không có nhà kho",
+      "noneFoundHint": "Tạo nhà kho đầu tiên để bắt đầu theo dõi tồn kho"
+    },
+    "import": {
+      "button": "Nhập dữ liệu",
+      "title": "Nhập dữ liệu kho",
+      "subtitle": "Tải lên tệp CSV hoặc Excel (.xlsx) để tạo hoặc cập nhật hàng loạt phụ tùng. Mã phụ tùng đã có sẽ được cập nhật; mã mới sẽ được tạo.",
+      "dropzoneText": "Kéo và thả tệp vào đây, hoặc nhấp để duyệt",
+      "dropzoneHint": "Hỗ trợ tệp .csv và .xlsx, tối đa 10 MB",
+      "clearFile": "Xóa",
+      "uploadButton": "Tải lên & Nhập",
+      "uploading": "Đang tải lên và xử lý dữ liệu…",
+      "uploadingHint": "Có thể mất vài giây đối với tệp lớn hơn.",
+      "uploadFailed": "Nhập thất bại. Vui lòng thử lại.",
+      "successBanner": "Nhập dữ liệu thành công",
+      "partialBanner": "Nhập hoàn tất nhưng có một số lỗi",
+      "resultSummary": "Đã nhập {{imported}}, đã cập nhật {{updated}}",
+      "rowErrorsTitle": "{{count}} dòng không thể nhập",
+      "rowLabel": "Dòng {{row}}:",
+      "closeAndRefresh": "Đóng & Làm mới"
+    }
+  },
+  "rental": {
+    "status": {
+      "reservation": "Đặt trước",
+      "draft": "Bản nháp",
+      "pendingApproval": "Chờ phê duyệt",
+      "approved": "Đã phê duyệt",
+      "revision": "Đang sửa đổi",
+      "delivering": "Đang giao",
+      "active": "Đang hoạt động",
+      "overdue": "Quá hạn",
+      "returning": "Đang trả",
+      "inspecting": "Đang kiểm tra",
+      "settling": "Đang quyết toán",
+      "closed": "Đã đóng",
+      "cancelled": "Đã hủy"
+    },
+    "contractType": {
+      "shortTerm": "Ngắn hạn",
+      "longTerm": "Dài hạn",
+      "project": "Dự án"
+    },
+    "list": {
+      "title": "Hợp đồng thuê",
+      "totalCount": "{{count}} hợp đồng",
+      "refresh": "Làm mới",
+      "newContract": "Hợp đồng mới",
+      "searchPlaceholder": "Tìm số hợp đồng, khách hàng...",
+      "allStatuses": "Tất cả trạng thái",
+      "allTypes": "Tất cả loại",
+      "colContract": "Hợp đồng",
+      "colCustomer": "Khách hàng",
+      "colTotalValue": "Tổng giá trị",
+      "colStartDate": "Ngày bắt đầu",
+      "colEndDate": "Ngày kết thúc",
+      "noContractsFound": "Không tìm thấy hợp đồng thuê",
+      "createOrAdjust": "Tạo hợp đồng mới hoặc điều chỉnh bộ lọc.",
+      "resultsCount": "{{count}} kết quả",
+      "pageOf": "Trang {{page}}/{{pages}} (tổng {{total}})",
+      "deleteConfirmTitle": "Xóa hợp đồng thuê",
+      "deleteConfirmMessage": "Xóa \"{{number}}\"? Không thể hoàn tác.",
+      "toast": {
+        "loadError": "Không thể tải danh sách hợp đồng thuê.",
+        "createSuccess": "Đã tạo hợp đồng thuê.",
+        "createError": "Không thể tạo hợp đồng thuê.",
+        "deleteSuccess": "Đã xóa hợp đồng thuê.",
+        "deleteError": "Không thể xóa hợp đồng thuê."
+      }
+    },
+    "form": {
+      "backToContracts": "Quay lại hợp đồng thuê",
+      "newContract": "Hợp đồng thuê mới",
+      "contractType": "Loại hợp đồng",
+      "currencyLabel": "Tiền tệ",
+      "customerId": "Mã khách hàng",
+      "customerIdPlaceholder": "Nhập mã khách hàng",
+      "startDate": "Ngày bắt đầu",
+      "endDate": "Ngày kết thúc",
+      "taxRateLabel": "Thuế suất (%)",
+      "depositAmount": "Số tiền đặt cọc",
+      "deliveryAddress": "Địa chỉ giao hàng",
+      "deliveryAddressPlaceholder": "Địa chỉ giao hàng đầy đủ",
+      "deliveryContactName": "Tên người nhận hàng",
+      "deliveryContactNamePlaceholder": "Ông / Bà",
+      "deliveryContactPhone": "Số điện thoại người nhận hàng",
+      "deliveryContactPhonePlaceholder": "+856 20 ...",
+      "notesLabel": "Ghi chú (khách hàng có thể xem)",
+      "notesPlaceholder": "Hiển thị trên hợp đồng...",
+      "internalNotesLabel": "Ghi chú nội bộ",
+      "internalNotesPlaceholder": "Chỉ nội bộ, không hiển thị cho khách hàng...",
+      "creating": "Đang tạo...",
+      "createContract": "Tạo hợp đồng",
+      "customerIdRequired": "Mã khách hàng là bắt buộc.",
+      "startDateRequired": "Ngày bắt đầu là bắt buộc.",
+      "endDateRequired": "Ngày kết thúc là bắt buộc.",
+      "createFailed": "Không thể tạo hợp đồng thuê.",
+      "createdToast": "Đã tạo hợp đồng {{number}}."
+    },
+    "detail": {
+      "backToContracts": "Quay lại hợp đồng thuê",
+      "notFoundError": "Không tìm thấy hợp đồng thuê hoặc tải thất bại.",
+      "actionFailed": "Thất bại: {{action}}",
+      "rev": "Phiên bản {{number}}",
+      "submit": "Gửi",
+      "approve": "Phê duyệt",
+      "requestRevision": "Yêu cầu sửa đổi",
+      "activate": "Kích hoạt",
+      "requestReturn": "Yêu cầu trả hàng",
+      "requestExtension": "Yêu cầu gia hạn",
+      "completeInspection": "Hoàn tất kiểm tra",
+      "inspectionInfo": "Hoàn tất kiểm tra — sử dụng bảng Trả hàng bên dưới.",
+      "generateBilling": "Tạo hóa đơn",
+      "billingInfo": "Tạo hóa đơn — sẽ có ở Giai đoạn 4.",
+      "closeContract": "Đóng hợp đồng",
+      "taxWithRate": "Thuế ({{rate}}%)",
+      "discount": "Giảm giá",
+      "totalBilled": "Tổng đã lập hóa đơn",
+      "totalPaid": "Tổng đã thanh toán",
+      "outstanding": "Còn nợ",
+      "customer": "Khách hàng",
+      "deliveryContact": "Người nhận hàng",
+      "deliveryPhone": "Điện thoại nhận hàng",
+      "assignedTo": "Người phụ trách",
+      "approvedBy": "Người phê duyệt",
+      "actualStart": "Bắt đầu thực tế",
+      "actualEnd": "Kết thúc thực tế",
+      "deposit": "Tiền đặt cọc",
+      "paymentTerms": "Điều khoản thanh toán",
+      "daysCount": "{{count}} ngày",
+      "internalNote": "Ghi chú nội bộ",
+      "lineItems": "Hạng mục ({{count}})",
+      "addItem": "Thêm hạng mục",
+      "colNumber": "#",
+      "colMonthlyRate": "Giá thuê tháng",
+      "colDailyRate": "Giá thuê ngày",
+      "colLineTotal": "Thành tiền",
+      "serialNumber": "Số seri: {{serial}}",
+      "hoursUsed": "Giờ sử dụng: {{count}}",
+      "noLineItems": "Chưa có hạng mục nào.",
+      "addItemsHint": "Thêm hạng mục để xây dựng hợp đồng.",
+      "extensions": "Gia hạn ({{count}})",
+      "colOriginalEnd": "Kết thúc ban đầu",
+      "colNewEnd": "Kết thúc mới",
+      "colReason": "Lý do",
+      "activeReturns": "Yêu cầu trả hàng đang xử lý ({{count}})",
+      "colReturnNumber": "Số trả hàng",
+      "colRequested": "Ngày yêu cầu",
+      "colScheduledPickup": "Lịch lấy hàng",
+      "colForklift": "Xe nâng",
+      "statusHistory": "Lịch sử trạng thái",
+      "colFrom": "Từ",
+      "colTo": "Đến",
+      "colBy": "Bởi",
+      "reasons": {
+        "revisionNeeded": "Cần sửa đổi",
+        "cancelledByUser": "Đã bị người dùng hủy",
+        "rejected": "Đã từ chối"
+      },
+      "toasts": {
+        "submitted": "Đã gửi để phê duyệt",
+        "revisionRequested": "Đã yêu cầu sửa đổi",
+        "activated": "Đã kích hoạt",
+        "contractClosed": "Đã đóng hợp đồng",
+        "itemRemoved": "Đã xóa hạng mục",
+        "extensionApproved": "Đã phê duyệt gia hạn",
+        "extensionRejected": "Đã từ chối gia hạn"
+      },
+      "addItemModal": {
+        "title": "Thêm hạng mục hợp đồng",
+        "forkliftId": "Mã xe nâng",
+        "hourlyRate": "Giá thuê giờ",
+        "monthlyRate": "Giá thuê tháng",
+        "dailyRate": "Giá thuê ngày",
+        "adding": "Đang thêm...",
+        "forkliftIdRequired": "Mã xe nâng là bắt buộc.",
+        "descriptionRequired": "Mô tả là bắt buộc.",
+        "monthlyRateRequired": "Giá thuê tháng là bắt buộc.",
+        "dailyRateRequired": "Giá thuê ngày là bắt buộc.",
+        "itemAdded": "Đã thêm hạng mục.",
+        "addFailed": "Không thể thêm hạng mục."
+      },
+      "extensionModal": {
+        "title": "Yêu cầu gia hạn hợp đồng",
+        "currentEndDate": "Ngày kết thúc hiện tại",
+        "newEndDate": "Ngày kết thúc mới",
+        "rateAdjustment": "Điều chỉnh giá (%)",
+        "reason": "Lý do",
+        "reasonPlaceholder": "Lý do yêu cầu gia hạn...",
+        "requesting": "Đang yêu cầu...",
+        "requestExtension": "Yêu cầu gia hạn",
+        "newEndDateRequired": "Ngày kết thúc mới là bắt buộc.",
+        "newEndDateAfterCurrent": "Ngày kết thúc mới phải sau ngày kết thúc hiện tại.",
+        "extensionRequested": "Đã yêu cầu gia hạn.",
+        "requestFailed": "Không thể yêu cầu gia hạn."
+      },
+      "returnModal": {
+        "title": "Yêu cầu trả thiết bị",
+        "returnType": "Loại trả hàng",
+        "scheduled": "Theo lịch",
+        "early": "Trả sớm",
+        "requestedDate": "Ngày yêu cầu",
+        "equipmentToReturn": "Thiết bị cần trả",
+        "allEquipment": "— Tất cả thiết bị —",
+        "scheduledPickupDate": "Ngày lấy hàng dự kiến",
+        "pickupAddress": "Địa chỉ lấy hàng",
+        "pickupAddressPlaceholder": "Địa chỉ tại cơ sở khách hàng",
+        "earlyTermination": "Chấm dứt sớm (có thể áp dụng phạt)",
+        "notesPlaceholder": "Hướng dẫn bổ sung...",
+        "requesting": "Đang yêu cầu...",
+        "requestReturn": "Yêu cầu trả hàng",
+        "requestedDateRequired": "Ngày yêu cầu là bắt buộc.",
+        "returnRequested": "Đã yêu cầu trả hàng.",
+        "requestFailed": "Không thể tạo yêu cầu trả hàng."
+      }
+    }
+  },
+  "settings": {
+    "title": "Cài Đặt Chung",
+    "subtitle": "Quản lý các thiết lập mặc định cốt lõi của tổ chức trên toàn hệ thống ERP.",
+    "loading": "Đang tải cài đặt…",
+    "save": "Lưu thay đổi",
+    "saving": "Đang lưu…",
+    "saveSuccess": "Đã cập nhật cài đặt thành công.",
+    "saveError": "Hiện không thể lưu cài đặt.",
+    "loadError": "Hiện không thể tải cài đặt.",
+    "tabs": {
+      "company": "Hồ Sơ Công Ty",
+      "financial": "Mặc Định Tài Chính",
+      "system": "Biến Hệ Thống",
+      "notifications": "Tùy Chọn Thông Báo"
+    },
+    "company": {
+      "description": "Thông tin mặc định của hồ sơ công ty",
+      "companyName": "Tên Công Ty",
+      "address": "Địa Chỉ",
+      "phone": "Điện Thoại",
+      "fax": "Fax",
+      "website": "Trang Web",
+      "email": "Email",
+      "logoUrl": "URL Logo",
+      "logoInvalidType": "Vui lòng chọn một tệp hình ảnh.",
+      "logoUploadError": "Hiện không thể tải lên logo.",
+      "logoUploading": "Đang tải lên logo…",
+      "logoDropzoneText": "Nhấp hoặc kéo & thả để tải lên logo",
+      "logoDropzoneHint": "PNG, JPG hoặc WebP",
+      "bankDetails": {
+        "title": "Thông Tin Ngân Hàng",
+        "bankName": "Tên Ngân Hàng",
+        "accountName": "Tên Tài Khoản",
+        "accountNumber": "Số Tài Khoản",
+        "swift": "Mã SWIFT / BIC"
+      }
+    },
+    "financial": {
+      "description": "Mặc định tài chính",
+      "vatRate": "Tỷ Lệ VAT (%)",
+      "defaultCurrency": "Đơn Vị Tiền Tệ Mặc Định",
+      "defaultPaymentTerms": "Điều Khoản Thanh Toán Mặc Định"
+    },
+    "system": {
+      "description": "Biến hệ thống",
+      "equipmentTypes": "Loại Thiết Bị",
+      "repairStatuses": "Trạng Thái Sửa Chữa"
+    },
+    "notifications": {
+      "description": "Đăng ký nhận cảnh báo qua email cho các sự kiện hệ thống quan trọng. Bạn sẽ được thông báo mỗi khi có sự kiện được theo dõi xảy ra, ngoại trừ các thao tác do chính bạn thực hiện.",
+      "loadError": "Hiện không thể tải tùy chọn thông báo.",
+      "saveError": "Hiện không thể cập nhật tùy chọn này.",
+      "groups": {
+        "critical": "Nghiêm Trọng & Xóa Dữ Liệu",
+        "sales": "Bán Hàng & Cho Thuê",
+        "billing": "Hóa Đơn",
+        "operations": "Vận Hành"
+      },
+      "events": {
+        "customerDeleted": "Đã xóa khách hàng",
+        "forkliftDeleted": "Đã xóa xe nâng",
+        "productDeleted": "Đã xóa sản phẩm trong danh mục",
+        "quotationApproved": "Báo giá đã được duyệt",
+        "quotationSent": "Đã gửi báo giá cho khách hàng",
+        "contractActivated": "Hợp đồng thuê đã kích hoạt",
+        "contractCancelled": "Hợp đồng thuê đã hủy",
+        "invoiceIssued": "Đã xuất hóa đơn",
+        "paymentRecorded": "Đã ghi nhận thanh toán",
+        "paymentRejected": "Thanh toán bị từ chối",
+        "depositRefunded": "Đã hoàn tiền đặt cọc",
+        "forkliftStatusChanged": "Trạng thái xe nâng đã thay đổi",
+        "inventoryImportExecuted": "Đã thực hiện nhập kho hàng loạt",
+        "settingUpdated": "Cài đặt chung đã cập nhật"
+      }
+    }
+  },
+  "customers": {
+    "status": {
+      "active": "Hoạt Động",
+      "prospect": "Tiềm Năng",
+      "inactive": "Ngừng Hoạt Động",
+      "churned": "Đã Rời Bỏ"
+    },
+    "form": {
+      "editTitle": "Sửa Khách Hàng",
+      "newTitle": "Khách Hàng Mới",
+      "saveChanges": "Lưu Thay Đổi",
+      "createCustomer": "Tạo Khách Hàng",
+      "firstNameLabel": "Tên",
+      "firstNamePlaceholder": "Nam",
+      "lastNameLabel": "Họ",
+      "lastNamePlaceholder": "Nguyễn",
+      "emailPlaceholder": "john@example.com",
+      "phonePlaceholder": "+856 20 000 0000",
+      "companyLabel": "Công Ty",
+      "companyPlaceholder": "Công ty ABC",
+      "notesPlaceholder": "Ghi chú bổ sung…"
+    },
+    "list": {
+      "title": "Khách Hàng",
+      "totalCount": "{{count}} khách hàng",
+      "newCustomer": "Khách Hàng Mới",
+      "searchPlaceholder": "Tìm tên, email, số điện thoại…",
+      "allStatuses": "Tất Cả Trạng Thái",
+      "resultsCount": "{{count}} kết quả",
+      "colCustomer": "Khách Hàng",
+      "noCustomersFound": "Không tìm thấy khách hàng",
+      "createFirstCustomer": "Tạo khách hàng đầu tiên của bạn để bắt đầu.",
+      "showingRange": "Hiển thị {{start}}–{{end}} trong {{total}}",
+      "deleteTitle": "Xóa Khách Hàng",
+      "deleteMessage": "Bạn có chắc chắn muốn xóa \"{{name}}\"? Hành động này không thể hoàn tác.",
+      "toast": {
+        "loadError": "Không thể tải danh sách khách hàng.",
+        "createSuccess": "Đã tạo khách hàng thành công.",
+        "createError": "Không thể tạo khách hàng.",
+        "updateSuccess": "Đã cập nhật khách hàng thành công.",
+        "updateError": "Không thể cập nhật khách hàng.",
+        "deleteSuccess": "Đã xóa khách hàng.",
+        "deleteError": "Không thể xóa khách hàng."
+      }
+    }
+  },
+  "finance": {
+    "collectionRate": {
+      "title": "Tỷ Lệ Thu Hồi Công Nợ",
+      "collected": "Đã Thu",
+      "invoiced": "Đã Xuất Hóa Đơn"
+    },
+    "kpi": {
+      "totalRevenue": "Tổng Doanh Thu",
+      "collected": "Đã Thu",
+      "outstanding": "Còn Nợ",
+      "overdue": "Quá Hạn",
+      "pastDue": "{{amount}} quá hạn",
+      "invoices": "Hóa Đơn",
+      "totalIssued": "Tổng đã xuất",
+      "payments": "Thanh Toán",
+      "received": "Đã Nhận"
+    },
+    "quickNav": {
+      "invoices": {
+        "label": "Hóa Đơn",
+        "desc": "Tạo và quản lý"
+      },
+      "payments": {
+        "label": "Thanh Toán",
+        "desc": "Theo dõi thu tiền"
+      },
+      "deposits": {
+        "label": "Tiền Đặt Cọc",
+        "desc": "Tiền đặt cọc bảo đảm"
+      },
+      "statements": {
+        "label": "Sao Kê",
+        "desc": "Hoạt động tài khoản"
+      },
+      "analytics": {
+        "label": "Phân Tích",
+        "desc": "Biểu đồ & xu hướng"
+      },
+      "revenue": {
+        "label": "Doanh Thu",
+        "desc": "Lịch ghi nhận doanh thu"
+      }
+    },
+    "invoiceStatusChart": {
+      "title": "Phân Bố Trạng Thái",
+      "totalCount": "{{count}} tổng",
+      "empty": "Không có hóa đơn"
+    },
+    "recentTransactions": {
+      "recentInvoices": "Hóa Đơn Gần Đây",
+      "recentPayments": "Thanh Toán Gần Đây",
+      "viewAll": "Xem Tất Cả",
+      "noInvoicesYet": "Chưa có hóa đơn nào",
+      "noPaymentsYet": "Chưa có thanh toán nào"
+    },
+    "revenueChart": {
+      "title": "Xu Hướng Doanh Thu",
+      "subtitle": "6 tháng gần nhất ({{currency}})",
+      "empty": "Chưa có dữ liệu doanh thu"
+    }
+  },
+  "billing": {
+    "common": {
+      "refresh": "Làm Mới",
+      "markOverdue": "Đánh Dấu Quá Hạn",
+      "markOverdueSuccess": "Đã đánh dấu {{count}} hóa đơn quá hạn",
+      "markOverdueError": "Không thể đánh dấu hóa đơn quá hạn"
+    },
+    "dashboard": {
+      "title": "Hóa Đơn & Thanh Toán",
+      "subtitle": "Tổng quan tài chính và thao tác nhanh",
+      "quickAccess": "Truy Cập Nhanh",
+      "loadError": "Không thể tải tổng quan hóa đơn."
+    },
+    "finance": {
+      "title": "Phân Tích Tài Chính",
+      "subtitle": "Hiệu quả doanh thu, công nợ phải thu và theo dõi thu hồi",
+      "loadError": "Không thể tải dữ liệu tài chính."
+    },
+    "revenue": {
+      "title": "Ghi Nhận Doanh Thu",
+      "entriesCount": "{{count}} mục",
+      "resultsCount": "{{count}} kết quả",
+      "loadError": "Không thể tải dữ liệu ghi nhận doanh thu.",
+      "actionError": "Thao tác thất bại.",
+      "empty": "Không có mục ghi nhận doanh thu",
+      "recognize": "Ghi Nhận",
+      "reverse": "Đảo Ngược",
+      "paginationInfo": "Trang {{page}}/{{pages}} (tổng {{total}})",
+      "columns": {
+        "number": "Số REV",
+        "period": "Kỳ"
+      },
+      "statusOptions": {
+        "all": "Tất Cả Trạng Thái",
+        "scheduled": "Đã Lên Lịch",
+        "recognized": "Đã Ghi Nhận",
+        "reversed": "Đã Đảo Ngược"
+      },
+      "typeOptions": {
+        "all": "Tất Cả Loại",
+        "rentalIncome": "Doanh Thu Cho Thuê",
+        "serviceFee": "Phí Dịch Vụ",
+        "penaltyFee": "Phí Phạt",
+        "damageRecovery": "Bồi Thường Hư Hỏng",
+        "depositForfeiture": "Tịch Thu Tiền Đặt Cọc"
+      },
+      "typeLabels": {
+        "rentalIncome": "Doanh Thu Cho Thuê",
+        "serviceFee": "Phí Dịch Vụ",
+        "penaltyFee": "Phạt",
+        "damageRecovery": "Bồi Thường Hư Hỏng",
+        "depositForfeiture": "Tịch Thu Tiền Đặt Cọc"
+      }
+    },
+    "statement": {
+      "title": "Sao Kê Tài Khoản",
+      "subtitle": "Toàn bộ hoạt động hóa đơn kèm số dư lũy kế",
+      "loadError": "Không thể tải dữ liệu sao kê.",
+      "totalCharges": "Tổng Phí",
+      "totalPayments": "Tổng Thanh Toán",
+      "outstandingBalance": "Số Dư Còn Nợ",
+      "searchPlaceholder": "Tìm kiếm hóa đơn...",
+      "entriesCount": "{{count}} mục",
+      "loading": "Đang tải sao kê...",
+      "noEntries": "Không có mục sao kê nào",
+      "emptySub": "Không tìm thấy hóa đơn phù hợp với tìm kiếm của bạn",
+      "columns": {
+        "invoiceNumber": "Số Hóa Đơn",
+        "charges": "Phí",
+        "payments": "Thanh Toán",
+        "balance": "Số Dư"
+      }
+    },
+    "aging": {
+      "title": "Tuổi Nợ Phải Thu",
+      "buckets": {
+        "current": "Hiện Tại",
+        "days1to30": "1-30 ngày",
+        "days31to60": "31-60 ngày",
+        "days61to90": "61-90 ngày",
+        "days90plus": "Trên 90 ngày"
+      }
+    },
+    "revenueChart": {
+      "title": "Xu Hướng Doanh Thu (6 Tháng Gần Nhất)",
+      "empty": "Không có dữ liệu",
+      "invoiced": "Đã Xuất Hóa Đơn",
+      "paid": "Đã Thanh Toán",
+      "invoicedTooltip": "Đã xuất hóa đơn: {{amount}}",
+      "paidTooltip": "Đã thanh toán: {{amount}}"
+    },
+    "payment": {
+      "status": {
+        "pending": "Đang Chờ",
+        "confirmed": "Đã Xác Nhận",
+        "rejected": "Đã Từ Chối",
+        "refunded": "Đã Hoàn Tiền"
+      },
+      "method": {
+        "cash": "Tiền Mặt",
+        "bank_transfer": "Chuyển Khoản Ngân Hàng",
+        "check": "Séc",
+        "credit_card": "Thẻ Tín Dụng",
+        "mobile_payment": "Thanh Toán Di Động",
+        "mobile_paymentShort": "Di Động",
+        "other": "Khác"
+      },
+      "statusFilter": {
+        "all": "Tất Cả Trạng Thái"
+      },
+      "methodFilter": {
+        "all": "Tất Cả Phương Thức"
+      },
+      "fields": {
+        "method": "Phương Thức",
+        "paymentDate": "Ngày Thanh Toán",
+        "received": "Đã Nhận",
+        "reference": "Tham Chiếu",
+        "createdBy": "Người Tạo",
+        "confirmedAt": "Ngày Xác Nhận",
+        "confirmedBy": "Người Xác Nhận",
+        "contract": "Hợp Đồng"
+      },
+      "table": {
+        "number": "Số Thanh Toán",
+        "customer": "Khách Hàng"
+      },
+      "list": {
+        "title": "Thanh Toán",
+        "subtitle": "{{count}} khoản thanh toán",
+        "resultsCount": "{{count}} kết quả"
+      },
+      "pagination": {
+        "pageOf": "Trang {{page}}/{{pages}} (tổng {{total}})"
+      },
+      "searchPlaceholder": "Tìm thanh toán / mã tham chiếu...",
+      "empty": "Không tìm thấy thanh toán nào",
+      "notFound": "Không tìm thấy thanh toán",
+      "actions": {
+        "reject": "Từ Chối",
+        "allocateToInvoice": "Phân Bổ Vào Hóa Đơn"
+      },
+      "toast": {
+        "confirmed": "Đã xác nhận thanh toán",
+        "rejected": "Đã từ chối thanh toán",
+        "allocated": "Đã phân bổ thanh toán",
+        "actionFailed": "Thất bại: {{action}}",
+        "loadFailed": "Không thể tải thanh toán.",
+        "loadPaymentsFailed": "Không thể tải danh sách thanh toán.",
+        "loadInvoicesFailed": "Không thể tải danh sách hóa đơn"
+      },
+      "allocate": {
+        "title": "Phân Bổ Thanh Toán Vào Hóa Đơn",
+        "invoiceLabel": "Hóa Đơn",
+        "selectPlaceholder": "Chọn hóa đơn...",
+        "balance": "Số Dư",
+        "amountPlaceholder": "0.00",
+        "submit": "Phân Bổ"
+      },
+      "summary": {
+        "title": "Thanh Toán",
+        "transactions": "Giao Dịch"
+      }
+    },
+    "invoice": {
+      "status": {
+        "draft": "Nháp",
+        "issued": "Đã Xuất",
+        "sent": "Đã Gửi",
+        "partially_paid": "Một Phần",
+        "paid": "Đã Thanh Toán",
+        "overdue": "Quá Hạn",
+        "cancelled": "Đã Hủy",
+        "voided": "Đã Hủy Bỏ"
+      },
+      "summary": {
+        "title": "Hóa Đơn",
+        "outstanding": "Còn Nợ",
+        "overdue": "Quá Hạn",
+        "count": "Số Lượng"
+      },
+      "filter": {
+        "all": "Tất Cả Trạng Thái",
+        "partially_paid": "Thanh Toán Một Phần"
+      },
+      "list": {
+        "title": "Hóa Đơn",
+        "subtitle": "{{count}} hóa đơn",
+        "newInvoice": "Hóa Đơn Mới",
+        "loadError": "Không thể tải danh sách hóa đơn.",
+        "searchPlaceholder": "Tìm số hóa đơn...",
+        "resultsCount": "{{count}} kết quả",
+        "empty": "Không tìm thấy hóa đơn nào"
+      },
+      "table": {
+        "number": "Số Hóa Đơn",
+        "customer": "Khách Hàng",
+        "balance": "Số Dư"
+      },
+      "meta": {
+        "issueDate": "Ngày Xuất",
+        "dueDate": "Ngày Đến Hạn",
+        "paidDate": "Ngày Thanh Toán",
+        "contract": "Hợp Đồng",
+        "referenceType": "Loại Hóa Đơn",
+        "period": "Kỳ",
+        "createdBy": "Người Tạo"
+      },
+      "referenceType": {
+        "sales": "Bán Hàng",
+        "workOrder": "Lệnh Công Việc",
+        "rental": "Cho Thuê"
+      },
+      "form": {
+        "title": "Hóa Đơn Mới",
+        "backToList": "Quay Lại Danh Sách Hóa Đơn",
+        "customer": "Khách Hàng",
+        "customerSearchPlaceholder": "Tìm tên, công ty...",
+        "noCustomersFound": "Không tìm thấy khách hàng",
+        "referenceType": "Loại Hóa Đơn",
+        "taxRate": "Thuế Suất (%)",
+        "description": "Mô Tả",
+        "descriptionPlaceholder": "Mô tả hạng mục hoặc dịch vụ",
+        "unitPrice": "Đơn Giá",
+        "lineTotal": "Thành Tiền",
+        "addRow": "Thêm Dòng",
+        "subtotal": "Tạm Tính",
+        "grandTotal": "Tổng Cộng",
+        "creating": "Đang tạo...",
+        "createInvoice": "Tạo Hóa Đơn",
+        "created": "Đã tạo hóa đơn {{number}}.",
+        "createFailed": "Không thể tạo hóa đơn.",
+        "errors": {
+          "customerRequired": "Vui lòng chọn khách hàng.",
+          "itemRequired": "Cần ít nhất một hạng mục có mô tả."
+        },
+        "itemCode": "Mã hàng",
+        "itemCodePlaceholder": "VD: SKU-1000",
+        "unit": "Đơn vị",
+        "currency": "Tiền Tệ",
+        "exchangeRate": "Tỷ Giá",
+        "bankDetails": "Thông Tin Ngân Hàng",
+        "bankDetailsPlaceholder": "Tên ngân hàng, tên tài khoản, số tài khoản, SWIFT/BIC...",
+        "grandTotalInLAK": "Tổng Cộng Quy Đổi LAK (Tiền Tệ Cơ Sở)",
+        "previewTitle": "Xem Trước Chứng Từ",
+        "previewPendingNumber": "(Chưa Có Số)"
+      },
+      "pagination": {
+        "info": "Trang {{page}}/{{pages}} (tổng {{total}})"
+      },
+      "actions": {
+        "issue": "Xuất Hóa Đơn",
+        "send": "Gửi",
+        "void": "Hủy Bỏ"
+      },
+      "amountSummary": {
+        "tax": "Thuế ({{rate}}%)",
+        "discount": "Giảm Giá",
+        "paid": "Đã Thanh Toán",
+        "balanceDue": "Số Dư Còn Lại"
+      },
+      "detail": {
+        "loadError": "Không thể tải hóa đơn.",
+        "notFound": "Không tìm thấy hóa đơn",
+        "actionFailed": "Thất bại: {{action}}",
+        "internalNotes": "Ghi Chú Nội Bộ",
+        "cancellationReason": "Lý Do Hủy"
+      },
+      "lineItems": {
+        "title": "Hạng Mục",
+        "number": "#",
+        "qty": "SL",
+        "rate": "Đơn Giá",
+        "tax": "Thuế",
+        "empty": "Không có hạng mục nào"
+      },
+      "allocations": {
+        "title": "Phân Bổ Thanh Toán",
+        "payment": "Thanh Toán",
+        "paymentLabel": "Thanh Toán #{{id}}"
+      },
+      "modal": {
+        "cancel": {
+          "title": "Hủy Hóa Đơn",
+          "reasonLabel": "Lý do hủy",
+          "reasonPlaceholder": "Nhập lý do..."
+        }
+      },
+      "toast": {
+        "issued": "Đã xuất hóa đơn",
+        "sent": "Đã gửi hóa đơn",
+        "voided": "Đã hủy bỏ hóa đơn",
+        "cancelled": "Đã hủy hóa đơn"
+      },
+      "card": {
+        "due": "Đến hạn {{date}}",
+        "balance": "Số dư: {{amount}} {{currency}}"
+      },
+      "vehicleInfo": {
+        "title": "Thông Tin Xe",
+        "make": "Hãng Xe",
+        "model": "Mẫu Xe",
+        "vin": "Số Khung (VIN)",
+        "engineNo": "Số Máy",
+        "regNo": "Biển Số",
+        "jobNumber": "Số Công Việc"
+      }
+    },
+    "deposit": {
+      "status": {
+        "all": "Tất Cả Trạng Thái",
+        "pending": "Đang Chờ",
+        "received": "Đã Nhận",
+        "partiallyRefunded": "Hoàn Một Phần",
+        "refunded": "Đã Hoàn Tiền",
+        "forfeited": "Đã Tịch Thu",
+        "applied": "Đã Áp Dụng"
+      },
+      "type": {
+        "all": "Tất Cả Loại",
+        "security": "Đặt Cọc Bảo Đảm",
+        "advance": "Tạm Ứng",
+        "guarantee": "Bảo Lãnh"
+      },
+      "list": {
+        "title": "Tiền Đặt Cọc",
+        "subtitle": "{{count}} khoản đặt cọc",
+        "loadError": "Không thể tải danh sách tiền đặt cọc.",
+        "resultsCount": "{{count}} kết quả",
+        "empty": "Không tìm thấy khoản đặt cọc nào"
+      },
+      "table": {
+        "number": "Số Đặt Cọc",
+        "customer": "Khách Hàng",
+        "contract": "Hợp Đồng",
+        "received": "Đã Nhận"
+      },
+      "pagination": {
+        "info": "Trang {{page}}/{{pages}} (tổng {{total}})"
+      },
+      "actions": {
+        "markReceived": "Đánh Dấu Đã Nhận",
+        "refund": "Hoàn Tiền",
+        "forfeit": "Tịch Thu",
+        "applyToInvoice": "Áp Dụng Vào Hóa Đơn"
+      },
+      "modal": {
+        "markReceived": {
+          "title": "Đánh Dấu Đã Nhận Tiền Đặt Cọc",
+          "depositLabel": "Tiền Đặt Cọc",
+          "receivedDateLabel": "Ngày Nhận",
+          "confirm": "Xác Nhận Đã Nhận"
+        },
+        "refund": {
+          "title": "Hoàn Tiền Đặt Cọc",
+          "amountLabel": "Số Tiền Hoàn (tối đa: {{max}})",
+          "dateLabel": "Ngày Hoàn Tiền"
+        },
+        "forfeit": {
+          "title": "Tịch Thu Tiền Đặt Cọc",
+          "amountLabel": "Số Tiền Tịch Thu (tối đa: {{max}})",
+          "reasonLabel": "Lý Do"
+        },
+        "apply": {
+          "title": "Áp Dụng Tiền Đặt Cọc Vào Hóa Đơn",
+          "invoiceLabel": "Hóa Đơn",
+          "selectInvoicePlaceholder": "Chọn hóa đơn...",
+          "invoiceOption": "{{number}} — Số dư: {{balance}} {{currency}}",
+          "amountLabel": "Số Tiền (tối đa: {{max}})",
+          "confirm": "Áp Dụng"
+        }
+      },
+      "summary": {
+        "amount": "Số Tiền Đặt Cọc",
+        "refunded": "Đã Hoàn",
+        "forfeited": "Đã Tịch Thu",
+        "applied": "Đã Áp Dụng",
+        "remaining": "Còn Lại"
+      },
+      "summaryCard": {
+        "title": "Tiền Đặt Cọc",
+        "active": "Đang Hoạt Động"
+      },
+      "detail": {
+        "loadError": "Không thể tải tiền đặt cọc.",
+        "notFound": "Không tìm thấy",
+        "actionFailed": "Thao tác thất bại.",
+        "invoicesLoadError": "Không thể tải danh sách hóa đơn.",
+        "receivedLabel": "Đã nhận: {{date}}",
+        "refundDateLabel": "Ngày hoàn tiền: {{date}}",
+        "contractLabel": "Hợp đồng:",
+        "notesLabel": "Ghi chú:"
+      },
+      "toast": {
+        "received": "Đã đánh dấu tiền đặt cọc là đã nhận",
+        "receiveError": "Không thể ghi nhận tiền đặt cọc"
+      }
+    }
+  },
+  "maintenance": {
+    "overdue": "Quá Hạn",
+    "actions": {
+      "refresh": "Làm Mới"
+    },
+    "status": {
+      "scheduled": "Đã Lên Lịch",
+      "due": "Đến Hạn",
+      "inProgress": "Đang Thực Hiện",
+      "verified": "Đã Xác Minh"
+    },
+    "type": {
+      "preventive": "Phòng Ngừa",
+      "corrective": "Sửa Chữa",
+      "emergency": "Khẩn Cấp",
+      "inspection": "Kiểm Tra",
+      "install": "Lắp Đặt"
+    },
+    "priority": {
+      "low": "Thấp",
+      "normal": "Bình Thường",
+      "high": "Cao",
+      "critical": "Nghiêm Trọng"
+    },
+    "dashboard": {
+      "title": "Bảo Trì & PM",
+      "subtitle": "Bảng điều khiển bảo trì phòng ngừa",
+      "loadError": "Không thể tải bảng điều khiển.",
+      "pmSchedulesButton": "Lịch Bảo Trì PM",
+      "workOrdersButton": "Lệnh Công Việc",
+      "cards": {
+        "pmPlans": "Kế Hoạch PM",
+        "activeSchedules": "Lịch Đang Hoạt Động",
+        "completedThisMonth": "Hoàn Thành (Tháng)",
+        "costThisMonth": "Chi Phí (Tháng)"
+      }
+    },
+    "schedule": {
+      "title": "Lịch Bảo Trì PM",
+      "activeSchedules": "{{count}} lịch đang hoạt động",
+      "loadError": "Không thể tải lịch bảo trì.",
+      "emptyState": "Không có lịch bảo trì PM nào đang hoạt động. Hãy tạo kế hoạch bảo trì và gán cho thiết bị.",
+      "nextDue": "Đến Hạn Kế Tiếp",
+      "interval": "Chu Kỳ",
+      "serviced": "Đã Bảo Trì"
+    },
+    "workOrders": {
+      "list": {
+        "title": "Lệnh Công Việc",
+        "subtitle": "{{count}} lệnh công việc",
+        "newWorkOrder": "Lệnh Công Việc Mới",
+        "loadError": "Không thể tải danh sách lệnh công việc.",
+        "searchPlaceholder": "Tìm số, tiêu đề...",
+        "resultsCount": "{{count}} kết quả",
+        "allStatuses": "Tất Cả Trạng Thái",
+        "allTypes": "Tất Cả Loại",
+        "columns": {
+          "workOrder": "Lệnh Công Việc",
+          "priority": "Ưu Tiên"
+        },
+        "paginationInfo": "Trang {{page}}/{{pages}} (tổng {{total}})"
+      },
+      "form": {
+        "title": "Lệnh Công Việc Mới",
+        "backToList": "Quay Lại Danh Sách Lệnh Công Việc",
+        "workOrderTitle": "Tiêu Đề",
+        "workOrderTitlePlaceholder": "vd: Bảo trì PM hàng tháng",
+        "asset": "Tài Sản",
+        "assetSearchPlaceholder": "Tìm số sê-ri hoặc tên...",
+        "noAssetsFound": "Không tìm thấy tài sản",
+        "workType": "Loại Công Việc",
+        "assignee": "Người Phụ Trách",
+        "unassigned": "— Chưa gán —",
+        "schedule": "Ngày & Giờ Dự Kiến",
+        "creating": "Đang tạo...",
+        "createWorkOrder": "Tạo Lệnh Công Việc",
+        "created": "Đã tạo lệnh công việc {{number}}.",
+        "createFailed": "Không thể tạo lệnh công việc.",
+        "errors": {
+          "titleRequired": "Tiêu đề là bắt buộc.",
+          "assetRequired": "Vui lòng chọn tài sản.",
+          "scheduleRequired": "Ngày và giờ dự kiến là bắt buộc."
+        }
+      },
+      "detail": {
+        "notFound": "Không tìm thấy lệnh công việc.",
+        "backToList": "Quay Lại Danh Sách Lệnh Công Việc",
+        "startWork": "Bắt Đầu Công Việc",
+        "completeAction": "Hoàn Thành",
+        "verify": "Xác Minh",
+        "addCost": "Thêm Chi Phí",
+        "toastStarted": "Đã bắt đầu công việc",
+        "actionFailed": "Thất bại: {{label}}",
+        "fields": {
+          "equipment": "Thiết Bị",
+          "technician": "Kỹ Thuật Viên",
+          "pmPlan": "Kế Hoạch PM",
+          "hourMeter": "Đồng Hồ Giờ",
+          "started": "Bắt Đầu",
+          "verifiedBy": "Người Xác Minh",
+          "created": "Ngày Tạo",
+          "estHours": "Giờ Ước Tính",
+          "actualHours": "Giờ Thực Tế",
+          "actualCost": "Chi Phí Thực Tế"
+        },
+        "findings": "Phát Hiện",
+        "resolution": "Cách Xử Lý",
+        "cancellationReason": "Lý Do Hủy",
+        "costBreakdown": "Chi Tiết Chi Phí ({{count}})",
+        "rate": "Đơn Giá",
+        "startModal": {
+          "title": "Bắt Đầu Lệnh Công Việc",
+          "hourMeterReading": "Chỉ Số Đồng Hồ Giờ",
+          "starting": "Đang bắt đầu...",
+          "start": "Bắt Đầu"
+        },
+        "completeModal": {
+          "title": "Hoàn Thành Lệnh Công Việc",
+          "findingsPlaceholder": "Những gì phát hiện được trong quá trình kiểm tra...",
+          "resolutionPlaceholder": "Những gì đã thực hiện để xử lý...",
+          "completing": "Đang hoàn thành..."
+        },
+        "costModal": {
+          "title": "Thêm Mục Chi Phí",
+          "descRateRequired": "Mô tả và đơn giá là bắt buộc.",
+          "costAdded": "Đã thêm chi phí.",
+          "failed": "Thất bại.",
+          "costType": "Loại Chi Phí",
+          "typeParts": "Phụ Tùng",
+          "typeLabor": "Nhân Công",
+          "typeExternalService": "Dịch Vụ Bên Ngoài",
+          "typeOther": "Khác",
+          "unitRate": "Đơn Giá",
+          "adding": "Đang thêm..."
+        },
+        "cancelReasonDefault": "Đã hủy bởi người dùng"
+      }
+    }
+  },
+  "activity": {
+    "title": "Nhật Ký Hoạt Động",
+    "eventsLoaded": "Đã tải {{count}} sự kiện",
+    "refresh": "Làm Mới",
+    "filters": {
+      "searchPlaceholder": "Tìm người dùng hoặc thao tác…",
+      "action": "Thao Tác",
+      "allActions": "Tất Cả Thao Tác",
+      "entityType": "Đối Tượng",
+      "allEntities": "Tất Cả Đối Tượng",
+      "dateFrom": "Từ",
+      "dateTo": "Đến"
+    },
+    "entity": {
+      "user": "Người Dùng",
+      "customer": "Khách Hàng",
+      "lead": "Cơ Hội",
+      "note": "Ghi Chú",
+      "invoice": "Hóa Đơn",
+      "payment": "Thanh Toán",
+      "deposit": "Tiền Đặt Cọc",
+      "revenue_recognition": "Ghi Nhận Doanh Thu",
+      "project": "Dự Án",
+      "project_milestone": "Mốc Dự Án",
+      "setting": "Cài Đặt",
+      "inventory_import": "Nhập Kho",
+      "notification_preference": "Tùy Chọn Thông Báo"
+    },
+    "table": {
+      "timestamp": "Thời Gian",
+      "user": "Người Dùng",
+      "action": "Thao Tác",
+      "entity": "Đối Tượng",
+      "id": "ID",
+      "details": "Chi Tiết",
+      "noActivityFound": "Không tìm thấy hoạt động nào",
+      "noActivityYet": "Hoạt động sẽ hiển thị tại đây khi người dùng bắt đầu tương tác với hệ thống.",
+      "ipAddress": "Địa Chỉ IP"
+    },
+    "details": {
+      "group": "Nhóm: {{group}}",
+      "eventInfo": "Thông Tin Sự Kiện",
+      "systemOrDeletedUser": "Hệ Thống / Người Dùng Đã Xóa",
+      "title": "Chi Tiết",
+      "noneRecorded": "Không có chi tiết bổ sung nào được ghi nhận.",
+      "fieldsModified": "Các trường đã thay đổi:",
+      "drawerTitle": "Chi Tiết Hoạt Động",
+      "ipNotTracked": "Không theo dõi"
+    },
+    "pagination": {
+      "showing": "Hiển thị {{start}}–{{end}} trong {{total}}"
+    },
+    "loadError": "Không thể tải nhật ký hoạt động.",
+    "action": {
+      "user_login": "Đăng Nhập",
+      "user_logout": "Đăng Xuất",
+      "user_created": "Đã Tạo Người Dùng",
+      "user_updated": "Đã Cập Nhật Người Dùng",
+      "user_deleted": "Đã Xóa Người Dùng",
+      "customer_created": "Đã Tạo Khách Hàng",
+      "customer_updated": "Đã Cập Nhật Khách Hàng",
+      "customer_deleted": "Đã Xóa Khách Hàng",
+      "customer_status_changed": "Đã Thay Đổi Trạng Thái",
+      "lead_created": "Đã Tạo Cơ Hội",
+      "lead_updated": "Đã Cập Nhật Cơ Hội",
+      "lead_deleted": "Đã Xóa Cơ Hội",
+      "lead_status_changed": "Đã Thay Đổi Trạng Thái",
+      "lead_note_added": "Đã Thêm Ghi Chú",
+      "lead_note_deleted": "Đã Xóa Ghi Chú",
+      "catalog_product_created": "Đã Tạo Sản Phẩm",
+      "catalog_product_updated": "Đã Cập Nhật Sản Phẩm",
+      "catalog_product_deleted": "Đã Xóa Sản Phẩm",
+      "catalog_brand_created": "Đã Tạo Thương Hiệu",
+      "catalog_brand_updated": "Đã Cập Nhật Thương Hiệu",
+      "catalog_brand_deleted": "Đã Xóa Thương Hiệu",
+      "catalog_category_created": "Đã Tạo Danh Mục",
+      "catalog_category_updated": "Đã Cập Nhật Danh Mục",
+      "catalog_category_deleted": "Đã Xóa Danh Mục",
+      "catalog_import_previewed": "Đã Xem Trước Nhập Dữ Liệu",
+      "catalog_import_executed": "Đã Thực Hiện Nhập Dữ Liệu",
+      "forklift_created": "Đã Đăng Ký Xe Nâng",
+      "forklift_updated": "Đã Cập Nhật Xe Nâng",
+      "forklift_deleted": "Đã Xóa Xe Nâng",
+      "forklift_status_changed": "Đã Thay Đổi Trạng Thái",
+      "quotation_created": "Đã Tạo Báo Giá",
+      "quotation_updated": "Đã Cập Nhật Báo Giá",
+      "quotation_deleted": "Đã Xóa Báo Giá",
+      "quotation_submitted": "Đã Gửi Duyệt Báo Giá",
+      "quotation_approved": "Đã Duyệt Báo Giá",
+      "quotation_revision_requested": "Đã Yêu Cầu Sửa Đổi",
+      "quotation_sent": "Đã Gửi Báo Giá",
+      "quotation_accepted": "Đã Chấp Nhận Báo Giá",
+      "quotation_declined": "Đã Từ Chối Báo Giá",
+      "quotation_converted": "Đã Chuyển Đổi Báo Giá",
+      "quotation_cancelled": "Đã Hủy Báo Giá",
+      "quotation_reactivated": "Đã Kích Hoạt Lại Báo Giá",
+      "rental_contract_created": "Đã Tạo Hợp Đồng",
+      "rental_contract_updated": "Đã Cập Nhật Hợp Đồng",
+      "rental_contract_deleted": "Đã Xóa Hợp Đồng",
+      "rental_contract_submitted": "Đã Gửi Duyệt Hợp Đồng",
+      "rental_contract_approved": "Đã Phê Duyệt Hợp Đồng",
+      "rental_contract_revision": "Đã Yêu Cầu Sửa Đổi",
+      "rental_contract_activated": "Đã Kích Hoạt Hợp Đồng",
+      "rental_contract_cancelled": "Đã Hủy Hợp Đồng",
+      "rental_contract_closed": "Đã Đóng Hợp Đồng",
+      "rental_return_requested": "Đã Yêu Cầu Trả Hàng",
+      "rental_return_picked_up": "Đã Lấy Hàng Trả",
+      "rental_return_received": "Đã Nhận Hàng Trả",
+      "rental_return_completed": "Đã Hoàn Tất Trả Hàng",
+      "rental_damage_assessed": "Đã Đánh Giá Hư Hỏng",
+      "rental_damage_disputed": "Đã Khiếu Nại Hư Hỏng",
+      "rental_damage_resolved": "Đã Giải Quyết Hư Hỏng",
+      "rental_extension_requested": "Đã Yêu Cầu Gia Hạn",
+      "rental_extension_approved": "Đã Phê Duyệt Gia Hạn",
+      "rental_extension_rejected": "Đã Từ Chối Gia Hạn",
+      "rental_billing_created": "Đã Tạo Hóa Đơn Cho Thuê",
+      "invoice_created": "Đã Tạo Hóa Đơn",
+      "invoice_updated": "Đã Cập Nhật Hóa Đơn",
+      "invoice_issued": "Đã Xuất Hóa Đơn",
+      "invoice_sent": "Đã Gửi Hóa Đơn",
+      "invoice_cancelled": "Đã Hủy Hóa Đơn",
+      "invoice_voided": "Đã Hủy Bỏ Hóa Đơn",
+      "payment_recorded": "Đã Ghi Nhận Thanh Toán",
+      "payment_confirmed": "Đã Xác Nhận Thanh Toán",
+      "payment_rejected": "Đã Từ Chối Thanh Toán",
+      "payment_allocated": "Đã Phân Bổ Thanh Toán",
+      "deposit_created": "Đã Tạo Tiền Đặt Cọc",
+      "deposit_received": "Đã Nhận Tiền Đặt Cọc",
+      "deposit_refunded": "Đã Hoàn Tiền Đặt Cọc",
+      "deposit_forfeited": "Đã Tịch Thu Tiền Đặt Cọc",
+      "deposit_applied": "Đã Áp Dụng Tiền Đặt Cọc",
+      "revenue_recognized": "Đã Ghi Nhận Doanh Thu",
+      "revenue_reversed": "Đã Đảo Ngược Doanh Thu",
+      "project_created": "Đã Tạo Dự Án",
+      "project_updated": "Đã Cập Nhật Dự Án",
+      "project_deleted": "Đã Xóa Dự Án",
+      "project_milestone_status_changed": "Đã Thay Đổi Trạng Thái Mốc Dự Án",
+      "setting_updated": "Đã Cập Nhật Cài Đặt",
+      "inventory_import_executed": "Đã Thực Hiện Nhập Kho Hàng Loạt",
+      "notification_preference_created": "Đã Đăng Ký Nhận Cảnh Báo",
+      "notification_preference_updated": "Đã Cập Nhật Tùy Chọn Cảnh Báo",
+      "notification_preference_deleted": "Đã Hủy Đăng Ký Nhận Cảnh Báo"
+    },
+    "group": {
+      "user": "Người Dùng",
+      "customer": "Khách Hàng",
+      "lead": "Cơ Hội",
+      "billing": "Hóa Đơn & Thanh Toán",
+      "project": "Dự Án",
+      "settings": "Cài Đặt",
+      "inventory": "Kho Hàng",
+      "notifications": "Thông Báo"
+    }
+  },
+  "executive": {
+    "title": "Bảng Điều Khiển Điều Hành",
+    "subtitle": "Chỉ số hiệu suất và phân tích toàn doanh nghiệp",
+    "refresh": "Làm Mới",
+    "loadFailed": "Không thể tải dữ liệu điều hành.",
+    "kpi": {
+      "totalRevenue": "Tổng Doanh Thu",
+      "invoicesCount": "{{count}} hóa đơn",
+      "collectionRate": "Tỷ Lệ Thu Hồi",
+      "collected": "{{amount}} đã thu",
+      "fleetUtilization": "Tỷ Lệ Sử Dụng Đội Xe",
+      "rentedOfTotal": "{{rented}} đang thuê / {{total}} tổng",
+      "customers": "Khách Hàng",
+      "activeCount": "{{count}} đang hoạt động",
+      "inventoryValue": "Giá Trị Tồn Kho",
+      "partsCount": "{{count}} phụ tùng",
+      "conversionRate": "Tỷ Lệ Chuyển Đổi",
+      "winRate": "Thắng: {{rate}}"
+    },
+    "chart": {
+      "revenueTrend": "Xu Hướng Doanh Thu",
+      "noRevenueData": "Không có dữ liệu doanh thu",
+      "invoiced": "Đã Xuất Hóa Đơn",
+      "collected": "Đã Thu",
+      "fleetStatus": "Trạng Thái Đội Xe",
+      "noFleetData": "Không có dữ liệu đội xe",
+      "leadPipeline": "Kênh Cơ Hội (12 tháng)",
+      "noLeadData": "Không có dữ liệu cơ hội",
+      "newLeads": "Cơ Hội Mới",
+      "customerGrowth": "Tăng Trưởng Khách Hàng (12 tháng)",
+      "noCustomerData": "Không có dữ liệu khách hàng",
+      "newCustomers": "Khách Hàng Mới",
+      "months": {
+        "jan": "Th1",
+        "feb": "Th2",
+        "mar": "Th3",
+        "apr": "Th4",
+        "may": "Th5",
+        "jun": "Th6",
+        "jul": "Th7",
+        "aug": "Th8",
+        "sep": "Th9",
+        "oct": "Th10",
+        "nov": "Th11",
+        "dec": "Th12"
+      }
+    },
+    "export": {
+      "exportExcel": "Xuất Excel",
+      "customers": "Khách Hàng",
+      "leads": "Cơ Hội",
+      "sales": "Bán Hàng",
+      "downloaded": "Đã tải xuống báo cáo {{report}}",
+      "exportFailed": "Xuất thất bại",
+      "exportReports": "Xuất Báo Cáo",
+      "customersExcel": "Khách Hàng (Excel)",
+      "leadsExcel": "Cơ Hội (Excel)",
+      "salesExcel": "Bán Hàng (Excel)",
+      "customersCsv": "Khách Hàng (CSV)",
+      "leadsCsv": "Cơ Hội (CSV)",
+      "salesCsv": "Bán Hàng (CSV)"
+    }
+  },
+  "catalog": {
+    "saveFailed": "Lưu thất bại.",
+    "saveChanges": "Lưu Thay Đổi",
+    "resultsCount": "{{count}} kết quả",
+    "pageOf": "Trang {{page}}/{{pages}} (tổng {{total}})",
+    "viewAll": "Xem Tất Cả →",
+    "browseAllProducts": "Xem Tất Cả Sản Phẩm →",
+    "hero": {
+      "title": "Danh Mục Sản Phẩm",
+      "subtitle": "Xe Nâng · Thiết Bị Kho Bãi · Phụ Tùng · Phụ Kiện",
+      "searchPlaceholder": "Tìm {{count}} sản phẩm theo tên, SKU, model..."
+    },
+    "categorySlider": {
+      "title": "Duyệt Theo Danh Mục"
+    },
+    "brandShowcase": {
+      "title": "Mua Theo Thương Hiệu"
+    },
+    "megaMenu": {
+      "allCategories": "Tất Cả Danh Mục"
+    },
+    "brands": {
+      "title": "Thương Hiệu",
+      "subtitle": "{{count}} thương hiệu",
+      "newBrand": "Thương Hiệu Mới",
+      "searchPlaceholder": "Tìm thương hiệu…",
+      "editTitle": "Sửa Thương Hiệu",
+      "newTitle": "Thương Hiệu Mới",
+      "table": {
+        "brand": "Thương Hiệu",
+        "country": "Quốc Gia",
+        "role": "Vai Trò"
+      },
+      "empty": {
+        "title": "Không tìm thấy thương hiệu nào",
+        "createHint": "Tạo thương hiệu đầu tiên của bạn để bắt đầu."
+      },
+      "roles": {
+        "primary": "Chính",
+        "partsOnly": "Chỉ Phụ Tùng",
+        "both": "Cả Hai"
+      },
+      "form": {
+        "nameRequired": "Tên thương hiệu là bắt buộc.",
+        "namePlaceholder": "Tên thương hiệu",
+        "countryLabel": "Quốc Gia",
+        "countryPlaceholder": "vd: Nhật Bản",
+        "roleLabel": "Vai Trò",
+        "websiteLabel": "Trang Web",
+        "websitePlaceholder": "https://…",
+        "createBrand": "Tạo Thương Hiệu"
+      },
+      "deleteDialog": {
+        "title": "Xóa Thương Hiệu",
+        "message": "Xóa thương hiệu \"{{name}}\"? Các sản phẩm tham chiếu đến thương hiệu này sẽ bị xóa liên kết thương hiệu."
+      },
+      "toast": {
+        "loadError": "Không thể tải danh sách thương hiệu.",
+        "createSuccess": "Đã tạo thương hiệu thành công.",
+        "createError": "Không thể tạo thương hiệu.",
+        "updateSuccess": "Đã cập nhật thương hiệu thành công.",
+        "updateError": "Không thể cập nhật thương hiệu.",
+        "deleteSuccess": "Đã xóa thương hiệu.",
+        "deleteError": "Không thể xóa thương hiệu."
+      }
+    },
+    "categories": {
+      "title": "Danh Mục",
+      "subtitle": "{{count}} danh mục (cây 3 cấp)",
+      "newCategory": "Danh Mục Mới",
+      "editTitle": "Sửa Danh Mục",
+      "newTitle": "Danh Mục Mới",
+      "table": {
+        "category": "Danh Mục",
+        "level": "Cấp",
+        "children": "Danh Mục Con"
+      },
+      "empty": {
+        "title": "Không tìm thấy danh mục nào",
+        "createHint": "Tạo danh mục đầu tiên của bạn để bắt đầu."
+      },
+      "types": {
+        "division": "Nhóm Ngành",
+        "category": "Danh Mục",
+        "subCategory": "Danh Mục Con"
+      },
+      "levelLine": "Cấp {{level}} — {{type}}",
+      "form": {
+        "nameRequired": "Tên tiếng Anh là bắt buộc.",
+        "nameEnLabel": "Tên (Tiếng Anh)",
+        "namePlaceholder": "Tên danh mục",
+        "nameLoLabel": "Tên (Tiếng Lào)",
+        "parentLabel": "Danh Mục Cha",
+        "topLevelOption": "— Cấp cao nhất (Nhóm ngành) —",
+        "createCategory": "Tạo Danh Mục"
+      },
+      "deleteDialog": {
+        "title": "Xóa Danh Mục",
+        "message": "Xóa \"{{name}}\"? Thao tác sẽ thất bại nếu danh mục này còn danh mục con hoặc sản phẩm được gán."
+      },
+      "toast": {
+        "loadError": "Không thể tải danh mục.",
+        "createSuccess": "Đã tạo danh mục thành công.",
+        "createError": "Không thể tạo danh mục.",
+        "updateSuccess": "Đã cập nhật danh mục thành công.",
+        "updateError": "Không thể cập nhật danh mục.",
+        "deleteSuccess": "Đã xóa danh mục.",
+        "deleteError": "Không thể xóa danh mục."
+      }
+    },
+    "products": {
+      "filterAllTypes": "Tất Cả Loại",
+      "forSale": "Để Bán",
+      "forRental": "Cho Thuê",
+      "featured": "Nổi Bật",
+      "refresh": "Làm Mới",
+      "newProduct": "Sản Phẩm Mới",
+      "productCount": "{{count}} sản phẩm",
+      "pillSearch": "Tìm kiếm: {{query}}",
+      "pillBrand": "Thương hiệu: {{name}}",
+      "pillCategory": "Danh mục: {{name}}",
+      "editTitle": "Sửa Sản Phẩm",
+      "newTitle": "Sản Phẩm Mới",
+      "skuPrefix": "SKU: {{sku}}",
+      "empty": {
+        "title": "Không tìm thấy sản phẩm nào",
+        "hint": "Hãy thử điều chỉnh bộ lọc hoặc tạo sản phẩm mới."
+      },
+      "table": {
+        "product": "Sản Phẩm",
+        "sku": "SKU",
+        "brand": "Thương Hiệu"
+      },
+      "badges": {
+        "sale": "Bán",
+        "rental": "Cho Thuê",
+        "featured": "Nổi Bật"
+      },
+      "deleteDialog": {
+        "title": "Xóa Sản Phẩm",
+        "message": "Xóa \"{{name}}\"? Hành động này không thể hoàn tác."
+      },
+      "form": {
+        "nameRequired": "Tên sản phẩm là bắt buộc.",
+        "saveFailed": "Lưu thất bại. Vui lòng thử lại.",
+        "nameEnLabel": "Tên (Tiếng Anh)",
+        "nameEnPlaceholder": "Tên sản phẩm bằng tiếng Anh",
+        "nameLoLabel": "Tên (Tiếng Lào)",
+        "skuPlaceholder": "Tự động tạo nếu để trống",
+        "modelNumberLabel": "Số Model",
+        "modelNumberPlaceholder": "vd: EFG115",
+        "brandLabel": "Thương Hiệu",
+        "noBrandOption": "— Không có thương hiệu —",
+        "noCategoryOption": "— Không có danh mục —",
+        "descriptionPlaceholder": "Mô tả sản phẩm…",
+        "attributesLabel": "Thuộc Tính",
+        "usedAvailable": "Có Hàng Đã Qua Sử Dụng",
+        "serviceItem": "Hạng Mục Dịch Vụ",
+        "createProduct": "Tạo Sản Phẩm"
+      },
+      "toast": {
+        "loadError": "Không thể tải danh sách sản phẩm.",
+        "createSuccess": "Đã tạo sản phẩm thành công.",
+        "createError": "Không thể tạo sản phẩm.",
+        "updateSuccess": "Đã cập nhật sản phẩm thành công.",
+        "updateError": "Không thể cập nhật sản phẩm.",
+        "deleteSuccess": "Đã xóa sản phẩm.",
+        "deleteError": "Không thể xóa sản phẩm."
+      }
+    },
+    "productDetail": {
+      "loadError": "Không tìm thấy sản phẩm hoặc tải thất bại.",
+      "backToCatalog": "Quay Lại Danh Mục",
+      "notFound": "Không tìm thấy sản phẩm.",
+      "model": "Model",
+      "compatibleWith": "Tương thích với",
+      "specifications": "Thông Số Kỹ Thuật"
+    },
+    "import": {
+      "title": "Nhập Sản Phẩm",
+      "subtitle": "Tải lên tệp Excel để nhập hàng loạt sản phẩm, thương hiệu và danh mục.",
+      "dropzoneText": "Kéo thả tệp Excel vào đây, hoặc nhấp để duyệt",
+      "dropzoneHint": "Hỗ trợ tệp .xlsx và .xls từ danh mục sản phẩm DK LAO",
+      "clear": "Xóa",
+      "supportedSheetsLabel": "Các trang tính được hỗ trợ:",
+      "supportedSheetsList": "Xe Nâng Jungheinrich, Xe Nâng Mitsubishi, Phụ Kiện (ອຸປະກອນ), Kho Bãi (ສາງ), Máy Hút Bụi (ດູດຝຸ່ນ), Máy Lau Sàn (ເຊັດຄັດ), Thương Hiệu (ບໍລິການ).",
+      "autoDetectHint": "Công cụ nhập sẽ tự động nhận diện các trang tính theo tên bằng cả tiếng Anh và tiếng Lào.",
+      "importButton": "Tải Lên & Nhập",
+      "importing": "Đang nhập…",
+      "uploadingHint": "Việc này có thể mất vài giây đối với tệp lớn hơn.",
+      "uploadFailed": "Nhập thất bại. Vui lòng thử lại.",
+      "successBanner": "Nhập dữ liệu thành công",
+      "partialBanner": "Nhập hoàn tất nhưng có lỗi",
+      "imported": "Đã Nhập",
+      "errors": "Lỗi",
+      "failedRows": "Dòng Thất Bại",
+      "importAnother": "Nhập Tệp Khác",
+      "viewCatalog": "Xem Danh Mục",
+      "successToast": "Nhập hoàn tất: đã nhập {{count}} sản phẩm.",
+      "errorToast": "Nhập hoàn tất với {{count}} lỗi.",
+      "table": {
+        "rowNum": "#",
+        "error": "Lỗi",
+        "sheet": "Trang Tính"
+      }
+    }
+  },
+  "quotations": {
+    "status": {
+      "draft": "Nháp",
+      "underReview": "Đang Xem Xét",
+      "approved": "Đã Duyệt",
+      "revision": "Đang Sửa Đổi",
+      "sent": "Đã Gửi",
+      "accepted": "Đã Chấp Nhận",
+      "rejected": "Đã Từ Chối",
+      "expired": "Hết Hạn",
+      "converted": "Đã Chuyển Đổi",
+      "cancelled": "Đã Hủy"
+    },
+    "type": {
+      "rental": "Cho Thuê",
+      "sales": "Bán Hàng",
+      "service": "Dịch Vụ",
+      "spareParts": "Phụ Tùng"
+    },
+    "itemType": {
+      "forkliftRental": "Cho Thuê Xe Nâng",
+      "forkliftSale": "Bán Xe Nâng",
+      "service": "Dịch Vụ",
+      "sparePart": "Phụ Tùng",
+      "delivery": "Giao Hàng",
+      "insurance": "Bảo Hiểm",
+      "custom": "Tùy Chỉnh"
+    },
+    "list": {
+      "title": "Báo Giá",
+      "totalCount": "{{count}} báo giá",
+      "refresh": "Làm Mới",
+      "newQuotation": "Báo Giá Mới",
+      "searchPlaceholder": "Tìm số, tiêu đề...",
+      "allStatuses": "Tất Cả Trạng Thái",
+      "allTypes": "Tất Cả Loại",
+      "colQuotation": "Báo Giá",
+      "colCustomer": "Khách Hàng",
+      "colValidUntil": "Có Hiệu Lực Đến",
+      "noQuotationsFound": "Không tìm thấy báo giá nào",
+      "createOrAdjust": "Tạo báo giá mới hoặc điều chỉnh bộ lọc.",
+      "resultsCount": "{{count}} kết quả",
+      "pageOf": "Trang {{page}}/{{pages}} (tổng {{total}})",
+      "deleteConfirmTitle": "Xóa Báo Giá",
+      "deleteConfirmMessage": "Xóa \"{{number}}\"? Hành động này không thể hoàn tác.",
+      "toast": {
+        "loadError": "Không thể tải danh sách báo giá.",
+        "createSuccess": "Đã tạo báo giá.",
+        "createError": "Không thể tạo báo giá.",
+        "deleteSuccess": "Đã xóa báo giá.",
+        "deleteError": "Không thể xóa báo giá."
+      }
+    },
+    "form": {
+      "backToQuotations": "Quay Lại Báo Giá",
+      "newQuotation": "Báo Giá Mới",
+      "typeLabel": "Loại Báo Giá",
+      "currencyLabel": "Tiền Tệ",
+      "titleLabel": "Tiêu Đề",
+      "titlePlaceholder": "vd: Cho thuê xe nâng — Vientiane Motors",
+      "contactNameLabel": "Tên Người Liên Hệ",
+      "contactNamePlaceholder": "Ông / Bà",
+      "contactEmailLabel": "Email Liên Hệ",
+      "contactEmailPlaceholder": "email@example.com",
+      "contactPhoneLabel": "Số Điện Thoại Liên Hệ",
+      "contactPhonePlaceholder": "+856 20 ...",
+      "taxRateLabel": "Thuế Suất (%)",
+      "validFromLabel": "Có Hiệu Lực Từ",
+      "validUntilLabel": "Có Hiệu Lực Đến",
+      "notesLabel": "Ghi Chú (khách hàng có thể xem)",
+      "notesPlaceholder": "Hiển thị trên bản PDF báo giá...",
+      "internalNotesLabel": "Ghi Chú Nội Bộ",
+      "internalNotesPlaceholder": "Chỉ nội bộ, không hiển thị cho khách hàng...",
+      "creating": "Đang tạo...",
+      "createQuotation": "Tạo Báo Giá",
+      "titleRequired": "Tiêu đề là bắt buộc.",
+      "createFailed": "Không thể tạo báo giá.",
+      "createdToast": "Đã tạo báo giá {{number}}.",
+      "typeOptions": {
+        "rental": "Báo Giá Cho Thuê",
+        "sales": "Báo Giá Bán Hàng",
+        "service": "Báo Giá Dịch Vụ",
+        "spareParts": "Báo Giá Phụ Tùng"
+      },
+      "vehicleInfo": {
+        "title": "Thông Tin Xe",
+        "make": "Hãng Xe",
+        "model": "Mẫu Xe",
+        "vin": "Số Khung (VIN)",
+        "engineNo": "Số Máy",
+        "regNo": "Biển Số",
+        "jobNumber": "Số Công Việc"
+      },
+      "exchangeRateLabel": "Tỷ Giá",
+      "bankDetails": "Thông Tin Ngân Hàng",
+      "bankDetailsPlaceholder": "Tên ngân hàng, tên tài khoản, số tài khoản, SWIFT/BIC..."
+    },
+    "detail": {
+      "backToQuotations": "Quay Lại Báo Giá",
+      "notFoundError": "Không tìm thấy báo giá hoặc tải thất bại.",
+      "actionFailed": "Thất bại: {{action}}",
+      "rev": "Phiên bản {{number}}",
+      "submit": "Gửi",
+      "approve": "Duyệt",
+      "requestRevision": "Yêu Cầu Sửa Đổi",
+      "sendToCustomer": "Gửi Cho Khách Hàng",
+      "markAccepted": "Đánh Dấu Đã Chấp Nhận",
+      "markRejected": "Đánh Dấu Đã Từ Chối",
+      "convert": "Chuyển Đổi",
+      "reactivate": "Kích Hoạt Lại",
+      "taxWithRate": "Thuế ({{rate}}%)",
+      "discount": "Giảm Giá",
+      "customer": "Khách Hàng",
+      "contact": "Liên Hệ",
+      "assignedTo": "Người Phụ Trách",
+      "validFrom": "Có Hiệu Lực Từ",
+      "validUntil": "Có Hiệu Lực Đến",
+      "convertedTo": "Đã Chuyển Đổi Thành",
+      "internalNote": "Ghi Chú Nội Bộ",
+      "lineItems": "Hạng Mục ({{count}})",
+      "addItem": "Thêm Hạng Mục",
+      "colNumber": "#",
+      "colUnitPrice": "Đơn Giá",
+      "colDiscount": "Giảm %",
+      "serialNumber": "Số seri: {{serial}}",
+      "sku": "SKU: {{sku}}",
+      "durationDays": "{{count}} ngày ({{period}})",
+      "noLineItems": "Chưa có hạng mục nào.",
+      "addItemsHint": "Thêm hạng mục để xây dựng báo giá.",
+      "statusHistory": "Lịch Sử Trạng Thái",
+      "colFrom": "Từ",
+      "colTo": "Đến",
+      "colReason": "Lý Do",
+      "colBy": "Bởi",
+      "approvalHistory": "Lịch Sử Duyệt",
+      "colRev": "Phiên Bản",
+      "colDecision": "Quyết Định",
+      "colConditions": "Điều Kiện",
+      "toasts": {
+        "submitted": "Đã gửi để xem xét",
+        "revisionRequested": "Đã yêu cầu sửa đổi",
+        "sent": "Đã gửi cho khách hàng",
+        "markedAccepted": "Đã đánh dấu chấp nhận",
+        "markedRejected": "Đã đánh dấu từ chối",
+        "converted": "Đã chuyển đổi",
+        "reactivated": "Đã kích hoạt lại",
+        "itemRemoved": "Đã xóa hạng mục"
+      },
+      "addItemModal": {
+        "title": "Thêm Hạng Mục",
+        "itemType": "Loại Hạng Mục",
+        "unit": "Đơn Vị",
+        "descriptionPlaceholder": "Mô tả hạng mục",
+        "unitPrice": "Đơn Giá",
+        "discountPercent": "Giảm Giá (%)",
+        "rentalDuration": "Thời Gian Thuê (ngày)",
+        "ratePeriod": "Kỳ Tính Giá",
+        "selectRatePeriod": "— Chọn —",
+        "daily": "Theo Ngày",
+        "weekly": "Theo Tuần",
+        "monthly": "Theo Tháng",
+        "adding": "Đang thêm...",
+        "descriptionRequired": "Mô tả là bắt buộc.",
+        "unitPriceRequired": "Đơn giá là bắt buộc.",
+        "itemAdded": "Đã thêm hạng mục.",
+        "addFailed": "Không thể thêm hạng mục.",
+        "itemCode": "Mã hàng"
+      },
+      "revisionNeededReason": "Cần sửa đổi",
+      "colItemCode": "Mã hàng"
+    }
+  },
+  "imageUpload": {
+    "invalidFormat": "Chỉ cho phép ảnh định dạng JPG, PNG hoặc WebP.",
+    "fileTooLarge": "Kích thước tệp vượt quá giới hạn {{size}} MB.",
+    "invalidImage": "Tệp không phải là hình ảnh hợp lệ.",
+    "uploadFailed": "Tải lên thất bại. Vui lòng thử lại.",
+    "remove": "Xóa",
+    "uploadedSuccessfully": "Đã tải lên thành công",
+    "clickOrDrag": "Nhấp hoặc kéo ảnh vào đây để tải lên",
+    "hint": "JPG, PNG, WebP · Tối đa {{size}} MB",
+    "previewAlt": "Xem trước ảnh đã tải lên"
+  },
+  "login": {
+    "subtitle": "Đăng nhập để tiếp tục",
+    "powerSwitch": "Công tắc nguồn",
+    "username": "Tên Đăng Nhập",
+    "usernamePlaceholder": "Nhập tên đăng nhập của bạn",
+    "password": "Mật Khẩu",
+    "passwordPlaceholder": "Nhập mật khẩu của bạn",
+    "rememberMe": "Ghi nhớ đăng nhập",
+    "signIn": "Đăng Nhập",
+    "signingIn": "Đang đăng nhập…",
+    "invalidCredentials": "Tên đăng nhập hoặc mật khẩu không đúng",
+    "footer": "© 2026 DK LAO Services. Bảo lưu mọi quyền."
+  },
+  "customer360": {
+    "backToCustomers": "Quay Lại Danh Sách Khách Hàng",
+    "notFound": "Không tìm thấy khách hàng.",
+    "loadError": "Không tìm thấy khách hàng hoặc tải thất bại.",
+    "forklifts": "Xe Nâng",
+    "activeRentals": "Hợp Đồng Thuê Đang Hoạt Động",
+    "openWorkOrders": "Lệnh Công Việc Đang Mở",
+    "outstanding": "Còn Nợ",
+    "notes": "Ghi Chú",
+    "rentalContracts": "Hợp Đồng Thuê",
+    "workOrders": "Lệnh Công Việc",
+    "invoices": "Hóa Đơn",
+    "noForklifts": "Chưa có xe nâng nào được gán cho khách hàng này.",
+    "noRentalContracts": "Khách hàng này chưa có hợp đồng thuê nào.",
+    "noWorkOrders": "Thiết bị của khách hàng này chưa có lệnh công việc nào.",
+    "noInvoices": "Khách hàng này chưa có hóa đơn nào.",
+    "colSerialNumber": "Số Sê-ri",
+    "colName": "Tên",
+    "colStatus": "Trạng Thái",
+    "colHourMeter": "Đồng Hồ Giờ",
+    "colContractNumber": "Số Hợp Đồng",
+    "colStartDate": "Ngày Bắt Đầu",
+    "colEndDate": "Ngày Kết Thúc",
+    "colTotalValue": "Tổng Giá Trị",
+    "colWorkOrderNumber": "Số Lệnh Công Việc",
+    "colForklift": "Xe Nâng",
+    "colTitle": "Tiêu Đề",
+    "colPriority": "Ưu Tiên",
+    "colScheduledDate": "Ngày Dự Kiến",
+    "colInvoiceNumber": "Số Hóa Đơn",
+    "colTotalAmount": "Tổng Số Tiền",
+    "colBalanceDue": "Số Dư Còn Lại",
+    "colDueDate": "Ngày Đến Hạn"
+  },
+  "projects": {
+    "title": "Dự Án Kho Bãi",
+    "totalCount": "Tổng: {{count}}",
+    "createProject": "Tạo Dự Án",
+    "allStatuses": "Tất Cả Trạng Thái",
+    "status": {
+      "draft": "Nháp",
+      "survey": "Khảo Sát",
+      "design": "Thiết Kế",
+      "boq_approved": "Đã Duyệt BOQ",
+      "installation": "Lắp Đặt",
+      "handover": "Bàn Giao",
+      "completed": "Hoàn Thành"
+    },
+    "milestoneStatus": {
+      "pending": "Đang Chờ",
+      "in_progress": "Đang Thực Hiện",
+      "completed": "Hoàn Thành"
+    },
+    "colProject": "Dự Án",
+    "colCustomer": "Khách Hàng",
+    "colStartEnd": "Bắt Đầu / Kết Thúc",
+    "colStatus": "Trạng Thái",
+    "colProgress": "Tiến Độ",
+    "noProjectsFound": "Không tìm thấy dự án nào",
+    "createToGetStarted": "Tạo dự án để bắt đầu.",
+    "noPermissionView": "Bạn không có quyền xem các dự án.",
+    "loadFailed": "Không thể tải danh sách dự án.",
+    "resultsCount": "Kết quả: {{count}}",
+    "pageOf": "Trang {{page}}/{{pages}} (tổng {{total}})",
+    "milestonesOf": "{{completed}}/{{total}} mốc",
+    "form": {
+      "editProject": "Sửa Dự Án",
+      "newProject": "Dự Án Mới",
+      "cancel": "Hủy",
+      "saving": "Đang lưu…",
+      "saveChanges": "Lưu Thay Đổi",
+      "createProject": "Tạo Dự Án",
+      "projectName": "Tên Dự Án",
+      "projectNamePlaceholder": "Kệ Kho Vientiane",
+      "customer": "Khách Hàng",
+      "selectCustomer": "Chọn khách hàng…",
+      "status": "Trạng Thái",
+      "startDate": "Ngày Bắt Đầu",
+      "endDate": "Ngày Kết Thúc",
+      "notes": "Ghi Chú",
+      "notesPlaceholder": "Ghi chú bổ sung…"
+    },
+    "detail": {
+      "backToProjects": "Quay Lại Dự Án",
+      "notFound": "Không tìm thấy dự án.",
+      "noPermissionView": "Bạn không có quyền xem dự án này.",
+      "edit": "Sửa",
+      "approveBoq": "Duyệt BOQ",
+      "delete": "Xóa",
+      "startDate": "Ngày Bắt Đầu",
+      "endDate": "Ngày Kết Thúc",
+      "milestones": "Mốc Dự Án",
+      "boqTotal": "Tổng BOQ",
+      "notes": "Ghi Chú",
+      "addMilestone": "Thêm Mốc",
+      "noMilestonesYet": "Chưa có mốc nào.",
+      "colMilestone": "Mốc",
+      "colDueDate": "Ngày Đến Hạn",
+      "colStatus": "Trạng Thái",
+      "markStatus": "Đánh dấu {{status}}",
+      "addBoqItem": "Thêm Hạng Mục BOQ",
+      "noBoqItemsYet": "Chưa có hạng mục BOQ nào.",
+      "colDescription": "Mô Tả",
+      "colQty": "SL",
+      "colUnitPrice": "Đơn Giá",
+      "colTotal": "Thành Tiền",
+      "totalRow": "Tổng Cộng",
+      "billOfQuantities": "Bảng Khối Lượng (BOQ)",
+      "deleteProjectTitle": "Xóa Dự Án",
+      "deleteMilestoneTitle": "Xóa Mốc",
+      "deleteBoqItemTitle": "Xóa Hạng Mục BOQ",
+      "deleteProjectMessage": "Thao tác này sẽ xóa vĩnh viễn dự án cùng toàn bộ mốc và hạng mục BOQ. Hành động này không thể hoàn tác.",
+      "deleteGenericMessage": "Hành động này không thể hoàn tác.",
+      "confirmDelete": "Xóa",
+      "milestoneModalTitle": "Thêm Mốc",
+      "milestoneName": "Tên Mốc",
+      "milestoneNamePlaceholder": "Khảo sát",
+      "dueDate": "Ngày Đến Hạn",
+      "adding": "Đang thêm…",
+      "boqModalTitle": "Thêm Hạng Mục BOQ",
+      "linkInventoryPart": "Liên Kết Phụ Tùng Trong Kho (tùy chọn)",
+      "notLinked": "— Không liên kết —",
+      "description": "Mô Tả",
+      "quantity": "Số Lượng",
+      "unitPrice": "Đơn Giá",
+      "addItem": "Thêm Hạng Mục",
+      "descriptionPriceRequired": "Mô tả và đơn giá là bắt buộc.",
+      "projectUpdated": "Đã cập nhật dự án.",
+      "projectUpdateFailed": "Không thể cập nhật dự án.",
+      "boqApproved": "Đã duyệt BOQ.",
+      "boqApproveFailed": "Không thể duyệt BOQ.",
+      "projectDeleted": "Đã xóa dự án.",
+      "projectDeleteFailed": "Không thể xóa dự án.",
+      "milestoneStatusUpdateFailed": "Không thể cập nhật trạng thái mốc.",
+      "milestoneRemoved": "Đã xóa mốc.",
+      "milestoneRemoveFailed": "Không thể xóa mốc.",
+      "boqItemRemoved": "Đã xóa hạng mục BOQ.",
+      "boqItemRemoveFailed": "Không thể xóa hạng mục BOQ.",
+      "milestoneAdded": "Đã thêm mốc.",
+      "milestoneAddFailed": "Không thể thêm mốc.",
+      "boqItemAdded": "Đã thêm hạng mục BOQ.",
+      "boqItemAddFailed": "Không thể thêm hạng mục BOQ.",
+      "projectCreated": "Đã tạo dự án.",
+      "projectCreateFailed": "Không thể tạo dự án."
+    }
+  },
+  "reports": {
+    "title": "Báo Cáo",
+    "subtitle": "Phân tích, chỉ số chuyển đổi và xuất dữ liệu",
+    "refresh": "Làm Mới",
+    "retry": "Thử Lại",
+    "keyMetrics": "Chỉ Số Chính",
+    "wonLeads": "Cơ Hội Thành Công",
+    "totalCustomers": "Tổng Khách Hàng",
+    "conversionRate": "Tỷ Lệ Chuyển Đổi",
+    "winRate": "Tỷ Lệ Thắng",
+    "wonOverTotalLeads": "Thành công ÷ Tổng cơ hội",
+    "wonOverWonPlusLost": "Thành công ÷ (Thành công + Thất bại)",
+    "exportData": "Xuất Dữ Liệu",
+    "downloadReports": "Tải Xuống Báo Cáo",
+    "format": "Định Dạng",
+    "fromDate": "Từ Ngày",
+    "toDate": "Đến Ngày",
+    "clearDates": "Xóa ngày",
+    "downloading": "Đang tải xuống…",
+    "exportNote": "Nếu điểm cuối báo cáo không khả dụng, một tệp CSV tóm tắt sẽ được tạo phía trình duyệt.",
+    "customers": "Khách Hàng",
+    "leads": "Cơ Hội",
+    "sales": "Bán Hàng",
+    "downloadSuccess": "Đã tải xuống báo cáo {{type}}.",
+    "downloadError": "Không thể tải xuống báo cáo {{type}}.",
+    "trends": "Xu Hướng — 12 Tháng Gần Nhất",
+    "syntheticPreview": "Dữ liệu xem trước minh họa",
+    "leadVolume": "Số Lượng Cơ Hội",
+    "leadVolumeSub": "Số cơ hội mới tạo theo tháng",
+    "noLeadTrend": "Không có dữ liệu xu hướng cơ hội",
+    "leadTrendWillAppear": "Xu hướng cơ hội sẽ hiển thị khi điểm cuối được kết nối",
+    "customerGrowth": "Tăng Trưởng Khách Hàng",
+    "customerGrowthSub": "Số khách hàng mới thêm theo tháng",
+    "noCustomerTrend": "Không có dữ liệu xu hướng khách hàng",
+    "customerTrendWillAppear": "Xu hướng khách hàng sẽ hiển thị khi điểm cuối được kết nối",
+    "leadAnalysis": "Phân Tích Cơ Hội",
+    "statusDistribution": "Phân Bố Trạng Thái",
+    "statusDistributionSub": "Cơ hội theo giai đoạn hiện tại",
+    "noStatusData": "Không có dữ liệu trạng thái cơ hội",
+    "createLeadsToSeeDistribution": "Tạo cơ hội để xem phân bố",
+    "sourceBreakdown": "Phân Tích Nguồn",
+    "sourceBreakdownSub": "Nguồn gốc của các cơ hội",
+    "noSourceData": "Không có dữ liệu nguồn",
+    "addSourceWhenCreating": "Thêm nguồn khi tạo cơ hội",
+    "conversionMetrics": "Chỉ Số Chuyển Đổi",
+    "metric": "Chỉ Số",
+    "rate": "Tỷ Lệ",
+    "breakdown": "Chi Tiết",
+    "formula": "Công Thức",
+    "lostRate": "Tỷ Lệ Thất Bại",
+    "activeCustomers": "Khách Hàng Đang Hoạt Động",
+    "leadsInPipeline": "Cơ Hội Trong Kênh",
+    "ofTotal": "trong tổng {{count}}",
+    "wonOverTotalFormula": "Thành công ÷ Tổng cơ hội × 100",
+    "wonOverWonLostFormula": "Thành công ÷ (Thành công + Thất bại) × 100",
+    "lostOverWonLostFormula": "Thất bại ÷ (Thành công + Thất bại) × 100",
+    "activeOverTotalFormula": "Đang hoạt động ÷ Tổng khách hàng × 100",
+    "pipelineFormula": "Mới + Đã liên hệ + Đủ điều kiện + Đề xuất",
+    "moduleRoadmap": "Lộ Trình Mô-đun",
+    "sourceLabels": {
+      "website": "Website",
+      "referral": "Giới Thiệu",
+      "coldCall": "Gọi Điện Trực Tiếp",
+      "email": "Email",
+      "socialMedia": "Mạng Xã Hội",
+      "other": "Khác"
+    },
+    "modules": {
+      "projects": {
+        "label": "Dự Án",
+        "description": "Quản lý dự án với mốc tiến độ, bảng trạng thái và phân công nhóm"
+      },
+      "services": {
+        "label": "Dịch Vụ",
+        "description": "Danh mục dịch vụ, bậc giá và phân công dịch vụ khách hàng"
+      },
+      "tasks": {
+        "label": "Công Việc",
+        "description": "Bảng công việc với phân công, hạn chót và mức độ ưu tiên"
+      },
+      "invoices": {
+        "label": "Hóa Đơn",
+        "description": "Tạo hóa đơn, theo dõi thanh toán và báo cáo doanh thu"
+      }
+    },
+    "formatCsv": "CSV (.csv)",
+    "formatExcel": "Excel (.xlsx)"
+  },
+  "routes": {
+    "dashboard": "Bảng Điều Khiển",
+    "customerDetail": "Khách Hàng 360",
+    "customers": "Khách Hàng",
+    "leads": "Cơ Hội Bán Hàng",
+    "activity": "Hoạt Động",
+    "reports": "Báo Cáo",
+    "settings": "Cài Đặt",
+    "products": "Sản Phẩm",
+    "productDetail": "Chi Tiết Sản Phẩm",
+    "brands": "Thương Hiệu",
+    "categories": "Danh Mục",
+    "import": "Nhập Dữ Liệu",
+    "equipmentRegistry": "Danh Mục Thiết Bị",
+    "equipmentDetail": "Chi Tiết Thiết Bị",
+    "quotations": "Báo Giá",
+    "newQuotation": "Báo Giá Mới",
+    "quotationDetail": "Chi Tiết Báo Giá",
+    "rentalContracts": "Hợp Đồng Thuê",
+    "newContract": "Hợp Đồng Mới",
+    "contractDetail": "Chi Tiết Hợp Đồng",
+    "movementControl": "Kiểm Soát Di Chuyển",
+    "newMovement": "Di Chuyển Mới",
+    "movementDetail": "Chi Tiết Di Chuyển",
+    "billing": "Hóa Đơn & Tài Chính",
+    "invoices": "Hóa Đơn",
+    "invoiceDetail": "Chi Tiết Hóa Đơn",
+    "payments": "Thanh Toán",
+    "paymentDetail": "Chi Tiết Thanh Toán",
+    "deposits": "Tiền Đặt Cọc",
+    "depositDetail": "Chi Tiết Tiền Đặt Cọc",
+    "revenueRecognition": "Ghi Nhận Doanh Thu",
+    "financeDashboard": "Bảng Điều Khiển Tài Chính",
+    "statements": "Sao Kê",
+    "paymentManager": "Quản Lý Thanh Toán",
+    "depositManager": "Quản Lý Tiền Đặt Cọc",
+    "maintenancePm": "Bảo Trì & PM",
+    "workOrders": "Lệnh Công Việc",
+    "newWorkOrder": "Lệnh Công Việc Mới",
+    "workOrderDetail": "Chi Tiết Lệnh Công Việc",
+    "pmSchedules": "Lịch Bảo Trì PM",
+    "inventory": "Kho Hàng",
+    "spareParts": "Phụ Tùng",
+    "newPart": "Phụ Tùng Mới",
+    "partDetail": "Chi Tiết Phụ Tùng",
+    "warehouses": "Nhà Kho",
+    "purchaseOrders": "Đơn Mua Hàng",
+    "executiveDashboard": "Bảng Điều Khiển Điều Hành",
+    "projects": "Dự Án Kho Bãi",
+    "projectDetail": "Chi Tiết Dự Án",
+    "iotManagement": "Quản Lý IoT"
+  },
+  "iot": {
+    "title": "Giám Sát IoT",
+    "subtitle": "Quản lý ghép nối thiết bị GPS/đồng hồ giờ và giám sát kết nối trực tiếp trên toàn bộ đội xe.",
+    "refresh": "Làm Mới",
+    "searchPlaceholder": "Tìm theo tên xe nâng hoặc số sê-ri...",
+    "kpi": {
+      "totalPaired": "Thiết Bị Đã Ghép Nối",
+      "live": "Đang Trực Tuyến",
+      "offline": "Ngoại Tuyến",
+      "unpaired": "Xe Chưa Ghép Nối"
+    },
+    "table": {
+      "forklift": "Xe Nâng",
+      "deviceId": "Mã Thiết Bị",
+      "lastPing": "Lần Cuối Kết Nối",
+      "status": "Trạng Thái"
+    },
+    "notPaired": "Chưa ghép nối",
+    "never": "Chưa từng",
+    "pairAction": "Ghép nối thiết bị",
+    "unpairAction": "Hủy ghép nối",
+    "noResults": "Không tìm thấy xe nâng nào.",
+    "pairModal": {
+      "title": "Ghép Nối Thiết Bị IoT — {{name}}",
+      "deviceIdLabel": "Mã Thiết Bị",
+      "deviceIdPlaceholder": "vd: DK-IOT-001",
+      "deviceIdRequired": "Mã thiết bị là bắt buộc.",
+      "duplicateError": "Mã thiết bị này đã được ghép nối với một xe nâng khác.",
+      "submitError": "Không thể ghép nối thiết bị. Vui lòng thử lại.",
+      "submit": "Ghép Nối Thiết Bị",
+      "pairing": "Đang ghép nối..."
+    },
+    "unpairConfirm": {
+      "title": "Hủy Ghép Nối Thiết Bị",
+      "message": "Gỡ thiết bị \"{{deviceId}}\" khỏi {{name}}? Thiết bị sẽ ngừng gửi cập nhật đồng hồ giờ tự động cho đến khi được ghép nối lại."
+    }
+  },
+  "changePassword": {
+    "title": "Đổi Mật Khẩu",
+    "subtitle": "Cập nhật mật khẩu để bảo mật tài khoản của bạn.",
+    "currentPassword": "Mật Khẩu Hiện Tại",
+    "currentPasswordPlaceholder": "Nhập mật khẩu hiện tại của bạn",
+    "newPassword": "Mật Khẩu Mới",
+    "newPasswordPlaceholder": "Tối thiểu 8 ký tự",
+    "confirmPassword": "Xác Nhận Mật Khẩu Mới",
+    "confirmPasswordPlaceholder": "Nhập lại mật khẩu mới",
+    "submit": "Đổi Mật Khẩu",
+    "submitting": "Đang đổi mật khẩu…",
+    "mismatchError": "Mật khẩu mới và xác nhận không khớp.",
+    "tooShortError": "Mật khẩu phải có ít nhất 8 ký tự.",
+    "successToast": "Đã đổi mật khẩu thành công.",
+    "incorrectCurrentError": "Mật khẩu hiện tại không đúng.",
+    "genericError": "Không thể đổi mật khẩu. Vui lòng thử lại."
+  },
+  "documentPreview": {
+    "docTitle": {
+      "invoice": "HÓA ĐƠN",
+      "quotation": "BÁO GIÁ",
+      "purchaseOrder": "ĐƠN MUA HÀNG"
+    },
+    "customerDetails": "Thông Tin Khách Hàng",
+    "vendorDetails": "Thông Tin Nhà Cung Cấp",
+    "vehicleInformation": "Thông Tin Xe",
+    "vehicle": {
+      "make": "Hãng Xe",
+      "model": "Mẫu Xe",
+      "vin": "Số Khung (VIN)",
+      "engineNo": "Số Máy",
+      "regNo": "Biển Số",
+      "jobNumber": "Số Công Việc"
+    },
+    "dateLabel": "Ngày",
+    "docNumberLabel": "Số Chứng Từ",
+    "unitPrice": "Đơn Giá",
+    "bankDetails": "Thông Tin Ngân Hàng",
+    "subtotal": "Tạm Tính",
+    "vatLabel": "Thuế VAT ({{rate}}%)",
+    "grandTotal": "Tổng Cộng",
+    "issuedBy": "Người Lập",
+    "approvedBy": "Người Duyệt"
+  },
+  "modulePlaceholder": {
+    "badge": "Sắp Ra Mắt",
+    "emptyHint": "Mô-đun này đã được dựng khung — quy trình đầy đủ sẽ sớm ra mắt."
+  },
+  "documentFlow": {
+    "title": "Luồng Chứng Từ:"
+  }
+}

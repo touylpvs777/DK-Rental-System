@@ -1,0 +1,797 @@
+{
+  "batchIndex": 20,
+  "nodes": [
+    {
+      "id": "file:backend/app/schemas/import_job.py",
+      "type": "file",
+      "name": "import_job.py",
+      "summary": "Pydantic schemas for Excel-based product import jobs, covering row-level preview types (PreviewProduct, PreviewError, SheetPreview) and job status/response schemas (ImportJobOut, ImportJobDetail, ImportPreviewResponse, ImportExecuteResponse).",
+      "tags": ["schema", "import", "excel", "product", "pydantic"],
+      "filePath": "backend/app/schemas/import_job.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/schemas/inventory.py",
+      "type": "file",
+      "name": "inventory.py",
+      "summary": "Pydantic schemas for the spare parts inventory system: spare parts CRUD, warehouses, inventory balances, stock transactions, purchase orders, parts consumption, and an inventory dashboard summary with reorder alerts.",
+      "tags": ["schema", "inventory", "spare-parts", "warehouse", "purchase-order", "pydantic"],
+      "filePath": "backend/app/schemas/inventory.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/schemas/lead.py",
+      "type": "file",
+      "name": "lead.py",
+      "summary": "Pydantic schemas for CRM lead management including lead creation, update, list response, and a detailed view with nested assigned user, customer, and note history.",
+      "tags": ["schema", "lead", "crm", "pydantic"],
+      "filePath": "backend/app/schemas/lead.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/schemas/maintenance.py",
+      "type": "file",
+      "name": "maintenance.py",
+      "summary": "Pydantic schemas for the maintenance module: maintenance plans (PlanCreate/Out), maintenance schedules (ScheduleCreate/Out), work order lifecycle (WorkOrderCreate, WorkOrderUpdate, WorkOrderOut, WorkOrderDetail), maintenance cost entries, service history, and a dashboard summary.",
+      "tags": ["schema", "maintenance", "work-order", "pydantic"],
+      "filePath": "backend/app/schemas/maintenance.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/schemas/movement.py",
+      "type": "file",
+      "name": "movement.py",
+      "summary": "Pydantic schemas for forklift asset movement tracking: movement creation/update, workflow action schemas (PrepareAction, DepartAction, ArriveAction), movement checkpoint history, and detailed/list response schemas.",
+      "tags": ["schema", "movement", "logistics", "forklift", "pydantic"],
+      "filePath": "backend/app/schemas/movement.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/schemas/permission.py",
+      "type": "file",
+      "name": "permission.py",
+      "summary": "Pydantic schemas for the permission system: a role-to-permissions entry and a PermissionMatrixOut that maps all roles to their permission sets via a class method.",
+      "tags": ["schema", "permission", "rbac", "pydantic"],
+      "filePath": "backend/app/schemas/permission.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/schemas/product.py",
+      "type": "file",
+      "name": "product.py",
+      "summary": "Pydantic schemas for the product catalog: product CRUD (ProductCreate, ProductUpdate, ProductOut, ProductDetail), technical spec schemas (SpecCreate, SpecOut), image management (ImageCreate, ImageOut), compatible brand associations, and a paginated list response.",
+      "tags": ["schema", "product", "catalog", "pydantic"],
+      "filePath": "backend/app/schemas/product.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/schemas/quotation.py",
+      "type": "file",
+      "name": "quotation.py",
+      "summary": "Pydantic schemas for the quotation workflow: quotation creation/update/response, line items (QuotationItemCreate/Out), status history, approval records, workflow action schemas (WorkflowAction, ApproveAction, ConvertAction), and a paginated list response.",
+      "tags": ["schema", "quotation", "sales", "workflow", "pydantic"],
+      "filePath": "backend/app/schemas/quotation.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/schemas/rental.py",
+      "type": "file",
+      "name": "rental.py",
+      "summary": "Comprehensive Pydantic schemas for the rental contract lifecycle: contract creation/update/detail, contract line items, contract terms, extensions with approval workflow, return processing (PickupAction, ReceiveAction), damage reports with dispute resolution, billing cycles, billing summary, status history, availability checking, and settlement summary.",
+      "tags": ["schema", "rental", "contract", "billing", "return", "damage", "pydantic"],
+      "filePath": "backend/app/schemas/rental.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/schemas/report.py",
+      "type": "file",
+      "name": "report.py",
+      "summary": "FastAPI dependency schema for report endpoints: ReportFormat enum (CSV/Excel) and ReportFilters dependency class that injects date-range and format query parameters.",
+      "tags": ["schema", "report", "export", "fastapi"],
+      "filePath": "backend/app/schemas/report.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/schemas/role.py",
+      "type": "file",
+      "name": "role.py",
+      "summary": "Pydantic schemas for system role management: RoleCreate, RoleUpdate, RoleOut, and RoleWithPermissionsOut that extends the base response with a permission list.",
+      "tags": ["schema", "role", "rbac", "pydantic"],
+      "filePath": "backend/app/schemas/role.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/schemas/user.py",
+      "type": "file",
+      "name": "user.py",
+      "summary": "Pydantic schemas for user management: UserCreate with password-strength validation, UserUpdate, UserOut with active/superuser flags, and UserLogin for authentication.",
+      "tags": ["schema", "user", "auth", "pydantic"],
+      "filePath": "backend/app/schemas/user.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "summary": "Empty services package initializer.",
+      "tags": ["services", "package"],
+      "filePath": "backend/app/services/__init__.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/activity_log_service.py",
+      "type": "file",
+      "name": "activity_log_service.py",
+      "summary": "Service for writing and querying ActivityLog entries directly via SQLAlchemy; supports filtering by user, action type, entity type/id, and date range.",
+      "tags": ["service", "activity-log", "audit"],
+      "filePath": "backend/app/services/activity_log_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/billing_service.py",
+      "type": "file",
+      "name": "billing_service.py",
+      "summary": "Large billing orchestration service (1329L) managing invoice creation from billing cycles, invoice lifecycle (issue, send, cancel), payment recording and confirmation, deposit management (receive, apply, refund, forfeit), payment allocations, and revenue recognition for rental contracts.",
+      "tags": ["service", "billing", "invoice", "payment", "deposit", "revenue"],
+      "filePath": "backend/app/services/billing_service.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/services/brand_service.py",
+      "type": "file",
+      "name": "brand_service.py",
+      "summary": "CRUD service for equipment/parts brands with slug auto-generation, unique-slug collision resolution, and a get-or-create helper used by the import pipeline.",
+      "tags": ["service", "brand", "catalog"],
+      "filePath": "backend/app/services/brand_service.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/services/category_service.py",
+      "type": "file",
+      "name": "category_service.py",
+      "summary": "Hierarchical product category service supporting up to 3 nesting levels, with slug auto-generation, tree retrieval, and a path-based get-or-create used during Excel imports.",
+      "tags": ["service", "category", "catalog", "hierarchy"],
+      "filePath": "backend/app/services/category_service.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/services/customer_service.py",
+      "type": "file",
+      "name": "customer_service.py",
+      "summary": "Simple CRUD service for customer records using the database session directly, with unique-email conflict handling.",
+      "tags": ["service", "customer", "crm"],
+      "filePath": "backend/app/services/customer_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/dashboard_service.py",
+      "type": "file",
+      "name": "dashboard_service.py",
+      "summary": "CRM dashboard analytics service aggregating customer counts by status, lead funnel metrics by status and source, conversion/win/loss rates, and month-by-month trend data for leads and customers.",
+      "tags": ["service", "dashboard", "analytics", "crm"],
+      "filePath": "backend/app/services/dashboard_service.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/services/forklift_cost_service.py",
+      "type": "file",
+      "name": "forklift_cost_service.py",
+      "summary": "Service for managing forklift ownership cost entries, including listing by date/type filters, cost summaries broken down by type, and blocking cost recording for decommissioned forklifts.",
+      "tags": ["service", "forklift", "cost", "ownership"],
+      "filePath": "backend/app/services/forklift_cost_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/forklift_document_service.py",
+      "type": "file",
+      "name": "forklift_document_service.py",
+      "summary": "Service for managing forklift compliance documents (registrations, insurance, etc.) with expiry-date validation and cross-fleet expiring-document retrieval.",
+      "tags": ["service", "forklift", "document", "compliance"],
+      "filePath": "backend/app/services/forklift_document_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/forklift_hour_meter_service.py",
+      "type": "file",
+      "name": "forklift_hour_meter_service.py",
+      "summary": "Service for recording forklift hour meter readings with rollback detection (warns when new reading is less than previous), and automatic update of current_hour_meter on the forklift record.",
+      "tags": ["service", "forklift", "hour-meter", "telemetry"],
+      "filePath": "backend/app/services/forklift_hour_meter_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/forklift_location_service.py",
+      "type": "file",
+      "name": "forklift_location_service.py",
+      "summary": "Service tracking forklift physical location history with effective-date validation (max 30 days future), current-location retrieval, and status-based write guards.",
+      "tags": ["service", "forklift", "location", "tracking"],
+      "filePath": "backend/app/services/forklift_location_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/forklift_photo_service.py",
+      "type": "file",
+      "name": "forklift_photo_service.py",
+      "summary": "Service for managing the forklift photo gallery with primary-photo designation, ordering, and ownership validation before updates or deletes.",
+      "tags": ["service", "forklift", "photo", "media"],
+      "filePath": "backend/app/services/forklift_photo_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/forklift_service.py",
+      "type": "file",
+      "name": "forklift_service.py",
+      "summary": "Core forklift lifecycle service enforcing a defined status-transition graph (IN_STOCK → RENTED/RESERVED/IN_SERVICE/SOLD/DECOMMISSIONED etc.), slug generation from serial number, initial spec creation, and automatic status-history recording on every status change.",
+      "tags": ["service", "forklift", "lifecycle", "status"],
+      "filePath": "backend/app/services/forklift_service.py",
+      "complexity": "complex"
+    },
+
+    {
+      "id": "class:backend/app/schemas/import_job.py:ImportJobOut",
+      "type": "class",
+      "name": "ImportJobOut",
+      "summary": "ORM-compatible response for an import job record with status, row counts (total, processed, success, error), creator, and timestamps.",
+      "tags": ["schema", "pydantic", "import", "response"],
+      "filePath": "backend/app/schemas/import_job.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/import_job.py:ImportJobDetail",
+      "type": "class",
+      "name": "ImportJobDetail",
+      "summary": "Extends ImportJobOut with a list of ImportErrorOut entries for full per-row error detail on a completed import job.",
+      "tags": ["schema", "pydantic", "import", "error", "response"],
+      "filePath": "backend/app/schemas/import_job.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/import_job.py:ImportPreviewResponse",
+      "type": "class",
+      "name": "ImportPreviewResponse",
+      "summary": "Preview response returned before committing an import, listing sheets detected, valid/error totals, and per-sheet breakdowns of parsed product rows and errors.",
+      "tags": ["schema", "pydantic", "import", "preview", "response"],
+      "filePath": "backend/app/schemas/import_job.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/import_job.py:ImportExecuteResponse",
+      "type": "class",
+      "name": "ImportExecuteResponse",
+      "summary": "Response after executing a committed import, reporting job status and success/error row counts with error details.",
+      "tags": ["schema", "pydantic", "import", "execute", "response"],
+      "filePath": "backend/app/schemas/import_job.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/inventory.py:SparePartCreate",
+      "type": "class",
+      "name": "SparePartCreate",
+      "summary": "Schema for creating a spare part with part number, name, category, brand, unit price, stock thresholds (min_stock_level, reorder_quantity), and lead time.",
+      "tags": ["schema", "pydantic", "inventory", "spare-part", "create"],
+      "filePath": "backend/app/schemas/inventory.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/inventory.py:SparePartOut",
+      "type": "class",
+      "name": "SparePartOut",
+      "summary": "ORM response for a spare part including nested BrandBrief, unit pricing, stock configuration, and active status.",
+      "tags": ["schema", "pydantic", "inventory", "spare-part", "response"],
+      "filePath": "backend/app/schemas/inventory.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/inventory.py:POCreate",
+      "type": "class",
+      "name": "POCreate",
+      "summary": "Schema for creating a purchase order with vendor, warehouse, order/expected dates, and a required list of POItemCreate line items.",
+      "tags": ["schema", "pydantic", "inventory", "purchase-order", "create"],
+      "filePath": "backend/app/schemas/inventory.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/inventory.py:InventoryDashboardSummary",
+      "type": "class",
+      "name": "InventoryDashboardSummary",
+      "summary": "Aggregate inventory dashboard with total parts/warehouses counts, total stock value, low-stock and pending-PO counts, and a list of reorder alert items.",
+      "tags": ["schema", "pydantic", "inventory", "dashboard", "summary"],
+      "filePath": "backend/app/schemas/inventory.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/lead.py:LeadCreate",
+      "type": "class",
+      "name": "LeadCreate",
+      "summary": "Schema for creating a CRM lead with title, optional value, source, status (default NEW), customer assignment, and assigned-to user.",
+      "tags": ["schema", "pydantic", "lead", "crm", "create"],
+      "filePath": "backend/app/schemas/lead.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/lead.py:LeadOut",
+      "type": "class",
+      "name": "LeadOut",
+      "summary": "ORM response for a lead including creator ID and audit timestamps.",
+      "tags": ["schema", "pydantic", "lead", "crm", "response"],
+      "filePath": "backend/app/schemas/lead.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/lead.py:LeadDetail",
+      "type": "class",
+      "name": "LeadDetail",
+      "summary": "Single-lead view extending LeadOut with nested UserBrief (assigned user), CustomerBrief, and list of LeadNoteOut entries.",
+      "tags": ["schema", "pydantic", "lead", "crm", "response", "nested"],
+      "filePath": "backend/app/schemas/lead.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/maintenance.py:WorkOrderCreate",
+      "type": "class",
+      "name": "WorkOrderCreate",
+      "summary": "Schema for creating a maintenance work order with forklift, optional schedule/plan links, order type, priority, title, assigned technician, scheduled date, and cost estimate.",
+      "tags": ["schema", "pydantic", "maintenance", "work-order", "create"],
+      "filePath": "backend/app/schemas/maintenance.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/maintenance.py:WorkOrderOut",
+      "type": "class",
+      "name": "WorkOrderOut",
+      "summary": "ORM list-view response for a work order with forklift, schedule/plan briefs, technician, status, priority, timing fields, and estimated vs actual costs.",
+      "tags": ["schema", "pydantic", "maintenance", "work-order", "response"],
+      "filePath": "backend/app/schemas/maintenance.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/schemas/maintenance.py:WorkOrderDetail",
+      "type": "class",
+      "name": "WorkOrderDetail",
+      "summary": "Extended work order response adding description, hour meter at service, findings, resolution, cancellation reason, verifier, and a list of CostOut entries.",
+      "tags": ["schema", "pydantic", "maintenance", "work-order", "response", "nested"],
+      "filePath": "backend/app/schemas/maintenance.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/schemas/maintenance.py:MaintenanceDashboardSummary",
+      "type": "class",
+      "name": "MaintenanceDashboardSummary",
+      "summary": "Aggregate maintenance dashboard with counts for total plans, active schedules, overdue and in-progress work orders, completed-this-month count, and total monthly cost.",
+      "tags": ["schema", "pydantic", "maintenance", "dashboard", "summary"],
+      "filePath": "backend/app/schemas/maintenance.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/movement.py:MovementCreate",
+      "type": "class",
+      "name": "MovementCreate",
+      "summary": "Schema for creating a forklift asset movement record specifying type, forklift, optional customer/contract links, origin/destination locations, scheduled date, priority, and driver assignment.",
+      "tags": ["schema", "pydantic", "movement", "logistics", "create"],
+      "filePath": "backend/app/schemas/movement.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/movement.py:MovementOut",
+      "type": "class",
+      "name": "MovementOut",
+      "summary": "ORM list-view response for a movement with nested ForkliftBrief, CustomerBrief, ContractBrief, driver UserBrief, locations, and timing fields.",
+      "tags": ["schema", "pydantic", "movement", "logistics", "response"],
+      "filePath": "backend/app/schemas/movement.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/movement.py:MovementDetail",
+      "type": "class",
+      "name": "MovementDetail",
+      "summary": "Extended movement response adding addresses, hour meter readings at departure/arrival, internal notes, cancellation reason, and a list of checkpoint history entries.",
+      "tags": ["schema", "pydantic", "movement", "logistics", "response", "nested"],
+      "filePath": "backend/app/schemas/movement.py",
+      "complexity": "moderate"
+    },
+
+    {
+      "id": "class:backend/app/schemas/permission.py:PermissionMatrixOut",
+      "type": "class",
+      "name": "PermissionMatrixOut",
+      "summary": "Response schema presenting the full RBAC permission matrix as a list of RolePermissionEntry objects; built via the from_mapping() class method from the ROLE_PERMISSIONS constant.",
+      "tags": ["schema", "pydantic", "permission", "rbac", "response"],
+      "filePath": "backend/app/schemas/permission.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/product.py:ProductCreate",
+      "type": "class",
+      "name": "ProductCreate",
+      "summary": "Schema for creating a product with bilingual names (EN/LO), optional SKU, brand/category foreign keys, description, feature flags (is_sale, is_rental, is_featured, etc.), and a name-not-blank validator.",
+      "tags": ["schema", "pydantic", "product", "catalog", "create"],
+      "filePath": "backend/app/schemas/product.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/product.py:ProductOut",
+      "type": "class",
+      "name": "ProductOut",
+      "summary": "ORM list-view response for a product with nested BrandBrief, CategoryBrief, all feature flags, primary_image_url (resolved via from_orm_with_image), and timestamps.",
+      "tags": ["schema", "pydantic", "product", "catalog", "response"],
+      "filePath": "backend/app/schemas/product.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/product.py:ProductDetail",
+      "type": "class",
+      "name": "ProductDetail",
+      "summary": "Extended product response with bilingual descriptions, specs grouped by group key, all images, compatible brand associations, and creator/updater IDs.",
+      "tags": ["schema", "pydantic", "product", "catalog", "response", "nested"],
+      "filePath": "backend/app/schemas/product.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/schemas/product.py:ProductListResponse",
+      "type": "class",
+      "name": "ProductListResponse",
+      "summary": "Paginated product list response with items, total, page, page_size, and pages fields.",
+      "tags": ["schema", "pydantic", "product", "catalog", "pagination"],
+      "filePath": "backend/app/schemas/product.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/quotation.py:QuotationCreate",
+      "type": "class",
+      "name": "QuotationCreate",
+      "summary": "Schema for creating a quotation with type (SALE/RENTAL), title, optional customer/lead links, contact info, tax rate, currency, validity dates, and notes.",
+      "tags": ["schema", "pydantic", "quotation", "sales", "create"],
+      "filePath": "backend/app/schemas/quotation.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/quotation.py:QuotationOut",
+      "type": "class",
+      "name": "QuotationOut",
+      "summary": "ORM list-view response for a quotation with nested CustomerBrief, LeadBrief, assigned user, financial totals, validity dates, and item count.",
+      "tags": ["schema", "pydantic", "quotation", "sales", "response"],
+      "filePath": "backend/app/schemas/quotation.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/quotation.py:QuotationDetail",
+      "type": "class",
+      "name": "QuotationDetail",
+      "summary": "Full quotation response with all financial fields, line items (QuotationItemOut), recent status history, recent approvals, and a list of available workflow actions.",
+      "tags": ["schema", "pydantic", "quotation", "sales", "response", "nested"],
+      "filePath": "backend/app/schemas/quotation.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/schemas/quotation.py:QuotationItemCreate",
+      "type": "class",
+      "name": "QuotationItemCreate",
+      "summary": "Schema for adding a quotation line item with item type, optional forklift/product FK, description, quantity, unit price, discount percent, and optional rental duration fields.",
+      "tags": ["schema", "pydantic", "quotation", "line-item", "create"],
+      "filePath": "backend/app/schemas/quotation.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/rental.py:RentalContractCreate",
+      "type": "class",
+      "name": "RentalContractCreate",
+      "summary": "Schema for creating a rental contract: customer, contract type, start/end dates, optional quotation/lead links, billing cycle day, payment terms, deposit, penalty percentages, tax rate, currency, and delivery details.",
+      "tags": ["schema", "pydantic", "rental", "contract", "create"],
+      "filePath": "backend/app/schemas/rental.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/schemas/rental.py:RentalContractOut",
+      "type": "class",
+      "name": "RentalContractOut",
+      "summary": "ORM list-view response for rental contracts with nested CustomerBrief, LeadBrief, QuotationBrief, assigned user, dates, item count, financial totals, and deposit status.",
+      "tags": ["schema", "pydantic", "rental", "contract", "response"],
+      "filePath": "backend/app/schemas/rental.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/schemas/rental.py:RentalReturnCreate",
+      "type": "class",
+      "name": "RentalReturnCreate",
+      "summary": "Schema for initiating a forklift return with return type, requested date, optional contract item/forklift scope, pickup details, and early-termination flag.",
+      "tags": ["schema", "pydantic", "rental", "return", "create"],
+      "filePath": "backend/app/schemas/rental.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/rental.py:BillingSummary",
+      "type": "class",
+      "name": "BillingSummary",
+      "summary": "Aggregate billing summary for a rental contract showing total billed, paid, outstanding, overdue, and credit amounts with currency and event count.",
+      "tags": ["schema", "pydantic", "rental", "billing", "summary"],
+      "filePath": "backend/app/schemas/rental.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/report.py:ReportFilters",
+      "type": "class",
+      "name": "ReportFilters",
+      "summary": "FastAPI dependency class injecting from_date, to_date, and format (CSV/Excel) query parameters into report endpoints without repeating declarations.",
+      "tags": ["schema", "fastapi", "report", "dependency", "export"],
+      "filePath": "backend/app/schemas/report.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/role.py:RoleCreate",
+      "type": "class",
+      "name": "RoleCreate",
+      "summary": "Schema for creating a system role by RoleName enum value with an optional description.",
+      "tags": ["schema", "pydantic", "role", "rbac", "create"],
+      "filePath": "backend/app/schemas/role.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/role.py:RoleOut",
+      "type": "class",
+      "name": "RoleOut",
+      "summary": "ORM response for a system role with ID, name, description, active flag, and creation timestamp.",
+      "tags": ["schema", "pydantic", "role", "rbac", "response"],
+      "filePath": "backend/app/schemas/role.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/role.py:RoleWithPermissionsOut",
+      "type": "class",
+      "name": "RoleWithPermissionsOut",
+      "summary": "Extended role response that adds the full list of PermissionName values assigned to the role.",
+      "tags": ["schema", "pydantic", "role", "rbac", "permission", "response"],
+      "filePath": "backend/app/schemas/role.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/schemas/user.py:UserCreate",
+      "type": "class",
+      "name": "UserCreate",
+      "summary": "Schema for creating a user with email, username, full name, role ID, and password (minimum 8 characters enforced by field validator).",
+      "tags": ["schema", "pydantic", "user", "auth", "create"],
+      "filePath": "backend/app/schemas/user.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/user.py:UserOut",
+      "type": "class",
+      "name": "UserOut",
+      "summary": "ORM response for a user with ID, email (string override to skip re-validation), active/superuser flags, and last login timestamp.",
+      "tags": ["schema", "pydantic", "user", "auth", "response"],
+      "filePath": "backend/app/schemas/user.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/schemas/user.py:UserLogin",
+      "type": "class",
+      "name": "UserLogin",
+      "summary": "Minimal authentication schema carrying username and password credentials.",
+      "tags": ["schema", "pydantic", "user", "auth", "login"],
+      "filePath": "backend/app/schemas/user.py",
+      "complexity": "simple"
+    },
+
+    {
+      "id": "class:backend/app/services/activity_log_service.py:ActivityLogService",
+      "type": "class",
+      "name": "ActivityLogService",
+      "summary": "Service for writing and querying ActivityLog entries directly via the SQLAlchemy session. Supports filtering by user_id, action type, entity type/id, and date range; used by routers to audit user actions.",
+      "tags": ["service", "activity-log", "audit", "sqlalchemy"],
+      "filePath": "backend/app/services/activity_log_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/billing_service.py:BillingService",
+      "type": "class",
+      "name": "BillingService",
+      "summary": "Large billing orchestration service handling invoice creation from billing cycles (create_invoice, create_invoice_from_cycles), invoice lifecycle transitions (issue, send, cancel), payment recording and confirmation, deposit management (receive, apply, refund, forfeit), payment allocations, and revenue recognition for rental contracts.",
+      "tags": ["service", "billing", "invoice", "payment", "deposit", "revenue", "rental"],
+      "filePath": "backend/app/services/billing_service.py",
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/services/brand_service.py:BrandService",
+      "type": "class",
+      "name": "BrandService",
+      "summary": "CRUD service for equipment and parts brands with auto-generated slugs, unique-slug collision resolution, and a get_or_create_by_name helper used by the product import pipeline.",
+      "tags": ["service", "brand", "catalog", "slug"],
+      "filePath": "backend/app/services/brand_service.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/services/category_service.py:CategoryService",
+      "type": "class",
+      "name": "CategoryService",
+      "summary": "Hierarchical product category service supporting up to 3 nesting levels, with tree retrieval, slug auto-generation, and a get_or_create_by_path helper that resolves or creates L1/L2/L3 nodes during Excel imports.",
+      "tags": ["service", "category", "catalog", "hierarchy", "slug"],
+      "filePath": "backend/app/services/category_service.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/services/customer_service.py:CustomerService",
+      "type": "class",
+      "name": "CustomerService",
+      "summary": "Lightweight CRUD service for customer records using the database session directly (no repository layer), enforcing unique email on create and update.",
+      "tags": ["service", "customer", "crm", "crud"],
+      "filePath": "backend/app/services/customer_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/dashboard_service.py:DashboardService",
+      "type": "class",
+      "name": "DashboardService",
+      "summary": "CRM analytics service providing get_summary (customer counts and lead funnel), get_lead_trend and get_customer_trend (month-by-month time series), and get_lead_metrics (detailed status/source breakdown with conversion rates).",
+      "tags": ["service", "dashboard", "analytics", "crm", "metrics"],
+      "filePath": "backend/app/services/dashboard_service.py",
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/services/forklift_cost_service.py:ForkliftCostService",
+      "type": "class",
+      "name": "ForkliftCostService",
+      "summary": "Manages forklift ownership cost entries with type/date filtering, per-type cost summaries, and a guard that blocks recording costs for decommissioned forklifts.",
+      "tags": ["service", "forklift", "cost", "ownership"],
+      "filePath": "backend/app/services/forklift_cost_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/forklift_document_service.py:ForkliftDocumentService",
+      "type": "class",
+      "name": "ForkliftDocumentService",
+      "summary": "Manages forklift compliance documents (registrations, insurance, permits) with expiry-date past-date validation, document-type filtering, and cross-fleet retrieval of documents expiring within N days.",
+      "tags": ["service", "forklift", "document", "compliance", "expiry"],
+      "filePath": "backend/app/services/forklift_document_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/forklift_hour_meter_service.py:ForkliftHourMeterService",
+      "type": "class",
+      "name": "ForkliftHourMeterService",
+      "summary": "Records forklift hour meter readings; detects and warns on meter rollback (new reading < previous), updates current_hour_meter on the forklift, and blocks logging for decommissioned or sold units.",
+      "tags": ["service", "forklift", "hour-meter", "telemetry"],
+      "filePath": "backend/app/services/forklift_hour_meter_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/forklift_location_service.py:ForkliftLocationService",
+      "type": "class",
+      "name": "ForkliftLocationService",
+      "summary": "Tracks forklift physical location history with effective-date validation (max 30 days in the future), current-location lookup, and write guards for decommissioned/sold forklifts.",
+      "tags": ["service", "forklift", "location", "tracking"],
+      "filePath": "backend/app/services/forklift_location_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/forklift_photo_service.py:ForkliftPhotoService",
+      "type": "class",
+      "name": "ForkliftPhotoService",
+      "summary": "Manages the forklift photo gallery with primary-photo support, ordering, and ownership validation ensuring photos can only be modified under their correct forklift.",
+      "tags": ["service", "forklift", "photo", "media"],
+      "filePath": "backend/app/services/forklift_photo_service.py",
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/forklift_service.py:ForkliftService",
+      "type": "class",
+      "name": "ForkliftService",
+      "summary": "Core forklift lifecycle service enforcing a defined status-transition graph (VALID_STATUS_TRANSITIONS dict), serial-number slug generation, ForkliftSpec creation at registration, automatic ForkliftStatusHistory recording on every status change, and paginated list/detail retrieval.",
+      "tags": ["service", "forklift", "lifecycle", "status", "transition"],
+      "filePath": "backend/app/services/forklift_service.py",
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {"source": "file:backend/app/schemas/import_job.py", "target": "class:backend/app/schemas/import_job.py:ImportJobOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/import_job.py", "target": "class:backend/app/schemas/import_job.py:ImportJobDetail", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/import_job.py", "target": "class:backend/app/schemas/import_job.py:ImportPreviewResponse", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/import_job.py", "target": "class:backend/app/schemas/import_job.py:ImportExecuteResponse", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/inventory.py", "target": "class:backend/app/schemas/inventory.py:SparePartCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/inventory.py", "target": "class:backend/app/schemas/inventory.py:SparePartOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/inventory.py", "target": "class:backend/app/schemas/inventory.py:POCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/inventory.py", "target": "class:backend/app/schemas/inventory.py:InventoryDashboardSummary", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/lead.py", "target": "class:backend/app/schemas/lead.py:LeadCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/lead.py", "target": "class:backend/app/schemas/lead.py:LeadOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/lead.py", "target": "class:backend/app/schemas/lead.py:LeadDetail", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/maintenance.py", "target": "class:backend/app/schemas/maintenance.py:WorkOrderCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/maintenance.py", "target": "class:backend/app/schemas/maintenance.py:WorkOrderOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/maintenance.py", "target": "class:backend/app/schemas/maintenance.py:WorkOrderDetail", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/maintenance.py", "target": "class:backend/app/schemas/maintenance.py:MaintenanceDashboardSummary", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/movement.py", "target": "class:backend/app/schemas/movement.py:MovementCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/movement.py", "target": "class:backend/app/schemas/movement.py:MovementOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/movement.py", "target": "class:backend/app/schemas/movement.py:MovementDetail", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/permission.py", "target": "class:backend/app/schemas/permission.py:PermissionMatrixOut", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/product.py", "target": "class:backend/app/schemas/product.py:ProductCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/product.py", "target": "class:backend/app/schemas/product.py:ProductOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/product.py", "target": "class:backend/app/schemas/product.py:ProductDetail", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/product.py", "target": "class:backend/app/schemas/product.py:ProductListResponse", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/quotation.py", "target": "class:backend/app/schemas/quotation.py:QuotationCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/quotation.py", "target": "class:backend/app/schemas/quotation.py:QuotationOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/quotation.py", "target": "class:backend/app/schemas/quotation.py:QuotationDetail", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/quotation.py", "target": "class:backend/app/schemas/quotation.py:QuotationItemCreate", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/rental.py", "target": "class:backend/app/schemas/rental.py:RentalContractCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/rental.py", "target": "class:backend/app/schemas/rental.py:RentalContractOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/rental.py", "target": "class:backend/app/schemas/rental.py:RentalReturnCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/rental.py", "target": "class:backend/app/schemas/rental.py:BillingSummary", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/report.py", "target": "class:backend/app/schemas/report.py:ReportFilters", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/role.py", "target": "class:backend/app/schemas/role.py:RoleCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/role.py", "target": "class:backend/app/schemas/role.py:RoleOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/role.py", "target": "class:backend/app/schemas/role.py:RoleWithPermissionsOut", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/schemas/user.py", "target": "class:backend/app/schemas/user.py:UserCreate", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/user.py", "target": "class:backend/app/schemas/user.py:UserOut", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/schemas/user.py", "target": "class:backend/app/schemas/user.py:UserLogin", "type": "contains", "weight": 1.0},
+
+    {"source": "file:backend/app/services/activity_log_service.py", "target": "class:backend/app/services/activity_log_service.py:ActivityLogService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/billing_service.py", "target": "class:backend/app/services/billing_service.py:BillingService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/brand_service.py", "target": "class:backend/app/services/brand_service.py:BrandService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/category_service.py", "target": "class:backend/app/services/category_service.py:CategoryService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/customer_service.py", "target": "class:backend/app/services/customer_service.py:CustomerService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/dashboard_service.py", "target": "class:backend/app/services/dashboard_service.py:DashboardService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/forklift_cost_service.py", "target": "class:backend/app/services/forklift_cost_service.py:ForkliftCostService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/forklift_document_service.py", "target": "class:backend/app/services/forklift_document_service.py:ForkliftDocumentService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/forklift_hour_meter_service.py", "target": "class:backend/app/services/forklift_hour_meter_service.py:ForkliftHourMeterService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/forklift_location_service.py", "target": "class:backend/app/services/forklift_location_service.py:ForkliftLocationService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/forklift_photo_service.py", "target": "class:backend/app/services/forklift_photo_service.py:ForkliftPhotoService", "type": "contains", "weight": 1.0},
+    {"source": "file:backend/app/services/forklift_service.py", "target": "class:backend/app/services/forklift_service.py:ForkliftService", "type": "contains", "weight": 1.0},
+
+    {"source": "class:backend/app/services/billing_service.py:BillingService", "target": "class:backend/app/repositories/billing_repository.py:BillingRepository", "type": "calls", "weight": 0.8},
+    {"source": "class:backend/app/services/billing_service.py:BillingService", "target": "class:backend/app/repositories/rental_repository.py:RentalRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/brand_service.py:BrandService", "target": "class:backend/app/repositories/brand_repository.py:BrandRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/category_service.py:CategoryService", "target": "class:backend/app/repositories/category_repository.py:CategoryRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/forklift_cost_service.py:ForkliftCostService", "target": "class:backend/app/repositories/forklift_cost_repository.py:ForkliftCostRepository", "type": "calls", "weight": 0.8},
+    {"source": "class:backend/app/services/forklift_cost_service.py:ForkliftCostService", "target": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/forklift_document_service.py:ForkliftDocumentService", "target": "class:backend/app/repositories/forklift_document_repository.py:ForkliftDocumentRepository", "type": "calls", "weight": 0.8},
+    {"source": "class:backend/app/services/forklift_document_service.py:ForkliftDocumentService", "target": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/forklift_hour_meter_service.py:ForkliftHourMeterService", "target": "class:backend/app/repositories/forklift_hour_meter_repository.py:ForkliftHourMeterRepository", "type": "calls", "weight": 0.8},
+    {"source": "class:backend/app/services/forklift_hour_meter_service.py:ForkliftHourMeterService", "target": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/forklift_location_service.py:ForkliftLocationService", "target": "class:backend/app/repositories/forklift_location_repository.py:ForkliftLocationRepository", "type": "calls", "weight": 0.8},
+    {"source": "class:backend/app/services/forklift_location_service.py:ForkliftLocationService", "target": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/forklift_photo_service.py:ForkliftPhotoService", "target": "class:backend/app/repositories/forklift_photo_repository.py:ForkliftPhotoRepository", "type": "calls", "weight": 0.8},
+    {"source": "class:backend/app/services/forklift_photo_service.py:ForkliftPhotoService", "target": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/forklift_service.py:ForkliftService", "target": "class:backend/app/repositories/forklift_repository.py:ForkliftRepository", "type": "calls", "weight": 0.8},
+    {"source": "class:backend/app/services/forklift_service.py:ForkliftService", "target": "class:backend/app/repositories/forklift_status_repository.py:ForkliftStatusRepository", "type": "calls", "weight": 0.8},
+
+    {"source": "class:backend/app/services/billing_service.py:BillingService", "target": "class:backend/app/schemas/rental.py:BillingSummary", "type": "validates", "weight": 0.5},
+    {"source": "class:backend/app/services/brand_service.py:BrandService", "target": "class:backend/app/schemas/product.py:ProductCreate", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/services/category_service.py:CategoryService", "target": "class:backend/app/schemas/product.py:ProductCreate", "type": "related", "weight": 0.5},
+
+    {"source": "class:backend/app/schemas/rental.py:RentalContractCreate", "target": "class:backend/app/schemas/quotation.py:QuotationCreate", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/schemas/rental.py:RentalContractOut", "target": "class:backend/app/schemas/quotation.py:QuotationOut", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/schemas/movement.py:MovementOut", "target": "class:backend/app/schemas/rental.py:RentalContractOut", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/schemas/maintenance.py:WorkOrderDetail", "target": "class:backend/app/schemas/rental.py:BillingSummary", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/services/forklift_service.py:ForkliftService", "target": "class:backend/app/services/forklift_cost_service.py:ForkliftCostService", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/services/forklift_service.py:ForkliftService", "target": "class:backend/app/services/forklift_document_service.py:ForkliftDocumentService", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/services/forklift_service.py:ForkliftService", "target": "class:backend/app/services/forklift_hour_meter_service.py:ForkliftHourMeterService", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/services/forklift_service.py:ForkliftService", "target": "class:backend/app/services/forklift_location_service.py:ForkliftLocationService", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/services/forklift_service.py:ForkliftService", "target": "class:backend/app/services/forklift_photo_service.py:ForkliftPhotoService", "type": "related", "weight": 0.5},
+    {"source": "class:backend/app/services/billing_service.py:BillingService", "target": "class:backend/app/services/dashboard_service.py:DashboardService", "type": "related", "weight": 0.5}
+  ]
+}

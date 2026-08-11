@@ -1,0 +1,32 @@
+.print-header {
+  display: none;
+}
+
+@media print {
+  .print-header {
+    display: block;
+    position: fixed;
+    top: 12mm;
+    right: 12mm;
+    z-index: 9999;
+  }
+
+  .print-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  .print-header-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .print-header-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+  }
+}

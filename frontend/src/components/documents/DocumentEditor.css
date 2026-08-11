@@ -1,0 +1,159 @@
+.doc-editor-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.field-error {
+  font-size: 11.5px;
+  color: var(--color-danger-600);
+  margin-top: 2px;
+}
+
+.doc-editor-header-company {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.doc-editor-company-logo {
+  width: 44px; height: 44px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--color-bg);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  color: var(--color-text-muted);
+}
+.doc-editor-company-logo img { width: 100%; height: 100%; object-fit: contain; }
+.doc-editor-company-name { font-size: 15px; font-weight: 700; color: var(--color-text); }
+.doc-editor-company-line { font-size: 12.5px; color: var(--color-text-muted); margin-top: 1px; }
+
+.doc-editor-header-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .doc-editor-header-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .doc-editor-header-grid { grid-template-columns: 1fr; }
+}
+
+.doc-editor-section {
+  margin-top: 16px;
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.doc-editor-section-title {
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-text-muted);
+}
+
+.doc-editor-vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .doc-editor-vehicle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .doc-editor-vehicle-grid { grid-template-columns: 1fr; }
+}
+
+.doc-editor-totals {
+  margin-left: auto;
+  width: 320px;
+  max-width: 100%;
+  padding: 16px 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.doc-editor-totals-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 13.5px;
+  color: var(--color-text);
+}
+.doc-editor-totals-value { font-variant-numeric: tabular-nums; font-weight: 600; }
+.doc-editor-totals-input {
+  width: 110px;
+  text-align: right;
+  padding: 4px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+.doc-editor-totals-rate-input {
+  width: 48px;
+  text-align: right;
+  padding: 2px 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 12.5px;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+.doc-editor-totals-default-rate {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--color-border);
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+}
+.doc-editor-totals-default-rate .doc-editor-totals-rate-input { margin: 0 4px; }
+
+.doc-editor-totals-grand {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 2px solid var(--color-text);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.doc-editor-signatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+}
+.doc-editor-signature-block {
+  flex: 1;
+  min-width: 160px;
+  text-align: center;
+}
+.doc-editor-signature-line {
+  border-top: 1px solid var(--color-text);
+  height: 40px;
+}
+.doc-editor-signature-label {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+.doc-editor-signature-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text);
+}

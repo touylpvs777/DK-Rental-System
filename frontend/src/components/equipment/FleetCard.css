@@ -1,0 +1,109 @@
+.fleet-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--duration-normal), box-shadow var(--duration-normal);
+}
+.fleet-card:hover {
+  border-color: var(--color-primary-100);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.fleet-card:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.fleet-card.inactive { opacity: 0.6; }
+
+.fleet-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--color-bg-subtle);
+  overflow: hidden;
+}
+.fleet-card-img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  transition: transform var(--duration-slow);
+}
+.fleet-card:hover .fleet-card-img { transform: scale(1.04); }
+
+.fleet-card-badges     { position: absolute; top: 8px; left: 8px; display: flex; gap: 4px; }
+.fleet-card-badges-right { position: absolute; top: 8px; right: 8px; }
+
+.fleet-card-body { padding: 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+
+.fleet-card-brand {
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--color-primary);
+}
+
+.fleet-card-name {
+  font-size: 14px; font-weight: 600;
+  color: var(--color-text); line-height: 1.35;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.fleet-card-serial {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 11.5px; color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.fleet-card-meta {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 6px;
+}
+.fleet-card-chip {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 11px; color: var(--color-text-muted);
+  padding: 2px 6px;
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Hour Meter Bar ──────────────────────────────────── */
+.fleet-hour-bar { margin-top: 8px; }
+.fleet-hour-bar-track {
+  height: 6px; border-radius: 3px;
+  background: var(--color-bg-subtle);
+  overflow: hidden;
+}
+.fleet-hour-bar-fill {
+  height: 100%; border-radius: 3px;
+  transition: width var(--duration-slow);
+}
+.fleet-hour-bar-label {
+  display: flex; justify-content: space-between;
+  font-size: 11px; color: var(--color-text-muted);
+  margin-top: 3px; font-variant-numeric: tabular-nums;
+}
+
+.fleet-card-customer {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 11px; color: var(--color-text-muted);
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Hover Actions ────────────────────────────────────── */
+.fleet-card-actions {
+  position: absolute; bottom: 12px; right: 12px;
+  display: flex; gap: 6px;
+  opacity: 0; transition: opacity var(--duration-normal);
+}
+.fleet-card:hover .fleet-card-actions { opacity: 1; }
+
+.fleet-card-action {
+  padding: 4px 12px; font-size: 12px;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius); cursor: pointer;
+  color: var(--color-text); font-weight: 500;
+  transition: background var(--duration-fast);
+}
+.fleet-card-action:hover { background: var(--color-bg-subtle); }

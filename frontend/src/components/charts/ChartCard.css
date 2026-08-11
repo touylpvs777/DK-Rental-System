@@ -1,0 +1,84 @@
+/* ── ChartCard — reusable chart wrapper ─────────────────────
+   Used by: ReportsPage (and any future module that needs charts)
+   ──────────────────────────────────────────────────────────── */
+
+.chart-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.chart-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.chart-card-titles { flex: 1; min-width: 0; }
+
+.chart-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.chart-card-sub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+}
+
+.chart-card-action { flex-shrink: 0; }
+
+/* ── Loading skeleton ───────────────────────────────────── */
+.chart-skeleton {
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--color-skeleton) 0%, var(--color-skeleton-shine) 50%, var(--color-skeleton) 100%);
+  background-size: 200% 100%;
+  animation: chart-shimmer 1.5s ease-in-out infinite;
+  margin-top: 14px;
+}
+@keyframes chart-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Empty state ────────────────────────────────────────── */
+.chart-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border-radius: 8px;
+  border: 1.5px dashed var(--color-border);
+  margin-top: 14px;
+  padding: 16px;
+}
+.chart-empty-state svg  { opacity: 0.3; }
+.chart-empty-state p    { font-size: 13px; margin: 0; font-weight: 500; color: var(--color-text); }
+.chart-empty-state small { font-size: 11.5px; color: var(--color-text-muted); }
+
+/* ── Error state ────────────────────────────────────────── */
+.chart-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-error-text);
+  background: var(--color-error-bg);
+  border-radius: 8px;
+  border: 1px solid var(--color-error-border);
+  margin-top: 14px;
+  padding: 16px;
+}
+.chart-error-state svg { opacity: 0.7; }
+.chart-error-state p   { font-size: 13px; margin: 0; }

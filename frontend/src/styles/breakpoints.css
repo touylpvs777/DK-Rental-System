@@ -1,0 +1,39 @@
+/*
+  Breakpoints:
+  xs:  < 420px   mobile small
+  sm:  < 640px   mobile
+  md:  < 768px   tablet portrait
+  lg:  < 1024px  tablet landscape
+  xl:  < 1280px  desktop
+  2xl: < 1536px  widescreen
+*/
+
+@media (max-width: 639px)  { .hide-below-sm { display: none !important; } }
+@media (max-width: 767px)  { .hide-below-md { display: none !important; } }
+@media (max-width: 1023px) { .hide-below-lg { display: none !important; } }
+@media (min-width: 640px)  { .show-below-sm { display: none !important; } }
+@media (min-width: 768px)  { .show-below-md { display: none !important; } }
+@media (min-width: 1024px) { .show-below-lg { display: none !important; } }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

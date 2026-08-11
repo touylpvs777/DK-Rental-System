@@ -1,0 +1,298 @@
+{
+  "batchIndex": 5,
+  "nodes": [
+    {
+      "id": "document:docs/database/constraints.md",
+      "type": "document",
+      "name": "Database Constraints",
+      "summary": "Comprehensive reference for all database constraints: 56 primary keys (SERIAL), 26 unique constraints (24 single-column + 2 composite), 124 foreign keys grouped by ON DELETE behavior (CASCADE/RESTRICT/SET NULL/NO ACTION), NOT NULL and nullability conventions, default values for status workflows and financial fields, and application-enforced integrity rules for state machines and workflow transitions.",
+      "tags": ["database", "constraints", "foreign-keys", "unique", "postgresql", "integrity"],
+      "filePath": "docs/database/constraints.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/database/er_diagram.md",
+      "type": "document",
+      "name": "Entity-Relationship Diagram",
+      "summary": "Mermaid ER diagram covering 56 tables across 10 domains (Auth, CRM, Catalog, Equipment, Quotation, Rental, Movement, Maintenance, Inventory, Billing) with 708 total columns and 124 FKs. Illustrates inter-domain data flows, FK cascade types (CASCADE/RESTRICT/SET NULL), and confirms all FK chains are acyclic with no circular references.",
+      "tags": ["database", "er-diagram", "architecture", "domains", "mermaid", "relationships"],
+      "filePath": "docs/database/er_diagram.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/database/indexes.md",
+      "type": "document",
+      "name": "Database Index Strategy",
+      "summary": "Documents ~161 total indexes: 56 implicit primary key indexes, 26 unique constraint indexes, ~70 explicit single-column indexes on FK/status/timestamp columns, and 9 proposed composite performance indexes targeting invoice aging, cash flow, fleet utilization, per-asset TCO, maintenance cost aggregation, active contract filtering, and revenue recognition reporting.",
+      "tags": ["database", "indexes", "postgresql", "performance", "query-optimization", "b-tree"],
+      "filePath": "docs/database/indexes.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/database/migration_order.md",
+      "type": "document",
+      "name": "Migration Order",
+      "summary": "Documents the 5-migration Alembic chain (initial 55-table schema → forklift_specs table → data migration for mast_type → 9 performance indexes → kpi_targets table), the 8-level dependency-sorted table creation order for all 56 tables, development (SQLite create_all) vs production (PostgreSQL Alembic) strategies, additive-only safety rules, and step-by-step apply/rollback instructions.",
+      "tags": ["database", "alembic", "migration", "postgresql", "deployment", "dependency-order"],
+      "filePath": "docs/database/migration_order.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/database/schema-documentation.md",
+      "type": "document",
+      "name": "PostgreSQL Schema Documentation",
+      "summary": "Master schema reference: 57 tables (56 current + kpi_targets) across 11 domains with estimated row counts, naming conventions (snake_case plurals, LAK currency default), FK ON DELETE patterns, unique constraint summary, default value patterns, the 9 new performance indexes from migration 001, and deployment instructions for fresh setup and incremental migration via Alembic.",
+      "tags": ["database", "schema", "postgresql", "conventions", "documentation", "deployment"],
+      "filePath": "docs/database/schema-documentation.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/database/table_definitions.md",
+      "type": "document",
+      "name": "Table Definitions",
+      "summary": "Column-level reference for all 56 tables across 10 domains: type, nullability, default value, and constraint annotations for every column. Provides full inline DDL-style definitions for Auth, CRM, Catalog, Equipment, and Quotation domains (5 domains, 28 tables); summarizes key column sets for Rental, Movement, Maintenance, Inventory, and Billing domains referencing postgresql-schema.sql for full DDL.",
+      "tags": ["database", "tables", "columns", "schema", "postgresql", "ddl", "reference"],
+      "filePath": "docs/database/table_definitions.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "schema:docs/database/postgresql-schema.sql",
+      "type": "schema",
+      "name": "PostgreSQL DDL Schema",
+      "summary": "Full DDL reference for the DK CRM PostgreSQL database: 56 CREATE TABLE statements across 10 domains plus all CREATE INDEX statements (~95 indexes). Covers Auth (3), CRM (4), Catalog (8), Equipment (9), Quotation (4), Rental (8), Movement (2), Maintenance (6), Inventory (6), and Billing (6) domains. Reference document only — Alembic manages actual deployment.",
+      "tags": ["database", "sql", "ddl", "postgresql", "schema", "create-table"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:roles",
+      "type": "table",
+      "name": "roles",
+      "summary": "RBAC role definitions (super_admin, manager, sales, support). Lookup table with unique name, description, and is_active flag. Referenced by users.role_id with SET NULL on delete.",
+      "tags": ["auth", "rbac", "roles", "authorization"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:users",
+      "type": "table",
+      "name": "users",
+      "summary": "Staff user accounts with RBAC role assignment. Stores hashed_password, unique email and username, superuser flag, and last_login. Used as created_by/updated_by/assigned_to across every domain via SET NULL foreign keys.",
+      "tags": ["auth", "users", "authentication", "rbac"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:customers",
+      "type": "table",
+      "name": "customers",
+      "summary": "Customer records with 4-stage lifecycle (prospect → active → inactive → churned). Unique email, optional company, assigned_to user. RESTRICT FK on rental_contracts, invoices, and deposits prevents customer deletion while active records exist.",
+      "tags": ["crm", "customers", "lifecycle", "sales"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:leads",
+      "type": "table",
+      "name": "leads",
+      "summary": "Sales pipeline leads with 7-stage status (new → contacted → qualified → proposal → won → lost). Links to an optional customer, tracks estimated value and lead source (website/referral/cold_call/email/social_media/other).",
+      "tags": ["crm", "leads", "sales-pipeline", "pipeline"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:brands",
+      "type": "table",
+      "name": "brands",
+      "summary": "Equipment and parts manufacturer brands with unique name and slug, brand_role (primary/parts_only/both), logo_url, country, and website. Referenced by products, forklifts, forklift_models, and spare_parts with SET NULL on delete.",
+      "tags": ["catalog", "brands", "manufacturers"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:products",
+      "type": "table",
+      "name": "products",
+      "summary": "Spare parts and accessories product catalog. Unique SKU and slug, multi-language names (Lao + English), brand and category FKs (SET NULL), and boolean classification flags (is_sale, is_rental, is_service_item). Supports EAV-style specs via product_specs child table.",
+      "tags": ["catalog", "products", "spare-parts", "sku"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:forklifts",
+      "type": "table",
+      "name": "forklifts",
+      "summary": "Core equipment asset entity. Tracks unique serial_number and internal_code, model/brand references, current status (in_stock/rented/in_service/reserved/decommissioned), condition, fuel type, capacity_kg, and hour meters (initial + current). Central hub: RESTRICT FKs from Rental, Maintenance, and Movement domains prevent deletion of active equipment.",
+      "tags": ["equipment", "forklifts", "assets", "fleet", "core-entity"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:forklift_models",
+      "type": "table",
+      "name": "forklift_models",
+      "summary": "Equipment model catalog linking brand to series, fuel_type, capacity_kg, and max_lift_height_mm. Unique slug for URL routing. Referenced by forklifts.model_id with SET NULL on delete.",
+      "tags": ["equipment", "forklift-models", "catalog"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:quotations",
+      "type": "table",
+      "name": "quotations",
+      "summary": "Sales quotations with 10-stage workflow (draft → under_review → approved → revision → sent → accepted → rejected → expired → converted → cancelled). Supports revisions via parent_id self-reference (SET NULL), polymorphic converted_to_id (no FK), full financial calculation fields (subtotal/tax/discount/total), and links to customer, lead, and assigned user.",
+      "tags": ["quotations", "sales", "workflow", "financials"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:rental_contracts",
+      "type": "table",
+      "name": "rental_contracts",
+      "summary": "Core rental entity with 13-stage lifecycle (reservation → draft → pending → approved → active → closed). 38 columns covering contract financials, billing configuration (cycle_day, payment_terms_days), penalty rates (overtime/late/early-termination percentages), delivery address/contact, and full audit trail. customer_id FK is RESTRICT. Hub for billing, movement, and maintenance operations.",
+      "tags": ["rental", "contracts", "lifecycle", "billing", "core-entity"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "complex"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:rental_billing_cycles",
+      "type": "table",
+      "name": "rental_billing_cycles",
+      "summary": "Periodic billing records generated per rental contract item. Tracks 10 billing_types, period start/end dates, quantity, unit_rate, amount, tax, and payment_status (pending/invoiced/paid). Performance index on payment_status enables efficient overdue cycle detection.",
+      "tags": ["rental", "billing", "billing-cycles", "finance"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:invoices",
+      "type": "table",
+      "name": "invoices",
+      "summary": "Invoice lifecycle management (draft → issued → sent → partially_paid → paid → overdue → cancelled → voided). Tracks 7 financial fields (subtotal through balance_due), billing period, sent/cancelled timestamps. RESTRICT FKs on contract_id and customer_id. Performance composite index on (status, customer_id) for customer statements.",
+      "tags": ["billing", "invoices", "finance", "accounts-receivable"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:payments",
+      "type": "table",
+      "name": "payments",
+      "summary": "Payment records for customers linked to optional rental contracts. Tracks 6 payment methods, 4 statuses (pending/confirmed/rejected/cancelled), amount, payment_date, reference_number, and confirmation audit. Linked to invoices via payment_allocations many-to-many table.",
+      "tags": ["billing", "payments", "finance", "cash-flow"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:deposits",
+      "type": "table",
+      "name": "deposits",
+      "summary": "Security, advance, and guarantee deposits for rental contracts. 6-stage lifecycle (pending → received → refunded/forfeited/applied/cancelled). Tracks deposit_type, amount, refund_amount, forfeit_amount, applied_amount, and payment references. RESTRICT FKs on contract_id and customer_id.",
+      "tags": ["billing", "deposits", "finance", "rental"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:work_orders",
+      "type": "table",
+      "name": "work_orders",
+      "summary": "Maintenance work orders with 6-stage lifecycle (scheduled → in_progress → completed → verified → cancelled → on_hold). Links to forklift (RESTRICT FK), maintenance_schedule, and maintenance_plan. Tracks priority, estimated/actual hours and costs, findings, and resolution. Parent of maintenance_costs and service_history child tables.",
+      "tags": ["maintenance", "work-orders", "service", "equipment"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:spare_parts",
+      "type": "table",
+      "name": "spare_parts",
+      "summary": "Spare parts catalog with unique part_number, 11 part categories, optional brand reference (SET NULL), unit pricing in LAK, and stock control parameters (min_stock_level, reorder_quantity, lead_time_days). Stock levels per warehouse tracked in inventory_balances. RESTRICT FK prevents deletion with transaction history.",
+      "tags": ["inventory", "spare-parts", "catalog", "stock"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:warehouses",
+      "type": "table",
+      "name": "warehouses",
+      "summary": "Storage location definitions with unique warehouse code (e.g., WH-01), name, address, and contact info. RESTRICT FK on inventory_balances, inventory_transactions, and purchase_orders prevents deletion of warehouses with stock or transaction history.",
+      "tags": ["inventory", "warehouses", "storage", "locations"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "simple"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:asset_movements",
+      "type": "table",
+      "name": "asset_movements",
+      "summary": "Delivery, retrieval, and transfer logistics for forklifts. Tracks movement_type, from/to locations with addresses, scheduled and actual departure/arrival timestamps, driver assignment, and optional GPS tracking_code (unique). forklift_id is RESTRICT FK. Checkpoint log stored in movement_history child table.",
+      "tags": ["movement", "logistics", "delivery", "forklifts"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:docs/database/postgresql-schema.sql:revenue_recognitions",
+      "type": "table",
+      "name": "revenue_recognitions",
+      "summary": "Accrual accounting entries for rental contract revenue (5 recognition types, 3 statuses: scheduled/recognized/reversed). Links to invoice, invoice_item, and rental_contract. Tracks recognition_date, period start/end, and amount. Performance index on recognition_date for period reporting.",
+      "tags": ["billing", "revenue", "accounting", "accrual"],
+      "filePath": "docs/database/postgresql-schema.sql",
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:roles", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:users", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:customers", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:leads", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:brands", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:products", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:forklifts", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:forklift_models", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:quotations", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:rental_contracts", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:rental_billing_cycles", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:invoices", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:payments", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:deposits", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:work_orders", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:spare_parts", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:warehouses", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:asset_movements", "type": "contains", "weight": 1.0},
+    {"source": "schema:docs/database/postgresql-schema.sql", "target": "table:docs/database/postgresql-schema.sql:revenue_recognitions", "type": "contains", "weight": 1.0},
+
+    {"source": "document:docs/database/constraints.md", "target": "schema:docs/database/postgresql-schema.sql", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/er_diagram.md", "target": "schema:docs/database/postgresql-schema.sql", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/indexes.md", "target": "schema:docs/database/postgresql-schema.sql", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/migration_order.md", "target": "schema:docs/database/postgresql-schema.sql", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/schema-documentation.md", "target": "schema:docs/database/postgresql-schema.sql", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "schema:docs/database/postgresql-schema.sql", "type": "documents", "weight": 0.5},
+
+    {"source": "document:docs/database/table_definitions.md", "target": "table:docs/database/postgresql-schema.sql:users", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "table:docs/database/postgresql-schema.sql:roles", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "table:docs/database/postgresql-schema.sql:customers", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "table:docs/database/postgresql-schema.sql:leads", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "table:docs/database/postgresql-schema.sql:forklifts", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "table:docs/database/postgresql-schema.sql:quotations", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "table:docs/database/postgresql-schema.sql:rental_contracts", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "table:docs/database/postgresql-schema.sql:invoices", "type": "documents", "weight": 0.5},
+
+    {"source": "document:docs/database/constraints.md", "target": "table:docs/database/postgresql-schema.sql:rental_contracts", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/constraints.md", "target": "table:docs/database/postgresql-schema.sql:invoices", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/constraints.md", "target": "table:docs/database/postgresql-schema.sql:forklifts", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/constraints.md", "target": "table:docs/database/postgresql-schema.sql:customers", "type": "documents", "weight": 0.5},
+
+    {"source": "document:docs/database/indexes.md", "target": "table:docs/database/postgresql-schema.sql:forklifts", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/indexes.md", "target": "table:docs/database/postgresql-schema.sql:invoices", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/indexes.md", "target": "table:docs/database/postgresql-schema.sql:rental_contracts", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/indexes.md", "target": "table:docs/database/postgresql-schema.sql:payments", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/indexes.md", "target": "table:docs/database/postgresql-schema.sql:rental_billing_cycles", "type": "documents", "weight": 0.5},
+    {"source": "document:docs/database/indexes.md", "target": "table:docs/database/postgresql-schema.sql:revenue_recognitions", "type": "documents", "weight": 0.5},
+
+    {"source": "document:docs/database/constraints.md", "target": "document:docs/database/er_diagram.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/database/constraints.md", "target": "document:docs/database/table_definitions.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/database/constraints.md", "target": "document:docs/database/schema-documentation.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/database/er_diagram.md", "target": "document:docs/database/schema-documentation.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/database/er_diagram.md", "target": "document:docs/database/table_definitions.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/database/indexes.md", "target": "document:docs/database/schema-documentation.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/database/indexes.md", "target": "document:docs/database/table_definitions.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/database/migration_order.md", "target": "document:docs/database/schema-documentation.md", "type": "related", "weight": 0.5},
+    {"source": "document:docs/database/table_definitions.md", "target": "document:docs/database/schema-documentation.md", "type": "related", "weight": 0.5}
+  ]
+}

@@ -1,0 +1,75 @@
+graph TB
+    subgraph "Developer Machine"
+        Dev["Developer<br/>VS Code"]
+        DevFE["npm run dev<br/>Vite :5173"]
+        DevBE["uvicorn app.main:app<br/>:8000"]
+        DevDB["crm.db<br/>SQLite"]
+        Dev --> DevFE & DevBE
+        DevBE --> DevDB
+        DevFE -->|"proxy /api"| DevBE
+    end
+
+    subgraph "Docker Compose Stack"
+        subgraph "docker-compose.yml"
+            subgraph "Frontend Container"
+                FE_Build["Node 20 Build Stage<br/>npm ci && npm run build"]
+                FE_Nginx["Nginx 1.25<br/>Serve dist/ on :80"]
+                FE_Build --> FE_Nginx
+            end
+
+            subgraph "Backend Container"
+                BE_Python["Python 3.12-slim<br/>pip install -r requirements.txt"]
+                BE_Uvicorn["Uvicorn<br/>app.main:app on :8000"]
+                BE_Alembic["Alembic<br/>alembic upgrade head"]
+                BE_Python --> BE_Alembic --> BE_Uvicorn
+            end
+
+            subgraph "Database Container"
+                PG["PostgreSQL 16<br/>dk_crm database<br/>Port :5432"]
+                PG_Vol["Volume:<br/>pgdata:/var/lib/postgresql/data"]
+                PG --> PG_Vol
+            end
+        end
+    end
+
+    subgraph "Network Flow"
+        Client["Browser / Client"]
+        Client -->|"HTTPS :443"| LB["Load Balancer<br/>(future)"]
+        LB -->|":80"| FE_Nginx
+        FE_Nginx -->|"/api/v1/*<br/>proxy_pass"| BE_Uvicorn
+        BE_Uvicorn -->|"AsyncSession<br/>postgresql+aiosqlite"| PG
+        BE_Uvicorn -->|"read/write"| Uploads["Volume:<br/>uploads/images/"]
+    end
+
+    subgraph "Configuration"
+        EnvFile[".env"]
+        EnvFile -->|"DATABASE_URL"| BE_Uvicorn
+        EnvFile -->|"SECRET_KEY"| BE_Uvicorn
+        EnvFile -->|"ALLOWED_ORIGINS"| BE_Uvicorn
+        NginxConf["nginx.conf"]
+        NginxConf -->|"SPA fallback<br/>try_files"| FE_Nginx
+    end
+
+    subgraph "CI/CD Pipeline (Future)"
+        Git["GitHub Repository"]
+        Git -->|"push"| GHA["GitHub Actions"]
+        GHA --> Lint["Lint + Type Check"]
+        GHA --> Test["pytest + vitest"]
+        GHA --> Build["Docker Build"]
+        Build --> Registry["Container Registry"]
+        Registry --> Deploy["Deploy to Server"]
+    end
+
+    classDef dev fill:#3b82f6,color:#fff
+    classDef container fill:#7c3aed,color:#fff
+    classDef db fill:#d97706,color:#fff
+    classDef network fill:#059669,color:#fff
+    classDef config fill:#64748b,color:#fff
+    classDef future fill:#94a3b8,color:#fff,stroke-dasharray: 5 5
+
+    class Dev,DevFE,DevBE,DevDB dev
+    class FE_Build,FE_Nginx,BE_Python,BE_Uvicorn,BE_Alembic container
+    class PG,PG_Vol db
+    class Client,LB network
+    class EnvFile,NginxConf config
+    class Git,GHA,Lint,Test,Build,Registry,Deploy future

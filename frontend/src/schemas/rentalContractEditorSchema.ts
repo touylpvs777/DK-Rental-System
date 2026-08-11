@@ -1,0 +1,51 @@
+import { z } from 'zod'
+
+export const rentalContractHeaderSchema = z.object({
+  customer_id: z.number().nullable(),
+  contract_type: z.enum(['short_term', 'long_term', 'project']),
+  start_date: z.string().min(1, 'Start date is required'),
+  end_date: z.string().min(1, 'End date is required'),
+  quotation_id: z.number().nullable(),
+  lead_id: z.number().nullable(),
+  assigned_to: z.number().nullable(),
+  billing_cycle_day: z.number().min(1).max(31),
+  payment_terms_days: z.number().min(0),
+  deposit_amount: z.number().min(0),
+  early_termination_fee_pct: z.number().min(0).max(100),
+  late_return_penalty_pct: z.number().min(0).max(100),
+  overtime_rate_pct: z.number().min(100),
+  tax_rate: z.number().min(0).max(100),
+  discount_amount: z.number().min(0),
+  currency: z.string().min(1),
+  delivery_address: z.string().optional(),
+  delivery_contact_name: z.string().optional(),
+  delivery_contact_phone: z.string().optional(),
+  notes: z.string().optional(),
+  internal_notes: z.string().optional(),
+})
+
+export type RentalContractEditorFormValues = z.infer<typeof rentalContractHeaderSchema>
+
+export const RENTAL_CONTRACT_EDITOR_DEFAULTS: RentalContractEditorFormValues = {
+  customer_id: null,
+  contract_type: 'short_term',
+  start_date: '',
+  end_date: '',
+  quotation_id: null,
+  lead_id: null,
+  assigned_to: null,
+  billing_cycle_day: 1,
+  payment_terms_days: 30,
+  deposit_amount: 0,
+  early_termination_fee_pct: 0,
+  late_return_penalty_pct: 0,
+  overtime_rate_pct: 150,
+  tax_rate: 0,
+  discount_amount: 0,
+  currency: 'LAK',
+  delivery_address: '',
+  delivery_contact_name: '',
+  delivery_contact_phone: '',
+  notes: '',
+  internal_notes: '',
+}

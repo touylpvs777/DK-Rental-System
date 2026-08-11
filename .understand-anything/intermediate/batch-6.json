@@ -1,0 +1,260 @@
+{
+  "batchIndex": 6,
+  "nodes": [
+    {
+      "id": "document:docs/design/api_design.md",
+      "type": "document",
+      "name": "API Design",
+      "summary": "Complete inventory of 218 REST API endpoints across 17 modules (auth, CRM, catalog, equipment, quotations, rentals, billing, etc.) with request flow diagram, API conventions, response patterns, and 7 planned new endpoints for profitability and executive BI phases.",
+      "tags": ["api", "rest", "endpoints", "fastapi", "jwt", "pagination", "authentication", "design", "http"],
+      "filePath": "docs/design/api_design.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/design/backend_architecture.md",
+      "type": "document",
+      "name": "Backend Architecture",
+      "summary": "Defines the FastAPI/Python layered architecture (routes→schemas→services→repositories→models), middleware stack, router registration order, cross-service dependencies, database engine configuration, lifecycle hooks, and backend refactor targets per phase.",
+      "tags": ["backend", "fastapi", "python", "architecture", "sqlalchemy", "middleware", "services", "repositories", "uvicorn"],
+      "filePath": "docs/design/backend_architecture.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/design/compatibility_report.md",
+      "type": "document",
+      "name": "Compatibility Report",
+      "summary": "Analyzes backward compatibility across API URLs, database schema, frontend routes, state management, CSS classes, TypeScript types, permissions, Docker deployment, and third-party dependencies for all refactor phases, identifying one managed breaking change (brand pagination response shape).",
+      "tags": ["compatibility", "api", "database", "frontend", "migration", "breaking-changes", "refactor", "dependencies", "analysis"],
+      "filePath": "docs/design/compatibility_report.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/design/database_design.md",
+      "type": "document",
+      "name": "Database Design",
+      "summary": "Documents all 56 database tables across 11 domains (Auth, CRM, Catalog, Equipment, Quotation, Rental, Movement, Maintenance, Inventory, Billing, Executive BI) with column inventories, foreign key relationships, domain enumerations, index strategy, and the Alembic migration chain.",
+      "tags": ["database", "schema", "postgresql", "sqlite", "sqlalchemy", "alembic", "migrations", "tables", "indexes", "erd"],
+      "filePath": "docs/design/database_design.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/design/deployment_design.md",
+      "type": "document",
+      "name": "Deployment Design",
+      "summary": "Specifies the Docker Compose deployment stack with three containers (Nginx frontend, Uvicorn FastAPI backend, PostgreSQL 16 database), Nginx configuration, environment variable requirements, database migration strategy, startup sequence, health monitoring, volume management gaps, and a proposed CI/CD pipeline.",
+      "tags": ["deployment", "docker", "nginx", "postgresql", "uvicorn", "cicd", "containers", "environment", "volumes", "health-check"],
+      "filePath": "docs/design/deployment_design.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/design/frontend_architecture.md",
+      "type": "document",
+      "name": "Frontend Architecture",
+      "summary": "Documents the React 19/TypeScript SPA architecture including 47 routes with lazy-loaded pages, four Zustand stores (auth, sidebar, theme, toast), 17 Axios API modules, CSS layer system with design tokens, TypeScript type files, component inventory by category, and cross-module CSS coupling problems to resolve.",
+      "tags": ["frontend", "react", "typescript", "vite", "zustand", "routing", "css", "components", "axios", "spa", "design-tokens"],
+      "filePath": "docs/design/frontend_architecture.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/design/impact_analysis.md",
+      "type": "document",
+      "name": "Impact Analysis",
+      "summary": "Provides per-phase change impact analysis covering file counts modified/created, breaking change identification, dependency ordering graph, risk matrix with probability/impact ratings, and notes that current test coverage is 0% with recommended tooling per layer.",
+      "tags": ["impact", "refactor", "risk", "analysis", "phases", "breaking-changes", "testing", "dependencies", "risk-matrix"],
+      "filePath": "docs/design/impact_analysis.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/design/migration_plan.md",
+      "type": "document",
+      "name": "Migration Plan",
+      "summary": "Defines the week-by-week execution sequence for all 10 refactor phases and cross-cutting concerns, with concrete step-by-step instructions, commit message conventions, database Alembic migration commands, pre-migration checklist, and post-migration verification checks.",
+      "tags": ["migration", "plan", "refactor", "phases", "alembic", "git", "execution", "schedule", "commits", "verification"],
+      "filePath": "docs/design/migration_plan.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/design/module_design.md",
+      "type": "document",
+      "name": "Module Design",
+      "summary": "Per-module breakdown of current backend/frontend implementation state and specific refactor targets for all 11 CRM modules (Auth through Executive BI), cross-module dependency graph, and TypeScript interface specs for new shared components SearchSelect and Can.",
+      "tags": ["modules", "design", "crm", "refactor", "dependencies", "components", "architecture", "inventory", "gaps"],
+      "filePath": "docs/design/module_design.md",
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/design/rollback_plan.md",
+      "type": "document",
+      "name": "Rollback Plan",
+      "summary": "Defines three-tier rollback strategy (surgical single-phase revert, cascade multi-phase revert, full nuclear rollback to pre-refactor git tag) with per-phase revert impact details, Alembic downgrade commands, SQLite and PostgreSQL backup restore procedures, a symptom-based decision matrix, and recovery time objectives.",
+      "tags": ["rollback", "git", "recovery", "risk", "deployment", "database", "alembic", "procedures", "disaster-recovery"],
+      "filePath": "docs/design/rollback_plan.md",
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/design/security_design.md",
+      "type": "document",
+      "name": "Security Design",
+      "summary": "Covers JWT token architecture (HS256, 30-min access + 7-day refresh with JTI revocation), RBAC with 28 permissions across 4 roles, CORS configuration, security header middleware, file upload controls (MIME/extension whitelist, UUID filenames), database security via ORM parameterization, frontend token storage tradeoffs, and 10 identified security gaps with priorities.",
+      "tags": ["security", "jwt", "rbac", "authentication", "authorization", "cors", "permissions", "bcrypt", "middleware", "file-upload"],
+      "filePath": "docs/design/security_design.md",
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/design/api_design.md",
+      "target": "document:docs/design/backend_architecture.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "API endpoints are implemented by the backend layer architecture"
+    },
+    {
+      "source": "document:docs/design/api_design.md",
+      "target": "document:docs/design/frontend_architecture.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Frontend API modules consume the 218 REST endpoints defined here"
+    },
+    {
+      "source": "document:docs/design/api_design.md",
+      "target": "document:docs/design/security_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Every endpoint is protected by the JWT/RBAC security model described here"
+    },
+    {
+      "source": "document:docs/design/api_design.md",
+      "target": "document:docs/design/module_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Module design organises the 218 endpoints by domain module"
+    },
+    {
+      "source": "document:docs/design/backend_architecture.md",
+      "target": "document:docs/design/database_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Backend architecture specifies the ORM/session/migration strategy used with the 56-table schema"
+    },
+    {
+      "source": "document:docs/design/backend_architecture.md",
+      "target": "document:docs/design/deployment_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Backend application runs inside the dk-backend Docker container described here"
+    },
+    {
+      "source": "document:docs/design/backend_architecture.md",
+      "target": "document:docs/design/security_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Security middleware, JWT handling, and RBAC enforcement are part of the backend architecture"
+    },
+    {
+      "source": "document:docs/design/database_design.md",
+      "target": "document:docs/design/deployment_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Database runs in the dk-db PostgreSQL 16 container specified in deployment design"
+    },
+    {
+      "source": "document:docs/design/database_design.md",
+      "target": "document:docs/design/migration_plan.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Migration plan references the Alembic migration chain and new tables defined in database design"
+    },
+    {
+      "source": "document:docs/design/database_design.md",
+      "target": "document:docs/design/compatibility_report.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Compatibility report confirms no existing table schema changes are required by the refactor"
+    },
+    {
+      "source": "document:docs/design/frontend_architecture.md",
+      "target": "document:docs/design/deployment_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Frontend SPA is built and served by the dk-frontend Nginx container defined in deployment design"
+    },
+    {
+      "source": "document:docs/design/frontend_architecture.md",
+      "target": "document:docs/design/security_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Frontend stores JWT tokens in localStorage and enforces RBAC via sidebar and action-button visibility"
+    },
+    {
+      "source": "document:docs/design/frontend_architecture.md",
+      "target": "document:docs/design/module_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Module design describes the per-module frontend pages, routes, and refactor targets catalogued in frontend architecture"
+    },
+    {
+      "source": "document:docs/design/module_design.md",
+      "target": "document:docs/design/database_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Each module in module design maps directly to the database domain tables listed in database design"
+    },
+    {
+      "source": "document:docs/design/migration_plan.md",
+      "target": "document:docs/design/impact_analysis.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Migration plan and impact analysis are companion documents covering execution steps and change consequences respectively"
+    },
+    {
+      "source": "document:docs/design/migration_plan.md",
+      "target": "document:docs/design/rollback_plan.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Rollback plan is the inverse of the migration plan, providing revert procedures for every phase"
+    },
+    {
+      "source": "document:docs/design/migration_plan.md",
+      "target": "document:docs/design/compatibility_report.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Migration plan references compatibility constraints when scheduling phase execution order"
+    },
+    {
+      "source": "document:docs/design/impact_analysis.md",
+      "target": "document:docs/design/compatibility_report.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Both documents analyse the same refactor phases — impact analysis covers files changed, compatibility report covers backward-compat verdicts"
+    },
+    {
+      "source": "document:docs/design/impact_analysis.md",
+      "target": "document:docs/design/module_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Impact analysis references per-module file changes and risks that align with module design refactor targets"
+    },
+    {
+      "source": "document:docs/design/rollback_plan.md",
+      "target": "document:docs/design/deployment_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Rollback procedures include Docker container restarts and PostgreSQL backup restore steps from deployment design"
+    },
+    {
+      "source": "document:docs/design/rollback_plan.md",
+      "target": "document:docs/design/database_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Database rollback uses Alembic downgrade against the migration chain defined in database design"
+    },
+    {
+      "source": "document:docs/design/security_design.md",
+      "target": "document:docs/design/module_design.md",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Security design defines the 28 RBAC permissions that control access to the features described per module"
+    }
+  ]
+}

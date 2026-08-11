@@ -1,0 +1,95 @@
+.c360-page { max-width: 1200px; }
+
+/* ── Back Button ──────────────────────────────────────── */
+.c360-back {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 13.5px; color: var(--color-text-muted);
+  background: none; border: none; cursor: pointer;
+  padding: 0; margin-bottom: 20px;
+  transition: color var(--duration-fast);
+}
+.c360-back:hover { color: var(--color-text); }
+
+/* ── Header ───────────────────────────────────────────── */
+.c360-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+.c360-header-left { display: flex; gap: 16px; align-items: flex-start; }
+.c360-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-primary); color: var(--color-on-primary);
+  font-size: 20px; font-weight: 700;
+  flex-shrink: 0;
+}
+.c360-header-info { display: flex; flex-direction: column; gap: 4px; }
+.c360-header-name { font-size: 22px; font-weight: 700; color: var(--color-text); line-height: 1.2; }
+.c360-header-meta {
+  font-size: 13px; color: var(--color-text-muted);
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.c360-header-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+
+@media (max-width: 640px) {
+  .c360-header { flex-direction: column; }
+  .c360-header-name { font-size: 18px; }
+}
+
+/* ── Summary Stat Chips ───────────────────────────────── */
+.c360-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+.c360-stat-chip {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 4px;
+  padding: 12px 20px;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-width: 110px;
+}
+.c360-stat-value { font-size: 18px; font-weight: 700; color: var(--color-text); font-variant-numeric: tabular-nums; }
+.c360-stat-label { font-size: 10.5px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.4px; }
+
+/* ── Sections ─────────────────────────────────────────── */
+.c360-sections { display: flex; flex-direction: column; gap: 20px; }
+
+.c360-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.c360-card-header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px; font-weight: 600;
+  color: var(--color-text);
+}
+.c360-card-header .c360-card-count { font-size: 12px; font-weight: 500; color: var(--color-text-muted); }
+.c360-card-body { padding: 20px; }
+
+/* ── Key-Value Rows (profile card) ───────────────────── */
+.c360-kv-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 6px 16px;
+  font-size: 13px;
+}
+.c360-kv-key { color: var(--color-text-muted); font-weight: 500; }
+.c360-kv-value { color: var(--color-text); }
+
+/* ── Empty state ──────────────────────────────────────── */
+.c360-empty {
+  padding: 24px; text-align: center;
+  color: var(--color-text-muted); font-size: 13px;
+}
+
+/* ── Skeleton ─────────────────────────────────────────── */
+.c360-skeleton { padding: 4px; }

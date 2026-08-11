@@ -1,0 +1,35 @@
+```mermaid
+stateDiagram-v2
+    [*] --> RESERVATION : Contract reserved
+
+    RESERVATION --> DRAFT : Terms drafted
+    RESERVATION --> CANCELLED : Expired or withdrawn
+
+    DRAFT --> PENDING_APPROVAL : Submitted for approval
+    DRAFT --> CANCELLED : Withdrawn
+
+    PENDING_APPROVAL --> APPROVED : Management approves
+    PENDING_APPROVAL --> REVISION : Changes required
+
+    REVISION --> DRAFT : Revised
+
+    APPROVED --> DELIVERING : Equipment dispatched
+    APPROVED --> CANCELLED : Cancelled after approval
+
+    DELIVERING --> ACTIVE : Equipment on-site confirmed
+
+    ACTIVE --> OVERDUE : Overdue payment detected
+    ACTIVE --> RETURNING : Return process started
+
+    OVERDUE --> ACTIVE : Payment received
+
+    RETURNING --> INSPECTING : Equipment received back
+
+    INSPECTING --> SETTLING : Inspection passed
+    INSPECTING --> RETURNING : Damage found
+
+    SETTLING --> CLOSED : Final invoice settled
+
+    CLOSED --> [*]
+    CANCELLED --> [*]
+```

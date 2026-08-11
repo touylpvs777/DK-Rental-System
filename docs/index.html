@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DK CRM — Architecture Documentation</title>
+<style>
+  :root {
+    --bg:       #0f172a;
+    --bg2:      #1e293b;
+    --bg3:      #263248;
+    --border:   #334155;
+    --text:     #e2e8f0;
+    --muted:    #94a3b8;
+    --accent:   #3b82f6;
+    --accent2:  #6366f1;
+    --green:    #22c55e;
+    --orange:   #f97316;
+    --purple:   #a855f7;
+    --sidebar-w: 260px;
+    --header-h:  56px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Header ─────────────────────────────────────────────────── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--header-h);
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; padding: 0 24px;
+    gap: 16px;
+  }
+  header .logo {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+  header .subtitle {
+    font-size: 12px; color: var(--muted);
+    border-left: 1px solid var(--border);
+    padding-left: 16px;
+  }
+  header .badge {
+    margin-left: auto;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+    background: var(--bg3); color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 3px 10px; border-radius: 20px;
+  }
+
+  /* ── Sidebar ─────────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: var(--header-h); left: 0; bottom: 0;
+    width: var(--sidebar-w);
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 16px 0;
+  }
+  nav .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted);
+    padding: 12px 20px 4px;
+  }
+  nav a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 7px 20px;
+    color: var(--muted); text-decoration: none;
+    font-size: 13px; transition: all 0.15s;
+    border-left: 3px solid transparent;
+  }
+  nav a:hover { color: var(--text); background: var(--bg3); }
+  nav a.active {
+    color: var(--accent); border-left-color: var(--accent);
+    background: rgba(59,130,246,0.08);
+  }
+  nav a .icon { font-size: 15px; width: 18px; text-align: center; flex-shrink: 0; }
+  nav .divider { height: 1px; background: var(--border); margin: 8px 0; }
+
+  /* ── Main content ────────────────────────────────────────────── */
+  main {
+    margin-left: var(--sidebar-w);
+    margin-top: var(--header-h);
+    padding: 32px 40px;
+    min-height: calc(100vh - var(--header-h));
+  }
+
+  /* ── Section headers ─────────────────────────────────────────── */
+  .section {
+    margin-bottom: 56px;
+    scroll-margin-top: calc(var(--header-h) + 24px);
+  }
+  .section-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .section-title { font-size: 20px; font-weight: 700; }
+  .section-desc { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* ── Diagram grid ────────────────────────────────────────────── */
+  .grid { display: grid; gap: 20px; }
+  .grid-1 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(560px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+
+  /* ── Diagram card ────────────────────────────────────────────── */
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(59,130,246,0.2); }
+  .card-header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    padding: 14px 18px 10px;
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+  }
+  .card-title { font-size: 14px; font-weight: 600; color: var(--text); }
+  .card-desc  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .card-actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 600;
+    padding: 4px 10px; border-radius: 6px;
+    text-decoration: none; transition: all 0.15s;
+    letter-spacing: 0.3px;
+  }
+  .btn-svg  { background: rgba(99,102,241,0.15); color: #818cf8; border: 1px solid rgba(99,102,241,0.3); }
+  .btn-png  { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+  .btn-zoom { background: rgba(148,163,184,0.1);  color: var(--muted); border: 1px solid var(--border); cursor: pointer; }
+  .btn:hover { filter: brightness(1.2); }
+
+  /* ── Diagram image ───────────────────────────────────────────── */
+  .card-img {
+    background: #ffffff;
+    padding: 12px;
+    cursor: zoom-in;
+    overflow: hidden;
+  }
+  .card-img img {
+    width: 100%; height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  .card-img.dark-bg { background: #0f172a; }
+
+  /* ── Fullscreen modal ────────────────────────────────────────── */
+  #modal {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(4px);
+    align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+  }
+  #modal.open { display: flex; }
+  #modal-img {
+    max-width: 94vw; max-height: 86vh;
+    object-fit: contain; border-radius: 8px;
+    background: #fff;
+  }
+  #modal-close {
+    position: fixed; top: 16px; right: 20px;
+    font-size: 28px; color: #fff; cursor: pointer;
+    background: rgba(0,0,0,0.5); border-radius: 50%;
+    width: 40px; height: 40px; display: flex;
+    align-items: center; justify-content: center;
+    border: none; line-height: 1;
+  }
+  #modal-label {
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Colour utilities for section icons ─────────────────────── */
+  .ic-blue   { background: rgba(59,130,246,0.15);  color: #60a5fa; }
+  .ic-indigo { background: rgba(99,102,241,0.15);  color: #818cf8; }
+  .ic-violet { background: rgba(139,92,246,0.15);  color: #a78bfa; }
+  .ic-green  { background: rgba(34,197,94,0.15);   color: #4ade80; }
+  .ic-orange { background: rgba(249,115,22,0.15);  color: #fb923c; }
+  .ic-pink   { background: rgba(236,72,153,0.15);  color: #f472b6; }
+  .ic-yellow { background: rgba(234,179,8,0.15);   color: #facc15; }
+  .ic-teal   { background: rgba(20,184,166,0.15);  color: #2dd4bf; }
+
+  /* ── Summary table ───────────────────────────────────────────── */
+  .summary-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+  .summary-table th, .summary-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .summary-table th { color: var(--muted); font-weight: 600; font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .summary-table tr:hover td { background: var(--bg3); }
+  .tag {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 4px; letter-spacing: 0.5px;
+  }
+  .tag-green  { background: rgba(34,197,94,0.15);  color: #4ade80; }
+  .tag-blue   { background: rgba(59,130,246,0.15); color: #60a5fa; }
+  .tag-orange { background: rgba(249,115,22,0.15); color: #fb923c; }
+
+  /* ── Scrollbar ───────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────── -->
+<header>
+  <span class="logo">DK CRM</span>
+  <span class="subtitle">Architecture Documentation</span>
+  <span class="badge">v1.0 · 2026-06-28</span>
+</header>
+
+<!-- ── Sidebar ─────────────────────────────────────────────────── -->
+<nav id="sidebar">
+  <div class="section-label">Overview</div>
+  <a href="#overview" class="active"><span class="icon">🗺️</span> Overview</a>
+
+  <div class="divider"></div>
+  <div class="section-label">C4 Model</div>
+  <a href="#c4-context"><span class="icon">🌐</span> C4 Context</a>
+  <a href="#c4-container"><span class="icon">📦</span> C4 Container</a>
+  <a href="#c4-component"><span class="icon">🔩</span> C4 Component</a>
+
+  <div class="divider"></div>
+  <div class="section-label">Data</div>
+  <a href="#er-diagram"><span class="icon">🗄️</span> Database ERD</a>
+
+  <div class="divider"></div>
+  <div class="section-label">Flows</div>
+  <a href="#sequences"><span class="icon">↔️</span> Sequence Diagrams</a>
+
+  <div class="divider"></div>
+  <div class="section-label">State Machines</div>
+  <a href="#states"><span class="icon">🔄</span> State Diagrams</a>
+
+  <div class="divider"></div>
+  <div class="section-label">Process</div>
+  <a href="#workflows"><span class="icon">⚙️</span> Business Workflows</a>
+
+  <div class="divider"></div>
+  <div class="section-label">Deployment</div>
+  <a href="#infrastructure"><span class="icon">🏗️</span> Infrastructure</a>
+</nav>
+
+<!-- ── Main ────────────────────────────────────────────────────── -->
+<main>
+
+  <!-- Overview -->
+  <section class="section" id="overview">
+    <div class="section-header">
+      <div class="section-icon ic-blue">🗺️</div>
+      <div>
+        <div class="section-title">DK CRM — Architecture Overview</div>
+        <div class="section-desc">Forklift fleet management, rental operations and CRM platform</div>
+      </div>
+    </div>
+
+    <p style="color:var(--muted);line-height:1.8;max-width:780px;margin-bottom:24px;">
+      DK CRM is a full-stack business platform built for DK Service Co. to manage their forklift fleet,
+      rental contracts, customer relationships, maintenance operations and financial billing.
+      The system is built with <strong style="color:var(--text)">FastAPI + Python 3.12</strong> on the backend,
+      <strong style="color:var(--text)">React 18 + TypeScript</strong> on the frontend, and
+      <strong style="color:var(--text)">PostgreSQL 16</strong> as the primary data store, deployed via Docker Compose.
+    </p>
+
+    <table class="summary-table">
+      <thead>
+        <tr><th>Layer</th><th>Technology</th><th>Purpose</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Frontend</td><td>React 18 + TypeScript + Vite + Zustand + Recharts</td><td>SPA — 30+ pages across 8 modules</td><td><span class="tag tag-green">Active</span></td></tr>
+        <tr><td>Backend</td><td>FastAPI + Python 3.12 + Uvicorn + SQLAlchemy</td><td>REST API — 16 route modules, JWT auth, RBAC</td><td><span class="tag tag-green">Active</span></td></tr>
+        <tr><td>Database</td><td>PostgreSQL 16 (prod) / SQLite (dev)</td><td>60+ tables across 11 domain modules</td><td><span class="tag tag-green">Active</span></td></tr>
+        <tr><td>Proxy</td><td>Nginx 1.25 Alpine</td><td>Static serving + /api/v1 reverse proxy</td><td><span class="tag tag-green">Active</span></td></tr>
+        <tr><td>Auth</td><td>python-jose (HS256 JWT) + bcrypt</td><td>Access (30 min) + Refresh (7d) tokens, revocation</td><td><span class="tag tag-green">Active</span></td></tr>
+        <tr><td>Migrations</td><td>Alembic</td><td>Schema version control</td><td><span class="tag tag-blue">Managed</span></td></tr>
+        <tr><td>Infrastructure</td><td>Docker Compose 3.8</td><td>3-container stack: frontend, backend, db</td><td><span class="tag tag-green">Active</span></td></tr>
+      </tbody>
+    </table>
+
+    <table class="summary-table" style="margin-top:16px;">
+      <thead>
+        <tr><th>Domain Module</th><th>Key Tables</th><th>Entities</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Auth &amp; RBAC</td><td>users · roles · revoked_tokens</td><td>JWT login/logout, role-based permissions</td></tr>
+        <tr><td>CRM</td><td>customers · leads · lead_notes</td><td>Pipeline with 6-state FSM for leads</td></tr>
+        <tr><td>Fleet / Equipment</td><td>forklifts + 8 sub-tables</td><td>Specs, photos, docs, location, hour meter, costs</td></tr>
+        <tr><td>Product Catalog</td><td>products · brands · categories</td><td>Excel bulk import, forklift model registry</td></tr>
+        <tr><td>Sales Pipeline</td><td>quotations + 3 sub-tables</td><td>10-state quotation FSM with approval workflow</td></tr>
+        <tr><td>Rental Operations</td><td>rental_contracts + 7 sub-tables</td><td>13-state contract lifecycle, extensions, returns</td></tr>
+        <tr><td>Finance &amp; Billing</td><td>invoices · payments · deposits · revenue_recognition</td><td>8-state invoice FSM, payment allocation</td></tr>
+        <tr><td>Maintenance</td><td>work_orders · plans · schedules · costs</td><td>6-state work order, PM scheduling, part consumption</td></tr>
+        <tr><td>Inventory</td><td>spare_parts · warehouses · inventory_balance</td><td>Stock tracking, reorder alerts, purchase orders</td></tr>
+        <tr><td>Asset Movement</td><td>asset_movements · movement_history</td><td>Delivery and retrieval tracking</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- C4 Context -->
+  <section class="section" id="c4-context">
+    <div class="section-header">
+      <div class="section-icon ic-blue">🌐</div>
+      <div>
+        <div class="section-title">C4 Context Diagram</div>
+        <div class="section-desc">DK CRM in its environment — users and external systems</div>
+      </div>
+    </div>
+    <div class="grid grid-1">
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">System Context</div><div class="card-desc">5 user personas interacting with DK CRM and 1 external system (Excel)</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/c4_context.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/c4_context.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/c4_context.svg','C4 Context — System Context')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/c4_context.svg','C4 Context — System Context')">
+          <img src="svg/c4_context.svg" alt="C4 Context Diagram" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C4 Container -->
+  <section class="section" id="c4-container">
+    <div class="section-header">
+      <div class="section-icon ic-indigo">📦</div>
+      <div>
+        <div class="section-title">C4 Container Diagram</div>
+        <div class="section-desc">Deployable units — React SPA, Nginx, FastAPI, PostgreSQL, File Storage</div>
+      </div>
+    </div>
+    <div class="grid grid-1">
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Containers</div><div class="card-desc">5 containers with their technology stack and communication protocols</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/c4_container.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/c4_container.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/c4_container.svg','C4 Container Diagram')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/c4_container.svg','C4 Container Diagram')">
+          <img src="svg/c4_container.svg" alt="C4 Container Diagram" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C4 Component -->
+  <section class="section" id="c4-component">
+    <div class="section-header">
+      <div class="section-icon ic-violet">🔩</div>
+      <div>
+        <div class="section-title">C4 Component Diagram</div>
+        <div class="section-desc">Components inside the FastAPI backend — 15 modules with responsibilities</div>
+      </div>
+    </div>
+    <div class="grid grid-1">
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">FastAPI Backend Components</div><div class="card-desc">Auth, CRM, Fleet, Catalog, Quotations, Rentals, Billing, Maintenance, Inventory, Movement, Reports, Dashboard, Uploads</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/c4_component.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/c4_component.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/c4_component.svg','C4 Component Diagram')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/c4_component.svg','C4 Component Diagram')">
+          <img src="svg/c4_component.svg" alt="C4 Component Diagram" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ER Diagram -->
+  <section class="section" id="er-diagram">
+    <div class="section-header">
+      <div class="section-icon ic-green">🗄️</div>
+      <div>
+        <div class="section-title">Database ER Diagram</div>
+        <div class="section-desc">Core entity relationships across 20 primary tables</div>
+      </div>
+    </div>
+    <div class="grid grid-1">
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Entity Relationships</div><div class="card-desc">Users, Customers, Leads, Forklifts, Quotations, Rental Contracts, Invoices, Payments, Work Orders, Inventory</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/er_diagram.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/er_diagram.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/er_diagram.svg','Database ER Diagram')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/er_diagram.svg','Database ER Diagram')">
+          <img src="svg/er_diagram.svg" alt="ER Diagram" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sequences -->
+  <section class="section" id="sequences">
+    <div class="section-header">
+      <div class="section-icon ic-orange">↔️</div>
+      <div>
+        <div class="section-title">Sequence Diagrams</div>
+        <div class="section-desc">Key interaction flows between actors, frontend, backend and database</div>
+      </div>
+    </div>
+    <div class="grid grid-1">
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Authentication Flow</div><div class="card-desc">Login → JWT issuance → authenticated requests → token refresh → logout with revocation</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/seq_auth.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/seq_auth.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/seq_auth.svg','Sequence — Authentication Flow')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/seq_auth.svg','Sequence — Authentication Flow')">
+          <img src="svg/seq_auth.svg" alt="Auth Sequence" loading="lazy">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Rental Contract Creation Flow</div><div class="card-desc">Lead → Quotation → Approval → Contract → Delivery → Invoice (7-step process)</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/seq_rental.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/seq_rental.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/seq_rental.svg','Sequence — Rental Creation Flow')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/seq_rental.svg','Sequence — Rental Creation Flow')">
+          <img src="svg/seq_rental.svg" alt="Rental Sequence" loading="lazy">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Maintenance Work Order Flow</div><div class="card-desc">PM trigger → Work order creation → Technician execution → Parts consumption → Manager verification</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/seq_maintenance.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/seq_maintenance.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/seq_maintenance.svg','Sequence — Maintenance Work Order')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/seq_maintenance.svg','Sequence — Maintenance Work Order')">
+          <img src="svg/seq_maintenance.svg" alt="Maintenance Sequence" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- States -->
+  <section class="section" id="states">
+    <div class="section-header">
+      <div class="section-icon ic-pink">🔄</div>
+      <div>
+        <div class="section-title">State Diagrams</div>
+        <div class="section-desc">Finite state machines for every major business entity</div>
+      </div>
+    </div>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Lead Status</div><div class="card-desc">6 states: NEW → CONTACTED → QUALIFIED → PROPOSAL → WON / LOST</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/state_lead.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/state_lead.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/state_lead.svg','State — Lead Status')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/state_lead.svg','State — Lead Status')">
+          <img src="svg/state_lead.svg" alt="Lead State" loading="lazy">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Quotation Status</div><div class="card-desc">10 states from DRAFT through approval, customer acceptance, to CONVERTED</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/state_quotation.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/state_quotation.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/state_quotation.svg','State — Quotation Status')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/state_quotation.svg','State — Quotation Status')">
+          <img src="svg/state_quotation.svg" alt="Quotation State" loading="lazy">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Rental Contract Status</div><div class="card-desc">13 states from RESERVATION through ACTIVE rental to CLOSED settlement</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/state_rental.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/state_rental.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/state_rental.svg','State — Rental Contract Status')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/state_rental.svg','State — Rental Contract Status')">
+          <img src="svg/state_rental.svg" alt="Rental State" loading="lazy">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Forklift Status</div><div class="card-desc">6 states: IN_STOCK → RESERVED → RENTED / IN_SERVICE → SOLD / DECOMMISSIONED</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/state_forklift.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/state_forklift.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/state_forklift.svg','State — Forklift Status')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/state_forklift.svg','State — Forklift Status')">
+          <img src="svg/state_forklift.svg" alt="Forklift State" loading="lazy">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Invoice Status</div><div class="card-desc">8 states: DRAFT → ISSUED → SENT → PARTIALLY_PAID / PAID / OVERDUE / VOIDED</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/state_invoice.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/state_invoice.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/state_invoice.svg','State — Invoice Status')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/state_invoice.svg','State — Invoice Status')">
+          <img src="svg/state_invoice.svg" alt="Invoice State" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Workflows -->
+  <section class="section" id="workflows">
+    <div class="section-header">
+      <div class="section-icon ic-yellow">⚙️</div>
+      <div>
+        <div class="section-title">Business Workflow Diagrams</div>
+        <div class="section-desc">End-to-end process flows for core business operations</div>
+      </div>
+    </div>
+    <div class="grid grid-1">
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Sales and Rental Pipeline</div><div class="card-desc">Full journey from new enquiry through lead, quotation approval, contract activation to paid invoice</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/workflow_sales.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/workflow_sales.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/workflow_sales.svg','Workflow — Sales & Rental Pipeline')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/workflow_sales.svg','Workflow — Sales & Rental Pipeline')">
+          <img src="svg/workflow_sales.svg" alt="Sales Workflow" loading="lazy">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Maintenance Workflow</div><div class="card-desc">Trigger types → work order creation → technician execution → parts/costs → manager verification</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/workflow_maintenance.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/workflow_maintenance.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/workflow_maintenance.svg','Workflow — Maintenance')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/workflow_maintenance.svg','Workflow — Maintenance')">
+          <img src="svg/workflow_maintenance.svg" alt="Maintenance Workflow" loading="lazy">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Inventory Replenishment Workflow</div><div class="card-desc">Stock monitoring → low-stock alerts → purchase order → goods receipt → balance update</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/workflow_inventory.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/workflow_inventory.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/workflow_inventory.svg','Workflow — Inventory Replenishment')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img" onclick="zoom('svg/workflow_inventory.svg','Workflow — Inventory Replenishment')">
+          <img src="svg/workflow_inventory.svg" alt="Inventory Workflow" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Infrastructure -->
+  <section class="section" id="infrastructure">
+    <div class="section-header">
+      <div class="section-icon ic-teal">🏗️</div>
+      <div>
+        <div class="section-title">Infrastructure Diagram</div>
+        <div class="section-desc">Docker Compose topology, networking, volumes and startup sequence</div>
+      </div>
+    </div>
+    <div class="grid grid-1">
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Docker Compose Deployment</div><div class="card-desc">3-container stack (dk-frontend, dk-backend, dk-db) with health checks, volumes and startup order</div></div>
+          <div class="card-actions">
+            <a class="btn btn-svg" href="svg/infrastructure.svg" download>↓ SVG</a>
+            <a class="btn btn-png" href="png/infrastructure.png" download>↓ PNG</a>
+            <button class="btn btn-zoom" onclick="zoom('svg/infrastructure.svg','Infrastructure — Docker Compose')">⤢ Zoom</button>
+          </div>
+        </div>
+        <div class="card-img dark-bg" onclick="zoom('svg/infrastructure.svg','Infrastructure — Docker Compose')">
+          <img src="svg/infrastructure.svg" alt="Infrastructure Diagram" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Fullscreen Modal ─────────────────────────────────────────── -->
+<div id="modal" onclick="closeModal()">
+  <button id="modal-close" onclick="closeModal()">✕</button>
+  <img id="modal-img" src="" alt="">
+  <div id="modal-label"></div>
+</div>
+
+<script>
+  /* Fullscreen zoom */
+  function zoom(src, label) {
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal-label').textContent = label;
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  /* Active nav highlight on scroll */
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const id = entry.target.id;
+        const link = document.querySelector(`nav a[href="#${id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

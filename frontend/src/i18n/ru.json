@@ -1,0 +1,3013 @@
+{
+  "common": {
+    "brandName": "DK Service",
+    "unassigned": "Не назначено",
+    "brandTagline": "Корпоративная платформа",
+    "language": "Язык",
+    "noDataYet": "Данных пока нет",
+    "dataWillAppear": "Данные появятся здесь после создания записей",
+    "save": "Сохранить",
+    "saving": "Сохранение…",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "deleting": "Удаление…",
+    "edit": "Изменить",
+    "create": "Создать",
+    "add": "Добавить",
+    "remove": "Убрать",
+    "search": "Поиск",
+    "filter": "Фильтр",
+    "filters": "Фильтры",
+    "actions": "Действия",
+    "status": "Статус",
+    "loading": "Загрузка…",
+    "close": "Закрыть",
+    "confirm": "Подтвердить",
+    "back": "Назад",
+    "next": "Далее",
+    "previous": "Назад",
+    "submit": "Отправить",
+    "view": "Просмотр",
+    "viewDetails": "Подробнее",
+    "download": "Скачать",
+    "upload": "Загрузить",
+    "yes": "Да",
+    "no": "Нет",
+    "required": "Обязательно",
+    "optional": "Необязательно",
+    "name": "Имя",
+    "email": "Email",
+    "phone": "Телефон",
+    "address": "Адрес",
+    "date": "Дата",
+    "description": "Описание",
+    "notes": "Заметки",
+    "total": "Итого",
+    "subtotal": "Промежуточный итог",
+    "quantity": "Количество",
+    "price": "Цена",
+    "amount": "Сумма",
+    "type": "Тип",
+    "category": "Категория",
+    "all": "Все",
+    "none": "Нет",
+    "unknown": "Неизвестно",
+    "active": "Активен",
+    "inactive": "Неактивен",
+    "pending": "Ожидание",
+    "approved": "Одобрено",
+    "rejected": "Отклонено",
+    "completed": "Завершено",
+    "cancelled": "Отменено",
+    "noResultsFound": "Результаты не найдены",
+    "tryAdjustingFilters": "Попробуйте изменить фильтры или условия поиска",
+    "somethingWentWrong": "Что-то пошло не так",
+    "retry": "Повторить",
+    "clearFilters": "Сбросить фильтры",
+    "export": "Экспорт",
+    "print": "Печать",
+    "closeDialog": "Закрыть диалог",
+    "closePanel": "Закрыть панель",
+    "dismissNotification": "Скрыть уведомление",
+    "gridView": "Вид сеткой",
+    "listView": "Вид списком",
+    "page": "Страница",
+    "of": "из",
+    "rowsPerPage": "Строк на странице",
+    "selectAll": "Выбрать всё",
+    "createdAt": "Создано",
+    "updatedAt": "Обновлено",
+    "mainNavigation": "Основная навигация",
+    "moreLanguages": "Другие языки",
+    "loadingApplication": "Загрузка приложения",
+    "skipToContent": "Перейти к содержимому",
+    "theme": "Тема",
+    "themeLight": "Светлая",
+    "themeDark": "Тёмная",
+    "themeSystem": "Системная",
+    "scrollLeft": "Прокрутить влево",
+    "scrollRight": "Прокрутить вправо",
+    "itemCode": "Код товара",
+    "unit": "Ед. изм.",
+    "exportPdf": "Экспорт в PDF",
+    "clear": "Очистить"
+  },
+  "leads": {
+    "status": {
+      "new": "Новый",
+      "contacted": "Связались",
+      "qualified": "Квалифицирован",
+      "proposal": "Коммерческое предложение",
+      "won": "Успешно",
+      "lost": "Проиграно"
+    },
+    "form": {
+      "editTitle": "Редактировать продажный лид",
+      "newTitle": "Новый продажный лид",
+      "saveChanges": "Сохранить изменения",
+      "createLead": "Создать продажный лид",
+      "titleLabel": "Название",
+      "titlePlaceholder": "напр. Корпоративная сделка по оборудованию",
+      "wonLeadsCannotChange": "Успешные продажи нельзя перевести в другой статус.",
+      "sourceLabel": "Источник",
+      "sourceNone": "— Не указан —",
+      "valueLabel": "Сумма ($)",
+      "descriptionPlaceholder": "Краткие заметки о данном продажном лидe…"
+    },
+    "source": {
+      "website": "Веб-сайт",
+      "referral": "Рекомендация",
+      "coldCall": "Холодный звонок",
+      "email": "Email",
+      "socialMedia": "Соцсети",
+      "other": "Другое"
+    },
+    "list": {
+      "title": "Продажные лиды",
+      "totalCount": "Всего продажных лидов: {{count}}",
+      "newLead": "Новый продажный лид",
+      "searchPlaceholder": "Поиск продажных лидов…",
+      "allSources": "Все источники",
+      "resultsCount": "{{count}} результатов",
+      "colLead": "Продажный лид",
+      "colSource": "Источник",
+      "colValue": "Сумма",
+      "noLeadsFound": "Продажные лиды не найдены",
+      "createFirstLead": "Создайте свой первый продажный лид, чтобы начать.",
+      "showingRange": "Показано {{start}}–{{end}} из {{total}}",
+      "deleteTitle": "Удалить продажный лид",
+      "deleteMessage": "Вы уверены, что хотите удалить «{{title}}»? Это действие нельзя отменить.",
+      "toast": {
+        "loadError": "Не удалось загрузить лиды.",
+        "createSuccess": "Лид создан.",
+        "createError": "Не удалось создать лид.",
+        "updateSuccess": "Лид обновлён.",
+        "updateError": "Не удалось обновить лид.",
+        "deleteSuccess": "Лид удалён.",
+        "deleteError": "Не удалось удалить лид."
+      }
+    }
+  },
+  "nav": {
+    "groups": {
+      "dashboard": "Исполнительная панель",
+      "crm": "CRM",
+      "sales": "Продажи",
+      "purchasing": "Закупки",
+      "equipment": "Парк оборудования",
+      "rental": "Операции аренды",
+      "maintenance": "Сервис и обслуживание",
+      "inventory": "Контроль запасов",
+      "finance": "Финансы и бухгалтерия",
+      "executive": "Исполнительская отчётность",
+      "projects": "Портфель проектов"
+    },
+    "items": {
+      "overview": "Операционный обзор",
+      "customers": "Клиенты",
+      "leads": "Продажные лиды",
+      "quotations": "Коммерческие предложения",
+      "registry": "Реестр активов",
+      "movements": "Движение запасов",
+      "contracts": "Сервисные контракты",
+      "dashboard": "Исполнительная панель",
+      "maintenance": "Сервис и обслуживание",
+      "inventory": "Управление запасами",
+      "billing": "Биллинг и дебиторская задолженность",
+      "products": "Каталог продукции",
+      "invoices": "Счета",
+      "payments": "Платежи",
+      "deposits": "Депозиты",
+      "statements": "Выписки по счетам",
+      "activity": "Активность",
+      "reports": "Отчёты",
+      "analytics": "Бизнес-аналитика",
+      "iotTelemetry": "IoT-телеметрия",
+      "settings": "Настройки",
+      "warehouseProjects": "Складские проекты",
+      "purchaseOrders": "Заказы на закупку",
+      "salesOrders": "Заказы на продажу",
+      "taxInvoices": "Налоговые счета-фактуры",
+      "creditNotes": "Кредит-ноты",
+      "paymentVouchers": "Платёжные поручения",
+      "deliveryNotes": "Накладные на доставку",
+      "goodsReceive": "Приход товаров",
+      "goodsIssue": "Расход товаров"
+    },
+    "expandSidebar": "Развернуть панель навигации",
+    "collapseSidebar": "Свернуть панель навигации"
+  },
+  "movement": {
+    "status": {
+      "draft": "Черновик",
+      "preparing": "Подготовка",
+      "in_transit": "В пути",
+      "delivered": "Доставлено",
+      "completed": "Завершено",
+      "cancelled": "Отменено"
+    },
+    "type": {
+      "warehouse_transfer": "Перемещение",
+      "customer_deployment": "Развёртывание",
+      "customer_return": "Возврат",
+      "internal_relocation": "Внутреннее перемещение"
+    },
+    "priority": {
+      "low": "Низкий",
+      "normal": "Обычный",
+      "high": "Высокий",
+      "urgent": "Срочный"
+    },
+    "card": {
+      "customer": "Клиент: {{name}}"
+    },
+    "timeline": {
+      "title": "Хронология перемещения",
+      "by": "автор {{name}}"
+    },
+    "list": {
+      "title": "Контроль перемещений",
+      "totalCount": "Перемещений: {{count}}",
+      "refresh": "Обновить",
+      "newMovement": "Новое перемещение",
+      "loadFailed": "Не удалось загрузить перемещения.",
+      "searchPlaceholder": "Поиск по номеру, месту, коду...",
+      "allStatuses": "Все статусы",
+      "allTypes": "Все типы",
+      "resultsCount": "{{count}} результатов",
+      "colMovement": "Перемещение",
+      "colEquipment": "Техника",
+      "colFromTo": "Откуда → Куда",
+      "colScheduled": "Запланировано",
+      "colPriority": "Приоритет",
+      "noMovementsFound": "Перемещения не найдены",
+      "pageOf": "Стр. {{page}} из {{pages}} (всего {{total}})"
+    },
+    "form": {
+      "title": "Новое перемещение",
+      "backToMovements": "Назад к перемещениям",
+      "movementType": "Тип перемещения",
+      "priority": "Приоритет",
+      "forkliftId": "ID погрузчика",
+      "forkliftIdPlaceholder": "Введите ID погрузчика",
+      "customerId": "ID клиента",
+      "fromLocation": "Место отправления",
+      "fromLocationPlaceholder": "Склад DK A",
+      "toLocation": "Место назначения",
+      "toLocationPlaceholder": "Объект клиента X",
+      "fromAddress": "Адрес отправления",
+      "toAddress": "Адрес назначения",
+      "addressPlaceholder": "Полный адрес (необязательно)",
+      "scheduledDate": "Запланированная дата",
+      "trackingCode": "Код отслеживания / QR",
+      "trackingCodePlaceholder": "QR-код или штрихкод",
+      "notesPlaceholder": "Видимые заметки...",
+      "internalNotes": "Внутренние заметки",
+      "internalNotesPlaceholder": "Только для внутреннего пользования...",
+      "creating": "Создание...",
+      "createMovement": "Создать перемещение",
+      "created": "Перемещение {{number}} создано.",
+      "createFailed": "Не удалось создать перемещение.",
+      "errors": {
+        "forkliftRequired": "Укажите ID погрузчика.",
+        "fromLocationRequired": "Укажите место отправления.",
+        "toLocationRequired": "Укажите место назначения.",
+        "scheduledDateRequired": "Укажите запланированную дату."
+      }
+    },
+    "detail": {
+      "notFound": "Перемещение не найдено.",
+      "actionFailed": "Ошибка: {{action}}",
+      "actions": {
+        "startPreparing": "Начать подготовку",
+        "recordDeparture": "Зафиксировать отправление",
+        "recordArrival": "Зафиксировать прибытие",
+        "markComplete": "Отметить завершённым"
+      },
+      "toasts": {
+        "preparationStarted": "Подготовка начата",
+        "movementCompleted": "Перемещение завершено",
+        "cancelled": "Отменено",
+        "departed": "Отправлено",
+        "arrived": "Прибыло"
+      },
+      "cancelledByUser": "Отменено пользователем",
+      "from": "Откуда",
+      "to": "Куда",
+      "scheduled": "Запланировано",
+      "trackingCode": "Код отслеживания",
+      "equipment": "Техника",
+      "customer": "Клиент",
+      "contract": "Договор",
+      "driver": "Водитель",
+      "departed": "Отправлено",
+      "arrived": "Прибыло",
+      "departureHours": "Часы при отправлении",
+      "arrivalHours": "Часы при прибытии",
+      "internalNote": "Внутренняя заметка",
+      "cancellationReason": "Причина отмены",
+      "departureHourMeter": "Счётчик часов при отправлении",
+      "arrivalHourMeter": "Счётчик часов при прибытии"
+    }
+  },
+  "header": {
+    "appearance": "Оформление",
+    "settings": "Настройки",
+    "logout": "Выйти",
+    "roleAdmin": "Администратор",
+    "roleUser": "Пользователь",
+    "myProfile": "Мой профиль",
+    "changePassword": "Сменить пароль",
+    "searchPlaceholder": "Поиск страниц, действий...",
+    "searchTrigger": "Поиск...",
+    "searchLabel": "Поиск (Ctrl+K)",
+    "searchCommandsLabel": "Поиск команд",
+    "clearSearch": "Очистить поиск",
+    "noResults": "Нет результатов по запросу «{{query}}»",
+    "navigate": "переход",
+    "select": "выбор",
+    "close": "закрыть",
+    "toggleSidebar": "Переключить боковую панель",
+    "groupNavigation": "Навигация",
+    "groupQuickActions": "Быстрые действия",
+    "quickActionNewCustomer": "Новый клиент",
+    "quickActionNewQuotation": "Новое предложение",
+    "quickActionNewContract": "Новый договор",
+    "quickActionRegisterEquipment": "Зарегистрировать технику",
+    "justNow": "только что",
+    "minutesAgo": "{{count}} мин. назад",
+    "hoursAgo": "{{count}} ч. назад",
+    "daysAgo": "{{count}} дн. назад",
+    "notifications": "Уведомления",
+    "notificationsUnread": "Уведомления, непрочитанных: {{count}}",
+    "noRecentActivity": "Нет недавней активности",
+    "systemUser": "Система",
+    "viewAllActivity": "Показать всю активность →",
+    "searchResults": "Результаты поиска",
+    "breadcrumb": "Хлебные крошки",
+    "userActions": "Действия пользователя",
+    "markAllRead": "Отметить все как прочитанные",
+    "adminBroadcast": "Администратор"
+  },
+  "dashboard": {
+    "exec": {
+      "eyebrow": "Обзор для руководства",
+      "title": "Центр управления арендой",
+      "rentalMvpEyebrow": "DK Rental · Обзор для руководства",
+      "rentalMvpTitle": "Панель управления автопарком и арендой",
+      "kpi": {
+        "totalFleet": "Весь парк",
+        "totalFleetSub": "Зарегистрированные погрузчики",
+        "activeRented": "В аренде",
+        "activeRentedSub": "Единицы, находящиеся в аренде",
+        "utilizationRate": "Коэффициент использования",
+        "utilizationRateSub": "Доля арендованных от всего парка",
+        "pendingMaintenance": "Ожидает ТО",
+        "pendingMaintenanceSub": "Открытые заявки на ТО / осмотр",
+        "pendingMaintenanceCritical": "{{count}} в процессе",
+        "totalStockValue": "Общая стоимость склада",
+        "totalStockValueSub": "Капитал, вложенный в запчасти",
+        "lowStockAlerts": "Низкий остаток",
+        "lowStockAlertsItems": "{{count}} позиций",
+        "lowStockAlertsSub": "Ниже точки повторного заказа",
+        "lowStockAlertsCritical": "{{count}} критично"
+      },
+      "chart": {
+        "utilizationTab": "Тренд использования парка",
+        "revenueTab": "Доход и расходы на ТО",
+        "last6Months": "Последние 6 месяцев",
+        "utilizationSeries": "Использование %",
+        "revenueSeries": "Доход",
+        "maintenanceSeries": "Расходы на ТО",
+        "months": {
+          "jan": "Янв",
+          "feb": "Февр",
+          "mar": "Март",
+          "apr": "Апр",
+          "may": "Май",
+          "jun": "Июнь"
+        }
+      },
+      "contracts": {
+        "title": "Активные договоры аренды",
+        "columnContractId": "№ договора",
+        "columnCustomerName": "Имя клиента",
+        "columnForkliftModel": "Модель погрузчика",
+        "columnEndDate": "Дата окончания",
+        "columnStatus": "Статус"
+      },
+      "lowStock": {
+        "title": "Критически низкий запас",
+        "minSuffix": "мин."
+      },
+      "status": {
+        "booked": "Забронировано",
+        "onRent": "В аренде",
+        "expiringSoon": "Скоро истекает",
+        "overdue": "Просрочено",
+        "returned": "Возвращено",
+        "cancelled": "Отменено"
+      },
+      "customizer": {
+        "fontSize": "Размер шрифта",
+        "language": "Язык",
+        "small": "Маленький",
+        "medium": "Средний",
+        "large": "Крупный"
+      },
+      "brandsWeService": "Бренды, с которыми мы работаем"
+    },
+    "title": "Панель управления",
+    "updated": "Обновлено {{date}}",
+    "refresh": "Обновить",
+    "retry": "Повторить",
+    "keyMetrics": "Ключевые показатели",
+    "quickActions": "Быстрые действия",
+    "revenueFleet": "Доход и парк",
+    "activityFleet": "Активность и парк",
+    "fleetByFuelType": "Парк по типу топлива",
+    "upcomingTasks": "Предстоящие задачи",
+    "customerOverview": "Обзор клиентов",
+    "leadPipeline": "Воронка лидов",
+    "resultsConversion": "Результаты и конверсия",
+    "recentActivity": "Недавняя активность",
+    "viewAll": "Показать все",
+    "noRecentActivity": "Нет недавней активности",
+    "loadError": "Не удалось загрузить данные панели управления.",
+    "kpi": {
+      "totalRevenue": "Общая выручка",
+      "activeRentals": "Активная аренда",
+      "overdueCount": "Просрочено: {{count}}",
+      "fleetUtilization": "Использование парка",
+      "rentedOfFleet": "{{rented}} из {{total}} в аренде",
+      "maintenanceDue": "Требуется ТО",
+      "criticalCount": "Критично: {{count}}",
+      "lowStock": "Низкий запас",
+      "outstandingInvoices": "Неоплаченные счета",
+      "amountOverdue": "{{amount}} просрочено",
+      "totalCustomers": "Всего клиентов",
+      "active": "Активные",
+      "percentOfTotal": "{{pct}} от общего числа",
+      "prospects": "Потенциальные",
+      "totalLeads": "Всего лидов",
+      "new": "Новые",
+      "contacted": "Связались",
+      "qualified": "Квалифицированные",
+      "proposal": "Предложение",
+      "won": "Успешные",
+      "lost": "Проигранные",
+      "conversion": "Конверсия",
+      "winRate": "Успешность",
+      "lostRate": "Доля потерь",
+      "wonOverTotal": "Успешные / Всего",
+      "wonOverWonLost": "Успешные / (Успешные+Проигранные)",
+      "lostOverWonLost": "Проигранные / (Успешные+Проигранные)"
+    },
+    "quickAction": {
+      "createRental": "Создать аренду",
+      "createRentalDesc": "Новый договор аренды",
+      "addEquipment": "Добавить технику",
+      "addEquipmentDesc": "Зарегистрировать погрузчик",
+      "createInvoice": "Создать счёт",
+      "createInvoiceDesc": "Сформировать счёт",
+      "purchaseOrder": "Заказ на закупку",
+      "purchaseOrderDesc": "Заказать запчасти",
+      "maintenance": "Обслуживание",
+      "maintenanceDesc": "Запланировать сервис"
+    },
+    "chart": {
+      "revenueTrend": "Динамика дохода",
+      "revenueTrendSub": "Выставленный доход по месяцам",
+      "noRevenueData": "Данных о доходе пока нет",
+      "rentalTrend": "Динамика аренды",
+      "rentalTrendSub": "Активные договоры по месяцам",
+      "noRentalData": "Данных об аренде пока нет",
+      "fleetUtilization": "Использование парка",
+      "fleetUtilizationSub": "Техника по статусу",
+      "noFleetData": "Нет данных о парке",
+      "total": "Итого",
+      "maintenanceCost": "Затраты на обслуживание",
+      "maintenanceCostSub": "Ежемесячные расходы на сервис",
+      "noMaintenanceCostData": "Нет данных о затратах на обслуживание",
+      "fleetByFuelType": "Парк по типу топлива",
+      "units": "Единиц"
+    },
+    "task": {
+      "loading": "Загрузка...",
+      "contractsExpiring": "Истекающие договоры",
+      "countInDays": "{{count}} за {{days}} дн.",
+      "noContractsExpiring": "Нет договоров, срок которых скоро истекает",
+      "viewAllContracts": "Показать все договоры →",
+      "quotationsExpiring": "Истекающие предложения",
+      "noQuotationsExpiring": "Нет предложений, срок которых скоро истекает",
+      "viewAllQuotations": "Показать все предложения →",
+      "pmServiceDue": "Требуется ТО / сервис",
+      "approaching": "Приближается: {{count}}",
+      "allWithinServiceRange": "Все погрузчики в пределах межсервисного интервала",
+      "hoursMeter": "{{hours}} ч",
+      "viewAllEquipment": "Показать всю технику →"
+    },
+    "fleetStatus": {
+      "inStock": "На складе",
+      "rented": "В аренде",
+      "inService": "На обслуживании",
+      "reserved": "Зарезервировано",
+      "sold": "Продано",
+      "decommissioned": "Списано"
+    },
+    "fuelType": {
+      "diesel": "Дизель",
+      "electric": "Электро",
+      "lpg": "СНГ",
+      "dualFuel": "Двойное топливо",
+      "unknown": "Неизвестно"
+    },
+    "catalog": {
+      "title": "Каталог продукции",
+      "viewCatalog": "Перейти в каталог →",
+      "loadError": "Не удалось загрузить статистику каталога.",
+      "totalProducts": "Всего товаров",
+      "brands": "Бренды",
+      "categories": "Категории"
+    },
+    "store": {
+      "get": "Открыть",
+      "free": "Бесплатно",
+      "comingSoon": "Скоро",
+      "hero": {
+        "assets": {
+          "eyebrow": "Модуль в фокусе",
+          "title": "Реестр активов, переосмысленный для полевых условий",
+          "desc": "Отслеживайте каждый погрузчик, прицеп и машину на протяжении всего жизненного цикла — владение, статус и показания счётчиков в одном актуальном реестре."
+        },
+        "invoicing": {
+          "eyebrow": "Уже доступно",
+          "title": "Умный биллинг с автоматическим НДС",
+          "desc": "Формируйте заказы на закупку, коммерческие предложения и счета в едином потоке — промежуточный итог, НДС и итоговая сумма рассчитываются автоматически."
+        },
+        "maintenance": {
+          "eyebrow": "Выбор редакции",
+          "title": "Планирование обслуживания, которое всегда на шаг впереди",
+          "desc": "Выявляйте технику, которой скоро требуется сервис, ещё до поломки — на основе актуальных показаний счётчика часов и истории обслуживания."
+        }
+      },
+      "promo": {
+        "sale": {
+          "kicker": "Ограниченное предложение",
+          "title": "Грандиозная распродажа — скидки до 50% на запчасти"
+        },
+        "new": {
+          "kicker": "Новинка",
+          "title": "Новые модули на этой неделе"
+        },
+        "staffPicks": {
+          "kicker": "Выбор редакции",
+          "title": "Лучшее в выездном обслуживании"
+        }
+      },
+      "rows": {
+        "mostUsed": "Самые используемые модули",
+        "recommended": "Рекомендуемые модули",
+        "fieldService": "Популярное в выездном обслуживании"
+      },
+      "modules": {
+        "equipmentRegistry": {
+          "title": "DK Реестр техники",
+          "sub": "Реестр техники и транспорта"
+        },
+        "customers": {
+          "title": "DK Клиенты",
+          "sub": "Управление данными клиентов"
+        },
+        "quotations": {
+          "title": "DK Коммерческие предложения",
+          "sub": "Коммерческие предложения"
+        },
+        "rentalContracts": {
+          "title": "DK Договоры аренды",
+          "sub": "Договоры аренды"
+        },
+        "movements": {
+          "title": "DK Перемещения",
+          "sub": "Перемещения техники"
+        },
+        "projects": {
+          "title": "DK Проекты",
+          "sub": "Проекты и склады"
+        },
+        "smartInvoicing": {
+          "title": "DK Умный биллинг",
+          "sub": "Автоматическое выставление счетов"
+        },
+        "payments": {
+          "title": "DK Платежи",
+          "sub": "Платежи"
+        },
+        "deposits": {
+          "title": "DK Депозиты",
+          "sub": "Депозиты"
+        },
+        "statements": {
+          "title": "DK Выписки",
+          "sub": "Выписки"
+        },
+        "inventory": {
+          "title": "DK Склад",
+          "sub": "Складской учёт"
+        },
+        "purchaseOrders": {
+          "title": "DK Заказы на закупку",
+          "sub": "Заказ запчастей"
+        },
+        "workOrders": {
+          "title": "DK Заказы-наряды",
+          "sub": "Планирование сервиса"
+        },
+        "assetRegistry": {
+          "title": "DK Реестр активов",
+          "sub": "Реестр активов"
+        },
+        "maintenanceSchedule": {
+          "title": "DK График ТО",
+          "sub": "Профилактическое обслуживание"
+        }
+      },
+      "thirdParty": {
+        "routeWise": {
+          "title": "RouteWise",
+          "sub": "Meridian Labs"
+        },
+        "fleetPulse": {
+          "title": "FleetPulse",
+          "sub": "Orbit Communications"
+        },
+        "partsBin": {
+          "title": "PartsBin",
+          "sub": "Ironclad Systems"
+        }
+      }
+    },
+    "errors": {
+      "leadTrend": "Не удалось загрузить динамику лидов.",
+      "customerTrend": "Не удалось загрузить динамику клиентов.",
+      "leadMetrics": "Не удалось загрузить показатели лидов."
+    }
+  },
+  "equipment": {
+    "status": {
+      "inStock": "На складе",
+      "sold": "Продано",
+      "rented": "В аренде",
+      "inService": "На обслуживании",
+      "reserved": "Зарезервировано",
+      "decommissioned": "Списано"
+    },
+    "ownership": {
+      "forSale": "На продажу",
+      "rental": "Арендный парк",
+      "customerOwned": "Собственность клиента",
+      "retired": "Выведено из эксплуатации"
+    },
+    "operationalStatus": {
+      "available": "Доступен",
+      "onRent": "В аренде",
+      "inService": "На обслуживании",
+      "sold": "Продано"
+    },
+    "condition": {
+      "new": "Новый",
+      "used": "Б/у",
+      "refurbished": "Восстановленный"
+    },
+    "fuel": {
+      "electric": "Электро",
+      "diesel": "Дизель",
+      "lpg": "СНГ",
+      "dualFuel": "Двойное топливо",
+      "notSpecified": "— Не указано —"
+    },
+    "card": {
+      "hoursValue": "{{count}} ч",
+      "editForklift": "Изменить погрузчик",
+      "serial": "Серийный номер",
+      "brand": "Бренд",
+      "fuel": "Топливо",
+      "customer": "Клиент",
+      "iotLive": "Онлайн",
+      "iotOffline": "Офлайн",
+      "iotAutoSynced": "Автосинхронизация через IoT"
+    },
+    "filters": {
+      "statusShort": {
+        "inService": "Обслуж.",
+        "decommissioned": "Списан"
+      },
+      "allFuelTypes": "Все виды топлива",
+      "allConditions": "Все состояния",
+      "allOwnership": "Все формы владения",
+      "allBrands": "Все бренды",
+      "clear": "Очистить",
+      "countLabel": "{{count}} единиц техники",
+      "noneFound": "Техника не найдена",
+      "noneFoundHint": "Попробуйте изменить фильтры или добавить новую технику",
+      "searchPlaceholder": "Поиск техники..."
+    },
+    "quickActions": {
+      "register": {
+        "label": "Зарегистрировать технику",
+        "desc": "Добавить новый погрузчик"
+      },
+      "movement": {
+        "label": "Создать перемещение",
+        "desc": "Переместить технику"
+      },
+      "maintenance": {
+        "label": "Запланировать ТО",
+        "desc": "Плановое обслуживание"
+      },
+      "rental": {
+        "label": "Новая аренда",
+        "desc": "Назначить на договор"
+      }
+    },
+    "gallery": {
+      "noPhotos": "Фотографии не загружены",
+      "noPhotosHint": "Фотографии помогают идентифицировать и документировать эту технику",
+      "previousPhoto": "Предыдущее фото",
+      "nextPhoto": "Следующее фото",
+      "viewFullscreen": "Просмотр на весь экран"
+    },
+    "timeline": {
+      "noHistory": "Изменений статуса пока не зафиксировано.",
+      "system": "Система"
+    },
+    "form": {
+      "serialRequired": "Серийный номер обязателен.",
+      "nameRequired": "Название обязательно.",
+      "saveFailed": "Не удалось сохранить. Попробуйте снова.",
+      "editTitle": "Изменить погрузчик",
+      "registerTitle": "Регистрация погрузчика",
+      "serialNumber": "Серийный номер",
+      "serialNumberPlaceholder": "напр. JH-2024-001",
+      "nameEnglish": "Название (англ.)",
+      "nameEnglishPlaceholder": "напр. Jungheinrich EFG 216k",
+      "nameLao": "Название (лаосский)",
+      "internalCode": "Внутренний код",
+      "internalCodePlaceholder": "Инвентарный номер DK",
+      "brand": "Бренд",
+      "noBrand": "— Без бренда —",
+      "modelNumber": "Номер модели",
+      "modelNumberPlaceholder": "напр. EFG 216k",
+      "condition": "Состояние",
+      "operationalStatus": "Эксплуатационный статус",
+      "ownershipState": "Форма владения",
+      "fuelType": "Тип топлива",
+      "capacityKg": "Грузоподъёмность (кг)",
+      "yearManufactured": "Год выпуска",
+      "currentHourMeter": "Текущий счётчик часов",
+      "initialHourMeter": "Начальный счётчик часов",
+      "purchaseDate": "Дата покупки",
+      "warrantyExpiry": "Окончание гарантии",
+      "notesPlaceholder": "Дополнительные заметки...",
+      "saveChanges": "Сохранить изменения",
+      "capacityKgPlaceholder": "напр. 1600",
+      "yearManufacturedPlaceholder": "напр. 2024"
+    },
+    "registry": {
+      "title": "Реестр техники",
+      "subtitle": "Управляйте и отслеживайте свой парк погрузчиков",
+      "refresh": "Обновить",
+      "registerForklift": "Зарегистрировать погрузчик",
+      "searchPlaceholder": "Поиск по номеру, названию, модели...",
+      "noForkliftsFound": "Погрузчики не найдены",
+      "pageInfo": "Стр. {{page}} из {{pages}} (всего {{total}})",
+      "deleteTitle": "Удалить погрузчик",
+      "deleteMessage": "Удалить «{{name}}» (с/н: {{serial}})? Это действие нельзя отменить.",
+      "kpi": {
+        "utilization": "Использование",
+        "avgHours": "Ср. часы",
+        "pmDue": "Требуется ТО",
+        "critical": "{{count}} критично",
+        "avgAge": "Средний возраст",
+        "years": "{{count}} г."
+      },
+      "table": {
+        "forklift": "Погрузчик",
+        "model": "Модель",
+        "ownership": "Владение",
+        "hours": "Часы счётчика"
+      },
+      "toast": {
+        "loadError": "Не удалось загрузить погрузчики.",
+        "createSuccess": "Погрузчик успешно зарегистрирован.",
+        "createError": "Не удалось зарегистрировать погрузчик.",
+        "updateSuccess": "Погрузчик успешно обновлён.",
+        "updateError": "Не удалось обновить погрузчик.",
+        "deleteSuccess": "Погрузчик удалён.",
+        "deleteError": "Не удалось удалить погрузчик."
+      }
+    },
+    "detail": {
+      "notFoundOrFailed": "Погрузчик не найден или ошибка загрузки.",
+      "backToEquipment": "Назад к технике",
+      "notFound": "Погрузчик не найден.",
+      "tabs": {
+        "overview": "Обзор",
+        "photos": "Фото",
+        "timeline": "Хронология",
+        "documents": "Документы",
+        "contracts": "Договоры"
+      },
+      "serialAbbrev": "С/Н",
+      "newQuote": "Новое КП",
+      "newContract": "Новый договор",
+      "specifications": "Характеристики",
+      "capacity": "Грузоподъёмность",
+      "year": "Год",
+      "model": "Модель",
+      "mastType": "Тип мачты",
+      "maxLiftHeight": "Макс. высота подъёма",
+      "currentLocation": "Текущее местоположение",
+      "zone": "Зона",
+      "since": "С",
+      "noLocationRecorded": "Местоположение не зафиксировано",
+      "hourMeter": "Счётчик часов",
+      "hoursUnit": "ч",
+      "pctOfThreshold": "{{pct}}% от {{threshold}} ч",
+      "serviceInterval": "интервал ТО",
+      "initial": "Начальный",
+      "hoursUsed": "Наработка часов",
+      "dailyAvg": "Средн. в день",
+      "estService": "Ориент. ТО",
+      "estServiceDays": "~{{count}} дн.",
+      "assetSummary": "Сводка по активу",
+      "assetAge": "Возраст актива",
+      "years": "{{count}} лет",
+      "warranty": "Гарантия",
+      "expired": "Истекла",
+      "valid": "Действует",
+      "statusChanges": "Изменения статуса",
+      "documents": "Документы",
+      "filesCount": "{{count}} файлов",
+      "photos": "Фото",
+      "imagesCount": "{{count}} изображений",
+      "assignedCustomer": "Назначенный клиент",
+      "documentTitle": "Название",
+      "expiry": "Срок действия",
+      "uploaded": "Загружено",
+      "noDocumentsUploaded": "Документы не загружены",
+      "viewContractsHint": "Просмотреть договоры аренды, связанные с этой техникой",
+      "viewRentalContracts": "Просмотр договоров аренды"
+    }
+  },
+  "inventory": {
+    "common": {
+      "refresh": "Обновить",
+      "resultCount_one": "{{count}} результат",
+      "resultCount_other": "{{count}} результатов",
+      "paginationInfo": "Страница {{page}} из {{pages}}"
+    },
+    "dashboard": {
+      "title": "Инвентаризация запасных частей",
+      "subtitle": "Обзор управления складом и закупками",
+      "purchaseOrdersButton": "Заказы на закупку",
+      "sparePartsButton": "Инвентаризация запасных частей",
+      "quickAccess": "Быстрый доступ",
+      "loadError": "Не удалось загрузить данные склада."
+    },
+    "purchaseOrder": {
+      "title": "Заказы на закупку",
+      "subtitle_one": "{{count}} заказ",
+      "subtitle_other": "{{count}} заказов",
+      "loadError": "Не удалось загрузить заказы на закупку.",
+      "status": {
+        "all": "Все статусы",
+        "draft": "Черновик",
+        "ordered": "Заказано",
+        "partial": "Частично получено",
+        "received": "Получено",
+        "cancelled": "Отменено"
+      },
+      "newPO": "Новый заказ на закупку",
+      "form": {
+        "title": "Новый заказ на закупку",
+        "backToList": "Назад к заказам на закупку",
+        "vendor": "Поставщик",
+        "vendorRequired": "Укажите поставщика",
+        "warehouse": "Склад",
+        "warehouseRequired": "Выберите склад",
+        "vendorAddress": "Адрес поставщика",
+        "vendorContact": "Контакт поставщика",
+        "orderDate": "Дата заказа",
+        "expectedDate": "Ожидаемая дата",
+        "taxRate": "Налоговая ставка (%)",
+        "lineItems": "Позиции заказа",
+        "itemCode": "Код товара",
+        "description": "Описание",
+        "descriptionPlaceholder": "Описание товара",
+        "qty": "Кол-во",
+        "unit": "Ед. изм.",
+        "unitCost": "Цена за единицу",
+        "linkCatalogPart": "Связать с запчастью",
+        "linkCatalogPartPlaceholder": "Поиск запчастей…",
+        "noPartsFound": "Запчасти не найдены",
+        "addRow": "Добавить строку",
+        "itemRequired": "Требуется хотя бы одна позиция",
+        "created": "Заказ на закупку {{number}} создан",
+        "createFailed": "Не удалось создать заказ на закупку",
+        "creating": "Создание...",
+        "createPO": "Создать заказ на закупку"
+      },
+      "detail": {
+        "loadError": "Не удалось загрузить заказ на закупку",
+        "notFound": "Заказ на закупку не найден",
+        "actionFailed": "Ошибка: {{action}}",
+        "submitted": "Заказ на закупку отправлен",
+        "submit": "Отправить",
+        "receiveItems": "Приёмка товара",
+        "receiveModalTitle": "Приёмка товара",
+        "received": "Товар получен",
+        "receivedDate": "Дата получения",
+        "qtyOrdered": "Кол-во заказано",
+        "qtyReceived": "Кол-во получено"
+      }
+    },
+    "spareParts": {
+      "unitPrice": "Цена за единицу",
+      "unit": "Единица",
+      "categories": {
+        "all": "Все категории",
+        "filter": "Фильтр",
+        "belt": "Ремень",
+        "brake": "Тормоз",
+        "hydraulic": "Гидравлика",
+        "electrical": "Электрика",
+        "engine": "Двигатель",
+        "tire": "Шина",
+        "chain": "Цепь",
+        "battery": "Аккумулятор",
+        "lubricant": "Смазка",
+        "general": "Общее"
+      },
+      "list": {
+        "title": "Инвентаризация запасных частей",
+        "subtitle_one": "{{count}} запчасть",
+        "subtitle_other": "{{count}} запчастей",
+        "addPart": "Добавить запчасть",
+        "loadError": "Не удалось загрузить запчасти.",
+        "searchPlaceholder": "Поиск по номеру, названию...",
+        "noPartsFound": "Запчасти не найдены",
+        "columns": {
+          "partNumber": "№ детали",
+          "minStock": "Мин. запас"
+        }
+      },
+      "detail": {
+        "backToList": "Назад к запчастям",
+        "notFound": "Не найдено.",
+        "loadError": "Запчасть не найдена.",
+        "totalStock": "Общий запас",
+        "minLevel": "Минимальный уровень",
+        "reorderQty": "Количество для дозаказа",
+        "brand": "Бренд",
+        "leadTime": "Срок поставки",
+        "leadTimeDays_one": "{{count}} день",
+        "leadTimeDays_other": "{{count}} дней",
+        "created": "Создано",
+        "active": "Активна",
+        "stockByWarehouse": "Остатки по складам",
+        "recentTransactions": "Последние операции",
+        "columns": {
+          "warehouse": "Склад",
+          "onHand": "В наличии",
+          "reserved": "Зарезервировано",
+          "available": "Доступно",
+          "number": "Номер",
+          "qty": "Кол-во",
+          "cost": "Стоимость"
+        }
+      }
+    },
+    "warehouse": {
+      "title": "Точки хранения",
+      "list": {
+        "subtitle_one": "{{count}} точка хранения",
+        "subtitle_other": "{{count}} точек хранения",
+        "addWarehouse": "Добавить точку хранения",
+        "loadError": "Не удалось загрузить точки хранения."
+      },
+      "form": {
+        "codeLabel": "Код",
+        "codePlaceholder": "WH-A",
+        "namePlaceholder": "Склад Альфа",
+        "addressPlaceholder": "Полный адрес (необязательно)",
+        "codeNameRequired": "Код и название обязательны.",
+        "createSuccess": "Склад создан.",
+        "createError": "Не удалось создать склад.",
+        "creating": "Создание..."
+      },
+      "detail": {
+        "backToList": "Назад к точкам хранения",
+        "loadError": "Не удалось загрузить точку хранения.",
+        "notFound": "Точка хранения не найдена.",
+        "address": "Адрес",
+        "contactName": "Контактное лицо",
+        "contactPhone": "Контактный телефон",
+        "distinctParts": "Уникальных позиций",
+        "totalStock": "Всего единиц на складе",
+        "stockTitle": "Запасы в этой точке хранения",
+        "noStock": "В этой точке хранения пока нет записей о запасах.",
+        "columns": {
+          "part": "Запчасть"
+        }
+      }
+    },
+    "stockBadge": {
+      "inStock": "В наличии",
+      "lowStock": "Мало на складе",
+      "outOfStock": "Нет в наличии"
+    },
+    "reorderAlert": {
+      "title": "Уведомления о дозаказе ({{count}})",
+      "detail": "{{warehouseCode}}: доступно {{available}} (мин.: {{minLevel}}) — дозаказать {{reorderQuantity}}"
+    },
+    "kpi": {
+      "spareParts": "Запчасти",
+      "warehouses": "Склады",
+      "stockValue": "Стоимость запасов",
+      "lowStock": "Мало на складе",
+      "belowMinimum": "{{count}} ниже минимума",
+      "pendingPOs": "Заказы на закупку в ожидании"
+    },
+    "quickNav": {
+      "parts": {
+        "label": "Инвентаризация запасных частей",
+        "desc": "Просмотр склада"
+      },
+      "warehouses": {
+        "label": "Точки хранения",
+        "desc": "Управление местоположениями"
+      },
+      "purchaseOrders": {
+        "label": "Заказы на закупку",
+        "desc": "Закупки"
+      },
+      "catalog": {
+        "label": "Каталог продукции",
+        "desc": "Полный каталог"
+      }
+    },
+    "lowStock": {
+      "title": "Уведомления о низком запасе",
+      "allHealthy": "Все уровни запасов в норме",
+      "viewAll": "Показать все",
+      "min": "Мин.",
+      "reorder": "Дозаказать"
+    },
+    "purchaseOrderTable": {
+      "poNumber": "№ заказа",
+      "vendor": "Поставщик",
+      "warehouse": "Склад",
+      "orderDate": "Дата заказа",
+      "empty": "Заказы на закупку не найдены",
+      "paginationInfo": "Страница {{page}} из {{pages}} (всего {{total}})"
+    },
+    "stockDistributionChart": {
+      "title": "Запасы по категориям",
+      "subtitle": "Количество запчастей по категориям",
+      "empty": "Нет данных о запасах"
+    },
+    "warehouseGrid": {
+      "noneFound": "Склады отсутствуют",
+      "noneFoundHint": "Создайте свой первый склад, чтобы начать учёт запасов"
+    },
+    "import": {
+      "button": "Импорт данных",
+      "title": "Импорт складских данных",
+      "subtitle": "Загрузите файл CSV или Excel (.xlsx), чтобы массово создать или обновить запчасти. Существующие номера деталей будут обновлены; новые будут созданы.",
+      "dropzoneText": "Перетащите файл сюда или нажмите для выбора",
+      "dropzoneHint": "Поддерживаются файлы .csv и .xlsx, до 10 МБ",
+      "clearFile": "Очистить",
+      "uploadButton": "Загрузить и импортировать",
+      "uploading": "Загрузка и обработка данных…",
+      "uploadingHint": "Для больших файлов это может занять несколько секунд.",
+      "uploadFailed": "Ошибка импорта. Попробуйте снова.",
+      "successBanner": "Импорт успешно завершён",
+      "partialBanner": "Импорт завершён с некоторыми ошибками",
+      "resultSummary": "Импортировано {{imported}}, обновлено {{updated}}",
+      "rowErrorsTitle": "Не удалось импортировать {{count}} строк",
+      "rowLabel": "Строка {{row}}:",
+      "closeAndRefresh": "Закрыть и обновить"
+    }
+  },
+  "rental": {
+    "status": {
+      "reservation": "Бронирование",
+      "draft": "Черновик",
+      "pendingApproval": "Ожидает утверждения",
+      "approved": "Утверждено",
+      "revision": "На доработке",
+      "delivering": "В доставке",
+      "active": "Активен",
+      "overdue": "Просрочен",
+      "returning": "Возвращается",
+      "inspecting": "На осмотре",
+      "settling": "На расчёте",
+      "closed": "Закрыт",
+      "cancelled": "Отменён"
+    },
+    "contractType": {
+      "shortTerm": "Краткосрочный",
+      "longTerm": "Долгосрочный",
+      "project": "Проектный"
+    },
+    "list": {
+      "title": "Договоры аренды",
+      "totalCount": "{{count}} договоров",
+      "refresh": "Обновить",
+      "newContract": "Новый договор",
+      "searchPlaceholder": "Поиск по номеру, клиенту...",
+      "allStatuses": "Все статусы",
+      "allTypes": "Все типы",
+      "colContract": "Договор",
+      "colCustomer": "Клиент",
+      "colTotalValue": "Общая стоимость",
+      "colStartDate": "Дата начала",
+      "colEndDate": "Дата окончания",
+      "noContractsFound": "Договоры аренды не найдены",
+      "createOrAdjust": "Создайте новый договор или измените фильтры.",
+      "resultsCount": "{{count}} результатов",
+      "pageOf": "Страница {{page}} из {{pages}} (всего {{total}})",
+      "deleteConfirmTitle": "Удалить договор аренды",
+      "deleteConfirmMessage": "Удалить «{{number}}»? Это действие необратимо.",
+      "toast": {
+        "loadError": "Не удалось загрузить договоры аренды.",
+        "createSuccess": "Договор аренды создан.",
+        "createError": "Не удалось создать договор аренды.",
+        "deleteSuccess": "Договор аренды удалён.",
+        "deleteError": "Не удалось удалить договор аренды."
+      }
+    },
+    "form": {
+      "backToContracts": "Назад к договорам аренды",
+      "newContract": "Новый договор аренды",
+      "contractType": "Тип договора",
+      "currencyLabel": "Валюта",
+      "customerId": "ID клиента",
+      "customerIdPlaceholder": "Введите ID клиента",
+      "startDate": "Дата начала",
+      "endDate": "Дата окончания",
+      "taxRateLabel": "Налоговая ставка (%)",
+      "depositAmount": "Сумма депозита",
+      "deliveryAddress": "Адрес доставки",
+      "deliveryAddressPlaceholder": "Полный адрес доставки",
+      "deliveryContactName": "Имя контактного лица по доставке",
+      "deliveryContactNamePlaceholder": "Г-н / Г-жа",
+      "deliveryContactPhone": "Телефон контактного лица по доставке",
+      "deliveryContactPhonePlaceholder": "+856 20 ...",
+      "notesLabel": "Примечания (видны клиенту)",
+      "notesPlaceholder": "Отображается в договоре...",
+      "internalNotesLabel": "Внутренние примечания",
+      "internalNotesPlaceholder": "Только для внутреннего пользования, не видно клиенту...",
+      "creating": "Создание...",
+      "createContract": "Создать договор",
+      "customerIdRequired": "ID клиента обязателен.",
+      "startDateRequired": "Дата начала обязательна.",
+      "endDateRequired": "Дата окончания обязательна.",
+      "createFailed": "Не удалось создать договор аренды.",
+      "createdToast": "Договор {{number}} создан."
+    },
+    "detail": {
+      "backToContracts": "Назад к договорам аренды",
+      "notFoundError": "Договор аренды не найден или не удалось загрузить.",
+      "actionFailed": "Ошибка: {{action}}",
+      "rev": "Ред. {{number}}",
+      "submit": "Отправить",
+      "approve": "Утвердить",
+      "requestRevision": "Запросить доработку",
+      "activate": "Активировать",
+      "requestReturn": "Запросить возврат",
+      "requestExtension": "Запросить продление",
+      "completeInspection": "Завершить осмотр",
+      "inspectionInfo": "Завершение осмотра — используйте панель возврата ниже.",
+      "generateBilling": "Сформировать счёт",
+      "billingInfo": "Формирование счетов — появится на этапе 4.",
+      "closeContract": "Закрыть договор",
+      "taxWithRate": "Налог ({{rate}}%)",
+      "discount": "Скидка",
+      "totalBilled": "Всего выставлено",
+      "totalPaid": "Всего оплачено",
+      "outstanding": "Остаток задолженности",
+      "customer": "Клиент",
+      "deliveryContact": "Контакт по доставке",
+      "deliveryPhone": "Телефон доставки",
+      "assignedTo": "Ответственный",
+      "approvedBy": "Утвердил",
+      "actualStart": "Фактическое начало",
+      "actualEnd": "Фактическое окончание",
+      "deposit": "Депозит",
+      "paymentTerms": "Условия оплаты",
+      "daysCount": "{{count}} дней",
+      "internalNote": "Внутреннее примечание",
+      "lineItems": "Позиции ({{count}})",
+      "addItem": "Добавить позицию",
+      "colNumber": "№",
+      "colMonthlyRate": "Месячная ставка",
+      "colDailyRate": "Дневная ставка",
+      "colLineTotal": "Сумма по строке",
+      "serialNumber": "С/Н: {{serial}}",
+      "hoursUsed": "Часы: {{count}}",
+      "noLineItems": "Пока нет позиций.",
+      "addItemsHint": "Добавьте позиции для формирования договора.",
+      "extensions": "Продления ({{count}})",
+      "colOriginalEnd": "Исходное окончание",
+      "colNewEnd": "Новое окончание",
+      "colReason": "Причина",
+      "activeReturns": "Активные возвраты ({{count}})",
+      "colReturnNumber": "№ возврата",
+      "colRequested": "Запрошено",
+      "colScheduledPickup": "Запланированный забор",
+      "colForklift": "Погрузчик",
+      "statusHistory": "История статусов",
+      "colFrom": "От",
+      "colTo": "До",
+      "colBy": "Кем",
+      "reasons": {
+        "revisionNeeded": "Требуется доработка",
+        "cancelledByUser": "Отменено пользователем",
+        "rejected": "Отклонено"
+      },
+      "toasts": {
+        "submitted": "Отправлено на утверждение",
+        "revisionRequested": "Запрошена доработка",
+        "activated": "Активировано",
+        "contractClosed": "Договор закрыт",
+        "itemRemoved": "Позиция удалена",
+        "extensionApproved": "Продление утверждено",
+        "extensionRejected": "Продление отклонено"
+      },
+      "addItemModal": {
+        "title": "Добавить позицию договора",
+        "forkliftId": "ID погрузчика",
+        "hourlyRate": "Почасовая ставка",
+        "monthlyRate": "Месячная ставка",
+        "dailyRate": "Дневная ставка",
+        "adding": "Добавление...",
+        "forkliftIdRequired": "ID погрузчика обязателен.",
+        "descriptionRequired": "Описание обязательно.",
+        "monthlyRateRequired": "Месячная ставка обязательна.",
+        "dailyRateRequired": "Дневная ставка обязательна.",
+        "itemAdded": "Позиция добавлена.",
+        "addFailed": "Не удалось добавить позицию."
+      },
+      "extensionModal": {
+        "title": "Запрос продления договора",
+        "currentEndDate": "Текущая дата окончания",
+        "newEndDate": "Новая дата окончания",
+        "rateAdjustment": "Корректировка ставки (%)",
+        "reason": "Причина",
+        "reasonPlaceholder": "Причина запроса продления...",
+        "requesting": "Запрос...",
+        "requestExtension": "Запросить продление",
+        "newEndDateRequired": "Новая дата окончания обязательна.",
+        "newEndDateAfterCurrent": "Новая дата окончания должна быть позже текущей.",
+        "extensionRequested": "Продление запрошено.",
+        "requestFailed": "Не удалось запросить продление."
+      },
+      "returnModal": {
+        "title": "Запрос возврата оборудования",
+        "returnType": "Тип возврата",
+        "scheduled": "Запланирован",
+        "early": "Досрочный",
+        "requestedDate": "Дата запроса",
+        "equipmentToReturn": "Оборудование для возврата",
+        "allEquipment": "— Всё оборудование —",
+        "scheduledPickupDate": "Запланированная дата забора",
+        "pickupAddress": "Адрес забора",
+        "pickupAddressPlaceholder": "Адрес объекта клиента",
+        "earlyTermination": "Досрочное расторжение (может применяться штраф)",
+        "notesPlaceholder": "Дополнительные инструкции...",
+        "requesting": "Запрос...",
+        "requestReturn": "Запросить возврат",
+        "requestedDateRequired": "Дата запроса обязательна.",
+        "returnRequested": "Возврат запрошен.",
+        "requestFailed": "Не удалось создать запрос на возврат."
+      }
+    }
+  },
+  "settings": {
+    "title": "Глобальные настройки",
+    "subtitle": "Управляйте основными параметрами организации в ERP-системе.",
+    "loading": "Загрузка настроек…",
+    "save": "Сохранить изменения",
+    "saving": "Сохранение…",
+    "saveSuccess": "Настройки успешно обновлены.",
+    "saveError": "Не удалось сохранить настройки. Попробуйте снова.",
+    "loadError": "Не удалось загрузить настройки. Попробуйте снова.",
+    "tabs": {
+      "company": "Профиль компании",
+      "financial": "Финансовые параметры",
+      "system": "Системные переменные",
+      "notifications": "Настройки уведомлений"
+    },
+    "company": {
+      "description": "Основные данные профиля компании",
+      "companyName": "Название компании",
+      "address": "Адрес",
+      "phone": "Телефон",
+      "fax": "Факс",
+      "website": "Веб-сайт",
+      "email": "Эл. почта",
+      "logoUrl": "URL логотипа",
+      "logoInvalidType": "Пожалуйста, выберите файл изображения.",
+      "logoUploadError": "Не удалось загрузить логотип. Попробуйте снова.",
+      "logoUploading": "Загрузка логотипа…",
+      "logoDropzoneText": "Нажмите или перетащите файл, чтобы загрузить логотип",
+      "logoDropzoneHint": "PNG, JPG или WebP",
+      "bankDetails": {
+        "title": "Банковские реквизиты",
+        "bankName": "Название банка",
+        "accountName": "Имя владельца счёта",
+        "accountNumber": "Номер счёта",
+        "swift": "Код SWIFT / BIC"
+      }
+    },
+    "financial": {
+      "description": "Финансовые параметры по умолчанию",
+      "vatRate": "Ставка НДС (%)",
+      "defaultCurrency": "Валюта по умолчанию",
+      "defaultPaymentTerms": "Условия оплаты по умолчанию"
+    },
+    "system": {
+      "description": "Системные переменные",
+      "equipmentTypes": "Типы техники",
+      "repairStatuses": "Статусы ремонта"
+    },
+    "notifications": {
+      "description": "Подпишитесь на email-оповещения о важных системных событиях. Вы будете получать уведомления при каждом отслеживаемом событии, кроме действий, выполненных вами самими.",
+      "loadError": "Не удалось загрузить настройки уведомлений. Попробуйте снова.",
+      "saveError": "Не удалось обновить этот параметр. Попробуйте снова.",
+      "groups": {
+        "critical": "Критичные события и удаления",
+        "sales": "Продажи и аренда",
+        "billing": "Биллинг",
+        "operations": "Операции"
+      },
+      "events": {
+        "customerDeleted": "Клиент удалён",
+        "forkliftDeleted": "Погрузчик удалён",
+        "productDeleted": "Товар каталога удалён",
+        "quotationApproved": "Коммерческое предложение утверждено",
+        "quotationSent": "Коммерческое предложение отправлено клиенту",
+        "contractActivated": "Договор аренды активирован",
+        "contractCancelled": "Договор аренды отменён",
+        "invoiceIssued": "Счёт выставлен",
+        "paymentRecorded": "Платёж зарегистрирован",
+        "paymentRejected": "Платёж отклонён",
+        "depositRefunded": "Депозит возвращён",
+        "forkliftStatusChanged": "Статус погрузчика изменён",
+        "inventoryImportExecuted": "Выполнен массовый импорт складских данных",
+        "settingUpdated": "Глобальная настройка обновлена"
+      }
+    }
+  },
+  "customers": {
+    "status": {
+      "active": "Активен",
+      "prospect": "Потенциальный",
+      "inactive": "Неактивен",
+      "churned": "Потерян"
+    },
+    "form": {
+      "editTitle": "Изменить клиента",
+      "newTitle": "Новый клиент",
+      "saveChanges": "Сохранить изменения",
+      "createCustomer": "Создать клиента",
+      "firstNameLabel": "Имя",
+      "firstNamePlaceholder": "Иван",
+      "lastNameLabel": "Фамилия",
+      "lastNamePlaceholder": "Иванов",
+      "emailPlaceholder": "ivan@example.com",
+      "phonePlaceholder": "+856 20 000 0000",
+      "companyLabel": "Компания",
+      "companyPlaceholder": "ООО «Ромашка»",
+      "notesPlaceholder": "Дополнительные заметки…"
+    },
+    "list": {
+      "title": "Клиенты",
+      "totalCount": "Всего клиентов: {{count}}",
+      "newCustomer": "Новый клиент",
+      "searchPlaceholder": "Поиск по имени, email, телефону…",
+      "allStatuses": "Все статусы",
+      "resultsCount": "{{count}} результатов",
+      "colCustomer": "Клиент",
+      "noCustomersFound": "Клиенты не найдены",
+      "createFirstCustomer": "Создайте своего первого клиента, чтобы начать.",
+      "showingRange": "Показано {{start}}–{{end}} из {{total}}",
+      "deleteTitle": "Удалить клиента",
+      "deleteMessage": "Вы уверены, что хотите удалить «{{name}}»? Это действие нельзя отменить.",
+      "toast": {
+        "loadError": "Не удалось загрузить клиентов.",
+        "createSuccess": "Клиент успешно создан.",
+        "createError": "Не удалось создать клиента.",
+        "updateSuccess": "Клиент успешно обновлён.",
+        "updateError": "Не удалось обновить клиента.",
+        "deleteSuccess": "Клиент удалён.",
+        "deleteError": "Не удалось удалить клиента."
+      }
+    }
+  },
+  "finance": {
+    "collectionRate": {
+      "title": "Коэффициент собираемости",
+      "collected": "Собрано",
+      "invoiced": "Выставлено"
+    },
+    "kpi": {
+      "totalRevenue": "Общая выручка",
+      "collected": "Собрано",
+      "outstanding": "Задолженность",
+      "overdue": "Просрочено",
+      "pastDue": "{{amount}} просрочено",
+      "invoices": "Счета",
+      "totalIssued": "Всего выставлено",
+      "payments": "Платежи",
+      "received": "Получено"
+    },
+    "quickNav": {
+      "invoices": {
+        "label": "Счета",
+        "desc": "Создание и управление"
+      },
+      "payments": {
+        "label": "Платежи",
+        "desc": "Отслеживание сборов"
+      },
+      "deposits": {
+        "label": "Депозиты",
+        "desc": "Гарантийные депозиты"
+      },
+      "statements": {
+        "label": "Выписки",
+        "desc": "История по счёту"
+      },
+      "analytics": {
+        "label": "Аналитика",
+        "desc": "Графики и тренды"
+      },
+      "revenue": {
+        "label": "Доход",
+        "desc": "График признания дохода"
+      }
+    },
+    "invoiceStatusChart": {
+      "title": "Распределение по статусам",
+      "totalCount": "Всего: {{count}}",
+      "empty": "Нет счетов"
+    },
+    "recentTransactions": {
+      "recentInvoices": "Последние счета",
+      "recentPayments": "Последние платежи",
+      "viewAll": "Показать все",
+      "noInvoicesYet": "Пока нет счетов",
+      "noPaymentsYet": "Пока нет платежей"
+    },
+    "revenueChart": {
+      "title": "Динамика дохода",
+      "subtitle": "Последние 6 месяцев ({{currency}})",
+      "empty": "Данных о доходе пока нет"
+    }
+  },
+  "billing": {
+    "common": {
+      "refresh": "Обновить",
+      "markOverdue": "Отметить как просроченные",
+      "markOverdueSuccess": "Отмечено просроченных счетов: {{count}}",
+      "markOverdueError": "Не удалось отметить просроченные счета"
+    },
+    "dashboard": {
+      "title": "Биллинг и платежи",
+      "subtitle": "Финансовый обзор и быстрые действия",
+      "quickAccess": "Быстрый доступ",
+      "loadError": "Не удалось загрузить сводку по биллингу."
+    },
+    "finance": {
+      "title": "Финансовая аналитика",
+      "subtitle": "Динамика доходов, дебиторская задолженность и контроль сборов",
+      "loadError": "Не удалось загрузить финансовые данные."
+    },
+    "revenue": {
+      "title": "Признание дохода",
+      "entriesCount": "Записей: {{count}}",
+      "resultsCount": "{{count}} результатов",
+      "loadError": "Не удалось загрузить записи признания дохода.",
+      "actionError": "Действие не выполнено.",
+      "empty": "Нет записей признания дохода",
+      "recognize": "Признать",
+      "reverse": "Сторнировать",
+      "paginationInfo": "Страница {{page}} из {{pages}} (всего {{total}})",
+      "columns": {
+        "number": "№ REV",
+        "period": "Период"
+      },
+      "statusOptions": {
+        "all": "Все статусы",
+        "scheduled": "Запланировано",
+        "recognized": "Признано",
+        "reversed": "Сторнировано"
+      },
+      "typeOptions": {
+        "all": "Все типы",
+        "rentalIncome": "Доход от аренды",
+        "serviceFee": "Плата за сервис",
+        "penaltyFee": "Штраф",
+        "damageRecovery": "Возмещение ущерба",
+        "depositForfeiture": "Удержание депозита"
+      },
+      "typeLabels": {
+        "rentalIncome": "Доход от аренды",
+        "serviceFee": "Плата за сервис",
+        "penaltyFee": "Штраф",
+        "damageRecovery": "Возмещение ущерба",
+        "depositForfeiture": "Удержание депозита"
+      }
+    },
+    "statement": {
+      "title": "Выписка по счёту",
+      "subtitle": "Вся история по счетам с текущим балансом",
+      "loadError": "Не удалось загрузить данные выписки.",
+      "totalCharges": "Начислено всего",
+      "totalPayments": "Оплачено всего",
+      "outstandingBalance": "Непогашенный остаток",
+      "searchPlaceholder": "Поиск счетов...",
+      "entriesCount": "Записей: {{count}}",
+      "loading": "Загрузка выписки...",
+      "noEntries": "Нет записей в выписке",
+      "emptySub": "Счета, соответствующие вашему запросу, не найдены",
+      "columns": {
+        "invoiceNumber": "№ счёта",
+        "charges": "Начислено",
+        "payments": "Оплачено",
+        "balance": "Баланс"
+      }
+    },
+    "aging": {
+      "title": "Просроченная дебиторская задолженность",
+      "buckets": {
+        "current": "Текущая",
+        "days1to30": "1–30 дней",
+        "days31to60": "31–60 дней",
+        "days61to90": "61–90 дней",
+        "days90plus": "90+ дней"
+      }
+    },
+    "revenueChart": {
+      "title": "Динамика дохода (последние 6 месяцев)",
+      "empty": "Нет доступных данных",
+      "invoiced": "Выставлено",
+      "paid": "Оплачено",
+      "invoicedTooltip": "Выставлено: {{amount}}",
+      "paidTooltip": "Оплачено: {{amount}}"
+    },
+    "payment": {
+      "status": {
+        "pending": "Ожидание",
+        "confirmed": "Подтверждён",
+        "rejected": "Отклонён",
+        "refunded": "Возвращён"
+      },
+      "method": {
+        "cash": "Наличные",
+        "bank_transfer": "Банковский перевод",
+        "check": "Чек",
+        "credit_card": "Банковская карта",
+        "mobile_payment": "Мобильный платёж",
+        "mobile_paymentShort": "Мобильный",
+        "other": "Другое"
+      },
+      "statusFilter": {
+        "all": "Все статусы"
+      },
+      "methodFilter": {
+        "all": "Все способы"
+      },
+      "fields": {
+        "method": "Способ",
+        "paymentDate": "Дата платежа",
+        "received": "Получено",
+        "reference": "Референс",
+        "createdBy": "Создал",
+        "confirmedAt": "Подтверждён",
+        "confirmedBy": "Подтвердил",
+        "contract": "Договор"
+      },
+      "table": {
+        "number": "№ платежа",
+        "customer": "Клиент"
+      },
+      "list": {
+        "title": "Платежи",
+        "subtitle": "Платежей: {{count}}",
+        "resultsCount": "{{count}} результатов"
+      },
+      "pagination": {
+        "pageOf": "Страница {{page}} из {{pages}} (всего {{total}})"
+      },
+      "searchPlaceholder": "Поиск по платежу / референсу...",
+      "empty": "Платежи не найдены",
+      "notFound": "Платёж не найден",
+      "actions": {
+        "reject": "Отклонить",
+        "allocateToInvoice": "Отнести на счёт"
+      },
+      "toast": {
+        "confirmed": "Платёж подтверждён",
+        "rejected": "Платёж отклонён",
+        "allocated": "Платёж отнесён на счёт",
+        "actionFailed": "Ошибка: {{action}}",
+        "loadFailed": "Не удалось загрузить платёж.",
+        "loadPaymentsFailed": "Не удалось загрузить платежи.",
+        "loadInvoicesFailed": "Не удалось загрузить счета"
+      },
+      "allocate": {
+        "title": "Отнести платёж на счёт",
+        "invoiceLabel": "Счёт",
+        "selectPlaceholder": "Выберите счёт...",
+        "balance": "Баланс",
+        "amountPlaceholder": "0.00",
+        "submit": "Отнести"
+      },
+      "summary": {
+        "title": "Платежи",
+        "transactions": "Транзакции"
+      }
+    },
+    "invoice": {
+      "status": {
+        "draft": "Черновик",
+        "issued": "Выставлен",
+        "sent": "Отправлен",
+        "partially_paid": "Частично оплачен",
+        "paid": "Оплачен",
+        "overdue": "Просрочен",
+        "cancelled": "Отменён",
+        "voided": "Аннулирован"
+      },
+      "summary": {
+        "title": "Счета",
+        "outstanding": "Задолженность",
+        "overdue": "Просрочено",
+        "count": "Количество"
+      },
+      "filter": {
+        "all": "Все статусы",
+        "partially_paid": "Частично оплачен"
+      },
+      "list": {
+        "title": "Счета",
+        "subtitle": "Счетов: {{count}}",
+        "newInvoice": "Новый счёт",
+        "loadError": "Не удалось загрузить счета.",
+        "searchPlaceholder": "Поиск по номеру счёта...",
+        "resultsCount": "{{count}} результатов",
+        "empty": "Счета не найдены"
+      },
+      "table": {
+        "number": "№ счёта",
+        "customer": "Клиент",
+        "balance": "Баланс"
+      },
+      "meta": {
+        "issueDate": "Дата выставления",
+        "dueDate": "Срок оплаты",
+        "paidDate": "Дата оплаты",
+        "contract": "Договор",
+        "referenceType": "Тип счёта",
+        "period": "Период",
+        "createdBy": "Создал"
+      },
+      "referenceType": {
+        "sales": "Продажа",
+        "workOrder": "Заказ-наряд",
+        "rental": "Аренда"
+      },
+      "form": {
+        "title": "Новый счёт",
+        "backToList": "Назад к счетам",
+        "customer": "Клиент",
+        "customerSearchPlaceholder": "Поиск по имени, компании...",
+        "noCustomersFound": "Клиенты не найдены",
+        "referenceType": "Тип счёта",
+        "taxRate": "Налоговая ставка (%)",
+        "description": "Описание",
+        "descriptionPlaceholder": "Описание товара или услуги",
+        "unitPrice": "Цена за единицу",
+        "lineTotal": "Сумма по строке",
+        "addRow": "Добавить строку",
+        "subtotal": "Промежуточный итог",
+        "grandTotal": "Итого к оплате",
+        "creating": "Создание...",
+        "createInvoice": "Создать счёт",
+        "created": "Счёт {{number}} создан.",
+        "createFailed": "Не удалось создать счёт.",
+        "errors": {
+          "customerRequired": "Пожалуйста, выберите клиента.",
+          "itemRequired": "Требуется хотя бы одна позиция с описанием."
+        },
+        "itemCode": "Код товара",
+        "itemCodePlaceholder": "напр. SKU-1000",
+        "unit": "Ед. изм.",
+        "currency": "Валюта",
+        "exchangeRate": "Обменный курс",
+        "bankDetails": "Банковские реквизиты",
+        "bankDetailsPlaceholder": "Название банка, имя владельца, номер счёта, SWIFT/BIC...",
+        "grandTotalInLAK": "Итого в LAK (базовая валюта)",
+        "previewTitle": "Предпросмотр документа",
+        "previewPendingNumber": "(Ожидается)"
+      },
+      "pagination": {
+        "info": "Страница {{page}} из {{pages}} (всего {{total}})"
+      },
+      "actions": {
+        "issue": "Выставить",
+        "send": "Отправить",
+        "void": "Аннулировать"
+      },
+      "amountSummary": {
+        "tax": "Налог ({{rate}}%)",
+        "discount": "Скидка",
+        "paid": "Оплачено",
+        "balanceDue": "Остаток к оплате"
+      },
+      "detail": {
+        "loadError": "Не удалось загрузить счёт.",
+        "notFound": "Счёт не найден",
+        "actionFailed": "Ошибка: {{action}}",
+        "internalNotes": "Внутренние заметки",
+        "cancellationReason": "Причина аннулирования"
+      },
+      "lineItems": {
+        "title": "Позиции",
+        "number": "№",
+        "qty": "Кол-во",
+        "rate": "Ставка",
+        "tax": "Налог",
+        "empty": "Нет позиций"
+      },
+      "allocations": {
+        "title": "Распределение платежей",
+        "payment": "Платёж",
+        "paymentLabel": "Платёж №{{id}}"
+      },
+      "modal": {
+        "cancel": {
+          "title": "Аннулировать счёт",
+          "reasonLabel": "Причина аннулирования",
+          "reasonPlaceholder": "Укажите причину..."
+        }
+      },
+      "toast": {
+        "issued": "Счёт выставлен",
+        "sent": "Счёт отправлен",
+        "voided": "Счёт аннулирован",
+        "cancelled": "Счёт отменён"
+      },
+      "card": {
+        "due": "Срок оплаты: {{date}}",
+        "balance": "Баланс: {{amount}} {{currency}}"
+      },
+      "vehicleInfo": {
+        "title": "Информация о транспортном средстве",
+        "make": "Марка",
+        "model": "Модель",
+        "vin": "VIN",
+        "engineNo": "Номер двигателя",
+        "regNo": "Регистрационный номер",
+        "jobNumber": "Номер заказа"
+      }
+    },
+    "deposit": {
+      "status": {
+        "all": "Все статусы",
+        "pending": "Ожидание",
+        "received": "Получен",
+        "partiallyRefunded": "Частично возвращён",
+        "refunded": "Возвращён",
+        "forfeited": "Удержан",
+        "applied": "Зачтён"
+      },
+      "type": {
+        "all": "Все типы",
+        "security": "Обеспечительный",
+        "advance": "Аванс",
+        "guarantee": "Гарантийный"
+      },
+      "list": {
+        "title": "Депозиты",
+        "subtitle": "Депозитов: {{count}}",
+        "loadError": "Не удалось загрузить депозиты.",
+        "resultsCount": "{{count}} результатов",
+        "empty": "Депозиты не найдены"
+      },
+      "table": {
+        "number": "№ депозита",
+        "customer": "Клиент",
+        "contract": "Договор",
+        "received": "Получено"
+      },
+      "pagination": {
+        "info": "Страница {{page}} из {{pages}} (всего {{total}})"
+      },
+      "actions": {
+        "markReceived": "Отметить как полученный",
+        "refund": "Вернуть",
+        "forfeit": "Удержать",
+        "applyToInvoice": "Зачесть в счёт"
+      },
+      "modal": {
+        "markReceived": {
+          "title": "Отметить депозит как полученный",
+          "depositLabel": "Депозит",
+          "receivedDateLabel": "Дата получения",
+          "confirm": "Подтвердить получение"
+        },
+        "refund": {
+          "title": "Возврат депозита",
+          "amountLabel": "Сумма возврата (макс.: {{max}})",
+          "dateLabel": "Дата возврата"
+        },
+        "forfeit": {
+          "title": "Удержание депозита",
+          "amountLabel": "Сумма удержания (макс.: {{max}})",
+          "reasonLabel": "Причина"
+        },
+        "apply": {
+          "title": "Зачесть депозит в счёт",
+          "invoiceLabel": "Счёт",
+          "selectInvoicePlaceholder": "Выберите счёт...",
+          "invoiceOption": "{{number}} — Баланс: {{balance}} {{currency}}",
+          "amountLabel": "Сумма (макс.: {{max}})",
+          "confirm": "Зачесть"
+        }
+      },
+      "summary": {
+        "amount": "Сумма депозита",
+        "refunded": "Возвращено",
+        "forfeited": "Удержано",
+        "applied": "Зачтено",
+        "remaining": "Остаток"
+      },
+      "summaryCard": {
+        "title": "Депозиты",
+        "active": "Активные"
+      },
+      "detail": {
+        "loadError": "Не удалось загрузить депозит.",
+        "notFound": "Не найдено",
+        "actionFailed": "Действие не выполнено.",
+        "invoicesLoadError": "Не удалось загрузить счета.",
+        "receivedLabel": "Получено: {{date}}",
+        "refundDateLabel": "Дата возврата: {{date}}",
+        "contractLabel": "Договор:",
+        "notesLabel": "Заметки:"
+      },
+      "toast": {
+        "received": "Депозит отмечен как полученный",
+        "receiveError": "Не удалось зафиксировать получение депозита"
+      }
+    }
+  },
+  "maintenance": {
+    "overdue": "Просрочено",
+    "actions": {
+      "refresh": "Обновить"
+    },
+    "status": {
+      "scheduled": "Запланировано",
+      "due": "Требуется",
+      "inProgress": "В процессе",
+      "verified": "Проверено"
+    },
+    "type": {
+      "preventive": "Профилактическое",
+      "corrective": "Восстановительное",
+      "emergency": "Аварийное",
+      "inspection": "Осмотр",
+      "install": "Монтаж"
+    },
+    "priority": {
+      "low": "Низкий",
+      "normal": "Обычный",
+      "high": "Высокий",
+      "critical": "Критический"
+    },
+    "dashboard": {
+      "title": "Обслуживание и ТО",
+      "subtitle": "Панель планового технического обслуживания",
+      "loadError": "Не удалось загрузить панель.",
+      "pmSchedulesButton": "Графики ТО",
+      "workOrdersButton": "Заказы-наряды",
+      "cards": {
+        "pmPlans": "Планы ТО",
+        "activeSchedules": "Активные графики",
+        "completedThisMonth": "Завершено (за месяц)",
+        "costThisMonth": "Затраты (за месяц)"
+      }
+    },
+    "schedule": {
+      "title": "Графики ТО",
+      "activeSchedules": "Активных графиков: {{count}}",
+      "loadError": "Не удалось загрузить графики.",
+      "emptyState": "Нет активных графиков ТО. Создайте план обслуживания и назначьте его на технику.",
+      "nextDue": "Следующее ТО",
+      "interval": "Интервал",
+      "serviced": "Обслужено"
+    },
+    "workOrders": {
+      "list": {
+        "title": "Заказы-наряды",
+        "subtitle": "Заказов-нарядов: {{count}}",
+        "newWorkOrder": "Новый заказ-наряд",
+        "loadError": "Не удалось загрузить заказы-наряды.",
+        "searchPlaceholder": "Поиск по номеру, названию...",
+        "resultsCount": "{{count}} результатов",
+        "allStatuses": "Все статусы",
+        "allTypes": "Все типы",
+        "columns": {
+          "workOrder": "Заказ-наряд",
+          "priority": "Приоритет"
+        },
+        "paginationInfo": "Страница {{page}} из {{pages}} (всего {{total}})"
+      },
+      "form": {
+        "title": "Новый заказ-наряд",
+        "backToList": "Назад к заказам-нарядам",
+        "workOrderTitle": "Название",
+        "workOrderTitlePlaceholder": "напр. Ежемесячное ТО",
+        "asset": "Актив",
+        "assetSearchPlaceholder": "Поиск по серийному номеру или названию...",
+        "noAssetsFound": "Активы не найдены",
+        "workType": "Тип работ",
+        "assignee": "Исполнитель",
+        "unassigned": "— Не назначен —",
+        "schedule": "Дата и время выполнения",
+        "creating": "Создание...",
+        "createWorkOrder": "Создать заказ-наряд",
+        "created": "Заказ-наряд {{number}} создан.",
+        "createFailed": "Не удалось создать заказ-наряд.",
+        "errors": {
+          "titleRequired": "Название обязательно.",
+          "assetRequired": "Пожалуйста, выберите актив.",
+          "scheduleRequired": "Дата и время выполнения обязательны."
+        }
+      },
+      "detail": {
+        "notFound": "Заказ-наряд не найден.",
+        "backToList": "Назад к заказам-нарядам",
+        "startWork": "Начать работу",
+        "completeAction": "Завершить",
+        "verify": "Проверить",
+        "addCost": "Добавить затраты",
+        "toastStarted": "Работа начата",
+        "actionFailed": "Ошибка: {{label}}",
+        "fields": {
+          "equipment": "Техника",
+          "technician": "Техник",
+          "pmPlan": "План ТО",
+          "hourMeter": "Счётчик часов",
+          "started": "Начато",
+          "verifiedBy": "Проверил",
+          "created": "Создано",
+          "estHours": "Плановые часы",
+          "actualHours": "Фактические часы",
+          "actualCost": "Фактические затраты"
+        },
+        "findings": "Обнаруженные неисправности",
+        "resolution": "Выполненные работы",
+        "cancellationReason": "Причина отмены",
+        "costBreakdown": "Разбивка затрат ({{count}})",
+        "rate": "Ставка",
+        "startModal": {
+          "title": "Начать заказ-наряд",
+          "hourMeterReading": "Показание счётчика часов",
+          "starting": "Запуск...",
+          "start": "Начать"
+        },
+        "completeModal": {
+          "title": "Завершить заказ-наряд",
+          "findingsPlaceholder": "Что было обнаружено при осмотре...",
+          "resolutionPlaceholder": "Какие работы были выполнены...",
+          "completing": "Завершение..."
+        },
+        "costModal": {
+          "title": "Добавить статью затрат",
+          "descRateRequired": "Требуется описание и ставка.",
+          "costAdded": "Затраты добавлены.",
+          "failed": "Ошибка.",
+          "costType": "Тип затрат",
+          "typeParts": "Запчасти",
+          "typeLabor": "Работа",
+          "typeExternalService": "Внешний сервис",
+          "typeOther": "Другое",
+          "unitRate": "Ставка за единицу",
+          "adding": "Добавление..."
+        },
+        "cancelReasonDefault": "Отменено пользователем"
+      }
+    }
+  },
+  "activity": {
+    "title": "Журнал активности",
+    "eventsLoaded": "Загружено событий: {{count}}",
+    "refresh": "Обновить",
+    "filters": {
+      "searchPlaceholder": "Поиск по пользователю или действию…",
+      "action": "Действие",
+      "allActions": "Все действия",
+      "entityType": "Сущность",
+      "allEntities": "Все сущности",
+      "dateFrom": "С",
+      "dateTo": "По"
+    },
+    "entity": {
+      "user": "Пользователь",
+      "customer": "Клиент",
+      "lead": "Лид",
+      "note": "Заметка",
+      "invoice": "Счёт",
+      "payment": "Платёж",
+      "deposit": "Депозит",
+      "revenue_recognition": "Признание дохода",
+      "project": "Проект",
+      "project_milestone": "Этап проекта",
+      "setting": "Настройка",
+      "inventory_import": "Импорт складских данных",
+      "notification_preference": "Настройка уведомлений"
+    },
+    "table": {
+      "timestamp": "Время",
+      "user": "Пользователь",
+      "action": "Действие",
+      "entity": "Сущность",
+      "id": "ID",
+      "details": "Детали",
+      "noActivityFound": "Активность не найдена",
+      "noActivityYet": "Активность появится здесь после того, как пользователи начнут работать с системой.",
+      "ipAddress": "IP-адрес"
+    },
+    "details": {
+      "group": "Группа: {{group}}",
+      "eventInfo": "Информация о событии",
+      "systemOrDeletedUser": "Система / Удалённый пользователь",
+      "title": "Детали",
+      "noneRecorded": "Дополнительные детали не зафиксированы.",
+      "fieldsModified": "Изменённые поля:",
+      "drawerTitle": "Детали активности",
+      "ipNotTracked": "Не отслеживается"
+    },
+    "pagination": {
+      "showing": "Показано {{start}}–{{end}} из {{total}}"
+    },
+    "loadError": "Не удалось загрузить журнал активности.",
+    "action": {
+      "user_login": "Вход",
+      "user_logout": "Выход",
+      "user_created": "Пользователь создан",
+      "user_updated": "Пользователь обновлён",
+      "user_deleted": "Пользователь удалён",
+      "customer_created": "Клиент создан",
+      "customer_updated": "Клиент обновлён",
+      "customer_deleted": "Клиент удалён",
+      "customer_status_changed": "Статус изменён",
+      "lead_created": "Лид создан",
+      "lead_updated": "Лид обновлён",
+      "lead_deleted": "Лид удалён",
+      "lead_status_changed": "Статус изменён",
+      "lead_note_added": "Заметка добавлена",
+      "lead_note_deleted": "Заметка удалена",
+      "catalog_product_created": "Товар создан",
+      "catalog_product_updated": "Товар обновлён",
+      "catalog_product_deleted": "Товар удалён",
+      "catalog_brand_created": "Бренд создан",
+      "catalog_brand_updated": "Бренд обновлён",
+      "catalog_brand_deleted": "Бренд удалён",
+      "catalog_category_created": "Категория создана",
+      "catalog_category_updated": "Категория обновлена",
+      "catalog_category_deleted": "Категория удалена",
+      "catalog_import_previewed": "Предпросмотр импорта",
+      "catalog_import_executed": "Импорт выполнен",
+      "forklift_created": "Погрузчик зарегистрирован",
+      "forklift_updated": "Погрузчик обновлён",
+      "forklift_deleted": "Погрузчик удалён",
+      "forklift_status_changed": "Статус изменён",
+      "quotation_created": "Предложение создано",
+      "quotation_updated": "Предложение обновлено",
+      "quotation_deleted": "Предложение удалено",
+      "quotation_submitted": "Предложение отправлено на рассмотрение",
+      "quotation_approved": "Предложение утверждено",
+      "quotation_revision_requested": "Запрошена доработка",
+      "quotation_sent": "Предложение отправлено",
+      "quotation_accepted": "Предложение принято",
+      "quotation_declined": "Предложение отклонено",
+      "quotation_converted": "Предложение конвертировано",
+      "quotation_cancelled": "Предложение отменено",
+      "quotation_reactivated": "Предложение возобновлено",
+      "rental_contract_created": "Договор создан",
+      "rental_contract_updated": "Договор обновлён",
+      "rental_contract_deleted": "Договор удалён",
+      "rental_contract_submitted": "Договор отправлен на утверждение",
+      "rental_contract_approved": "Договор утверждён",
+      "rental_contract_revision": "Запрошена доработка",
+      "rental_contract_activated": "Договор активирован",
+      "rental_contract_cancelled": "Договор отменён",
+      "rental_contract_closed": "Договор закрыт",
+      "rental_return_requested": "Возврат запрошен",
+      "rental_return_picked_up": "Оборудование забрано",
+      "rental_return_received": "Возврат получен",
+      "rental_return_completed": "Возврат завершён",
+      "rental_damage_assessed": "Ущерб оценён",
+      "rental_damage_disputed": "Ущерб оспорен",
+      "rental_damage_resolved": "Ущерб урегулирован",
+      "rental_extension_requested": "Продление запрошено",
+      "rental_extension_approved": "Продление утверждено",
+      "rental_extension_rejected": "Продление отклонено",
+      "rental_billing_created": "Начисление создано",
+      "invoice_created": "Счёт создан",
+      "invoice_updated": "Счёт обновлён",
+      "invoice_issued": "Счёт выставлен",
+      "invoice_sent": "Счёт отправлен",
+      "invoice_cancelled": "Счёт отменён",
+      "invoice_voided": "Счёт аннулирован",
+      "payment_recorded": "Платёж зафиксирован",
+      "payment_confirmed": "Платёж подтверждён",
+      "payment_rejected": "Платёж отклонён",
+      "payment_allocated": "Платёж отнесён на счёт",
+      "deposit_created": "Депозит создан",
+      "deposit_received": "Депозит получен",
+      "deposit_refunded": "Депозит возвращён",
+      "deposit_forfeited": "Депозит удержан",
+      "deposit_applied": "Депозит зачтён",
+      "revenue_recognized": "Доход признан",
+      "revenue_reversed": "Доход сторнирован",
+      "project_created": "Проект создан",
+      "project_updated": "Проект обновлён",
+      "project_deleted": "Проект удалён",
+      "project_milestone_status_changed": "Статус этапа изменён",
+      "setting_updated": "Настройка обновлена",
+      "inventory_import_executed": "Импорт складских данных выполнен",
+      "notification_preference_created": "Подписка на оповещения оформлена",
+      "notification_preference_updated": "Настройка оповещений изменена",
+      "notification_preference_deleted": "Подписка на оповещения отменена"
+    },
+    "group": {
+      "user": "Пользователи",
+      "customer": "Клиенты",
+      "lead": "Лиды",
+      "billing": "Биллинг",
+      "project": "Проекты",
+      "settings": "Настройки",
+      "inventory": "Склад",
+      "notifications": "Уведомления"
+    }
+  },
+  "executive": {
+    "title": "Панель для руководства",
+    "subtitle": "Показатели эффективности и аналитика по всему предприятию",
+    "refresh": "Обновить",
+    "loadFailed": "Не удалось загрузить данные для руководства.",
+    "kpi": {
+      "totalRevenue": "Общая выручка",
+      "invoicesCount": "Счетов: {{count}}",
+      "collectionRate": "Коэффициент собираемости",
+      "collected": "Собрано: {{amount}}",
+      "fleetUtilization": "Использование парка",
+      "rentedOfTotal": "{{rented}} в аренде / {{total}} всего",
+      "customers": "Клиенты",
+      "activeCount": "Активных: {{count}}",
+      "inventoryValue": "Стоимость запасов",
+      "partsCount": "Позиций: {{count}}",
+      "conversionRate": "Конверсия",
+      "winRate": "Успешность: {{rate}}"
+    },
+    "chart": {
+      "revenueTrend": "Динамика дохода",
+      "noRevenueData": "Нет данных о доходе",
+      "invoiced": "Выставлено",
+      "collected": "Собрано",
+      "fleetStatus": "Статус парка",
+      "noFleetData": "Нет данных о парке",
+      "leadPipeline": "Воронка лидов (12 мес.)",
+      "noLeadData": "Нет данных о лидах",
+      "newLeads": "Новые лиды",
+      "customerGrowth": "Рост клиентской базы (12 мес.)",
+      "noCustomerData": "Нет данных о клиентах",
+      "newCustomers": "Новые клиенты",
+      "months": {
+        "jan": "Янв",
+        "feb": "Февр",
+        "mar": "Март",
+        "apr": "Апр",
+        "may": "Май",
+        "jun": "Июнь",
+        "jul": "Июль",
+        "aug": "Авг",
+        "sep": "Сент",
+        "oct": "Окт",
+        "nov": "Нояб",
+        "dec": "Дек"
+      }
+    },
+    "export": {
+      "exportExcel": "Экспорт в Excel",
+      "customers": "Клиенты",
+      "leads": "Лиды",
+      "sales": "Продажи",
+      "downloaded": "Отчёт «{{report}}» скачан",
+      "exportFailed": "Ошибка экспорта",
+      "exportReports": "Экспорт отчётов",
+      "customersExcel": "Клиенты (Excel)",
+      "leadsExcel": "Лиды (Excel)",
+      "salesExcel": "Продажи (Excel)",
+      "customersCsv": "Клиенты (CSV)",
+      "leadsCsv": "Лиды (CSV)",
+      "salesCsv": "Продажи (CSV)"
+    }
+  },
+  "catalog": {
+    "saveFailed": "Не удалось сохранить.",
+    "saveChanges": "Сохранить изменения",
+    "resultsCount": "{{count}} результатов",
+    "pageOf": "Страница {{page}} из {{pages}} (всего {{total}})",
+    "viewAll": "Показать все →",
+    "browseAllProducts": "Все товары →",
+    "hero": {
+      "title": "Каталог продукции",
+      "subtitle": "Погрузчики · Складское оборудование · Запчасти · Навесное оборудование",
+      "searchPlaceholder": "Поиск среди {{count}} товаров по названию, SKU, модели..."
+    },
+    "categorySlider": {
+      "title": "Просмотр по категориям"
+    },
+    "brandShowcase": {
+      "title": "Покупки по брендам"
+    },
+    "megaMenu": {
+      "allCategories": "Все категории"
+    },
+    "brands": {
+      "title": "Бренды",
+      "subtitle": "Брендов: {{count}}",
+      "newBrand": "Новый бренд",
+      "searchPlaceholder": "Поиск брендов…",
+      "editTitle": "Изменить бренд",
+      "newTitle": "Новый бренд",
+      "table": {
+        "brand": "Бренд",
+        "country": "Страна",
+        "role": "Роль"
+      },
+      "empty": {
+        "title": "Бренды не найдены",
+        "createHint": "Создайте свой первый бренд, чтобы начать."
+      },
+      "roles": {
+        "primary": "Основной",
+        "partsOnly": "Только запчасти",
+        "both": "Оба"
+      },
+      "form": {
+        "nameRequired": "Название бренда обязательно.",
+        "namePlaceholder": "Название бренда",
+        "countryLabel": "Страна",
+        "countryPlaceholder": "напр. Япония",
+        "roleLabel": "Роль",
+        "websiteLabel": "Веб-сайт",
+        "websitePlaceholder": "https://…",
+        "createBrand": "Создать бренд"
+      },
+      "deleteDialog": {
+        "title": "Удалить бренд",
+        "message": "Удалить бренд «{{name}}»? У товаров, ссылающихся на этот бренд, поле бренда будет очищено."
+      },
+      "toast": {
+        "loadError": "Не удалось загрузить бренды.",
+        "createSuccess": "Бренд успешно создан.",
+        "createError": "Не удалось создать бренд.",
+        "updateSuccess": "Бренд успешно обновлён.",
+        "updateError": "Не удалось обновить бренд.",
+        "deleteSuccess": "Бренд удалён.",
+        "deleteError": "Не удалось удалить бренд."
+      }
+    },
+    "categories": {
+      "title": "Категории",
+      "subtitle": "Категорий: {{count}} (дерево из 3 уровней)",
+      "newCategory": "Новая категория",
+      "editTitle": "Изменить категорию",
+      "newTitle": "Новая категория",
+      "table": {
+        "category": "Категория",
+        "level": "Уровень",
+        "children": "Подкатегории"
+      },
+      "empty": {
+        "title": "Категории не найдены",
+        "createHint": "Создайте свою первую категорию, чтобы начать."
+      },
+      "types": {
+        "division": "Раздел",
+        "category": "Категория",
+        "subCategory": "Подкатегория"
+      },
+      "levelLine": "У{{level}} — {{type}}",
+      "form": {
+        "nameRequired": "Название на английском обязательно.",
+        "nameEnLabel": "Название (англ.)",
+        "namePlaceholder": "Название категории",
+        "nameLoLabel": "Название (лаосский)",
+        "parentLabel": "Родительская категория",
+        "topLevelOption": "— Верхний уровень (раздел) —",
+        "createCategory": "Создать категорию"
+      },
+      "deleteDialog": {
+        "title": "Удалить категорию",
+        "message": "Удалить «{{name}}»? Действие завершится ошибкой, если у категории есть подкатегории или привязанные товары."
+      },
+      "toast": {
+        "loadError": "Не удалось загрузить категории.",
+        "createSuccess": "Категория успешно создана.",
+        "createError": "Не удалось создать категорию.",
+        "updateSuccess": "Категория успешно обновлена.",
+        "updateError": "Не удалось обновить категорию.",
+        "deleteSuccess": "Категория удалена.",
+        "deleteError": "Не удалось удалить категорию."
+      }
+    },
+    "products": {
+      "filterAllTypes": "Все типы",
+      "forSale": "На продажу",
+      "forRental": "В аренду",
+      "featured": "Рекомендуемые",
+      "refresh": "Обновить",
+      "newProduct": "Новый товар",
+      "productCount": "Товаров: {{count}}",
+      "pillSearch": "Поиск: {{query}}",
+      "pillBrand": "Бренд: {{name}}",
+      "pillCategory": "Категория: {{name}}",
+      "editTitle": "Изменить товар",
+      "newTitle": "Новый товар",
+      "skuPrefix": "SKU: {{sku}}",
+      "empty": {
+        "title": "Товары не найдены",
+        "hint": "Попробуйте изменить фильтры или создать новый товар."
+      },
+      "table": {
+        "product": "Товар",
+        "sku": "SKU",
+        "brand": "Бренд"
+      },
+      "badges": {
+        "sale": "Продажа",
+        "rental": "Аренда",
+        "featured": "Рекомендуем"
+      },
+      "deleteDialog": {
+        "title": "Удалить товар",
+        "message": "Удалить «{{name}}»? Это действие нельзя отменить."
+      },
+      "form": {
+        "nameRequired": "Название товара обязательно.",
+        "saveFailed": "Не удалось сохранить. Попробуйте снова.",
+        "nameEnLabel": "Название (англ.)",
+        "nameEnPlaceholder": "Название товара на английском",
+        "nameLoLabel": "Название (лаосский)",
+        "skuPlaceholder": "Генерируется автоматически, если не заполнено",
+        "modelNumberLabel": "Номер модели",
+        "modelNumberPlaceholder": "напр. EFG115",
+        "brandLabel": "Бренд",
+        "noBrandOption": "— Без бренда —",
+        "noCategoryOption": "— Без категории —",
+        "descriptionPlaceholder": "Описание товара…",
+        "attributesLabel": "Характеристики",
+        "usedAvailable": "Доступен Б/У вариант",
+        "serviceItem": "Услуга",
+        "createProduct": "Создать товар"
+      },
+      "toast": {
+        "loadError": "Не удалось загрузить товары.",
+        "createSuccess": "Товар успешно создан.",
+        "createError": "Не удалось создать товар.",
+        "updateSuccess": "Товар успешно обновлён.",
+        "updateError": "Не удалось обновить товар.",
+        "deleteSuccess": "Товар удалён.",
+        "deleteError": "Не удалось удалить товар."
+      }
+    },
+    "productDetail": {
+      "loadError": "Товар не найден или произошла ошибка загрузки.",
+      "backToCatalog": "Назад в каталог",
+      "notFound": "Товар не найден.",
+      "model": "Модель",
+      "compatibleWith": "Совместим с",
+      "specifications": "Характеристики"
+    },
+    "import": {
+      "title": "Импорт товаров",
+      "subtitle": "Загрузите файл Excel для массового импорта товаров, брендов и категорий.",
+      "dropzoneText": "Перетащите файл Excel сюда или нажмите для выбора",
+      "dropzoneHint": "Поддерживаются файлы .xlsx и .xls из каталога продукции DK LAO",
+      "clear": "Очистить",
+      "supportedSheetsLabel": "Поддерживаемые листы:",
+      "supportedSheetsList": "Jungheinrich Forklift, Mitsubishi Forklift, Accessories (ອຸປະກອນ), Warehouse (ສາງ), Vacuum (ດູດຝຸ່ນ), Floor Cleaner (ເຊັດຄັດ), Brands (ບໍລິການ).",
+      "autoDetectHint": "Модуль импорта автоматически определяет листы по названию на английском и лаосском языках.",
+      "importButton": "Загрузить и импортировать",
+      "importing": "Импорт…",
+      "uploadingHint": "Для больших файлов это может занять несколько секунд.",
+      "uploadFailed": "Ошибка импорта. Попробуйте снова.",
+      "successBanner": "Импорт успешно завершён",
+      "partialBanner": "Импорт завершён с ошибками",
+      "imported": "Импортировано",
+      "errors": "Ошибки",
+      "failedRows": "Строки с ошибками",
+      "importAnother": "Импортировать ещё один файл",
+      "viewCatalog": "Перейти в каталог",
+      "successToast": "Импорт завершён: товаров импортировано — {{count}}.",
+      "errorToast": "Импорт завершён с ошибками: {{count}}.",
+      "table": {
+        "rowNum": "№",
+        "error": "Ошибка",
+        "sheet": "Лист"
+      }
+    }
+  },
+  "quotations": {
+    "status": {
+      "draft": "Черновик",
+      "underReview": "На рассмотрении",
+      "approved": "Утверждено",
+      "revision": "На доработке",
+      "sent": "Отправлено",
+      "accepted": "Принято",
+      "rejected": "Отклонено",
+      "expired": "Истёк срок",
+      "converted": "Конвертировано",
+      "cancelled": "Отменено"
+    },
+    "type": {
+      "rental": "Аренда",
+      "sales": "Продажа",
+      "service": "Сервис",
+      "spareParts": "Запчасти"
+    },
+    "itemType": {
+      "forkliftRental": "Аренда погрузчика",
+      "forkliftSale": "Продажа погрузчика",
+      "service": "Услуга",
+      "sparePart": "Запчасть",
+      "delivery": "Доставка",
+      "insurance": "Страхование",
+      "custom": "Произвольная позиция"
+    },
+    "list": {
+      "title": "Коммерческие предложения",
+      "totalCount": "Предложений: {{count}}",
+      "refresh": "Обновить",
+      "newQuotation": "Новое предложение",
+      "searchPlaceholder": "Поиск по номеру, названию...",
+      "allStatuses": "Все статусы",
+      "allTypes": "Все типы",
+      "colQuotation": "Предложение",
+      "colCustomer": "Клиент",
+      "colValidUntil": "Действительно до",
+      "noQuotationsFound": "Коммерческие предложения не найдены",
+      "createOrAdjust": "Создайте новое предложение или измените фильтры.",
+      "resultsCount": "{{count}} результатов",
+      "pageOf": "Страница {{page}} из {{pages}} (всего {{total}})",
+      "deleteConfirmTitle": "Удалить коммерческое предложение",
+      "deleteConfirmMessage": "Удалить «{{number}}»? Это действие нельзя отменить.",
+      "toast": {
+        "loadError": "Не удалось загрузить коммерческие предложения.",
+        "createSuccess": "Коммерческое предложение создано.",
+        "createError": "Не удалось создать коммерческое предложение.",
+        "deleteSuccess": "Коммерческое предложение удалено.",
+        "deleteError": "Не удалось удалить коммерческое предложение."
+      }
+    },
+    "form": {
+      "backToQuotations": "Назад к предложениям",
+      "newQuotation": "Новое коммерческое предложение",
+      "typeLabel": "Тип предложения",
+      "currencyLabel": "Валюта",
+      "titleLabel": "Название",
+      "titlePlaceholder": "напр. Аренда погрузчиков — Vientiane Motors",
+      "contactNameLabel": "Имя контактного лица",
+      "contactNamePlaceholder": "Г-н / Г-жа",
+      "contactEmailLabel": "Email контактного лица",
+      "contactEmailPlaceholder": "email@example.com",
+      "contactPhoneLabel": "Телефон контактного лица",
+      "contactPhonePlaceholder": "+856 20 ...",
+      "taxRateLabel": "Налоговая ставка (%)",
+      "validFromLabel": "Действительно с",
+      "validUntilLabel": "Действительно до",
+      "notesLabel": "Примечания (видны клиенту)",
+      "notesPlaceholder": "Отображается в PDF предложения...",
+      "internalNotesLabel": "Внутренние примечания",
+      "internalNotesPlaceholder": "Только для внутреннего пользования, не видно клиенту...",
+      "creating": "Создание...",
+      "createQuotation": "Создать предложение",
+      "titleRequired": "Название обязательно.",
+      "createFailed": "Не удалось создать коммерческое предложение.",
+      "createdToast": "Предложение {{number}} создано.",
+      "typeOptions": {
+        "rental": "Предложение по аренде",
+        "sales": "Предложение по продаже",
+        "service": "Предложение по сервису",
+        "spareParts": "Предложение по запчастям"
+      },
+      "vehicleInfo": {
+        "title": "Информация о транспортном средстве",
+        "make": "Марка",
+        "model": "Модель",
+        "vin": "VIN",
+        "engineNo": "Номер двигателя",
+        "regNo": "Регистрационный номер",
+        "jobNumber": "Номер заказа"
+      },
+      "exchangeRateLabel": "Обменный курс",
+      "bankDetails": "Банковские реквизиты",
+      "bankDetailsPlaceholder": "Название банка, имя владельца, номер счёта, SWIFT/BIC..."
+    },
+    "detail": {
+      "backToQuotations": "Назад к предложениям",
+      "notFoundError": "Коммерческое предложение не найдено или не удалось загрузить.",
+      "actionFailed": "Ошибка: {{action}}",
+      "rev": "Ред. {{number}}",
+      "submit": "Отправить на рассмотрение",
+      "approve": "Утвердить",
+      "requestRevision": "Запросить доработку",
+      "sendToCustomer": "Отправить клиенту",
+      "markAccepted": "Отметить принятым",
+      "markRejected": "Отметить отклонённым",
+      "convert": "Конвертировать",
+      "reactivate": "Возобновить",
+      "taxWithRate": "Налог ({{rate}}%)",
+      "discount": "Скидка",
+      "customer": "Клиент",
+      "contact": "Контакт",
+      "assignedTo": "Ответственный",
+      "validFrom": "Действительно с",
+      "validUntil": "Действительно до",
+      "convertedTo": "Конвертировано в",
+      "internalNote": "Внутренняя заметка",
+      "lineItems": "Позиции ({{count}})",
+      "addItem": "Добавить позицию",
+      "colNumber": "№",
+      "colUnitPrice": "Цена за единицу",
+      "colDiscount": "Скидка %",
+      "serialNumber": "С/Н: {{serial}}",
+      "sku": "SKU: {{sku}}",
+      "durationDays": "{{count}} дней ({{period}})",
+      "noLineItems": "Пока нет позиций.",
+      "addItemsHint": "Добавьте позиции для формирования предложения.",
+      "statusHistory": "История статусов",
+      "colFrom": "От",
+      "colTo": "До",
+      "colReason": "Причина",
+      "colBy": "Кем",
+      "approvalHistory": "История утверждений",
+      "colRev": "Ред.",
+      "colDecision": "Решение",
+      "colConditions": "Условия",
+      "toasts": {
+        "submitted": "Отправлено на рассмотрение",
+        "revisionRequested": "Запрошена доработка",
+        "sent": "Отправлено клиенту",
+        "markedAccepted": "Отмечено как принятое",
+        "markedRejected": "Отмечено как отклонённое",
+        "converted": "Конвертировано",
+        "reactivated": "Возобновлено",
+        "itemRemoved": "Позиция удалена"
+      },
+      "addItemModal": {
+        "title": "Добавить позицию",
+        "itemType": "Тип позиции",
+        "unit": "Единица",
+        "descriptionPlaceholder": "Описание позиции",
+        "unitPrice": "Цена за единицу",
+        "discountPercent": "Скидка (%)",
+        "rentalDuration": "Срок аренды (дней)",
+        "ratePeriod": "Период ставки",
+        "selectRatePeriod": "— Выбрать —",
+        "daily": "Дневная",
+        "weekly": "Недельная",
+        "monthly": "Месячная",
+        "adding": "Добавление...",
+        "descriptionRequired": "Описание обязательно.",
+        "unitPriceRequired": "Цена за единицу обязательна.",
+        "itemAdded": "Позиция добавлена.",
+        "addFailed": "Не удалось добавить позицию.",
+        "itemCode": "Код товара"
+      },
+      "revisionNeededReason": "Требуется доработка",
+      "colItemCode": "Код товара"
+    }
+  },
+  "imageUpload": {
+    "invalidFormat": "Допускаются только изображения JPG, PNG и WebP.",
+    "fileTooLarge": "Размер файла превышает лимит в {{size}} МБ.",
+    "invalidImage": "Файл не является допустимым изображением.",
+    "uploadFailed": "Ошибка загрузки. Попробуйте снова.",
+    "remove": "Удалить",
+    "uploadedSuccessfully": "Успешно загружено",
+    "clickOrDrag": "Нажмите или перетащите изображение для загрузки",
+    "hint": "JPG, PNG, WebP · Максимум {{size}} МБ",
+    "previewAlt": "Предпросмотр загруженного изображения"
+  },
+  "login": {
+    "subtitle": "Войдите, чтобы продолжить",
+    "powerSwitch": "Переключатель питания",
+    "username": "Имя пользователя",
+    "usernamePlaceholder": "Введите имя пользователя",
+    "password": "Пароль",
+    "passwordPlaceholder": "Введите пароль",
+    "rememberMe": "Запомнить меня",
+    "signIn": "Войти",
+    "signingIn": "Вход…",
+    "invalidCredentials": "Неверное имя пользователя или пароль",
+    "footer": "© 2026 DK LAO Services. Все права защищены."
+  },
+  "customer360": {
+    "backToCustomers": "Назад к клиентам",
+    "notFound": "Клиент не найден.",
+    "loadError": "Клиент не найден или не удалось загрузить данные.",
+    "forklifts": "Погрузчики",
+    "activeRentals": "Активная аренда",
+    "openWorkOrders": "Открытые заказы-наряды",
+    "outstanding": "Задолженность",
+    "notes": "Заметки",
+    "rentalContracts": "Договоры аренды",
+    "workOrders": "Заказы-наряды",
+    "invoices": "Счета",
+    "noForklifts": "У этого клиента нет закреплённых погрузчиков.",
+    "noRentalContracts": "У этого клиента нет договоров аренды.",
+    "noWorkOrders": "Нет заказов-нарядов для техники этого клиента.",
+    "noInvoices": "У этого клиента нет счетов.",
+    "colSerialNumber": "Серийный номер",
+    "colName": "Название",
+    "colStatus": "Статус",
+    "colHourMeter": "Счётчик часов",
+    "colContractNumber": "Номер договора",
+    "colStartDate": "Дата начала",
+    "colEndDate": "Дата окончания",
+    "colTotalValue": "Общая стоимость",
+    "colWorkOrderNumber": "Номер заказа-наряда",
+    "colForklift": "Погрузчик",
+    "colTitle": "Название",
+    "colPriority": "Приоритет",
+    "colScheduledDate": "Запланированная дата",
+    "colInvoiceNumber": "Номер счёта",
+    "colTotalAmount": "Общая сумма",
+    "colBalanceDue": "Остаток к оплате",
+    "colDueDate": "Срок оплаты"
+  },
+  "projects": {
+    "title": "Складские проекты",
+    "totalCount": "Всего: {{count}}",
+    "createProject": "Создать проект",
+    "allStatuses": "Все статусы",
+    "status": {
+      "draft": "Черновик",
+      "survey": "Обследование",
+      "design": "Проектирование",
+      "boq_approved": "Смета утверждена",
+      "installation": "Монтаж",
+      "handover": "Передача",
+      "completed": "Завершён"
+    },
+    "milestoneStatus": {
+      "pending": "Ожидание",
+      "in_progress": "В процессе",
+      "completed": "Завершено"
+    },
+    "colProject": "Проект",
+    "colCustomer": "Клиент",
+    "colStartEnd": "Начало / Окончание",
+    "colStatus": "Статус",
+    "colProgress": "Прогресс",
+    "noProjectsFound": "Проекты не найдены",
+    "createToGetStarted": "Создайте проект, чтобы начать.",
+    "noPermissionView": "У вас нет прав для просмотра проектов.",
+    "loadFailed": "Не удалось загрузить проекты.",
+    "resultsCount": "Результатов: {{count}}",
+    "pageOf": "Страница {{page}} из {{pages}} (всего {{total}})",
+    "milestonesOf": "Этапов: {{completed}}/{{total}}",
+    "form": {
+      "editProject": "Изменить проект",
+      "newProject": "Новый проект",
+      "cancel": "Отмена",
+      "saving": "Сохранение…",
+      "saveChanges": "Сохранить изменения",
+      "createProject": "Создать проект",
+      "projectName": "Название проекта",
+      "projectNamePlaceholder": "Стеллажная система склада во Вьентьяне",
+      "customer": "Клиент",
+      "selectCustomer": "Выберите клиента…",
+      "status": "Статус",
+      "startDate": "Дата начала",
+      "endDate": "Дата окончания",
+      "notes": "Заметки",
+      "notesPlaceholder": "Дополнительные заметки…"
+    },
+    "detail": {
+      "backToProjects": "Назад к проектам",
+      "notFound": "Проект не найден.",
+      "noPermissionView": "У вас нет прав для просмотра этого проекта.",
+      "edit": "Изменить",
+      "approveBoq": "Утвердить смету",
+      "delete": "Удалить",
+      "startDate": "Дата начала",
+      "endDate": "Дата окончания",
+      "milestones": "Этапы",
+      "boqTotal": "Итого по смете",
+      "notes": "Заметки",
+      "addMilestone": "Добавить этап",
+      "noMilestonesYet": "Пока нет этапов.",
+      "colMilestone": "Этап",
+      "colDueDate": "Срок",
+      "colStatus": "Статус",
+      "markStatus": "Отметить как «{{status}}»",
+      "addBoqItem": "Добавить позицию сметы",
+      "noBoqItemsYet": "Пока нет позиций сметы.",
+      "colDescription": "Описание",
+      "colQty": "Кол-во",
+      "colUnitPrice": "Цена за единицу",
+      "colTotal": "Итого",
+      "totalRow": "Итого",
+      "billOfQuantities": "Ведомость объёмов работ (смета)",
+      "deleteProjectTitle": "Удалить проект",
+      "deleteMilestoneTitle": "Удалить этап",
+      "deleteBoqItemTitle": "Удалить позицию сметы",
+      "deleteProjectMessage": "Это приведёт к безвозвратному удалению проекта, всех его этапов и позиций сметы. Это действие нельзя отменить.",
+      "deleteGenericMessage": "Это действие нельзя отменить.",
+      "confirmDelete": "Удалить",
+      "milestoneModalTitle": "Добавить этап",
+      "milestoneName": "Название этапа",
+      "milestoneNamePlaceholder": "Обследование",
+      "dueDate": "Срок",
+      "adding": "Добавление…",
+      "boqModalTitle": "Добавить позицию сметы",
+      "linkInventoryPart": "Привязать к складской позиции (необязательно)",
+      "notLinked": "— Не привязано —",
+      "description": "Описание",
+      "quantity": "Количество",
+      "unitPrice": "Цена за единицу",
+      "addItem": "Добавить позицию",
+      "descriptionPriceRequired": "Описание и цена за единицу обязательны.",
+      "projectUpdated": "Проект обновлён.",
+      "projectUpdateFailed": "Не удалось обновить проект.",
+      "boqApproved": "Смета утверждена.",
+      "boqApproveFailed": "Не удалось утвердить смету.",
+      "projectDeleted": "Проект удалён.",
+      "projectDeleteFailed": "Не удалось удалить проект.",
+      "milestoneStatusUpdateFailed": "Не удалось обновить статус этапа.",
+      "milestoneRemoved": "Этап удалён.",
+      "milestoneRemoveFailed": "Не удалось удалить этап.",
+      "boqItemRemoved": "Позиция сметы удалена.",
+      "boqItemRemoveFailed": "Не удалось удалить позицию сметы.",
+      "milestoneAdded": "Этап добавлен.",
+      "milestoneAddFailed": "Не удалось добавить этап.",
+      "boqItemAdded": "Позиция сметы добавлена.",
+      "boqItemAddFailed": "Не удалось добавить позицию сметы.",
+      "projectCreated": "Проект создан.",
+      "projectCreateFailed": "Не удалось создать проект."
+    }
+  },
+  "reports": {
+    "title": "Отчёты",
+    "subtitle": "Аналитика, показатели конверсии и экспорт данных",
+    "refresh": "Обновить",
+    "retry": "Повторить",
+    "keyMetrics": "Ключевые показатели",
+    "wonLeads": "Успешные лиды",
+    "totalCustomers": "Всего клиентов",
+    "conversionRate": "Конверсия",
+    "winRate": "Успешность",
+    "wonOverTotalLeads": "Успешные ÷ Всего лидов",
+    "wonOverWonPlusLost": "Успешные ÷ (Успешные + Проигранные)",
+    "exportData": "Экспорт данных",
+    "downloadReports": "Скачать отчёты",
+    "format": "Формат",
+    "fromDate": "Дата от",
+    "toDate": "Дата до",
+    "clearDates": "Очистить даты",
+    "downloading": "Скачивание…",
+    "exportNote": "Если конечная точка отчёта недоступна, сводный CSV генерируется на стороне клиента.",
+    "customers": "Клиенты",
+    "leads": "Лиды",
+    "sales": "Продажи",
+    "downloadSuccess": "Отчёт «{{type}}» скачан.",
+    "downloadError": "Не удалось скачать отчёт «{{type}}».",
+    "trends": "Тренды — последние 12 месяцев",
+    "syntheticPreview": "Демонстрационные данные предпросмотра",
+    "leadVolume": "Объём лидов",
+    "leadVolumeSub": "Новые лиды по месяцам",
+    "noLeadTrend": "Нет данных по тренду лидов",
+    "leadTrendWillAppear": "Тренд по лидам появится после подключения конечной точки",
+    "customerGrowth": "Рост клиентской базы",
+    "customerGrowthSub": "Новые клиенты по месяцам",
+    "noCustomerTrend": "Нет данных по тренду клиентов",
+    "customerTrendWillAppear": "Тренд по клиентам появится после подключения конечной точки",
+    "leadAnalysis": "Анализ лидов",
+    "statusDistribution": "Распределение по статусам",
+    "statusDistributionSub": "Лиды по текущему этапу воронки",
+    "noStatusData": "Нет данных о статусах лидов",
+    "createLeadsToSeeDistribution": "Создайте лиды, чтобы увидеть распределение",
+    "sourceBreakdown": "Разбивка по источникам",
+    "sourceBreakdownSub": "Откуда приходят лиды",
+    "noSourceData": "Нет данных об источниках",
+    "addSourceWhenCreating": "Указывайте источник при создании лидов",
+    "conversionMetrics": "Показатели конверсии",
+    "metric": "Показатель",
+    "rate": "Значение",
+    "breakdown": "Разбивка",
+    "formula": "Формула",
+    "lostRate": "Доля потерь",
+    "activeCustomers": "Активные клиенты",
+    "leadsInPipeline": "Лидов в воронке",
+    "ofTotal": "из {{count}} всего",
+    "wonOverTotalFormula": "Успешные ÷ Всего лидов × 100",
+    "wonOverWonLostFormula": "Успешные ÷ (Успешные + Проигранные) × 100",
+    "lostOverWonLostFormula": "Проигранные ÷ (Успешные + Проигранные) × 100",
+    "activeOverTotalFormula": "Активные ÷ Всего клиентов × 100",
+    "pipelineFormula": "Новые + Связались + Квалифицированные + Предложение",
+    "moduleRoadmap": "Дорожная карта модулей",
+    "sourceLabels": {
+      "website": "Веб-сайт",
+      "referral": "Рекомендация",
+      "coldCall": "Холодный звонок",
+      "email": "Email",
+      "socialMedia": "Соцсети",
+      "other": "Другое"
+    },
+    "modules": {
+      "projects": {
+        "label": "Проекты",
+        "description": "Управление проектами с этапами, канбан-досками статусов и назначением команды"
+      },
+      "services": {
+        "label": "Услуги",
+        "description": "Каталог услуг, тарифные планы и назначение услуг клиентам"
+      },
+      "tasks": {
+        "label": "Задачи",
+        "description": "Доска задач с назначениями, сроками и уровнями приоритета"
+      },
+      "invoices": {
+        "label": "Счета",
+        "description": "Формирование счетов, отслеживание платежей и отчётность по доходу"
+      }
+    },
+    "formatCsv": "CSV (.csv)",
+    "formatExcel": "Excel (.xlsx)"
+  },
+  "routes": {
+    "dashboard": "Панель управления",
+    "customerDetail": "Профиль клиента 360",
+    "customers": "Клиенты",
+    "leads": "Лиды",
+    "activity": "Активность",
+    "reports": "Отчёты",
+    "settings": "Настройки",
+    "products": "Товары",
+    "productDetail": "Карточка товара",
+    "brands": "Бренды",
+    "categories": "Категории",
+    "import": "Импорт",
+    "equipmentRegistry": "Реестр техники",
+    "equipmentDetail": "Карточка техники",
+    "quotations": "Коммерческие предложения",
+    "newQuotation": "Новое предложение",
+    "quotationDetail": "Карточка предложения",
+    "rentalContracts": "Договоры аренды",
+    "newContract": "Новый договор",
+    "contractDetail": "Карточка договора",
+    "movementControl": "Контроль перемещений",
+    "newMovement": "Новое перемещение",
+    "movementDetail": "Карточка перемещения",
+    "billing": "Биллинг",
+    "invoices": "Счета",
+    "invoiceDetail": "Карточка счёта",
+    "payments": "Платежи",
+    "paymentDetail": "Карточка платежа",
+    "deposits": "Депозиты",
+    "depositDetail": "Карточка депозита",
+    "revenueRecognition": "Признание дохода",
+    "financeDashboard": "Финансовая панель",
+    "statements": "Выписки",
+    "paymentManager": "Управление платежами",
+    "depositManager": "Управление депозитами",
+    "maintenancePm": "Обслуживание и ТО",
+    "workOrders": "Заказы-наряды",
+    "newWorkOrder": "Новый заказ-наряд",
+    "workOrderDetail": "Карточка заказа-наряда",
+    "pmSchedules": "Графики ТО",
+    "inventory": "Склад",
+    "spareParts": "Запчасти",
+    "newPart": "Новая запчасть",
+    "partDetail": "Карточка запчасти",
+    "warehouses": "Склады",
+    "purchaseOrders": "Заказы на закупку",
+    "executiveDashboard": "Панель для руководства",
+    "projects": "Складские проекты",
+    "projectDetail": "Карточка проекта",
+    "iotManagement": "Управление IoT"
+  },
+  "iot": {
+    "title": "IoT-телеметрия",
+    "subtitle": "Управляйте привязкой GPS/счётчиков часов и следите за подключением техники в реальном времени.",
+    "refresh": "Обновить",
+    "searchPlaceholder": "Поиск по названию погрузчика или серийному номеру...",
+    "kpi": {
+      "totalPaired": "Привязано устройств",
+      "live": "В сети сейчас",
+      "offline": "Не в сети",
+      "unpaired": "Непривязанные единицы"
+    },
+    "table": {
+      "forklift": "Погрузчик",
+      "deviceId": "ID устройства",
+      "lastPing": "Последний сигнал",
+      "status": "Статус"
+    },
+    "notPaired": "Не привязано",
+    "never": "Никогда",
+    "pairAction": "Привязать устройство",
+    "unpairAction": "Отвязать",
+    "noResults": "Погрузчики не найдены.",
+    "pairModal": {
+      "title": "Привязка IoT-устройства — {{name}}",
+      "deviceIdLabel": "ID устройства",
+      "deviceIdPlaceholder": "напр. DK-IOT-001",
+      "deviceIdRequired": "ID устройства обязателен.",
+      "duplicateError": "Это устройство уже привязано к другому погрузчику.",
+      "submitError": "Не удалось привязать устройство. Попробуйте снова.",
+      "submit": "Привязать устройство",
+      "pairing": "Привязка..."
+    },
+    "unpairConfirm": {
+      "title": "Отвязать устройство",
+      "message": "Отвязать устройство «{{deviceId}}» от {{name}}? Оно перестанет отправлять автоматические обновления счётчика часов до повторной привязки."
+    }
+  },
+  "changePassword": {
+    "title": "Смена пароля",
+    "subtitle": "Обновите пароль, чтобы обезопасить свою учётную запись.",
+    "currentPassword": "Текущий пароль",
+    "currentPasswordPlaceholder": "Введите текущий пароль",
+    "newPassword": "Новый пароль",
+    "newPasswordPlaceholder": "Минимум 8 символов",
+    "confirmPassword": "Подтвердите новый пароль",
+    "confirmPasswordPlaceholder": "Введите новый пароль ещё раз",
+    "submit": "Сменить пароль",
+    "submitting": "Смена пароля…",
+    "mismatchError": "Новый пароль и подтверждение не совпадают.",
+    "tooShortError": "Пароль должен содержать не менее 8 символов.",
+    "successToast": "Пароль успешно изменён.",
+    "incorrectCurrentError": "Текущий пароль неверен.",
+    "genericError": "Не удалось изменить пароль. Попробуйте снова."
+  },
+  "documentPreview": {
+    "docTitle": {
+      "invoice": "СЧЁТ-ФАКТУРА",
+      "quotation": "КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ",
+      "purchaseOrder": "ЗАКАЗ НА ЗАКУПКУ"
+    },
+    "customerDetails": "Данные клиента",
+    "vendorDetails": "Данные поставщика",
+    "vehicleInformation": "Информация о транспортном средстве",
+    "vehicle": {
+      "make": "Марка",
+      "model": "Модель",
+      "vin": "VIN",
+      "engineNo": "Номер двигателя",
+      "regNo": "Рег. номер",
+      "jobNumber": "Номер заказа"
+    },
+    "dateLabel": "Дата",
+    "docNumberLabel": "Номер документа",
+    "unitPrice": "Цена за единицу",
+    "bankDetails": "Банковские реквизиты",
+    "subtotal": "Промежуточный итог",
+    "vatLabel": "НДС ({{rate}}%)",
+    "grandTotal": "Итого к оплате",
+    "issuedBy": "Выдал",
+    "approvedBy": "Утвердил"
+  },
+  "modulePlaceholder": {
+    "badge": "Скоро",
+    "emptyHint": "Этот модуль пока в виде каркаса — полный рабочий процесс появится позже."
+  },
+  "documentFlow": {
+    "title": "Цепочка документов:"
+  }
+}

@@ -1,0 +1,67 @@
+graph TB
+    subgraph "Sales Pipeline"
+        L[Lead Created] --> Q[Quotation Draft]
+        Q --> QR[Under Review]
+        QR --> QA[Approved]
+        QA --> QS[Sent to Customer]
+        QS --> QAcc[Accepted]
+        QAcc -->|"convert_to_contract()"| RC[Contract Created]
+    end
+
+    subgraph "Contract Lifecycle"
+        RC --> Res[Reservation]
+        Res --> Draft[Draft]
+        Draft --> PA[Pending Approval]
+        PA -->|"approve()"| Approved[Approved]
+        PA -->|"revision"| Rev[Revision]
+        Rev --> Draft
+        Approved -->|"activate()"| Delivering[Delivering]
+
+        Delivering -->|"delivery movement<br/>completed"| Active[Active ★]
+
+        Active -->|"monthly cycle"| BillCycle[Generate Billing Cycle]
+        BillCycle --> Invoice[Create Invoice]
+
+        Active -->|"extension request"| Ext[Extension]
+        Ext -->|"approve"| Active
+        Ext -->|"reject"| Active
+
+        Active -->|"return request"| Returning[Returning]
+        Returning -->|"pickup"| PickedUp[Picked Up]
+        PickedUp -->|"receive"| Inspecting[Inspecting]
+        Inspecting -->|"no damage"| Settling[Settling]
+        Inspecting -->|"damage found"| DmgReport[Damage Report]
+        DmgReport -->|"assessed"| DmgInvoice[Damage Invoice]
+        DmgInvoice --> Settling
+        Settling -->|"all settled"| Closed[Closed]
+    end
+
+    subgraph "Equipment Side Effects"
+        Approved -->|"forklift status"| FK_Reserved["Forklift: reserved"]
+        Active -->|"forklift status"| FK_Rented["Forklift: rented"]
+        Closed -->|"forklift status"| FK_InStock["Forklift: in_stock"]
+    end
+
+    subgraph "Billing Side Effects"
+        Active -->|"on_contract_activated()"| DepositCreate[Create Deposit Record]
+        Active -->|"on_contract_activated()"| FirstCycle[First Billing Cycle]
+        FirstCycle --> AutoInvoice[Auto Invoice]
+    end
+
+    subgraph "Cancellation Path"
+        Draft -->|"cancel()"| Cancelled[Cancelled]
+        PA -->|"cancel()"| Cancelled
+        Approved -->|"cancel()"| Cancelled
+    end
+
+    classDef active fill:#22c55e,color:#fff,stroke:#16a34a
+    classDef billing fill:#3b82f6,color:#fff,stroke:#2563eb
+    classDef cancel fill:#ef4444,color:#fff,stroke:#dc2626
+    classDef equipment fill:#f59e0b,color:#000,stroke:#d97706
+    classDef workflow fill:#7c3aed,color:#fff,stroke:#6d28d9
+
+    class Active active
+    class BillCycle,Invoice,AutoInvoice,DepositCreate,FirstCycle,DmgInvoice billing
+    class Cancelled cancel
+    class FK_Reserved,FK_Rented,FK_InStock equipment
+    class Delivering,Returning,PickedUp,Inspecting,Settling workflow
