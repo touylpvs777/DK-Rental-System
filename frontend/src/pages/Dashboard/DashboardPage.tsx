@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import type { LucideIcon } from 'lucide-react'
 import {
-  DollarSign, ShoppingCart, TrendingUp, CreditCard, AlertCircle, ArrowRight,
-  ArrowDownToLine, ArrowUpFromLine, Boxes, PackageX, Wrench, Cog, Layers, Receipt,
+  DollarSign, TrendingUp, CreditCard, AlertCircle, ArrowRight,
+  Wrench, Cog, Layers,
 } from 'lucide-react'
 import { useCustomUI, type FontSizeTier } from '@/config/customLanguageStore'
 import UICustomizerBar from '@/components/ui/UICustomizerBar'
@@ -22,7 +22,7 @@ const FONT_SIZE_CLASS: Record<FontSizeTier, string> = {
   large: 'text-base',
 }
 
-type Tab = 'financial' | 'operations' | 'service'
+type Tab = 'financial' | 'service'
 
 interface KpiCardProps {
   label: string
@@ -143,10 +143,8 @@ function TabButton({ active, onClick, children }: { active: boolean; onClick: ()
 
 const ROLLUP_SOURCES: { key: string; to: string }[] = [
   { key: 'invoices', to: '/billing/invoices' },
-  { key: 'purchaseOrders', to: '/inventory/purchase-orders' },
   { key: 'workOrders', to: '/maintenance/work-orders' },
   { key: 'payments', to: '/billing/payments' },
-  { key: 'inventory', to: '/inventory/parts' },
 ]
 
 export default function DashboardPage() {
@@ -189,10 +187,10 @@ export default function DashboardPage() {
       )}
 
       {/* Headline KPIs (always visible) — top-level rollup numbers */}
-      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {isLoading || !data ? (
           <>
-            <KpiCardSkeleton /><KpiCardSkeleton /><KpiCardSkeleton /><KpiCardSkeleton />
+            <KpiCardSkeleton /><KpiCardSkeleton /><KpiCardSkeleton />
           </>
         ) : (
           <>
@@ -205,25 +203,18 @@ export default function DashboardPage() {
               to="/billing/invoices"
             />
             <KpiCard
-              label={t('dashboard.erp.hero.totalCost')}
-              value={formatLak(data.costs.total_cost)}
-              icon={ShoppingCart}
-              accent="bg-gradient-to-br from-amber-500 to-amber-700"
-              to="/inventory/purchase-orders"
-            />
-            <KpiCard
               label={t('dashboard.erp.hero.netProfit')}
               value={formatLak(data.net_profit)}
               icon={TrendingUp}
               accent={data.net_profit >= 0 ? 'bg-gradient-to-br from-emerald-500 to-emerald-700' : 'bg-gradient-to-br from-red-500 to-red-700'}
-              to="/billing/finance"
+              to="/billing"
             />
             <KpiCard
               label={t('dashboard.erp.hero.outstandingBalance')}
               value={formatLak(data.credit.outstanding_balance)}
               icon={CreditCard}
               accent="bg-gradient-to-br from-violet-500 to-violet-700"
-              to="/billing/statements"
+              to="/billing"
             />
           </>
         )}
@@ -232,7 +223,6 @@ export default function DashboardPage() {
       {/* Tabs */}
       <div className="mt-8 flex gap-3">
         <TabButton active={tab === 'financial'} onClick={() => setTab('financial')}>{t('dashboard.erp.tabs.financial')}</TabButton>
-        <TabButton active={tab === 'operations'} onClick={() => setTab('operations')}>{t('dashboard.erp.tabs.operations')}</TabButton>
         <TabButton active={tab === 'service'} onClick={() => setTab('service')}>{t('dashboard.erp.tabs.service')}</TabButton>
       </div>
 
@@ -240,7 +230,7 @@ export default function DashboardPage() {
         <div className="mt-6">
           {tab === 'financial' && (
             <div className="flex flex-col gap-4">
-              <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <MetricPanel
                   title={t('dashboard.erp.sales.title')}
                   icon={DollarSign}
@@ -255,24 +245,11 @@ export default function DashboardPage() {
                   ]}
                 />
                 <MetricPanel
-                  title={t('dashboard.erp.costs.title')}
-                  icon={ShoppingCart}
-                  accent="bg-gradient-to-br from-amber-500 to-amber-700"
-                  to="/inventory/purchase-orders"
-                  rows={[
-                    { label: t('dashboard.erp.costs.purchasePrice'), value: formatLak(data.costs.purchase_price) },
-                    { label: t('dashboard.erp.costs.importFees'), value: `${formatLak(data.costs.import_fees)} (${t('dashboard.erp.costs.notTracked')})` },
-                    { label: t('dashboard.erp.costs.shippingFees'), value: `${formatLak(data.costs.shipping_fees)} (${t('dashboard.erp.costs.notTracked')})` },
-                    { label: t('dashboard.erp.costs.totalCost'), value: formatLak(data.costs.total_cost) },
-                  ]}
-                />
-                <MetricPanel
                   title={t('dashboard.erp.profit.title')}
                   icon={TrendingUp}
                   accent="bg-gradient-to-br from-emerald-500 to-emerald-700"
-                  to="/billing/finance"
+                  to="/billing"
                   rows={[
-                    { label: t('dashboard.erp.profit.profitPerItem'), value: formatLak(data.profit.profit_per_item) },
                     { label: t('dashboard.erp.profit.profitPerInvoice'), value: formatLak(data.profit.profit_per_invoice) },
                     { label: t('dashboard.erp.profit.dailyProfit'), value: formatLak(data.profit.daily_profit) },
                     { label: t('dashboard.erp.profit.monthlyProfit'), value: formatLak(data.profit.monthly_profit) },
@@ -285,7 +262,7 @@ export default function DashboardPage() {
                   title={t('dashboard.erp.credit.title')}
                   icon={CreditCard}
                   accent="bg-gradient-to-br from-violet-500 to-violet-700"
-                  to="/billing/statements"
+                  to="/billing"
                   rows={[
                     { label: t('dashboard.erp.credit.totalCustomerDebt'), value: formatLak(data.credit.total_customer_debt) },
                     { label: t('dashboard.erp.credit.totalPaid'), value: formatLak(data.credit.total_paid) },
@@ -306,63 +283,18 @@ export default function DashboardPage() {
             </div>
           )}
 
-          {tab === 'operations' && (
-            <div className="flex flex-col gap-4">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <KpiCard
-                  label={t('dashboard.erp.inventory.stockIn')}
-                  value={`${lakFormatter.format(data.inventory.stock_in)} ${t('dashboard.erp.inventory.unitsSuffix')}`}
-                  sublabel={t('dashboard.erp.inventory.thisMonth')}
-                  icon={ArrowDownToLine}
-                  accent="bg-gradient-to-br from-emerald-500 to-emerald-700"
-                  to="/movements"
-                />
-                <KpiCard
-                  label={t('dashboard.erp.inventory.stockOut')}
-                  value={`${lakFormatter.format(data.inventory.stock_out)} ${t('dashboard.erp.inventory.unitsSuffix')}`}
-                  sublabel={t('dashboard.erp.inventory.thisMonth')}
-                  icon={ArrowUpFromLine}
-                  accent="bg-gradient-to-br from-amber-500 to-amber-700"
-                  to="/movements"
-                />
-                <KpiCard
-                  label={t('dashboard.erp.inventory.currentBalance')}
-                  value={`${lakFormatter.format(data.inventory.current_balance)} ${t('dashboard.erp.inventory.unitsSuffix')}`}
-                  icon={Boxes}
-                  accent="bg-gradient-to-br from-cyan-500 to-cyan-700"
-                  to="/inventory/parts"
-                />
-                <KpiCard
-                  label={t('dashboard.erp.inventory.lowStockAlerts')}
-                  value={String(data.inventory.low_stock_alerts)}
-                  icon={PackageX}
-                  accent={data.inventory.low_stock_alerts > 0 ? 'bg-gradient-to-br from-red-500 to-red-700' : 'bg-gradient-to-br from-slate-500 to-slate-700'}
-                  to="/inventory/parts"
-                />
-              </div>
-
-              <IoTWidget />
-            </div>
-          )}
-
           {tab === 'service' && (
             <div className="flex flex-col gap-4">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <KpiCard label={t('dashboard.erp.service.laborCost')} value={formatLak(data.service.labor_cost)} icon={Wrench} accent="bg-gradient-to-br from-orange-500 to-orange-700" to="/maintenance/work-orders" />
                 <KpiCard label={t('dashboard.erp.service.partsCost')} value={formatLak(data.service.parts_cost)} icon={Cog} accent="bg-gradient-to-br from-cyan-500 to-cyan-700" to="/maintenance/work-orders" />
                 <KpiCard label={t('dashboard.erp.service.otherServices')} value={formatLak(data.service.other_services)} icon={Layers} accent="bg-gradient-to-br from-violet-500 to-violet-700" to="/maintenance/work-orders" />
-                <KpiCard
-                  label={t('dashboard.erp.service.discount')}
-                  value={formatLak(data.service.discount)}
-                  sublabel={t('dashboard.erp.costs.notTracked')}
-                  icon={Receipt}
-                  accent="bg-gradient-to-br from-slate-500 to-slate-700"
-                  to="/maintenance/work-orders"
-                />
                 <KpiCard label={t('dashboard.erp.service.grandTotal')} value={formatLak(data.service.grand_total)} icon={TrendingUp} accent="bg-gradient-to-br from-emerald-500 to-emerald-700" to="/maintenance/work-orders" />
               </div>
 
               <ServiceCostChart labor={data.service.labor_cost} parts={data.service.parts_cost} other={data.service.other_services} to="/maintenance/work-orders" />
+
+              <IoTWidget />
             </div>
           )}
         </div>

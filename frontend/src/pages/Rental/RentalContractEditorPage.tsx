@@ -422,11 +422,8 @@ export default function RentalContractEditorPage() {
   }
 
   const flowSteps = [
-    { labelKey: 'nav.items.quotations', to: '/quotations' },
-    { labelKey: 'nav.items.salesOrders', to: '/sales-orders' },
-    { labelKey: 'nav.items.purchaseOrders', to: '/inventory/purchase-orders' },
-    { labelKey: 'nav.items.workOrders', to: '/maintenance/work-orders' },
     { labelKey: 'nav.items.rentalContracts', to: '/rental-contracts' },
+    { labelKey: 'nav.items.workOrders', to: '/maintenance/work-orders' },
     { labelKey: 'nav.items.invoices', to: '/billing/invoices' },
   ]
 

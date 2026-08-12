@@ -12,7 +12,6 @@ import logging
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.events import event_bus
-from app.models.quotation import Quotation
 from app.models.rental_contract import RentalContract
 from app.models.work_order import WorkOrder
 from app.schemas.notification import NotificationCreate
@@ -97,28 +96,6 @@ async def on_work_order_completed(db: AsyncSession, work_order: WorkOrder, **_: 
     )
 
 
-async def on_quotation_sent(db: AsyncSession, quotation: Quotation, **_: object) -> None:
-    # A quotation may be addressed to a specific contact rather than the customer record's own info.
-    phone = quotation.contact_phone or (quotation.customer.phone if quotation.customer else None)
-    email = quotation.contact_email or (quotation.customer.email if quotation.customer else None)
-    message = (
-        f"Your quotation {quotation.quotation_number} for "
-        f"{quotation.total_amount:,.0f} {quotation.currency} has been sent. "
-        f"Valid until {quotation.valid_until}."
-    )
-    await _notify(
-        db,
-        phone=phone,
-        email=email,
-        subject=f"Quotation {quotation.quotation_number}",
-        message=message,
-        event_type="quotation.sent",
-        entity_type="quotation",
-        entity_id=quotation.id,
-    )
-
-
 def register_notification_subscribers() -> None:
     event_bus.subscribe("rental.activated", on_rental_activated)
     event_bus.subscribe("work_order.completed", on_work_order_completed)
-    event_bus.subscribe("quotation.sent", on_quotation_sent)

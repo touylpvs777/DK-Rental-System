@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { FileText, CreditCard, Landmark, FileSpreadsheet, TrendingUp, Receipt, ArrowRight } from 'lucide-react'
+import { FileText, CreditCard, Landmark, Receipt, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export default function FinanceQuickNav() {
@@ -10,8 +10,6 @@ export default function FinanceQuickNav() {
     { id: 'invoices', label: t('finance.quickNav.invoices.label'), desc: t('finance.quickNav.invoices.desc'), icon: FileText, color: 'var(--color-primary-600)', href: '/billing/invoices' },
     { id: 'payments', label: t('finance.quickNav.payments.label'), desc: t('finance.quickNav.payments.desc'), icon: CreditCard, color: 'var(--color-success-600)', href: '/billing/payments' },
     { id: 'deposits', label: t('finance.quickNav.deposits.label'), desc: t('finance.quickNav.deposits.desc'), icon: Landmark, color: 'var(--color-info-600)', href: '/billing/deposits' },
-    { id: 'statements', label: t('finance.quickNav.statements.label'), desc: t('finance.quickNav.statements.desc'), icon: FileSpreadsheet, color: 'var(--color-purple-600)', href: '/billing/statements' },
-    { id: 'finance', label: t('finance.quickNav.analytics.label'), desc: t('finance.quickNav.analytics.desc'), icon: TrendingUp, color: 'var(--color-warning-600)', href: '/billing/finance' },
     { id: 'recognition', label: t('finance.quickNav.revenue.label'), desc: t('finance.quickNav.revenue.desc'), icon: Receipt, color: 'var(--color-gray-500)', href: '/billing/revenue-recognitions' },
   ]
 

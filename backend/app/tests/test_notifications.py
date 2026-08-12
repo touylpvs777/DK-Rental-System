@@ -6,7 +6,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.security import hash_password
 from app.models.notification import Notification
 from app.models.user import User
-from app.models.warehouse import Warehouse
 from app.services.notification_service import (
     ADMIN_ROLE,
     EmailAdapter,
@@ -240,39 +239,3 @@ async def test_admin_mark_all_read_clears_role_targeted_feed(
 
     after = await client.get("/api/v1/notifications/me/unread-count", headers=headers)
     assert after.json()["count"] == 0
-
-
-async def test_manual_receive_transaction_notifies_admins(
-    client: AsyncClient, db_session: AsyncSession,
-):
-    admin_token, admin = await _login_as(client, db_session, username="admin3", is_superuser=True)
-
-    warehouse = Warehouse(code="WH-NOTIFY", name="Notify Test Warehouse")
-    db_session.add(warehouse)
-    from app.models.spare_part import SparePart
-    part = SparePart(part_number="NOTIFY-001", name="Notify Test Part", unit="piece")
-    db_session.add(part)
-    await db_session.commit()
-    await db_session.refresh(warehouse)
-    await db_session.refresh(part)
-
-    response = await client.post(
-        "/api/v1/inventory/transactions",
-        headers={"Authorization": f"Bearer {admin_token}"},
-        json={
-            "transaction_type": "receive",
-            "spare_part_id": part.id,
-            "warehouse_id": warehouse.id,
-            "quantity": 25,
-            "unit_cost": 1.5,
-        },
-    )
-    assert response.status_code == 201
-
-    notifications = (await db_session.execute(
-        select(Notification).where(Notification.target_role == ADMIN_ROLE, Notification.event_type == "inventory.transaction.receive")
-    )).scalars().all()
-    assert len(notifications) == 1
-    assert "Goods Receipt" in notifications[0].message
-    assert "Notify Test Part" in notifications[0].message
-    assert "Notify Test Warehouse" in notifications[0].message

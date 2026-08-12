@@ -63,6 +63,7 @@
     "tryAdjustingFilters": "Try adjusting your filters or search terms",
     "somethingWentWrong": "Something went wrong",
     "retry": "Retry",
+    "refresh": "Refresh",
     "clearFilters": "Clear filters",
     "export": "Export",
     "print": "Print",
@@ -1524,6 +1525,7 @@
       "nameEnglish": "Name (English)",
       "nameEnglishPlaceholder": "e.g. Jungheinrich EFG 216k",
       "nameLao": "Name (Lao)",
+      "nameLaoPlaceholder": "Name (Lao)",
       "internalCode": "Internal Code",
       "internalCodePlaceholder": "DK asset tag",
       "brand": "Brand",
@@ -2344,6 +2346,7 @@
       "purchasing": "Purchasing",
       "equipment": "Fleet & Equipment",
       "rental": "Rental Operations",
+      "rentalManagement": "Rental Management",
       "maintenance": "Service & Maintenance",
       "inventory": "Inventory Control",
       "finance": "Finance & Accounting",
@@ -2352,6 +2355,7 @@
     },
     "items": {
       "overview": "Operations Overview",
+      "forklifts": "Forklifts",
       "customers": "Customers",
       "leads": "Sales Leads",
       "quotations": "Commercial Quotations",
@@ -2370,6 +2374,7 @@
       "statements": "Account Statements",
       "activity": "Activity",
       "reports": "Reports",
+      "shiftHandovers": "Shift Handovers",
       "analytics": "Business Analytics",
       "iotTelemetry": "IoT Telemetry",
       "settings": "Settings",
@@ -3123,6 +3128,7 @@
     "invoiceDetail": "Invoice Detail",
     "payments": "Payments",
     "paymentDetail": "Payment Detail",
+    "receipts": "Receipts",
     "deposits": "Deposits",
     "depositDetail": "Deposit Detail",
     "revenueRecognition": "Revenue Recognition",
@@ -3152,7 +3158,10 @@
     "executiveDashboard": "Executive Dashboard",
     "projects": "Warehouse Projects",
     "projectDetail": "Project Detail",
-    "iotManagement": "IoT Management"
+    "iotManagement": "IoT Management",
+    "shiftHandovers": "Shift Handovers",
+    "newShiftHandover": "New Shift Handover",
+    "shiftHandoverDetail": "Shift Handover Detail"
   },
   "iot": {
     "title": "IoT Telemetry",
@@ -3565,6 +3574,64 @@
         "void": "Void",
         "voided": "Receipt voided"
       }
+    }
+  },
+  "shiftHandover": {
+    "list": {
+      "title": "Shift Handovers",
+      "subtitle": "{{count}} handover checklists",
+      "newHandover": "New Handover",
+      "allForklifts": "All forklifts",
+      "empty": "No shift handovers recorded yet.",
+      "rangeOf": "Showing {{from}}–{{to}} of {{total}}",
+      "deleteTitle": "Delete handover record",
+      "deleteConfirm": "This shift handover checklist will be permanently deleted. This cannot be undone."
+    },
+    "form": {
+      "notFound": "Shift handover record not found.",
+      "photoUploadFailed": "Could not upload photo.",
+      "contractRequired": "Select a rental contract.",
+      "forkliftRequired": "Select a forklift.",
+      "newTitle": "New Shift Handover",
+      "editTitle": "Edit Shift Handover",
+      "equipmentSection": "Equipment & Contract",
+      "rentalContract": "Rental Contract",
+      "selectContract": "Select a contract…",
+      "forklift": "Forklift",
+      "selectForklift": "Select a forklift…",
+      "shiftSection": "Shift Details",
+      "shift": "Shift",
+      "dateTime": "Handover Date & Time",
+      "hourMeter": "Hour Meter Reading",
+      "personnelSection": "Personnel",
+      "handoverPerson": "Handover Person (outgoing)",
+      "namePlaceholder": "Full name",
+      "receiverPerson": "Receiver Person (incoming)",
+      "checklistSection": "Checklist",
+      "checklistStatus": "Checklist Status",
+      "issuesDescription": "Describe the Issue",
+      "issuesPlaceholder": "What did you notice? Be specific.",
+      "issuePhotos": "Photos",
+      "addPhoto": "Add",
+      "signaturesSection": "Signatures",
+      "handoverSignature": "Handover person signature",
+      "receiverSignature": "Receiver person signature",
+      "submit": "Submit Handover",
+      "saveChanges": "Save Changes"
+    },
+    "shiftOptions": {
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "night": "Night"
+    },
+    "statusOptions": {
+      "normal": "Normal",
+      "issuesFound": "Issues Found"
+    },
+    "validation": {
+      "required": "This field is required",
+      "min0": "Must be 0 or more",
+      "issueDescRequired": "Please describe the issue found"
     }
   }
 }

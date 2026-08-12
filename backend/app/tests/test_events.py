@@ -8,14 +8,12 @@ from app.events import EventBus, event_bus
 from app.models.customer import Customer
 from app.models.forklift import Forklift
 from app.models.notification import Notification
-from app.models.quotation import Quotation
 from app.models.rental_contract import RentalContract
 from app.models.work_order import WorkOrder
 from app.services.maintenance_service import MaintenanceService
 from app.services.notification_service import WhatsAppAdapter
 from app.schemas.maintenance import CompleteAction
 from app.schemas.rental import ActivateContractAction
-from app.services.quotation_workflow_service import QuotationWorkflowService
 from app.services.rental_workflow_service import RentalWorkflowService
 
 pytestmark = pytest.mark.anyio
@@ -174,43 +172,7 @@ async def test_completing_work_order_without_customer_skips_notification(db_sess
     assert notifications == []
 
 
-# ── quotation.sent ────────────────────────────────────────────────────────────
-
-
-async def test_sending_quotation_triggers_notification(db_session: AsyncSession):
-    customer = Customer(
-        first_name="Khamla", last_name="Phommachanh",
-        phone="+8562077777777", email="khamla@example.com",
-    )
-    db_session.add(customer)
-    await db_session.commit()
-    await db_session.refresh(customer)
-
-    quotation = Quotation(
-        quotation_number="QT-EVT-001",
-        quotation_type="rental",
-        status="approved",
-        title="Forklift rental quotation",
-        customer_id=customer.id,
-        total_amount=1200.0,
-        currency="LAK",
-    )
-    db_session.add(quotation)
-    await db_session.commit()
-    await db_session.refresh(quotation)
-
-    await QuotationWorkflowService(db_session).send(quotation.id, reason=None, user_id=1)
-
-    notifications = await _notifications_for(db_session, "quotation.sent")
-    assert len(notifications) == 1
-    assert notifications[0].status == "sent"
-    assert notifications[0].recipient == "+8562077777777"
-    assert notifications[0].entity_type == "quotation"
-    assert notifications[0].entity_id == quotation.id
-
-
 async def test_notification_subscribers_registered_on_shared_event_bus():
     # The app registers subscribers at import time (app.main); verify they're on the shared bus.
     assert len(event_bus._subscribers["rental.activated"]) >= 1
     assert len(event_bus._subscribers["work_order.completed"]) >= 1
-    assert len(event_bus._subscribers["quotation.sent"]) >= 1

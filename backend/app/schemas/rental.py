@@ -38,21 +38,6 @@ class ForkliftBrief(BaseModel):
     condition: str
 
 
-class QuotationBrief(BaseModel):
-    model_config = {"from_attributes": True}
-    id: int
-    quotation_number: str
-    quotation_type: str
-    status: str
-    total_amount: float
-
-
-class LeadBrief(BaseModel):
-    model_config = {"from_attributes": True}
-    id: int
-    title: str
-
-
 # ── Contract schemas ─────────────────────────────────────────────────────────
 
 class RentalContractCreate(BaseModel):
@@ -60,8 +45,6 @@ class RentalContractCreate(BaseModel):
     contract_type: ContractType
     start_date: date
     end_date: date
-    quotation_id: int | None = None
-    lead_id: int | None = None
     assigned_to: int | None = None
     billing_cycle_day: int = Field(default=1, ge=1, le=28)
     payment_terms_days: int = Field(default=30, gt=0)
@@ -82,8 +65,6 @@ class RentalContractUpdate(BaseModel):
     contract_type: ContractType | None = None
     start_date: date | None = None
     end_date: date | None = None
-    quotation_id: int | None = None
-    lead_id: int | None = None
     assigned_to: int | None = None
     billing_cycle_day: int | None = Field(default=None, ge=1, le=28)
     payment_terms_days: int | None = Field(default=None, gt=0)
@@ -111,8 +92,6 @@ class RentalContractOut(BaseModel):
     status: str
     contract_type: str
     customer: CustomerBrief
-    lead: LeadBrief | None = None
-    quotation: QuotationBrief | None = None
     assigned_user: UserBrief | None = None
     start_date: date
     end_date: date
@@ -176,7 +155,6 @@ class RentalContractItemCreate(BaseModel):
     hourly_rate: float | None = Field(default=None, ge=0)
     contracted_hours_limit: float | None = Field(default=None, gt=0)
     maintenance_interval_hours: float | None = Field(default=None, gt=0)
-    quotation_item_id: int | None = None
     notes: str | None = None
     sort_order: int = 0
 
@@ -209,7 +187,6 @@ class RentalContractItemBulkRow(BaseModel):
     hourly_rate: float | None = Field(default=None, ge=0)
     contracted_hours_limit: float | None = Field(default=None, gt=0)
     maintenance_interval_hours: float | None = Field(default=None, gt=0)
-    quotation_item_id: int | None = None
     notes: str | None = None
     sort_order: int = 0
 
@@ -225,7 +202,6 @@ class RentalContractItemOut(BaseModel):
     contract_id: int
     line_number: int
     forklift: ForkliftBrief | None = None
-    quotation_item_id: int | None = None
     description: str
     monthly_rate: float
     daily_rate: float
@@ -542,13 +518,6 @@ class ActivateContractAction(BaseModel):
 
 class CancelContractAction(BaseModel):
     cancellation_reason: str = Field(..., min_length=1)
-
-
-class ConvertQuotationAction(BaseModel):
-    quotation_id: int
-    override_start_date: date | None = None
-    override_end_date: date | None = None
-    notes: str | None = None
 
 
 class RecordHoursAction(BaseModel):

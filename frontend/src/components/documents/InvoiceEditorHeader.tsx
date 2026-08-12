@@ -7,7 +7,6 @@ import './DocumentEditor.css'
 
 const CURRENCY_OPTIONS = ['LAK', 'THB', 'USD', 'CNY']
 const REFERENCE_TYPE_OPTIONS: { value: string; labelKey: string }[] = [
-  { value: 'sales', labelKey: 'billing.invoice.referenceType.sales' },
   { value: 'work_order', labelKey: 'billing.invoice.referenceType.workOrder' },
   { value: 'rental', labelKey: 'billing.invoice.referenceType.rental' },
 ]
@@ -21,8 +20,6 @@ export interface InvoiceEditorHeaderProps {
   companyPhone?: string
   companyLogoUrl?: string | null
   customers: { id: number; label: string; phone?: string | null; address?: string | null }[]
-  /** e.g. "SO-2026-00012 (from QT-2026-00034)" — resolved by the parent page via GET /sales-orders/{id}. */
-  linkedSalesOrderLabel?: string | null
   /** Once saved, customer/reference/issue-date/currency are permanently fixed —
    *  InvoiceUpdate does not accept them. Only due_date and exchange_rate stay editable. */
   isNew: boolean
@@ -31,13 +28,12 @@ export interface InvoiceEditorHeaderProps {
 export default function InvoiceEditorHeader({
   documentNumber, statusVariant, statusLabel,
   companyName, companyAddress, companyPhone, companyLogoUrl,
-  customers, linkedSalesOrderLabel, isNew,
+  customers, isNew,
 }: InvoiceEditorHeaderProps) {
   const { t } = useTranslation()
   const { register, watch, formState: { errors } } = useFormContext<InvoiceEditorFormValues>()
   const selectedCustomerId = watch('customer_id')
   const selectedCustomer = customers.find((c) => c.id === selectedCustomerId)
-  const referenceType = watch('reference_type')
   const currency = watch('currency')
 
   return (
@@ -105,12 +101,6 @@ export default function InvoiceEditorHeader({
           />
         </div>
 
-        {referenceType === 'sales' && (
-          <div className="form-group">
-            <label>{t('billing.invoice.editor.referenceSalesOrder')}</label>
-            <input value={linkedSalesOrderLabel ?? t('billing.invoice.editor.noSalesOrder')} readOnly disabled />
-          </div>
-        )}
         <div className="form-group">
           <label>{t('common.status')}</label>
           <div style={{ paddingTop: 6 }}>

@@ -14,7 +14,6 @@ import MovementTimeline from '@/components/movement/MovementTimeline'
 import Modal from '@/components/ui/Modal'
 import { toast } from '@/store/toastStore'
 import type { MovementDetail } from '@/types/movement'
-import '@/pages/Catalog/ProductDetailPage.css'
 import '@/styles/detail.css'
 import '@/styles/shared.css'
 

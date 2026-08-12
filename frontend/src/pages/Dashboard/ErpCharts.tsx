@@ -243,7 +243,6 @@ export function RevenueBreakdownChart({ data, range, onRangeChange, isFetching, 
   const toggleLabels = { line: t('dashboard.erp.chart.line'), bar: t('dashboard.erp.chart.bar'), area: t('dashboard.erp.chart.area') }
   const seriesName = t('dashboard.erp.chart.revenueSeries')
   const chartData = [
-    { key: t('dashboard.erp.revenue.partsRevenue'), value: data.parts_revenue },
     { key: t('dashboard.erp.revenue.vehicleRevenue'), value: data.vehicle_revenue },
     { key: t('dashboard.erp.revenue.serviceRevenue'), value: data.service_revenue },
     { key: t('dashboard.erp.revenue.otherRevenue'), value: data.other_revenue },

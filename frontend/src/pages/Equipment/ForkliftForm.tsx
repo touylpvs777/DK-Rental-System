@@ -186,7 +186,7 @@ export default function ForkliftForm({
             <input
               value={form.name_lo}
               onChange={(e) => set('name_lo', e.target.value)}
-              placeholder="ຊື່ລົດຍົກ"
+              placeholder={t('equipment.form.nameLaoPlaceholder')}
             />
           </div>
           <div className="form-group">

@@ -27,9 +27,6 @@ class RentalContractItem(Base):
     forklift_id: Mapped[int | None] = mapped_column(
         Integer, ForeignKey("forklifts.id", ondelete="SET NULL"), nullable=True, index=True,
     )
-    quotation_item_id: Mapped[int | None] = mapped_column(
-        Integer, ForeignKey("quotation_items.id", ondelete="SET NULL"), nullable=True,
-    )
 
     line_number: Mapped[int] = mapped_column(Integer, nullable=False)
     description: Mapped[str] = mapped_column(String(1000), nullable=False)
@@ -60,4 +57,3 @@ class RentalContractItem(Base):
 
     contract: Mapped["RentalContract"] = relationship("RentalContract", back_populates="items")
     forklift: Mapped["Forklift | None"] = relationship("Forklift")
-    quotation_item: Mapped["QuotationItem | None"] = relationship("QuotationItem")

@@ -31,8 +31,7 @@ import app.models as _models  # noqa: F401, E402
 from app.core.security import hash_password
 from app.models.role import Role, RoleName
 from app.models.user import User
-from app.models.warehouse import Warehouse
-from app.routes import activity, auth, billing, customers, dashboard, delivery_notes, forklifts, inventory, iot_telemetry, leads, maintenance, movements, notifications, partners, projects, quotations, receipts, rentals, reports, roles, sales_orders, users, uploads
+from app.routes import activity, auth, billing, customers, dashboard, forklifts, iot_telemetry, maintenance, movements, notifications, receipts, rentals, reports, roles, shift_handover, users, uploads
 from app.routes.catalog import router as catalog_router
 from app.routes.settings import router as settings_router
 from app.scheduler import shutdown_scheduler, start_scheduler
@@ -64,12 +63,6 @@ async def _apply_sqlite_migrations(conn) -> None:
     Non-destructive schema migrations for SQLite.
     Each block is idempotent — safe to run on every startup.
     """
-    # ── leads.source ───────────────────────────────────────────────────────
-    try:
-        await conn.execute(text("ALTER TABLE leads ADD COLUMN source VARCHAR(50)"))
-    except OperationalError:
-        pass  # column already exists
-
     # ── activity_logs.ip_address ─────────────────────────────────────────
     try:
         await conn.execute(text("ALTER TABLE activity_logs ADD COLUMN ip_address VARCHAR(45)"))
@@ -135,46 +128,6 @@ async def _apply_sqlite_migrations(conn) -> None:
         pass  # column already exists
     try:
         await conn.execute(text("ALTER TABLE invoices ADD COLUMN reference_id INTEGER"))
-    except OperationalError:
-        pass  # column already exists
-
-    # ── quotations equipment fields + quotation_items.tax_percent (Document Editor) ──
-    try:
-        await conn.execute(text("ALTER TABLE quotations ADD COLUMN machine_type VARCHAR(100)"))
-    except OperationalError:
-        pass  # column already exists
-    try:
-        await conn.execute(text("ALTER TABLE quotations ADD COLUMN hour_meter FLOAT"))
-    except OperationalError:
-        pass  # column already exists
-    try:
-        await conn.execute(text("ALTER TABLE quotations ADD COLUMN location VARCHAR(200)"))
-    except OperationalError:
-        pass  # column already exists
-    try:
-        await conn.execute(text("ALTER TABLE quotations ADD COLUMN customer_reference VARCHAR(100)"))
-    except OperationalError:
-        pass  # column already exists
-    try:
-        await conn.execute(text(
-            "ALTER TABLE quotations ADD COLUMN round_amount FLOAT NOT NULL DEFAULT 0"
-        ))
-    except OperationalError:
-        pass  # column already exists
-    try:
-        await conn.execute(text("ALTER TABLE quotations ADD COLUMN terms_conditions TEXT"))
-    except OperationalError:
-        pass  # column already exists
-    try:
-        await conn.execute(text(
-            "ALTER TABLE quotation_items ADD COLUMN tax_percent FLOAT NOT NULL DEFAULT 0"
-        ))
-    except OperationalError:
-        pass  # column already exists
-
-    # ── purchase_orders.partner_id (Partners) ─────────────────────────────
-    try:
-        await conn.execute(text("ALTER TABLE purchase_orders ADD COLUMN partner_id INTEGER REFERENCES partners (id) ON DELETE SET NULL"))
     except OperationalError:
         pass  # column already exists
 
@@ -257,16 +210,15 @@ _DEFAULT_ADMIN_PASSWORD = "Admin@123"
 
 async def _seed_defaults(db: AsyncSession) -> None:
     """
-    Startup safety net: guarantees a working admin login and a default
-    warehouse exist even after a database reset (e.g. a wiped Docker
-    volume). Idempotent and safe to run on every startup — a no-op once
-    the admin account and a warehouse both already exist.
+    Startup safety net: guarantees a working admin login exists even after a
+    database reset (e.g. a wiped Docker volume). Idempotent and safe to run
+    on every startup — a no-op once the admin account already exists.
 
     This restores *access*, not lost data: if the database was actually
-    wiped, everything else (customers, quotations, inventory, ...) is gone
-    and must come from a backup — this only re-establishes the bootstrap
-    records needed to log back in and use the app again. Never raises —
-    a seeding conflict must not prevent the app from starting.
+    wiped, everything else (customers, rentals, ...) is gone and must come
+    from a backup — this only re-establishes the bootstrap record needed to
+    log back in and use the app again. Never raises — a seeding conflict
+    must not prevent the app from starting.
     """
     try:
         admin = (
@@ -290,11 +242,6 @@ async def _seed_defaults(db: AsyncSession) -> None:
                 "password. Log in and change it.", _DEFAULT_ADMIN_EMAIL,
             )
 
-        warehouse = (await db.execute(select(Warehouse).limit(1))).scalar_one_or_none()
-        if warehouse is None:
-            db.add(Warehouse(code="WH-MAIN", name="Main Warehouse", is_active=True))
-            logger.info("No warehouse found on startup - auto-created default warehouse WH-MAIN.")
-
         await db.commit()
     except Exception:
         await db.rollback()
@@ -312,7 +259,6 @@ async def _apply_postgres_migrations(conn) -> None:
     run on every startup.
     """
     for statement in (
-        "ALTER TABLE leads ADD COLUMN IF NOT EXISTS source VARCHAR(50)",
         "ALTER TABLE activity_logs ADD COLUMN IF NOT EXISTS ip_address VARCHAR(45)",
         "ALTER TABLE activity_logs ADD COLUMN IF NOT EXISTS details JSON",
         "ALTER TABLE notifications ADD COLUMN IF NOT EXISTS recipient_user_id INTEGER",
@@ -324,15 +270,6 @@ async def _apply_postgres_migrations(conn) -> None:
         "ALTER TABLE forklifts ADD COLUMN IF NOT EXISTS iot_device_id VARCHAR(100)",
         "ALTER TABLE forklifts ADD COLUMN IF NOT EXISTS last_telemetry_ping TIMESTAMPTZ",
         "CREATE UNIQUE INDEX IF NOT EXISTS ix_forklifts_iot_device_id ON forklifts (iot_device_id)",
-        "ALTER TABLE quotations ADD COLUMN IF NOT EXISTS machine_type VARCHAR(100)",
-        "ALTER TABLE quotations ADD COLUMN IF NOT EXISTS hour_meter DOUBLE PRECISION",
-        "ALTER TABLE quotations ADD COLUMN IF NOT EXISTS location VARCHAR(200)",
-        "ALTER TABLE quotations ADD COLUMN IF NOT EXISTS customer_reference VARCHAR(100)",
-        "ALTER TABLE quotations ADD COLUMN IF NOT EXISTS round_amount DOUBLE PRECISION NOT NULL DEFAULT 0",
-        "ALTER TABLE quotations ADD COLUMN IF NOT EXISTS terms_conditions TEXT",
-        "ALTER TABLE quotation_items ADD COLUMN IF NOT EXISTS tax_percent DOUBLE PRECISION NOT NULL DEFAULT 0",
-        "ALTER TABLE purchase_orders ADD COLUMN IF NOT EXISTS partner_id INTEGER REFERENCES partners (id) ON DELETE SET NULL",
-        "CREATE INDEX IF NOT EXISTS ix_purchase_orders_partner_id ON purchase_orders (partner_id)",
     ):
         await conn.execute(text(statement))
 
@@ -399,7 +336,6 @@ app.add_middleware(ClientIPMiddleware)
 app.include_router(auth.router, prefix="/api/v1")
 app.include_router(users.router, prefix="/api/v1")
 app.include_router(customers.router, prefix="/api/v1")
-app.include_router(leads.router, prefix="/api/v1")
 app.include_router(dashboard.router, prefix="/api/v1")
 app.include_router(activity.router, prefix="/api/v1")
 app.include_router(roles.router, prefix="/api/v1")
@@ -407,19 +343,14 @@ app.include_router(reports.router, prefix="/api/v1")
 app.include_router(catalog_router, prefix="/api/v1/catalog")
 app.include_router(forklifts.router, prefix="/api/v1")
 app.include_router(iot_telemetry.router, prefix="/api/v1")
-app.include_router(quotations.router, prefix="/api/v1")
-app.include_router(sales_orders.router, prefix="/api/v1")
-app.include_router(delivery_notes.router, prefix="/api/v1")
 app.include_router(rentals.router, prefix="/api/v1")
 app.include_router(movements.router, prefix="/api/v1")
 app.include_router(maintenance.router, prefix="/api/v1")
-app.include_router(inventory.router, prefix="/api/v1")
-app.include_router(partners.router, prefix="/api/v1")
+app.include_router(shift_handover.router, prefix="/api/v1")
 app.include_router(billing.router, prefix="/api/v1")
 app.include_router(receipts.router, prefix="/api/v1")
 app.include_router(uploads.router, prefix="/api/v1")
 app.include_router(notifications.router, prefix="/api/v1")
-app.include_router(projects.router, prefix="/api/v1")
 app.include_router(settings_router, prefix="/api/v1")
 
 _uploads_dir = Path(settings.UPLOAD_DIR)

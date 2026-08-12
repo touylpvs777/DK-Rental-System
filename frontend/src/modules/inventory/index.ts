@@ -1,6 +1,0 @@
-export { default as InventoryKpiStrip, InventoryKpiStripSkeleton } from './components/InventoryKpiStrip'
-export { default as LowStockAlerts, LowStockAlertsSkeleton } from './components/LowStockAlerts'
-export { default as WarehouseGrid, WarehouseGridSkeleton } from './components/WarehouseGrid'
-export { default as PurchaseOrderTable } from './components/PurchaseOrderTable'
-export { default as StockDistributionChart } from './components/StockDistributionChart'
-export { default as InventoryQuickNav } from './components/InventoryQuickNav'

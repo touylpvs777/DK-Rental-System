@@ -5,7 +5,7 @@ export type DepositType = 'security' | 'advance' | 'guarantee'
 export type DepositRecordStatus = 'pending' | 'received' | 'partially_refunded' | 'refunded' | 'forfeited' | 'applied'
 export type RecognitionType = 'rental_income' | 'service_fee' | 'penalty_fee' | 'damage_recovery' | 'deposit_forfeiture'
 export type RecognitionStatus = 'scheduled' | 'recognized' | 'reversed'
-export type ReferenceType = 'work_order' | 'rental' | 'sales'
+export type ReferenceType = 'work_order' | 'rental'
 
 export interface CustomerBrief { id: number; first_name: string; last_name: string; company: string | null }
 export interface UserBrief { id: number; username: string; full_name: string | null }
@@ -111,38 +111,4 @@ export interface DepositCreate { contract_id: number; customer_id: number; depos
 
 export interface InvoiceListParams { q?: string; status?: string; customer_id?: number; contract_id?: number; is_active?: boolean; issue_from?: string; issue_to?: string; due_from?: string; due_to?: string; page?: number; page_size?: number; sort?: string; order?: 'asc' | 'desc' }
 
-export interface SalesOrderBrief { id: number; so_number: string; title: string }
-
-/** Prefill payload passed via `navigate(..., { state: { fromSalesOrder } })` when
- *  converting a confirmed/completed Sales Order into an Invoice. Deliberately
- *  drops per-line discount_percent/tax_percent (Sales Order items have them,
- *  InvoiceItemCreate does not accept them — folding them into unit_rate would
- *  silently change the displayed price vs. the source order). */
-export interface InvoiceConversionPrefill {
-  salesOrderBrief: SalesOrderBrief
-  header: {
-    customer_id: number | null
-    reference_type: 'sales'
-    reference_id: number
-    tax_rate: number
-    currency: string
-    exchange_rate: number
-    bank_details: string
-    vehicle_make: string
-    vehicle_model: string
-    vehicle_vin: string
-    vehicle_engine_no: string
-    vehicle_reg_no: string
-    job_number: string
-    notes: string
-    internal_notes: string
-  }
-  items: {
-    item_code: string
-    description: string
-    quantity: number
-    unit: string
-    unit_rate: number
-  }[]
-}
 export interface PaymentListParams { q?: string; customer_id?: number; contract_id?: number; payment_status?: string; payment_method?: string; date_from?: string; date_to?: string; page?: number; page_size?: number; sort?: string; order?: 'asc' | 'desc' }

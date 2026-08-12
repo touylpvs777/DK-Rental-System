@@ -143,7 +143,6 @@ export default function ForkliftDetailPage() {
           </div>
         </div>
         <div className="fd-header-actions">
-          <button className="btn btn-ghost" onClick={() => navigate(`/quotations/new`)}><FileText size={14} /> {t('equipment.detail.newQuote')}</button>
           <button className="btn btn-primary" onClick={() => navigate(`/rental-contracts/new`)}><FileText size={14} /> {t('equipment.detail.newContract')}</button>
         </div>
       </div>

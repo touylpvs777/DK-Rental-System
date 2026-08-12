@@ -146,3 +146,57 @@
 .detail-summary-grid .detail-summary-card:hover {
   border-color: var(--color-primary-200);
 }
+
+/* ── Generic detail-page primitives (back link, name, meta, skeleton) ───── */
+
+.product-detail { max-width: 1100px; }
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  transition: color 0.13s;
+}
+.detail-back:hover { color: var(--color-text); }
+
+.detail-name { font-size: 22px; font-weight: 700; color: var(--color-text); line-height: 1.3; }
+
+.detail-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 16px;
+  font-size: 13.5px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.detail-meta dt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.detail-meta dd { color: var(--color-text); margin: 0; }
+
+.detail-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.detail-description p { font-size: 14px; color: var(--color-text); line-height: 1.6; }
+
+.detail-skeleton { padding: 4px; }
+.detail-skeleton-body { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 8px; }
+.detail-skeleton-info { display: flex; flex-direction: column; gap: 8px; padding-top: 8px; }

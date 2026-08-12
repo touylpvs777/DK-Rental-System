@@ -3,7 +3,7 @@ import client from './client'
 import type { DashboardSummary } from '@/types/dashboard'
 import { buildCSV } from '@/utils/mockAdapter'
 
-export type ReportType   = 'customers' | 'leads' | 'sales'
+export type ReportType   = 'customers'
 export type ReportFormat = 'csv' | 'excel'
 
 export interface ReportParams {
@@ -37,19 +37,15 @@ function summaryFallbackCSV(summary: DashboardSummary): Blob {
   return buildCSV(
     ['Metric', 'Value'],
     [
-      ['Total Customers',   summary.total_customers],
-      ['Active Customers',  summary.active_customers],
-      ['Prospect Customers',summary.prospect_customers],
-      ['Total Leads',       summary.total_leads],
-      ['New Leads',         summary.new_leads],
-      ['Contacted Leads',   summary.contacted_leads],
-      ['Qualified Leads',   summary.qualified_leads],
-      ['Proposal Leads',    summary.proposal_leads],
-      ['Won Leads',         summary.won_leads],
-      ['Lost Leads',        summary.lost_leads],
-      ['Conversion Rate',   `${summary.conversion_rate.toFixed(2)}%`],
-      ['Win Rate',          `${summary.win_rate.toFixed(2)}%`],
-      ['Lost Rate',         `${summary.lost_rate.toFixed(2)}%`],
+      ['Total Customers',        summary.total_customers],
+      ['Active Customers',       summary.active_customers],
+      ['Prospect Customers',     summary.prospect_customers],
+      ['Fleet Size',             summary.fleet.total],
+      ['Forklifts In Stock',     summary.fleet.in_stock],
+      ['Forklifts Rented',       summary.fleet.rented],
+      ['Forklifts In Service',   summary.fleet.in_service],
+      ['Active Rental Contracts',summary.active_rental_contracts],
+      ['Total Rental Contracts', summary.total_rental_contracts],
     ],
   )
 }

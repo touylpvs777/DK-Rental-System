@@ -3,13 +3,12 @@ import { createPortal } from 'react-dom'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
-  LayoutDashboard, Users, TrendingUp, Activity, BarChart2, Settings,
-  Package, Truck, Car, FileText, ClipboardList,
-  Building2, ArrowRightLeft, Wrench, Radio,
-  Box, Receipt, CreditCard, Landmark, FileSpreadsheet, Warehouse, LogOut, ShoppingCart,
+  LayoutDashboard, Users, BarChart2, Settings,
+  Truck, Car, ClipboardList, ClipboardCheck,
+  Building2, ArrowRightLeft, Wrench,
+  Receipt, LogOut, Radio,
   UserCircle, KeyRound, PanelLeftClose, PanelLeftOpen, ChevronDown,
-  FileCheck2, ReceiptText, Undo2, Banknote, FileOutput, PackageCheck, PackageMinus,
-  BadgeCheck, Camera, LayoutGrid,
+  Camera,
 } from 'lucide-react'
 import ThemeToggle from '@/components/ui/ThemeToggle'
 import { useAuthStore } from '@/store/authStore'
@@ -56,94 +55,18 @@ const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
-    id: 'crm',
-    labelKey: 'nav.groups.crm',
-    items: [
-      { to: '/customers', labelKey: 'nav.items.customers', icon: Users },
-      { to: '/leads', labelKey: 'nav.items.leads', icon: TrendingUp },
-    ],
-  },
-  {
-    id: 'sales',
-    labelKey: 'nav.groups.sales',
-    items: [
-      { to: '/quotations', labelKey: 'nav.items.quotations', icon: FileText },
-      { to: '/sales-orders', labelKey: 'nav.items.salesOrders', icon: FileCheck2 },
-      { to: '/inventory/delivery-notes', labelKey: 'nav.items.deliveryNotes', icon: FileOutput },
-    ],
-  },
-  {
-    id: 'purchasing',
-    labelKey: 'nav.groups.purchasing',
-    items: [
-      { to: '/inventory/purchase-orders', labelKey: 'nav.items.purchaseOrders', icon: ShoppingCart },
-      { to: '/inventory/goods-receive', labelKey: 'nav.items.goodsReceive', icon: PackageCheck },
-    ],
-  },
-  {
-    id: 'equipment',
-    labelKey: 'nav.groups.equipment',
-    items: [
-      { to: '/equipment', labelKey: 'nav.items.registry', icon: Truck },
-      { to: '/movements', labelKey: 'nav.items.movements', icon: ArrowRightLeft },
-    ],
-  },
-  {
     id: 'rental',
-    labelKey: 'nav.groups.rental',
+    labelKey: 'nav.groups.rentalManagement',
     items: [
+      { to: '/equipment', labelKey: 'nav.items.forklifts', icon: Truck },
+      { to: '/iot-management', labelKey: 'nav.items.iotTelemetry', icon: Radio },
       { to: '/rental-contracts', labelKey: 'nav.items.contracts', icon: ClipboardList },
-    ],
-  },
-  {
-    id: 'maintenance',
-    labelKey: 'nav.groups.maintenance',
-    items: [
-      { to: '/maintenance', labelKey: 'nav.items.maintenance', icon: Wrench },
-    ],
-  },
-  {
-    id: 'inventory',
-    labelKey: 'nav.groups.inventory',
-    items: [
-      { to: '/inventory', labelKey: 'nav.items.inventory', icon: Box },
-      { to: '/inventory/pos', labelKey: 'nav.items.partsPOS', icon: LayoutGrid },
-      { to: '/inventory/goods-issue', labelKey: 'nav.items.goodsIssue', icon: PackageMinus },
-      { to: '/inventory/goods-receive', labelKey: 'nav.items.goodsReceive', icon: PackageCheck },
-      { to: '/catalog', labelKey: 'nav.items.products', icon: Package },
-    ],
-  },
-  {
-    id: 'projects',
-    labelKey: 'nav.groups.projects',
-    items: [
-      { to: '/projects', labelKey: 'nav.items.warehouseProjects', icon: Warehouse },
-    ],
-  },
-  {
-    id: 'finance',
-    labelKey: 'nav.groups.finance',
-    items: [
       { to: '/billing', labelKey: 'nav.items.billing', icon: Receipt },
-      { to: '/billing/invoices', labelKey: 'nav.items.invoices', icon: FileText },
-      { to: '/billing/tax-invoices', labelKey: 'nav.items.taxInvoices', icon: ReceiptText },
-      { to: '/billing/credit-notes', labelKey: 'nav.items.creditNotes', icon: Undo2 },
-      { to: '/billing/payments', labelKey: 'nav.items.payments', icon: CreditCard },
-      { to: '/billing/receipts', labelKey: 'nav.items.receipts', icon: BadgeCheck },
-      { to: '/billing/payment-vouchers', labelKey: 'nav.items.paymentVouchers', icon: Banknote },
-      { to: '/billing/deposits', labelKey: 'nav.items.deposits', icon: Landmark },
-      { to: '/billing/statements', labelKey: 'nav.items.statements', icon: FileSpreadsheet },
-    ],
-  },
-  {
-    id: 'executive',
-    labelKey: 'nav.groups.executive',
-    items: [
-      { to: '/activities', labelKey: 'nav.items.activity', icon: Activity, adminOnly: true },
+      { to: '/maintenance', labelKey: 'nav.items.maintenance', icon: Wrench },
+      { to: '/shift-handovers', labelKey: 'nav.items.shiftHandovers', icon: ClipboardCheck },
+      { to: '/movements', labelKey: 'nav.items.movements', icon: ArrowRightLeft },
+      { to: '/customers', labelKey: 'nav.items.customers', icon: Users },
       { to: '/reports', labelKey: 'nav.items.reports', icon: BarChart2 },
-      { to: '/iot-management', labelKey: 'nav.items.iotTelemetry', icon: Radio, adminOnly: true },
-      // '/executive' (Analytics) removed for the MVP presentation — redundant with
-      // the new /dashboard executive overview, and the endpoint isn't wired up yet.
     ],
   },
 ]

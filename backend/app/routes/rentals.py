@@ -16,7 +16,6 @@ from app.schemas.rental import (
     ActivateContractAction,
     ApproveContractAction,
     CancelContractAction,
-    ConvertQuotationAction,
     DisputeAction,
     ExtensionDecisionAction,
     PickupAction,
@@ -58,7 +57,7 @@ async def _contract_out(db: AsyncSession, contract: RentalContract) -> RentalCon
     # model_validate() leaves it at its default of 0. A dedicated COUNT query
     # (rather than `len(contract.items)`) is used deliberately: `.items` is
     # only guaranteed eager-loaded on contracts that came from get_by_id()
-    # (update/submit/approve/reject/activate/cancel/close/convert-quotation),
+    # (update/submit/approve/reject/activate/cancel/close),
     # not on a freshly created one — a COUNT query is correct and safe (no
     # relationship access, no lazy-load risk) on every call site uniformly.
     obj = RentalContractOut.model_validate(contract)
@@ -378,31 +377,6 @@ async def close_contract(
         entity_type=EntityType.RENTAL_CONTRACT,
         entity_id=contract.id,
         details={"contract_number": contract.contract_number},
-    )
-    return await _contract_out(db, contract)
-
-
-@router.post(
-    "/convert-quotation",
-    response_model=RentalContractOut,
-    status_code=status.HTTP_201_CREATED,
-    summary="Convert quotation to rental contract",
-)
-async def convert_quotation(
-    body: ConvertQuotationAction,
-    db: AsyncSession = Depends(get_db),
-    current_user: User = require_permission(PermissionName.RENTAL_CREATE),
-):
-    contract = await RentalContractService(db).convert_from_quotation(body, current_user.id)
-    await ActivityLogService(db).log(
-        user_id=current_user.id,
-        action=ActionType.RENTAL_CONTRACT_CREATED,
-        entity_type=EntityType.RENTAL_CONTRACT,
-        entity_id=contract.id,
-        details={
-            "contract_number": contract.contract_number,
-            "quotation_id": body.quotation_id,
-        },
     )
     return await _contract_out(db, contract)
 

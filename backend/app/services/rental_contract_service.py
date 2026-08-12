@@ -3,10 +3,8 @@ import math
 import time
 
 from fastapi import HTTPException, status
-from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import selectinload
 
 from app.models.rental_contract import RentalContract, RentalContractStatus
 from app.models.rental_contract_item import RentalContractItem, ContractItemStatus
@@ -16,8 +14,6 @@ from app.models.rental_billing_cycle import RentalBillingCycle, BillingType, Pay
 from app.models.rental_return import RentalReturn
 from app.models.rental_damage_report import RentalDamageReport
 from app.models.forklift import Forklift, ForkliftStatus
-from app.models.quotation import Quotation, QuotationStatus
-from app.models.quotation_item import QuotationItem
 from app.repositories.rental_repository import RentalContractFilter, RentalRepository
 from app.repositories.forklift_repository import ForkliftRepository
 from app.repositories.forklift_status_repository import ForkliftStatusRepository
@@ -29,7 +25,7 @@ from app.schemas.rental import (
     RentalContractListResponse, RentalContractOut,
     RentalContractTermCreate, RentalBillingCycleCreate,
     RentalBillingCycleUpdate, GenerateBillingAction,
-    BillingSummary, ConvertQuotationAction, RecordHoursAction,
+    BillingSummary, RecordHoursAction,
 )
 
 logger = logging.getLogger(__name__)
@@ -138,8 +134,6 @@ class RentalContractService:
             status=RentalContractStatus.RESERVATION.value,
             contract_type=data.contract_type.value,
             customer_id=data.customer_id,
-            quotation_id=data.quotation_id,
-            lead_id=data.lead_id,
             assigned_to=data.assigned_to or created_by,
             start_date=data.start_date,
             end_date=data.end_date,
@@ -328,7 +322,6 @@ class RentalContractService:
         item = RentalContractItem(
             contract_id=contract_id,
             forklift_id=data.forklift_id,
-            quotation_item_id=data.quotation_item_id,
             line_number=line_number,
             description=data.description,
             monthly_rate=data.monthly_rate,
@@ -438,7 +431,6 @@ class RentalContractService:
                 await self._repo.add_item(RentalContractItem(
                     contract_id=contract_id,
                     forklift_id=row.forklift_id,
-                    quotation_item_id=row.quotation_item_id,
                     line_number=next_line,
                     description=row.description,
                     monthly_rate=row.monthly_rate,
@@ -541,150 +533,6 @@ class RentalContractService:
 
         await self.db.commit()
         return item
-
-    # ── Convert from quotation ───────────────────────────────────────────────
-
-    async def convert_from_quotation(
-        self, data: ConvertQuotationAction, user_id: int,
-    ) -> RentalContract:
-        result = await self.db.execute(
-            select(Quotation)
-            .options(selectinload(Quotation.items).selectinload(QuotationItem.forklift))
-            .where(Quotation.id == data.quotation_id)
-        )
-        quotation = result.scalar_one_or_none()
-        if quotation is None:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Quotation not found.",
-            )
-        if quotation.status != QuotationStatus.ACCEPTED.value:
-            raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-                detail="Quotation must be in accepted status to convert.",
-            )
-        if quotation.quotation_type != "rental":
-            raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-                detail="Only rental quotations can be converted to rental contracts.",
-            )
-        if quotation.converted_to_id is not None:
-            raise HTTPException(
-                status_code=status.HTTP_409_CONFLICT,
-                detail="Quotation has already been converted.",
-            )
-
-        number = await self._generate_number()
-
-        start_date = data.override_start_date or quotation.valid_from
-        end_date = data.override_end_date or quotation.valid_until
-        if not start_date or not end_date:
-            raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-                detail="Start and end dates are required. Provide overrides or ensure quotation has valid_from/valid_until.",
-            )
-
-        contract = RentalContract(
-            contract_number=number,
-            status=RentalContractStatus.RESERVATION.value,
-            quotation_id=quotation.id,
-            customer_id=quotation.customer_id,
-            lead_id=quotation.lead_id,
-            assigned_to=quotation.assigned_to or user_id,
-            start_date=start_date,
-            end_date=end_date,
-            tax_rate=quotation.tax_rate,
-            currency=quotation.currency,
-            notes=data.notes,
-            created_by=user_id,
-            updated_by=user_id,
-        )
-
-        try:
-            contract = await self._repo.create(contract)
-        except IntegrityError:
-            await self.db.rollback()
-            raise HTTPException(
-                status_code=status.HTTP_409_CONFLICT,
-                detail="Contract number generation conflict. Please retry.",
-            )
-
-        await self._repo.add_status_history(RentalContractStatusHistory(
-            contract_id=contract.id,
-            from_status=None,
-            to_status=RentalContractStatus.RESERVATION.value,
-            reason=f"Converted from quotation {quotation.quotation_number}",
-            changed_by=user_id,
-        ))
-
-        # Convert qualifying quotation items
-        for qi in quotation.items:
-            if qi.item_type != "forklift_rental":
-                continue
-            if qi.forklift_id is None:
-                continue
-
-            forklift = await self._forklift_repo.get_by_id(qi.forklift_id)
-            if forklift is None:
-                continue
-
-            # Check availability
-            conflicts = await self._repo.check_forklift_conflicts(
-                forklift_id=qi.forklift_id,
-                start_date=start_date,
-                end_date=end_date,
-                exclude_contract_id=contract.id,
-            )
-            if conflicts:
-                logger.warning(
-                    "Forklift %s has conflicts during conversion, skipping",
-                    qi.forklift_id,
-                )
-                continue
-
-            # Reserve forklift
-            if forklift.status == ForkliftStatus.IN_STOCK.value:
-                old_status = forklift.status
-                await self._forklift_repo.update(forklift, {
-                    "status": ForkliftStatus.RESERVED.value,
-                })
-                await self._forklift_status_repo.create(ForkliftStatusHistory(
-                    forklift_id=forklift.id,
-                    from_status=old_status,
-                    to_status=ForkliftStatus.RESERVED.value,
-                    reason=f"Reserved for contract {contract.contract_number} (quotation conversion)",
-                    changed_by=user_id,
-                ))
-
-            line_number = await self._repo.next_line_number(contract.id)
-            duration_days = (end_date - start_date).days
-            line_total = round(qi.unit_price * (duration_days / 30), 2)
-
-            item = RentalContractItem(
-                contract_id=contract.id,
-                forklift_id=qi.forklift_id,
-                quotation_item_id=qi.id,
-                line_number=line_number,
-                description=qi.description,
-                monthly_rate=qi.unit_price,
-                daily_rate=round(qi.unit_price / 30, 2),
-                line_status=ContractItemStatus.RESERVED.value,
-                line_total=line_total,
-                sort_order=qi.sort_order,
-                notes=qi.notes,
-            )
-            await self._repo.add_item(item)
-
-        await self._recalculate_totals(contract)
-
-        # Update quotation
-        quotation.converted_to_type = "rental_contract"
-        quotation.converted_to_id = contract.id
-        quotation.status = QuotationStatus.CONVERTED.value
-        await self.db.flush()
-
-        await self.db.commit()
-        return await self._repo.get_by_id(contract.id)
 
     # ── Totals recalculation ─────────────────────────────────────────────────
 

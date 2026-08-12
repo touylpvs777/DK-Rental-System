@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import { useForm, FormProvider } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -9,9 +9,8 @@ import {
   issueInvoice, sendInvoice, cancelInvoice, voidInvoice,
 } from '@/api/billing'
 import { getCustomers } from '@/api/customers'
-import { getSalesOrder } from '@/api/salesOrder'
 import type { Customer } from '@/types/customer'
-import type { InvoiceDetail, InvoiceCreate, InvoiceUpdate, InvoiceConversionPrefill } from '@/types/billing'
+import type { InvoiceDetail, InvoiceCreate, InvoiceUpdate } from '@/types/billing'
 import {
   invoiceHeaderSchema, INVOICE_EDITOR_DEFAULTS, type InvoiceEditorFormValues,
 } from '@/schemas/invoiceEditorSchema'
@@ -81,22 +80,8 @@ export default function InvoiceEditorPage() {
   const location = useLocation()
   const headerColorClass = getHeaderColorClass(location.pathname)
 
-  // Present only when navigated to from the Sales Order editor's "Convert to
-  // Invoice" action. Deliberately drops per-line discount%/tax% (Sales Order
-  // items have them, InvoiceItemCreate does not accept them).
-  const prefill = isNew
-    ? (location.state as { fromSalesOrder?: InvoiceConversionPrefill } | null)?.fromSalesOrder
-    : undefined
-
   const [invoice, setInvoice] = useState<InvoiceDetail | null>(null)
-  const [items, setItems] = useState<InvoiceLineRow[]>(isNew
-    ? (prefill?.items.length
-      ? prefill.items.map((it) => ({
-        _key: nextRowKey++, id: null, item_code: it.item_code, description: it.description,
-        quantity: it.quantity, unit: it.unit, unit_rate: it.unit_rate,
-      }))
-      : [emptyRow()])
-    : [])
+  const [items, setItems] = useState<InvoiceLineRow[]>(isNew ? [emptyRow()] : [])
   const [customers, setCustomers] = useState<Customer[]>([])
   const [isLoading, setIsLoading] = useState(!isNew)
   const [isSaving, setIsSaving] = useState(false)
@@ -105,18 +90,10 @@ export default function InvoiceEditorPage() {
   const [cancelOpen, setCancelOpen] = useState(false)
   const [cancelReason, setCancelReason] = useState('')
   const [bankData, setBankData] = useState<DocumentBankDetails>(EMPTY_BANK_DETAILS)
-  const [linkedSalesOrder, setLinkedSalesOrder] = useState<{ so_number: string; quotationNumber?: string } | null>(null)
 
   const companyProfile = useCompanyStore((s) => s.profile)
   const fetchCompanyProfile = useCompanyStore((s) => s.fetch)
   useEffect(() => { fetchCompanyProfile() }, [fetchCompanyProfile])
-
-  useEffect(() => {
-    if (prefill) {
-      toast.success(t('billing.invoice.editor.prefilledFromSalesOrder', { number: prefill.salesOrderBrief.so_number }))
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   useEffect(() => {
     getCustomers().then(({ data }) => setCustomers(data)).catch(() => {})
@@ -124,20 +101,8 @@ export default function InvoiceEditorPage() {
 
   const methods = useForm<InvoiceEditorFormValues>({
     resolver: zodResolver(invoiceHeaderSchema),
-    defaultValues: prefill ? { ...INVOICE_EDITOR_DEFAULTS, ...prefill.header } : INVOICE_EDITOR_DEFAULTS,
+    defaultValues: INVOICE_EDITOR_DEFAULTS,
   })
-
-  // Same async-select timing workaround used by the Quotation->SalesOrder
-  // converter: the customer <select> only has real <option>s once
-  // getCustomers() resolves, so re-apply the prefill once that's happened.
-  const prefillReappliedRef = useRef(false)
-  useEffect(() => {
-    if (prefill && customers.length > 0 && !prefillReappliedRef.current) {
-      prefillReappliedRef.current = true
-      methods.reset({ ...INVOICE_EDITOR_DEFAULTS, ...prefill.header })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [customers])
 
   const load = async () => {
     if (isNew) return
@@ -147,7 +112,7 @@ export default function InvoiceEditorPage() {
       setInvoice(data)
       methods.reset({
         customer_id: data.customer_id,
-        reference_type: data.reference_type ?? 'sales',
+        reference_type: data.reference_type ?? 'work_order',
         reference_id: data.reference_id,
         issue_date: data.issue_date ?? '',
         due_date: data.due_date ?? '',
@@ -185,17 +150,6 @@ export default function InvoiceEditorPage() {
   // Quotation/SalesOrder have. The grid and those header fields are simply
   // locked forever once `!isNew`.
   const itemsReadOnly = !isNew
-
-  useEffect(() => {
-    if (values.reference_type === 'sales' && values.reference_id) {
-      getSalesOrder(values.reference_id)
-        .then(({ data }) => setLinkedSalesOrder({ so_number: data.so_number, quotationNumber: data.quotation?.quotation_number }))
-        .catch(() => setLinkedSalesOrder(null))
-    } else {
-      setLinkedSalesOrder(null)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [values.reference_type, values.reference_id])
 
   const subtotal = useMemo(() => items.reduce((s, r) => s + r.quantity * r.unit_rate, 0), [items])
   // Invoice's tax model is a single document-level rate applied server-side —
@@ -298,16 +252,10 @@ export default function InvoiceEditorPage() {
   const invId = invoice?.id
   const s = invoice?.status
 
-  const linkedSalesOrderLabel = linkedSalesOrder
-    ? `${linkedSalesOrder.so_number}${linkedSalesOrder.quotationNumber ? ` (${t('billing.invoice.editor.fromQuotation', { number: linkedSalesOrder.quotationNumber })})` : ''}`
-    : null
-
   const printProps = {
     invoiceNumber: invoice?.invoice_number ?? t('billing.invoice.form.previewPendingNumber'),
     date: fmtDate(values.issue_date || invoice?.created_at),
-    refLabel: values.reference_type === 'sales'
-      ? (linkedSalesOrderLabel ?? undefined)
-      : (values.reference_id ? `${values.reference_type} #${values.reference_id}` : undefined),
+    refLabel: values.reference_id ? `${values.reference_type} #${values.reference_id}` : undefined,
     company: {
       name: companyProfile?.company_name || 'DK LAO TRADING SOLE CO., LTD',
       address: companyProfile?.address,
@@ -419,7 +367,6 @@ export default function InvoiceEditorPage() {
                   id: c.id, label: `${c.first_name} ${c.last_name}${c.company ? ` — ${c.company}` : ''}`,
                   phone: c.phone, address: null,
                 }))}
-                linkedSalesOrderLabel={linkedSalesOrderLabel}
                 isNew={isNew}
               />
 
@@ -490,7 +437,7 @@ export default function InvoiceEditorPage() {
                   </span>
                 </div>
               )}
-              {invoice?.reference_type && invoice.reference_type !== 'sales' && REFERENCE_LIST_ROUTE[invoice.reference_type] && (
+              {invoice?.reference_type && REFERENCE_LIST_ROUTE[invoice.reference_type] && (
                 <div className="doc-editor-section">
                   <span style={{ color: 'var(--color-text-muted)' }}>{t('billing.invoice.meta.referenceType')}: </span>
                   <Link to={REFERENCE_LIST_ROUTE[invoice.reference_type]} style={{ color: 'var(--color-primary-600)' }}>

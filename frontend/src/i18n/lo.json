@@ -63,6 +63,7 @@
     "tryAdjustingFilters": "ລອງປັບຕົວກັ່ນຕອງ ຫຼື ຄຳຄົ້ນຫາ",
     "somethingWentWrong": "ມີບາງຢ່າງຜິດພາດ",
     "retry": "ລອງໃໝ່",
+    "refresh": "ໂຫຼດໃໝ່",
     "clearFilters": "ລ້າງຕົວກັ່ນຕອງ",
     "export": "ສົ່ງອອກ",
     "print": "ພິມ",
@@ -293,6 +294,7 @@
       "purchasing": "ການຈັດຊື້",
       "equipment": "ຊັບສິນອຸປະກອນ",
       "rental": "ການດຳເນີນການເຊົ່າ",
+      "rentalManagement": "ການຄຸ້ມຄອງການເຊົ່າ",
       "maintenance": "ບໍລິການ ແລະ ການບໍລິຫານ",
       "inventory": "ການຄຸ້ມຄອງສິນຄ້າ",
       "finance": "ການເງິນ ແລະ ບັນຊີ",
@@ -301,6 +303,7 @@
     },
     "items": {
       "overview": "ພາບລວມການດຳເນີນງານ",
+      "forklifts": "ລົດຍົກ",
       "customers": "ລູກຄ້າ",
       "leads": "ລາຍການຂາຍ",
       "quotations": "ໃບສະເໜີລາຄາທາງທຸລະກິດ",
@@ -319,8 +322,9 @@
       "statements": "ໃບລາຍງານດົນປະຈຳ",
       "activity": "ກິດຈະກຳ",
       "reports": "ລາຍງານ",
+      "shiftHandovers": "ມອບ-ຮັບກະ",
       "analytics": "ການວິເຄາະທຸລະກິດ",
-      "iotTelemetry": "ລະບົບ IoT",
+      "iotTelemetry": "ລະບົບຕິດຕາມ IoT",
       "settings": "ຕັ້ງຄ່າ",
       "warehouseProjects": "ໂຄງການຄັງສິນຄ້າ",
       "purchaseOrders": "ໃບສັ່ງຊື້",
@@ -1094,7 +1098,10 @@
     "executiveDashboard": "ໜ້າຫຼັກຜູ້ບໍລິຫານ",
     "projects": "ໂຄງການສາງເກັບເຄື່ອງ",
     "projectDetail": "ລາຍລະອຽດໂຄງການ",
-    "iotManagement": "ຈັດການ IoT"
+    "iotManagement": "ຈັດການ IoT",
+    "shiftHandovers": "ມອບ-ຮັບກະ",
+    "newShiftHandover": "ມອບ-ຮັບກະໃໝ່",
+    "shiftHandoverDetail": "ລາຍລະອຽດມອບ-ຮັບກະ"
   },
   "inventory": {
     "common": {
@@ -2350,6 +2357,7 @@
       "nameEnglish": "ຊື່ (ພາສາອັງກິດ)",
       "nameEnglishPlaceholder": "ຕົວຢ່າງ: Jungheinrich EFG 216k",
       "nameLao": "ຊື່ (ພາສາລາວ)",
+      "nameLaoPlaceholder": "ຊື່ລົດຍົກ",
       "nameRequired": "ຕ້ອງລະບຸຊື່.",
       "noBrand": "— ບໍ່ມີຍີ່ຫໍ້ —",
       "notesPlaceholder": "ໝາຍເຫດເພີ່ມເຕີມ (ບໍ່ບັງຄັບ)...",
@@ -3547,6 +3555,64 @@
         "void": "ຍົກເລີກ",
         "voided": "ໃບຮັບເງິນຖືກຍົກເລີກແລ້ວ"
       }
+    }
+  },
+  "shiftHandover": {
+    "list": {
+      "title": "ການມອບ-ຮັບກະ",
+      "subtitle": "{{count}} ລາຍການກວດກາການມອບ-ຮັບກະ",
+      "newHandover": "ມອບ-ຮັບໃໝ່",
+      "allForklifts": "ລົດຍົກທັງໝົດ",
+      "empty": "ຍັງບໍ່ມີຂໍ້ມູນການມອບ-ຮັບກະ",
+      "rangeOf": "ສະແດງ {{from}}–{{to}} ຈາກ {{total}}",
+      "deleteTitle": "ລຶບຂໍ້ມູນການມອບ-ຮັບກະ",
+      "deleteConfirm": "ລາຍການກວດກາການມອບ-ຮັບກະນີ້ຈະຖືກລຶບຖາວອນ. ບໍ່ສາມາດກູ້ຄືນໄດ້."
+    },
+    "form": {
+      "notFound": "ບໍ່ພົບຂໍ້ມູນການມອບ-ຮັບກະ.",
+      "photoUploadFailed": "ບໍ່ສາມາດອັບໂຫຼດຮູບພາບໄດ້.",
+      "contractRequired": "ກະລຸນາເລືອກສັນຍາເຊົ່າ.",
+      "forkliftRequired": "ກະລຸນາເລືອກລົດຍົກ.",
+      "newTitle": "ການມອບ-ຮັບກະໃໝ່",
+      "editTitle": "ແກ້ໄຂການມອບ-ຮັບກະ",
+      "equipmentSection": "ອຸປະກອນ ແລະ ສັນຍາ",
+      "rentalContract": "ສັນຍາເຊົ່າ",
+      "selectContract": "ເລືອກສັນຍາ…",
+      "forklift": "ລົດຍົກ",
+      "selectForklift": "ເລືອກລົດຍົກ…",
+      "shiftSection": "ລາຍລະອຽດກະ",
+      "shift": "ກະ",
+      "dateTime": "ວັນທີ ແລະ ເວລາມອບ-ຮັບ",
+      "hourMeter": "ເລກໄມຊົ່ວໂມງ",
+      "personnelSection": "ບຸກຄະລາກອນ",
+      "handoverPerson": "ຜູ້ມອບກະ (ອອກ)",
+      "namePlaceholder": "ຊື່ເຕັມ",
+      "receiverPerson": "ຜູ້ຮັບກະ (ເຂົ້າ)",
+      "checklistSection": "ລາຍການກວດກາ",
+      "checklistStatus": "ສະຖານະການກວດກາ",
+      "issuesDescription": "ອະທິບາຍບັນຫາ",
+      "issuesPlaceholder": "ທ່ານສັງເກດເຫັນຫຍັງແດ່? ກະລຸນາລະບຸໃຫ້ຊັດເຈນ.",
+      "issuePhotos": "ຮູບພາບ",
+      "addPhoto": "ເພີ່ມ",
+      "signaturesSection": "ລາຍເຊັນ",
+      "handoverSignature": "ລາຍເຊັນຜູ້ມອບກະ",
+      "receiverSignature": "ລາຍເຊັນຜູ້ຮັບກະ",
+      "submit": "ສົ່ງການມອບ-ຮັບກະ",
+      "saveChanges": "ບັນທຶກການປ່ຽນແປງ"
+    },
+    "shiftOptions": {
+      "morning": "ກະເຊົ້າ",
+      "afternoon": "ກະບ່າຍ",
+      "night": "ກະກາງຄືນ"
+    },
+    "statusOptions": {
+      "normal": "ປົກກະຕິ",
+      "issuesFound": "ພົບບັນຫາ"
+    },
+    "validation": {
+      "required": "ກະລຸນາປ້ອນຂໍ້ມູນນີ້",
+      "min0": "ຕ້ອງມີຄ່າ 0 ຫຼືຫຼາຍກວ່າ",
+      "issueDescRequired": "ກະລຸນາອະທິບາຍບັນຫາທີ່ພົບ"
     }
   }
 }

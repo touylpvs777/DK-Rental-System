@@ -17,7 +17,6 @@ const NAV_RESULTS: SearchResult[] = ROUTE_CONFIG
 
 const QUICK_ACTIONS: SearchResult[] = [
   { labelKey: 'header.quickActionNewCustomer', path: '/customers', groupKey: 'header.groupQuickActions' },
-  { labelKey: 'header.quickActionNewQuotation', path: '/quotations/new', groupKey: 'header.groupQuickActions' },
   { labelKey: 'header.quickActionNewContract', path: '/rental-contracts/new', groupKey: 'header.groupQuickActions' },
   { labelKey: 'header.quickActionRegisterEquipment', path: '/equipment', groupKey: 'header.groupQuickActions' },
 ]

@@ -36,9 +36,6 @@ class Brand(Base):
         DateTime(timezone=True), onupdate=func.now(), nullable=True
     )
 
-    products: Mapped[list["Product"]] = relationship(
-        "Product", back_populates="brand", passive_deletes=True
-    )
-    compat_entries: Mapped[list["ProductCompatBrand"]] = relationship(
-        "ProductCompatBrand", back_populates="brand", passive_deletes=True
+    forklift_models: Mapped[list["ForkliftModel"]] = relationship(
+        "ForkliftModel", back_populates="brand", passive_deletes=True
     )

@@ -48,8 +48,6 @@ class RentalRepository:
             select(RentalContract)
             .options(
                 selectinload(RentalContract.customer),
-                selectinload(RentalContract.lead),
-                selectinload(RentalContract.quotation),
                 selectinload(RentalContract.assigned_user),
                 selectinload(RentalContract.items),
             )
@@ -62,8 +60,6 @@ class RentalRepository:
             select(RentalContract)
             .options(
                 selectinload(RentalContract.customer),
-                selectinload(RentalContract.lead),
-                selectinload(RentalContract.quotation),
                 selectinload(RentalContract.assigned_user),
                 selectinload(RentalContract.approved_by_user),
                 selectinload(RentalContract.items).selectinload(RentalContractItem.forklift),
@@ -95,8 +91,6 @@ class RentalRepository:
             select(RentalContract)
             .options(
                 selectinload(RentalContract.customer),
-                selectinload(RentalContract.lead),
-                selectinload(RentalContract.quotation),
                 selectinload(RentalContract.assigned_user),
             )
         )

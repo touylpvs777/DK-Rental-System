@@ -30,7 +30,7 @@ class ForkliftModel(Base):
         DateTime(timezone=True), onupdate=func.now(), nullable=True,
     )
 
-    brand: Mapped["Brand | None"] = relationship("Brand")
+    brand: Mapped["Brand | None"] = relationship("Brand", back_populates="forklift_models")
     forklifts: Mapped[list["Forklift"]] = relationship(
         "Forklift", back_populates="forklift_model", passive_deletes=True,
     )

@@ -53,14 +53,8 @@ class RentalContract(Base):
         String(50), nullable=False, unique=True, index=True,
     )
 
-    quotation_id: Mapped[int | None] = mapped_column(
-        Integer, ForeignKey("quotations.id", ondelete="SET NULL"), nullable=True, index=True,
-    )
     customer_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("customers.id", ondelete="RESTRICT"), nullable=False, index=True,
-    )
-    lead_id: Mapped[int | None] = mapped_column(
-        Integer, ForeignKey("leads.id", ondelete="SET NULL"), nullable=True, index=True,
     )
 
     status: Mapped[str] = mapped_column(
@@ -132,8 +126,6 @@ class RentalContract(Base):
     # ── Relationships ────────────────────────────────────────────────────────
 
     customer: Mapped["Customer"] = relationship("Customer")
-    lead: Mapped["Lead | None"] = relationship("Lead")
-    quotation: Mapped["Quotation | None"] = relationship("Quotation")
     assigned_user: Mapped["User | None"] = relationship(
         "User", foreign_keys="[RentalContract.assigned_to]",
     )

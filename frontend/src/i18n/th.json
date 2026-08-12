@@ -63,6 +63,7 @@
     "tryAdjustingFilters": "ลองปรับตัวกรองหรือคำค้นหา",
     "somethingWentWrong": "เกิดข้อผิดพลาด",
     "retry": "ลองใหม่",
+    "refresh": "รีเฟรช",
     "clearFilters": "ล้างตัวกรอง",
     "export": "ส่งออก",
     "print": "พิมพ์",
@@ -293,6 +294,7 @@
       "purchasing": "งานจัดซื้อ",
       "equipment": "สินทรัพย์อุปกรณ์",
       "rental": "การดำเนินงานเช่า",
+      "rentalManagement": "การจัดการเช่า",
       "maintenance": "บริการและบำรุงรักษา",
       "inventory": "ควบคุมสินค้าคงคลัง",
       "finance": "การเงินและบัญชี",
@@ -301,6 +303,7 @@
     },
     "items": {
       "overview": "ภาพรวมการดำเนินงาน",
+      "forklifts": "รถโฟล์คลิฟท์",
       "customers": "ลูกค้า",
       "leads": "โอกาสทางการขาย",
       "quotations": "ข้อเสนอเชิงพาณิชย์",
@@ -319,8 +322,9 @@
       "statements": "คำร้องแจ้งยอด",
       "activity": "กิจกรรม",
       "reports": "รายงาน",
+      "shiftHandovers": "ส่งมอบกะ",
       "analytics": "การวิเคราะห์เชิงธุรกิจ",
-      "iotTelemetry": "ระบบ IoT",
+      "iotTelemetry": "ระบบติดตาม IoT",
       "settings": "ตั้งค่า",
       "warehouseProjects": "โครงการคลังสินค้า",
       "purchaseOrders": "ใบสั่งซื้อ",
@@ -1094,7 +1098,10 @@
     "executiveDashboard": "แดชบอร์ดผู้บริหาร",
     "projects": "โครงการคลังสินค้า",
     "projectDetail": "รายละเอียดโครงการ",
-    "iotManagement": "การจัดการ IoT"
+    "iotManagement": "การจัดการ IoT",
+    "shiftHandovers": "ส่งมอบกะ",
+    "newShiftHandover": "ส่งมอบกะใหม่",
+    "shiftHandoverDetail": "รายละเอียดส่งมอบกะ"
   },
   "inventory": {
     "common": {
@@ -2256,6 +2263,7 @@
       "nameEnglish": "ชื่อ (ภาษาอังกฤษ)",
       "nameEnglishPlaceholder": "เช่น Jungheinrich EFG 216k",
       "nameLao": "ชื่อ (ภาษาลาว)",
+      "nameLaoPlaceholder": "ชื่อรถโฟล์คลิฟท์ (ภาษาลาว)",
       "internalCode": "รหัสภายใน",
       "internalCodePlaceholder": "รหัสทรัพย์สินของ DK",
       "brand": "ยี่ห้อ",
@@ -3547,6 +3555,64 @@
         "void": "ยกเลิก",
         "voided": "ใบเสร็จรับเงินถูกยกเลิกแล้ว"
       }
+    }
+  },
+  "shiftHandover": {
+    "list": {
+      "title": "การส่งมอบกะ",
+      "subtitle": "{{count}} รายการตรวจสอบการส่งมอบกะ",
+      "newHandover": "ส่งมอบกะใหม่",
+      "allForklifts": "รถโฟล์คลิฟท์ทั้งหมด",
+      "empty": "ยังไม่มีการบันทึกส่งมอบกะ",
+      "rangeOf": "แสดง {{from}}–{{to}} จาก {{total}}",
+      "deleteTitle": "ลบข้อมูลการส่งมอบกะ",
+      "deleteConfirm": "รายการตรวจสอบการส่งมอบกะนี้จะถูกลบอย่างถาวร ไม่สามารถกู้คืนได้"
+    },
+    "form": {
+      "notFound": "ไม่พบข้อมูลการส่งมอบกะ",
+      "photoUploadFailed": "ไม่สามารถอัปโหลดรูปภาพได้",
+      "contractRequired": "กรุณาเลือกสัญญาเช่า",
+      "forkliftRequired": "กรุณาเลือกรถโฟล์คลิฟท์",
+      "newTitle": "การส่งมอบกะใหม่",
+      "editTitle": "แก้ไขการส่งมอบกะ",
+      "equipmentSection": "อุปกรณ์และสัญญา",
+      "rentalContract": "สัญญาเช่า",
+      "selectContract": "เลือกสัญญา…",
+      "forklift": "รถโฟล์คลิฟท์",
+      "selectForklift": "เลือกรถโฟล์คลิฟท์…",
+      "shiftSection": "รายละเอียดกะ",
+      "shift": "กะ",
+      "dateTime": "วันที่และเวลาส่งมอบ",
+      "hourMeter": "เลขไมล์ชั่วโมง",
+      "personnelSection": "บุคลากร",
+      "handoverPerson": "ผู้ส่งมอบกะ (ออก)",
+      "namePlaceholder": "ชื่อ-นามสกุล",
+      "receiverPerson": "ผู้รับมอบกะ (เข้า)",
+      "checklistSection": "รายการตรวจสอบ",
+      "checklistStatus": "สถานะการตรวจสอบ",
+      "issuesDescription": "อธิบายปัญหา",
+      "issuesPlaceholder": "คุณสังเกตเห็นอะไรบ้าง? โปรดระบุให้ชัดเจน",
+      "issuePhotos": "รูปภาพ",
+      "addPhoto": "เพิ่ม",
+      "signaturesSection": "ลายเซ็น",
+      "handoverSignature": "ลายเซ็นผู้ส่งมอบกะ",
+      "receiverSignature": "ลายเซ็นผู้รับมอบกะ",
+      "submit": "ส่งข้อมูลการส่งมอบกะ",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง"
+    },
+    "shiftOptions": {
+      "morning": "กะเช้า",
+      "afternoon": "กะบ่าย",
+      "night": "กะดึก"
+    },
+    "statusOptions": {
+      "normal": "ปกติ",
+      "issuesFound": "พบปัญหา"
+    },
+    "validation": {
+      "required": "กรุณากรอกข้อมูลนี้",
+      "min0": "ต้องมีค่า 0 หรือมากกว่า",
+      "issueDescRequired": "กรุณาอธิบายปัญหาที่พบ"
     }
   }
 }
