@@ -2191,7 +2191,13 @@
       "billingCycleDay": "Billing Cycle Day",
       "earlyTerminationFee": "Early Termination Fee",
       "lateReturnPenalty": "Late Return Penalty",
-      "overtimeRate": "Overtime Rate"
+      "overtimeRate": "Overtime Rate",
+      "dailyHoursQuota": "Daily Hours Quota",
+      "overtimeRatePerHour": "Overtime Rate / Hour",
+      "restPolicyWorkHours": "Continuous Work Hours",
+      "restPolicyRestMinutes": "Required Rest (minutes)",
+      "jobType": "Job Type",
+      "jobTypePlaceholder": "e.g. Cold Storage, Outdoor, Heavy Lifting"
     },
     "editor": {
       "notFoundError": "Rental contract not found",
@@ -2203,7 +2209,9 @@
       "keyTerms": "Key Terms",
       "confirmCancel": "Are you sure you want to cancel this rental contract?",
       "itemWarning": "One or more line items may not have saved — please reload and verify before continuing.",
-      "refreshFailed": "Couldn't refresh the latest data — your last change may still have saved. Reload to check."
+      "refreshFailed": "Couldn't refresh the latest data — your last change may still have saved. Reload to check.",
+      "generalSection": "General & IoT Data",
+      "quotaSection": "Usage Quotas & Rest Policy"
     },
     "detail": {
       "backToContracts": "Back to Rental Contracts",
@@ -2320,6 +2328,28 @@
         "revisionNeeded": "Revision needed",
         "cancelledByUser": "Cancelled by user",
         "rejected": "Rejected"
+      }
+    },
+    "legalDocument": {
+      "title": "Legal Document",
+      "writeTab": "Write Content",
+      "uploadTab": "Upload File",
+      "viewerTitle": "Document Viewer",
+      "bodyPlaceholder": "Type or paste the contract terms here…",
+      "dropzoneTitle": "Drag & drop a file here",
+      "dropzoneSubtitle": "or click to browse — PDF, JPEG, Word, Excel",
+      "removeFile": "Remove",
+      "noPreview": "No preview available for this file type.",
+      "downloadFile": "Download",
+      "empty": "No legal document attached yet.",
+      "mockNotice": "Document storage isn't connected to the server yet — this is a local preview only.",
+      "invalidType": "Unsupported file type. Please upload a PDF, JPEG, Word, or Excel file.",
+      "mockSaved": "Legal document saved locally (not yet persisted to the server).",
+      "toolbar": {
+        "bold": "Bold",
+        "italic": "Italic",
+        "underline": "Underline",
+        "bulletList": "Bulleted List"
       }
     }
   },
@@ -2863,6 +2893,40 @@
       "leadTrend": "Failed to load lead trend.",
       "customerTrend": "Failed to load customer trend.",
       "leadMetrics": "Failed to load lead metrics."
+    },
+    "fleetOps": {
+      "eyebrow": "Fleet Operations",
+      "title": "Fleet Operations Command Center",
+      "subtitle": "Live snapshot of fleet availability, shift handover issues, and device alerts.",
+      "overview": {
+        "title": "Fleet Status Overview",
+        "totalForklifts": "Total Forklifts",
+        "readyForRent": "Ready for Rent",
+        "currentlyRented": "Currently Rented",
+        "pendingInspection": "Pending Inspection"
+      },
+      "issues": {
+        "title": "Recent Issues (Shift Handovers)",
+        "viewAll": "View all",
+        "empty": "No open issues right now.",
+        "loadError": "Could not load recent issues."
+      },
+      "alerts": {
+        "title": "IoT Safety Alerts",
+        "mockNotice": "Sample data — live IoT alerting isn't connected yet.",
+        "minutesAgo": "{{count}}m ago",
+        "hoursAgo": "{{count}}h ago",
+        "severity": {
+          "critical": "Critical",
+          "warning": "Warning"
+        },
+        "items": {
+          "overheat": "Overheat Warning — {{forklift}}",
+          "geofence": "Out of Geofence — {{forklift}}",
+          "battery": "Low Battery — {{forklift}}",
+          "offline": "Device Offline — {{forklift}}"
+        }
+      }
     }
   },
   "customer360": {

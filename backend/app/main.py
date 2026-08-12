@@ -202,6 +202,34 @@ async def _apply_sqlite_migrations(conn) -> None:
                 {"val": member.value, "name": member.name},
             )
 
+    # ── rental_contracts: quotas & rest policy ────────────────────────────
+    try:
+        await conn.execute(text(
+            "ALTER TABLE rental_contracts ADD COLUMN daily_hours_quota INTEGER NOT NULL DEFAULT 8"
+        ))
+    except OperationalError:
+        pass  # column already exists
+    try:
+        await conn.execute(text("ALTER TABLE rental_contracts ADD COLUMN overtime_rate_per_hour FLOAT"))
+    except OperationalError:
+        pass  # column already exists
+    try:
+        await conn.execute(text(
+            "ALTER TABLE rental_contracts ADD COLUMN rest_policy_work_hours INTEGER NOT NULL DEFAULT 4"
+        ))
+    except OperationalError:
+        pass  # column already exists
+    try:
+        await conn.execute(text(
+            "ALTER TABLE rental_contracts ADD COLUMN rest_policy_rest_minutes INTEGER NOT NULL DEFAULT 30"
+        ))
+    except OperationalError:
+        pass  # column already exists
+    try:
+        await conn.execute(text("ALTER TABLE rental_contracts ADD COLUMN job_type VARCHAR(50)"))
+    except OperationalError:
+        pass  # column already exists
+
 
 _DEFAULT_ADMIN_EMAIL = "admin@dkservice.com"
 _DEFAULT_ADMIN_USERNAME = "admin"
@@ -270,6 +298,11 @@ async def _apply_postgres_migrations(conn) -> None:
         "ALTER TABLE forklifts ADD COLUMN IF NOT EXISTS iot_device_id VARCHAR(100)",
         "ALTER TABLE forklifts ADD COLUMN IF NOT EXISTS last_telemetry_ping TIMESTAMPTZ",
         "CREATE UNIQUE INDEX IF NOT EXISTS ix_forklifts_iot_device_id ON forklifts (iot_device_id)",
+        "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS daily_hours_quota INTEGER NOT NULL DEFAULT 8",
+        "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS overtime_rate_per_hour DOUBLE PRECISION",
+        "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS rest_policy_work_hours INTEGER NOT NULL DEFAULT 4",
+        "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS rest_policy_rest_minutes INTEGER NOT NULL DEFAULT 30",
+        "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS job_type VARCHAR(50)",
     ):
         await conn.execute(text(statement))
 

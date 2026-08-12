@@ -82,6 +82,13 @@ class RentalContract(Base):
     late_return_penalty_pct: Mapped[float] = mapped_column(Float, default=0.0, nullable=False)
     overtime_rate_pct: Mapped[float] = mapped_column(Float, default=150.0, nullable=False)
 
+    # ── Contract Quotas & Rest Policy ───────────────────────────────────────
+    daily_hours_quota: Mapped[int] = mapped_column(Integer, default=8, nullable=False)
+    overtime_rate_per_hour: Mapped[float | None] = mapped_column(Float, nullable=True)
+    rest_policy_work_hours: Mapped[int] = mapped_column(Integer, default=4, nullable=False)
+    rest_policy_rest_minutes: Mapped[int] = mapped_column(Integer, default=30, nullable=False)
+    job_type: Mapped[str | None] = mapped_column(String(50), nullable=True)
+
     subtotal: Mapped[float] = mapped_column(Float, default=0.0, nullable=False)
     tax_rate: Mapped[float] = mapped_column(Float, default=0.0, nullable=False)
     tax_amount: Mapped[float] = mapped_column(Float, default=0.0, nullable=False)

@@ -22,6 +22,11 @@ export const rentalContractHeaderSchema = z.object({
   delivery_contact_phone: z.string().optional(),
   notes: z.string().optional(),
   internal_notes: z.string().optional(),
+  daily_hours_quota: z.number().min(1).max(24),
+  overtime_rate_per_hour: z.number().min(0).nullable(),
+  rest_policy_work_hours: z.number().min(1).max(24),
+  rest_policy_rest_minutes: z.number().min(0),
+  job_type: z.string().optional(),
 })
 
 export type RentalContractEditorFormValues = z.infer<typeof rentalContractHeaderSchema>
@@ -48,4 +53,9 @@ export const RENTAL_CONTRACT_EDITOR_DEFAULTS: RentalContractEditorFormValues = {
   delivery_contact_phone: '',
   notes: '',
   internal_notes: '',
+  daily_hours_quota: 8,
+  overtime_rate_per_hour: null,
+  rest_policy_work_hours: 4,
+  rest_policy_rest_minutes: 30,
+  job_type: '',
 }

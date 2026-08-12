@@ -229,6 +229,11 @@ export interface RentalContractDetail extends RentalContract {
   early_termination_fee_pct: number
   late_return_penalty_pct: number
   overtime_rate_pct: number
+  daily_hours_quota: number
+  overtime_rate_per_hour: number | null
+  rest_policy_work_hours: number
+  rest_policy_rest_minutes: number
+  job_type: string | null
   delivery_address: string | null
   delivery_contact_name: string | null
   delivery_contact_phone: string | null
@@ -279,6 +284,11 @@ export interface RentalContractCreate {
   delivery_contact_phone?: string
   notes?: string
   internal_notes?: string
+  daily_hours_quota?: number
+  overtime_rate_per_hour?: number | null
+  rest_policy_work_hours?: number
+  rest_policy_rest_minutes?: number
+  job_type?: string | null
 }
 
 export interface RentalContractUpdate {
@@ -297,6 +307,11 @@ export interface RentalContractUpdate {
   delivery_contact_phone?: string
   notes?: string
   internal_notes?: string
+  daily_hours_quota?: number
+  overtime_rate_per_hour?: number | null
+  rest_policy_work_hours?: number
+  rest_policy_rest_minutes?: number
+  job_type?: string | null
 }
 
 export interface RentalContractItemCreate {

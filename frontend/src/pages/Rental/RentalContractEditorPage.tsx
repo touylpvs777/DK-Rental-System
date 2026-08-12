@@ -21,11 +21,13 @@ import LineItemsGrid, { type GridColumn, type GridRow } from '@/components/grid/
 import DocumentPreview from '@/components/DocumentPreview'
 import DocumentFlowStrip from '@/components/layout/DocumentFlowStrip'
 import { RentalStatusBadge, RentalContractTypeBadge } from '@/components/rental/RentalStatusBadge'
+import LegalDocumentPanel from '@/components/rental/LegalDocumentPanel'
 import Modal from '@/components/ui/Modal'
 import PrintButton from '@/components/ui/PrintButton'
 import { toast } from '@/store/toastStore'
 import { useCompanyStore } from '@/store/companyStore'
 import { getHeaderColorClass } from '@/utils/routeHeaderColor'
+import { EMPTY_LEGAL_DOCUMENT, type LegalDocumentState } from '@/types/legalDocument'
 import '@/styles/shared.css'
 import '@/styles/detail.css'
 import '@/components/documents/DocumentEditor.css'
@@ -138,6 +140,39 @@ function RentalContractHeaderFields({ customers, readOnly }: { customers: Custom
   )
 }
 
+function QuotaRestPolicyFields({ readOnly }: { readOnly: boolean }) {
+  const { t } = useTranslation()
+  const { register } = useFormContext<RentalContractEditorFormValues>()
+
+  return (
+    <div className="doc-editor-header-grid">
+      <div className="form-group">
+        <label>{t('rental.form.dailyHoursQuota')}</label>
+        <input type="number" step="1" min="1" max="24" disabled={readOnly} {...register('daily_hours_quota', { valueAsNumber: true })} />
+      </div>
+      <div className="form-group">
+        <label>{t('rental.form.overtimeRatePerHour')}</label>
+        <input
+          type="number" step="any" min="0" disabled={readOnly}
+          {...register('overtime_rate_per_hour', { setValueAs: (v) => (v === '' || v == null ? null : Number(v)) })}
+        />
+      </div>
+      <div className="form-group">
+        <label>{t('rental.form.restPolicyWorkHours')}</label>
+        <input type="number" step="1" min="1" max="24" disabled={readOnly} {...register('rest_policy_work_hours', { valueAsNumber: true })} />
+      </div>
+      <div className="form-group">
+        <label>{t('rental.form.restPolicyRestMinutes')}</label>
+        <input type="number" step="1" min="0" disabled={readOnly} {...register('rest_policy_rest_minutes', { valueAsNumber: true })} />
+      </div>
+      <div className="form-group" style={{ gridColumn: 'span 2' }}>
+        <label>{t('rental.form.jobType')}</label>
+        <input placeholder={t('rental.form.jobTypePlaceholder')} disabled={readOnly} {...register('job_type')} />
+      </div>
+    </div>
+  )
+}
+
 export default function RentalContractEditorPage() {
   const { t } = useTranslation()
   const { id } = useParams<{ id: string }>()
@@ -155,6 +190,8 @@ export default function RentalContractEditorPage() {
   const [error, setError] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<'edit' | 'preview'>('edit')
   const [cancelModal, setCancelModal] = useState(false)
+  const [legalDoc, setLegalDoc] = useState<LegalDocumentState>(EMPTY_LEGAL_DOCUMENT)
+  const updateLegalDoc = (patch: Partial<LegalDocumentState>) => setLegalDoc((prev) => ({ ...prev, ...patch }))
 
   const companyProfile = useCompanyStore((s) => s.profile)
   const fetchCompanyProfile = useCompanyStore((s) => s.fetch)
@@ -212,6 +249,11 @@ export default function RentalContractEditorPage() {
         delivery_contact_phone: data.delivery_contact_phone ?? '',
         notes: data.notes ?? '',
         internal_notes: data.internal_notes ?? '',
+        daily_hours_quota: data.daily_hours_quota,
+        overtime_rate_per_hour: data.overtime_rate_per_hour,
+        rest_policy_work_hours: data.rest_policy_work_hours,
+        rest_policy_rest_minutes: data.rest_policy_rest_minutes,
+        job_type: data.job_type ?? '',
       })
       setItems(data.items.length
         ? data.items.map((it) => ({
@@ -276,6 +318,11 @@ export default function RentalContractEditorPage() {
         delivery_contact_phone: form.delivery_contact_phone || undefined,
         notes: form.notes || undefined,
         internal_notes: form.internal_notes || undefined,
+        daily_hours_quota: form.daily_hours_quota,
+        overtime_rate_per_hour: form.overtime_rate_per_hour,
+        rest_policy_work_hours: form.rest_policy_work_hours,
+        rest_policy_rest_minutes: form.rest_policy_rest_minutes,
+        job_type: form.job_type || undefined,
       }
       const { data } = await createRentalContract(payload)
       // The add-item endpoint's response occasionally errors even though the
@@ -296,6 +343,7 @@ export default function RentalContractEditorPage() {
       }
       if (itemWarning) toast.error(t('rental.editor.itemWarning'))
       toast.success(t('rental.form.createdToast', { number: data.contract_number }))
+      if (legalDoc.contract_body.trim() || legalDoc.attachment_file) toast.success(t('rental.legalDocument.mockSaved'))
       navigate(`/rental-contracts/${data.id}`, { replace: true })
     } catch (err: unknown) {
       const msg = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail
@@ -326,6 +374,11 @@ export default function RentalContractEditorPage() {
         delivery_contact_phone: form.delivery_contact_phone,
         notes: form.notes,
         internal_notes: form.internal_notes,
+        daily_hours_quota: form.daily_hours_quota,
+        overtime_rate_per_hour: form.overtime_rate_per_hour,
+        rest_policy_work_hours: form.rest_policy_work_hours,
+        rest_policy_rest_minutes: form.rest_policy_rest_minutes,
+        job_type: form.job_type || undefined,
       })
       // Differential merge: rows with an `id` update in place (forklift_id
       // ignored — swapping equipment on a saved line isn't supported), rows
@@ -346,6 +399,7 @@ export default function RentalContractEditorPage() {
         })),
       })
       toast.success(t('rental.editor.saveSuccess'))
+      if (legalDoc.contract_body.trim() || legalDoc.attachment_file) toast.success(t('rental.legalDocument.mockSaved'))
       await load()
     } catch (err: unknown) {
       const msg = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail
@@ -506,8 +560,19 @@ export default function RentalContractEditorPage() {
             <div style={{ display: 'grid', gap: 16, marginTop: 16 }}>
               <DocumentFlowStrip steps={flowSteps} currentIndex={4} />
 
-              <div className="doc-editor-header">
-                <RentalContractHeaderFields customers={customers} readOnly={!isNew} />
+              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
+                <div className="grid gap-4">
+                  <div className="doc-editor-section">
+                    <h3 className="doc-editor-section-title">{t('rental.editor.generalSection')}</h3>
+                    <RentalContractHeaderFields customers={customers} readOnly={!isNew} />
+                  </div>
+                  <div className="doc-editor-section">
+                    <h3 className="doc-editor-section-title">{t('rental.editor.quotaSection')}</h3>
+                    <QuotaRestPolicyFields readOnly={!isEditableHeader} />
+                  </div>
+                </div>
+
+                <LegalDocumentPanel state={legalDoc} onChange={updateLegalDoc} canEdit={isEditableHeader} />
               </div>
 
               <div className="doc-editor-section">
