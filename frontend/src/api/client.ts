@@ -1,7 +1,10 @@
 import axios from 'axios'
 
 const client = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL as string,
+  // The relative default is routed by Vite in development and nginx in the
+  // container. It also prevents requests from falling back to `/auth/*` on
+  // the frontend origin when a local .env file has not been created yet.
+  baseURL: (import.meta.env.VITE_API_BASE_URL as string | undefined) || '/api/v1',
   headers: { 'Content-Type': 'application/json' },
 })
 

@@ -26,6 +26,9 @@ from app.models.rental_damage_report import RentalDamageReport
 from app.models.rental_extension import RentalExtension
 from app.models.rental_return import RentalReturn
 from app.models.shift_handover import ShiftHandover
+from app.models.quotation import Quotation
+from app.models.delivery_order import DeliveryOrder
+from app.models.delivery_checklist import DeliveryChecklist
 from app.models.maintenance_plan import MaintenancePlan
 from app.models.maintenance_schedule import MaintenanceSchedule
 from app.models.work_order import WorkOrder
@@ -52,7 +55,8 @@ __all__ = [
     "ForkliftHourMeterLog", "ForkliftDocument", "ForkliftPhoto", "ForkliftOwnershipCost", "ForkliftSpec",
     "RentalContract", "RentalContractItem", "RentalContractStatusHistory",
     "RentalContractTerm", "RentalExtension", "RentalReturn",
-    "RentalDamageReport", "RentalBillingCycle", "ShiftHandover",
+    "RentalDamageReport", "RentalBillingCycle", "ShiftHandover", "Quotation",
+    "DeliveryOrder", "DeliveryChecklist",
     "Invoice", "InvoiceItem", "Payment", "PaymentAllocation",
     "Receipt", "ReceiptStatusHistory",
     "Deposit", "RevenueRecognition",

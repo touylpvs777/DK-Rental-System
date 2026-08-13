@@ -31,7 +31,7 @@ import app.models as _models  # noqa: F401, E402
 from app.core.security import hash_password
 from app.models.role import Role, RoleName
 from app.models.user import User
-from app.routes import activity, auth, billing, customers, dashboard, forklifts, iot_telemetry, maintenance, movements, notifications, receipts, rentals, reports, roles, shift_handover, users, uploads
+from app.routes import activity, auth, billing, customers, dashboard, delivery_orders, forklifts, invoices, iot_telemetry, maintenance, movements, notifications, quotations, receipts, rentals, reports, roles, shift_handover, users, uploads
 from app.routes.catalog import router as catalog_router
 from app.routes.settings import router as settings_router
 from app.scheduler import shutdown_scheduler, start_scheduler
@@ -230,6 +230,16 @@ async def _apply_sqlite_migrations(conn) -> None:
     except OperationalError:
         pass  # column already exists
 
+    # ── rental_contracts: legal document (rich text body + file attachment) ──
+    try:
+        await conn.execute(text("ALTER TABLE rental_contracts ADD COLUMN contract_body TEXT"))
+    except OperationalError:
+        pass  # column already exists
+    try:
+        await conn.execute(text("ALTER TABLE rental_contracts ADD COLUMN attachment_url VARCHAR(500)"))
+    except OperationalError:
+        pass  # column already exists
+
 
 _DEFAULT_ADMIN_EMAIL = "admin@dkservice.com"
 _DEFAULT_ADMIN_USERNAME = "admin"
@@ -303,6 +313,8 @@ async def _apply_postgres_migrations(conn) -> None:
         "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS rest_policy_work_hours INTEGER NOT NULL DEFAULT 4",
         "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS rest_policy_rest_minutes INTEGER NOT NULL DEFAULT 30",
         "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS job_type VARCHAR(50)",
+        "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS contract_body TEXT",
+        "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS attachment_url VARCHAR(500)",
     ):
         await conn.execute(text(statement))
 
@@ -377,10 +389,13 @@ app.include_router(catalog_router, prefix="/api/v1/catalog")
 app.include_router(forklifts.router, prefix="/api/v1")
 app.include_router(iot_telemetry.router, prefix="/api/v1")
 app.include_router(rentals.router, prefix="/api/v1")
+app.include_router(quotations.router, prefix="/api/v1")
+app.include_router(delivery_orders.router, prefix="/api/v1")
 app.include_router(movements.router, prefix="/api/v1")
 app.include_router(maintenance.router, prefix="/api/v1")
 app.include_router(shift_handover.router, prefix="/api/v1")
 app.include_router(billing.router, prefix="/api/v1")
+app.include_router(invoices.router, prefix="/api/v1")
 app.include_router(receipts.router, prefix="/api/v1")
 app.include_router(uploads.router, prefix="/api/v1")
 app.include_router(notifications.router, prefix="/api/v1")
@@ -388,6 +403,7 @@ app.include_router(settings_router, prefix="/api/v1")
 
 _uploads_dir = Path(settings.UPLOAD_DIR)
 _uploads_dir.mkdir(parents=True, exist_ok=True)
+(_uploads_dir.parent / "documents").mkdir(parents=True, exist_ok=True)
 app.mount("/uploads", StaticFiles(directory=str(_uploads_dir.parent)), name="uploads")
 
 

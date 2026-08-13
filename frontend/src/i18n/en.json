@@ -845,7 +845,8 @@
       "actions": {
         "issue": "Issue",
         "send": "Send",
-        "void": "Void"
+        "void": "Void",
+        "printPdf": "Print Invoice"
       },
       "amountSummary": {
         "tax": "Tax ({{rate}}%)",
@@ -884,7 +885,8 @@
         "issued": "Invoice issued",
         "sent": "Invoice sent",
         "voided": "Invoice voided",
-        "cancelled": "Invoice cancelled"
+        "cancelled": "Invoice cancelled",
+        "pdfFailed": "Failed to load invoice PDF"
       },
       "card": {
         "due": "Due {{date}}",
@@ -2211,7 +2213,9 @@
       "itemWarning": "One or more line items may not have saved — please reload and verify before continuing.",
       "refreshFailed": "Couldn't refresh the latest data — your last change may still have saved. Reload to check.",
       "generalSection": "General & IoT Data",
-      "quotaSection": "Usage Quotas & Rest Policy"
+      "quotaSection": "Usage Quotas & Rest Policy",
+      "prefilledFromQuotation": "Pre-filled from quotation {{number}}. Review the details before creating the contract.",
+      "prefilledLineDescription": "Forklift rental (from quotation {{number}})"
     },
     "detail": {
       "backToContracts": "Back to Rental Contracts",
@@ -2345,6 +2349,8 @@
       "mockNotice": "Document storage isn't connected to the server yet — this is a local preview only.",
       "invalidType": "Unsupported file type. Please upload a PDF, JPEG, Word, or Excel file.",
       "mockSaved": "Legal document saved locally (not yet persisted to the server).",
+      "uploadFailed": "Could not upload the document. Please try again.",
+      "viewFile": "View",
       "toolbar": {
         "bold": "Bold",
         "italic": "Italic",
@@ -2388,7 +2394,8 @@
       "forklifts": "Forklifts",
       "customers": "Customers",
       "leads": "Sales Leads",
-      "quotations": "Commercial Quotations",
+      "quotations": "Quotations",
+      "deliveryOrders": "Delivery Orders",
       "registry": "Asset Register",
       "movements": "Stock Movements",
       "contracts": "Service Contracts",
@@ -3181,6 +3188,10 @@
     "quotations": "Quotations",
     "newQuotation": "New Quotation",
     "quotationDetail": "Quotation Detail",
+    "deliveryOrders": "Delivery Orders",
+    "newDeliveryOrder": "New Delivery Order",
+    "editDeliveryOrder": "Edit Delivery Order",
+    "deliveryOrderDetail": "Delivery Order Detail",
     "rentalContracts": "Rental Contracts",
     "newContract": "New Contract",
     "contractDetail": "Contract Detail",
@@ -3225,7 +3236,10 @@
     "iotManagement": "IoT Management",
     "shiftHandovers": "Shift Handovers",
     "newShiftHandover": "New Shift Handover",
-    "shiftHandoverDetail": "Shift Handover Detail"
+    "shiftHandoverDetail": "Shift Handover Detail",
+    "newQuotation": "New Quotation",
+    "editQuotation": "Edit Quotation",
+    "quotationDetail": "Quotation Detail"
   },
   "iot": {
     "title": "IoT Telemetry",
@@ -3697,5 +3711,81 @@
       "min0": "Must be 0 or more",
       "issueDescRequired": "Please describe the issue found"
     }
+  },
+  "quotation": {
+    "status": {
+      "draft": "Draft",
+      "sent": "Sent",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "list": {
+      "title": "Quotations",
+      "totalCount": "{{count}} quotations",
+      "newQuotation": "New Quotation",
+      "searchPlaceholder": "Search by quotation no…",
+      "resultsCount": "{{count}} results",
+      "allStatuses": "All statuses",
+      "colQuotationNo": "Quotation No",
+      "colCustomer": "Customer",
+      "colForklift": "Forklift",
+      "colRentalPrice": "Rental Price",
+      "colStartDate": "Start Date",
+      "colEndDate": "End Date",
+      "noQuotationsFound": "No quotations found.",
+      "createOrAdjust": "Create a new quotation or adjust your filters.",
+      "pageOf": "Page {{page}} of {{pages}} ({{total}} total)",
+      "deleteConfirmTitle": "Delete quotation",
+      "deleteConfirmMessage": "Delete quotation {{number}}? This cannot be undone."
+    },
+    "form": {
+      "newQuotation": "New Quotation",
+      "createQuotation": "Create Quotation",
+      "saveChanges": "Save Changes",
+      "detailsSection": "Quotation Details",
+      "customer": "Customer",
+      "selectCustomer": "Select a customer…",
+      "forklift": "Forklift",
+      "noForklift": "Not selected yet",
+      "status": "Status",
+      "expectedStartDate": "Expected Start Date",
+      "expectedEndDate": "Expected End Date",
+      "dailyHoursQuota": "Daily Hours Quota",
+      "rentalPrice": "Rental Price",
+      "notesPlaceholder": "Optional notes about this quotation…",
+      "customerRequired": "Select a customer.",
+      "dateOrderError": "End date must be after start date.",
+      "notFound": "Quotation not found."
+    },
+    "detail": {
+      "backToQuotations": "Back to Quotations",
+      "notFoundError": "Quotation not found or failed to load.",
+      "convertToContract": "Convert to Contract",
+      "rentalPrice": "Rental Price",
+      "createdBy": "Created By"
+    },
+    "validation": {
+      "required": "This field is required",
+      "min0": "Must be 0 or more"
+    },
+    "toast": {
+      "createSuccess": "Quotation created.",
+      "createError": "Failed to create quotation.",
+      "updateSuccess": "Quotation saved.",
+      "updateError": "Failed to save quotation.",
+      "deleteSuccess": "Quotation deleted.",
+      "deleteError": "Failed to delete quotation.",
+      "loadError": "Failed to load quotations."
+    }
+  },
+  "deliveryOrders": {
+    "orderType": { "delivery": "Delivery", "return": "Return" },
+    "status": { "pending": "Pending", "in_transit": "In Transit", "delivered": "Delivered", "cancelled": "Cancelled" },
+    "list": { "title": "Delivery Orders", "totalCount": "{{count}} delivery orders", "new": "New Delivery Order", "searchPlaceholder": "Search by DO number…", "allStatuses": "All statuses", "empty": "No delivery orders found.", "pageOf": "Page {{page}} of {{pages}} ({{total}} total)" },
+    "fields": { "doNo": "DO No", "orderType": "Order Type", "customer": "Customer", "contract": "Rental Contract", "deliveryDate": "Delivery Date", "deliveryAddress": "Delivery Address", "driverName": "Driver Name", "checklist": "Check List", "group": "Group", "item": "Inspection Item", "result": "Result", "remark": "Remark", "passed": "Passed", "failed": "Failed" },
+    "form": { "new": "New Delivery Order", "create": "Create Delivery Order", "save": "Save Changes", "details": "Delivery Details", "loadTemplate": "Load Default Template", "addItem": "Add Item", "noChecklist": "No inspection items added.", "notFound": "Delivery order not found.", "prefilled": "Pre-filled from contract {{contract}} for {{customer}} ({{forklift}})." },
+    "detail": { "back": "Back to Delivery Orders", "deleteTitle": "Delete delivery order", "deleteMessage": "Delete delivery order {{number}}? This cannot be undone." },
+    "validation": { "required": "This field is required" },
+    "toast": { "createSuccess": "Delivery order created.", "createError": "Failed to create delivery order.", "updateSuccess": "Delivery order saved.", "updateError": "Failed to save delivery order.", "deleteSuccess": "Delivery order deleted.", "deleteError": "Failed to delete delivery order.", "loadError": "Failed to load delivery orders." }
   }
 }

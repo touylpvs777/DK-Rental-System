@@ -148,6 +148,8 @@ class RentalContractService:
             rest_policy_work_hours=data.rest_policy_work_hours,
             rest_policy_rest_minutes=data.rest_policy_rest_minutes,
             job_type=data.job_type,
+            contract_body=data.contract_body,
+            attachment_url=data.attachment_url,
             tax_rate=data.tax_rate,
             currency=data.currency,
             delivery_address=data.delivery_address,

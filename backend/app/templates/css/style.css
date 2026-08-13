@@ -1,0 +1,43 @@
+@page {
+  size: A4;
+  margin: 15mm;
+  @bottom-center { content: "Page " counter(page) " of " counter(pages); color: #6b7280; font-size: 8pt; }
+}
+
+* { box-sizing: border-box; }
+body { color: #172033; font-family: "Inter", "Noto Sans Lao", "Noto Sans", Arial, sans-serif; font-size: 9.5pt; line-height: 1.45; }
+.document-header { border-bottom: 2px solid #173e72; display: table; padding-bottom: 12px; width: 100%; }
+.company-name { color: #173e72; font-size: 16pt; font-weight: 800; letter-spacing: .1px; }
+.company-contact { color: #4b5563; font-size: 8.5pt; margin-top: 3px; }
+.document-title { color: #173e72; font-size: 21pt; font-weight: 800; letter-spacing: 1px; text-align: right; }
+.document-subtitle { color: #6b7280; font-size: 8.5pt; text-align: right; text-transform: uppercase; }
+.info-grid { display: table; margin: 18px 0; width: 100%; }
+.info-card { display: table-cell; vertical-align: top; width: 50%; }
+.info-card + .info-card { padding-left: 28px; }
+.section-label { color: #173e72; font-size: 8pt; font-weight: 800; letter-spacing: .8px; margin-bottom: 4px; text-transform: uppercase; }
+.customer-name { font-size: 11pt; font-weight: 700; }
+.muted { color: #6b7280; }
+.meta-table, .items-table, .vehicle-table { border-collapse: collapse; width: 100%; }
+.meta-table td { padding: 2px 0; }
+.meta-table td:first-child { color: #6b7280; padding-right: 12px; width: 42%; }
+.vehicle-block { background: #f4f7fb; border-left: 3px solid #173e72; margin: 14px 0 18px; padding: 9px 11px; }
+.vehicle-table td { padding: 3px 8px 3px 0; width: 25%; }
+.vehicle-table span { color: #6b7280; display: block; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; }
+.items-table { margin-top: 8px; }
+.items-table th { background: #173e72; color: white; font-size: 8pt; font-weight: 700; padding: 8px 6px; text-align: left; }
+.items-table td { border-bottom: 1px solid #d9e0ea; padding: 8px 6px; vertical-align: top; }
+.items-table tbody tr:nth-child(even) { background: #f8fafc; }
+.text-right { text-align: right !important; }
+.summary-wrap { margin-left: auto; margin-top: 14px; width: 43%; }
+.summary-table { border-collapse: collapse; width: 100%; }
+.summary-table td { padding: 5px 7px; }
+.summary-table td:last-child { text-align: right; }
+.summary-total td { background: #173e72; color: white; font-size: 11pt; font-weight: 800; padding: 8px 7px; }
+.notes { border-top: 1px solid #d9e0ea; margin-top: 20px; padding-top: 10px; }
+.footer { border-top: 1px solid #b8c4d3; margin-top: 28px; padding-top: 10px; }
+.bank-details { color: #384152; font-size: 7.7pt; white-space: pre-line; }
+.signatures { display: table; margin-top: 28px; width: 100%; }
+.signature { display: table-cell; padding-right: 18px; text-align: center; width: 33.33%; }
+.signature:last-child { padding-right: 0; }
+.signature-line { border-top: 1px solid #64748b; margin: 36px 0 5px; }
+.signature-label { color: #4b5563; font-size: 8pt; font-weight: 700; }

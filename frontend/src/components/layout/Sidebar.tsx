@@ -6,7 +6,7 @@ import {
   LayoutDashboard, Users, BarChart2, Settings,
   Truck, Car, ClipboardList, ClipboardCheck,
   Building2, ArrowRightLeft, Wrench,
-  Receipt, LogOut, Radio,
+  Receipt, LogOut, Radio, FileText, ClipboardSignature,
   UserCircle, KeyRound, PanelLeftClose, PanelLeftOpen, ChevronDown,
   Camera,
 } from 'lucide-react'
@@ -60,7 +60,9 @@ const NAV_GROUPS: NavGroup[] = [
     items: [
       { to: '/equipment', labelKey: 'nav.items.forklifts', icon: Truck },
       { to: '/iot-management', labelKey: 'nav.items.iotTelemetry', icon: Radio },
+      { to: '/quotations', labelKey: 'nav.items.quotations', icon: FileText },
       { to: '/rental-contracts', labelKey: 'nav.items.contracts', icon: ClipboardList },
+      { to: '/delivery-orders', labelKey: 'nav.items.deliveryOrders', icon: ClipboardSignature },
       { to: '/billing', labelKey: 'nav.items.billing', icon: Receipt },
       { to: '/maintenance', labelKey: 'nav.items.maintenance', icon: Wrench },
       { to: '/shift-handovers', labelKey: 'nav.items.shiftHandovers', icon: ClipboardCheck },

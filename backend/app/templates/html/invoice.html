@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Invoice {{ invoice.invoice_number }}{% endblock %}
+{% block document_heading %}<div class="document-title">INVOICE</div><div class="document-subtitle">Tax invoice</div>{% endblock %}
+{% block content %}
+<section class="info-grid">
+  <div class="info-card"><div class="section-label">Bill To</div><div class="customer-name">{{ customer.company or customer.name }}</div><div>{{ customer.name }}</div>{% if customer.phone %}<div class="muted">{{ customer.phone }}</div>{% endif %}{% if customer.email %}<div class="muted">{{ customer.email }}</div>{% endif %}</div>
+  <div class="info-card"><table class="meta-table"><tr><td>Invoice No.</td><td><strong>{{ invoice.invoice_number }}</strong></td></tr><tr><td>Date</td><td>{{ invoice.issue_date }}</td></tr><tr><td>Due Date</td><td>{{ invoice.due_date }}</td></tr><tr><td>Currency</td><td>{{ invoice.currency }}</td></tr></table></div>
+</section>
+<section class="vehicle-block"><div class="section-label">Vehicle Information</div><table class="vehicle-table"><tr><td><span>Make</span>{{ invoice.vehicle_make }}</td><td><span>Model</span>{{ invoice.vehicle_model }}</td><td><span>VIN / Serial #</span>{{ invoice.vehicle_vin }}</td><td><span>Reg #</span>{{ invoice.vehicle_reg_no }}</td></tr></table></section>
+<table class="items-table"><thead><tr><th>Item Code</th><th>Description</th><th class="text-right">Qty</th><th>Unit</th><th class="text-right">Price</th><th class="text-right">Amount</th></tr></thead><tbody>{% for item in invoice.line_items %}<tr><td>{{ item.item_code }}</td><td>{{ item.description }}</td><td class="text-right">{{ item.quantity }}</td><td>{{ item.unit }}</td><td class="text-right">{{ item.unit_rate }}</td><td class="text-right">{{ item.amount }}</td></tr>{% else %}<tr><td colspan="6" class="muted">No invoice items available.</td></tr>{% endfor %}</tbody></table>
+<div class="summary-wrap"><table class="summary-table"><tr><td>Subtotal</td><td>{{ invoice.subtotal }}</td></tr><tr><td>VAT ({{ invoice.tax_rate }}%)</td><td>{{ invoice.tax_amount }}</td></tr>{% if invoice.discount_amount != '0.00' %}<tr><td>Discount</td><td>{{ invoice.discount_amount }}</td></tr>{% endif %}<tr class="summary-total"><td>Total Invoice</td><td>{{ invoice.total_amount }} {{ invoice.currency }}</td></tr></table></div>
+{% if invoice.notes %}<section class="notes"><div class="section-label">Notes</div>{{ invoice.notes }}</section>{% endif %}
+<footer class="footer"><div class="section-label">Bank Details</div><div class="bank-details">{{ invoice.bank_details }}</div><div class="signatures"><div class="signature"><div class="signature-line"></div><div class="signature-label">Issued by</div></div><div class="signature"><div class="signature-line"></div><div class="signature-label">Approved by</div></div><div class="signature"><div class="signature-line"></div><div class="signature-label">Received by</div></div></div></footer>
+{% endblock %}

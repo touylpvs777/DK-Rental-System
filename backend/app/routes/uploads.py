@@ -26,6 +26,18 @@ ALLOWED_MIME_TYPES = {
 
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 
+# Legal-document attachments (rental contract PDFs, scanned agreements, etc.)
+# — a distinct, broader allowlist from the image-only one above.
+ALLOWED_DOCUMENT_MIME_TYPES = {
+    "application/pdf",
+    "image/jpeg",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/vnd.ms-excel",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+}
+ALLOWED_DOCUMENT_EXTENSIONS = {".pdf", ".jpg", ".jpeg", ".doc", ".docx", ".xls", ".xlsx"}
+
 DANGEROUS_EXTENSIONS = {
     ".exe", ".bat", ".cmd", ".sh", ".ps1", ".dll", ".so",
     ".php", ".py", ".rb", ".js", ".html", ".htm", ".svg",
@@ -64,11 +76,36 @@ def _sniff_image_type(head: bytes) -> str | None:
     return None
 
 
-def _validate_file(file: UploadFile) -> None:
-    if file.content_type not in ALLOWED_MIME_TYPES:
+def _looks_like_document(head: bytes) -> bool:
+    """Confirms the upload's true binary signature matches one of the
+    document formats this endpoint accepts, independent of the client-sent
+    Content-Type header (which is never trusted alone). Covers: PDF, JPEG,
+    the ZIP container modern .docx/.xlsx are built on, and the legacy OLE
+    Compound File format .doc/.xls use. Doesn't attempt to distinguish docx
+    from xlsx (both are plain ZIPs) — the extension allowlist already
+    constrains what's accepted; this only rules out disguised non-document
+    files (an .exe or .html renamed to .pdf, for example).
+    """
+    if head.startswith(b"%PDF-"):
+        return True
+    if head.startswith(b"\xff\xd8\xff"):
+        return True
+    if head[:4] in (b"PK\x03\x04", b"PK\x05\x06", b"PK\x07\x08"):
+        return True
+    if head.startswith(b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1"):
+        return True
+    return False
+
+
+def _validate_file(
+    file: UploadFile,
+    allowed_mime: set[str] = ALLOWED_MIME_TYPES,
+    allowed_ext: set[str] = ALLOWED_EXTENSIONS,
+) -> None:
+    if file.content_type not in allowed_mime:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-            detail=f"File type '{file.content_type}' is not allowed. Accepted: JPEG, PNG, WebP.",
+            detail=f"File type '{file.content_type}' is not allowed. Accepted: {', '.join(sorted(allowed_ext))}.",
         )
 
     filename = file.filename or ""
@@ -78,10 +115,10 @@ def _validate_file(file: UploadFile) -> None:
             status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
             detail="Executable files are not allowed.",
         )
-    if ext not in ALLOWED_EXTENSIONS:
+    if ext not in allowed_ext:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-            detail=f"Extension '{ext}' is not allowed. Accepted: {', '.join(sorted(ALLOWED_EXTENSIONS))}.",
+            detail=f"Extension '{ext}' is not allowed. Accepted: {', '.join(sorted(allowed_ext))}.",
         )
 
 
@@ -153,6 +190,52 @@ async def upload_image(
 
     url = f"/uploads/images/{unique_name}"
     logger.info("Image uploaded: %s (%d bytes)", url, len(content))
+
+    return {
+        "url": url,
+        "filename": unique_name,
+        "original_name": file.filename,
+        "size": len(content),
+        "content_type": file.content_type,
+    }
+
+
+@router.post(
+    "/documents",
+    status_code=status.HTTP_201_CREATED,
+    summary="Upload a legal document attachment (PDF, JPEG, Word, Excel)",
+    response_model=dict,
+)
+async def upload_document(
+    file: UploadFile = File(..., description="Document file (PDF, JPEG, Word, Excel, max 5 MB)"),
+    _: User = require_permission(PermissionName.RENTAL_UPDATE),
+):
+    _validate_file(file, allowed_mime=ALLOWED_DOCUMENT_MIME_TYPES, allowed_ext=ALLOWED_DOCUMENT_EXTENSIONS)
+
+    max_bytes = settings.MAX_UPLOAD_SIZE_MB * 1024 * 1024
+    content = await file.read()
+    if len(content) > max_bytes:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=f"File size exceeds {settings.MAX_UPLOAD_SIZE_MB} MB limit.",
+        )
+    if not _looks_like_document(content[:16]):
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+            detail="File content doesn't match a supported document format.",
+        )
+
+    upload_dir = Path(settings.UPLOAD_DIR).parent / "documents"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+
+    ext = Path(file.filename or "document.pdf").suffix.lower()
+    unique_name = f"{uuid.uuid4().hex}{ext}"
+    file_path = upload_dir / unique_name
+
+    file_path.write_bytes(content)
+
+    url = f"/uploads/documents/{unique_name}"
+    logger.info("Document uploaded: %s (%d bytes)", url, len(content))
 
     return {
         "url": url,

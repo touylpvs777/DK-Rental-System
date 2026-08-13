@@ -16,6 +16,12 @@ const EquipmentRegistryPage = lazy(() => import('@/pages/Equipment/EquipmentRegi
 const ForkliftDetailPage = lazy(() => import('@/pages/Equipment/ForkliftDetailPage'))
 const RentalContractListPage = lazy(() => import('@/pages/Rental/RentalContractListPage'))
 const RentalContractEditorPage = lazy(() => import('@/pages/Rental/RentalContractEditorPage'))
+const QuotationListPage = lazy(() => import('@/pages/Quotations/QuotationListPage'))
+const QuotationForm = lazy(() => import('@/pages/Quotations/QuotationForm'))
+const QuotationDetailPage = lazy(() => import('@/pages/Quotations/QuotationDetailPage'))
+const DeliveryOrderListPage = lazy(() => import('@/pages/DeliveryOrders/DeliveryOrderListPage'))
+const DeliveryOrderFormPage = lazy(() => import('@/pages/DeliveryOrders/DeliveryOrderFormPage'))
+const DeliveryOrderDetailPage = lazy(() => import('@/pages/DeliveryOrders/DeliveryOrderDetailPage'))
 const MovementListPage = lazy(() => import('@/pages/Movement/MovementListPage'))
 const MovementDetailPage = lazy(() => import('@/pages/Movement/MovementDetailPage'))
 const MovementForm = lazy(() => import('@/pages/Movement/MovementForm'))
@@ -74,6 +80,16 @@ export default function App() {
             <Route path="/rental-contracts"       element={<Suspense fallback={<PageLoader />}><RentalContractListPage /></Suspense>} />
             <Route path="/rental-contracts/new"   element={<Suspense fallback={<PageLoader />}><RentalContractEditorPage /></Suspense>} />
             <Route path="/rental-contracts/:id"   element={<Suspense fallback={<PageLoader />}><RentalContractEditorPage /></Suspense>} />
+
+            <Route path="/quotations"             element={<Suspense fallback={<PageLoader />}><QuotationListPage /></Suspense>} />
+            <Route path="/quotations/new"         element={<Suspense fallback={<PageLoader />}><QuotationForm /></Suspense>} />
+            <Route path="/quotations/:id/edit"    element={<Suspense fallback={<PageLoader />}><QuotationForm /></Suspense>} />
+            <Route path="/quotations/:id"         element={<Suspense fallback={<PageLoader />}><QuotationDetailPage /></Suspense>} />
+
+            <Route path="/delivery-orders"             element={<Suspense fallback={<PageLoader />}><DeliveryOrderListPage /></Suspense>} />
+            <Route path="/delivery-orders/new"         element={<Suspense fallback={<PageLoader />}><DeliveryOrderFormPage /></Suspense>} />
+            <Route path="/delivery-orders/:id/edit"    element={<Suspense fallback={<PageLoader />}><DeliveryOrderFormPage /></Suspense>} />
+            <Route path="/delivery-orders/:id"         element={<Suspense fallback={<PageLoader />}><DeliveryOrderDetailPage /></Suspense>} />
 
             <Route path="/movements"              element={<Suspense fallback={<PageLoader />}><MovementListPage /></Suspense>} />
             <Route path="/movements/new"          element={<Suspense fallback={<PageLoader />}><MovementForm /></Suspense>} />

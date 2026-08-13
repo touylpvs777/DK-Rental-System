@@ -234,6 +234,8 @@ export interface RentalContractDetail extends RentalContract {
   rest_policy_work_hours: number
   rest_policy_rest_minutes: number
   job_type: string | null
+  contract_body: string | null
+  attachment_url: string | null
   delivery_address: string | null
   delivery_contact_name: string | null
   delivery_contact_phone: string | null
@@ -289,6 +291,8 @@ export interface RentalContractCreate {
   rest_policy_work_hours?: number
   rest_policy_rest_minutes?: number
   job_type?: string | null
+  contract_body?: string | null
+  attachment_url?: string | null
 }
 
 export interface RentalContractUpdate {
@@ -312,6 +316,8 @@ export interface RentalContractUpdate {
   rest_policy_work_hours?: number
   rest_policy_rest_minutes?: number
   job_type?: string | null
+  contract_body?: string | null
+  attachment_url?: string | null
 }
 
 export interface RentalContractItemCreate {

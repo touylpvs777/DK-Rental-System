@@ -4,7 +4,7 @@ import { useForm, FormProvider, useFormContext } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
 import {
-  AlertCircle, Check, ChevronLeft, FileDown, Loader2, RotateCcw, Send, X,
+  AlertCircle, Check, ChevronLeft, FileDown, Info, Loader2, RotateCcw, Send, X,
 } from 'lucide-react'
 import {
   getRentalContract, createRentalContract, updateRentalContract, addContractItem, replaceContractItemsBulk,
@@ -12,8 +12,11 @@ import {
 } from '@/api/rental'
 import { getCustomers } from '@/api/customers'
 import { getForklifts } from '@/api/forklift'
+import { uploadDocument } from '@/api/upload'
 import type { Customer } from '@/types/customer'
 import type { RentalContractDetail, RentalContractCreate, ForkliftBrief } from '@/types/rental'
+import type { QuotationConversionPrefill } from '@/types/quotation'
+import type { DeliveryOrderConversionPrefill } from '@/types/deliveryOrder'
 import {
   rentalContractHeaderSchema, RENTAL_CONTRACT_EDITOR_DEFAULTS, type RentalContractEditorFormValues,
 } from '@/schemas/rentalContractEditorSchema'
@@ -207,6 +210,34 @@ export default function RentalContractEditorPage() {
     defaultValues: RENTAL_CONTRACT_EDITOR_DEFAULTS,
   })
 
+  // "Convert to Contract" hand-off from QuotationDetailPage — pre-fills a
+  // brand-new contract from an approved quotation's data, passed via router
+  // state rather than a URL param so nothing sensitive shows up in the URL
+  // and no extra round-trip to re-fetch the quotation is needed here.
+  const fromQuotation = (location.state as { fromQuotation?: QuotationConversionPrefill } | null)?.fromQuotation
+  useEffect(() => {
+    if (!isNew || !fromQuotation) return
+    methods.reset({
+      ...RENTAL_CONTRACT_EDITOR_DEFAULTS,
+      customer_id: fromQuotation.customer_id,
+      start_date: fromQuotation.expected_start_date,
+      end_date: fromQuotation.expected_end_date,
+      daily_hours_quota: fromQuotation.daily_hours_quota,
+    })
+    setItems([{
+      _key: nextRowKey++,
+      id: null,
+      forklift_id: fromQuotation.forklift_id,
+      description: t('rental.editor.prefilledLineDescription', 'Forklift rental (from quotation {{number}})', { number: fromQuotation.quotation_no }),
+      monthly_rate: fromQuotation.rental_price,
+      daily_rate: 0,
+      hourly_rate: 0,
+    }])
+    // Runs once on mount only — re-applying on every render would stomp on
+    // whatever the admin has since typed into the form.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const load = async () => {
     if (isNew) return
     setIsLoading(true)
@@ -255,6 +286,11 @@ export default function RentalContractEditorPage() {
         rest_policy_rest_minutes: data.rest_policy_rest_minutes,
         job_type: data.job_type ?? '',
       })
+      setLegalDoc({
+        contract_body: data.contract_body ?? '',
+        attachment_file: null,
+        attachment_url: data.attachment_url ?? null,
+      })
       setItems(data.items.length
         ? data.items.map((it) => ({
           _key: nextRowKey++, id: it.id, forklift_id: it.forklift?.id ?? null, description: it.description,
@@ -300,6 +336,19 @@ export default function RentalContractEditorPage() {
     try {
       const validItems = items.filter((r) => r.forklift_id && r.description.trim())
       if (validItems.length === 0) { setError(t('rental.editor.itemRequired')); setIsSaving(false); return }
+
+      let attachmentUrl = legalDoc.attachment_url
+      if (legalDoc.attachment_file) {
+        try {
+          const uploaded = await uploadDocument(legalDoc.attachment_file)
+          attachmentUrl = uploaded.url
+        } catch {
+          setError(t('rental.legalDocument.uploadFailed'))
+          setIsSaving(false)
+          return
+        }
+      }
+
       const payload: RentalContractCreate = {
         customer_id: form.customer_id!,
         contract_type: form.contract_type,
@@ -323,6 +372,8 @@ export default function RentalContractEditorPage() {
         rest_policy_work_hours: form.rest_policy_work_hours,
         rest_policy_rest_minutes: form.rest_policy_rest_minutes,
         job_type: form.job_type || undefined,
+        contract_body: legalDoc.contract_body || undefined,
+        attachment_url: attachmentUrl || undefined,
       }
       const { data } = await createRentalContract(payload)
       // The add-item endpoint's response occasionally errors even though the
@@ -343,7 +394,6 @@ export default function RentalContractEditorPage() {
       }
       if (itemWarning) toast.error(t('rental.editor.itemWarning'))
       toast.success(t('rental.form.createdToast', { number: data.contract_number }))
-      if (legalDoc.contract_body.trim() || legalDoc.attachment_file) toast.success(t('rental.legalDocument.mockSaved'))
       navigate(`/rental-contracts/${data.id}`, { replace: true })
     } catch (err: unknown) {
       const msg = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail
@@ -358,6 +408,18 @@ export default function RentalContractEditorPage() {
     setIsSaving(true)
     setError(null)
     try {
+      let attachmentUrl = legalDoc.attachment_url
+      if (legalDoc.attachment_file) {
+        try {
+          const uploaded = await uploadDocument(legalDoc.attachment_file)
+          attachmentUrl = uploaded.url
+        } catch {
+          setError(t('rental.legalDocument.uploadFailed'))
+          setIsSaving(false)
+          return
+        }
+      }
+
       await updateRentalContract(ct.id, {
         contract_type: form.contract_type,
         start_date: form.start_date,
@@ -379,6 +441,8 @@ export default function RentalContractEditorPage() {
         rest_policy_work_hours: form.rest_policy_work_hours,
         rest_policy_rest_minutes: form.rest_policy_rest_minutes,
         job_type: form.job_type || undefined,
+        contract_body: legalDoc.contract_body,
+        attachment_url: attachmentUrl,
       })
       // Differential merge: rows with an `id` update in place (forklift_id
       // ignored — swapping equipment on a saved line isn't supported), rows
@@ -399,7 +463,6 @@ export default function RentalContractEditorPage() {
         })),
       })
       toast.success(t('rental.editor.saveSuccess'))
-      if (legalDoc.contract_body.trim() || legalDoc.attachment_file) toast.success(t('rental.legalDocument.mockSaved'))
       await load()
     } catch (err: unknown) {
       const msg = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail
@@ -481,6 +544,19 @@ export default function RentalContractEditorPage() {
     { labelKey: 'nav.items.invoices', to: '/billing/invoices' },
   ]
 
+  const createDeliveryOrder = () => {
+    if (!ct) return
+    const forklift = ct.items.find((item) => item.forklift)?.forklift
+    const prefill: DeliveryOrderConversionPrefill = {
+      contract_id: ct.id,
+      contract_number: ct.contract_number,
+      customer_name: `${ct.customer.first_name} ${ct.customer.last_name}${ct.customer.company ? ` (${ct.customer.company})` : ''}`,
+      forklift_label: forklift ? `${forklift.serial_number} — ${forklift.name_en}` : null,
+      delivery_address: ct.delivery_address,
+    }
+    navigate('/delivery-orders/new', { state: { fromContract: prefill } })
+  }
+
   if (isLoading) return <div style={{ padding: 40, textAlign: 'center', color: 'var(--color-text-muted)' }}>{t('common.loading')}</div>
   if (error && !ct && !isNew) return <div className="page-error"><AlertCircle size={16} /> {error}</div>
 
@@ -541,6 +617,11 @@ export default function RentalContractEditorPage() {
                   <Check size={14} /> {t('rental.detail.activate')}
                 </button>
               )}
+              {ct && ct.status !== 'cancelled' && (
+                <button className="btn btn-primary" onClick={createDeliveryOrder}>
+                  {t('deliveryOrders.form.create')}
+                </button>
+              )}
               {ct && actions.includes('close') && (
                 <button className="btn btn-primary" disabled={isSaving} onClick={() => runAction(t('rental.detail.toasts.contractClosed'), () => closeContract(ct.id))}>
                   <Check size={14} /> {t('rental.detail.closeContract')}
@@ -555,6 +636,13 @@ export default function RentalContractEditorPage() {
           </div>
 
           {error && <div className="page-error"><AlertCircle size={16} /> {error}</div>}
+
+          {isNew && fromQuotation && (
+            <div className="mb-3 flex items-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-3 py-2 text-sm text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300" style={{ marginTop: 16 }}>
+              <Info size={15} />
+              {t('rental.editor.prefilledFromQuotation', 'Pre-filled from quotation {{number}}. Review the details before creating the contract.', { number: fromQuotation.quotation_no })}
+            </div>
+          )}
 
           {viewMode === 'edit' ? (
             <div style={{ display: 'grid', gap: 16, marginTop: 16 }}>

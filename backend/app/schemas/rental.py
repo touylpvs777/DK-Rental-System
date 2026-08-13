@@ -64,6 +64,8 @@ class RentalContractCreate(BaseModel):
     rest_policy_work_hours: int = Field(default=4, gt=0, le=24)
     rest_policy_rest_minutes: int = Field(default=30, ge=0)
     job_type: str | None = Field(default=None, max_length=50)
+    contract_body: str | None = Field(default=None, max_length=50_000)
+    attachment_url: str | None = Field(default=None, max_length=500)
 
 
 class RentalContractUpdate(BaseModel):
@@ -91,6 +93,8 @@ class RentalContractUpdate(BaseModel):
     rest_policy_work_hours: int | None = Field(default=None, gt=0, le=24)
     rest_policy_rest_minutes: int | None = Field(default=None, ge=0)
     job_type: str | None = Field(default=None, max_length=50)
+    contract_body: str | None = Field(default=None, max_length=50_000)
+    attachment_url: str | None = Field(default=None, max_length=500)
 
 
 class RentalContractOut(BaseModel):
@@ -132,6 +136,8 @@ class RentalContractDetail(RentalContractOut):
     rest_policy_work_hours: int
     rest_policy_rest_minutes: int
     job_type: str | None = None
+    contract_body: str | None = None
+    attachment_url: str | None = None
     delivery_address: str | None = None
     delivery_contact_name: str | None = None
     delivery_contact_phone: str | None = None

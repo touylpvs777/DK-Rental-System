@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
-  Bold, Italic, Underline, List, UploadCloud, X, AlertTriangle,
-  FileText, FileSpreadsheet, FileImage, File as FileIcon, Download,
+  Bold, Italic, Underline, List, UploadCloud, X,
+  FileText, FileSpreadsheet, FileImage, File as FileIcon, Download, ExternalLink,
   type LucideIcon,
 } from 'lucide-react'
 import { toast } from '@/store/toastStore'
 import { sanitizeRichText } from '@/utils/sanitizeRichText'
+import { resolveMediaUrl } from '@/utils/media'
 import type { LegalDocumentState } from '@/types/legalDocument'
 
 const ACCEPTED_EXT = ['.pdf', '.jpg', '.jpeg', '.doc', '.docx', '.xls', '.xlsx']
@@ -124,13 +125,14 @@ function RichTextEditor({ initialValue, onChange, placeholder }: {
 
 // ── Tab 2: Upload File (drag & drop) ────────────────────────────────────────
 
-function FileDropzone({ file, onFileSelected, onRemove }: {
-  file: File | null; onFileSelected: (file: File) => void; onRemove: () => void
+function FileDropzone({ file, url, onFileSelected, onRemove }: {
+  file: File | null; url: string | null; onFileSelected: (file: File) => void; onRemove: () => void
 }) {
   const { t } = useTranslation()
   const [isDragging, setIsDragging] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
-  const FileTypeIcon = EXT_ICONS[getFileExtension(file?.name ?? '')] ?? FileIcon
+  const displayName = file ? file.name : (url ? (url.split('/').pop() ?? url) : '')
+  const FileTypeIcon = EXT_ICONS[getFileExtension(displayName)] ?? FileIcon
 
   const handleFiles = (files: FileList | null) => {
     const picked = files?.[0]
@@ -142,7 +144,7 @@ function FileDropzone({ file, onFileSelected, onRemove }: {
     onFileSelected(picked)
   }
 
-  if (file) {
+  if (file || url) {
     return (
       <div className="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-zinc-700 dark:bg-zinc-800">
         <div className="flex min-w-0 items-center gap-3">
@@ -150,18 +152,31 @@ function FileDropzone({ file, onFileSelected, onRemove }: {
             <FileTypeIcon size={18} className="text-white" />
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-slate-800 dark:text-white">{file.name}</p>
-            <p className="text-xs text-slate-500 dark:text-zinc-400">{formatBytes(file.size)}</p>
+            <p className="truncate text-sm font-medium text-slate-800 dark:text-white">{displayName}</p>
+            {file && <p className="text-xs text-slate-500 dark:text-zinc-400">{formatBytes(file.size)}</p>}
           </div>
         </div>
-        <button
-          type="button"
-          onClick={onRemove}
-          aria-label={t('rental.legalDocument.removeFile')}
-          className="shrink-0 rounded-lg p-1.5 text-slate-400 hover:bg-slate-200 hover:text-slate-700 dark:hover:bg-zinc-700"
-        >
-          <X size={16} />
-        </button>
+        <div className="flex shrink-0 items-center gap-1">
+          {url && !file && (
+            <a
+              href={resolveMediaUrl(url) ?? url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={t('rental.legalDocument.viewFile')}
+              className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-200 hover:text-slate-700 dark:hover:bg-zinc-700"
+            >
+              <ExternalLink size={16} />
+            </a>
+          )}
+          <button
+            type="button"
+            onClick={onRemove}
+            aria-label={t('rental.legalDocument.removeFile')}
+            className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-200 hover:text-slate-700 dark:hover:bg-zinc-700"
+          >
+            <X size={16} />
+          </button>
+        </div>
       </div>
     )
   }
@@ -197,27 +212,43 @@ function FileDropzone({ file, onFileSelected, onRemove }: {
 
 // ── Document Viewer — renders whatever is currently attached/written ───────
 
-function DocumentViewer({ contractBody, attachmentFile }: { contractBody: string; attachmentFile: File | null }) {
+function DocumentViewer({ contractBody, attachmentFile, attachmentUrl }: {
+  contractBody: string; attachmentFile: File | null; attachmentUrl: string | null
+}) {
   const { t } = useTranslation()
   const objectUrl = useMemo(() => (attachmentFile ? URL.createObjectURL(attachmentFile) : null), [attachmentFile])
   useEffect(() => () => { if (objectUrl) URL.revokeObjectURL(objectUrl) }, [objectUrl])
-  const FileTypeIcon = EXT_ICONS[getFileExtension(attachmentFile?.name ?? '')] ?? FileIcon
 
-  if (attachmentFile && objectUrl) {
-    if (attachmentFile.type === 'application/pdf') {
-      return <embed src={objectUrl} type="application/pdf" className="h-[560px] w-full rounded-xl border border-slate-200 dark:border-zinc-700" />
+  // A freshly-picked local file (not yet uploaded) takes priority for
+  // preview purposes over whatever's already persisted on the contract.
+  const previewSrc = objectUrl ?? resolveMediaUrl(attachmentUrl)
+  const previewName = attachmentFile?.name ?? (attachmentUrl ? (attachmentUrl.split('/').pop() ?? '') : '')
+  const ext = getFileExtension(previewName)
+  const isPdf = attachmentFile ? attachmentFile.type === 'application/pdf' : ext === 'pdf'
+  const isImage = attachmentFile ? attachmentFile.type.startsWith('image/') : ['jpg', 'jpeg', 'png'].includes(ext)
+  const FileTypeIcon = EXT_ICONS[ext] ?? FileIcon
+
+  if (previewSrc) {
+    if (isPdf) {
+      return <embed src={previewSrc} type="application/pdf" className="h-[560px] w-full rounded-xl border border-slate-200 dark:border-zinc-700" />
     }
-    if (attachmentFile.type.startsWith('image/')) {
-      return <img src={objectUrl} alt={attachmentFile.name} className="w-full rounded-xl border border-slate-200 object-contain dark:border-zinc-700" />
+    if (isImage) {
+      return <img src={previewSrc} alt={previewName} className="w-full rounded-xl border border-slate-200 object-contain dark:border-zinc-700" />
     }
     return (
       <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-slate-300 p-10 text-center dark:border-zinc-700">
         <FileTypeIcon size={36} className="text-slate-400" />
-        <p className="text-sm font-medium text-slate-700 dark:text-zinc-200">{attachmentFile.name}</p>
+        <p className="text-sm font-medium text-slate-700 dark:text-zinc-200">{previewName}</p>
         <p className="text-xs text-slate-400">{t('rental.legalDocument.noPreview')}</p>
-        <a href={objectUrl} download={attachmentFile.name} className="btn btn-secondary" style={{ fontSize: 12.5 }}>
-          <Download size={13} /> {t('rental.legalDocument.downloadFile')}
-        </a>
+        {attachmentFile ? (
+          <a href={previewSrc} download={previewName} className="btn btn-secondary" style={{ fontSize: 12.5 }}>
+            <Download size={13} /> {t('rental.legalDocument.downloadFile')}
+          </a>
+        ) : (
+          <a href={previewSrc} target="_blank" rel="noreferrer" className="btn btn-secondary" style={{ fontSize: 12.5 }}>
+            <Download size={13} /> {t('rental.legalDocument.downloadFile')}
+          </a>
+        )}
       </div>
     )
   }
@@ -248,7 +279,7 @@ export default function LegalDocumentPanel({ state, onChange, canEdit }: {
 }) {
   const { t } = useTranslation()
   const [tab, setTab] = useState<'write' | 'upload'>('write')
-  const hasDocument = !!state.contract_body.trim() || !!state.attachment_file
+  const hasDocument = !!state.contract_body.trim() || !!state.attachment_file || !!state.attachment_url
 
   return (
     <section className="rounded-2xl border border-slate-200/60 bg-white p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:border-zinc-800/70 dark:bg-zinc-900 dark:shadow-none">
@@ -272,23 +303,20 @@ export default function LegalDocumentPanel({ state, onChange, canEdit }: {
           ) : (
             <FileDropzone
               file={state.attachment_file}
+              url={state.attachment_url}
               onFileSelected={(file) => onChange({ attachment_file: file })}
-              onRemove={() => onChange({ attachment_file: null })}
+              onRemove={() => onChange({ attachment_file: null, attachment_url: null })}
             />
           )}
 
-          <div className="mt-3 flex items-center gap-1.5 text-xs text-slate-400 dark:text-zinc-500">
-            <AlertTriangle size={12} /> {t('rental.legalDocument.mockNotice')}
-          </div>
-
           {hasDocument && (
             <div className="mt-5 border-t border-slate-100 pt-4 dark:border-zinc-800">
-              <DocumentViewer contractBody={state.contract_body} attachmentFile={state.attachment_file} />
+              <DocumentViewer contractBody={state.contract_body} attachmentFile={state.attachment_file} attachmentUrl={state.attachment_url} />
             </div>
           )}
         </>
       ) : (
-        <DocumentViewer contractBody={state.contract_body} attachmentFile={state.attachment_file} />
+        <DocumentViewer contractBody={state.contract_body} attachmentFile={state.attachment_file} attachmentUrl={state.attachment_url} />
       )}
     </section>
   )

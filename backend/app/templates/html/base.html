@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>{% block title %}DK LAO Document{% endblock %}</title></head>
+<body>
+  <header class="document-header">
+    <div style="display: table-cell; width: 68%;">
+      <div class="company-name">DK LAO TRADING SOLE CO., LTD</div>
+      <div class="company-contact">Unit 24, Kamphaengmeuang Rd, Ban Nonghai, Hatxayfong District, Vientiane Capital</div>
+      <div class="company-contact">Tel: +856 (0) 21 480 248 | www.dklao.com</div>
+    </div>
+    <div style="display: table-cell; vertical-align: top; width: 32%;">{% block document_heading %}{% endblock %}</div>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

@@ -3,10 +3,10 @@ import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import { useForm, FormProvider } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
-import { AlertCircle, Ban, CheckCircle, ChevronLeft, FileDown, Loader2, Send, XCircle } from 'lucide-react'
+import { AlertCircle, Ban, CheckCircle, ChevronLeft, FileDown, Loader2, Printer, Send, XCircle } from 'lucide-react'
 import {
   getInvoice, createInvoice, updateInvoice,
-  issueInvoice, sendInvoice, cancelInvoice, voidInvoice,
+  issueInvoice, sendInvoice, cancelInvoice, voidInvoice, getInvoicePdf,
 } from '@/api/billing'
 import { getCustomers } from '@/api/customers'
 import type { Customer } from '@/types/customer'
@@ -85,6 +85,7 @@ export default function InvoiceEditorPage() {
   const [customers, setCustomers] = useState<Customer[]>([])
   const [isLoading, setIsLoading] = useState(!isNew)
   const [isSaving, setIsSaving] = useState(false)
+  const [isDownloadingPdf, setIsDownloadingPdf] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<'edit' | 'preview'>('edit')
   const [cancelOpen, setCancelOpen] = useState(false)
@@ -235,6 +236,25 @@ export default function InvoiceEditorPage() {
     }
   })
 
+  // Fetches the server-rendered (WeasyPrint) PDF as a blob and opens it in a
+  // new tab — matches the endpoint's `inline` Content-Disposition, letting
+  // the browser's own PDF viewer handle printing/saving.
+  const handlePrintPdf = async () => {
+    if (!invId) return
+    setIsDownloadingPdf(true)
+    try {
+      const { data } = await getInvoicePdf(invId)
+      const blob = new Blob([data], { type: 'application/pdf' })
+      const url = URL.createObjectURL(blob)
+      window.open(url, '_blank')
+      setTimeout(() => URL.revokeObjectURL(url), 60_000)
+    } catch {
+      toast.error(t('billing.invoice.toast.pdfFailed'))
+    } finally {
+      setIsDownloadingPdf(false)
+    }
+  }
+
   const runAction = async (label: string, fn: () => Promise<unknown>) => {
     setIsSaving(true)
     try {
@@ -320,6 +340,11 @@ export default function InvoiceEditorPage() {
                 {viewMode === 'edit' ? t('quotations.editor.printPreview') : t('quotations.editor.backToEdit')}
               </button>
               <PrintButton />
+              {invoice && (
+                <button className="btn btn-ghost" disabled={isDownloadingPdf} onClick={handlePrintPdf}>
+                  {isDownloadingPdf ? <Loader2 size={14} className="spin" /> : <Printer size={14} />} {t('billing.invoice.actions.printPdf')}
+                </button>
+              )}
               <button className="btn btn-primary" onClick={() => window.print()}>
                 <FileDown size={14} /> {t('common.exportPdf')}
               </button>

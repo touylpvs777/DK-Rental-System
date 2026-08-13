@@ -40,6 +40,9 @@ export const voidInvoice = (id: number) =>
 export const createInvoiceFromCycles = (data: InvoiceFromCyclesRequest) =>
   client.post<InvoiceOut>(`${B}/invoices/from-billing-cycles`, data)
 
+export const getInvoicePdf = (id: number) =>
+  client.get<Blob>(`${B}/invoices/${id}/pdf`, { responseType: 'blob' })
+
 // -- Payments -----------------------------------------------------------------
 
 export const getPayments = (params?: PaymentListParams) =>

@@ -89,6 +89,10 @@ class RentalContract(Base):
     rest_policy_rest_minutes: Mapped[int] = mapped_column(Integer, default=30, nullable=False)
     job_type: Mapped[str | None] = mapped_column(String(50), nullable=True)
 
+    # ── Legal Document ───────────────────────────────────────────────────────
+    contract_body: Mapped[str | None] = mapped_column(Text, nullable=True)
+    attachment_url: Mapped[str | None] = mapped_column(String(500), nullable=True)
+
     subtotal: Mapped[float] = mapped_column(Float, default=0.0, nullable=False)
     tax_rate: Mapped[float] = mapped_column(Float, default=0.0, nullable=False)
     tax_amount: Mapped[float] = mapped_column(Float, default=0.0, nullable=False)
@@ -175,4 +179,9 @@ class RentalContract(Base):
         back_populates="contract",
         cascade="all, delete-orphan",
         order_by="RentalDamageReport.id.desc()",
+    )
+    delivery_orders: Mapped[list["DeliveryOrder"]] = relationship(
+        "DeliveryOrder",
+        back_populates="contract",
+        order_by="DeliveryOrder.id.desc()",
     )

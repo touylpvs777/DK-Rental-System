@@ -306,7 +306,8 @@
       "forklifts": "รถโฟล์คลิฟท์",
       "customers": "ลูกค้า",
       "leads": "โอกาสทางการขาย",
-      "quotations": "ข้อเสนอเชิงพาณิชย์",
+      "quotations": "ใบเสนอราคา",
+      "deliveryOrders": "ใบส่งมอบ",
       "registry": "ทะเบียนสินทรัพย์",
       "movements": "การย้ายคลัง",
       "contracts": "สัญญาบริการ",
@@ -1099,6 +1100,10 @@
     "quotations": "ใบเสนอราคา",
     "newQuotation": "ใบเสนอราคาใหม่",
     "quotationDetail": "รายละเอียดใบเสนอราคา",
+    "deliveryOrders": "ใบส่งมอบ",
+    "newDeliveryOrder": "สร้างใบส่งมอบ",
+    "editDeliveryOrder": "แก้ไขใบส่งมอบ",
+    "deliveryOrderDetail": "รายละเอียดใบส่งมอบ",
     "rentalContracts": "สัญญาเช่า",
     "newContract": "สัญญาใหม่",
     "contractDetail": "รายละเอียดสัญญา",
@@ -1135,7 +1140,10 @@
     "iotManagement": "การจัดการ IoT",
     "shiftHandovers": "ส่งมอบกะ",
     "newShiftHandover": "ส่งมอบกะใหม่",
-    "shiftHandoverDetail": "รายละเอียดส่งมอบกะ"
+    "shiftHandoverDetail": "รายละเอียดส่งมอบกะ",
+    "newQuotation": "ใบเสนอราคาใหม่",
+    "editQuotation": "แก้ไขใบเสนอราคา",
+    "quotationDetail": "รายละเอียดใบเสนอราคา"
   },
   "inventory": {
     "common": {
@@ -1616,7 +1624,8 @@
       "actions": {
         "issue": "ออกใบแจ้งหนี้",
         "send": "ส่ง",
-        "void": "ยกเลิก (โมฆะ)"
+        "void": "ยกเลิก (โมฆะ)",
+        "printPdf": "พิมพ์ใบแจ้งหนี้"
       },
       "amountSummary": {
         "tax": "ภาษี ({{rate}}%)",
@@ -1689,7 +1698,8 @@
         "issued": "ออกใบแจ้งหนี้แล้ว",
         "sent": "ส่งใบแจ้งหนี้แล้ว",
         "voided": "ยกเลิกใบแจ้งหนี้แล้ว (โมฆะ)",
-        "cancelled": "ยกเลิกใบแจ้งหนี้แล้ว"
+        "cancelled": "ยกเลิกใบแจ้งหนี้แล้ว",
+        "pdfFailed": "ไม่สามารถโหลด PDF ใบแจ้งหนี้ได้"
       },
       "card": {
         "due": "ครบกำหนด {{date}}",
@@ -3016,7 +3026,9 @@
       "itemWarning": "รายการหนึ่งหรือมากกว่าอาจไม่ได้ถูกบันทึก — กรุณาโหลดใหม่และตรวจสอบก่อนดำเนินการต่อ",
       "refreshFailed": "ไม่สามารถโหลดข้อมูลล่าสุดได้ — การเปลี่ยนแปลงล่าสุดของคุณอาจยังบันทึกไว้ กรุณาโหลดใหม่เพื่อตรวจสอบ",
       "generalSection": "ข้อมูลทั่วไปและ IoT",
-      "quotaSection": "โควตาการใช้งานและนโยบายการพัก"
+      "quotaSection": "โควตาการใช้งานและนโยบายการพัก",
+      "prefilledFromQuotation": "กรอกข้อมูลล่วงหน้าจากใบเสนอราคา {{number}} กรุณาตรวจสอบก่อนสร้างสัญญา",
+      "prefilledLineDescription": "ค่าเช่ารถโฟล์คลิฟท์ (จากใบเสนอราคา {{number}})"
     },
     "detail": {
       "backToContracts": "กลับไปยังสัญญาเช่า",
@@ -3150,6 +3162,8 @@
       "mockNotice": "ระบบจัดเก็บเอกสารยังไม่ได้เชื่อมต่อกับเซิร์ฟเวอร์ — นี่เป็นเพียงตัวอย่างในเครื่องเท่านั้น",
       "invalidType": "ไม่รองรับไฟล์ประเภทนี้ กรุณาอัปโหลด PDF, JPEG, Word หรือ Excel",
       "mockSaved": "บันทึกเอกสารสัญญาไว้ในเครื่องแล้ว (ยังไม่ได้บันทึกไปยังเซิร์ฟเวอร์)",
+      "uploadFailed": "ไม่สามารถอัปโหลดเอกสารได้ กรุณาลองใหม่อีกครั้ง",
+      "viewFile": "ดู",
       "toolbar": {
         "bold": "ตัวหนา",
         "italic": "ตัวเอียง",
@@ -3678,5 +3692,79 @@
       "min0": "ต้องมีค่า 0 หรือมากกว่า",
       "issueDescRequired": "กรุณาอธิบายปัญหาที่พบ"
     }
+  },
+  "quotation": {
+    "status": {
+      "draft": "ร่าง",
+      "sent": "ส่งแล้ว",
+      "approved": "อนุมัติแล้ว",
+      "rejected": "ปฏิเสธ"
+    },
+    "list": {
+      "title": "ใบเสนอราคา",
+      "totalCount": "{{count}} ใบเสนอราคา",
+      "newQuotation": "ใบเสนอราคาใหม่",
+      "searchPlaceholder": "ค้นหาตามเลขที่ใบเสนอราคา…",
+      "resultsCount": "{{count}} ผลลัพธ์",
+      "allStatuses": "ทุกสถานะ",
+      "colQuotationNo": "เลขที่ใบเสนอราคา",
+      "colCustomer": "ลูกค้า",
+      "colForklift": "รถโฟล์คลิฟท์",
+      "colRentalPrice": "ราคาเช่า",
+      "colStartDate": "วันที่เริ่ม",
+      "colEndDate": "วันที่สิ้นสุด",
+      "noQuotationsFound": "ไม่พบใบเสนอราคา",
+      "createOrAdjust": "สร้างใบเสนอราคาใหม่หรือปรับตัวกรองของคุณ",
+      "pageOf": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}})",
+      "deleteConfirmTitle": "ลบใบเสนอราคา",
+      "deleteConfirmMessage": "ลบใบเสนอราคา {{number}}? ไม่สามารถกู้คืนได้"
+    },
+    "form": {
+      "newQuotation": "ใบเสนอราคาใหม่",
+      "createQuotation": "สร้างใบเสนอราคา",
+      "saveChanges": "บันทึกการเปลี่ยนแปลง",
+      "detailsSection": "รายละเอียดใบเสนอราคา",
+      "customer": "ลูกค้า",
+      "selectCustomer": "เลือกลูกค้า…",
+      "forklift": "รถโฟล์คลิฟท์",
+      "noForklift": "ยังไม่ได้เลือก",
+      "status": "สถานะ",
+      "expectedStartDate": "วันที่เริ่มโดยประมาณ",
+      "expectedEndDate": "วันที่สิ้นสุดโดยประมาณ",
+      "dailyHoursQuota": "โควตาชั่วโมงทำงานต่อวัน",
+      "rentalPrice": "ราคาเช่า",
+      "notesPlaceholder": "หมายเหตุเพิ่มเติมเกี่ยวกับใบเสนอราคานี้…",
+      "customerRequired": "กรุณาเลือกลูกค้า",
+      "dateOrderError": "วันที่สิ้นสุดต้องอยู่หลังวันที่เริ่ม",
+      "notFound": "ไม่พบใบเสนอราคา"
+    },
+    "detail": {
+      "backToQuotations": "กลับไปใบเสนอราคา",
+      "notFoundError": "ไม่พบใบเสนอราคาหรือโหลดไม่สำเร็จ",
+      "convertToContract": "สร้างสัญญาจากใบเสนอราคา",
+      "rentalPrice": "ราคาเช่า",
+      "createdBy": "สร้างโดย"
+    },
+    "validation": {
+      "required": "กรุณากรอกข้อมูลนี้",
+      "min0": "ต้องมีค่า 0 หรือมากกว่า"
+    },
+    "toast": {
+      "createSuccess": "สร้างใบเสนอราคาแล้ว",
+      "createError": "ไม่สามารถสร้างใบเสนอราคาได้",
+      "updateSuccess": "บันทึกใบเสนอราคาแล้ว",
+      "updateError": "ไม่สามารถบันทึกใบเสนอราคาได้",
+      "deleteSuccess": "ลบใบเสนอราคาแล้ว",
+      "deleteError": "ไม่สามารถลบใบเสนอราคาได้",
+      "loadError": "ไม่สามารถโหลดใบเสนอราคาได้"
+    }
+  },
+  "deliveryOrders": {
+    "orderType": { "delivery": "ส่งมอบรถ (ขาออก)", "return": "รับคืนรถ (ขาเข้า)" },
+    "status": { "pending": "รอดำเนินการ", "in_transit": "กำลังจัดส่ง", "delivered": "ส่งมอบแล้ว", "cancelled": "ยกเลิก" },
+    "list": { "title": "ใบส่งมอบ", "totalCount": "ใบส่งมอบ {{count}} รายการ", "new": "สร้างใบส่งมอบ", "searchPlaceholder": "ค้นหาเลขที่ใบส่งมอบ…", "allStatuses": "ทุกสถานะ", "empty": "ไม่พบใบส่งมอบ", "pageOf": "หน้า {{page}} จาก {{pages}}" },
+    "fields": { "doNo": "เลขที่ใบส่งมอบ", "orderType": "ประเภทใบงาน", "customer": "ลูกค้า", "contract": "สัญญาเช่า", "deliveryDate": "วันที่ส่งมอบ", "deliveryAddress": "ที่อยู่จัดส่ง", "driverName": "ชื่อคนขับ", "checklist": "รายการตรวจสอบ", "group": "กลุ่ม", "item": "รายการตรวจ", "result": "ผล", "remark": "หมายเหตุ", "passed": "ผ่าน", "failed": "ไม่ผ่าน" },
+    "form": { "new": "ใบส่งมอบใหม่", "create": "สร้างใบส่งมอบ", "save": "บันทึก", "details": "รายละเอียดการส่งมอบ", "loadTemplate": "โหลดแม่แบบ", "addItem": "เพิ่มรายการ", "noChecklist": "ยังไม่มีรายการตรวจ", "notFound": "ไม่พบใบส่งมอบ", "prefilled": "กรอกข้อมูลจากสัญญา {{contract}} สำหรับ {{customer}} ({{forklift}})" },
+    "detail": { "back": "กลับไปยังใบส่งมอบ", "deleteTitle": "ลบใบส่งมอบ", "deleteMessage": "ลบใบส่งมอบ {{number}}?" }, "validation": { "required": "กรุณากรอกข้อมูลนี้" }, "toast": { "createSuccess": "สร้างใบส่งมอบแล้ว", "createError": "ไม่สามารถสร้างใบส่งมอบได้", "updateSuccess": "บันทึกใบส่งมอบแล้ว", "updateError": "ไม่สามารถบันทึกได้", "deleteSuccess": "ลบใบส่งมอบแล้ว", "deleteError": "ไม่สามารถลบได้", "loadError": "ไม่สามารถโหลดใบส่งมอบได้" }
   }
 }
