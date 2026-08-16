@@ -61,11 +61,42 @@ export interface FleetMetrics {
   reserved: number
 }
 
+export interface DashboardForkliftBrief {
+  id: number
+  serial_number: string
+  name_en: string
+}
+
+export interface DashboardDeliveryOrderBrief {
+  id: number
+  do_no: string
+  order_type: 'delivery' | 'return'
+  status: string
+  delivery_date: string
+  contract_number: string
+  customer_name: string
+  forklift: DashboardForkliftBrief | null
+}
+
+export interface DashboardQuotationBrief {
+  id: number
+  quotation_no: string
+  status: string
+  customer_name: string
+  rental_price: number
+  created_at: string
+}
+
 export interface DashboardSummary {
   total_customers: number
   active_customers: number
   prospect_customers: number
   fleet: FleetMetrics
+  available_forklifts: number
+  maintenance_count: number
   active_rental_contracts: number
   total_rental_contracts: number
+  recent_pending_deliveries: DashboardDeliveryOrderBrief[]
+  recent_pending_returns: DashboardDeliveryOrderBrief[]
+  pending_quotations: DashboardQuotationBrief[]
 }

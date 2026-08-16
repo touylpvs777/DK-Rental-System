@@ -17,6 +17,7 @@ from app.models.forklift import Forklift, ForkliftStatus
 from app.repositories.rental_repository import RentalContractFilter, RentalRepository
 from app.repositories.forklift_repository import ForkliftRepository
 from app.repositories.forklift_status_repository import ForkliftStatusRepository
+from app.repositories.quotation_repository import QuotationRepository
 from app.models.forklift_status_history import ForkliftStatusHistory
 from app.schemas.rental import (
     RentalContractCreate, RentalContractUpdate, RentalContractDetail,
@@ -45,6 +46,7 @@ class RentalContractService:
         self._repo = RentalRepository(db)
         self._forklift_repo = ForkliftRepository(db)
         self._forklift_status_repo = ForkliftStatusRepository(db)
+        self._quotation_repo = QuotationRepository(db)
 
     # ── List ─────────────────────────────────────────────────────────────────
 
@@ -127,6 +129,11 @@ class RentalContractService:
                 detail="end_date must be after start_date.",
             )
 
+        if data.quotation_id is not None:
+            quotation = await self._quotation_repo.get_by_id(data.quotation_id)
+            if quotation is None:
+                raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Quotation not found")
+
         number = await self._generate_number()
 
         contract = RentalContract(
@@ -134,6 +141,7 @@ class RentalContractService:
             status=RentalContractStatus.RESERVATION.value,
             contract_type=data.contract_type.value,
             customer_id=data.customer_id,
+            quotation_id=data.quotation_id,
             assigned_to=data.assigned_to or created_by,
             start_date=data.start_date,
             end_date=data.end_date,

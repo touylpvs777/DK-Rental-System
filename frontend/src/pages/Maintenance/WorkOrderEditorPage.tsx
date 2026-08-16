@@ -469,7 +469,7 @@ export default function WorkOrderEditorPage() {
         </div>
 
         <StartModal key={startModal ? 'start-open' : 'start-closed'} isOpen={startModal} onClose={() => setStartModal(false)} onSubmit={(r, n) => runAction(t('maintenance.workOrders.detail.toastStarted'), () => startWorkOrder(wo!.id, r, n)).then(() => setStartModal(false))} />
-        <CompleteModal key={completeModal ? 'complete-open' : 'complete-closed'} isOpen={completeModal} onClose={() => setCompleteModal(false)} onSubmit={(h, f, r) => runAction(t('common.completed'), () => completeWorkOrder(wo!.id, h, f, r)).then(() => setCompleteModal(false))} />
+        <CompleteModal key={completeModal ? 'complete-open' : 'complete-closed'} isOpen={completeModal} onClose={() => setCompleteModal(false)} defaultHourMeter={wo?.forklift.current_hour_meter} onSubmit={(h, f, r, hm) => runAction(t('common.completed'), () => completeWorkOrder(wo!.id, h, f, r, hm)).then(() => setCompleteModal(false))} />
 
         <Modal
           isOpen={cancelModal}
@@ -509,13 +509,20 @@ function StartModal({ isOpen, onClose, onSubmit }: { isOpen: boolean; onClose: (
   )
 }
 
-function CompleteModal({ isOpen, onClose, onSubmit }: { isOpen: boolean; onClose: () => void; onSubmit: (hours: number, findings?: string, resolution?: string) => Promise<void> }) {
+function CompleteModal({ isOpen, onClose, onSubmit, defaultHourMeter }: {
+  isOpen: boolean; onClose: () => void
+  onSubmit: (hours: number, findings?: string, resolution?: string, hourMeterReading?: number) => Promise<void>
+  defaultHourMeter?: number
+}) {
   const { t } = useTranslation()
-  const [h, setH] = useState(''); const [f, setF] = useState(''); const [r, setR] = useState(''); const [s, setS] = useState(false)
+  const [h, setH] = useState(''); const [f, setF] = useState(''); const [r, setR] = useState('')
+  const [hm, setHm] = useState(defaultHourMeter != null ? String(defaultHourMeter) : '')
+  const [s, setS] = useState(false)
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={t('maintenance.workOrders.detail.completeModal.title')} width={500}>
-      <form onSubmit={async (e) => { e.preventDefault(); if (!h) return; setS(true); await onSubmit(Number(h), f.trim() || undefined, r.trim() || undefined); setS(false) }} className="form-grid">
+      <form onSubmit={async (e) => { e.preventDefault(); if (!h) return; setS(true); await onSubmit(Number(h), f.trim() || undefined, r.trim() || undefined, hm ? Number(hm) : undefined); setS(false) }} className="form-grid">
         <div className="form-group"><label>{t('maintenance.workOrders.detail.fields.actualHours')} <span className="required">*</span></label><input type="number" value={h} onChange={(e) => setH(e.target.value)} min="0.1" step="0.1" required /></div>
+        <div className="form-group"><label>{t('maintenance.workOrders.detail.completeModal.hourMeterReading')}</label><input type="number" value={hm} onChange={(e) => setHm(e.target.value)} min="0" step="0.1" placeholder={t('common.optional')} /></div>
         <div className="form-group"><label>{t('maintenance.workOrders.detail.findings')}</label><textarea value={f} onChange={(e) => setF(e.target.value)} rows={2} placeholder={t('maintenance.workOrders.detail.completeModal.findingsPlaceholder')} /></div>
         <div className="form-group"><label>{t('maintenance.workOrders.detail.resolution')}</label><textarea value={r} onChange={(e) => setR(e.target.value)} rows={2} placeholder={t('maintenance.workOrders.detail.completeModal.resolutionPlaceholder')} /></div>
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}><button type="button" className="btn btn-secondary" onClick={onClose} disabled={s}>{t('common.cancel')}</button><button type="submit" className="btn btn-primary" disabled={s || !h}>{s ? t('maintenance.workOrders.detail.completeModal.completing') : t('maintenance.workOrders.detail.completeAction')}</button></div>

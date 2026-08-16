@@ -3,14 +3,14 @@ import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import { useForm, FormProvider } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
-import { AlertCircle, Ban, CheckCircle, ChevronLeft, FileDown, Loader2, Printer, Send, XCircle } from 'lucide-react'
+import { AlertCircle, Ban, CheckCircle, ChevronLeft, FileDown, Info, Loader2, Printer, Send, XCircle } from 'lucide-react'
 import {
   getInvoice, createInvoice, updateInvoice,
   issueInvoice, sendInvoice, cancelInvoice, voidInvoice, getInvoicePdf,
 } from '@/api/billing'
 import { getCustomers } from '@/api/customers'
 import type { Customer } from '@/types/customer'
-import type { InvoiceDetail, InvoiceCreate, InvoiceUpdate } from '@/types/billing'
+import type { InvoiceDetail, InvoiceCreate, InvoiceUpdate, InvoiceConversionPrefill } from '@/types/billing'
 import {
   invoiceHeaderSchema, INVOICE_EDITOR_DEFAULTS, type InvoiceEditorFormValues,
 } from '@/schemas/invoiceEditorSchema'
@@ -105,6 +105,31 @@ export default function InvoiceEditorPage() {
     defaultValues: INVOICE_EDITOR_DEFAULTS,
   })
 
+  // "Create Invoice" hand-off from RentalContractEditorPage — pre-fills a
+  // brand-new invoice from an active contract's line items, passed via
+  // router state so no extra round-trip is needed here.
+  const fromContract = (location.state as { fromContract?: InvoiceConversionPrefill } | null)?.fromContract
+  useEffect(() => {
+    if (!isNew || !fromContract) return
+    methods.reset({
+      ...INVOICE_EDITOR_DEFAULTS,
+      customer_id: fromContract.customer_id,
+      contract_id: fromContract.contract_id,
+      reference_type: 'rental',
+      currency: fromContract.currency,
+      tax_rate: fromContract.tax_rate,
+    })
+    setItems(fromContract.items.length
+      ? fromContract.items.map((it) => ({
+        _key: nextRowKey++, id: null, item_code: it.item_code ?? '',
+        description: it.description, quantity: it.quantity, unit: it.unit ?? '', unit_rate: it.unit_rate,
+      }))
+      : [emptyRow()])
+    // Runs once on mount only — re-applying on every render would stomp on
+    // whatever the admin has since typed into the form.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const load = async () => {
     if (isNew) return
     setIsLoading(true)
@@ -113,6 +138,7 @@ export default function InvoiceEditorPage() {
       setInvoice(data)
       methods.reset({
         customer_id: data.customer_id,
+        contract_id: data.contract_id ?? null,
         reference_type: data.reference_type ?? 'work_order',
         reference_id: data.reference_id,
         issue_date: data.issue_date ?? '',
@@ -184,6 +210,7 @@ export default function InvoiceEditorPage() {
       if (isNew) {
         const payload: InvoiceCreate = {
           customer_id: form.customer_id!,
+          contract_id: form.contract_id ?? undefined,
           reference_type: form.reference_type,
           reference_id: form.reference_id ?? undefined,
           issue_date: form.issue_date || undefined,
@@ -377,6 +404,13 @@ export default function InvoiceEditorPage() {
           </div>
 
           {error && <div className="page-error"><AlertCircle size={16} /> {error}</div>}
+
+          {isNew && fromContract && (
+            <div className="mb-3 flex items-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-3 py-2 text-sm text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300" style={{ marginTop: 16 }}>
+              <Info size={15} />
+              {t('billing.invoice.editor.prefilledFromContract', { number: fromContract.contract_number })}
+            </div>
+          )}
 
           {viewMode === 'edit' ? (
             <div style={{ display: 'grid', gap: 16, marginTop: 16 }}>

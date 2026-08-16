@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 export const invoiceHeaderSchema = z.object({
   customer_id: z.number().nullable(),
+  contract_id: z.number().nullable(),
   reference_type: z.enum(['work_order', 'rental']),
   reference_id: z.number().nullable(),
   issue_date: z.string().optional().or(z.literal('')),
@@ -31,6 +32,7 @@ export type InvoiceEditorFormValues = z.infer<typeof invoiceHeaderSchema>
 
 export const INVOICE_EDITOR_DEFAULTS: InvoiceEditorFormValues = {
   customer_id: null,
+  contract_id: null,
   reference_type: 'work_order',
   reference_id: null,
   issue_date: '',

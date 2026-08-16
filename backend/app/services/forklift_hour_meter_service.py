@@ -71,7 +71,11 @@ class ForkliftHourMeterService:
 
         await self._forklift_repo.update(forklift, {"current_hour_meter": data.reading})
 
-        await self.db.commit()
+        # Commit is the caller's responsibility — lets this compose into a
+        # larger transaction (e.g. work-order completion) instead of forcing
+        # an early, out-of-band commit partway through the caller's own unit
+        # of work. The standalone hour-meter-log route commits after calling
+        # this; so does anything else that calls it directly.
         return log, warning
 
     async def process_iot_telemetry(

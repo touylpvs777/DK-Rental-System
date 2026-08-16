@@ -3,6 +3,7 @@ import type {
   Forklift,
   ForkliftCreate,
   ForkliftDetail,
+  ForkliftHourMeterLogEntry,
   ForkliftListParams,
   ForkliftListResponse,
   ForkliftUpdate,
@@ -24,3 +25,6 @@ export const updateForklift = (id: number, data: ForkliftUpdate) =>
 
 export const deleteForklift = (id: number) =>
   client.delete(`${BASE}/${id}`)
+
+export const getHourMeterLogs = (forkliftId: number, params?: { skip?: number; limit?: number }) =>
+  client.get<ForkliftHourMeterLogEntry[]>(`${BASE}/${forkliftId}/hour-meter-logs`, { params })

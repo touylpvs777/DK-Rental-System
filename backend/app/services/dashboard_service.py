@@ -1,16 +1,23 @@
 from datetime import date, datetime, timedelta
 from sqlalchemy import case, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from app.core.config import settings
 from app.models.customer import Customer, CustomerStatus
+from app.models.delivery_order import DeliveryOrder, DeliveryOrderStatus, DeliveryOrderType
 from app.models.forklift import Forklift, ForkliftStatus
 from app.models.invoice import Invoice, InvoiceStatus, ReferenceType
 from app.models.maintenance_cost import MaintenanceCost, MaintenanceCostType
+from app.models.quotation import Quotation, QuotationStatus
 from app.models.rental_contract import RentalContract, RentalContractStatus
+from app.models.rental_contract_item import RentalContractItem
 from app.models.work_order import WorkOrder, WorkOrderStatus
 from app.schemas.dashboard import (
     CreditMetrics,
+    DashboardDeliveryOrderBrief,
+    DashboardForkliftBrief,
+    DashboardQuotationBrief,
     DashboardSummary,
     ErpDashboardSummary,
     FleetMetrics,
@@ -21,6 +28,12 @@ from app.schemas.dashboard import (
     ServiceMetrics,
     TrendPoint,
 )
+
+# "Pending" for a delivery order = still awaiting dispatch or currently en
+# route (matches DeliveryOrder's actual status enum, which has no literal
+# "in_progress" value — IN_TRANSIT is that state's real name here).
+_PENDING_DELIVERY_STATUSES = (DeliveryOrderStatus.PENDING.value, DeliveryOrderStatus.IN_TRANSIT.value)
+_RECENT_LIST_LIMIT = 5
 
 _OPEN_INVOICE_STATUSES = (InvoiceStatus.CANCELLED.value, InvoiceStatus.VOIDED.value)
 _SERVICE_COST_TYPES_OTHER = (MaintenanceCostType.EXTERNAL_SERVICE.value, MaintenanceCostType.OTHER.value)
@@ -131,6 +144,10 @@ class DashboardService:
             )
         ).one()
 
+        recent_pending_deliveries = await self._get_pending_delivery_orders(DeliveryOrderType.DELIVERY.value)
+        recent_pending_returns = await self._get_pending_delivery_orders(DeliveryOrderType.RETURN.value)
+        pending_quotations = await self._get_pending_quotations()
+
         return DashboardSummary(
             total_customers=customer_row.total,
             active_customers=customer_row.active,
@@ -142,9 +159,75 @@ class DashboardService:
                 in_service=fleet_row.in_service,
                 reserved=fleet_row.reserved,
             ),
+            available_forklifts=fleet_row.in_stock,
+            maintenance_count=fleet_row.in_service,
             active_rental_contracts=rental_row.active,
             total_rental_contracts=rental_row.total,
+            recent_pending_deliveries=recent_pending_deliveries,
+            recent_pending_returns=recent_pending_returns,
+            pending_quotations=pending_quotations,
         )
+
+    async def _get_pending_delivery_orders(
+        self, order_type: str, limit: int = _RECENT_LIST_LIMIT,
+    ) -> list[DashboardDeliveryOrderBrief]:
+        stmt = (
+            select(DeliveryOrder)
+            .where(DeliveryOrder.order_type == order_type)
+            .where(DeliveryOrder.status.in_(_PENDING_DELIVERY_STATUSES))
+            .options(
+                selectinload(DeliveryOrder.contract).selectinload(RentalContract.customer),
+                selectinload(DeliveryOrder.contract)
+                .selectinload(RentalContract.items)
+                .selectinload(RentalContractItem.forklift),
+            )
+            .order_by(DeliveryOrder.delivery_date.desc())
+            .limit(limit)
+        )
+        orders = (await self.db.execute(stmt)).scalars().all()
+
+        briefs = []
+        for order in orders:
+            # A contract can have several forklifts on it; the dashboard just
+            # needs a representative one, not every line item.
+            forklift = next((item.forklift for item in order.contract.items if item.forklift), None)
+            briefs.append(DashboardDeliveryOrderBrief(
+                id=order.id,
+                do_no=order.do_no,
+                order_type=order.order_type,
+                status=order.status,
+                delivery_date=order.delivery_date,
+                contract_number=order.contract.contract_number,
+                customer_name=f"{order.contract.customer.first_name} {order.contract.customer.last_name}",
+                forklift=DashboardForkliftBrief(
+                    id=forklift.id, serial_number=forklift.serial_number, name_en=forklift.name_en,
+                ) if forklift else None,
+            ))
+        return briefs
+
+    async def _get_pending_quotations(self, limit: int = _RECENT_LIST_LIMIT) -> list[DashboardQuotationBrief]:
+        # Quotation has no literal "pending" status — SENT (out to the
+        # customer, awaiting their decision) is the closest real analog to
+        # an actionable/pending item on this dashboard.
+        stmt = (
+            select(Quotation)
+            .where(Quotation.status == QuotationStatus.SENT.value)
+            .options(selectinload(Quotation.customer))
+            .order_by(Quotation.created_at.desc())
+            .limit(limit)
+        )
+        quotations = (await self.db.execute(stmt)).scalars().all()
+        return [
+            DashboardQuotationBrief(
+                id=q.id,
+                quotation_no=q.quotation_no,
+                status=q.status,
+                customer_name=f"{q.customer.first_name} {q.customer.last_name}",
+                rental_price=q.rental_price,
+                created_at=q.created_at,
+            )
+            for q in quotations
+        ]
 
     # ── Trend charts ───────────────────────────────────────────────────────
 

@@ -106,6 +106,17 @@ export interface InvoiceCreate {
 }
 export interface InvoiceUpdate { due_date?: string; tax_rate?: number; discount_amount?: number; exchange_rate?: number; bank_details?: string; notes?: string; internal_notes?: string }
 export interface InvoiceFromCyclesRequest { contract_id: number; billing_cycle_ids: number[]; tax_rate?: number; discount_amount?: number; currency?: string; notes?: string }
+
+// Payload handed from the rental contract editor to the invoice editor via
+// router state, for the Contract -> Invoice hand-off.
+export interface InvoiceConversionPrefill {
+  contract_id: number
+  contract_number: string
+  customer_id: number
+  currency: string
+  tax_rate: number
+  items: InvoiceItemCreate[]
+}
 export interface PaymentCreate { customer_id: number; contract_id?: number; payment_method: PaymentMethod; amount: number; currency?: string; payment_date: string; received_date?: string; reference_number?: string; notes?: string }
 export interface DepositCreate { contract_id: number; customer_id: number; deposit_type: DepositType; amount: number; currency?: string; notes?: string }
 

@@ -56,6 +56,12 @@ class RentalContract(Base):
     customer_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("customers.id", ondelete="RESTRICT"), nullable=False, index=True,
     )
+    # Data lineage back to the approved Quotation this contract was created
+    # from, if any — SET NULL (not RESTRICT) since a signed contract must
+    # stand on its own even if the source quotation is later deleted.
+    quotation_id: Mapped[int | None] = mapped_column(
+        Integer, ForeignKey("quotations.id", ondelete="SET NULL"), nullable=True, index=True,
+    )
 
     status: Mapped[str] = mapped_column(
         String(30), default=RentalContractStatus.RESERVATION.value, nullable=False, index=True,

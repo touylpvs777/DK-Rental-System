@@ -101,4 +101,9 @@ export interface DeliveryOrderConversionPrefill {
   customer_name: string
   forklift_label: string | null
   delivery_address: string | null
+  order_type: DeliveryOrderType
+  // The date to prefill into the form's own `delivery_date` field — the
+  // contract's start_date for an outbound delivery, its end_date for a
+  // return, decided by the caller before navigating here.
+  delivery_date: string
 }

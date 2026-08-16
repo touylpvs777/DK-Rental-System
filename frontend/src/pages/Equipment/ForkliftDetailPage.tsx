@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, Fragment } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
@@ -9,6 +9,9 @@ import { getForklift } from '@/api/forklift'
 import { ForkliftStatusBadge, ForkliftConditionBadge } from '@/components/equipment/ForkliftStatusBadge'
 import PhotoGallery from '@/components/equipment/PhotoGallery'
 import StatusTimeline from '@/components/equipment/StatusTimeline'
+import { useWorkOrders } from '@/hooks/useWorkOrders'
+import { useForkliftHourMeterLogs } from '@/hooks/useForkliftHourMeterLogs'
+import { WOStatusBadge, WOTypeBadge, WOPriorityBadge } from '@/components/maintenance/MaintenanceStatusBadge'
 import type { ForkliftDetail } from '@/types/forklift'
 import './ForkliftDetailPage.css'
 import '@/styles/shared.css'
@@ -27,7 +30,11 @@ function fmtDate(iso: string | null) {
   return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 }
 
-type TabId = 'overview' | 'photos' | 'timeline' | 'documents' | 'contracts'
+function fmtDateTime(iso: string) {
+  return new Date(iso).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+}
+
+type TabId = 'overview' | 'photos' | 'timeline' | 'documents' | 'contracts' | 'workOrders'
 
 export default function ForkliftDetailPage() {
   const { t } = useTranslation()
@@ -39,7 +46,7 @@ export default function ForkliftDetailPage() {
   const [error, setError] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState<TabId>(() => {
     const hash = window.location.hash.slice(1) as TabId
-    return ['overview', 'photos', 'timeline', 'documents', 'contracts'].includes(hash) ? hash : 'overview'
+    return ['overview', 'photos', 'timeline', 'documents', 'contracts', 'workOrders'].includes(hash) ? hash : 'overview'
   })
 
   const load = useCallback(async () => {
@@ -57,6 +64,15 @@ export default function ForkliftDetailPage() {
   }, [id, t])
 
   useEffect(() => { load() }, [load])
+
+  const {
+    workOrders: forkliftWorkOrders, total: workOrdersTotal,
+    isLoading: workOrdersLoading, error: workOrdersError,
+  } = useWorkOrders({ forklift_id: Number(id), page_size: 20 })
+
+  const {
+    logs: hourMeterLogs, isLoading: hourMeterLogsLoading, error: hourMeterLogsError,
+  } = useForkliftHourMeterLogs(Number(id))
 
   const switchTab = (tab: TabId) => {
     setActiveTab(tab)
@@ -109,6 +125,7 @@ export default function ForkliftDetailPage() {
     { id: 'timeline', label: t('equipment.detail.tabs.timeline'), count: forklift.recent_status_history.length },
     { id: 'documents', label: t('equipment.detail.tabs.documents'), count: forklift.documents.length },
     { id: 'contracts', label: t('equipment.detail.tabs.contracts') },
+    { id: 'workOrders', label: t('equipment.detail.tabs.workOrders'), count: workOrdersTotal },
   ]
 
   return (
@@ -358,6 +375,93 @@ export default function ForkliftDetailPage() {
             </Link>
           </div>
         </div>
+      )}
+
+      {/* ═══ Work Orders Tab ═══ */}
+      {activeTab === 'workOrders' && (
+        <>
+          <div className="fd-card" style={{ marginBottom: 16 }}>
+            <div className="fd-card-header"><Clock size={16} /> {t('equipment.detail.hourMeterHistory')}</div>
+            <div className="fd-card-body">
+              {hourMeterLogsError ? (
+                <div className="page-error"><AlertCircle size={16} /> {hourMeterLogsError}</div>
+              ) : hourMeterLogsLoading ? (
+                <div style={{ display: 'grid', gap: 6 }}>
+                  {Array.from({ length: 3 }).map((_, i) => <div key={i} className="skeleton-cell" style={{ height: 20 }} />)}
+                </div>
+              ) : hourMeterLogs.length === 0 ? (
+                <div className="fd-location-empty"><Clock size={16} /> {t('equipment.detail.noHourMeterLogs')}</div>
+              ) : (
+                <div className="fd-kv-grid">
+                  {hourMeterLogs.map((log) => (
+                    <Fragment key={log.id}>
+                      <span className="fd-kv-value" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                        {log.reading.toLocaleString(undefined, { maximumFractionDigits: 1 })} {t('equipment.detail.hoursUnit')}
+                        <span style={{ marginLeft: 8, fontSize: 11, color: 'var(--color-text-muted)' }}>
+                          ({t(`equipment.detail.hourMeterSource.${log.source}`, log.source)})
+                        </span>
+                      </span>
+                      <span className="fd-kv-key">{fmtDateTime(log.recorded_at)}</span>
+                    </Fragment>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {workOrdersError ? (
+          <div className="page-error" style={{ margin: '20px 0' }}><AlertCircle size={16} /> {workOrdersError}</div>
+        ) : workOrdersLoading ? (
+          <div className="table-card">
+            <div className="table-wrap">
+              <table className="data-table">
+                <tbody>
+                  {Array.from({ length: 4 }).map((_, i) => (
+                    <tr key={i} className="skeleton-row">
+                      <td><div className="skeleton-cell" style={{ width: '70%' }} /></td>
+                      <td><div className="skeleton-cell" style={{ width: 60 }} /></td>
+                      <td><div className="skeleton-cell" style={{ width: 70 }} /></td>
+                      <td className="col-hide-sm"><div className="skeleton-cell" style={{ width: 80 }} /></td>
+                      <td className="col-hide-sm"><div className="skeleton-cell" style={{ width: 50 }} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ) : forkliftWorkOrders.length > 0 ? (
+          <div className="table-card">
+            <div className="table-wrap">
+              <table className="data-table">
+                <thead>
+                  <tr>
+                    <th>{t('maintenance.workOrders.list.columns.workOrder')}</th>
+                    <th>{t('common.type')}</th>
+                    <th>{t('common.status')}</th>
+                    <th className="col-hide-sm">{t('maintenance.status.scheduled')}</th>
+                    <th className="col-hide-sm">{t('maintenance.workOrders.list.columns.priority')}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {forkliftWorkOrders.map((wo) => (
+                    <tr key={wo.id} style={{ cursor: 'pointer' }} onClick={() => navigate(`/maintenance/work-orders/${wo.id}`)}>
+                      <td><div className="cell-desc">{wo.work_order_number}</div><div className="cell-muted cell-sub">{wo.title}</div></td>
+                      <td><WOTypeBadge type={wo.order_type} /></td>
+                      <td><WOStatusBadge status={wo.status} /></td>
+                      <td className="cell-muted col-hide-sm">{fmtDate(wo.scheduled_date)}</td>
+                      <td className="col-hide-sm"><WOPriorityBadge priority={wo.priority} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          ) : (
+            <div className="fd-location-empty" style={{ margin: '20px 0' }}>
+              <Wrench size={16} /> {t('equipment.detail.noWorkOrders')}
+            </div>
+          )}
+        </>
       )}
     </div>
   )

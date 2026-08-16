@@ -21,7 +21,7 @@ export const createWorkOrder = (data: WOCreate) => client.post<WorkOrder>(`${B}/
 export const updateWorkOrder = (id: number, data: Record<string, unknown>) => client.put<WorkOrder>(`${B}/work-orders/${id}`, data)
 
 export const startWorkOrder = (id: number, hour_meter_reading: number, notes?: string) => client.post<WorkOrder>(`${B}/work-orders/${id}/start`, { hour_meter_reading, notes })
-export const completeWorkOrder = (id: number, actual_hours: number, findings?: string, resolution?: string) => client.post<WorkOrder>(`${B}/work-orders/${id}/complete`, { actual_hours, findings, resolution })
+export const completeWorkOrder = (id: number, actual_hours: number, findings?: string, resolution?: string, hour_meter_reading?: number) => client.post<WorkOrder>(`${B}/work-orders/${id}/complete`, { actual_hours, findings, resolution, hour_meter_reading })
 export const verifyWorkOrder = (id: number) => client.post<WorkOrder>(`${B}/work-orders/${id}/verify`, {})
 export const cancelWorkOrder = (id: number, cancellation_reason: string) => client.post<WorkOrder>(`${B}/work-orders/${id}/cancel`, { cancellation_reason })
 

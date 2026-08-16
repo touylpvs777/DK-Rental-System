@@ -240,6 +240,28 @@ async def _apply_sqlite_migrations(conn) -> None:
     except OperationalError:
         pass  # column already exists
 
+    # ── rental_contracts: data lineage back to the source Quotation ──────────
+    try:
+        await conn.execute(text("ALTER TABLE rental_contracts ADD COLUMN quotation_id INTEGER"))
+    except OperationalError:
+        pass  # column already exists
+    else:
+        await conn.execute(text(
+            "CREATE INDEX IF NOT EXISTS ix_rental_contracts_quotation_id ON rental_contracts (quotation_id)"
+        ))
+
+    # ── delivery_orders: outbound/return distinction ──────────────────────────
+    try:
+        await conn.execute(text(
+            "ALTER TABLE delivery_orders ADD COLUMN order_type VARCHAR(20) NOT NULL DEFAULT 'delivery'"
+        ))
+    except OperationalError:
+        pass  # column already exists
+    else:
+        await conn.execute(text(
+            "CREATE INDEX IF NOT EXISTS ix_delivery_orders_order_type ON delivery_orders (order_type)"
+        ))
+
 
 _DEFAULT_ADMIN_EMAIL = "admin@dkservice.com"
 _DEFAULT_ADMIN_USERNAME = "admin"
@@ -315,6 +337,10 @@ async def _apply_postgres_migrations(conn) -> None:
         "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS job_type VARCHAR(50)",
         "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS contract_body TEXT",
         "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS attachment_url VARCHAR(500)",
+        "ALTER TABLE rental_contracts ADD COLUMN IF NOT EXISTS quotation_id INTEGER REFERENCES quotations(id) ON DELETE SET NULL",
+        "CREATE INDEX IF NOT EXISTS ix_rental_contracts_quotation_id ON rental_contracts (quotation_id)",
+        "ALTER TABLE delivery_orders ADD COLUMN IF NOT EXISTS order_type VARCHAR(20) NOT NULL DEFAULT 'delivery'",
+        "CREATE INDEX IF NOT EXISTS ix_delivery_orders_order_type ON delivery_orders (order_type)",
     ):
         await conn.execute(text(statement))
 

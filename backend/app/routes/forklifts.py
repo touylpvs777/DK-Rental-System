@@ -257,6 +257,7 @@ async def create_hour_meter_log(
     log, warning = await ForkliftHourMeterService(db).create_log(
         forklift_id, data, recorded_by=current_user.id,
     )
+    await db.commit()
     response = ForkliftHourMeterLogOut.model_validate(log)
     return response
 

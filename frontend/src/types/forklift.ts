@@ -211,3 +211,17 @@ export interface ForkliftListParams {
   sort?: 'name_en' | 'serial_number' | 'status' | 'created_at' | 'updated_at' | 'current_hour_meter'
   order?: 'asc' | 'desc'
 }
+
+// ── Hour meter ───────────────────────────────────────────────────────────────
+
+export type HourMeterSource = 'manual' | 'iot' | 'work_order'
+
+export interface ForkliftHourMeterLogEntry {
+  id: number
+  forklift_id: number
+  reading: number
+  recorded_at: string
+  source: string
+  notes: string | null
+  recorded_by: number | null
+}

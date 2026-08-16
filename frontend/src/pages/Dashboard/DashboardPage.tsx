@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import type { LucideIcon } from 'lucide-react'
 import {
-  Truck, CheckCircle2, Send, ClipboardCheck,
+  Truck, CheckCircle2, Send, ClipboardCheck, FileText,
   AlertCircle, AlertTriangle, ArrowRight, Radio,
   Thermometer, MapPinOff, BatteryWarning, WifiOff,
 } from 'lucide-react'
@@ -13,6 +13,7 @@ import { useDashboardSummary } from '@/hooks/useDashboard'
 import { useShiftHandovers } from '@/hooks/useShiftHandovers'
 import { shiftLabel } from '@/utils/shiftHandoverLabels'
 import type { ShiftHandover } from '@/types/shiftHandover'
+import type { DashboardDeliveryOrderBrief, DashboardQuotationBrief } from '@/types/dashboard'
 
 const FONT_SIZE_CLASS: Record<FontSizeTier, string> = {
   small: 'text-xs',
@@ -180,7 +181,136 @@ function RecentIssuesPanel() {
   )
 }
 
-// ── Section C: IoT Safety Alerts (mock data — live IoT alerting isn't wired up yet) ──
+// ── Section C: Pending Deliveries & Returns (Delivery Orders quote-to-cash pipeline) ──
+
+function PendingDeliveryRow({ order }: { order: DashboardDeliveryOrderBrief }) {
+  const { t } = useTranslation()
+  const isReturn = order.order_type === 'return'
+  return (
+    <Link
+      to={`/delivery-orders/${order.id}`}
+      className={`block rounded-xl border p-3 transition ${
+        isReturn
+          ? 'border-purple-100 bg-purple-50/60 hover:bg-purple-50 dark:border-purple-500/10 dark:bg-purple-500/5 dark:hover:bg-purple-500/10'
+          : 'border-cyan-100 bg-cyan-50/60 hover:bg-cyan-50 dark:border-cyan-500/10 dark:bg-cyan-500/5 dark:hover:bg-cyan-500/10'
+      }`}
+    >
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <div className="truncate text-sm font-semibold text-slate-800 dark:text-white">
+            {order.do_no} · {order.contract_number}
+          </div>
+          <div className="mt-0.5 truncate text-xs text-slate-500 dark:text-zinc-400">
+            {order.customer_name}{order.forklift ? ` — ${order.forklift.serial_number} ${order.forklift.name_en}` : ''}
+          </div>
+          <div className="mt-0.5 text-xs text-slate-400 dark:text-zinc-500">{fmtDateTime(order.delivery_date)}</div>
+        </div>
+        <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+          isReturn
+            ? 'bg-purple-100 text-purple-700 dark:bg-purple-500/15 dark:text-purple-300'
+            : 'bg-cyan-100 text-cyan-700 dark:bg-cyan-500/15 dark:text-cyan-300'
+        }`}
+        >
+          {t(`deliveryOrders.orderType.${order.order_type}`, order.order_type)}
+        </span>
+      </div>
+    </Link>
+  )
+}
+
+function PendingDeliveriesPanel() {
+  const { t } = useTranslation()
+  const { data: summary, isLoading, error } = useDashboardSummary()
+  const orders = useMemo(
+    () => [...(summary?.recent_pending_deliveries ?? []), ...(summary?.recent_pending_returns ?? [])]
+      .sort((a, b) => new Date(b.delivery_date).getTime() - new Date(a.delivery_date).getTime()),
+    [summary],
+  )
+
+  return (
+    <Panel
+      title={t('dashboard.fleetOps.deliveries.title')}
+      icon={Truck}
+      accent="bg-gradient-to-br from-cyan-500 to-cyan-700"
+      action={{ label: t('dashboard.fleetOps.deliveries.viewAll'), to: '/delivery-orders' }}
+    >
+      {error ? (
+        <div className="flex items-center gap-2 text-sm text-red-600 dark:text-red-400">
+          <AlertCircle size={14} /> {t('dashboard.fleetOps.deliveries.loadError')}
+        </div>
+      ) : isLoading ? (
+        <div className="grid gap-2">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="h-16 animate-pulse rounded-xl bg-slate-100 dark:bg-zinc-800" />
+          ))}
+        </div>
+      ) : orders.length === 0 ? (
+        <EmptyState icon={CheckCircle2} message={t('dashboard.fleetOps.deliveries.empty')} />
+      ) : (
+        <div className="grid gap-2">
+          {orders.map((o) => <PendingDeliveryRow key={o.id} order={o} />)}
+        </div>
+      )}
+    </Panel>
+  )
+}
+
+// ── Section D: Pending Quotations (quote-to-cash pipeline) ─────────────────
+
+function PendingQuotationRow({ quotation }: { quotation: DashboardQuotationBrief }) {
+  return (
+    <Link
+      to={`/quotations/${quotation.id}`}
+      className="block rounded-xl border border-emerald-100 bg-emerald-50/60 p-3 transition hover:bg-emerald-50 dark:border-emerald-500/10 dark:bg-emerald-500/5 dark:hover:bg-emerald-500/10"
+    >
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <div className="truncate text-sm font-semibold text-slate-800 dark:text-white">{quotation.quotation_no}</div>
+          <div className="mt-0.5 truncate text-xs text-slate-500 dark:text-zinc-400">{quotation.customer_name}</div>
+          <div className="mt-0.5 text-xs text-slate-400 dark:text-zinc-500">{fmtDateTime(quotation.created_at)}</div>
+        </div>
+        <span className="shrink-0 text-sm font-semibold text-slate-700 dark:text-zinc-300">
+          {quotation.rental_price.toLocaleString()}
+        </span>
+      </div>
+    </Link>
+  )
+}
+
+function PendingQuotationsPanel() {
+  const { t } = useTranslation()
+  const { data: summary, isLoading, error } = useDashboardSummary()
+  const quotations = summary?.pending_quotations ?? []
+
+  return (
+    <Panel
+      title={t('dashboard.fleetOps.quotations.title')}
+      icon={FileText}
+      accent="bg-gradient-to-br from-emerald-500 to-emerald-700"
+      action={{ label: t('dashboard.fleetOps.quotations.viewAll'), to: '/quotations' }}
+    >
+      {error ? (
+        <div className="flex items-center gap-2 text-sm text-red-600 dark:text-red-400">
+          <AlertCircle size={14} /> {t('dashboard.fleetOps.quotations.loadError')}
+        </div>
+      ) : isLoading ? (
+        <div className="grid gap-2">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="h-16 animate-pulse rounded-xl bg-slate-100 dark:bg-zinc-800" />
+          ))}
+        </div>
+      ) : quotations.length === 0 ? (
+        <EmptyState icon={CheckCircle2} message={t('dashboard.fleetOps.quotations.empty')} />
+      ) : (
+        <div className="grid gap-2">
+          {quotations.map((q) => <PendingQuotationRow key={q.id} quotation={q} />)}
+        </div>
+      )}
+    </Panel>
+  )
+}
+
+// ── Section E: IoT Safety Alerts (mock data — live IoT alerting isn't wired up yet) ──
 
 type AlertType = 'overheat' | 'geofence' | 'battery' | 'offline'
 type AlertSeverity = 'critical' | 'warning'
@@ -341,9 +471,15 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      {/* Section B + C — Recent Issues / IoT Safety Alerts */}
+      {/* Section B + C — Recent Issues / Pending Deliveries & Returns */}
       <div className="mt-8 grid grid-cols-1 items-start gap-4 lg:grid-cols-2">
         <RecentIssuesPanel />
+        <PendingDeliveriesPanel />
+      </div>
+
+      {/* Section D + E — Pending Quotations / IoT Safety Alerts */}
+      <div className="mt-4 grid grid-cols-1 items-start gap-4 lg:grid-cols-2">
+        <PendingQuotationsPanel />
         <IoTSafetyAlertsPanel />
       </div>
     </div>

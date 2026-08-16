@@ -4,17 +4,26 @@ import time
 from datetime import date, datetime, timedelta, timezone
 
 from fastapi import HTTPException, status
+from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.events import event_bus
+from app.models.forklift import Forklift, ForkliftStatus
+from app.models.forklift_status_history import ForkliftStatusHistory
 from app.models.maintenance_plan import IntervalType, MaintenancePlan
 from app.models.maintenance_schedule import MaintenanceSchedule, ScheduleStatus
+from app.models.rental_contract import RentalContract, RentalContractStatus
+from app.models.rental_contract_item import RentalContractItem
 from app.models.work_order import WorkOrder, WorkOrderStatus
 from app.models.service_history import ServiceHistory
 from app.models.maintenance_cost import MaintenanceCost
 from app.repositories.forklift_repository import ForkliftRepository
+from app.repositories.forklift_status_repository import ForkliftStatusRepository
 from app.repositories.maintenance_repository import MaintenanceRepository, WorkOrderFilter
+from app.schemas.forklift import HourMeterLogCreate
+from app.services.forklift_hour_meter_service import ForkliftHourMeterService
+from app.services.forklift_service import VALID_STATUS_TRANSITIONS
 from app.schemas.maintenance import (
     CostBulkReplaceRequest,
     CostCreate,
@@ -49,12 +58,24 @@ VALID_WO_TRANSITIONS: dict[str, set[str]] = {
     WorkOrderStatus.CANCELLED.value: set(),
 }
 
+# Contract statuses under which a forklift is still physically out with the
+# customer — used to decide whether a just-serviced forklift should revert to
+# RENTED instead of IN_STOCK once its maintenance work order completes.
+_FORKLIFT_HOLDING_STATUSES = (
+    RentalContractStatus.DELIVERING.value,
+    RentalContractStatus.ACTIVE.value,
+    RentalContractStatus.OVERDUE.value,
+    RentalContractStatus.RETURNING.value,
+)
+
 
 class MaintenanceService:
     def __init__(self, db: AsyncSession) -> None:
         self.db = db
         self._repo = MaintenanceRepository(db)
         self._forklift_repo = ForkliftRepository(db)
+        self._forklift_status_repo = ForkliftStatusRepository(db)
+        self._hour_meter_service = ForkliftHourMeterService(db)
 
     # ── Plans ────────────────────────────────────────────────────────────────
 
@@ -220,6 +241,7 @@ class MaintenanceService:
             "hour_meter_at_service": data.hour_meter_reading,
             "updated_by": user_id,
         })
+        await self._sync_forklift_to_maintenance(wo.forklift_id, user_id)
         await self.db.commit()
         return await self._repo.get_work_order_by_id(wo.id)
 
@@ -254,6 +276,27 @@ class MaintenanceService:
         if wo.schedule_id:
             await self._advance_schedule(wo.schedule_id, wo.forklift_id)
 
+        if data.hour_meter_reading is not None:
+            # Reuses the canonical hour-meter path (the same one manual entry
+            # and IoT telemetry go through) instead of writing
+            # current_hour_meter directly, so this shows up in
+            # ForkliftHourMeterLog with a proper audit trail. create_log()
+            # doesn't commit internally — it composes into this method's own
+            # transaction, so a failure anywhere else in completion rolls
+            # this back too rather than leaving a committed reading against
+            # a work order that never actually completed.
+            await self._hour_meter_service.create_log(
+                wo.forklift_id,
+                HourMeterLogCreate(
+                    reading=data.hour_meter_reading,
+                    source="work_order",
+                    notes=f"Completed work order {wo.work_order_number}",
+                ),
+                recorded_by=user_id,
+            )
+
+        await self._sync_forklift_after_completion(wo.forklift_id, user_id)
+
         await self.db.commit()
         completed_wo = await self._repo.get_work_order_by_id(wo.id)
         await event_bus.emit("work_order.completed", db=self.db, work_order=completed_wo)
@@ -283,6 +326,64 @@ class MaintenanceService:
         })
         await self.db.commit()
         return await self._repo.get_work_order_by_id(wo.id)
+
+    # ── Fleet status sync ───────────────────────────────────────────────────
+    # Keeps Forklift.status in lockstep with its work order lifecycle: taken
+    # out of service while a work order is actively being worked, restored
+    # once the last active work order on it finishes — without overriding
+    # a status some other flow (sale, decommission, a fresh rental) has
+    # since moved it to.
+
+    async def _sync_forklift_to_maintenance(self, forklift_id: int, changed_by: int) -> None:
+        forklift = await self.db.get(Forklift, forklift_id)
+        if forklift is None or forklift.status == ForkliftStatus.IN_SERVICE.value:
+            return
+        if ForkliftStatus.IN_SERVICE.value not in VALID_STATUS_TRANSITIONS.get(forklift.status, set()):
+            return  # e.g. sold/decommissioned — leave it alone
+
+        old_status = forklift.status
+        forklift.status = ForkliftStatus.IN_SERVICE.value
+        forklift.updated_by = changed_by
+        await self.db.flush()
+        await self._forklift_status_repo.create(ForkliftStatusHistory(
+            forklift_id=forklift.id, from_status=old_status,
+            to_status=ForkliftStatus.IN_SERVICE.value, changed_by=changed_by,
+        ))
+
+    async def _sync_forklift_after_completion(self, forklift_id: int, changed_by: int) -> None:
+        forklift = await self.db.get(Forklift, forklift_id)
+        if forklift is None or forklift.status != ForkliftStatus.IN_SERVICE.value:
+            return  # something else already claimed it since — don't fight it
+
+        other_active = await self.db.execute(
+            select(func.count(WorkOrder.id)).where(
+                WorkOrder.forklift_id == forklift_id,
+                WorkOrder.status == WorkOrderStatus.IN_PROGRESS.value,
+            )
+        )
+        if other_active.scalar_one() > 0:
+            return  # still has other in-progress work
+
+        holding_rental = await self.db.execute(
+            select(func.count(RentalContractItem.id))
+            .join(RentalContract, RentalContract.id == RentalContractItem.contract_id)
+            .where(
+                RentalContractItem.forklift_id == forklift_id,
+                RentalContract.status.in_(_FORKLIFT_HOLDING_STATUSES),
+            )
+        )
+        new_status = (
+            ForkliftStatus.RENTED.value if holding_rental.scalar_one() > 0
+            else ForkliftStatus.IN_STOCK.value
+        )
+
+        old_status = forklift.status
+        forklift.status = new_status
+        forklift.updated_by = changed_by
+        await self.db.flush()
+        await self._forklift_status_repo.create(ForkliftStatusHistory(
+            forklift_id=forklift.id, from_status=old_status, to_status=new_status, changed_by=changed_by,
+        ))
 
     # ── Costs ────────────────────────────────────────────────────────────────
 

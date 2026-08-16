@@ -830,6 +830,18 @@
         "empty": "ບໍ່ມີບັນຫາທີ່ຍັງຄ້າງຢູ່ໃນຕອນນີ້.",
         "loadError": "ບໍ່ສາມາດໂຫຼດບັນຫາຫຼ້າສຸດໄດ້."
       },
+      "deliveries": {
+        "title": "ໃບສົ່ງມອບ ແລະ ຮັບລົດຄືນທີ່ຍັງຄ້າງ",
+        "viewAll": "ເບິ່ງທັງໝົດ",
+        "empty": "ບໍ່ມີໃບສົ່ງມອບ ຫຼື ຮັບລົດຄືນທີ່ຍັງຄ້າງ.",
+        "loadError": "ບໍ່ສາມາດໂຫຼດຂໍ້ມູນການສົ່ງມອບທີ່ຍັງຄ້າງໄດ້."
+      },
+      "quotations": {
+        "title": "ໃບສະເໜີລາຄາທີ່ຍັງຄ້າງ",
+        "viewAll": "ເບິ່ງທັງໝົດ",
+        "empty": "ບໍ່ມີໃບສະເໜີລາຄາທີ່ຍັງຄ້າງ.",
+        "loadError": "ບໍ່ສາມາດໂຫຼດໃບສະເໜີລາຄາທີ່ຍັງຄ້າງໄດ້."
+      },
       "alerts": {
         "title": "ແຈ້ງເຕືອນຄວາມປອດໄພ IoT",
         "mockNotice": "ຂໍ້ມູນຕົວຢ່າງ — ຍັງບໍ່ໄດ້ເຊື່ອມຕໍ່ລະບົບແຈ້ງເຕືອນ IoT ແບບສົດ.",
@@ -1680,6 +1692,7 @@
         "saveDraft": "ບັນທຶກແບບຮ່າງ",
         "saveSuccess": "ບັນທຶກໃບແຈ້ງໜີ້ແລ້ວ",
         "saveFailed": "ບັນທຶກໃບແຈ້ງໜີ້ບໍ່ສຳເລັດ",
+        "prefilledFromContract": "ຂໍ້ມູນຈາກສັນຍາ {{number}}. ກະລຸນາກວດສອບກ່ອນສ້າງໃບແຈ້ງໜີ້.",
         "notFoundError": "ບໍ່ພົບໃບແຈ້ງໜີ້",
         "actionFailed": "ດຳເນີນການ {{action}} ບໍ່ສຳເລັດ",
         "prefilledFromSalesOrder": "ຕື່ມຂໍ້ມູນຈາກໃບສັ່ງຂາຍ {{number}} ແລ້ວ"
@@ -1877,6 +1890,7 @@
         "completeAction": "ສຳເລັດ",
         "completeModal": {
           "completing": "ກຳລັງດຳເນີນການໃຫ້ສຳເລັດ...",
+          "hourMeterReading": "ເລກໄມໂມງເມື່ອສຳເລັດ",
           "findingsPlaceholder": "ສິ່ງທີ່ພົບໃນລະຫວ່າງການກວດກາ...",
           "resolutionPlaceholder": "ສິ່ງທີ່ໄດ້ດຳເນີນການແກ້ໄຂ...",
           "title": "ດຳເນີນໃບສັ່ງງານໃຫ້ສຳເລັດ"
@@ -2345,6 +2359,11 @@
       "newContract": "ສັນຍາໃໝ່",
       "newQuote": "ໃບສະເໜີລາຄາໃໝ່",
       "noDocumentsUploaded": "ຍັງບໍ່ໄດ້ອັບໂຫຼດເອກະສານ",
+      "noWorkOrders": "ຍັງບໍ່ມີໃບສັ່ງງານສຳລັບລົດຍົກນີ້",
+      "hourMeterHistory": "ປະຫວັດເລກໄມໂມງ",
+      "noHourMeterLogs": "ຍັງບໍ່ມີການບັນທຶກເລກໄມໂມງ",
+      "hourMeterLogLoadError": "ບໍ່ສາມາດໂຫຼດປະຫວັດເລກໄມໂມງໄດ້",
+      "hourMeterSource": { "manual": "ປ້ອນເອງ", "iot": "IoT", "work_order": "ໃບສັ່ງງານ" },
       "noLocationRecorded": "ບໍ່ມີສະຖານທີ່ບັນທຶກໄວ້",
       "notFound": "ບໍ່ພົບລົດຍົກ.",
       "notFoundOrFailed": "ບໍ່ພົບລົດຍົກ ຫຼື ໂຫຼດຂໍ້ມູນບໍ່ສຳເລັດ.",
@@ -2360,7 +2379,8 @@
         "documents": "ເອກະສານ",
         "overview": "ພາບລວມ",
         "photos": "ຮູບພາບ",
-        "timeline": "ລຳດັບເຫດການ"
+        "timeline": "ລຳດັບເຫດການ",
+        "workOrders": "ໃບສັ່ງງານ"
       },
       "uploaded": "ອັບໂຫຼດແລ້ວ",
       "valid": "ຍັງໃຊ້ໄດ້",
@@ -3022,6 +3042,7 @@
       "backToContracts": "ກັບໄປສັນຍາເຊົ່າ",
       "billingInfo": "ການອອກໃບແຈ້ງໜີ້ — ຈະມີໃນເຟສ 4.",
       "closeContract": "ປິດສັນຍາ",
+      "createInvoice": "ອອກໃບແຈ້ງໜີ້",
       "colBy": "ໂດຍ",
       "colDailyRate": "ອັດຕາລາຍວັນ",
       "colForklift": "ລົດຍົກ",
@@ -3764,7 +3785,7 @@
     "status": { "pending": "ລໍຖ້າ", "in_transit": "ກຳລັງຂົນສົ່ງ", "delivered": "ສົ່ງມອບແລ້ວ", "cancelled": "ຍົກເລີກ" },
     "list": { "title": "ໃບສົ່ງມອບລົດ", "totalCount": "{{count}} ໃບສົ່ງມອບລົດ", "new": "ສ້າງໃບສົ່ງມອບລົດ", "searchPlaceholder": "ຄົ້ນຫາເລກທີໃບສົ່ງມອບ…", "allStatuses": "ທຸກສະຖານະ", "empty": "ບໍ່ພົບໃບສົ່ງມອບລົດ.", "pageOf": "ໜ້າ {{page}} ຈາກ {{pages}}" },
     "fields": { "doNo": "ເລກທີໃບສົ່ງມອບ", "orderType": "ປະເພດໃບງານ", "customer": "ລູກຄ້າ", "contract": "ສັນຍາເຊົ່າ", "deliveryDate": "ວັນທີສົ່ງ", "deliveryAddress": "ທີ່ຢູ່ສົ່ງ", "driverName": "ຊື່ຄົນຂັບລົດ", "checklist": "ລາຍການກວດກາສະພາບລົດ", "group": "ກຸ່ມ", "item": "ລາຍການກວດ", "result": "ຜົນ", "remark": "ໝາຍເຫດ", "passed": "ຜ່ານ", "failed": "ບໍ່ຜ່ານ" },
-    "form": { "new": "ໃບສົ່ງມອບລົດໃໝ່", "create": "ສ້າງໃບສົ່ງມອບລົດ", "save": "ບັນທຶກ", "details": "ລາຍລະອຽດການສົ່ງ", "loadTemplate": "ໂຫຼດແບບຟອມມາດຕະຖານ", "addItem": "ເພີ່ມລາຍການ", "noChecklist": "ບໍ່ມີລາຍການກວດ.", "notFound": "ບໍ່ພົບໃບສົ່ງມອບລົດ.", "prefilled": "ຂໍ້ມູນຈາກສັນຍາ {{contract}} ສຳລັບ {{customer}} ({{forklift}})." },
+    "form": { "new": "ໃບສົ່ງມອບລົດໃໝ່", "newReturn": "ໃບຮັບລົດຄືນໃໝ່", "create": "ສ້າງໃບສົ່ງມອບລົດ", "createReturn": "ສ້າງໃບຮັບລົດຄືນ", "save": "ບັນທຶກ", "details": "ລາຍລະອຽດການສົ່ງ", "detailsReturn": "ລາຍລະອຽດການຮັບລົດຄືນ", "loadTemplate": "ໂຫຼດແບບຟອມມາດຕະຖານ", "addItem": "ເພີ່ມລາຍການ", "noChecklist": "ບໍ່ມີລາຍການກວດ.", "notFound": "ບໍ່ພົບໃບສົ່ງມອບລົດ.", "prefilled": "ຂໍ້ມູນຈາກສັນຍາ {{contract}} ສຳລັບ {{customer}} ({{forklift}})." },
     "detail": { "back": "ກັບໄປໃບສົ່ງມອບລົດ", "deleteTitle": "ລຶບໃບສົ່ງມອບລົດ", "deleteMessage": "ລຶບ {{number}} ບໍ?" },
     "validation": { "required": "ກະລຸນາປ້ອນຂໍ້ມູນນີ້" }, "toast": { "createSuccess": "ສ້າງໃບສົ່ງມອບລົດແລ້ວ.", "createError": "ບໍ່ສາມາດສ້າງໄດ້.", "updateSuccess": "ບັນທຶກແລ້ວ.", "updateError": "ບໍ່ສາມາດບັນທຶກໄດ້.", "deleteSuccess": "ລຶບແລ້ວ.", "deleteError": "ບໍ່ສາມາດລຶບໄດ້.", "loadError": "ບໍ່ສາມາດໂຫຼດໄດ້." }
   }

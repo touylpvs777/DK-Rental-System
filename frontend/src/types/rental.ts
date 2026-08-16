@@ -31,14 +31,6 @@ export interface ForkliftBrief {
   condition: string
 }
 
-export interface QuotationBrief {
-  id: number
-  quotation_number: string
-  quotation_type: string
-  status: string
-  total_amount: number
-}
-
 export interface LeadBrief {
   id: number
   title: string
@@ -203,7 +195,7 @@ export interface RentalContract {
   contract_type: string
   customer: CustomerBrief
   lead: LeadBrief | null
-  quotation: QuotationBrief | null
+  quotation_id: number | null
   assigned_user: UserBrief | null
   start_date: string
   end_date: string

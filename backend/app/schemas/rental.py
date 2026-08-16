@@ -45,6 +45,7 @@ class RentalContractCreate(BaseModel):
     contract_type: ContractType
     start_date: date
     end_date: date
+    quotation_id: int | None = None
     assigned_to: int | None = None
     billing_cycle_day: int = Field(default=1, ge=1, le=28)
     payment_terms_days: int = Field(default=30, gt=0)
@@ -123,6 +124,7 @@ class RentalContractOut(BaseModel):
 
 
 class RentalContractDetail(RentalContractOut):
+    quotation_id: int | None = None
     billing_cycle_day: int
     payment_terms_days: int
     tax_rate: float

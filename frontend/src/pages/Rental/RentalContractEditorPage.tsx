@@ -4,7 +4,7 @@ import { useForm, FormProvider, useFormContext } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
 import {
-  AlertCircle, Check, ChevronLeft, FileDown, Info, Loader2, RotateCcw, Send, X,
+  AlertCircle, ArrowDownLeft, Check, ChevronLeft, FileDown, Info, Loader2, Receipt, RotateCcw, Send, Truck, X,
 } from 'lucide-react'
 import {
   getRentalContract, createRentalContract, updateRentalContract, addContractItem, replaceContractItemsBulk,
@@ -16,7 +16,9 @@ import { uploadDocument } from '@/api/upload'
 import type { Customer } from '@/types/customer'
 import type { RentalContractDetail, RentalContractCreate, ForkliftBrief } from '@/types/rental'
 import type { QuotationConversionPrefill } from '@/types/quotation'
-import type { DeliveryOrderConversionPrefill } from '@/types/deliveryOrder'
+import { getDeliveryOrders } from '@/api/deliveryOrders'
+import type { DeliveryOrder, DeliveryOrderConversionPrefill } from '@/types/deliveryOrder'
+import type { InvoiceConversionPrefill } from '@/types/billing'
 import {
   rentalContractHeaderSchema, RENTAL_CONTRACT_EDITOR_DEFAULTS, type RentalContractEditorFormValues,
 } from '@/schemas/rentalContractEditorSchema'
@@ -185,6 +187,7 @@ export default function RentalContractEditorPage() {
   const headerColorClass = getHeaderColorClass(location.pathname)
 
   const [ct, setCt] = useState<RentalContractDetail | null>(null)
+  const [contractDeliveryOrders, setContractDeliveryOrders] = useState<DeliveryOrder[]>([])
   const [items, setItems] = useState<RentalLineRow[]>(isNew ? [emptyRow()] : [])
   const [customers, setCustomers] = useState<Customer[]>([])
   const [forklifts, setForklifts] = useState<ForkliftBrief[]>([])
@@ -223,6 +226,7 @@ export default function RentalContractEditorPage() {
       start_date: fromQuotation.expected_start_date,
       end_date: fromQuotation.expected_end_date,
       daily_hours_quota: fromQuotation.daily_hours_quota,
+      quotation_id: fromQuotation.quotation_id,
     })
     setItems([{
       _key: nextRowKey++,
@@ -263,7 +267,7 @@ export default function RentalContractEditorPage() {
         contract_type: data.contract_type as RentalContractEditorFormValues['contract_type'],
         start_date: data.start_date ?? '',
         end_date: data.end_date ?? '',
-        quotation_id: data.quotation?.id ?? null,
+        quotation_id: data.quotation_id ?? null,
         lead_id: data.lead?.id ?? null,
         assigned_to: data.assigned_user?.id ?? null,
         billing_cycle_day: data.billing_cycle_day,
@@ -305,6 +309,14 @@ export default function RentalContractEditorPage() {
     }
   }
   useEffect(() => { void load() }, [id])
+
+  // Drives the "Create Return Order" button's visibility (shown once an
+  // outbound delivery order exists, even before the contract reaches
+  // 'active') — a lightweight read, not part of the main load() payload.
+  useEffect(() => {
+    if (!ct) { setContractDeliveryOrders([]); return }
+    getDeliveryOrders({ contract_id: ct.id }).then(({ data }) => setContractDeliveryOrders(data.items)).catch(() => {})
+  }, [ct?.id])
 
   const values = methods.watch()
   // Mirrors the backend's `_require_editable` guard on both the header PUT
@@ -354,6 +366,7 @@ export default function RentalContractEditorPage() {
         contract_type: form.contract_type,
         start_date: form.start_date,
         end_date: form.end_date,
+        quotation_id: form.quotation_id ?? undefined,
         billing_cycle_day: form.billing_cycle_day,
         payment_terms_days: form.payment_terms_days,
         deposit_amount: form.deposit_amount,
@@ -544,17 +557,51 @@ export default function RentalContractEditorPage() {
     { labelKey: 'nav.items.invoices', to: '/billing/invoices' },
   ]
 
-  const createDeliveryOrder = () => {
-    if (!ct) return
+  const buildDeliveryOrderPrefill = (orderType: 'delivery' | 'return'): DeliveryOrderConversionPrefill | null => {
+    if (!ct) return null
     const forklift = ct.items.find((item) => item.forklift)?.forklift
-    const prefill: DeliveryOrderConversionPrefill = {
+    return {
       contract_id: ct.id,
       contract_number: ct.contract_number,
       customer_name: `${ct.customer.first_name} ${ct.customer.last_name}${ct.customer.company ? ` (${ct.customer.company})` : ''}`,
       forklift_label: forklift ? `${forklift.serial_number} — ${forklift.name_en}` : null,
       delivery_address: ct.delivery_address,
+      order_type: orderType,
+      delivery_date: orderType === 'return' ? ct.end_date : ct.start_date,
     }
+  }
+
+  const createDeliveryOrder = () => {
+    const prefill = buildDeliveryOrderPrefill('delivery')
+    if (!prefill) return
     navigate('/delivery-orders/new', { state: { fromContract: prefill } })
+  }
+
+  const hasOutboundDelivery = contractDeliveryOrders.some((d) => d.order_type === 'delivery')
+
+  const createReturnOrder = () => {
+    const prefill = buildDeliveryOrderPrefill('return')
+    if (!prefill) return
+    navigate('/delivery-orders/new', { state: { fromContract: prefill } })
+  }
+
+  const createInvoice = () => {
+    if (!ct) return
+    const prefill: InvoiceConversionPrefill = {
+      contract_id: ct.id,
+      contract_number: ct.contract_number,
+      customer_id: ct.customer.id,
+      currency: ct.currency,
+      tax_rate: ct.tax_rate,
+      items: ct.items.map((item) => ({
+        item_code: item.forklift?.serial_number,
+        description: item.forklift ? `${item.description} — ${item.forklift.serial_number} ${item.forklift.name_en}` : item.description,
+        unit: 'month',
+        quantity: 1,
+        unit_rate: item.monthly_rate,
+      })),
+    }
+    navigate('/billing/invoices/new', { state: { fromContract: prefill } })
   }
 
   if (isLoading) return <div style={{ padding: 40, textAlign: 'center', color: 'var(--color-text-muted)' }}>{t('common.loading')}</div>
@@ -617,9 +664,19 @@ export default function RentalContractEditorPage() {
                   <Check size={14} /> {t('rental.detail.activate')}
                 </button>
               )}
-              {ct && ct.status !== 'cancelled' && (
+              {ct && (ct.status === 'approved' || ct.status === 'active') && (
                 <button className="btn btn-primary" onClick={createDeliveryOrder}>
-                  {t('deliveryOrders.form.create')}
+                  <Truck size={14} /> {t('deliveryOrders.form.create')}
+                </button>
+              )}
+              {ct && (ct.status === 'active' || hasOutboundDelivery) && (
+                <button className="btn btn-secondary" onClick={createReturnOrder}>
+                  <ArrowDownLeft size={14} /> {t('deliveryOrders.form.createReturn')}
+                </button>
+              )}
+              {ct && ['active', 'overdue', 'settling', 'closed'].includes(ct.status) && (
+                <button className="btn btn-secondary" onClick={createInvoice}>
+                  <Receipt size={14} /> {t('rental.detail.createInvoice')}
                 </button>
               )}
               {ct && actions.includes('close') && (

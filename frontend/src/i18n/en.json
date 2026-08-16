@@ -913,6 +913,7 @@
         "saveDraft": "Save Draft",
         "saveSuccess": "Invoice saved",
         "saveFailed": "Failed to save invoice",
+        "prefilledFromContract": "Pre-filled from contract {{number}}. Review the details before creating the invoice.",
         "notFoundError": "Invoice not found",
         "actionFailed": "Failed to {{action}}",
         "prefilledFromSalesOrder": "Pre-filled from sales order {{number}}"
@@ -1127,6 +1128,7 @@
         },
         "completeModal": {
           "title": "Complete Work Order",
+          "hourMeterReading": "Closing Hour Meter Reading",
           "findingsPlaceholder": "What was found during inspection...",
           "resolutionPlaceholder": "What was done to resolve...",
           "completing": "Completing..."
@@ -1592,7 +1594,8 @@
         "photos": "Photos",
         "timeline": "Timeline",
         "documents": "Documents",
-        "contracts": "Contracts"
+        "contracts": "Contracts",
+        "workOrders": "Work Orders"
       },
       "serialAbbrev": "S/N",
       "newQuote": "New Quote",
@@ -1632,6 +1635,11 @@
       "expiry": "Expiry",
       "uploaded": "Uploaded",
       "noDocumentsUploaded": "No documents uploaded",
+      "noWorkOrders": "No work orders for this forklift yet",
+      "hourMeterHistory": "Hour Meter History",
+      "noHourMeterLogs": "No hour meter readings recorded yet",
+      "hourMeterLogLoadError": "Could not load hour meter history",
+      "hourMeterSource": { "manual": "Manual", "iot": "IoT", "work_order": "Work Order" },
       "viewContractsHint": "View rental contracts linked to this equipment",
       "viewRentalContracts": "View Rental Contracts"
     }
@@ -2233,6 +2241,7 @@
       "generateBilling": "Generate Billing",
       "billingInfo": "Billing generation — coming in Phase 4.",
       "closeContract": "Close Contract",
+      "createInvoice": "Create Invoice",
       "taxWithRate": "Tax ({{rate}}%)",
       "discount": "Discount",
       "totalBilled": "Total Billed",
@@ -2917,6 +2926,18 @@
         "viewAll": "View all",
         "empty": "No open issues right now.",
         "loadError": "Could not load recent issues."
+      },
+      "deliveries": {
+        "title": "Pending Deliveries & Returns",
+        "viewAll": "View all",
+        "empty": "No pending deliveries or returns.",
+        "loadError": "Could not load pending deliveries."
+      },
+      "quotations": {
+        "title": "Pending Quotations",
+        "viewAll": "View all",
+        "empty": "No pending quotations.",
+        "loadError": "Could not load pending quotations."
       },
       "alerts": {
         "title": "IoT Safety Alerts",
@@ -3783,7 +3804,7 @@
     "status": { "pending": "Pending", "in_transit": "In Transit", "delivered": "Delivered", "cancelled": "Cancelled" },
     "list": { "title": "Delivery Orders", "totalCount": "{{count}} delivery orders", "new": "New Delivery Order", "searchPlaceholder": "Search by DO number…", "allStatuses": "All statuses", "empty": "No delivery orders found.", "pageOf": "Page {{page}} of {{pages}} ({{total}} total)" },
     "fields": { "doNo": "DO No", "orderType": "Order Type", "customer": "Customer", "contract": "Rental Contract", "deliveryDate": "Delivery Date", "deliveryAddress": "Delivery Address", "driverName": "Driver Name", "checklist": "Check List", "group": "Group", "item": "Inspection Item", "result": "Result", "remark": "Remark", "passed": "Passed", "failed": "Failed" },
-    "form": { "new": "New Delivery Order", "create": "Create Delivery Order", "save": "Save Changes", "details": "Delivery Details", "loadTemplate": "Load Default Template", "addItem": "Add Item", "noChecklist": "No inspection items added.", "notFound": "Delivery order not found.", "prefilled": "Pre-filled from contract {{contract}} for {{customer}} ({{forklift}})." },
+    "form": { "new": "New Delivery Order", "newReturn": "New Return Order", "create": "Create Delivery Order", "createReturn": "Create Return Order", "save": "Save Changes", "details": "Delivery Details", "detailsReturn": "Return Details", "loadTemplate": "Load Default Template", "addItem": "Add Item", "noChecklist": "No inspection items added.", "notFound": "Delivery order not found.", "prefilled": "Pre-filled from contract {{contract}} for {{customer}} ({{forklift}})." },
     "detail": { "back": "Back to Delivery Orders", "deleteTitle": "Delete delivery order", "deleteMessage": "Delete delivery order {{number}}? This cannot be undone." },
     "validation": { "required": "This field is required" },
     "toast": { "createSuccess": "Delivery order created.", "createError": "Failed to create delivery order.", "updateSuccess": "Delivery order saved.", "updateError": "Failed to save delivery order.", "deleteSuccess": "Delivery order deleted.", "deleteError": "Failed to delete delivery order.", "loadError": "Failed to load delivery orders." }

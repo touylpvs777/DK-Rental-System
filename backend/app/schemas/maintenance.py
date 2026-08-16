@@ -199,6 +199,11 @@ class CompleteAction(BaseModel):
     actual_hours: float = Field(..., gt=0)
     findings: str | None = None
     resolution: str | None = None
+    # Closing hour-meter reading. Optional — some jobs (e.g. off-machine
+    # inspections) have nothing new to report. When given, it's recorded
+    # through ForkliftHourMeterLog (source="work_order") and becomes the
+    # forklift's new current_hour_meter, same as a manual or IoT reading.
+    hour_meter_reading: float | None = Field(default=None, ge=0)
 
 
 class VerifyAction(BaseModel):

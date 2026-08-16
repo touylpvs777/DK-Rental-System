@@ -830,6 +830,18 @@
         "empty": "ไม่มีปัญหาค้างอยู่ในขณะนี้",
         "loadError": "ไม่สามารถโหลดปัญหาล่าสุดได้"
       },
+      "deliveries": {
+        "title": "ใบส่งมอบและรับคืนรถที่ค้างอยู่",
+        "viewAll": "ดูทั้งหมด",
+        "empty": "ไม่มีใบส่งมอบหรือรับคืนรถที่ค้างอยู่",
+        "loadError": "ไม่สามารถโหลดข้อมูลการส่งมอบที่ค้างอยู่ได้"
+      },
+      "quotations": {
+        "title": "ใบเสนอราคาที่ค้างอยู่",
+        "viewAll": "ดูทั้งหมด",
+        "empty": "ไม่มีใบเสนอราคาที่ค้างอยู่",
+        "loadError": "ไม่สามารถโหลดใบเสนอราคาที่ค้างอยู่ได้"
+      },
       "alerts": {
         "title": "การแจ้งเตือนความปลอดภัย IoT",
         "mockNotice": "ข้อมูลตัวอย่าง — ยังไม่ได้เชื่อมต่อระบบแจ้งเตือน IoT แบบสด",
@@ -1726,6 +1738,7 @@
         "saveDraft": "บันทึกแบบร่าง",
         "saveSuccess": "บันทึกใบแจ้งหนี้แล้ว",
         "saveFailed": "บันทึกใบแจ้งหนี้ไม่สำเร็จ",
+        "prefilledFromContract": "กรอกข้อมูลจากสัญญา {{number}} กรุณาตรวจสอบก่อนสร้างใบแจ้งหนี้",
         "notFoundError": "ไม่พบใบแจ้งหนี้",
         "actionFailed": "ดำเนินการ {{action}} ไม่สำเร็จ",
         "prefilledFromSalesOrder": "เติมข้อมูลจากใบสั่งขาย {{number}} แล้ว"
@@ -1940,6 +1953,7 @@
         },
         "completeModal": {
           "title": "ปิดใบสั่งงาน",
+          "hourMeterReading": "เลขไมล์เมื่อปิดงาน",
           "findingsPlaceholder": "สิ่งที่พบระหว่างการตรวจสอบ...",
           "resolutionPlaceholder": "สิ่งที่ดำเนินการเพื่อแก้ไข...",
           "completing": "กำลังปิดงาน..."
@@ -2372,7 +2386,8 @@
         "photos": "รูปภาพ",
         "timeline": "ไทม์ไลน์",
         "documents": "เอกสาร",
-        "contracts": "สัญญา"
+        "contracts": "สัญญา",
+        "workOrders": "ใบสั่งงาน"
       },
       "serialAbbrev": "S/N",
       "newQuote": "ใบเสนอราคาใหม่",
@@ -2412,6 +2427,11 @@
       "expiry": "วันหมดอายุ",
       "uploaded": "อัปโหลดเมื่อ",
       "noDocumentsUploaded": "ยังไม่มีการอัปโหลดเอกสาร",
+      "noWorkOrders": "ยังไม่มีใบสั่งงานสำหรับรถยกคันนี้",
+      "hourMeterHistory": "ประวัติเลขไมล์",
+      "noHourMeterLogs": "ยังไม่มีการบันทึกเลขไมล์",
+      "hourMeterLogLoadError": "ไม่สามารถโหลดประวัติเลขไมล์ได้",
+      "hourMeterSource": { "manual": "กรอกเอง", "iot": "IoT", "work_order": "ใบสั่งงาน" },
       "viewContractsHint": "ดูสัญญาเช่าที่เชื่อมโยงกับอุปกรณ์นี้",
       "viewRentalContracts": "ดูสัญญาเช่า"
     },
@@ -3046,6 +3066,7 @@
       "generateBilling": "สร้างใบเรียกเก็บเงิน",
       "billingInfo": "การสร้างใบเรียกเก็บเงิน — จะพร้อมใช้งานในระยะที่ 4",
       "closeContract": "ปิดสัญญา",
+      "createInvoice": "ออกใบแจ้งหนี้",
       "taxWithRate": "ภาษี ({{rate}}%)",
       "discount": "ส่วนลด",
       "totalBilled": "ยอดเรียกเก็บรวม",
@@ -3764,7 +3785,7 @@
     "status": { "pending": "รอดำเนินการ", "in_transit": "กำลังจัดส่ง", "delivered": "ส่งมอบแล้ว", "cancelled": "ยกเลิก" },
     "list": { "title": "ใบส่งมอบ", "totalCount": "ใบส่งมอบ {{count}} รายการ", "new": "สร้างใบส่งมอบ", "searchPlaceholder": "ค้นหาเลขที่ใบส่งมอบ…", "allStatuses": "ทุกสถานะ", "empty": "ไม่พบใบส่งมอบ", "pageOf": "หน้า {{page}} จาก {{pages}}" },
     "fields": { "doNo": "เลขที่ใบส่งมอบ", "orderType": "ประเภทใบงาน", "customer": "ลูกค้า", "contract": "สัญญาเช่า", "deliveryDate": "วันที่ส่งมอบ", "deliveryAddress": "ที่อยู่จัดส่ง", "driverName": "ชื่อคนขับ", "checklist": "รายการตรวจสอบ", "group": "กลุ่ม", "item": "รายการตรวจ", "result": "ผล", "remark": "หมายเหตุ", "passed": "ผ่าน", "failed": "ไม่ผ่าน" },
-    "form": { "new": "ใบส่งมอบใหม่", "create": "สร้างใบส่งมอบ", "save": "บันทึก", "details": "รายละเอียดการส่งมอบ", "loadTemplate": "โหลดแม่แบบ", "addItem": "เพิ่มรายการ", "noChecklist": "ยังไม่มีรายการตรวจ", "notFound": "ไม่พบใบส่งมอบ", "prefilled": "กรอกข้อมูลจากสัญญา {{contract}} สำหรับ {{customer}} ({{forklift}})" },
+    "form": { "new": "ใบส่งมอบใหม่", "newReturn": "ใบรับคืนรถใหม่", "create": "สร้างใบส่งมอบรถ", "createReturn": "สร้างใบรับรถคืน", "save": "บันทึก", "details": "รายละเอียดการส่งมอบ", "detailsReturn": "รายละเอียดการรับคืน", "loadTemplate": "โหลดแม่แบบ", "addItem": "เพิ่มรายการ", "noChecklist": "ยังไม่มีรายการตรวจ", "notFound": "ไม่พบใบส่งมอบ", "prefilled": "กรอกข้อมูลจากสัญญา {{contract}} สำหรับ {{customer}} ({{forklift}})" },
     "detail": { "back": "กลับไปยังใบส่งมอบ", "deleteTitle": "ลบใบส่งมอบ", "deleteMessage": "ลบใบส่งมอบ {{number}}?" }, "validation": { "required": "กรุณากรอกข้อมูลนี้" }, "toast": { "createSuccess": "สร้างใบส่งมอบแล้ว", "createError": "ไม่สามารถสร้างใบส่งมอบได้", "updateSuccess": "บันทึกใบส่งมอบแล้ว", "updateError": "ไม่สามารถบันทึกได้", "deleteSuccess": "ลบใบส่งมอบแล้ว", "deleteError": "ไม่สามารถลบได้", "loadError": "ไม่สามารถโหลดใบส่งมอบได้" }
   }
 }

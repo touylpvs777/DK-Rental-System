@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel
 
 
@@ -62,6 +64,32 @@ class FleetMetrics(BaseModel):
     reserved: int
 
 
+class DashboardForkliftBrief(BaseModel):
+    id: int
+    serial_number: str
+    name_en: str
+
+
+class DashboardDeliveryOrderBrief(BaseModel):
+    id: int
+    do_no: str
+    order_type: str
+    status: str
+    delivery_date: datetime
+    contract_number: str
+    customer_name: str
+    forklift: DashboardForkliftBrief | None = None
+
+
+class DashboardQuotationBrief(BaseModel):
+    id: int
+    quotation_no: str
+    status: str
+    customer_name: str
+    rental_price: float
+    created_at: datetime
+
+
 class DashboardSummary(BaseModel):
     # ── Customers ──────────────────────────────────────────────────────────
     total_customers: int
@@ -70,7 +98,17 @@ class DashboardSummary(BaseModel):
 
     # ── Fleet ──────────────────────────────────────────────────────────────
     fleet: FleetMetrics
+    # `fleet.in_stock` / `fleet.in_service` restated as their operational
+    # names for callers that just want a single fleet-availability number
+    # without pulling in the whole FleetMetrics breakdown.
+    available_forklifts: int
+    maintenance_count: int
 
     # ── Rentals ────────────────────────────────────────────────────────────
     active_rental_contracts: int
     total_rental_contracts: int
+
+    # ── Quote-to-cash pipeline ────────────────────────────────────────────
+    recent_pending_deliveries: list[DashboardDeliveryOrderBrief]
+    recent_pending_returns: list[DashboardDeliveryOrderBrief]
+    pending_quotations: list[DashboardQuotationBrief]
