@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import {
   LayoutDashboard, Users, BarChart2, Settings,
   Truck, Car, ClipboardList, ClipboardCheck,
-  Building2, ArrowRightLeft, Wrench,
+  ArrowRightLeft, Wrench,
   Receipt, LogOut, Radio, FileText, ClipboardSignature,
   UserCircle, KeyRound, PanelLeftClose, PanelLeftOpen, ChevronDown,
   Camera,
@@ -149,7 +149,10 @@ export default function Sidebar() {
   useEffect(() => {
     fetchCompanyProfile()
   }, [fetchCompanyProfile])
-  const brandLogoUrl = resolveMediaUrl(companyProfile?.logo_url)
+  // Falls back to the bundled brand logo until an admin uploads a custom one
+  // via Settings > Company Profile — without this, no logo_url means the
+  // sidebar shows a generic building icon instead of any logo at all.
+  const brandLogoUrl = resolveMediaUrl(companyProfile?.logo_url) ?? '/dk-lao-logo.png'
   const brandCompanyName = companyProfile?.company_name || t('common.brandName')
 
   return (
@@ -164,10 +167,20 @@ export default function Sidebar() {
         {/* Brand */}
         <div className="sidebar-brand">
           <NavLink to="/dashboard" className="sidebar-brand-icon-link" onClick={closeMobile} title={brandCompanyName}>
-            <div className={`sidebar-brand-icon${brandLogoUrl ? ' sidebar-brand-icon--logo' : ''}`}>
-              {brandLogoUrl
-                ? <img src={brandLogoUrl} alt="" className="sidebar-brand-logo-img" />
-                : <Building2 size={18} />}
+            <div className="sidebar-brand-icon sidebar-brand-icon--logo">
+              <img
+                src={brandLogoUrl}
+                alt=""
+                className="sidebar-brand-logo-img"
+                // Catches a company_profile.logo_url that 404s (deleted
+                // upload, bad path, dev-server proxy gap) without leaving the
+                // brand box empty. Clearing onerror first means even a bad
+                // fallback path can't loop.
+                onError={(e) => {
+                  e.currentTarget.onerror = null
+                  e.currentTarget.src = '/dk-lao-logo.png'
+                }}
+              />
             </div>
           </NavLink>
 

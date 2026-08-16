@@ -76,6 +76,17 @@ export default defineConfig({
         target: 'http://localhost:8001',
         changeOrigin: true,
       },
+      // resolveMediaUrl() resolves uploaded-file paths (company logo,
+      // forklift photos, documents, ...) relative to the page's own origin
+      // whenever VITE_API_BASE_URL is a relative path (the .env default,
+      // '/api/v1') — which is correct in the nginx-fronted container, where
+      // both /api and /uploads share the frontend's origin, but leaves
+      // /uploads unrouted against the Vite dev server unless it's proxied
+      // here too, same as /api.
+      '/uploads': {
+        target: 'http://localhost:8001',
+        changeOrigin: true,
+      },
     },
   },
 })
