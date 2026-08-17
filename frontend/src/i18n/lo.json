@@ -845,6 +845,8 @@
       "alerts": {
         "title": "ແຈ້ງເຕືອນຄວາມປອດໄພ IoT",
         "mockNotice": "ຂໍ້ມູນຕົວຢ່າງ — ຍັງບໍ່ໄດ້ເຊື່ອມຕໍ່ລະບົບແຈ້ງເຕືອນ IoT ແບບສົດ.",
+        "empty": "ບໍ່ມີການແຈ້ງເຕືອນ. ອຸປະກອນທັງໝົດລາຍງານປົກກະຕິ.",
+        "loadError": "ບໍ່ສາມາດໂຫຼດການແຈ້ງເຕືອນ IoT ໄດ້.",
         "minutesAgo": "{{count}} ນາທີກ່ອນ",
         "hoursAgo": "{{count}} ຊົ່ວໂມງກ່ອນ",
         "severity": {
@@ -855,7 +857,8 @@
           "overheat": "ແຈ້ງເຕືອນຄວາມຮ້ອນເກີນ — {{forklift}}",
           "geofence": "ອອກນອກຂອບເຂດພື້ນທີ່ — {{forklift}}",
           "battery": "ແບັດເຕີຣີຕ່ຳ — {{forklift}}",
-          "offline": "ອຸປະກອນອອບໄລນ໌ — {{forklift}}"
+          "offline": "ອຸປະກອນອອບໄລນ໌ — {{forklift}}",
+          "maintenance_due": "ຮອດກຳນົດບຳລຸງຮັກສາ — {{forklift}}"
         }
       }
     }
@@ -1540,7 +1543,8 @@
         "issue": "ອອກໃບແຈ້ງໜີ້",
         "send": "ສົ່ງ",
         "void": "ຍົກເລີກໃຊ້ງານ",
-        "printPdf": "ພິມໃບແຈ້ງໜີ້"
+        "printPdf": "ພິມໃບແຈ້ງໜີ້",
+        "recordPayment": "ບັນທຶກການຊຳລະເງິນ"
       },
       "allocations": {
         "payment": "ການຊຳລະເງິນ",
@@ -1711,6 +1715,20 @@
         "submit": "ແບ່ງສັນ",
         "title": "ແບ່ງສັນການຊຳລະເງິນໃຫ້ໃບແຈ້ງໜີ້"
       },
+      "form": {
+        "title": "ບັນທຶກການຊຳລະເງິນ",
+        "save": "ບັນທຶກການຊຳລະເງິນ",
+        "customer": "ລູກຄ້າ",
+        "customerPlaceholder": "ເລືອກລູກຄ້າ...",
+        "currency": "ສະກຸນເງິນ",
+        "prefilledFromInvoice": "ຂໍ້ມູນຈາກ {{customer}}. ກະລຸນາກວດສອບກ່ອນບັນທຶກ.",
+        "createSuccess": "ບັນທຶກການຊຳລະເງິນ {{number}} ແລ້ວ",
+        "createFailed": "ບໍ່ສາມາດບັນທຶກການຊຳລະເງິນໄດ້",
+        "errors": {
+          "customerRequired": "ກະລຸນາເລືອກລູກຄ້າ.",
+          "amountRequired": "ກະລຸນາປ້ອນຈຳນວນເງິນທີ່ຫຼາຍກວ່າສູນ."
+        }
+      },
       "empty": "ບໍ່ພົບການຊຳລະເງິນ",
       "fields": {
         "confirmedAt": "ຢືນຢັນເມື່ອ",
@@ -1725,7 +1743,8 @@
       "list": {
         "resultsCount": "{{count}} ຜົນລັບ",
         "subtitle": "{{count}} ການຊຳລະເງິນ",
-        "title": "ການຊຳລະເງິນ"
+        "title": "ການຊຳລະເງິນ",
+        "newPayment": "ບັນທຶກການຊຳລະເງິນໃໝ່"
       },
       "method": {
         "bank_transfer": "ໂອນຜ່ານທະນາຄານ",

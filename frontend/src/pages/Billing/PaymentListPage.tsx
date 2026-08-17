@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { AlertCircle, RefreshCw, ChevronLeft, ChevronRight, CreditCard, Search } from 'lucide-react'
+import { AlertCircle, Plus, RefreshCw, ChevronLeft, ChevronRight, CreditCard, Search } from 'lucide-react'
 import { getPayments } from '@/api/billing'
 import { Badge, type BadgeVariant } from '@/components/ui/Badge'
 import type { PaymentOut } from '@/types/billing'
@@ -49,6 +49,9 @@ export default function PaymentListPage() {
       <PageHeader title={t('billing.payment.list.title')} subtitle={t('billing.payment.list.subtitle', { count: total })}>
         <button className="btn btn-ghost" onClick={load} disabled={isLoading}>
           <RefreshCw size={14} className={isLoading ? 'spin' : ''} /> {t('billing.common.refresh')}
+        </button>
+        <button className="btn btn-primary" onClick={() => navigate('/billing/payments/new')}>
+          <Plus size={14} /> {t('billing.payment.list.newPayment')}
         </button>
       </PageHeader>
 

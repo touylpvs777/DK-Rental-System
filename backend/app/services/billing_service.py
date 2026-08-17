@@ -1154,6 +1154,16 @@ class BillingService:
     async def schedule_revenue_recognition(
         self, invoice: Invoice, user_id: int,
     ) -> list[RevenueRecognition]:
+        # RevenueRecognition.contract_id is NOT NULL — recognition is a
+        # rental/contract accounting concept (recognition_type is always
+        # RENTAL_INCOME or a billing-cycle-derived type). A work-order or
+        # plain-sale invoice with no contract has nothing to schedule here;
+        # without this guard, allocate_payment/apply_deposit would crash on
+        # an IntegrityError the moment any contract-less invoice reached
+        # PAID, since both call this unconditionally on that transition.
+        if invoice.contract_id is None:
+            return []
+
         entries = []
         result = await self.db.execute(
             select(InvoiceItem).where(InvoiceItem.invoice_id == invoice.id)

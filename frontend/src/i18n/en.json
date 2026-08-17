@@ -722,7 +722,8 @@
       "list": {
         "title": "Payments",
         "subtitle": "{{count}} payments",
-        "resultsCount": "{{count}} results"
+        "resultsCount": "{{count}} results",
+        "newPayment": "New Payment"
       },
       "pagination": {
         "pageOf": "Page {{page}} of {{pages}} ({{total}} total)"
@@ -750,6 +751,20 @@
         "balance": "Balance",
         "amountPlaceholder": "0.00",
         "submit": "Allocate"
+      },
+      "form": {
+        "title": "Record Payment",
+        "save": "Save Payment",
+        "customer": "Customer",
+        "customerPlaceholder": "Select a customer...",
+        "currency": "Currency",
+        "prefilledFromInvoice": "Pre-filled for {{customer}}. Review the details before saving.",
+        "createSuccess": "Payment {{number}} recorded",
+        "createFailed": "Failed to record payment",
+        "errors": {
+          "customerRequired": "Please select a customer.",
+          "amountRequired": "Please enter an amount greater than zero."
+        }
       },
       "summary": {
         "title": "Payments",
@@ -846,7 +861,8 @@
         "issue": "Issue",
         "send": "Send",
         "void": "Void",
-        "printPdf": "Print Invoice"
+        "printPdf": "Print Invoice",
+        "recordPayment": "Record Payment"
       },
       "amountSummary": {
         "tax": "Tax ({{rate}}%)",
@@ -2942,6 +2958,8 @@
       "alerts": {
         "title": "IoT Safety Alerts",
         "mockNotice": "Sample data — live IoT alerting isn't connected yet.",
+        "empty": "No active alerts. All paired devices are reporting normally.",
+        "loadError": "Could not load IoT alerts.",
         "minutesAgo": "{{count}}m ago",
         "hoursAgo": "{{count}}h ago",
         "severity": {
@@ -2952,7 +2970,8 @@
           "overheat": "Overheat Warning — {{forklift}}",
           "geofence": "Out of Geofence — {{forklift}}",
           "battery": "Low Battery — {{forklift}}",
-          "offline": "Device Offline — {{forklift}}"
+          "offline": "Device Offline — {{forklift}}",
+          "maintenance_due": "Maintenance Due — {{forklift}}"
         }
       }
     }

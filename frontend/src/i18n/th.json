@@ -845,6 +845,8 @@
       "alerts": {
         "title": "การแจ้งเตือนความปลอดภัย IoT",
         "mockNotice": "ข้อมูลตัวอย่าง — ยังไม่ได้เชื่อมต่อระบบแจ้งเตือน IoT แบบสด",
+        "empty": "ไม่มีการแจ้งเตือน อุปกรณ์ทั้งหมดรายงานผลตามปกติ",
+        "loadError": "ไม่สามารถโหลดการแจ้งเตือน IoT ได้",
         "minutesAgo": "{{count}} นาทีที่แล้ว",
         "hoursAgo": "{{count}} ชั่วโมงที่แล้ว",
         "severity": {
@@ -855,7 +857,8 @@
           "overheat": "แจ้งเตือนความร้อนสูงเกิน — {{forklift}}",
           "geofence": "ออกนอกขอบเขตพื้นที่ — {{forklift}}",
           "battery": "แบตเตอรี่ต่ำ — {{forklift}}",
-          "offline": "อุปกรณ์ออฟไลน์ — {{forklift}}"
+          "offline": "อุปกรณ์ออฟไลน์ — {{forklift}}",
+          "maintenance_due": "ถึงกำหนดบำรุงรักษา — {{forklift}}"
         }
       }
     }
@@ -1547,7 +1550,8 @@
       "list": {
         "title": "การชำระเงิน",
         "subtitle": "การชำระเงิน {{count}} รายการ",
-        "resultsCount": "{{count}} รายการ"
+        "resultsCount": "{{count}} รายการ",
+        "newPayment": "บันทึกการชำระเงินใหม่"
       },
       "pagination": {
         "pageOf": "หน้า {{page}} จาก {{pages}} (ทั้งหมด {{total}} รายการ)"
@@ -1575,6 +1579,20 @@
         "balance": "ยอดคงเหลือ",
         "amountPlaceholder": "0.00",
         "submit": "จัดสรร"
+      },
+      "form": {
+        "title": "บันทึกการชำระเงิน",
+        "save": "บันทึกการชำระเงิน",
+        "customer": "ลูกค้า",
+        "customerPlaceholder": "เลือกลูกค้า...",
+        "currency": "สกุลเงิน",
+        "prefilledFromInvoice": "กรอกข้อมูลจาก {{customer}} กรุณาตรวจสอบก่อนบันทึก",
+        "createSuccess": "บันทึกการชำระเงิน {{number}} แล้ว",
+        "createFailed": "ไม่สามารถบันทึกการชำระเงินได้",
+        "errors": {
+          "customerRequired": "กรุณาเลือกลูกค้า",
+          "amountRequired": "กรุณาระบุจำนวนเงินที่มากกว่าศูนย์"
+        }
       },
       "summary": {
         "title": "การชำระเงิน",
@@ -1637,7 +1655,8 @@
         "issue": "ออกใบแจ้งหนี้",
         "send": "ส่ง",
         "void": "ยกเลิก (โมฆะ)",
-        "printPdf": "พิมพ์ใบแจ้งหนี้"
+        "printPdf": "พิมพ์ใบแจ้งหนี้",
+        "recordPayment": "บันทึกการชำระเงิน"
       },
       "amountSummary": {
         "tax": "ภาษี ({{rate}}%)",

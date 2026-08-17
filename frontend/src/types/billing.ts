@@ -118,6 +118,20 @@ export interface InvoiceConversionPrefill {
   items: InvoiceItemCreate[]
 }
 export interface PaymentCreate { customer_id: number; contract_id?: number; payment_method: PaymentMethod; amount: number; currency?: string; payment_date: string; received_date?: string; reference_number?: string; notes?: string }
+
+// Payload handed from the invoice editor to the payment editor via router
+// state, for the Invoice -> Record Payment hand-off. Payments aren't tied to
+// one invoice at creation (PaymentCreate has no invoice_id — allocation is a
+// separate, later step), so this only pre-fills who's paying and how much;
+// it doesn't skip the confirm-then-allocate workflow.
+export interface PaymentConversionPrefill {
+  customer_id: number
+  customer_name: string
+  contract_id?: number
+  contract_number?: string
+  suggested_amount: number
+  currency: string
+}
 export interface DepositCreate { contract_id: number; customer_id: number; deposit_type: DepositType; amount: number; currency?: string; notes?: string }
 
 export interface InvoiceListParams { q?: string; status?: string; customer_id?: number; contract_id?: number; is_active?: boolean; issue_from?: string; issue_to?: string; due_from?: string; due_to?: string; page?: number; page_size?: number; sort?: string; order?: 'asc' | 'desc' }

@@ -1,19 +1,21 @@
 import { useMemo, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
+import type { TFunction } from 'i18next'
 import { Link } from 'react-router-dom'
 import type { LucideIcon } from 'lucide-react'
 import {
   Truck, CheckCircle2, Send, ClipboardCheck, FileText,
-  AlertCircle, AlertTriangle, ArrowRight, Radio,
-  Thermometer, MapPinOff, BatteryWarning, WifiOff,
+  AlertCircle, ArrowRight, Radio, Wrench, WifiOff,
 } from 'lucide-react'
 import { useCustomUI, type FontSizeTier } from '@/config/customLanguageStore'
 import UICustomizerBar from '@/components/ui/UICustomizerBar'
 import { useDashboardSummary } from '@/hooks/useDashboard'
 import { useShiftHandovers } from '@/hooks/useShiftHandovers'
+import { useIoTAlerts } from '@/hooks/useIoTAlerts'
 import { shiftLabel } from '@/utils/shiftHandoverLabels'
 import type { ShiftHandover } from '@/types/shiftHandover'
 import type { DashboardDeliveryOrderBrief, DashboardQuotationBrief } from '@/types/dashboard'
+import type { IoTAlert, IoTAlertType } from '@/types/iot'
 
 const FONT_SIZE_CLASS: Record<FontSizeTier, string> = {
   small: 'text-xs',
@@ -310,41 +312,27 @@ function PendingQuotationsPanel() {
   )
 }
 
-// ── Section E: IoT Safety Alerts (mock data — live IoT alerting isn't wired up yet) ──
+// ── Section E: IoT Safety Alerts (real: offline devices + PM-threshold crossings) ──
 
-type AlertType = 'overheat' | 'geofence' | 'battery' | 'offline'
-type AlertSeverity = 'critical' | 'warning'
-
-interface MockAlert {
-  id: number
-  type: AlertType
-  severity: AlertSeverity
-  forklift: string
-  minutesAgo?: number
-  hoursAgo?: number
-}
-
-const ALERT_ICONS: Record<AlertType, LucideIcon> = {
-  overheat: Thermometer,
-  geofence: MapPinOff,
-  battery: BatteryWarning,
+const ALERT_ICONS: Record<IoTAlertType, LucideIcon> = {
   offline: WifiOff,
+  maintenance_due: Wrench,
 }
 
-const MOCK_ALERTS: MockAlert[] = [
-  { id: 1, type: 'overheat', severity: 'critical', forklift: 'Forklift #03', minutesAgo: 8 },
-  { id: 2, type: 'geofence', severity: 'warning', forklift: 'Forklift #07', minutesAgo: 34 },
-  { id: 3, type: 'battery', severity: 'warning', forklift: 'Forklift #12', minutesAgo: 52 },
-  { id: 4, type: 'offline', severity: 'critical', forklift: 'Forklift #05', hoursAgo: 2 },
-]
+// Mirrors the old mock copy's "N minutes/hours ago" phrasing from a real ISO
+// timestamp instead of a canned offset.
+function timeAgo(iso: string, t: TFunction): string {
+  const minutes = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000))
+  if (minutes < 60) return t('dashboard.fleetOps.alerts.minutesAgo', { count: minutes })
+  return t('dashboard.fleetOps.alerts.hoursAgo', { count: Math.round(minutes / 60) })
+}
 
-function AlertRow({ alert }: { alert: MockAlert }) {
+function AlertRow({ alert }: { alert: IoTAlert }) {
   const { t } = useTranslation()
   const Icon = ALERT_ICONS[alert.type]
   const isCritical = alert.severity === 'critical'
-  const time = alert.hoursAgo != null
-    ? t('dashboard.fleetOps.alerts.hoursAgo', { count: alert.hoursAgo })
-    : t('dashboard.fleetOps.alerts.minutesAgo', { count: alert.minutesAgo })
+  const forkliftLabel = `${alert.forklift.serial_number} — ${alert.forklift.name_en}`
+  const time = timeAgo(alert.occurred_at, t)
 
   return (
     <div className={`flex items-start gap-3 rounded-xl border p-3 ${
@@ -362,7 +350,7 @@ function AlertRow({ alert }: { alert: MockAlert }) {
       <div className="min-w-0 flex-1">
         <div className="flex items-center justify-between gap-2">
           <p className="truncate text-sm font-medium text-slate-800 dark:text-white">
-            {t(`dashboard.fleetOps.alerts.items.${alert.type}`, { forklift: alert.forklift })}
+            {t(`dashboard.fleetOps.alerts.items.${alert.type}`, { forklift: forkliftLabel })}
           </p>
           <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold ${
             isCritical
@@ -381,6 +369,8 @@ function AlertRow({ alert }: { alert: MockAlert }) {
 
 function IoTSafetyAlertsPanel() {
   const { t } = useTranslation()
+  const { alerts, isLoading, error } = useIoTAlerts()
+
   return (
     <Panel
       title={t('dashboard.fleetOps.alerts.title')}
@@ -388,12 +378,23 @@ function IoTSafetyAlertsPanel() {
       accent="bg-gradient-to-br from-red-500 to-red-700"
       action={{ label: t('nav.items.iotTelemetry'), to: '/iot-management' }}
     >
-      <div className="mb-3 flex items-center gap-1.5 text-xs text-slate-400 dark:text-zinc-500">
-        <AlertTriangle size={12} /> {t('dashboard.fleetOps.alerts.mockNotice')}
-      </div>
-      <div className="grid gap-2">
-        {MOCK_ALERTS.map((a) => <AlertRow key={a.id} alert={a} />)}
-      </div>
+      {error ? (
+        <div className="flex items-center gap-2 text-sm text-red-600 dark:text-red-400">
+          <AlertCircle size={14} /> {error}
+        </div>
+      ) : isLoading ? (
+        <div className="grid gap-2">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="h-16 animate-pulse rounded-xl bg-slate-100 dark:bg-zinc-800" />
+          ))}
+        </div>
+      ) : alerts.length === 0 ? (
+        <EmptyState icon={CheckCircle2} message={t('dashboard.fleetOps.alerts.empty')} />
+      ) : (
+        <div className="grid gap-2">
+          {alerts.map((a) => <AlertRow key={a.id} alert={a} />)}
+        </div>
+      )}
     </Panel>
   )
 }

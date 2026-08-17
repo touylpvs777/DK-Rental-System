@@ -3,14 +3,14 @@ import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import { useForm, FormProvider } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
-import { AlertCircle, Ban, CheckCircle, ChevronLeft, FileDown, Info, Loader2, Printer, Send, XCircle } from 'lucide-react'
+import { AlertCircle, Ban, CheckCircle, ChevronLeft, CreditCard, FileDown, Info, Loader2, Printer, Send, XCircle } from 'lucide-react'
 import {
   getInvoice, createInvoice, updateInvoice,
   issueInvoice, sendInvoice, cancelInvoice, voidInvoice, getInvoicePdf,
 } from '@/api/billing'
 import { getCustomers } from '@/api/customers'
 import type { Customer } from '@/types/customer'
-import type { InvoiceDetail, InvoiceCreate, InvoiceUpdate, InvoiceConversionPrefill } from '@/types/billing'
+import type { InvoiceDetail, InvoiceCreate, InvoiceUpdate, InvoiceConversionPrefill, PaymentConversionPrefill } from '@/types/billing'
 import {
   invoiceHeaderSchema, INVOICE_EDITOR_DEFAULTS, type InvoiceEditorFormValues,
 } from '@/schemas/invoiceEditorSchema'
@@ -295,6 +295,19 @@ export default function InvoiceEditorPage() {
     }
   }
 
+  const createPayment = () => {
+    if (!invoice) return
+    const prefill: PaymentConversionPrefill = {
+      customer_id: invoice.customer.id,
+      customer_name: `${invoice.customer.first_name} ${invoice.customer.last_name}${invoice.customer.company ? ` (${invoice.customer.company})` : ''}`,
+      contract_id: invoice.contract?.id,
+      contract_number: invoice.contract?.contract_number,
+      suggested_amount: invoice.balance_due,
+      currency: invoice.currency,
+    }
+    navigate('/billing/payments/new', { state: { fromInvoice: prefill } })
+  }
+
   const selectedCustomer = customers.find((c) => c.id === values.customer_id)
   const invId = invoice?.id
   const s = invoice?.status
@@ -393,6 +406,11 @@ export default function InvoiceEditorPage() {
               {(s === 'issued' || s === 'sent') && (
                 <button className="btn btn-ghost" disabled={isSaving} onClick={() => runAction(t('billing.invoice.toast.voided'), () => voidInvoice(invId!))}>
                   <Ban size={14} /> {t('billing.invoice.actions.void')}
+                </button>
+              )}
+              {invoice && invoice.balance_due > 0 && ['issued', 'sent', 'partially_paid', 'overdue'].includes(s ?? '') && (
+                <button className="btn btn-secondary" onClick={createPayment}>
+                  <CreditCard size={14} /> {t('billing.invoice.actions.recordPayment')}
                 </button>
               )}
               {invoice && !['paid', 'voided', 'cancelled'].includes(s ?? '') && (

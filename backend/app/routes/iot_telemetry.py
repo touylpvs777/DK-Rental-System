@@ -1,12 +1,28 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.permissions import PermissionName, require_permission
 from app.database.session import get_db
 from app.dependencies import verify_iot_api_key
-from app.schemas.iot_telemetry import IoTTelemetryWebhookPayload, IoTTelemetryWebhookResult
+from app.models.user import User
+from app.schemas.iot_telemetry import IoTAlertOut, IoTTelemetryWebhookPayload, IoTTelemetryWebhookResult
 from app.services.forklift_hour_meter_service import ForkliftHourMeterService
+from app.services.iot_alert_service import IoTAlertService
 
 router = APIRouter(prefix="/iot", tags=["IoT Telemetry"])
+
+
+@router.get(
+    "/alerts",
+    response_model=list[IoTAlertOut],
+    summary="Recent IoT alerts (offline devices, PM-threshold crossings) for the dashboard",
+)
+async def get_iot_alerts(
+    limit: int = Query(default=20, ge=1, le=100),
+    db: AsyncSession = Depends(get_db),
+    _: User = require_permission(PermissionName.VIEW_DASHBOARD),
+):
+    return await IoTAlertService(db).get_alerts(limit=limit)
 
 
 @router.post(

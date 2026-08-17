@@ -100,6 +100,7 @@ export default function App() {
             <Route path="/billing/invoices/new"            element={<Suspense fallback={<PageLoader />}><InvoiceEditorPage /></Suspense>} />
             <Route path="/billing/invoices/:id"            element={<Suspense fallback={<PageLoader />}><InvoiceEditorPage /></Suspense>} />
             <Route path="/billing/payments"                element={<Suspense fallback={<PageLoader />}><PaymentListPage /></Suspense>} />
+            <Route path="/billing/payments/new"            element={<Suspense fallback={<PageLoader />}><PaymentDetailPage /></Suspense>} />
             <Route path="/billing/payments/:id"            element={<Suspense fallback={<PageLoader />}><PaymentDetailPage /></Suspense>} />
             <Route path="/billing/receipts"                element={<Suspense fallback={<PageLoader />}><ReceiptListPage /></Suspense>} />
             <Route path="/billing/receipts/new"            element={<Suspense fallback={<PageLoader />}><ReceiptEditorPage /></Suspense>} />
