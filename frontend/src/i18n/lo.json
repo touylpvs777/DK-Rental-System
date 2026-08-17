@@ -1546,6 +1546,10 @@
         "printPdf": "ພິມໃບແຈ້ງໜີ້",
         "recordPayment": "ບັນທຶກການຊຳລະເງິນ"
       },
+      "preview": {
+        "open": "ເບິ່ງຕົວຢ່າງ ແລະ ພິມ",
+        "title": "ຕົວຢ່າງໃບແຈ້ງໜີ້"
+      },
       "allocations": {
         "payment": "ການຊຳລະເງິນ",
         "paymentLabel": "ການຊຳລະເງິນ #{{id}}",

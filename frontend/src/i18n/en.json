@@ -864,6 +864,10 @@
         "printPdf": "Print Invoice",
         "recordPayment": "Record Payment"
       },
+      "preview": {
+        "open": "Preview & Print",
+        "title": "Invoice Preview"
+      },
       "amountSummary": {
         "tax": "Tax ({{rate}}%)",
         "discount": "Discount",

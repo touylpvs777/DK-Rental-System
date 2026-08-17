@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation, Link } from 'react-router-dom'
 import { useForm, FormProvider } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
-import { AlertCircle, Ban, CheckCircle, ChevronLeft, CreditCard, FileDown, Info, Loader2, Printer, Send, XCircle } from 'lucide-react'
+import { AlertCircle, Ban, CheckCircle, ChevronLeft, CreditCard, Eye, FileDown, Info, Loader2, Printer, Send, XCircle } from 'lucide-react'
 import {
   getInvoice, createInvoice, updateInvoice,
   issueInvoice, sendInvoice, cancelInvoice, voidInvoice, getInvoicePdf,
@@ -20,6 +20,7 @@ import InvoiceVehicleInfoSection from '@/components/documents/InvoiceVehicleInfo
 import DocumentTotalsPanel from '@/components/documents/DocumentTotalsPanel'
 import InvoiceFooterSection from '@/components/documents/InvoiceFooterSection'
 import InvoicePrintTemplate from '@/components/print/InvoicePrintTemplate'
+import InvoicePreviewModal from '@/components/print/InvoicePreviewModal'
 import BankDetailsForm, { EMPTY_BANK_DETAILS, serializeBankDetails, type DocumentBankDetails } from '@/components/BankDetailsForm'
 import { Badge, type BadgeVariant } from '@/components/ui/Badge'
 import Modal from '@/components/ui/Modal'
@@ -89,6 +90,7 @@ export default function InvoiceEditorPage() {
   const [error, setError] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<'edit' | 'preview'>('edit')
   const [cancelOpen, setCancelOpen] = useState(false)
+  const [previewOpen, setPreviewOpen] = useState(false)
   const [cancelReason, setCancelReason] = useState('')
   const [bankData, setBankData] = useState<DocumentBankDetails>(EMPTY_BANK_DETAILS)
 
@@ -379,6 +381,9 @@ export default function InvoiceEditorPage() {
               <button className="btn btn-ghost" onClick={() => setViewMode(viewMode === 'edit' ? 'preview' : 'edit')}>
                 {viewMode === 'edit' ? t('quotations.editor.printPreview') : t('quotations.editor.backToEdit')}
               </button>
+              <button className="btn btn-ghost" onClick={() => setPreviewOpen(true)}>
+                <Eye size={14} /> {t('billing.invoice.preview.open')}
+              </button>
               <PrintButton />
               {invoice && (
                 <button className="btn btn-ghost" disabled={isDownloadingPdf} onClick={handlePrintPdf}>
@@ -570,6 +575,8 @@ export default function InvoiceEditorPage() {
             </div>
           </div>
         </Modal>
+
+        <InvoicePreviewModal isOpen={previewOpen} onClose={() => setPreviewOpen(false)} printProps={printProps} />
       </div>
     </FormProvider>
   )

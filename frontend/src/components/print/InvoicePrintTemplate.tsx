@@ -16,6 +16,7 @@ export interface InvoicePrintCompany {
 export interface InvoicePrintCustomer {
   name: string
   tel?: string
+  address?: string
 }
 
 export interface InvoicePrintEquipment {
@@ -25,6 +26,10 @@ export interface InvoicePrintEquipment {
   engineNo?: string
   vinSerial?: string
   regNo?: string
+  /** Odometer/hour-meter reading — "KM/HOUR" on the meta box. No natural
+   *  source on a plain Invoice today (it has no linked hour-meter field),
+   *  so this stays optional and degrades to "—" like the other cells. */
+  hourMeter?: string
   terms?: string
 }
 
@@ -78,9 +83,12 @@ export interface InvoicePrintTemplateProps {
    *  reused for this print slot), rendered only when non-empty. */
   notesText?: string | null
   notesLabel?: string
+
+  /** Partner/dealership logos strip along the bottom, above the signatures. */
+  partnerLogos?: string[]
 }
 
-const BRAND_LOGOS = ['Cummins', 'MITSUBISHI FORKLIFT TRUCKS', 'Kwick service', 'JUNGHEINRICH', 'Bangchak', 'Nilfisk', 'JLG']
+const DEFAULT_PARTNER_LOGOS = ['Cummins', 'MITSUBISHI FORKLIFT TRUCKS', 'Kwick service', 'JUNGHEINRICH', 'Bangchak', 'Nilfisk', 'JLG']
 
 const CURRENCY_SYMBOLS: Record<string, string> = { LAK: '₭', THB: '฿', USD: '$' }
 
@@ -136,8 +144,12 @@ export default function InvoicePrintTemplate({
   showAmountInWords = false,
   notesText,
   notesLabel = 'Notes',
+  partnerLogos = DEFAULT_PARTNER_LOGOS,
 }: InvoicePrintTemplateProps) {
-  const logoSrc = resolveMediaUrl(company.logoUrl)
+  // Falls back to the bundled brand logo until an admin uploads a custom one
+  // via Settings > Company Profile — same convention as the sidebar, so a
+  // fresh install prints a real logo instead of a blank header.
+  const logoSrc = resolveMediaUrl(company.logoUrl) ?? '/dk-lao-logo.png'
   const useOverrideBank = !!bankDetailsText?.trim()
 
   return (
@@ -145,69 +157,57 @@ export default function InvoicePrintTemplate({
       className="
         invoice-print-root mx-auto w-[210mm] min-h-[297mm] bg-white text-gray-900
         p-[10mm_12mm_16mm] box-border text-[10.5px] leading-snug
-        shadow-lg print:shadow-none print:m-0 print:p-[10mm_12mm_16mm]
+        shadow-lg print:shadow-none print:w-full print:m-0 print:p-[10mm_12mm_16mm]
         flex flex-col
       "
     >
-      {/* 1. Header: company / bill-to / document info */}
-      <div className="flex items-start justify-between gap-6 pb-2 border-b-2 border-gray-900">
-        <div className="flex items-start gap-3">
-          {logoSrc && (
-            <img src={logoSrc} alt="" className="h-14 w-14 shrink-0 object-contain" />
-          )}
-          <div>
-            <div className="text-[13px] font-extrabold uppercase tracking-wide">{company.name}</div>
-            {company.address && <div className="text-[9.5px] text-gray-600 mt-0.5 max-w-[70mm]">{company.address}</div>}
-            <div className="text-[9.5px] text-gray-600 mt-0.5 grid gap-0.5">
-              {company.tel && <div>Tel: {company.tel}</div>}
-              {company.fax && <div>Fax: {company.fax}</div>}
-              {company.website && <div>Web: {company.website}</div>}
-              {company.email && <div>Email: {company.email}</div>}
-            </div>
-          </div>
-        </div>
+      {/* 1a. Top-center company logo + name */}
+      <div className="text-center mb-2">
+        <img src={logoSrc} alt="DK LAO" className="h-16 mx-auto mb-2 object-contain" />
+        <div className="text-[13px] font-extrabold uppercase tracking-wide">{company.name}</div>
+      </div>
 
-        <div className="w-[58mm] shrink-0">
-          <div className="border border-gray-300 rounded px-2.5 py-1.5 mb-1.5">
+      {/* 1b. Bill-to (left) / document title + company contact (right) */}
+      <div className="flex items-start justify-between gap-6 pb-2 mb-2.5 border-b-2 border-gray-900">
+        <div className="w-[85mm]">
+          <div className="border border-gray-300 rounded px-2.5 py-1.5">
             <div className="text-[8.5px] font-bold uppercase tracking-wide text-gray-500">Bill To / ຊື່ລູກຄ້າ</div>
             <div className="text-[11.5px] font-bold text-gray-900 leading-tight">{customer.name}</div>
             {customer.tel && <div className="text-[9.5px] text-gray-700">TEL: {customer.tel}</div>}
+            {customer.address && <div className="text-[9.5px] text-gray-700">{customer.address}</div>}
           </div>
+        </div>
+
+        <div className="w-[70mm] shrink-0 text-right">
+          <div className="text-[15px] font-extrabold uppercase tracking-[0.1em] mb-1.5">ໃບເກັບເງິນ / Invoice</div>
           <div className="grid gap-0.5">
             <InfoRow label="ວັນທີ / Date" value={date} />
             <InfoRow label="ເລກທີ / Invoice No." value={invoiceNumber} />
-            <InfoRow label="Ref." value={refLabel || '—'} />
+            {refLabel && <InfoRow label="Ref." value={refLabel} />}
+          </div>
+          <div className="text-[9px] text-gray-600 mt-1.5 pt-1.5 border-t border-gray-200 grid gap-0.5">
+            {company.address && <div>{company.address}</div>}
+            {company.tel && <div>Tel: {company.tel}</div>}
+            {company.email && <div>Email: {company.email}</div>}
           </div>
         </div>
       </div>
 
-      {/* 2. Brand logos strip */}
-      <div className="invoice-print-force-color mt-2.5 flex border border-gray-300 divide-x divide-gray-300 bg-gray-50">
-        {BRAND_LOGOS.map((brand) => (
-          <div
-            key={brand}
-            className="flex-1 h-9 flex items-center justify-center px-1 text-center text-[7.5px] font-bold uppercase tracking-tight text-gray-700"
-          >
-            {brand}
-          </div>
-        ))}
+      {/* 2. Document title */}
+      <div className="text-center mb-2">
+        <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-gray-500">Sales - Rentals - Service - Spare Parts</div>
       </div>
 
-      {/* 3. Document title */}
-      <div className="text-center mt-3 mb-2">
-        <div className="text-[16px] font-extrabold uppercase tracking-[0.15em]">ໃບເກັບເງິນ / Invoice</div>
-      </div>
-
-      {/* Equipment info row */}
+      {/* 3. Meta data box: Job No, Reg#, Make, Model, VIN/Serial#, Engine#, KM/Hour */}
       {equipment && (
         <div className="invoice-print-force-color flex border border-gray-300 divide-x divide-gray-300 bg-gray-50 mb-3">
           <EquipmentCell labelEn="JOB #" labelLo="ໃບສັ່ງສ້ອມ" value={equipment.jobNumber} />
+          <EquipmentCell labelEn="REG#" labelLo="ເລກທະບຽນ" value={equipment.regNo} />
           <EquipmentCell labelEn="MAKE" labelLo="ຍີ່ຫໍ້" value={equipment.make} />
           <EquipmentCell labelEn="MODEL" labelLo="ຮຸ່ນ" value={equipment.model} />
-          <EquipmentCell labelEn="ENGINE#" labelLo="ເລກຈັກ" value={equipment.engineNo} />
           <EquipmentCell labelEn="VIN/SERIAL#" labelLo="ເລກຖັງ" value={equipment.vinSerial} />
-          <EquipmentCell labelEn="REG#" labelLo="ເລກທະບຽນ" value={equipment.regNo} />
-          <EquipmentCell labelEn="TERMS" value={equipment.terms} />
+          <EquipmentCell labelEn="ENGINE#" labelLo="ເລກຈັກ" value={equipment.engineNo} />
+          <EquipmentCell labelEn="KM/HOUR" labelLo="ໄມ/ຊົ່ວໂມງ" value={equipment.hourMeter} />
         </div>
       )}
 
@@ -218,8 +218,8 @@ export default function InvoicePrintTemplate({
             <th className="border border-gray-300 bg-gray-100 px-2 py-1 text-left text-[9px] font-bold uppercase w-[14%]">Item Code</th>
             <th className="border border-gray-300 bg-gray-100 px-2 py-1 text-left text-[9px] font-bold uppercase">Description</th>
             <th className="border border-gray-300 bg-gray-100 px-2 py-1 text-right text-[9px] font-bold uppercase w-[8%]">Qty</th>
-            <th className="border border-gray-300 bg-gray-100 px-2 py-1 text-left text-[9px] font-bold uppercase w-[9%]">Unit</th>
-            <th className="border border-gray-300 bg-gray-100 px-2 py-1 text-right text-[9px] font-bold uppercase w-[15%]">Price</th>
+            <th className="border border-gray-300 bg-gray-100 px-2 py-1 text-left text-[9px] font-bold uppercase w-[9%]">U/M</th>
+            <th className="border border-gray-300 bg-gray-100 px-2 py-1 text-right text-[9px] font-bold uppercase w-[15%]">Unit Price</th>
             <th className="border border-gray-300 bg-gray-100 px-2 py-1 text-right text-[9px] font-bold uppercase w-[16%]">Amount</th>
           </tr>
         </thead>
@@ -241,7 +241,7 @@ export default function InvoicePrintTemplate({
         </tbody>
       </table>
 
-      {/* 5. Footer: bank details + totals */}
+      {/* 5. Footer: bank details + totals (aligned to the right, bottom of the table) */}
       <div className="flex justify-between items-start gap-6">
         <div className="flex-1 border border-gray-300 rounded px-3 py-2">
           <div className="text-[9px] font-bold uppercase tracking-wide text-gray-500 mb-1">Bank Details / ບັນຊີທະນາຄານ</div>
@@ -314,9 +314,16 @@ export default function InvoicePrintTemplate({
         </div>
       </div>
 
-      {/* 6. Bottom tagline — pinned to the page footer on print, inline on screen */}
-      <div className="invoice-print-tagline mt-auto pt-6 text-center text-[9px] font-semibold uppercase tracking-[0.2em] text-gray-500 border-t border-gray-300">
-        Sales - Rentals - Service - Spare Parts
+      {/* 6. Partner logos strip — pinned to the very bottom of the page */}
+      <div className="invoice-print-force-color invoice-print-tagline mt-auto pt-3 border-t border-gray-300 flex divide-x divide-gray-300 bg-gray-50">
+        {partnerLogos.map((brand) => (
+          <div
+            key={brand}
+            className="flex-1 h-9 flex items-center justify-center px-1 text-center text-[7.5px] font-bold uppercase tracking-tight text-gray-700"
+          >
+            {brand}
+          </div>
+        ))}
       </div>
     </div>
   )
