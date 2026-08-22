@@ -15,7 +15,8 @@ import {
   EquipmentGrid, EquipmentSearch, EquipmentFilters,
   EquipmentDrawer, EquipmentQuickActions,
 } from '@/modules/equipment'
-import type { Forklift, ForkliftStatus } from '@/types/forklift'
+import { toast } from '@/store/toastStore'
+import type { Forklift, ForkliftStatus, ForkliftListParams } from '@/types/forklift'
 import './EquipmentRegistryPage.css'
 import '@/styles/shared.css'
 
@@ -23,6 +24,80 @@ type ViewMode = 'grid' | 'list'
 
 function fmtDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+}
+
+// ── Sample fleet preview (shown only when the registry has zero real rows) ──
+// Every id is negative so it can never collide with a real forklift id, and
+// so edit/delete can be blocked below instead of silently 404ing against the
+// API. Swap this out (or just delete it) once real forklifts are registered.
+
+const SAMPLE_PHOTO = '/images/mit-fgc15n-33n-tooltips.png'
+
+const SAMPLE_FORKLIFTS: Forklift[] = [
+  {
+    id: -1, serial_number: 'DK-F01-2024', slug: 'toyota-8fg25-f01', internal_code: 'F01',
+    name_en: 'Toyota 8FG25', name_lo: null, model_number: '8FG25', model: null,
+    brand: { id: -101, name: 'Toyota', slug: 'toyota', logo_url: null, country: 'Japan' },
+    customer: null,
+    status: 'in_stock', ownership_state: 'rental', condition: 'used',
+    fuel_type: 'lpg', capacity_kg: 2500, year_manufactured: 2021,
+    current_hour_meter: 1248, meter_hours: 1248, is_active: true,
+    primary_photo_url: SAMPLE_PHOTO, iot_device_id: null, last_telemetry_ping: null,
+    current_latitude: null, current_longitude: null, last_location_update: null,
+    created_at: '2024-01-15T00:00:00Z', updated_at: null,
+  },
+  {
+    id: -2, serial_number: 'DK-F02-2024', slug: 'komatsu-fg20-f02', internal_code: 'F02',
+    name_en: 'Komatsu FG20', name_lo: null, model_number: 'FG20', model: null,
+    brand: { id: -102, name: 'Komatsu', slug: 'komatsu', logo_url: null, country: 'Japan' },
+    customer: { id: -201, first_name: 'Vientiane', last_name: 'Construction', company: 'Vientiane Construction Co.' },
+    status: 'rented', ownership_state: 'rental', condition: 'used',
+    fuel_type: 'diesel', capacity_kg: 2000, year_manufactured: 2020,
+    current_hour_meter: 2103, meter_hours: 2103, is_active: true,
+    primary_photo_url: SAMPLE_PHOTO, iot_device_id: null, last_telemetry_ping: null,
+    current_latitude: null, current_longitude: null, last_location_update: null,
+    created_at: '2024-02-20T00:00:00Z', updated_at: null,
+  },
+  {
+    id: -3, serial_number: 'DK-F03-2024', slug: 'raymond-5200-f03', internal_code: 'F03',
+    name_en: 'RAYMOND 5200', name_lo: null, model_number: '5200', model: null,
+    brand: { id: -103, name: 'Raymond', slug: 'raymond', logo_url: null, country: 'USA' },
+    customer: null,
+    status: 'in_service', ownership_state: 'rental', condition: 'used',
+    fuel_type: 'electric', capacity_kg: 3000, year_manufactured: 2019,
+    current_hour_meter: 3567, meter_hours: 3567, is_active: true,
+    primary_photo_url: SAMPLE_PHOTO, iot_device_id: null, last_telemetry_ping: null,
+    current_latitude: null, current_longitude: null, last_location_update: null,
+    created_at: '2024-03-05T00:00:00Z', updated_at: null,
+  },
+  {
+    id: -4, serial_number: 'DK-F04-2024', slug: 'mitsubishi-fgc15n-33n-f04', internal_code: 'F04',
+    name_en: 'Mitsubishi FGC15N-33N', name_lo: null, model_number: 'FGC15N-33N', model: null,
+    brand: { id: -104, name: 'Mitsubishi', slug: 'mitsubishi', logo_url: null, country: 'Japan' },
+    customer: { id: -202, first_name: 'Golden', last_name: 'Build', company: 'Golden Build Co.' },
+    status: 'rented', ownership_state: 'rental', condition: 'new',
+    fuel_type: 'lpg', capacity_kg: 1500, year_manufactured: 2022,
+    current_hour_meter: 645, meter_hours: 645, is_active: true,
+    primary_photo_url: SAMPLE_PHOTO, iot_device_id: null, last_telemetry_ping: null,
+    current_latitude: null, current_longitude: null, last_location_update: null,
+    created_at: '2024-04-10T00:00:00Z', updated_at: null,
+  },
+]
+
+const isSampleForklift = (f: Forklift) => f.id < 0
+
+function matchesSampleParams(f: Forklift, params: ForkliftListParams): boolean {
+  if (params.status && f.status !== params.status) return false
+  if (params.ownership_state && f.ownership_state !== params.ownership_state) return false
+  if (params.condition && f.condition !== params.condition) return false
+  if (params.fuel_type && f.fuel_type !== params.fuel_type) return false
+  if (params.brand_id && f.brand?.id !== params.brand_id) return false
+  if (params.q) {
+    const q = params.q.toLowerCase()
+    const haystack = `${f.name_en} ${f.serial_number} ${f.model_number ?? ''}`.toLowerCase()
+    if (!haystack.includes(q)) return false
+  }
+  return true
 }
 
 export default function EquipmentRegistryPage() {
@@ -44,7 +119,14 @@ export default function EquipmentRegistryPage() {
   const [drawerTarget, setDrawerTarget] = useState<Forklift | null>(null)
 
   const openCreate = () => { setEditTarget(null); setFormOpen(true) }
-  const openEdit = (f: Forklift) => { setEditTarget(f); setFormOpen(true) }
+  const openEdit = (f: Forklift) => {
+    if (isSampleForklift(f)) { toast.info(t('equipment.registry.sampleRowNotice')); return }
+    setEditTarget(f); setFormOpen(true)
+  }
+  const requestDelete = (f: Forklift) => {
+    if (isSampleForklift(f)) { toast.info(t('equipment.registry.sampleRowNotice')); return }
+    setDeleteTarget(f)
+  }
 
   const handleFormSubmit = async (data: Record<string, unknown>) => {
     if (editTarget) return update(editTarget.id, data as never)
@@ -59,23 +141,30 @@ export default function EquipmentRegistryPage() {
     setDeleteTarget(null)
   }
 
+  // The registry has zero real rows (fresh DB) — show a labeled sample fleet
+  // instead of the bare empty state so the grid/card visuals are previewable.
+  const usingSampleData = !isLoading && forklifts.length === 0
+  const displayForklifts = usingSampleData
+    ? SAMPLE_FORKLIFTS.filter((f) => matchesSampleParams(f, params))
+    : forklifts
+
   const statusCounts = useMemo(() => {
-    const counts: Record<string, number> = { all: total }
-    for (const f of forklifts) counts[f.status] = (counts[f.status] || 0) + 1
+    const counts: Record<string, number> = { all: usingSampleData ? SAMPLE_FORKLIFTS.length : total }
+    for (const f of displayForklifts) counts[f.status] = (counts[f.status] || 0) + 1
     return counts
-  }, [forklifts, total])
+  }, [displayForklifts, total, usingSampleData])
 
   const fleetStats = useMemo(() => {
-    if (!forklifts.length) return { utilization: 0, avgHours: 0, pmDue: 0, avgAge: 0, criticalPm: 0 }
-    const rented = forklifts.filter((f) => f.status === 'rented').length
-    const avgHours = forklifts.reduce((s, f) => s + f.current_hour_meter, 0) / forklifts.length
-    const pmDue = forklifts.filter((f) => f.current_hour_meter >= 4000).length
-    const criticalPm = forklifts.filter((f) => f.current_hour_meter >= 4500).length
+    if (!displayForklifts.length) return { utilization: 0, avgHours: 0, pmDue: 0, avgAge: 0, criticalPm: 0 }
+    const rented = displayForklifts.filter((f) => f.status === 'rented').length
+    const avgHours = displayForklifts.reduce((s, f) => s + f.current_hour_meter, 0) / displayForklifts.length
+    const pmDue = displayForklifts.filter((f) => f.current_hour_meter >= 4000).length
+    const criticalPm = displayForklifts.filter((f) => f.current_hour_meter >= 4500).length
     const currentYear = new Date().getFullYear()
-    const ages = forklifts.filter((f) => f.year_manufactured).map((f) => currentYear - f.year_manufactured!)
+    const ages = displayForklifts.filter((f) => f.year_manufactured).map((f) => currentYear - f.year_manufactured!)
     const avgAge = ages.length ? ages.reduce((a, b) => a + b, 0) / ages.length : 0
-    return { utilization: Math.round((rented / forklifts.length) * 100), avgHours: Math.round(avgHours), pmDue, criticalPm, avgAge: Number(avgAge.toFixed(1)) }
-  }, [forklifts])
+    return { utilization: Math.round((rented / displayForklifts.length) * 100), avgHours: Math.round(avgHours), pmDue, criticalPm, avgAge: Number(avgAge.toFixed(1)) }
+  }, [displayForklifts])
 
   const activeStatus = (params.status as ForkliftStatus) || null
   const hasFilters = !!(params.q || params.brand_id || params.status || params.fuel_type || params.condition || params.ownership_state)
@@ -102,7 +191,14 @@ export default function EquipmentRegistryPage() {
         />
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 16, position: 'relative', zIndex: 1 }}>
           <div>
-            <div className="mp-hero-title">{t('equipment.registry.title')}</div>
+            <div className="mp-hero-title" style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+              {t('equipment.registry.title')}
+              {usingSampleData && (
+                <span style={{ fontSize: 10.5, fontWeight: 600, letterSpacing: 0, textTransform: 'none', padding: '2px 8px', borderRadius: 20, background: 'var(--color-warning-50)', color: 'var(--color-warning-700)', border: '1px solid var(--color-warning-200)' }}>
+                  {t('reports.syntheticPreview')}
+                </span>
+              )}
+            </div>
             <div className="mp-hero-sub">{t('equipment.registry.subtitle')}</div>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
@@ -189,7 +285,7 @@ export default function EquipmentRegistryPage() {
       {/* Grid View */}
       {viewMode === 'grid' && (
         <EquipmentGrid
-          forklifts={forklifts}
+          forklifts={displayForklifts}
           isLoading={isLoading}
           onView={(f) => setDrawerTarget(f)}
           onEdit={openEdit}
@@ -227,9 +323,9 @@ export default function EquipmentRegistryPage() {
                       <td><div className="skeleton-cell" style={{ width: 40 }} /></td>
                     </tr>
                   ))
-                ) : forklifts.length === 0 ? (
+                ) : displayForklifts.length === 0 ? (
                   <tr><td colSpan={8}><div className="table-empty"><Truck size={36} /><p>{t('equipment.registry.noForkliftsFound')}</p></div></td></tr>
-                ) : forklifts.map((f) => (
+                ) : displayForklifts.map((f) => (
                   <tr key={f.id} style={{ cursor: 'pointer' }} onClick={() => setDrawerTarget(f)}>
                     <td>
                       <div className="fleet-row-name">
@@ -249,7 +345,7 @@ export default function EquipmentRegistryPage() {
                     <td>
                       <div className="row-actions" onClick={(e) => e.stopPropagation()}>
                         <button className="action-btn" title={t('common.edit')} onClick={() => openEdit(f)}><Pencil size={14} /></button>
-                        <button className="action-btn danger" title={t('common.delete')} onClick={() => setDeleteTarget(f)}><Trash2 size={14} /></button>
+                        <button className="action-btn danger" title={t('common.delete')} onClick={() => requestDelete(f)}><Trash2 size={14} /></button>
                       </div>
                     </td>
                   </tr>

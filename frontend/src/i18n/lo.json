@@ -2518,6 +2518,7 @@
         "years": "{{count}} ປີ"
       },
       "noForkliftsFound": "ບໍ່ພົບລົດຍົກ",
+      "sampleRowNotice": "ນີ້ແມ່ນຂໍ້ມູນຕົວຢ່າງ — ກະລຸນາລົງທະບຽນລົດຍົກຕົວຈິງກ່ອນແກ້ໄຂ ຫຼື ລຶບຂໍ້ມູນ.",
       "pageInfo": "ໜ້າ {{page}} ຈາກ {{pages}} (ທັງໝົດ {{total}})",
       "refresh": "ໂຫຼດຂໍ້ມູນໃໝ່",
       "registerForklift": "ລົງທະບຽນລົດຍົກ",

@@ -1578,6 +1578,7 @@
       "registerForklift": "Register Forklift",
       "searchPlaceholder": "Search serial number, name, model...",
       "noForkliftsFound": "No forklifts found",
+      "sampleRowNotice": "This is sample data — register a real forklift to edit or delete records.",
       "pageInfo": "Page {{page}} of {{pages}} ({{total}} total)",
       "deleteTitle": "Delete Forklift",
       "deleteMessage": "Delete \"{{name}}\" (S/N: {{serial}})? This cannot be undone.",
